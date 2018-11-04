@@ -3,7 +3,7 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Lcom/android/systemui/statusbar/policy/DeviceProvisionedController$DeviceProvisionedListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 7097
+    .line 5446
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$25;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,34 +37,25 @@
 
 
 # virtual methods
-.method public onDeviceProvisionedChanged()V
-    .locals 1
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 7100
+    .line 5449
+    invoke-static {}, Landroid/os/Debug;->stopMethodTracing()V
+
+    .line 5450
+    const-string/jumbo v0, "StatusBar"
+
+    const-string/jumbo v1, "stopTracing"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 5451
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$25;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotifications()V
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->vibrate()V
 
-    .line 7099
-    return-void
-.end method
-
-.method public onUserSetupChanged()V
-    .locals 0
-
-    .prologue
-    .line 7109
-    return-void
-.end method
-
-.method public onUserSwitched()V
-    .locals 0
-
-    .prologue
-    .line 7105
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar$25;->onUserSetupChanged()V
-
-    .line 7104
+    .line 5448
     return-void
 .end method

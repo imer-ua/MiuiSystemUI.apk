@@ -453,7 +453,7 @@
 
     const-string v13, "set_haptic_feedback"
 
-    invoke-static {v12, v13}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v13, v12}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v13
 

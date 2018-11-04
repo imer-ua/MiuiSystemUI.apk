@@ -165,7 +165,7 @@
 
     const-string v1, "set_toggles_columns_row"
 
-    invoke-static {v0, v1}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v1
 
@@ -645,7 +645,7 @@
 
     const-string v4, "set_toggles_columns_full"
 
-    invoke-static {v1, v4}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v4, v1}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 
@@ -664,7 +664,7 @@
 
     const-string v4, "set_toggles_columns_row"
 
-    invoke-static {v1, v4}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v4, v1}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 

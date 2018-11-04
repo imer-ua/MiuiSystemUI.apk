@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 444
+    .line 445
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$9;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,36 +42,36 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 446
+    .line 447
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 448
+    .line 449
     .local v0, "intent":Landroid/content/Intent;
     const-string/jumbo v1, "com.android.settings"
 
-    .line 449
+    .line 450
     const-string/jumbo v2, "com.android.settings.applications.ManageApplicationsActivity"
 
-    .line 447
+    .line 448
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 450
+    .line 451
     const-string/jumbo v1, "com.android.settings.APPLICATION_LIST_TYPE"
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 451
+    .line 452
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 452
+    .line 453
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$9;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/RecentsActivity;->getApplicationContext()Landroid/content/Context;
@@ -86,16 +86,16 @@
 
     move-result-object v1
 
-    .line 454
+    .line 455
     sget-object v2, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
 
-    .line 453
+    .line 454
     const/4 v3, 0x0
 
-    .line 452
+    .line 453
     invoke-virtual {v1, v3, v2}, Landroid/app/TaskStackBuilder;->startActivities(Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 455
+    .line 456
     const/4 v1, 0x1
 
     return v1

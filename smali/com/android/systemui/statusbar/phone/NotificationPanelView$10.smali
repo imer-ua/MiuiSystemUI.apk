@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 3162
+    .line 3178
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,18 +43,18 @@
     .param p2, "fragment"    # Lcom/miui/systemui/support/v4/app/Fragment;
 
     .prologue
-    .line 3165
+    .line 3181
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     check-cast p2, Lcom/android/systemui/plugins/qs/QS;
 
     .end local p2    # "fragment":Lcom/miui/systemui/support/v4/app/Fragment;
-    invoke-static {v0, p2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-set6(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Lcom/android/systemui/plugins/qs/QS;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v0, p2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-set7(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Lcom/android/systemui/plugins/qs/QS;)Lcom/android/systemui/plugins/qs/QS;
 
-    .line 3166
+    .line 3182
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get19(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get21(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
 
     move-result-object v0
 
@@ -62,10 +62,10 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/plugins/qs/QS;->setPanelView(Lcom/android/systemui/plugins/qs/QS$HeightListener;)V
 
-    .line 3167
+    .line 3183
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get19(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get21(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
 
     move-result-object v0
 
@@ -73,10 +73,10 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/plugins/qs/QS;->setExpandClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3168
+    .line 3184
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get19(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get21(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
 
     move-result-object v0
 
@@ -86,10 +86,10 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/plugins/qs/QS;->setHeaderClickable(Z)V
 
-    .line 3169
+    .line 3185
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get19(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get21(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
 
     move-result-object v0
 
@@ -101,25 +101,25 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/plugins/qs/QS;->setKeyguardShowing(Z)V
 
-    .line 3170
+    .line 3186
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get19(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get21(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get23(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Z
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get27(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Z
 
     move-result v1
 
     invoke-interface {v0, v1}, Lcom/android/systemui/plugins/qs/QS;->setOverscrolling(Z)V
 
-    .line 3173
+    .line 3189
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get19(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get21(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
 
     move-result-object v0
 
@@ -133,30 +133,30 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 3183
+    .line 3199
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mNotificationStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get19(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get21(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->setQs(Lcom/android/systemui/plugins/qs/QS;)V
 
-    .line 3184
+    .line 3200
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->updateQsExpansion()V
 
-    .line 3185
+    .line 3201
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-wrap6(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
-    .line 3164
+    .line 3180
     return-void
 .end method
 
@@ -166,16 +166,16 @@
     .param p2, "fragment"    # Lcom/miui/systemui/support/v4/app/Fragment;
 
     .prologue
-    .line 3193
+    .line 3209
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get19(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get21(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
 
     move-result-object v0
 
     if-ne p2, v0, :cond_1
 
-    .line 3194
+    .line 3210
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isQsDetailShowing()Z
@@ -184,24 +184,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 3195
+    .line 3211
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get19(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get21(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
 
     move-result-object v0
 
     invoke-interface {v0}, Lcom/android/systemui/plugins/qs/QS;->closeDetail()V
 
-    .line 3197
+    .line 3213
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-set6(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Lcom/android/systemui/plugins/qs/QS;)Lcom/android/systemui/plugins/qs/QS;
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-set7(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Lcom/android/systemui/plugins/qs/QS;)Lcom/android/systemui/plugins/qs/QS;
 
-    .line 3189
+    .line 3205
     :cond_1
     return-void
 .end method

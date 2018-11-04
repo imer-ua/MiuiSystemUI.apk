@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     .prologue
-    .line 284
+    .line 285
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$H;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -49,17 +49,17 @@
     .param p1, "m"    # Landroid/os/Message;
 
     .prologue
-    .line 286
+    .line 287
     iget v5, p1, Landroid/os/Message;->what:I
 
     packed-switch v5, :pswitch_data_0
 
-    .line 285
+    .line 286
     :cond_0
     :goto_0
     return-void
 
-    .line 288
+    .line 289
     :pswitch_0
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -81,7 +81,7 @@
 
     move-result-object v1
 
-    .line 289
+    .line 290
     .local v1, "how":Ljava/lang/String;
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$H;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
@@ -89,7 +89,7 @@
 
     move-result v4
 
-    .line 290
+    .line 291
     .local v4, "w":I
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$H;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
@@ -97,7 +97,7 @@
 
     move-result v0
 
-    .line 291
+    .line 292
     .local v0, "h":I
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$H;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
@@ -107,7 +107,7 @@
 
     move-result v3
 
-    .line 292
+    .line 293
     .local v3, "vw":I
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$H;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
@@ -117,25 +117,25 @@
 
     move-result v2
 
-    .line 294
+    .line 295
     .local v2, "vh":I
     if-ne v0, v2, :cond_1
 
     if-eq v4, v3, :cond_0
 
-    .line 295
+    .line 296
     :cond_1
     const-string/jumbo v5, "PhoneStatusBar/NavigationBarView"
 
-    .line 296
+    .line 297
     const-string/jumbo v6, "*** Invalid layout in navigation bar (%s this=%dx%d cur=%dx%d)"
 
-    .line 295
+    .line 296
     const/4 v7, 0x5
 
     new-array v7, v7, [Ljava/lang/Object;
 
-    .line 297
+    .line 298
     const/4 v8, 0x0
 
     aput-object v1, v7, v8
@@ -172,21 +172,21 @@
 
     aput-object v8, v7, v9
 
-    .line 295
+    .line 296
     invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 299
+    .line 300
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$H;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v5}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->requestLayout()V
 
     goto :goto_0
 
-    .line 286
+    .line 287
     nop
 
     :pswitch_data_0

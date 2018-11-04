@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/RoundedCorners;
 
     .prologue
-    .line 247
+    .line 249
     iput-object p1, p0, Lcom/android/systemui/RoundedCorners$4;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 265
+    .line 267
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 255
+    .line 257
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners$4;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v2}, Lcom/android/systemui/RoundedCorners;->-get1(Lcom/android/systemui/RoundedCorners;)Landroid/view/Display;
@@ -62,7 +62,7 @@
 
     move-result v1
 
-    .line 256
+    .line 258
     .local v1, "rotation":I
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners$4;->this$0:Lcom/android/systemui/RoundedCorners;
 
@@ -72,12 +72,12 @@
 
     if-eq v2, v1, :cond_0
 
-    .line 257
+    .line 259
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners$4;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v2, v1}, Lcom/android/systemui/RoundedCorners;->-set3(Lcom/android/systemui/RoundedCorners;I)I
 
-    .line 258
+    .line 260
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners$4;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v2}, Lcom/android/systemui/RoundedCorners;->-get3(Lcom/android/systemui/RoundedCorners;)Landroid/os/Handler;
@@ -92,13 +92,13 @@
 
     move-result-object v0
 
-    .line 259
+    .line 261
     .local v0, "msg":Landroid/os/Message;
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Message;->setAsynchronous(Z)V
 
-    .line 260
+    .line 262
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners$4;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v2}, Lcom/android/systemui/RoundedCorners;->-get3(Lcom/android/systemui/RoundedCorners;)Landroid/os/Handler;
@@ -107,7 +107,7 @@
 
     invoke-virtual {v2, v0}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
 
-    .line 254
+    .line 256
     .end local v0    # "msg":Landroid/os/Message;
     :cond_0
     return-void
@@ -118,6 +118,6 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 250
+    .line 252
     return-void
 .end method

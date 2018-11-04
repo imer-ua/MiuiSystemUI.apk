@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 1709
+    .line 1718
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$11;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,7 +41,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1724
+    .line 1733
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavStubView$11;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     const-string/jumbo v1, "startAppAnimation-1"
@@ -50,19 +50,19 @@
 
     invoke-static {v0, v3, v3, v2, v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->-wrap2(Lcom/android/systemui/statusbar/phone/NavStubView;ZZZLjava/lang/String;)V
 
-    .line 1725
+    .line 1734
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     move-result-object v0
 
     invoke-virtual {v0, v3}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->setIsFsGestureAnimating(Z)V
 
-    .line 1726
+    .line 1735
     const-string/jumbo v0, "home"
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NavStubJankyFrameReporter;->recordJankyFrames(Ljava/lang/String;)V
 
-    .line 1723
+    .line 1732
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1712
+    .line 1721
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     move-result-object v1
@@ -82,7 +82,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->setIsFsGestureAnimating(Z)V
 
-    .line 1714
+    .line 1723
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$11;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get2(Lcom/android/systemui/statusbar/phone/NavStubView;)Landroid/content/Context;
@@ -113,7 +113,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 1716
+    .line 1725
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$11;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
@@ -125,15 +125,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1711
+    .line 1720
     :goto_0
     return-void
 
-    .line 1717
+    .line 1726
     :catch_0
     move-exception v0
 
-    .line 1718
+    .line 1727
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 

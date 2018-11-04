@@ -255,187 +255,187 @@
     .line 79
     iput-boolean v7, p0, Lcom/android/systemui/RoundedCorners;->mForceBlack:Z
 
-    .line 164
+    .line 166
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
-    .line 165
+    .line 167
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
     const/16 v2, 0x30
 
-    .line 168
+    .line 170
     const v3, 0x902031b
 
-    .line 165
+    .line 167
     invoke-direct {v1, v2, v5, v4, v3}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     aput-object v1, v0, v7
 
-    .line 170
+    .line 172
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
-    .line 173
+    .line 175
     const v2, 0x90206f5
 
-    .line 170
+    .line 172
     invoke-direct {v1, v6, v4, v5, v2}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     aput-object v1, v0, v8
 
-    .line 175
+    .line 177
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
     const/16 v2, 0x50
 
-    .line 178
+    .line 180
     const v3, 0x90206f6
 
-    .line 175
+    .line 177
     invoke-direct {v1, v2, v5, v4, v3}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 180
+    .line 182
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
     const/4 v2, 0x5
 
-    .line 183
+    .line 185
     const v3, 0x90206f7
 
-    .line 180
+    .line 182
     invoke-direct {v1, v2, v4, v5, v3}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     aput-object v1, v0, v6
 
-    .line 164
+    .line 166
     iput-object v0, p0, Lcom/android/systemui/RoundedCorners;->mTopCorner:[Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
-    .line 187
+    .line 189
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
-    .line 188
+    .line 190
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
     const/16 v2, 0x50
 
-    .line 191
+    .line 193
     const v3, 0x902031a
 
-    .line 188
+    .line 190
     invoke-direct {v1, v2, v5, v4, v3}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     aput-object v1, v0, v7
 
-    .line 193
+    .line 195
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
     const/4 v2, 0x5
 
-    .line 196
+    .line 198
     const v3, 0x90206f8
 
-    .line 193
+    .line 195
     invoke-direct {v1, v2, v4, v5, v3}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     aput-object v1, v0, v8
 
-    .line 198
+    .line 200
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
     const/16 v2, 0x30
 
-    .line 201
+    .line 203
     const v3, 0x90206f9
 
-    .line 198
+    .line 200
     invoke-direct {v1, v2, v5, v4, v3}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 203
+    .line 205
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
-    .line 206
+    .line 208
     const v2, 0x90206fa
 
-    .line 203
+    .line 205
     invoke-direct {v1, v6, v4, v5, v2}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     aput-object v1, v0, v6
 
-    .line 187
+    .line 189
     iput-object v0, p0, Lcom/android/systemui/RoundedCorners;->mBottomCorner:[Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
-    .line 210
+    .line 212
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
-    .line 211
+    .line 213
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
     const/16 v2, 0x30
 
-    .line 214
+    .line 216
     const v3, 0x90206fb
 
-    .line 211
+    .line 213
     invoke-direct {v1, v2, v5, v4, v3}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     aput-object v1, v0, v7
 
-    .line 216
+    .line 218
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
-    .line 219
+    .line 221
     const v2, 0x90206fc
 
-    .line 216
+    .line 218
     invoke-direct {v1, v6, v4, v5, v2}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     aput-object v1, v0, v8
 
-    .line 221
+    .line 223
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
     const/16 v2, 0x50
 
-    .line 224
+    .line 226
     const v3, 0x90206fd
 
-    .line 221
+    .line 223
     invoke-direct {v1, v2, v5, v4, v3}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 226
+    .line 228
     new-instance v1, Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
     const/4 v2, 0x5
 
-    .line 229
+    .line 231
     const v3, 0x90206fe
 
-    .line 226
+    .line 228
     invoke-direct {v1, v2, v4, v5, v3}, Lcom/android/systemui/RoundedCorners$RoundCornerData;-><init>(IIII)V
 
     aput-object v1, v0, v6
 
-    .line 210
+    .line 212
     iput-object v0, p0, Lcom/android/systemui/RoundedCorners;->mNotchCorner:[Lcom/android/systemui/RoundedCorners$RoundCornerData;
 
-    .line 316
+    .line 318
     new-instance v0, Lcom/android/systemui/RoundedCorners$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/RoundedCorners$1;-><init>(Lcom/android/systemui/RoundedCorners;)V
@@ -455,7 +455,7 @@
 
     const/4 v1, 0x0
 
-    .line 308
+    .line 310
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners;->mRoundCornerViewTop:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_1
@@ -464,7 +464,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 309
+    .line 311
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners;->mRoundCornerViewTop:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -473,18 +473,18 @@
 
     if-eqz p1, :cond_2
 
-    .line 310
+    .line 312
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
     invoke-direct {v0, v4, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 309
+    .line 311
     :goto_0
     invoke-virtual {v2, v0}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 311
+    .line 313
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners;->mRoundCornerViewBottom:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -493,25 +493,25 @@
 
     if-eqz p1, :cond_0
 
-    .line 312
+    .line 314
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
     invoke-direct {v1, v4, v2}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 311
+    .line 313
     :cond_0
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 307
+    .line 309
     :cond_1
     return-void
 
     :cond_2
     move-object v0, v1
 
-    .line 310
+    .line 312
     goto :goto_0
 .end method
 
@@ -522,17 +522,17 @@
     .param p3, "notch"    # Z
 
     .prologue
-    .line 370
+    .line 372
     if-eqz p3, :cond_0
 
-    .line 371
+    .line 373
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 369
+    .line 371
     :goto_0
     return-void
 
-    .line 373
+    .line 375
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/RoundedCorners;->mInitialSize:Landroid/graphics/Point;
 
@@ -546,7 +546,7 @@
 
     move-result v2
 
-    .line 374
+    .line 376
     .local v2, "initWidth":I
     iget-object v4, p0, Lcom/android/systemui/RoundedCorners;->mCurrentSize:Landroid/graphics/Point;
 
@@ -560,13 +560,13 @@
 
     move-result v0
 
-    .line 375
+    .line 377
     .local v0, "currentWidth":I
     new-instance v3, Landroid/util/TypedValue;
 
     invoke-direct {v3}, Landroid/util/TypedValue;-><init>()V
 
-    .line 376
+    .line 378
     .local v3, "value":Landroid/util/TypedValue;
     iget-object v4, p0, Lcom/android/systemui/RoundedCorners;->mContext:Landroid/content/Context;
 
@@ -578,26 +578,26 @@
 
     invoke-virtual {v4, p2, v3, v5}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 377
+    .line 379
     iget-object v4, p0, Lcom/android/systemui/RoundedCorners;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    .line 378
+    .line 380
     iget v5, v3, Landroid/util/TypedValue;->density:I
 
     mul-int/2addr v5, v0
 
     div-int/2addr v5, v2
 
-    .line 377
+    .line 379
     invoke-virtual {v4, p2, v5}, Landroid/content/res/Resources;->getDrawableForDensity(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 379
+    .line 381
     .local v1, "drawable":Landroid/graphics/drawable/Drawable;
     invoke-virtual {p1, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
@@ -610,7 +610,7 @@
     .param p2, "roundCornerImgResId"    # I
 
     .prologue
-    .line 344
+    .line 346
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/systemui/RoundedCorners;->showRoundCornerViewAt(IIZ)Landroid/widget/ImageView;
@@ -627,7 +627,7 @@
     .param p3, "notch"    # Z
 
     .prologue
-    .line 348
+    .line 350
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners;->mContext:Landroid/content/Context;
 
     const-string/jumbo v2, "window"
@@ -638,7 +638,7 @@
 
     check-cast v7, Landroid/view/WindowManager;
 
-    .line 349
+    .line 351
     .local v7, "wm":Landroid/view/WindowManager;
     new-instance v6, Landroid/widget/ImageView;
 
@@ -646,61 +646,61 @@
 
     invoke-direct {v6, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 350
+    .line 352
     .local v6, "view":Landroid/widget/ImageView;
     invoke-direct {p0, v6, p2, p3}, Lcom/android/systemui/RoundedCorners;->setBackgroundResource(Landroid/view/View;IZ)V
 
-    .line 351
+    .line 353
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 354
+    .line 356
     if-eqz p3, :cond_0
 
     const/16 v3, 0x7e1
 
-    .line 352
+    .line 354
     :goto_0
     const/4 v1, -0x1
 
-    .line 353
+    .line 355
     const/4 v2, -0x2
 
-    .line 355
+    .line 357
     const/16 v4, 0x518
 
-    .line 359
+    .line 361
     const/4 v5, -0x3
 
-    .line 351
+    .line 353
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 360
+    .line 362
     .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     const v1, 0x100010
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    .line 361
+    .line 363
     iput p1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 362
+    .line 364
     const-string/jumbo v1, "RoundCorner"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 364
+    .line 366
     const/4 v1, 0x1
 
-    .line 363
+    .line 365
     invoke-static {v0, v1}, Landroid/view/WindowManagerCompat;->setLayoutInDisplayCutoutMode(Landroid/view/WindowManager$LayoutParams;I)V
 
-    .line 365
+    .line 367
     invoke-interface {v7, v6, v0}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 366
+    .line 368
     return-object v6
 
-    .line 354
+    .line 356
     .end local v0    # "lp":Landroid/view/WindowManager$LayoutParams;
     :cond_0
     const/16 v3, 0x7df
@@ -714,45 +714,45 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 384
+    .line 386
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners;->mNotchRoundCornerView:Landroid/widget/ImageView;
 
     if-eqz v1, :cond_1
 
-    .line 385
+    .line 387
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners;->mNotchRoundCornerView:Landroid/widget/ImageView;
 
     iget v2, p0, Lcom/android/systemui/RoundedCorners;->mRoundCornerRotation:I
 
     if-eqz v2, :cond_2
 
-    .line 386
+    .line 388
     iget-boolean v2, p0, Lcom/android/systemui/RoundedCorners;->mEnableNotchConfig:Z
 
     if-eqz v2, :cond_2
 
-    .line 387
+    .line 389
     :cond_0
     const/16 v0, 0x8
 
-    .line 385
+    .line 387
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 383
+    .line 385
     :cond_1
     return-void
 
-    .line 386
+    .line 388
     :cond_2
     iget-boolean v2, p0, Lcom/android/systemui/RoundedCorners;->mDriveMode:Z
 
     if-nez v2, :cond_0
 
-    .line 387
+    .line 389
     iget-boolean v2, p0, Lcom/android/systemui/RoundedCorners;->mForceBlack:Z
 
-    .line 385
+    .line 387
     if-eqz v2, :cond_0
 
     goto :goto_0
@@ -765,13 +765,13 @@
     .param p3, "notch"    # Z
 
     .prologue
-    .line 331
+    .line 333
     if-nez p1, :cond_0
 
-    .line 332
+    .line 334
     return-void
 
-    .line 334
+    .line 336
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners;->mContext:Landroid/content/Context;
 
@@ -783,7 +783,7 @@
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 335
+    .line 337
     .local v1, "wm":Landroid/view/WindowManager;
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -791,31 +791,31 @@
 
     check-cast v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 336
+    .line 338
     .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     iget v2, p2, Lcom/android/systemui/RoundedCorners$RoundCornerData;->gravity:I
 
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 337
+    .line 339
     iget v2, p2, Lcom/android/systemui/RoundedCorners$RoundCornerData;->width:I
 
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    .line 338
+    .line 340
     iget v2, p2, Lcom/android/systemui/RoundedCorners$RoundCornerData;->height:I
 
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 339
+    .line 341
     iget v2, p2, Lcom/android/systemui/RoundedCorners$RoundCornerData;->backgroundRes:I
 
     invoke-direct {p0, p1, v2, p3}, Lcom/android/systemui/RoundedCorners;->setBackgroundResource(Landroid/view/View;IZ)V
 
-    .line 340
+    .line 342
     invoke-interface {v1, p1, v0}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 330
+    .line 332
     return-void
 .end method
 
@@ -826,7 +826,7 @@
     .param p1, "tile"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 530
+    .line 532
     return-void
 .end method
 
@@ -835,7 +835,7 @@
     .param p1, "flags"    # I
 
     .prologue
-    .line 429
+    .line 431
     return-void
 .end method
 
@@ -843,7 +843,7 @@
     .locals 0
 
     .prologue
-    .line 425
+    .line 427
     return-void
 .end method
 
@@ -852,7 +852,7 @@
     .param p1, "obj"    # Ljava/lang/String;
 
     .prologue
-    .line 433
+    .line 435
     return-void
 .end method
 
@@ -860,7 +860,7 @@
     .locals 0
 
     .prologue
-    .line 497
+    .line 499
     return-void
 .end method
 
@@ -868,7 +868,7 @@
     .locals 0
 
     .prologue
-    .line 506
+    .line 508
     return-void
 .end method
 
@@ -877,7 +877,7 @@
     .param p1, "forced"    # Z
 
     .prologue
-    .line 493
+    .line 495
     return-void
 .end method
 
@@ -888,7 +888,7 @@
     .param p5, "forced"    # Z
 
     .prologue
-    .line 502
+    .line 504
     return-void
 .end method
 
@@ -896,7 +896,7 @@
     .locals 0
 
     .prologue
-    .line 481
+    .line 483
     return-void
 .end method
 
@@ -905,7 +905,7 @@
     .param p1, "tile"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 538
+    .line 540
     return-void
 .end method
 
@@ -916,7 +916,7 @@
     .param p3, "animate"    # Z
 
     .prologue
-    .line 421
+    .line 423
     return-void
 .end method
 
@@ -924,7 +924,7 @@
     .locals 0
 
     .prologue
-    .line 473
+    .line 475
     return-void
 .end method
 
@@ -932,7 +932,7 @@
     .locals 0
 
     .prologue
-    .line 571
+    .line 573
     return-void
 .end method
 
@@ -941,7 +941,7 @@
     .param p1, "arg1"    # I
 
     .prologue
-    .line 567
+    .line 569
     return-void
 .end method
 
@@ -949,7 +949,7 @@
     .locals 0
 
     .prologue
-    .line 562
+    .line 564
     return-void
 .end method
 
@@ -959,7 +959,7 @@
     .param p2, "triggeredFromHomeKey"    # Z
 
     .prologue
-    .line 457
+    .line 459
     return-void
 .end method
 
@@ -991,12 +991,12 @@
 
     const/4 v6, 0x1
 
-    .line 234
+    .line 236
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mContext:Landroid/content/Context;
 
     const-string v1, "round_toggle"
 
-    invoke-static {v0, v1}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v1
 
@@ -1015,13 +1015,13 @@
 
     if-eqz v2, :cond_5
 
-    .line 236
+    .line 238
     :cond_1
     sget-boolean v2, Lcom/android/systemui/RoundedCorners;->sIsRoundCorner:Z
 
     if-eqz v2, :cond_2
 
-    .line 237
+    .line 239
     const v2, 0x902031b
 
     invoke-direct {p0, v4, v2}, Lcom/android/systemui/RoundedCorners;->showRoundCornerViewAt(II)Landroid/widget/ImageView;
@@ -1030,7 +1030,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/RoundedCorners;->mRoundCornerViewTop:Landroid/widget/ImageView;
 
-    .line 238
+    .line 240
     const/16 v2, 0x53
 
     const v3, 0x902031a
@@ -1041,20 +1041,20 @@
 
     iput-object v2, p0, Lcom/android/systemui/RoundedCorners;->mRoundCornerViewBottom:Landroid/widget/ImageView;
 
-    .line 240
+    .line 242
     :cond_2
     sget-boolean v2, Lmiui/util/CustomizeUtil;->HAS_NOTCH:Z
 
     if-eqz v2, :cond_4
 
-    .line 241
+    .line 243
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x1c
 
     if-ge v2, v3, :cond_3
 
-    .line 242
+    .line 244
     const v2, 0x90206fb
 
     invoke-direct {p0, v4, v2, v6}, Lcom/android/systemui/RoundedCorners;->showRoundCornerViewAt(IIZ)Landroid/widget/ImageView;
@@ -1063,10 +1063,10 @@
 
     iput-object v2, p0, Lcom/android/systemui/RoundedCorners;->mNotchRoundCornerView:Landroid/widget/ImageView;
 
-    .line 243
+    .line 245
     invoke-direct {p0}, Lcom/android/systemui/RoundedCorners;->updateNotchRoundCornerVisibility()V
 
-    .line 245
+    .line 247
     :cond_3
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners;->mDisplay:Landroid/view/Display;
 
@@ -1076,7 +1076,7 @@
 
     iput v2, p0, Lcom/android/systemui/RoundedCorners;->mRoundCornerRotation:I
 
-    .line 246
+    .line 248
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners;->mContext:Landroid/content/Context;
 
     const-string/jumbo v3, "display"
@@ -1087,19 +1087,19 @@
 
     check-cast v0, Landroid/hardware/display/DisplayManager;
 
-    .line 247
+    .line 249
     .local v0, "dm":Landroid/hardware/display/DisplayManager;
     new-instance v2, Lcom/android/systemui/RoundedCorners$4;
 
     invoke-direct {v2, p0}, Lcom/android/systemui/RoundedCorners$4;-><init>(Lcom/android/systemui/RoundedCorners;)V
 
-    .line 267
+    .line 269
     iget-object v3, p0, Lcom/android/systemui/RoundedCorners;->mHandler:Landroid/os/Handler;
 
-    .line 247
+    .line 249
     invoke-virtual {v0, v2, v3}, Landroid/hardware/display/DisplayManager;->registerDisplayListener(Landroid/hardware/display/DisplayManager$DisplayListener;Landroid/os/Handler;)V
 
-    .line 271
+    .line 273
     .end local v0    # "dm":Landroid/hardware/display/DisplayManager;
     :cond_4
     new-instance v2, Lcom/android/systemui/RoundedCorners$5;
@@ -1108,61 +1108,61 @@
 
     iget-object v4, p0, Lcom/android/systemui/RoundedCorners;->mHandler:Landroid/os/Handler;
 
-    .line 272
+    .line 274
     const-string/jumbo v5, "accessibility_display_inversion_enabled"
 
-    .line 271
+    .line 273
     invoke-direct {v2, p0, v3, v4, v5}, Lcom/android/systemui/RoundedCorners$5;-><init>(Lcom/android/systemui/RoundedCorners;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
 
     iput-object v2, p0, Lcom/android/systemui/RoundedCorners;->mSettings:Lcom/android/systemui/qs/SecureSetting;
 
-    .line 278
+    .line 280
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners;->mSettings:Lcom/android/systemui/qs/SecureSetting;
 
     invoke-virtual {v2, v6}, Lcom/android/systemui/qs/SecureSetting;->setListening(Z)V
 
-    .line 279
+    .line 281
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners;->mSettings:Lcom/android/systemui/qs/SecureSetting;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/qs/SecureSetting;->onChange(Z)V
 
-    .line 281
+    .line 283
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 282
+    .line 284
     .local v1, "filter":Landroid/content/IntentFilter;
     const-string/jumbo v2, "android.intent.action.USER_SWITCHED"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 283
+    .line 285
     const-string/jumbo v2, "miui.action.handymode_change"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 284
+    .line 286
     iget-object v2, p0, Lcom/android/systemui/RoundedCorners;->mContext:Landroid/content/Context;
 
     new-instance v3, Lcom/android/systemui/RoundedCorners$6;
 
     invoke-direct {v3, p0}, Lcom/android/systemui/RoundedCorners$6;-><init>(Lcom/android/systemui/RoundedCorners;)V
 
-    .line 304
+    .line 306
     iget-object v4, p0, Lcom/android/systemui/RoundedCorners;->mHandler:Landroid/os/Handler;
 
     const/4 v5, 0x0
 
-    .line 284
+    .line 286
     invoke-virtual {v2, v3, v1, v5, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 233
+    .line 235
     return-void
 
-    .line 234
+    .line 236
     .end local v1    # "filter":Landroid/content/IntentFilter;
     :cond_5
     return-void
@@ -1173,7 +1173,7 @@
     .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 399
+    .line 401
     return-void
 .end method
 
@@ -1181,19 +1181,19 @@
     .locals 3
 
     .prologue
-    .line 404
+    .line 406
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners;->mNotchRoundCornerView:Landroid/widget/ImageView;
 
     if-eqz v1, :cond_0
 
-    .line 405
+    .line 407
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners;->mNotchRoundCornerView:Landroid/widget/ImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
-    .line 407
+    .line 409
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners;->mHandler:Landroid/os/Handler;
 
@@ -1203,18 +1203,18 @@
 
     move-result-object v0
 
-    .line 408
+    .line 410
     .local v0, "msg":Landroid/os/Message;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Message;->setAsynchronous(Z)V
 
-    .line 409
+    .line 411
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
 
-    .line 403
+    .line 405
     return-void
 .end method
 
@@ -1222,7 +1222,7 @@
     .locals 0
 
     .prologue
-    .line 547
+    .line 549
     return-void
 .end method
 
@@ -1231,7 +1231,7 @@
     .param p1, "error"    # Ljava/lang/String;
 
     .prologue
-    .line 557
+    .line 559
     return-void
 .end method
 
@@ -1240,7 +1240,7 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 552
+    .line 554
     return-void
 .end method
 
@@ -1248,7 +1248,7 @@
     .locals 0
 
     .prologue
-    .line 469
+    .line 471
     return-void
 .end method
 
@@ -1257,7 +1257,7 @@
     .param p1, "tile"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 534
+    .line 536
     return-void
 .end method
 
@@ -1266,7 +1266,7 @@
     .param p1, "slot"    # Ljava/lang/String;
 
     .prologue
-    .line 417
+    .line 419
     return-void
 .end method
 
@@ -1276,7 +1276,7 @@
     .param p2, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 413
+    .line 415
     return-void
 .end method
 
@@ -1288,7 +1288,7 @@
     .param p4, "showImeSwitcher"    # Z
 
     .prologue
-    .line 448
+    .line 450
     return-void
 .end method
 
@@ -1299,7 +1299,7 @@
     .param p3, "ext"    # Landroid/os/Bundle;
 
     .prologue
-    .line 392
+    .line 394
     sget-boolean v0, Lmiui/util/CustomizeUtil;->HAS_NOTCH:Z
 
     if-eqz v0, :cond_0
@@ -1312,7 +1312,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 393
+    .line 395
     const-string/jumbo v0, "enable_config"
 
     invoke-virtual {p3, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -1321,10 +1321,10 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/RoundedCorners;->mEnableNotchConfig:Z
 
-    .line 394
+    .line 396
     invoke-direct {p0}, Lcom/android/systemui/RoundedCorners;->updateNotchRoundCornerVisibility()V
 
-    .line 391
+    .line 393
     :cond_0
     return-void
 .end method
@@ -1339,7 +1339,7 @@
     .param p6, "dockedStackBounds"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 439
+    .line 441
     return-void
 .end method
 
@@ -1349,7 +1349,7 @@
     .param p2, "state"    # I
 
     .prologue
-    .line 485
+    .line 487
     return-void
 .end method
 
@@ -1357,7 +1357,7 @@
     .locals 0
 
     .prologue
-    .line 510
+    .line 512
     return-void
 .end method
 
@@ -1366,7 +1366,7 @@
     .param p1, "args"    # Lcom/android/internal/os/SomeArgs;
 
     .prologue
-    .line 542
+    .line 544
     return-void
 .end method
 
@@ -1374,7 +1374,7 @@
     .locals 0
 
     .prologue
-    .line 522
+    .line 524
     return-void
 .end method
 
@@ -1384,7 +1384,7 @@
     .param p2, "fromHome"    # Z
 
     .prologue
-    .line 452
+    .line 454
     return-void
 .end method
 
@@ -1393,7 +1393,7 @@
     .param p1, "taskId"    # I
 
     .prologue
-    .line 489
+    .line 491
     return-void
 .end method
 
@@ -1581,7 +1581,24 @@
 
     invoke-virtual {v2, v5}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 146
+    .line 147
+    :cond_1
+    sget-boolean v2, Lmiui/util/CustomizeUtil;->HAS_NOTCH:Z
+
+    if-nez v2, :cond_2
+
+    sget-object v2, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string/jumbo v3, "perseus"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 148
+    :cond_2
     const-class v2, Lcom/android/systemui/statusbar/policy/ConfigurationController;
 
     invoke-static {v2}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1593,7 +1610,7 @@
     invoke-interface {v2, p0}, Lcom/android/systemui/statusbar/policy/ConfigurationController;->addCallback(Ljava/lang/Object;)V
 
     .line 97
-    :cond_1
+    :cond_3
     return-void
 
     .line 107
@@ -1632,7 +1649,7 @@
     .param p1, "args"    # Landroid/os/Bundle;
 
     .prologue
-    .line 514
+    .line 516
     return-void
 .end method
 
@@ -1641,7 +1658,7 @@
     .param p1, "deviceId"    # I
 
     .prologue
-    .line 477
+    .line 479
     return-void
 .end method
 
@@ -1649,7 +1666,7 @@
     .locals 0
 
     .prologue
-    .line 461
+    .line 463
     return-void
 .end method
 
@@ -1657,7 +1674,7 @@
     .locals 0
 
     .prologue
-    .line 465
+    .line 467
     return-void
 .end method
 
@@ -1666,7 +1683,7 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 443
+    .line 445
     return-void
 .end method
 
@@ -1682,7 +1699,7 @@
 
     const-string v1, "round_toggle"
 
-    invoke-static {v0, v1}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v0
 

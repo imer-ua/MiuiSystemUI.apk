@@ -27,12 +27,12 @@
     .param p4, "$anonymous2"    # Ljava/lang/String;
 
     .prologue
-    .line 271
+    .line 273
     iput-object p1, p0, Lcom/android/systemui/RoundedCorners$5;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/qs/SecureSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
 
-    .line 272
+    .line 274
     return-void
 .end method
 
@@ -44,11 +44,11 @@
     .param p2, "observedChange"    # Z
 
     .prologue
-    .line 275
+    .line 277
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners$5;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v0, p1}, Lcom/android/systemui/RoundedCorners;->-wrap0(Lcom/android/systemui/RoundedCorners;I)V
 
-    .line 274
+    .line 276
     return-void
 .end method

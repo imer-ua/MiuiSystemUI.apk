@@ -139,33 +139,49 @@
 .end method
 
 .method private closeCursor(Landroid/database/Cursor;)V
-    .locals 0
+    .locals 1
     .param p1, "cursor"    # Landroid/database/Cursor;
 
     .prologue
-    .line 317
+    .line 321
     if-eqz p1, :cond_0
 
-    .line 318
+    invoke-interface {p1}, Landroid/database/Cursor;->isClosed()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 320
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 322
+    :cond_1
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
-    .line 316
-    :cond_0
-    return-void
+    goto :goto_0
 .end method
 
 .method private closeDB(Landroid/database/sqlite/SQLiteDatabase;)V
-    .locals 0
+    .locals 1
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 311
+    .line 315
     if-eqz p1, :cond_0
 
-    .line 312
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->isOpen()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 316
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
-    .line 310
+    .line 314
     :cond_0
     return-void
 .end method
@@ -176,40 +192,40 @@
     .param p2, "pkgEntity"    # Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     .prologue
-    .line 104
+    .line 108
     invoke-static {}, Lcom/android/systemui/DateUtils;->getDigitalFormatDateToday()I
 
     move-result v3
 
-    .line 105
+    .line 109
     .local v3, "today":I
     invoke-virtual {p2}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 107
+    .line 111
     .local v1, "pkgName":Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 108
+    .line 112
     .local v2, "sql":Ljava/lang/StringBuilder;
     const-string/jumbo v4, " INSERT OR REPLACE INTO notification_sort "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 109
+    .line 113
     const-string/jumbo v4, " (_id, package_name, date, click_count, show_count) "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 110
+    .line 114
     const-string/jumbo v4, " VALUES((SELECT _id FROM notification_sort "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 111
+    .line 115
     const-string/jumbo v4, " WHERE package_name = \'"
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -224,7 +240,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 112
+    .line 116
     const-string/jumbo v4, " AND date = "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -239,7 +255,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 113
+    .line 117
     const-string/jumbo v4, " , \'"
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -254,7 +270,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 114
+    .line 118
     const-string/jumbo v4, " , "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -263,7 +279,7 @@
 
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 115
+    .line 119
     const-string/jumbo v4, " , "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -276,7 +292,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 116
+    .line 120
     const-string/jumbo v4, " , "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -295,12 +311,12 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 117
+    .line 121
     sget-boolean v4, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->DEBUG:Z
 
     if-eqz v4, :cond_0
 
-    .line 118
+    .line 122
     const-string/jumbo v4, "packageScoreCache"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -327,7 +343,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 122
+    .line 126
     :cond_0
     :try_start_0
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -338,15 +354,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 103
+    .line 107
     :goto_0
     return-void
 
-    .line 123
+    .line 127
     :catch_0
     move-exception v0
 
-    .line 124
+    .line 128
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v4, "packageScoreCache"
 
@@ -360,11 +376,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
@@ -381,10 +393,10 @@
     .locals 6
 
     .prologue
-    .line 323
+    .line 327
     const/4 v0, 0x0
 
-    .line 324
+    .line 328
     .local v0, "changed":Z
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -396,19 +408,19 @@
 
     long-to-int v1, v2
 
-    .line 325
+    .line 329
     .local v1, "days":I
     iget v2, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mCurrentDays:I
 
     if-eq v1, v2, :cond_0
 
-    .line 326
+    .line 330
     iput v1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mCurrentDays:I
 
-    .line 327
+    .line 331
     const/4 v0, 0x1
 
-    .line 329
+    .line 333
     :cond_0
     return v0
 .end method
@@ -417,10 +429,10 @@
     .locals 5
 
     .prologue
-    .line 301
+    .line 305
     const/4 v0, 0x0
 
-    .line 303
+    .line 307
     .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     :try_start_0
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mOpenHelper:Lcom/android/systemui/miui/statusbar/DatabaseHelper;
@@ -431,17 +443,17 @@
 
     move-result-object v0
 
-    .line 307
+    .line 311
     .end local v0    # "db":Landroid/database/sqlite/SQLiteDatabase;
     :goto_0
     return-object v0
 
-    .line 304
+    .line 308
     .restart local v0    # "db":Landroid/database/sqlite/SQLiteDatabase;
     :catch_0
     move-exception v1
 
-    .line 305
+    .line 309
     .local v1, "e":Ljava/lang/Exception;
     const-string/jumbo v2, "packageScoreCache"
 
@@ -473,24 +485,24 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 129
+    .line 133
     invoke-static {}, Lcom/android/systemui/DateUtils;->getDigitalPreviousMonthDate()I
 
     move-result v1
 
-    .line 131
+    .line 135
     .local v1, "oneMonthAgo":I
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 132
+    .line 136
     .local v2, "sql":Ljava/lang/StringBuilder;
     const-string/jumbo v3, " DELETE FROM notification_sort "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 133
+    .line 137
     const-string/jumbo v3, " WHERE date < "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -499,12 +511,12 @@
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 134
+    .line 138
     sget-boolean v3, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->DEBUG:Z
 
     if-eqz v3, :cond_0
 
-    .line 135
+    .line 139
     const-string/jumbo v3, "packageScoreCache"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -531,7 +543,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 139
+    .line 143
     :cond_0
     :try_start_0
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -542,15 +554,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 128
+    .line 132
     :goto_0
     return-void
 
-    .line 140
+    .line 144
     :catch_0
     move-exception v0
 
-    .line 141
+    .line 145
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v3, "packageScoreCache"
 
@@ -564,11 +576,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -586,18 +594,18 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 225
+    .line 229
     new-instance v0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     invoke-direct {v0, p1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;-><init>(Ljava/lang/String;)V
 
-    .line 226
+    .line 230
     .local v0, "pkgEntity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
     iget-object v1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mPkgEntities:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;
 
     invoke-virtual {v1, p1, v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 227
+    .line 231
     iget-object v1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mBgHandler:Landroid/os/Handler;
 
     new-instance v2, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$2;
@@ -606,12 +614,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 224
+    .line 228
     return-void
 .end method
 
 .method private updateAll()V
-    .locals 3
+    .locals 6
 
     .prologue
     .line 73
@@ -627,38 +635,72 @@
 
     .line 75
     :cond_0
-    iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mPkgEntities:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;
+    iget-object v3, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mPkgEntities:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;
 
-    invoke-virtual {v2}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;->snapshot()Ljava/util/Map;
+    invoke-virtual {v3}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;->snapshot()Ljava/util/Map;
 
-    move-result-object v1
-
-    .line 76
-    .local v1, "entities":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;>;"
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->writeToDatabase(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Map;)V
+    move-result-object v2
 
     .line 77
+    .local v2, "entities":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;>;"
+    :try_start_0
+    invoke-direct {p0, v0, v2}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->writeToDatabase(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Map;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 81
+    :goto_0
     invoke-direct {p0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->isDateChanged()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_1
-
-    .line 78
-    invoke-direct {p0, v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->removeExpiredData(Landroid/database/sqlite/SQLiteDatabase;)V
-
-    .line 79
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->updateEntryData(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Map;)V
-
-    .line 80
-    invoke-direct {p0, v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->updateLocalData(Landroid/database/sqlite/SQLiteDatabase;)V
+    if-eqz v3, :cond_1
 
     .line 82
+    invoke-direct {p0, v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->removeExpiredData(Landroid/database/sqlite/SQLiteDatabase;)V
+
+    .line 83
+    invoke-direct {p0, v0, v2}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->updateEntryData(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Map;)V
+
+    .line 84
+    invoke-direct {p0, v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->updateLocalData(Landroid/database/sqlite/SQLiteDatabase;)V
+
+    .line 86
     :cond_1
     invoke-direct {p0, v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeDB(Landroid/database/sqlite/SQLiteDatabase;)V
 
     .line 72
     return-void
+
+    .line 78
+    :catch_0
+    move-exception v1
+
+    .line 79
+    .local v1, "e":Ljava/lang/Exception;
+    const-string/jumbo v3, "packageScoreCache"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "updateAll Exception "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method private updateDailyData(Landroid/database/sqlite/SQLiteDatabase;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;)V
@@ -667,30 +709,30 @@
     .param p2, "pkgEntity"    # Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     .prologue
-    .line 247
+    .line 251
     invoke-static {}, Lcom/android/systemui/DateUtils;->getDigitalFormatDateToday()I
 
     move-result v6
 
-    .line 248
+    .line 252
     .local v6, "today":I
     invoke-virtual {p2}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 250
+    .line 254
     .local v3, "pkgName":Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 251
+    .line 255
     .local v5, "sql":Ljava/lang/StringBuilder;
     const-string/jumbo v7, " SELECT click_count, show_count FROM notification_sort "
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 252
+    .line 256
     const-string/jumbo v7, " WHERE package_name = \'"
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -705,7 +747,7 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 253
+    .line 257
     const-string/jumbo v7, " AND date = "
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -714,12 +756,12 @@
 
     invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 254
+    .line 258
     sget-boolean v7, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->DEBUG:Z
 
     if-eqz v7, :cond_0
 
-    .line 255
+    .line 259
     const-string/jumbo v7, "packageScoreCache"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -746,11 +788,11 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 258
+    .line 262
     :cond_0
     const/4 v1, 0x0
 
-    .line 260
+    .line 264
     .local v1, "cursor":Landroid/database/Cursor;
     :try_start_0
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -763,7 +805,7 @@
 
     move-result-object v1
 
-    .line 261
+    .line 265
     .local v1, "cursor":Landroid/database/Cursor;
     if-eqz v1, :cond_1
 
@@ -773,14 +815,14 @@
 
     if-eqz v7, :cond_1
 
-    .line 262
+    .line 266
     const/4 v7, 0x0
 
     invoke-interface {v1, v7}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
 
-    .line 263
+    .line 267
     .local v0, "clickCount":I
     const/4 v7, 0x1
 
@@ -788,29 +830,29 @@
 
     move-result v4
 
-    .line 264
+    .line 268
     .local v4, "showCount":I
     invoke-virtual {p2, v0, v4}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->setDailyData(II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 269
+    .line 273
     .end local v0    # "clickCount":I
     .end local v4    # "showCount":I
     :cond_1
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
-    .line 246
+    .line 250
     .end local v1    # "cursor":Landroid/database/Cursor;
     :goto_0
     return-void
 
-    .line 266
+    .line 270
     :catch_0
     move-exception v2
 
-    .line 267
+    .line 271
     .local v2, "e":Ljava/lang/Exception;
     :try_start_1
     const-string/jumbo v7, "packageScoreCache"
@@ -837,20 +879,20 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 269
+    .line 273
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
     goto :goto_0
 
-    .line 268
+    .line 272
     .end local v2    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v7
 
-    .line 269
+    .line 273
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
-    .line 268
+    .line 272
     throw v7
 .end method
 
@@ -895,33 +937,33 @@
     .param p1, "pkgEntity"    # Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     .prologue
-    .line 236
+    .line 240
     invoke-direct {p0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->openDB()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 237
+    .line 241
     .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 238
+    .line 242
     :cond_0
     invoke-direct {p0, v0, p1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->updateDailyData(Landroid/database/sqlite/SQLiteDatabase;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;)V
 
-    .line 239
+    .line 243
     invoke-direct {p0, v0, p1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->updateHistoryData(Landroid/database/sqlite/SQLiteDatabase;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;)V
 
-    .line 240
+    .line 244
     invoke-direct {p0, v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeDB(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 241
+    .line 245
     sget-boolean v1, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->DEBUG:Z
 
     if-eqz v1, :cond_1
 
-    .line 242
+    .line 246
     const-string/jumbo v1, "packageScoreCache"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -948,7 +990,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 235
+    .line 239
     :cond_1
     return-void
 .end method
@@ -969,25 +1011,25 @@
     .end annotation
 
     .prologue
-    .line 146
+    .line 150
     .local p2, "entityMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;>;"
     invoke-static {}, Lcom/android/systemui/DateUtils;->getDigitalFormatDateToday()I
 
     move-result v7
 
-    .line 148
+    .line 152
     .local v7, "today":I
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 149
+    .line 153
     .local v6, "sql":Ljava/lang/StringBuilder;
     const-string/jumbo v8, " SELECT package_name, SUM(click_count), SUM(show_count) FROM notification_sort "
 
     invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 150
+    .line 154
     const-string/jumbo v8, " WHERE date < "
 
     invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -996,17 +1038,17 @@
 
     invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 151
+    .line 155
     const-string/jumbo v8, " GROUP BY package_name "
 
     invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 152
+    .line 156
     sget-boolean v8, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->DEBUG:Z
 
     if-eqz v8, :cond_0
 
-    .line 153
+    .line 157
     const-string/jumbo v8, "packageScoreCache"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -1033,11 +1075,11 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 156
+    .line 160
     :cond_0
     const/4 v1, 0x0
 
-    .line 158
+    .line 162
     .local v1, "cursor":Landroid/database/Cursor;
     :try_start_0
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1050,11 +1092,11 @@
 
     move-result-object v1
 
-    .line 159
+    .line 163
     .local v1, "cursor":Landroid/database/Cursor;
     if-eqz v1, :cond_2
 
-    .line 160
+    .line 164
     :cond_1
     :goto_0
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
@@ -1063,14 +1105,14 @@
 
     if-eqz v8, :cond_2
 
-    .line 161
+    .line 165
     const/4 v8, 0x0
 
     invoke-interface {v1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 162
+    .line 166
     .local v4, "pkgName":Ljava/lang/String;
     const/4 v8, 0x1
 
@@ -1078,7 +1120,7 @@
 
     move-result v0
 
-    .line 163
+    .line 167
     .local v0, "clickCount":I
     const/4 v8, 0x2
 
@@ -1086,7 +1128,7 @@
 
     move-result v5
 
-    .line 165
+    .line 169
     .local v5, "showCount":I
     invoke-interface {p2, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1094,11 +1136,11 @@
 
     check-cast v3, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
-    .line 166
+    .line 170
     .local v3, "entity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
     if-eqz v3, :cond_1
 
-    .line 167
+    .line 171
     invoke-virtual {v3, v0, v5}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->onDateChanged(II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1106,7 +1148,7 @@
 
     goto :goto_0
 
-    .line 171
+    .line 175
     .end local v0    # "clickCount":I
     .end local v1    # "cursor":Landroid/database/Cursor;
     .end local v3    # "entity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
@@ -1115,7 +1157,7 @@
     :catch_0
     move-exception v2
 
-    .line 172
+    .line 176
     .local v2, "e":Ljava/lang/Exception;
     :try_start_1
     const-string/jumbo v8, "packageScoreCache"
@@ -1142,30 +1184,30 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 174
+    .line 178
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
-    .line 145
+    .line 149
     .end local v2    # "e":Ljava/lang/Exception;
     :goto_1
     return-void
 
-    .line 174
+    .line 178
     .restart local v1    # "cursor":Landroid/database/Cursor;
     :cond_2
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
     goto :goto_1
 
-    .line 173
+    .line 177
     .end local v1    # "cursor":Landroid/database/Cursor;
     :catchall_0
     move-exception v8
 
-    .line 174
+    .line 178
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
-    .line 173
+    .line 177
     throw v8
 .end method
 
@@ -1175,30 +1217,30 @@
     .param p2, "pkgEntity"    # Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     .prologue
-    .line 274
+    .line 278
     invoke-static {}, Lcom/android/systemui/DateUtils;->getDigitalFormatDateToday()I
 
     move-result v6
 
-    .line 275
+    .line 279
     .local v6, "today":I
     invoke-virtual {p2}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 277
+    .line 281
     .local v3, "pkgName":Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 278
+    .line 282
     .local v5, "sql":Ljava/lang/StringBuilder;
     const-string/jumbo v7, " SELECT SUM(click_count), SUM(show_count) FROM notification_sort "
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 279
+    .line 283
     const-string/jumbo v7, " WHERE package_name = \'"
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1213,7 +1255,7 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 280
+    .line 284
     const-string/jumbo v7, " AND date < "
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1222,12 +1264,12 @@
 
     invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 281
+    .line 285
     sget-boolean v7, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->DEBUG:Z
 
     if-eqz v7, :cond_0
 
-    .line 282
+    .line 286
     const-string/jumbo v7, "packageScoreCache"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1254,11 +1296,11 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 285
+    .line 289
     :cond_0
     const/4 v1, 0x0
 
-    .line 287
+    .line 291
     .local v1, "cursor":Landroid/database/Cursor;
     :try_start_0
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1271,7 +1313,7 @@
 
     move-result-object v1
 
-    .line 288
+    .line 292
     .local v1, "cursor":Landroid/database/Cursor;
     if-eqz v1, :cond_1
 
@@ -1281,14 +1323,14 @@
 
     if-eqz v7, :cond_1
 
-    .line 289
+    .line 293
     const/4 v7, 0x0
 
     invoke-interface {v1, v7}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
 
-    .line 290
+    .line 294
     .local v0, "clickCount":I
     const/4 v7, 0x1
 
@@ -1296,29 +1338,29 @@
 
     move-result v4
 
-    .line 291
+    .line 295
     .local v4, "showCount":I
     invoke-virtual {p2, v0, v4}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->setHistoryData(II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 296
+    .line 300
     .end local v0    # "clickCount":I
     .end local v4    # "showCount":I
     :cond_1
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
-    .line 273
+    .line 277
     .end local v1    # "cursor":Landroid/database/Cursor;
     :goto_0
     return-void
 
-    .line 293
+    .line 297
     :catch_0
     move-exception v2
 
-    .line 294
+    .line 298
     .local v2, "e":Ljava/lang/Exception;
     :try_start_1
     const-string/jumbo v7, "packageScoreCache"
@@ -1345,20 +1387,20 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 296
+    .line 300
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
     goto :goto_0
 
-    .line 295
+    .line 299
     .end local v2    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v7
 
-    .line 296
+    .line 300
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
-    .line 295
+    .line 299
     throw v7
 .end method
 
@@ -1367,24 +1409,24 @@
     .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
-    .line 179
+    .line 183
     invoke-static {}, Lcom/android/systemui/DateUtils;->getDigitalFormatDateToday()I
 
     move-result v3
 
-    .line 181
+    .line 185
     .local v3, "today":I
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 182
+    .line 186
     .local v2, "sql":Ljava/lang/StringBuilder;
     const-string/jumbo v4, " SELECT SUM(click_count), SUM(show_count) FROM notification_sort "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 183
+    .line 187
     const-string/jumbo v4, " WHERE date < "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1393,12 +1435,12 @@
 
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 184
+    .line 188
     sget-boolean v4, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->DEBUG:Z
 
     if-eqz v4, :cond_0
 
-    .line 185
+    .line 189
     const-string/jumbo v4, "packageScoreCache"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1425,11 +1467,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 188
+    .line 192
     :cond_0
     const/4 v0, 0x0
 
-    .line 190
+    .line 194
     .local v0, "cursor":Landroid/database/Cursor;
     :try_start_0
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1442,7 +1484,7 @@
 
     move-result-object v0
 
-    .line 191
+    .line 195
     .local v0, "cursor":Landroid/database/Cursor;
     if-eqz v0, :cond_1
 
@@ -1452,7 +1494,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 192
+    .line 196
     const/4 v4, 0x0
 
     invoke-interface {v0, v4}, Landroid/database/Cursor;->getInt(I)I
@@ -1461,7 +1503,7 @@
 
     iput v4, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mTotalClickCount:I
 
-    .line 193
+    .line 197
     const/4 v4, 0x1
 
     invoke-interface {v0, v4}, Landroid/database/Cursor;->getInt(I)I
@@ -1473,18 +1515,18 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 198
+    .line 202
     :cond_1
     invoke-direct {p0, v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
-    .line 201
+    .line 205
     .end local v0    # "cursor":Landroid/database/Cursor;
     :goto_0
     sget-boolean v4, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->DEBUG:Z
 
     if-eqz v4, :cond_2
 
-    .line 202
+    .line 206
     const-string/jumbo v4, "packageScoreCache"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1521,15 +1563,15 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 178
+    .line 182
     :cond_2
     return-void
 
-    .line 195
+    .line 199
     :catch_0
     move-exception v1
 
-    .line 196
+    .line 200
     .local v1, "e":Ljava/lang/Exception;
     :try_start_1
     const-string/jumbo v4, "packageScoreCache"
@@ -1556,20 +1598,20 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 198
+    .line 202
     invoke-direct {p0, v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
     goto :goto_0
 
-    .line 197
+    .line 201
     .end local v1    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v4
 
-    .line 198
+    .line 202
     invoke-direct {p0, v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->closeCursor(Landroid/database/Cursor;)V
 
-    .line 197
+    .line 201
     throw v4
 .end method
 
@@ -1589,11 +1631,11 @@
     .end annotation
 
     .prologue
-    .line 86
+    .line 90
     .local p2, "entityMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;>;"
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    .line 88
+    .line 92
     :try_start_0
     invoke-interface {p2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -1618,7 +1660,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 89
+    .line 93
     .local v2, "packageEntityEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1626,7 +1668,7 @@
 
     check-cast v1, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
-    .line 90
+    .line 94
     .local v1, "packageEntity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
     invoke-virtual {v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->isDataChanged()Z
 
@@ -1634,10 +1676,10 @@
 
     if-eqz v4, :cond_0
 
-    .line 91
+    .line 95
     invoke-direct {p0, p1, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->insertOrUpdate(Landroid/database/sqlite/SQLiteDatabase;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;)V
 
-    .line 92
+    .line 96
     const/4 v4, 0x0
 
     invoke-virtual {v1, v4}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->setDataChanged(Z)V
@@ -1647,14 +1689,14 @@
 
     goto :goto_0
 
-    .line 96
+    .line 100
     .end local v1    # "packageEntity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
     .end local v2    # "packageEntityEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;>;"
     .end local v3    # "packageEntityEntry$iterator":Ljava/util/Iterator;
     :catch_0
     move-exception v0
 
-    .line 97
+    .line 101
     .local v0, "e":Ljava/lang/Exception;
     :try_start_1
     const-string/jumbo v4, "packageScoreCache"
@@ -1681,15 +1723,15 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 99
+    .line 103
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 85
+    .line 89
     .end local v0    # "e":Ljava/lang/Exception;
     :goto_1
     return-void
 
-    .line 95
+    .line 99
     .restart local v3    # "packageEntityEntry$iterator":Ljava/util/Iterator;
     :cond_1
     :try_start_2
@@ -1698,20 +1740,20 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 99
+    .line 103
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     goto :goto_1
 
-    .line 98
+    .line 102
     .end local v3    # "packageEntityEntry$iterator":Ljava/util/Iterator;
     :catchall_0
     move-exception v4
 
-    .line 99
+    .line 103
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 98
+    .line 102
     throw v4
 .end method
 
@@ -1722,7 +1764,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 216
+    .line 220
     iget-object v1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mPkgEntities:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1731,10 +1773,10 @@
 
     if-nez v1, :cond_0
 
-    .line 217
+    .line 221
     invoke-direct {p0, p1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->retrievePackage(Ljava/lang/String;)V
 
-    .line 219
+    .line 223
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mPkgEntities:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;
 
@@ -1744,11 +1786,11 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
-    .line 220
+    .line 224
     .local v0, "packageEntity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
     invoke-virtual {v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->addClickCount()V
 
-    .line 221
+    .line 225
     return-object v0
 .end method
 
@@ -1757,7 +1799,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 207
+    .line 211
     iget-object v1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mPkgEntities:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1766,10 +1808,10 @@
 
     if-nez v1, :cond_0
 
-    .line 208
+    .line 212
     invoke-direct {p0, p1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->retrievePackage(Ljava/lang/String;)V
 
-    .line 210
+    .line 214
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->mPkgEntities:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;
 
@@ -1779,11 +1821,11 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
-    .line 211
+    .line 215
     .local v0, "packageEntity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
     invoke-virtual {v0}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->addShowCount()V
 
-    .line 212
+    .line 216
     return-object v0
 .end method
 
@@ -1859,12 +1901,12 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 333
+    .line 337
     invoke-virtual {p0, p1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->getPkgEntity(Ljava/lang/String;)Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     move-result-object v0
 
-    .line 334
+    .line 338
     .local v0, "entity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
     if-eqz v0, :cond_0
 
@@ -1896,12 +1938,12 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 338
+    .line 342
     invoke-virtual {p0, p1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->getPkgEntity(Ljava/lang/String;)Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     move-result-object v0
 
-    .line 339
+    .line 343
     .local v0, "entity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
     if-eqz v0, :cond_0
 

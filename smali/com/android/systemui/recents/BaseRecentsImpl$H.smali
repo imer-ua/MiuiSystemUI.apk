@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/BaseRecentsImpl;
 
     .prologue
-    .line 1742
+    .line 1747
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -57,17 +57,17 @@
 
     const/4 v5, 0x0
 
-    .line 1745
+    .line 1750
     iget v2, p1, Landroid/os/Message;->what:I
 
     sparse-switch v2, :sswitch_data_0
 
-    .line 1744
+    .line 1749
     :cond_0
     :goto_0
     return-void
 
-    .line 1747
+    .line 1752
     :sswitch_0
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -75,7 +75,7 @@
 
     goto :goto_0
 
-    .line 1751
+    .line 1756
     :sswitch_1
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 1755
+    .line 1760
     :sswitch_2
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -101,11 +101,11 @@
 
     if-nez v2, :cond_2
 
-    .line 1756
+    .line 1761
     :cond_1
     return-void
 
-    .line 1758
+    .line 1763
     :cond_2
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -117,7 +117,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/fsgesture/GestureStubView;->setSize(I)V
 
-    .line 1759
+    .line 1764
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get3(Lcom/android/systemui/recents/BaseRecentsImpl;)Lcom/android/systemui/fsgesture/GestureStubView;
@@ -130,7 +130,7 @@
 
     goto :goto_0
 
-    .line 1763
+    .line 1768
     :sswitch_3
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -148,11 +148,11 @@
 
     if-nez v2, :cond_4
 
-    .line 1764
+    .line 1769
     :cond_3
     return-void
 
-    .line 1766
+    .line 1771
     :cond_4
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -166,7 +166,7 @@
 
     const/16 v1, 0x36
 
-    .line 1767
+    .line 1772
     .local v1, "size":I
     :goto_1
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
@@ -177,7 +177,7 @@
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/fsgesture/GestureStubView;->setSize(I)V
 
-    .line 1768
+    .line 1773
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get3(Lcom/android/systemui/recents/BaseRecentsImpl;)Lcom/android/systemui/fsgesture/GestureStubView;
@@ -188,7 +188,7 @@
 
     goto :goto_0
 
-    .line 1766
+    .line 1771
     .end local v1    # "size":I
     :cond_5
     const/16 v1, 0x28
@@ -196,7 +196,7 @@
     .restart local v1    # "size":I
     goto :goto_1
 
-    .line 1771
+    .line 1776
     .end local v1    # "size":I
     :sswitch_4
     invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
@@ -209,7 +209,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/recents/events/RecentsEventBus;->send(Lcom/android/systemui/recents/events/RecentsEventBus$Event;)V
 
-    .line 1772
+    .line 1777
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get9(Lcom/android/systemui/recents/BaseRecentsImpl;)Lcom/android/systemui/statusbar/phone/NavStubView;
@@ -218,7 +218,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1773
+    .line 1778
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get9(Lcom/android/systemui/recents/BaseRecentsImpl;)Lcom/android/systemui/statusbar/phone/NavStubView;
@@ -229,7 +229,7 @@
 
     goto/16 :goto_0
 
-    .line 1777
+    .line 1782
     :sswitch_5
     const-string/jumbo v2, "RecentsImpl"
 
@@ -259,7 +259,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1778
+    .line 1783
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get10(Lcom/android/systemui/recents/BaseRecentsImpl;)Z
@@ -268,7 +268,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 1779
+    .line 1784
     invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
 
     move-result-object v2
@@ -279,12 +279,12 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/recents/events/RecentsEventBus;->send(Lcom/android/systemui/recents/events/RecentsEventBus$Event;)V
 
-    .line 1780
+    .line 1785
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2, v8}, Lcom/android/systemui/recents/BaseRecentsImpl;->-set3(Lcom/android/systemui/recents/BaseRecentsImpl;Z)Z
 
-    .line 1781
+    .line 1786
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get9(Lcom/android/systemui/recents/BaseRecentsImpl;)Lcom/android/systemui/statusbar/phone/NavStubView;
@@ -293,7 +293,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1782
+    .line 1787
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get9(Lcom/android/systemui/recents/BaseRecentsImpl;)Lcom/android/systemui/statusbar/phone/NavStubView;
@@ -304,24 +304,24 @@
 
     invoke-direct {v3, p0}, Lcom/android/systemui/recents/BaseRecentsImpl$H$1;-><init>(Lcom/android/systemui/recents/BaseRecentsImpl$H;)V
 
-    .line 1789
+    .line 1794
     const-wide/16 v4, 0x64
 
-    .line 1782
+    .line 1787
     invoke-virtual {v2, v3, v4, v5}, Lcom/android/systemui/statusbar/phone/NavStubView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto/16 :goto_0
 
-    .line 1792
+    .line 1797
     :cond_6
     invoke-virtual {p0, v6}, Lcom/android/systemui/recents/BaseRecentsImpl$H;->removeMessages(I)V
 
-    .line 1793
+    .line 1798
     invoke-virtual {p0, v6}, Lcom/android/systemui/recents/BaseRecentsImpl$H;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1794
+    .line 1799
     .local v0, "newMsg":Landroid/os/Message;
     const-wide/16 v2, 0x14
 
@@ -329,14 +329,14 @@
 
     goto/16 :goto_0
 
-    .line 1798
+    .line 1803
     .end local v0    # "newMsg":Landroid/os/Message;
     :sswitch_6
     invoke-virtual {p0, v6}, Lcom/android/systemui/recents/BaseRecentsImpl$H;->removeMessages(I)V
 
     goto/16 :goto_0
 
-    .line 1801
+    .line 1806
     :sswitch_7
     invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
 
@@ -348,7 +348,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/recents/events/RecentsEventBus;->send(Lcom/android/systemui/recents/events/RecentsEventBus$Event;)V
 
-    .line 1802
+    .line 1807
     invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
 
     move-result-object v2
@@ -359,14 +359,14 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/recents/events/RecentsEventBus;->send(Lcom/android/systemui/recents/events/RecentsEventBus$Event;)V
 
-    .line 1803
+    .line 1808
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2, v5}, Lcom/android/systemui/recents/BaseRecentsImpl;->-set3(Lcom/android/systemui/recents/BaseRecentsImpl;Z)Z
 
     goto/16 :goto_0
 
-    .line 1806
+    .line 1811
     :sswitch_8
     invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
 
@@ -382,7 +382,7 @@
 
     goto/16 :goto_0
 
-    .line 1809
+    .line 1814
     :sswitch_9
     const-string/jumbo v2, "RecentsImpl"
 
@@ -406,22 +406,22 @@
 
     move-result-object v3
 
-    .line 1810
+    .line 1815
     const-string/jumbo v4, " mIsStartRecent = "
 
-    .line 1809
+    .line 1814
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    .line 1810
+    .line 1815
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v4}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get8(Lcom/android/systemui/recents/BaseRecentsImpl;)Z
 
     move-result v4
 
-    .line 1809
+    .line 1814
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -432,7 +432,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1811
+    .line 1816
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get10(Lcom/android/systemui/recents/BaseRecentsImpl;)Z
@@ -449,7 +449,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 1812
+    .line 1817
     invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
 
     move-result-object v2
@@ -462,16 +462,16 @@
 
     goto/16 :goto_0
 
-    .line 1814
+    .line 1819
     :cond_7
     invoke-virtual {p0, v7}, Lcom/android/systemui/recents/BaseRecentsImpl$H;->removeMessages(I)V
 
-    .line 1815
+    .line 1820
     invoke-virtual {p0, v7}, Lcom/android/systemui/recents/BaseRecentsImpl$H;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1816
+    .line 1821
     .restart local v0    # "newMsg":Landroid/os/Message;
     const-wide/16 v2, 0x14
 
@@ -479,14 +479,14 @@
 
     goto/16 :goto_0
 
-    .line 1820
+    .line 1825
     .end local v0    # "newMsg":Landroid/os/Message;
     :sswitch_a
     invoke-virtual {p0, v7}, Lcom/android/systemui/recents/BaseRecentsImpl$H;->removeMessages(I)V
 
     goto/16 :goto_0
 
-    .line 1823
+    .line 1828
     :sswitch_b
     invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
 
@@ -498,19 +498,19 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/recents/events/RecentsEventBus;->send(Lcom/android/systemui/recents/events/RecentsEventBus$Event;)V
 
-    .line 1824
+    .line 1829
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2}, Lcom/android/systemui/recents/BaseRecentsImpl;->-wrap7(Lcom/android/systemui/recents/BaseRecentsImpl;)V
 
-    .line 1825
+    .line 1830
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v2, v5}, Lcom/android/systemui/recents/BaseRecentsImpl;->-set3(Lcom/android/systemui/recents/BaseRecentsImpl;Z)Z
 
     goto/16 :goto_0
 
-    .line 1745
+    .line 1750
     nop
 
     :sswitch_data_0

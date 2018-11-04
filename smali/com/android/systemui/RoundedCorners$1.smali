@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/RoundedCorners;
 
     .prologue
-    .line 316
+    .line 318
     iput-object p1, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 319
+    .line 321
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v0}, Lcom/android/systemui/RoundedCorners;->-get1(Lcom/android/systemui/RoundedCorners;)Landroid/view/Display;
@@ -58,7 +58,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
-    .line 320
+    .line 322
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
 
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
@@ -81,7 +81,7 @@
 
     invoke-static {v0, v1, v2, v4}, Lcom/android/systemui/RoundedCorners;->-wrap2(Lcom/android/systemui/RoundedCorners;Landroid/view/View;Lcom/android/systemui/RoundedCorners$RoundCornerData;Z)V
 
-    .line 321
+    .line 323
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
 
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
@@ -104,7 +104,7 @@
 
     invoke-static {v0, v1, v2, v4}, Lcom/android/systemui/RoundedCorners;->-wrap2(Lcom/android/systemui/RoundedCorners;Landroid/view/View;Lcom/android/systemui/RoundedCorners$RoundCornerData;Z)V
 
-    .line 322
+    .line 324
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
 
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
@@ -129,12 +129,12 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/systemui/RoundedCorners;->-wrap2(Lcom/android/systemui/RoundedCorners;Landroid/view/View;Lcom/android/systemui/RoundedCorners$RoundCornerData;Z)V
 
-    .line 323
+    .line 325
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v0}, Lcom/android/systemui/RoundedCorners;->-wrap1(Lcom/android/systemui/RoundedCorners;)V
 
-    .line 324
+    .line 326
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v0}, Lcom/android/systemui/RoundedCorners;->-get9(Lcom/android/systemui/RoundedCorners;)Lcom/android/systemui/qs/SecureSetting;
@@ -143,7 +143,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 325
+    .line 327
     iget-object v0, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
 
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$1;->this$0:Lcom/android/systemui/RoundedCorners;
@@ -158,7 +158,7 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/RoundedCorners;->-wrap0(Lcom/android/systemui/RoundedCorners;I)V
 
-    .line 318
+    .line 320
     :cond_0
     return-void
 .end method

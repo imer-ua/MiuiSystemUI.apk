@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 868
+    .line 873
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$9;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -44,7 +44,7 @@
 
     const/4 v1, 0x0
 
-    .line 870
+    .line 875
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$9;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$9;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
@@ -55,10 +55,10 @@
 
     move-result-object v3
 
-    .line 871
+    .line 876
     const-string/jumbo v4, "drive_mode_drive_mode"
 
-    .line 870
+    .line 875
     invoke-static {v3, v4, v1}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v3
@@ -68,17 +68,17 @@
     :goto_0
     invoke-static {v2, v0}, Lcom/android/systemui/recents/BaseRecentsImpl;->-set0(Lcom/android/systemui/recents/BaseRecentsImpl;Z)Z
 
-    .line 872
+    .line 877
     iget-object v0, p0, Lcom/android/systemui/recents/BaseRecentsImpl$9;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v0}, Lcom/android/systemui/recents/BaseRecentsImpl;->-wrap8(Lcom/android/systemui/recents/BaseRecentsImpl;)V
 
-    .line 869
+    .line 874
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 870
+    .line 875
     goto :goto_0
 .end method

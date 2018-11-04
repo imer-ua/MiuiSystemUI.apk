@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     .prologue
-    .line 415
+    .line 429
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$2;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 4
 
     .prologue
-    .line 418
+    .line 432
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$2;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-get1(Lcom/android/keyguard/fod/MiuiGxzwIconView;)Z
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 420
+    .line 434
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$2;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-get5(Lcom/android/keyguard/fod/MiuiGxzwIconView;)Landroid/os/PowerManager;
@@ -63,12 +63,12 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/os/PowerManager;->wakeUp(J)V
 
-    .line 423
+    .line 437
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$2;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-wrap2(Lcom/android/keyguard/fod/MiuiGxzwIconView;)V
 
-    .line 417
+    .line 431
     return-void
 .end method

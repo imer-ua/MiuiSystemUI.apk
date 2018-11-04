@@ -3,7 +3,7 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Lcom/android/systemui/statusbar/NotificationFilter$ClickListener;
+.implements Lcom/android/systemui/statusbar/NotificationGuts$OnHeightChangedListener;
 
 
 # annotations
@@ -20,30 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-.field final synthetic val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
-
 .field final synthetic val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-
-.field final synthetic val$sbn:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/NotificationGuts;Lcom/android/systemui/miui/statusbar/ExpandedNotification;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
     .param p2, "val$row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-    .param p3, "val$guts"    # Lcom/android/systemui/statusbar/NotificationGuts;
-    .param p4, "val$sbn"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
-    .line 7799
+    .line 7801
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-
-    iput-object p3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
-
-    iput-object p4, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->val$sbn:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -52,50 +42,26 @@
 
 
 # virtual methods
-.method public onClickCancel(Landroid/view/View;)V
+.method public onHeightChanged(Lcom/android/systemui/statusbar/NotificationGuts;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
+    .param p1, "guts"    # Lcom/android/systemui/statusbar/NotificationGuts;
 
     .prologue
-    .line 7808
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
-
-    invoke-static {v0, v1, v2, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap27(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/NotificationGuts;Landroid/view/View;)V
-
-    .line 7809
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap25(Lcom/android/systemui/statusbar/phone/StatusBar;)V
-
-    .line 7807
-    return-void
-.end method
-
-.method public onClickConfirm(Landroid/view/View;)V
-    .locals 3
-    .param p1, "v"    # Landroid/view/View;
-
-    .prologue
-    .line 7802
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
-
-    invoke-static {v0, v1, v2, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap27(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/NotificationGuts;Landroid/view/View;)V
-
     .line 7803
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->val$sbn:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap28(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/miui/statusbar/ExpandedNotification;)V
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 7801
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$79;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isShown()Z
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->onHeightChanged(Lcom/android/systemui/statusbar/ExpandableView;Z)V
+
+    .line 7802
     return-void
 .end method

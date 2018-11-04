@@ -77,4 +77,6 @@
     <integer name="config_charging_temp_warning_level">45</integer>
     <integer name="keyguard_status_bar_color_mode">2</integer>
     <integer name="flash_on_value">100</integer>
+    <integer name="status_bar_notification_icons_size_hint">0</integer>
+    <integer name="status_bar_notification_icons_peeking_duration">3000</integer>
 </resources>

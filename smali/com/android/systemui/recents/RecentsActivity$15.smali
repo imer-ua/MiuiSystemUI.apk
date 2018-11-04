@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 1427
+    .line 1431
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$15;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,13 @@
     .locals 1
 
     .prologue
-    .line 1430
+    .line 1434
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->endProlongedAnimations()V
 
-    .line 1429
+    .line 1433
     return-void
 .end method

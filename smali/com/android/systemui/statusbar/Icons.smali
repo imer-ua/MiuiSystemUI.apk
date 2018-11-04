@@ -1189,7 +1189,46 @@
 
     invoke-virtual {v1, v4, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
+    .line 187
+    sget-object v1, Lcom/android/systemui/statusbar/Icons;->sMapping:Landroid/util/SparseArray;
+
+    const v2, 0x9020067
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const v3, 0x9020066
+
+    invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
     .line 188
+    sget-object v1, Lcom/android/systemui/statusbar/Icons;->sMapping:Landroid/util/SparseArray;
+
+    const v2, 0x902006b
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const v3, 0x902006a
+
+    invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 189
+    sget-object v1, Lcom/android/systemui/statusbar/Icons;->sMapping:Landroid/util/SparseArray;
+
+    const v2, 0x9020069
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const v3, 0x9020068
+
+    invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 192
     :cond_0
     if-eqz p1, :cond_1
 
@@ -1207,7 +1246,7 @@
 
     move-object v0, v1
 
-    .line 189
+    .line 193
     .local v0, "resultId":Ljava/lang/Integer;
     :goto_0
     if-nez v0, :cond_2
@@ -1221,10 +1260,10 @@
     :cond_1
     move-object v0, p0
 
-    .line 188
+    .line 192
     goto :goto_0
 
-    .line 189
+    .line 193
     .restart local v0    # "resultId":Ljava/lang/Integer;
     :cond_2
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -1239,60 +1278,30 @@
     .param p0, "originalId"    # Ljava/lang/Integer;
 
     .prologue
-    .line 193
+    .line 197
     sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
 
     if-nez v1, :cond_0
 
-    .line 194
+    .line 198
     new-instance v1, Landroid/util/SparseArray;
 
     invoke-direct {v1}, Landroid/util/SparseArray;-><init>()V
 
     sput-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
 
-    .line 195
+    .line 199
     sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
 
-    .line 196
+    .line 200
     const v2, 0x902046a
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    .line 195
+    .line 199
     const v3, 0x9020435
-
-    invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    .line 197
-    sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
-
-    .line 198
-    const v2, 0x90204ac
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    .line 197
-    const v3, 0x9020477
-
-    invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    .line 199
-    sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
-
-    .line 200
-    const v2, 0x90204f2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    .line 199
-    const v3, 0x90204bd
 
     invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -1300,14 +1309,14 @@
     sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
 
     .line 202
-    const v2, 0x9020538
+    const v2, 0x90204ac
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     .line 201
-    const v3, 0x9020503
+    const v3, 0x9020477
 
     invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -1315,14 +1324,14 @@
     sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
 
     .line 204
-    const v2, 0x902057e
+    const v2, 0x90204f2
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     .line 203
-    const v3, 0x9020549
+    const v3, 0x90204bd
 
     invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -1330,14 +1339,14 @@
     sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
 
     .line 206
-    const v2, 0x9020595
+    const v2, 0x9020538
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     .line 205
-    const v3, 0x9020593
+    const v3, 0x9020503
 
     invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -1345,18 +1354,48 @@
     sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
 
     .line 208
-    const v2, 0x90205b4
+    const v2, 0x902057e
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     .line 207
-    const v3, 0x90205b1
+    const v3, 0x9020549
+
+    invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 209
+    sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
+
+    .line 210
+    const v2, 0x9020595
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    .line 209
+    const v3, 0x9020593
 
     invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 211
+    sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
+
+    .line 212
+    const v2, 0x90205b4
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    .line 211
+    const v3, 0x90205b1
+
+    invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 215
     :cond_0
     sget-object v1, Lcom/android/systemui/statusbar/Icons;->sSignalHalfMapping:Landroid/util/SparseArray;
 
@@ -1370,7 +1409,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 212
+    .line 216
     .local v0, "resultId":Ljava/lang/Integer;
     if-nez v0, :cond_1
 

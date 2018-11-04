@@ -954,9 +954,9 @@
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v2, "set_panel_full"
+    const-string v2, "set_panel_full"
 
-    invoke-static {v1, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v1}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v0
 
@@ -978,7 +978,7 @@
 
     const-string v2, "set_panel_one"
 
-    invoke-static {v1, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v1}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v0
 

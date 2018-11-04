@@ -25,13 +25,13 @@
     .param p2, "linearLayout"    # Landroid/widget/LinearLayout;
 
     .prologue
-    .line 732
+    .line 730
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
-    .line 733
+    .line 731
     invoke-direct {p0, p2}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;-><init>(Landroid/widget/LinearLayout;)V
 
-    .line 732
+    .line 730
     return-void
 .end method
 
@@ -45,7 +45,7 @@
 
     const/4 v5, 0x0
 
-    .line 755
+    .line 753
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
     invoke-static {v4}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->-get0(Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;)Landroid/widget/LinearLayout;
@@ -58,26 +58,26 @@
 
     check-cast v3, Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    .line 757
+    .line 755
     .local v3, "view":Lcom/android/systemui/statusbar/StatusBarIconView;
     if-nez v3, :cond_0
 
     return-void
 
-    .line 759
+    .line 757
     :cond_0
     if-nez p2, :cond_1
 
     const/4 v0, 0x0
 
-    .line 760
+    .line 758
     .local v0, "iconId":I
     :goto_0
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/StatusBarIconView;->getSlot()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 762
+    .line 760
     .local v2, "slot":Ljava/lang/String;
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
@@ -89,10 +89,10 @@
 
     if-nez v4, :cond_2
 
-    .line 763
+    .line 761
     return-void
 
-    .line 759
+    .line 757
     .end local v0    # "iconId":I
     .end local v2    # "slot":Ljava/lang/String;
     :cond_1
@@ -105,7 +105,7 @@
     .restart local v0    # "iconId":I
     goto :goto_0
 
-    .line 766
+    .line 764
     .restart local v2    # "slot":Ljava/lang/String;
     :cond_2
     const-string/jumbo v4, "bluetooth"
@@ -116,15 +116,15 @@
 
     if-eqz v4, :cond_d
 
-    .line 767
+    .line 765
     if-eqz p2, :cond_c
 
-    .line 768
+    .line 766
     sget-boolean v4, Lcom/android/systemui/Constants;->IS_NARROW_NOTCH:Z
 
     if-nez v4, :cond_a
 
-    .line 769
+    .line 767
     const v4, 0x9020366
 
     if-eq v0, v4, :cond_3
@@ -136,7 +136,7 @@
     :cond_3
     move v1, v6
 
-    .line 770
+    .line 768
     .local v1, "show":Z
     :goto_1
     if-eqz v1, :cond_9
@@ -146,12 +146,12 @@
     :goto_2
     invoke-virtual {v3, v4}, Lcom/android/systemui/statusbar/StatusBarIconView;->setVisibility(I)V
 
-    .line 771
+    .line 769
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
     invoke-static {v4, v1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->-set0(Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;Z)Z
 
-    .line 782
+    .line 780
     .end local v1    # "show":Z
     :cond_4
     :goto_3
@@ -176,7 +176,7 @@
 
     if-eqz v4, :cond_10
 
-    .line 788
+    .line 786
     :cond_6
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
@@ -188,7 +188,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 789
+    .line 787
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
     invoke-static {v4}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->-get4(Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;)Lcom/android/systemui/statusbar/policy/Clock;
@@ -197,7 +197,7 @@
 
     iput-boolean v5, v4, Lcom/android/systemui/statusbar/policy/Clock;->mForceHideAmPm:Z
 
-    .line 790
+    .line 788
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
     invoke-static {v4}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->-get4(Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;)Lcom/android/systemui/statusbar/policy/Clock;
@@ -206,12 +206,12 @@
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/Clock;->update()V
 
-    .line 754
+    .line 752
     :cond_7
     :goto_4
     return-void
 
-    .line 769
+    .line 767
     :cond_8
     const v4, 0x9020368
 
@@ -221,14 +221,14 @@
 
     goto :goto_1
 
-    .line 770
+    .line 768
     .restart local v1    # "show":Z
     :cond_9
     const/16 v4, 0x8
 
     goto :goto_2
 
-    .line 773
+    .line 771
     .end local v1    # "show":Z
     :cond_a
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
@@ -251,7 +251,7 @@
 
     goto :goto_5
 
-    .line 776
+    .line 774
     :cond_c
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
@@ -259,7 +259,7 @@
 
     goto :goto_3
 
-    .line 778
+    .line 776
     :cond_d
     const-string/jumbo v4, "location"
 
@@ -269,7 +269,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 779
+    .line 777
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
     if-nez p2, :cond_f
@@ -293,7 +293,7 @@
 
     goto :goto_6
 
-    .line 783
+    .line 781
     :cond_10
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
@@ -305,7 +305,7 @@
 
     if-nez v4, :cond_7
 
-    .line 784
+    .line 782
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
     invoke-static {v4}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->-get4(Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;)Lcom/android/systemui/statusbar/policy/Clock;
@@ -314,7 +314,7 @@
 
     iput-boolean v6, v4, Lcom/android/systemui/statusbar/policy/Clock;->mForceHideAmPm:Z
 
-    .line 785
+    .line 783
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
     invoke-static {v4}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->-get4(Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;)Lcom/android/systemui/statusbar/policy/Clock;
@@ -336,13 +336,13 @@
     .param p4, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 738
+    .line 736
     invoke-super {p0, p1, p2, p3, p4}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->onIconAdded(ILjava/lang/String;ZLcom/android/internal/statusbar/StatusBarIcon;)V
 
-    .line 739
+    .line 737
     invoke-direct {p0, p1, p4}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->updateIcons(ILcom/android/internal/statusbar/StatusBarIcon;)V
 
-    .line 737
+    .line 735
     return-void
 .end method
 
@@ -351,15 +351,15 @@
     .param p1, "viewIndex"    # I
 
     .prologue
-    .line 750
+    .line 748
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->updateIcons(ILcom/android/internal/statusbar/StatusBarIcon;)V
 
-    .line 751
+    .line 749
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->onRemoveIcon(I)V
 
-    .line 749
+    .line 747
     return-void
 .end method
 
@@ -369,12 +369,12 @@
     .param p2, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 744
+    .line 742
     invoke-super {p0, p1, p2}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->onSetIcon(ILcom/android/internal/statusbar/StatusBarIcon;)V
 
-    .line 745
+    .line 743
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->updateIcons(ILcom/android/internal/statusbar/StatusBarIcon;)V
 
-    .line 743
+    .line 741
     return-void
 .end method

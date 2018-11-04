@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 1246
+    .line 941
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$12;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,36 +36,46 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 3
+    .locals 6
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 1249
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$12;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$12;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    const/4 v1, 0x0
 
-    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    .line 944
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$12;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$12;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    move-result-object v1
+    iget-object v3, v3, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
 
-    .line 1250
-    const-string/jumbo v2, "force_fsg_nav_bar"
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    .line 1249
-    invoke-static {v1, v2}, Landroid/provider/MiuiSettings$Global;->getBoolean(Landroid/content/ContentResolver;Ljava/lang/String;)Z
+    move-result-object v3
 
-    move-result v1
+    .line 945
+    const-string/jumbo v4, "gb_handsfree"
 
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set8(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
+    const/4 v5, -0x2
 
-    .line 1251
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$12;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    .line 944
+    invoke-static {v3, v4, v1, v5}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap6(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+    move-result v3
 
-    .line 1248
+    if-ne v3, v0, :cond_0
+
+    :goto_0
+    invoke-static {v2, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set7(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
+
+    .line 943
     return-void
+
+    :cond_0
+    move v0, v1
+
+    .line 944
+    goto :goto_0
 .end method

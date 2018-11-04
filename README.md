@@ -1,2 +1,0 @@
-# MiuiSystemUI.apk
-Unlock-MiuiPro

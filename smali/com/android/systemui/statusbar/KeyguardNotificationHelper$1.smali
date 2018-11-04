@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/KeyguardNotificationHelper;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/android/systemui/statusbar/phone/NotificationGroupManager;)V
+    value = Lcom/android/systemui/statusbar/KeyguardNotificationHelper;-><init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/NotificationGroupManager;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Looper;
 
     .prologue
-    .line 43
+    .line 42
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper$1;->this$0:Lcom/android/systemui/statusbar/KeyguardNotificationHelper;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -42,19 +42,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 46
+    .line 45
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 47
+    .line 46
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 45
+    .line 44
     :goto_0
     return-void
 
-    .line 49
+    .line 48
     :pswitch_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper$1;->this$0:Lcom/android/systemui/statusbar/KeyguardNotificationHelper;
 
@@ -66,7 +66,7 @@
 
     goto :goto_0
 
-    .line 52
+    .line 51
     :pswitch_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper$1;->this$0:Lcom/android/systemui/statusbar/KeyguardNotificationHelper;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 55
+    .line 54
     :pswitch_2
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper$1;->this$0:Lcom/android/systemui/statusbar/KeyguardNotificationHelper;
 
@@ -97,7 +97,7 @@
 
     goto :goto_0
 
-    .line 58
+    .line 57
     :pswitch_3
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper$1;->this$0:Lcom/android/systemui/statusbar/KeyguardNotificationHelper;
 
@@ -105,7 +105,7 @@
 
     goto :goto_0
 
-    .line 47
+    .line 46
     :pswitch_data_0
     .packed-switch 0xbb8
         :pswitch_0

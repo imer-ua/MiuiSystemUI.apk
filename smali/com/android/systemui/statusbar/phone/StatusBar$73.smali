@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->onMakeExpandedVisibleForRemoteInput(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Landroid/view/View;)V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->closeQs()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-.field final synthetic val$clickedView:Landroid/view/View;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/view/View;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
-    .param p2, "val$clickedView"    # Landroid/view/View;
 
     .prologue
-    .line 6415
+    .line 6117
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$73;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$73;->val$clickedView:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,11 +41,13 @@
     .locals 1
 
     .prologue
-    .line 6418
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$73;->val$clickedView:Landroid/view/View;
+    .line 6120
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$73;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-virtual {v0}, Landroid/view/View;->performClick()Z
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    .line 6417
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->animateCloseQs()V
+
+    .line 6119
     return-void
 .end method

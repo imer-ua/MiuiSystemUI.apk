@@ -51,30 +51,37 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/android/systemui/statusbar/phone/NotificationGroupManager;)V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/NotificationGroupManager;)V
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
-    .param p2, "bgLooper"    # Landroid/os/Looper;
-    .param p3, "groupManager"    # Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
+    .param p2, "groupManager"    # Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
     .prologue
-    .line 40
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
+    .line 40
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mContext:Landroid/content/Context;
 
+    .line 41
+    iput-object p2, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mGroupManager:Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
+
     .line 42
-    iput-object p3, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mGroupManager:Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
+    new-instance v1, Lcom/android/systemui/statusbar/KeyguardNotificationHelper$1;
 
-    .line 43
-    new-instance v0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper$1;
+    sget-object v0, Lcom/android/systemui/Dependency;->BG_LOOPER:Lcom/android/systemui/Dependency$DependencyKey;
 
-    invoke-direct {v0, p0, p2}, Lcom/android/systemui/statusbar/KeyguardNotificationHelper$1;-><init>(Lcom/android/systemui/statusbar/KeyguardNotificationHelper;Landroid/os/Looper;)V
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Lcom/android/systemui/Dependency$DependencyKey;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mBgHandler:Landroid/os/Handler;
+    move-result-object v0
 
-    .line 40
+    check-cast v0, Landroid/os/Looper;
+
+    invoke-direct {v1, p0, v0}, Lcom/android/systemui/statusbar/KeyguardNotificationHelper$1;-><init>(Lcom/android/systemui/statusbar/KeyguardNotificationHelper;Landroid/os/Looper;)V
+
+    iput-object v1, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mBgHandler:Landroid/os/Handler;
+
+    .line 39
     return-void
 .end method
 
@@ -85,18 +92,18 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 146
+    .line 145
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->getByteIcon(Lcom/android/systemui/statusbar/NotificationData$Entry;)[B
 
     move-result-object v1
 
-    .line 147
+    .line 146
     .local v1, "icon":[B
     if-nez v1, :cond_0
 
     return-object v7
 
-    .line 149
+    .line 148
     :cond_0
     iget-boolean v7, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->hideSensitive:Z
 
@@ -104,7 +111,7 @@
 
     iget-boolean v3, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->hideSensitiveByAppLock:Z
 
-    .line 150
+    .line 149
     :goto_0
     iget-object v7, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
@@ -112,7 +119,7 @@
 
     move-result-object v2
 
-    .line 151
+    .line 150
     .local v2, "n":Landroid/app/Notification;
     if-eqz v3, :cond_2
 
@@ -122,7 +129,7 @@
 
     move-result-object v5
 
-    .line 152
+    .line 151
     .local v5, "title":Ljava/lang/CharSequence;
     :goto_1
     if-eqz v3, :cond_3
@@ -133,27 +140,27 @@
 
     move-result-object v0
 
-    .line 153
+    .line 152
     .local v0, "content":Ljava/lang/CharSequence;
     :goto_2
     if-eqz v3, :cond_4
 
     const-string/jumbo v4, ""
 
-    .line 155
+    .line 154
     .local v4, "subtext":Ljava/lang/CharSequence;
     :goto_3
     new-instance v6, Landroid/content/ContentValues;
 
     invoke-direct {v6}, Landroid/content/ContentValues;-><init>()V
 
-    .line 156
+    .line 155
     .local v6, "values":Landroid/content/ContentValues;
     const-string/jumbo v7, "icon"
 
     invoke-virtual {v6, v7, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 157
+    .line 156
     const-string/jumbo v8, "title"
 
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -167,7 +174,7 @@
     :goto_4
     invoke-virtual {v6, v8, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 158
+    .line 157
     const-string/jumbo v8, "content"
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -181,7 +188,7 @@
     :goto_5
     invoke-virtual {v6, v8, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 159
+    .line 158
     const-string/jumbo v7, "time"
 
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->getTimeText(Lcom/android/systemui/statusbar/NotificationData$Entry;)Ljava/lang/String;
@@ -190,14 +197,14 @@
 
     invoke-virtual {v6, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 160
+    .line 159
     const-string/jumbo v7, "info"
 
     const-string/jumbo v8, ""
 
     invoke-virtual {v6, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 161
+    .line 160
     const-string/jumbo v8, "subtext"
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -211,7 +218,7 @@
     :goto_6
     invoke-virtual {v6, v8, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 162
+    .line 161
     const-string/jumbo v7, "key"
 
     iget-object v8, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->key:Ljava/lang/String;
@@ -226,7 +233,7 @@
 
     invoke-virtual {v6, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 163
+    .line 162
     const-string/jumbo v7, "pkg"
 
     iget-object v8, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
@@ -237,7 +244,7 @@
 
     invoke-virtual {v6, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 164
+    .line 163
     const-string/jumbo v7, "user_id"
 
     iget-object v8, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
@@ -252,10 +259,10 @@
 
     invoke-virtual {v6, v7, v8}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 166
+    .line 165
     return-object v6
 
-    .line 149
+    .line 148
     .end local v0    # "content":Ljava/lang/CharSequence;
     .end local v2    # "n":Landroid/app/Notification;
     .end local v4    # "subtext":Ljava/lang/CharSequence;
@@ -267,7 +274,7 @@
     .local v3, "sensitive":Z
     goto/16 :goto_0
 
-    .line 151
+    .line 150
     .end local v3    # "sensitive":Z
     .restart local v2    # "n":Landroid/app/Notification;
     :cond_2
@@ -278,7 +285,7 @@
     .restart local v5    # "title":Ljava/lang/CharSequence;
     goto/16 :goto_1
 
-    .line 152
+    .line 151
     :cond_3
     invoke-static {v2}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->resolveText(Landroid/app/Notification;)Ljava/lang/CharSequence;
 
@@ -287,7 +294,7 @@
     .restart local v0    # "content":Ljava/lang/CharSequence;
     goto/16 :goto_2
 
-    .line 153
+    .line 152
     :cond_4
     invoke-static {v2}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->resolveSubText(Landroid/app/Notification;)Ljava/lang/CharSequence;
 
@@ -296,7 +303,7 @@
     .restart local v4    # "subtext":Ljava/lang/CharSequence;
     goto/16 :goto_3
 
-    .line 157
+    .line 156
     .restart local v6    # "values":Landroid/content/ContentValues;
     :cond_5
     invoke-interface {v5}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -305,7 +312,7 @@
 
     goto :goto_4
 
-    .line 158
+    .line 157
     :cond_6
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -313,7 +320,7 @@
 
     goto :goto_5
 
-    .line 161
+    .line 160
     :cond_7
     invoke-interface {v4}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -331,13 +338,13 @@
 
     const/4 v7, 0x0
 
-    .line 194
+    .line 193
     if-nez p1, :cond_0
 
-    .line 195
+    .line 194
     return-object v10
 
-    .line 197
+    .line 196
     :cond_0
     instance-of v6, p1, Lmiui/maml/FancyDrawable;
 
@@ -345,20 +352,20 @@
 
     move-object v6, p1
 
-    .line 198
+    .line 197
     check-cast v6, Lmiui/maml/FancyDrawable;
 
     invoke-virtual {v6}, Lmiui/maml/FancyDrawable;->getQuietDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
-    .line 199
+    .line 198
     .local v4, "quiet":Landroid/graphics/drawable/Drawable;
     if-nez v4, :cond_3
 
     move-object v6, p1
 
-    .line 200
+    .line 199
     check-cast v6, Lmiui/maml/FancyDrawable;
 
     invoke-virtual {v6}, Lmiui/maml/FancyDrawable;->getRoot()Lmiui/maml/ScreenElementRoot;
@@ -371,7 +378,7 @@
 
     invoke-virtual {v6, v8, v9}, Lmiui/maml/ScreenElementRoot;->tick(J)V
 
-    .line 205
+    .line 204
     .end local v4    # "quiet":Landroid/graphics/drawable/Drawable;
     :cond_1
     :goto_0
@@ -379,23 +386,23 @@
 
     move-result v5
 
-    .line 206
+    .line 205
     .local v5, "w":I
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v3
 
-    .line 207
+    .line 206
     .local v3, "h":I
     if-lez v5, :cond_2
 
     if-gtz v3, :cond_4
 
-    .line 208
+    .line 207
     :cond_2
     return-object v10
 
-    .line 202
+    .line 201
     .end local v3    # "h":I
     .end local v5    # "w":I
     .restart local v4    # "quiet":Landroid/graphics/drawable/Drawable;
@@ -404,7 +411,7 @@
 
     goto :goto_0
 
-    .line 210
+    .line 209
     .end local v4    # "quiet":Landroid/graphics/drawable/Drawable;
     .restart local v3    # "h":I
     .restart local v5    # "w":I
@@ -415,25 +422,25 @@
 
     move-result-object v1
 
-    .line 211
+    .line 210
     .local v1, "bitmap":Landroid/graphics/Bitmap;
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 212
+    .line 211
     .local v2, "canvas":Landroid/graphics/Canvas;
     invoke-virtual {p1, v7, v7, v5, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 213
+    .line 212
     invoke-virtual {p1, v2}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 214
+    .line 213
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 215
+    .line 214
     .local v0, "baos":Ljava/io/ByteArrayOutputStream;
     sget-object v6, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -441,7 +448,7 @@
 
     invoke-virtual {v1, v6, v7, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 216
+    .line 215
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v6
@@ -458,10 +465,10 @@
 
     const/4 v1, 0x0
 
-    .line 170
+    .line 169
     const/4 v4, 0x0
 
-    .line 171
+    .line 170
     .local v4, "rightIconView":Landroid/widget/ImageView;
     iget-boolean v5, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->hideSensitive:Z
 
@@ -471,17 +478,17 @@
 
     if-eqz v5, :cond_4
 
-    .line 172
+    .line 171
     :cond_0
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/NotificationData$Entry;->getPublicContentView()Landroid/view/View;
 
     move-result-object v3
 
-    .line 173
+    .line 172
     .local v3, "publicView":Landroid/view/View;
     if-eqz v3, :cond_1
 
-    .line 174
+    .line 173
     invoke-virtual {v3, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
@@ -489,7 +496,7 @@
     .end local v4    # "rightIconView":Landroid/widget/ImageView;
     check-cast v4, Landroid/widget/ImageView;
 
-    .line 186
+    .line 185
     .end local v3    # "publicView":Landroid/view/View;
     :cond_1
     :goto_0
@@ -499,19 +506,19 @@
 
     move-result-object v1
 
-    .line 187
+    .line 186
     .local v1, "iconDrawable":Landroid/graphics/drawable/Drawable;
     :cond_2
     if-nez v1, :cond_3
 
-    .line 188
+    .line 187
     iget-object v5, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     invoke-virtual {v5}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getAppIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 190
+    .line 189
     :cond_3
     invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->drawableToByte(Landroid/graphics/drawable/Drawable;)[B
 
@@ -519,7 +526,7 @@
 
     return-object v5
 
-    .line 177
+    .line 176
     .end local v1    # "iconDrawable":Landroid/graphics/drawable/Drawable;
     .restart local v4    # "rightIconView":Landroid/widget/ImageView;
     :cond_4
@@ -529,20 +536,20 @@
 
     check-cast v2, Lcom/android/systemui/statusbar/NotificationContentView;
 
-    .line 178
+    .line 177
     .local v2, "privateView":Lcom/android/systemui/statusbar/NotificationContentView;
     if-eqz v2, :cond_1
 
-    .line 179
+    .line 178
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/NotificationContentView;->getContractedChild()Landroid/view/View;
 
     move-result-object v0
 
-    .line 180
+    .line 179
     .local v0, "contractedChildView":Landroid/view/View;
     if-eqz v0, :cond_1
 
-    .line 181
+    .line 180
     invoke-virtual {v0, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
@@ -559,14 +566,14 @@
     .param p1, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .prologue
-    .line 220
+    .line 219
     new-instance v0, Landroid/widget/DateTimeView;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/DateTimeView;-><init>(Landroid/content/Context;)V
 
-    .line 221
+    .line 220
     .local v0, "dateTime":Landroid/widget/DateTimeView;
     iget-object v1, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
@@ -582,7 +589,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 222
+    .line 221
     iget-object v1, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     invoke-virtual {v1}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
@@ -593,7 +600,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/DateTimeView;->setTime(J)V
 
-    .line 224
+    .line 223
     :cond_0
     invoke-virtual {v0}, Landroid/widget/DateTimeView;->getText()Ljava/lang/CharSequence;
 
@@ -612,25 +619,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 139
+    .line 138
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 140
+    .line 139
     .local v0, "resolver":Landroid/content/ContentResolver;
     sget-object v1, Lmiui/provider/KeyguardNotification;->URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v2, v2}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 141
+    .line 140
     sget-object v1, Lmiui/provider/KeyguardNotification;->URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
 
-    .line 142
+    .line 141
     const-class v1, Lcom/android/systemui/statusbar/policy/KeyguardNotificationController;
 
     invoke-static {v1}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -641,7 +648,7 @@
 
     invoke-interface {v1}, Lcom/android/systemui/statusbar/policy/KeyguardNotificationController;->clearAll()V
 
-    .line 138
+    .line 137
     return-void
 .end method
 
@@ -653,12 +660,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 125
+    .line 124
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 126
+    .line 125
     .local v2, "where":Ljava/lang/StringBuilder;
     const-string/jumbo v3, "key"
 
@@ -674,14 +681,14 @@
 
     invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 128
+    .line 127
     iget-object v3, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 129
+    .line 128
     .local v0, "resolver":Landroid/content/ContentResolver;
     sget-object v3, Lmiui/provider/KeyguardNotification;->URI:Landroid/net/Uri;
 
@@ -693,23 +700,23 @@
 
     move-result v1
 
-    .line 130
+    .line 129
     .local v1, "rows":I
     if-lez v1, :cond_0
 
-    .line 131
+    .line 130
     sget-object v3, Lmiui/provider/KeyguardNotification;->URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v3, v5}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
 
-    .line 132
+    .line 131
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 133
+    .line 132
     const-class v3, Lcom/android/systemui/statusbar/policy/KeyguardNotificationController;
 
     invoke-static {v3}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -720,7 +727,7 @@
 
     invoke-interface {v3, p2}, Lcom/android/systemui/statusbar/policy/KeyguardNotificationController;->delete(Ljava/lang/String;)V
 
-    .line 124
+    .line 123
     :cond_0
     return-void
 .end method
@@ -730,14 +737,14 @@
     .param p1, "values"    # Landroid/content/ContentValues;
 
     .prologue
-    .line 103
+    .line 102
     const-string/jumbo v2, "pkg"
 
     invoke-virtual {p1, v2}, Landroid/content/ContentValues;->getAsString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 105
+    .line 104
     .local v0, "pkg":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mContext:Landroid/content/Context;
 
@@ -745,20 +752,20 @@
 
     move-result-object v1
 
-    .line 106
+    .line 105
     .local v1, "resolver":Landroid/content/ContentResolver;
     sget-object v2, Lmiui/provider/KeyguardNotification;->URI:Landroid/net/Uri;
 
     invoke-virtual {v1, v2, p1}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
-    .line 107
+    .line 106
     sget-object v2, Lmiui/provider/KeyguardNotification;->URI:Landroid/net/Uri;
 
     const/4 v3, 0x0
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
 
-    .line 108
+    .line 107
     const-class v2, Lcom/android/systemui/statusbar/policy/KeyguardNotificationController;
 
     invoke-static {v2}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -769,7 +776,7 @@
 
     invoke-interface {v2, v0}, Lcom/android/systemui/statusbar/policy/KeyguardNotificationController;->add(Ljava/lang/String;)V
 
-    .line 102
+    .line 101
     return-void
 .end method
 
@@ -780,7 +787,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 112
+    .line 111
     const-string/jumbo v4, "key"
 
     invoke-virtual {p1, v4}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
@@ -791,7 +798,7 @@
 
     move-result v0
 
-    .line 113
+    .line 112
     .local v0, "key":I
     const-string/jumbo v4, "pkg"
 
@@ -799,13 +806,13 @@
 
     move-result-object v1
 
-    .line 115
+    .line 114
     .local v1, "pkg":Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 116
+    .line 115
     .local v3, "where":Ljava/lang/StringBuilder;
     const-string/jumbo v4, "key"
 
@@ -821,14 +828,14 @@
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 118
+    .line 117
     iget-object v4, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    .line 119
+    .line 118
     .local v2, "resolver":Landroid/content/ContentResolver;
     sget-object v4, Lmiui/provider/KeyguardNotification;->URI:Landroid/net/Uri;
 
@@ -838,12 +845,12 @@
 
     invoke-virtual {v2, v4, p1, v5, v6}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 120
+    .line 119
     sget-object v4, Lmiui/provider/KeyguardNotification;->URI:Landroid/net/Uri;
 
     invoke-virtual {v2, v4, v6}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
 
-    .line 121
+    .line 120
     const-class v4, Lcom/android/systemui/statusbar/policy/KeyguardNotificationController;
 
     invoke-static {v4}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -854,7 +861,7 @@
 
     invoke-interface {v4, v1}, Lcom/android/systemui/statusbar/policy/KeyguardNotificationController;->update(Ljava/lang/String;)V
 
-    .line 111
+    .line 110
     return-void
 .end method
 
@@ -865,7 +872,7 @@
     .param p1, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .prologue
-    .line 68
+    .line 67
     iget-object v4, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     invoke-virtual {v4}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
@@ -878,7 +885,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 69
+    .line 68
     iget-object v4, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mGroupManager:Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
     iget-object v5, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
@@ -889,10 +896,10 @@
 
     if-eqz v4, :cond_1
 
-    .line 70
+    .line 69
     return-void
 
-    .line 73
+    .line 72
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mGroupManager:Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -902,11 +909,11 @@
 
     move-result-object v2
 
-    .line 74
+    .line 73
     .local v2, "row":Lcom/android/systemui/statusbar/ExpandableNotificationRow;
     if-eqz v2, :cond_1
 
-    .line 75
+    .line 74
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getEntry()Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     move-result-object v4
@@ -917,7 +924,7 @@
 
     move-result v0
 
-    .line 76
+    .line 75
     .local v0, "key":I
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getEntry()Lcom/android/systemui/statusbar/NotificationData$Entry;
 
@@ -929,11 +936,11 @@
 
     move-result-object v1
 
-    .line 77
+    .line 76
     .local v1, "pkg":Ljava/lang/String;
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->remove(ILjava/lang/String;)V
 
-    .line 81
+    .line 80
     .end local v0    # "key":I
     .end local v1    # "pkg":Ljava/lang/String;
     .end local v2    # "row":Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -942,11 +949,11 @@
 
     move-result-object v3
 
-    .line 82
+    .line 81
     .local v3, "values":Landroid/content/ContentValues;
     if-eqz v3, :cond_2
 
-    .line 83
+    .line 82
     iget-object v4, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mBgHandler:Landroid/os/Handler;
 
     const/16 v5, 0xbb8
@@ -957,7 +964,7 @@
 
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 67
+    .line 66
     :cond_2
     return-void
 .end method
@@ -966,7 +973,7 @@
     .locals 2
 
     .prologue
-    .line 99
+    .line 98
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mBgHandler:Landroid/os/Handler;
 
     const/16 v1, 0xbbb
@@ -977,7 +984,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 98
+    .line 97
     return-void
 .end method
 
@@ -987,7 +994,7 @@
     .param p2, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 95
+    .line 94
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mBgHandler:Landroid/os/Handler;
 
     const/16 v1, 0xbba
@@ -1000,7 +1007,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 94
+    .line 93
     return-void
 .end method
 
@@ -1009,16 +1016,16 @@
     .param p1, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .prologue
-    .line 88
+    .line 87
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->buildValues(Lcom/android/systemui/statusbar/NotificationData$Entry;)Landroid/content/ContentValues;
 
     move-result-object v0
 
-    .line 89
+    .line 88
     .local v0, "values":Landroid/content/ContentValues;
     if-eqz v0, :cond_0
 
-    .line 90
+    .line 89
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardNotificationHelper;->mBgHandler:Landroid/os/Handler;
 
     const/16 v2, 0xbb9
@@ -1029,7 +1036,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 87
+    .line 86
     :cond_0
     return-void
 .end method

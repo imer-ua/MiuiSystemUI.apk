@@ -12,7 +12,7 @@
     .locals 0
 
     .prologue
-    .line 72
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,14 +23,14 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 57
+    .line 58
     const v3, 0x910003e
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 58
+    .line 59
     .local v1, "clsName":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -40,7 +40,7 @@
 
     if-nez v3, :cond_1
 
-    .line 59
+    .line 60
     :cond_0
     new-instance v3, Ljava/lang/RuntimeException;
 
@@ -50,11 +50,11 @@
 
     throw v3
 
-    .line 63
+    .line 64
     :cond_1
     const/4 v0, 0x0
 
-    .line 64
+    .line 65
     .local v0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
@@ -65,7 +65,7 @@
 
     move-result-object v0
 
-    .line 65
+    .line 66
     .local v0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
@@ -77,15 +77,15 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 56
+    .line 57
     return-void
 
-    .line 66
+    .line 67
     .end local v0    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :catch_0
     move-exception v2
 
-    .line 67
+    .line 68
     .local v2, "t":Ljava/lang/Throwable;
     const-string/jumbo v3, "SystemUIFactory"
 
@@ -109,7 +109,7 @@
 
     invoke-static {v3, v4, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 68
+    .line 69
     new-instance v3, Ljava/lang/RuntimeException;
 
     invoke-direct {v3, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -121,7 +121,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 54
     sget-object v0, Lcom/android/systemui/SystemUIFactory;->mFactory:Lcom/android/systemui/SystemUIFactory;
 
     return-object v0
@@ -142,7 +142,7 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 118
     .local p1, "classType":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     const/4 v0, 0x0
 
@@ -158,7 +158,7 @@
     .param p5, "dismissCallbackRegistry"    # Lcom/android/systemui/keyguard/DismissCallbackRegistry;
 
     .prologue
-    .line 82
+    .line 83
     new-instance v0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;
 
     move-object v1, p1
@@ -183,7 +183,7 @@
     .param p3, "upArrow"    # Landroid/widget/ImageView;
 
     .prologue
-    .line 99
+    .line 104
     new-instance v0, Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
     invoke-direct {v0, p1, p2, p3}, Lcom/android/systemui/statusbar/KeyguardIndicationController;-><init>(Landroid/content/Context;Landroid/view/ViewGroup;Landroid/widget/ImageView;)V
@@ -197,7 +197,7 @@
     .param p2, "notificationPanelView"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 104
+    .line 109
     new-instance v0, Lcom/android/systemui/statusbar/KeyguardWallpaperCarouselController;
 
     invoke-direct {v0, p1, p2}, Lcom/android/systemui/statusbar/KeyguardWallpaperCarouselController;-><init>(Landroid/content/Context;Landroid/view/ViewGroup;)V
@@ -206,12 +206,33 @@
 .end method
 
 .method public createNotificationIconAreaController(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
-    .locals 1
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "statusBar"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 94
+    .line 95
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x90d0044
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 96
+    new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPeekingIconAreaController;
+
+    invoke-direct {v0, p1, p2}, Lcom/android/systemui/statusbar/phone/NotificationPeekingIconAreaController;-><init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/StatusBar;)V
+
+    return-object v0
+
+    .line 98
+    :cond_0
     new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
 
     invoke-direct {v0, p1, p2}, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;-><init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/StatusBar;)V
@@ -226,7 +247,7 @@
     .param p3, "iconController"    # Lcom/android/systemui/statusbar/phone/StatusBarIconController;
 
     .prologue
-    .line 109
+    .line 114
     new-instance v0, Lcom/android/systemui/qs/QSTileHost;
 
     invoke-direct {v0, p1, p2, p3}, Lcom/android/systemui/qs/QSTileHost;-><init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/phone/StatusBarIconController;)V
@@ -243,7 +264,7 @@
     .param p5, "lockscreenWallpaper"    # Lcom/android/systemui/statusbar/phone/LockscreenWallpaper;
 
     .prologue
-    .line 89
+    .line 90
     new-instance v0, Lcom/android/systemui/statusbar/phone/ScrimController;
 
     invoke-direct {v0, p1, p2, p3, p4}, Lcom/android/systemui/statusbar/phone/ScrimController;-><init>(Lcom/android/systemui/statusbar/phone/LightBarController;Lcom/android/systemui/statusbar/ScrimView;Lcom/android/systemui/statusbar/ScrimView;Landroid/view/View;)V
@@ -258,7 +279,7 @@
     .param p3, "lockPatternUtils"    # Lcom/android/internal/widget/LockPatternUtils;
 
     .prologue
-    .line 76
+    .line 77
     new-instance v0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-direct {v0, p1, p2, p3}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;-><init>(Landroid/content/Context;Lcom/android/keyguard/ViewMediatorCallback;Lcom/android/internal/widget/LockPatternUtils;)V
@@ -283,7 +304,7 @@
     .end annotation
 
     .prologue
-    .line 117
+    .line 122
     .local p1, "providers":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Object;Lcom/android/systemui/Dependency$DependencyProvider;>;"
     return-void
 .end method

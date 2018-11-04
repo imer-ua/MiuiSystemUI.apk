@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->onIconClicked(Z)V
+    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->saveValueToTunerService(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
+.field final synthetic val$qqs_count:I
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    .param p2, "val$qqs_count"    # I
 
     .prologue
-    .line 2611
+    .line 2506
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$31;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    iput p2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$31;->val$qqs_count:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,23 +43,24 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 2614
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$31;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    .line 2509
+    const-class v0, Lcom/android/systemui/tuner/TunerService;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
-    iput-boolean v1, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHintAnimationRunning:Z
+    move-result-object v0
 
-    .line 2615
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$31;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    check-cast v0, Lcom/android/systemui/tuner/TunerService;
 
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
+    const-string/jumbo v1, "sysui_qqs_count"
 
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->onHintFinished()V
+    iget v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$31;->val$qqs_count:I
 
-    .line 2613
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/tuner/TunerService;->setValue(Ljava/lang/String;I)V
+
+    .line 2508
     return-void
 .end method

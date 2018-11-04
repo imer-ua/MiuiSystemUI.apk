@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->onFinishedGoingToSleep()V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->onWorkChallengeChanged()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
+.field final synthetic val$clickPendingViewRunnable:Ljava/lang/Runnable;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Ljava/lang/Runnable;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
+    .param p2, "val$clickPendingViewRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 6605
+    .line 6543
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$76;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$76;->val$clickPendingViewRunnable:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,21 +42,60 @@
 
 
 # virtual methods
-.method public run()V
+.method public onGlobalLayout()V
     .locals 2
 
     .prologue
-    .line 6608
+    .line 6546
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$76;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->getStatusBarWindow()Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->getHeight()I
+
+    move-result v0
+
+    .line 6547
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$76;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get20(Lcom/android/systemui/statusbar/phone/StatusBar;)I
+    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->getStatusBarHeight()I
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->onCameraLaunchGestureDetected(I)V
+    .line 6546
+    if-eq v0, v1, :cond_0
 
-    .line 6607
+    .line 6549
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$76;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    .line 6551
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$76;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$76;->val$clickPendingViewRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->post(Ljava/lang/Runnable;)Z
+
+    .line 6545
+    :cond_0
     return-void
 .end method

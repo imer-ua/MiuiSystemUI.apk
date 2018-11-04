@@ -37,7 +37,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     .prologue
-    .line 294
+    .line 295
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$12;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
     .locals 3
 
     .prologue
-    .line 297
+    .line 298
     new-instance v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$12;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
@@ -67,7 +67,7 @@
     .locals 1
 
     .prologue
-    .line 296
+    .line 297
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$12;->get()Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;
 
     move-result-object v0

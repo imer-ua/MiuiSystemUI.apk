@@ -26,13 +26,13 @@
     .locals 0
 
     .prologue
-    .line 60
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
+    .line 65
     iput-object p1, p0, Lcom/xiaomi/xmsf/push/service/b$a$a;->a:Landroid/os/IBinder;
 
-    .line 62
+    .line 66
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 77
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
@@ -55,13 +55,13 @@
     :try_start_0
     const-string/jumbo v0, "com.xiaomi.xmsf.push.service.IStatService"
 
-    .line 75
+    .line 79
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 76
+    .line 80
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 77
+    .line 81
     iget-object v0, p0, Lcom/xiaomi/xmsf/push/service/b$a$a;->a:Landroid/os/IBinder;
 
     const/4 v2, 0x1
@@ -74,20 +74,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 80
+    .line 84
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 82
+    .line 86
     return-void
 
-    .line 81
+    .line 85
     :catchall_0
     move-exception v0
 
-    .line 80
+    .line 84
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 81
+    .line 85
     throw v0
 .end method
 
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 69
     iget-object v0, p0, Lcom/xiaomi/xmsf/push/service/b$a$a;->a:Landroid/os/IBinder;
 
     return-object v0

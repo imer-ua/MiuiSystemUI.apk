@@ -27,6 +27,8 @@
 
 .field private mIconHPadding:I
 
+.field private mShieldDarkReceiver:Z
+
 .field private mTintArea:Landroid/graphics/Rect;
 
 
@@ -39,7 +41,15 @@
     return v0
 .end method
 
-.method static synthetic -get1(Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;)Landroid/graphics/Rect;
+.method static synthetic -get1(Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mShieldDarkReceiver:Z
+
+    return v0
+.end method
+
+.method static synthetic -get2(Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;)Landroid/graphics/Rect;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mTintArea:Landroid/graphics/Rect;
@@ -47,7 +57,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get2()I
+.method static synthetic -get3()I
     .locals 1
 
     sget v0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->sFilterColor:I
@@ -89,7 +99,7 @@
     .param p1, "linearLayout"    # Landroid/widget/LinearLayout;
 
     .prologue
-    .line 67
+    .line 68
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;-><init>(Landroid/view/ViewGroup;)V
 
     .line 63
@@ -99,24 +109,24 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mTintArea:Landroid/graphics/Rect;
 
-    .line 68
+    .line 69
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 69
+    .line 70
     const v1, 0x90f00b8
 
-    .line 68
+    .line 69
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mIconHPadding:I
 
-    .line 70
+    .line 71
     const-class v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -127,21 +137,21 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mDarkIconDispatcher:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
-    .line 71
+    .line 72
     new-instance v0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager$1;-><init>(Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mDarkReceiver:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
-    .line 100
+    .line 104
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mDarkIconDispatcher:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mDarkReceiver:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->addDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
-    .line 66
+    .line 67
     return-void
 .end method
 
@@ -150,7 +160,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 131
+    .line 144
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
@@ -169,7 +179,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 132
+    .line 145
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v1, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -178,7 +188,7 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    .line 133
+    .line 146
     .local v0, "iconView":Lcom/android/systemui/statusbar/StatusBarIconView;
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/StatusBarIconView;->getStatusBarIcon()Lcom/android/internal/statusbar/StatusBarIcon;
 
@@ -194,7 +204,7 @@
 
     move-result-object v1
 
-    .line 134
+    .line 147
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mTintArea:Landroid/graphics/Rect;
 
     iget v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mDarkIntensity:F
@@ -203,14 +213,14 @@
 
     move-result v2
 
-    .line 133
+    .line 146
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/Icons;->get(Ljava/lang/Integer;Z)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/StatusBarIconView;->setImageResource(I)V
 
-    .line 130
+    .line 143
     .end local v0    # "iconView":Lcom/android/systemui/statusbar/StatusBarIconView;
     :cond_0
     return-void
@@ -222,19 +232,19 @@
     .locals 2
 
     .prologue
-    .line 120
+    .line 124
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 121
+    .line 125
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mDarkIconDispatcher:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mDarkReceiver:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->removeDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
-    .line 119
+    .line 123
     return-void
 .end method
 
@@ -244,18 +254,18 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 112
+    .line 116
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 113
+    .line 117
     iget v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mIconSize:I
 
     const/4 v2, -0x2
 
-    .line 112
+    .line 116
     invoke-direct {v0, v2, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 114
+    .line 118
     .local v0, "lp":Landroid/widget/LinearLayout$LayoutParams;
     iget v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mIconHPadding:I
 
@@ -263,7 +273,7 @@
 
     invoke-virtual {v0, v1, v3, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 115
+    .line 119
     return-object v0
 .end method
 
@@ -275,13 +285,13 @@
     .param p4, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 106
+    .line 110
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->addIcon(ILjava/lang/String;ZLcom/android/internal/statusbar/StatusBarIcon;)Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    .line 107
+    .line 111
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->applyDark(I)V
 
-    .line 105
+    .line 109
     return-void
 .end method
 
@@ -291,12 +301,43 @@
     .param p2, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 126
+    .line 130
     invoke-super {p0, p1, p2}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->onSetIcon(ILcom/android/internal/statusbar/StatusBarIcon;)V
 
-    .line 127
+    .line 131
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->applyDark(I)V
 
-    .line 125
+    .line 129
+    return-void
+.end method
+
+.method public setDarkIntensity(Landroid/graphics/Rect;FI)V
+    .locals 1
+    .param p1, "area"    # Landroid/graphics/Rect;
+    .param p2, "darkIntensity"    # F
+    .param p3, "tint"    # I
+
+    .prologue
+    .line 139
+    iput p2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mDarkIntensity:F
+
+    .line 140
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mTintArea:Landroid/graphics/Rect;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    .line 138
+    return-void
+.end method
+
+.method public setShieldDarkReceiver(Z)V
+    .locals 0
+    .param p1, "isShieldDarkReceiver"    # Z
+
+    .prologue
+    .line 135
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mShieldDarkReceiver:Z
+
+    .line 134
     return-void
 .end method

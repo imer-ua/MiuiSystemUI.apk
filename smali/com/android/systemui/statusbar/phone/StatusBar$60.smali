@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->onHeadsUpPinnedModeChanged(Z)V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->updateMediaMetaData(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 3821
+    .line 3560
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$60;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,15 +41,46 @@
     .locals 2
 
     .prologue
-    .line 3824
+    .line 3563
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$60;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mBackdrop:Lcom/android/systemui/statusbar/BackDropView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/BackDropView;->setVisibility(I)V
+
+    .line 3564
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$60;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mBackdropFront:Landroid/widget/ImageView;
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
+
+    .line 3565
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$60;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mBackdropBack:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setForceWindowCollapsed(Z)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 3823
+    .line 3566
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$60;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$60;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mHideBackdropFront:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->post(Ljava/lang/Runnable;)Z
+
+    .line 3562
     return-void
 .end method

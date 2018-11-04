@@ -36,7 +36,7 @@
     .param p4, "val$freeAtFirst"    # J
 
     .prologue
-    .line 1957
+    .line 1962
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$2;->this$1:Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;
 
     iput-object p2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$2;->val$clearButton:Lmiui/widget/CircleProgressBar;
@@ -56,7 +56,7 @@
     .locals 7
 
     .prologue
-    .line 1959
+    .line 1964
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$2;->val$clearButton:Lmiui/widget/CircleProgressBar;
 
     new-instance v0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$2$1;
@@ -75,6 +75,6 @@
 
     invoke-virtual {v6, v1, v0}, Lmiui/widget/CircleProgressBar;->setProgressByAnimator(ILandroid/animation/Animator$AnimatorListener;)V
 
-    .line 1958
+    .line 1963
     return-void
 .end method

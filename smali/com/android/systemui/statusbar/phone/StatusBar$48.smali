@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->getStatusBarWindowTouchListener()Landroid/view/View$OnTouchListener;
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->makeStatusBarView()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1897
+    .line 1767
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,50 +37,147 @@
 
 
 # virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 1
+.method public onClick(Landroid/view/View;)V
+    .locals 8
     .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1899
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    const/4 v7, 0x1
 
-    invoke-virtual {v0, p1, p2}, Lcom/android/systemui/statusbar/phone/StatusBar;->checkUserAutohide(Landroid/view/View;Landroid/view/MotionEvent;)V
+    .line 1769
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 1900
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get12(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/classifier/FalsingManager;
 
-    invoke-static {v0, p2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap8(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/view/MotionEvent;)V
+    move-result-object v3
 
-    .line 1901
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+    invoke-virtual {v3}, Lcom/android/systemui/classifier/FalsingManager;->reportRejectedTouch()Landroid/net/Uri;
 
-    move-result v0
+    move-result-object v2
 
-    if-nez v0, :cond_0
+    .line 1770
+    .local v2, "session":Landroid/net/Uri;
+    if-nez v2, :cond_0
 
-    .line 1902
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    return-void
 
-    iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mExpandedVisible:Z
-
-    if-eqz v0, :cond_0
-
-    .line 1903
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels()V
-
-    .line 1906
+    .line 1772
     :cond_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    new-instance v1, Ljava/io/StringWriter;
 
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+    invoke-direct {v1}, Ljava/io/StringWriter;-><init>()V
 
-    invoke-virtual {v0, p2}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    .line 1773
+    .local v1, "message":Ljava/io/StringWriter;
+    const-string/jumbo v3, "Build info: "
 
-    move-result v0
+    invoke-virtual {v1, v3}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
 
-    return v0
+    .line 1774
+    const-string/jumbo v3, "ro.build.description"
+
+    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
+
+    .line 1775
+    const-string/jumbo v3, "\nSerial number: "
+
+    invoke-virtual {v1, v3}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
+
+    .line 1776
+    const-string/jumbo v3, "ro.serialno"
+
+    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
+
+    .line 1777
+    const-string/jumbo v3, "\n"
+
+    invoke-virtual {v1, v3}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
+
+    .line 1779
+    new-instance v0, Ljava/io/PrintWriter;
+
+    invoke-direct {v0, v1}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
+
+    .line 1780
+    .local v0, "falsingPw":Ljava/io/PrintWriter;
+    invoke-static {v0}, Lcom/android/systemui/classifier/FalsingLog;->dump(Ljava/io/PrintWriter;)V
+
+    .line 1781
+    invoke-virtual {v0}, Ljava/io/PrintWriter;->flush()V
+
+    .line 1783
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    new-instance v4, Landroid/content/Intent;
+
+    const-string/jumbo v5, "android.intent.action.SEND"
+
+    invoke-direct {v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 1784
+    const-string/jumbo v5, "*/*"
+
+    .line 1783
+    invoke-virtual {v4, v5}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v4
+
+    .line 1785
+    const-string/jumbo v5, "android.intent.extra.SUBJECT"
+
+    const-string/jumbo v6, "Rejected touch report"
+
+    .line 1783
+    invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v4
+
+    .line 1786
+    const-string/jumbo v5, "android.intent.extra.STREAM"
+
+    .line 1783
+    invoke-virtual {v4, v5, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    move-result-object v4
+
+    .line 1787
+    const-string/jumbo v5, "android.intent.extra.TEXT"
+
+    invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 1783
+    invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v4
+
+    .line 1788
+    const-string/jumbo v5, "Share rejected touch report"
+
+    .line 1783
+    invoke-static {v4, v5}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+
+    move-result-object v4
+
+    .line 1789
+    const/high16 v5, 0x10000000
+
+    .line 1783
+    invoke-virtual {v4, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4, v7, v7}, Lcom/android/systemui/statusbar/phone/StatusBar;->startActivityDismissingKeyguard(Landroid/content/Intent;ZZ)V
+
+    .line 1768
+    return-void
 .end method

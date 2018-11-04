@@ -30,7 +30,7 @@
     .param p2, "val$icon"    # Lcom/android/systemui/statusbar/StatusBarIconView;
 
     .prologue
-    .line 255
+    .line 257
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$6;->this$0:Lcom/android/systemui/statusbar/phone/NotificationIconContainer;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$6;->val$icon:Lcom/android/systemui/statusbar/StatusBarIconView;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 258
+    .line 260
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$6;->this$0:Lcom/android/systemui/statusbar/phone/NotificationIconContainer;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$6;->val$icon:Lcom/android/systemui/statusbar/StatusBarIconView;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->removeTransientView(Landroid/view/View;)V
 
-    .line 257
+    .line 259
     return-void
 .end method

@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;
 
     .prologue
-    .line 212
+    .line 213
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable$1;->this$1:Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,31 +41,31 @@
     .locals 5
 
     .prologue
-    .line 215
+    .line 216
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable$1;->this$1:Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;
 
     iget-object v0, v1, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->mOpts:Landroid/app/ActivityOptions;
 
-    .line 216
+    .line 217
     .local v0, "opts":Landroid/app/ActivityOptions;
     if-nez v0, :cond_0
 
-    .line 217
+    .line 218
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable$1;->this$1:Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;
 
     iget-object v1, v1, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    .line 218
+    .line 219
     const v2, 0x90500b9
 
     const v3, 0x90500ba
 
-    .line 217
+    .line 218
     invoke-static {v1, v2, v3}, Landroid/app/ActivityOptions;->makeCustomAnimation(Landroid/content/Context;II)Landroid/app/ActivityOptions;
 
     move-result-object v0
 
-    .line 220
+    .line 221
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable$1;->this$1:Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;
 
@@ -83,13 +83,13 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/android/systemui/recents/RecentsActivity;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 221
+    .line 222
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable$1;->this$1:Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;
 
     iget-object v1, v1, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/RecentsActivity;->startHomeAnim()V
 
-    .line 214
+    .line 215
     return-void
 .end method

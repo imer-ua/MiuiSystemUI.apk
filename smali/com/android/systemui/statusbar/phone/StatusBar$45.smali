@@ -3,7 +3,7 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1700
+    .line 1666
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,47 +37,151 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onBatteryLevelChanged(IZZ)V
+    .locals 1
+    .param p1, "level"    # I
+    .param p2, "pluggedIn"    # Z
+    .param p3, "charging"    # Z
 
     .prologue
-    .line 1703
+    .line 1687
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v0, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set0(Lcom/android/systemui/statusbar/phone/StatusBar;I)I
+
+    .line 1686
+    return-void
+.end method
+
+.method public onBatteryStyleChanged(I)V
+    .locals 0
+    .param p1, "batteryStyle"    # I
+
+    .prologue
+    .line 1691
+    return-void
+.end method
+
+.method public onExtremePowerSaveChanged(Z)V
+    .locals 2
+    .param p1, "isExtremePowerSave"    # Z
+
+    .prologue
+    .line 1678
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
+
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mBackdrop:Lcom/android/systemui/statusbar/BackDropView;
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get6(Lcom/android/systemui/statusbar/phone/StatusBar;)Ljava/lang/Runnable;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/BackDropView;->getVisibility()I
+    move-result-object v1
 
-    move-result v1
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    if-eqz v1, :cond_0
+    .line 1679
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    const/4 v0, 0x1
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get9(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
 
-    .line 1704
-    .local v0, "asSrc":Z
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 1680
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get9(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
+
+    move-result-object v1
+
+    if-nez p1, :cond_1
+
+    .line 1681
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get2(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/policy/BatteryController;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/BatteryController;->isPowerSave()Z
+
+    move-result v0
+
+    .line 1680
     :goto_0
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;->firePowerSaveChanged(Z)V
 
-    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mScrimController:Lcom/android/systemui/statusbar/phone/ScrimController;
-
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/ScrimController;->setDrawBehindAsSrc(Z)V
-
-    .line 1705
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
-
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->setDrawBackgroundAsSrc(Z)V
-
-    .line 1702
+    .line 1677
+    :cond_0
     return-void
 
-    .line 1703
-    .end local v0    # "asSrc":Z
-    :cond_0
-    const/4 v0, 0x0
+    .line 1680
+    :cond_1
+    const/4 v0, 0x1
 
-    .restart local v0    # "asSrc":Z
+    goto :goto_0
+.end method
+
+.method public onPowerSaveChanged(Z)V
+    .locals 2
+    .param p1, "isPowerSave"    # Z
+
+    .prologue
+    .line 1669
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get6(Lcom/android/systemui/statusbar/phone/StatusBar;)Ljava/lang/Runnable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->post(Ljava/lang/Runnable;)Z
+
+    .line 1670
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get9(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 1671
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get9(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
+
+    move-result-object v1
+
+    if-nez p1, :cond_1
+
+    .line 1672
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get2(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/policy/BatteryController;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/BatteryController;->isExtremePowerSave()Z
+
+    move-result v0
+
+    .line 1671
+    :goto_0
+    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;->firePowerSaveChanged(Z)V
+
+    .line 1668
+    :cond_0
+    return-void
+
+    .line 1671
+    :cond_1
+    const/4 v0, 0x1
+
     goto :goto_0
 .end method

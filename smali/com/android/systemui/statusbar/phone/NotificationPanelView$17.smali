@@ -3,12 +3,12 @@
 .source "NotificationPanelView.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/TextureView$SurfaceTextureListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->onAttachedToWindow()V
+    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->showMiLiveLockWallpaper(Ljava/io/File;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 583
+    .line 562
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,44 +37,119 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
+    .locals 3
+    .param p1, "surface"    # Landroid/graphics/SurfaceTexture;
+    .param p2, "width"    # I
+    .param p3, "height"    # I
 
     .prologue
-    .line 588
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    .line 566
+    :try_start_0
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get16(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get18(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/media/MediaPlayer;
 
     move-result-object v1
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    new-instance v2, Landroid/view/Surface;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get10(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Z
+    invoke-direct {v2, p1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
 
-    move-result v0
+    invoke-virtual {v1, v2}, Landroid/media/MediaPlayer;->setSurface(Landroid/view/Surface;)V
 
-    if-nez v0, :cond_0
+    .line 567
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get2(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/keyguard/charge/ChargeHelper;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get25(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/keyguard/KeyguardUpdateMonitor;
+    move-result-object v1
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isLightWallpaperStatusBar()Z
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get5(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
 
-    move-result v0
+    move-result-object v2
 
+    invoke-virtual {v1, v2}, Lcom/android/keyguard/charge/ChargeHelper;->isExtremePowerModeEnabled(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 568
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get18(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/media/MediaPlayer;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/media/MediaPlayer;->start()V
+
+    .line 572
     :goto_0
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setDarkMode(Z)V
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    .line 585
+    const/4 v2, 0x1
+
+    invoke-static {v1, v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-set6(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
+
+    .line 564
+    :goto_1
     return-void
 
-    .line 588
+    .line 570
     :cond_0
-    const/4 v0, 0x0
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get18(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/media/MediaPlayer;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/media/MediaPlayer;->pause()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
+
+    .line 573
+    :catch_0
+    move-exception v0
+
+    .line 574
+    .local v0, "e":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_1
+.end method
+
+.method public onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
+    .locals 1
+    .param p1, "surface"    # Landroid/graphics/SurfaceTexture;
+
+    .prologue
+    .line 584
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
+    .locals 0
+    .param p1, "surface"    # Landroid/graphics/SurfaceTexture;
+    .param p2, "width"    # I
+    .param p3, "height"    # I
+
+    .prologue
+    .line 579
+    return-void
+.end method
+
+.method public onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
+    .locals 0
+    .param p1, "surface"    # Landroid/graphics/SurfaceTexture;
+
+    .prologue
+    .line 588
+    return-void
 .end method

@@ -93,7 +93,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get38(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get37(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
 
     move-result v4
 
@@ -115,7 +115,7 @@
     .line 647
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get38(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get37(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
 
     move-result v1
 
@@ -124,12 +124,12 @@
     .line 648
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set19(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
+    invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set20(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
     .line 649
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get38(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get37(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
 
     move-result v1
 
@@ -161,7 +161,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get38(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get37(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
 
     move-result v2
 
@@ -171,7 +171,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap39(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap40(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
     .line 641
     :cond_2

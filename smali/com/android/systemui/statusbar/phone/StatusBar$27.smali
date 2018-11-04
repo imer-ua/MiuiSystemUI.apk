@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 7125
+    .line 7124
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$27;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,40 +36,66 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 4
+    .locals 5
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 7128
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$27;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    const/4 v0, 0x1
 
-    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    .line 7129
-    const-string/jumbo v2, "zen_mode"
-
-    const/4 v3, 0x0
-
-    .line 7128
-    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    .line 7130
-    .local v0, "mode":I
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$27;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->setZenMode(I)V
-
-    .line 7132
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$27;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap33(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+    const/4 v1, 0x0
 
     .line 7127
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$27;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    .line 7128
+    const-string/jumbo v3, "miui_optimization"
+
+    const/4 v4, -0x2
+
+    .line 7127
+    invoke-static {v2, v3, v0, v4}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    .line 7129
+    .local v0, "disabled":Z
+    :goto_0
+    invoke-static {v0}, Lcom/android/systemui/Util;->setMiuiOptimizationDisabled(Z)V
+
+    .line 7130
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$27;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get27(Lcom/android/systemui/statusbar/phone/StatusBar;)Landroid/view/View;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    .line 7131
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$27;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get32(Lcom/android/systemui/statusbar/phone/StatusBar;)Landroid/database/ContentObserver;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Landroid/database/ContentObserver;->onChange(Z)V
+
+    .line 7126
+    :cond_0
     return-void
+
+    .end local v0    # "disabled":Z
+    :cond_1
+    move v0, v1
+
+    .line 7127
+    goto :goto_0
 .end method

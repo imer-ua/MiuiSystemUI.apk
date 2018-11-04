@@ -218,7 +218,7 @@
 
     const-string v2, "network_speed_view_zero_hide"
 
-    invoke-static {p0, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, p0}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v2
 

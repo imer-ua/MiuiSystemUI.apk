@@ -130,7 +130,7 @@
 
     const-string v2, "activitykey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 
@@ -141,7 +141,7 @@
     :cond_0
     const-string v2, "bluetoothkey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyTime(Landroid/content/Context;Ljava/lang/String;)J
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKT(Ljava/lang/String;Landroid/content/Context;)J
 
     move-result-wide v2
 
@@ -179,7 +179,7 @@
 
     const-string v2, "smartreturnkey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 
@@ -219,7 +219,7 @@
 
     const-string v2, "activitykey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 
@@ -230,7 +230,7 @@
     :cond_0
     const-string v2, "locationkey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyTime(Landroid/content/Context;Ljava/lang/String;)J
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKT(Ljava/lang/String;Landroid/content/Context;)J
 
     move-result-wide v2
 
@@ -268,7 +268,7 @@
 
     const-string v2, "smartreturnkey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 
@@ -308,7 +308,7 @@
 
     const-string v2, "activitykey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 
@@ -319,7 +319,7 @@
     :cond_0
     const-string v2, "mobiledatakey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyTime(Landroid/content/Context;Ljava/lang/String;)J
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKT(Ljava/lang/String;Landroid/content/Context;)J
 
     move-result-wide v2
 
@@ -357,7 +357,7 @@
 
     const-string v2, "smartreturnkey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 
@@ -397,7 +397,7 @@
 
     const-string v2, "activitykey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 
@@ -408,7 +408,7 @@
     :cond_0
     const-string v2, "wifikey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyTime(Landroid/content/Context;Ljava/lang/String;)J
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKT(Ljava/lang/String;Landroid/content/Context;)J
 
     move-result-wide v2
 
@@ -446,7 +446,7 @@
 
     const-string v2, "smartreturnkey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 
@@ -486,7 +486,7 @@
 
     const-string v2, "activitykey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 
@@ -497,7 +497,7 @@
     :cond_0
     const-string v2, "wifihotspotkey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyTime(Landroid/content/Context;Ljava/lang/String;)J
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKT(Ljava/lang/String;Landroid/content/Context;)J
 
     move-result-wide v2
 
@@ -535,7 +535,7 @@
 
     const-string v2, "smartreturnkey"
 
-    invoke-static {v7, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v4
 

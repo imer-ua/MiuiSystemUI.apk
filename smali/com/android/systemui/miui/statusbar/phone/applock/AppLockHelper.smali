@@ -38,18 +38,18 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 84
+    .line 97
     invoke-virtual {p0, p1, p2}, Lmiui/security/SecurityManager;->checkAccessControlPassAsUser(Ljava/lang/String;I)Z
 
     move-result v0
 
-    .line 85
+    .line 98
     .local v0, "isMasked":Z
     sget-boolean v1, Lcom/android/systemui/miui/statusbar/phone/applock/AppLockHelper;->DEBUG:Z
 
     if-eqz v1, :cond_0
 
-    .line 86
+    .line 99
     const-string/jumbo v1, "AppLockHelper"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -72,7 +72,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 88
+    .line 101
     :cond_0
     return v0
 .end method
@@ -84,18 +84,18 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 95
+    .line 108
     invoke-virtual {p0, p1, p2}, Lmiui/security/SecurityManager;->getApplicationAccessControlEnabledAsUser(Ljava/lang/String;I)Z
 
     move-result v0
 
-    .line 96
+    .line 109
     .local v0, "lockOn":Z
     sget-boolean v1, Lcom/android/systemui/miui/statusbar/phone/applock/AppLockHelper;->DEBUG:Z
 
     if-eqz v1, :cond_0
 
-    .line 97
+    .line 110
     const-string/jumbo v1, "AppLockHelper"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -118,7 +118,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
+    .line 112
     :cond_0
     return v0
 .end method
@@ -130,18 +130,18 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 73
+    .line 86
     invoke-virtual {p0, p1, p2}, Lmiui/security/SecurityManager;->getApplicationMaskNotificationEnabledAsUser(Ljava/lang/String;I)Z
 
     move-result v0
 
-    .line 74
+    .line 87
     .local v0, "isMasked":Z
     sget-boolean v1, Lcom/android/systemui/miui/statusbar/phone/applock/AppLockHelper;->DEBUG:Z
 
     if-eqz v1, :cond_0
 
-    .line 75
+    .line 88
     const-string/jumbo v1, "AppLockHelper"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -164,7 +164,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 77
+    .line 90
     :cond_0
     return v0
 .end method
@@ -175,12 +175,12 @@
     .param p1, "currentUserId"    # I
 
     .prologue
-    .line 40
+    .line 53
     sget-boolean v0, Lcom/android/systemui/miui/statusbar/phone/applock/AppLockHelper;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 41
+    .line 54
     const-string/jumbo v0, "AppLockHelper"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -213,11 +213,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 44
+    .line 57
     :cond_0
     if-gez p1, :cond_1
 
-    .line 45
+    .line 58
     const-string/jumbo v0, "AppLockHelper"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -250,17 +250,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 46
+    .line 59
     const/4 p1, 0x0
 
-    .line 48
+    .line 61
     :cond_1
     if-gez p0, :cond_2
 
-    .line 49
+    .line 62
     return p1
 
-    .line 51
+    .line 64
     :cond_2
     return p0
 .end method
@@ -270,19 +270,19 @@
     .param p0, "userId"    # I
 
     .prologue
-    .line 106
+    .line 119
     invoke-static {p0}, Lmiui/securityspace/XSpaceUserHandle;->isXSpaceUserId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 107
+    .line 120
     const/4 v0, 0x0
 
     return v0
 
-    .line 109
+    .line 122
     :cond_0
     return p0
 .end method
@@ -293,12 +293,12 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 59
+    .line 72
     invoke-static {p1}, Lcom/android/systemui/miui/statusbar/phone/applock/AppLockHelper;->getUserIdIgnoreXspace(I)I
 
     move-result v1
 
-    .line 61
+    .line 74
     .local v1, "userIdIgnoreXspace":I
     const-string/jumbo v2, "access_control_lock_enabled"
 
@@ -308,22 +308,22 @@
 
     move-result v2
 
-    .line 62
+    .line 75
     const/4 v3, 0x1
 
-    .line 61
+    .line 74
     if-ne v2, v3, :cond_1
 
     const/4 v0, 0x1
 
-    .line 63
+    .line 76
     .local v0, "lockOn":Z
     :goto_0
     sget-boolean v2, Lcom/android/systemui/miui/statusbar/phone/applock/AppLockHelper;->DEBUG:Z
 
     if-eqz v2, :cond_0
 
-    .line 64
+    .line 77
     const-string/jumbo v2, "AppLockHelper"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -346,11 +346,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 66
+    .line 79
     :cond_0
     return v0
 
-    .line 61
+    .line 74
     .end local v0    # "lockOn":Z
     :cond_1
     const/4 v0, 0x0

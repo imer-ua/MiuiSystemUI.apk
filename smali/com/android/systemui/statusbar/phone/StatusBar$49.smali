@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Lcom/android/systemui/miui/statusbar/notification/FoldHeaderView$ClickListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->inflateFoldView()V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->getStatusBarWindowTouchListener()Landroid/view/View$OnTouchListener;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 2019
+    .line 1901
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,78 +37,50 @@
 
 
 # virtual methods
-.method public onClickTips()V
-    .locals 5
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 1
+    .param p1, "v"    # Landroid/view/View;
+    .param p2, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 2022
-    new-instance v1, Landroid/content/Intent;
+    .line 1903
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    const-string/jumbo v2, "android.intent.action.MAIN"
+    invoke-virtual {v0, p1, p2}, Lcom/android/systemui/statusbar/phone/StatusBar;->checkUserAutohide(Landroid/view/View;Landroid/view/MotionEvent;)V
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    .line 1904
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 2023
-    .local v1, "intent":Landroid/content/Intent;
-    const-string/jumbo v2, ":android:show_fragment"
+    invoke-static {v0, p2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap8(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/view/MotionEvent;)V
 
-    const-string/jumbo v3, "com.android.settings.UserFoldFragment"
+    .line 1905
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    move-result v0
 
-    .line 2024
-    const-string/jumbo v2, "com.android.settings"
+    if-nez v0, :cond_0
 
-    const-string/jumbo v3, "com.android.settings.SubSettings"
+    .line 1906
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mExpandedVisible:Z
 
-    .line 2025
-    const v2, 0x8000
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    .line 1907
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 2026
-    const/high16 v2, 0x10000000
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels()V
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    .line 1910
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 2028
-    :try_start_0
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    invoke-virtual {v0, p2}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    sget-object v3, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+    move-result v0
 
-    invoke-virtual {v2, v1, v3}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 2032
-    :goto_0
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v2, v3, v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels(IZ)V
-
-    .line 2021
-    return-void
-
-    .line 2029
-    :catch_0
-    move-exception v0
-
-    .line 2030
-    .local v0, "e":Landroid/content/ActivityNotFoundException;
-    const-string/jumbo v2, "StatusBar"
-
-    const-string/jumbo v3, "Failed startActivityAsUser() "
-
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
+    return v0
 .end method

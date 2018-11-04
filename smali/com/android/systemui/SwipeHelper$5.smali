@@ -33,7 +33,7 @@
     .param p3, "val$canBeDismissed"    # Z
 
     .prologue
-    .line 597
+    .line 602
     iput-object p1, p0, Lcom/android/systemui/SwipeHelper$5;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iput-object p2, p0, Lcom/android/systemui/SwipeHelper$5;->val$animView:Landroid/view/View;
@@ -52,7 +52,7 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 600
+    .line 605
     iget-object v1, p0, Lcom/android/systemui/SwipeHelper$5;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iget-object v2, p0, Lcom/android/systemui/SwipeHelper$5;->val$animView:Landroid/view/View;
@@ -71,6 +71,6 @@
 
     invoke-virtual {v1, v2, v0, v3}, Lcom/android/systemui/SwipeHelper;->onTranslationUpdate(Landroid/view/View;FZ)V
 
-    .line 599
+    .line 604
     return-void
 .end method

@@ -168,21 +168,23 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .prologue
-    const/4 v3, -0x1
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
+    const/4 v4, -0x1
+
+    const/4 v3, 0x0
 
     .line 91
-    sput-boolean v2, Lcom/android/keyguard/MiuiKeyguardUtils;->sIsFullScreenGestureOpened:Z
+    sput-boolean v3, Lcom/android/keyguard/MiuiKeyguardUtils;->sIsFullScreenGestureOpened:Z
 
     .line 92
-    sput-boolean v2, Lcom/android/keyguard/MiuiKeyguardUtils;->sIsScreenTurnOnDelayed:Z
+    sput-boolean v3, Lcom/android/keyguard/MiuiKeyguardUtils;->sIsScreenTurnOnDelayed:Z
 
     .line 93
-    sput-boolean v2, Lcom/android/keyguard/MiuiKeyguardUtils;->sWallpaperPreviewAvailable:Z
+    sput-boolean v3, Lcom/android/keyguard/MiuiKeyguardUtils;->sWallpaperPreviewAvailable:Z
 
     .line 94
     const/4 v1, 0x0
@@ -259,50 +261,63 @@
 
     sput-object v1, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportScreenOnDelay:Ljava/util/List;
 
-    .line 113
+    .line 114
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v1, Lcom/android/keyguard/MiuiKeyguardUtils;->sSCSlideNotOpenCameraList:Ljava/util/List;
 
-    .line 479
+    .line 480
     const-string/jumbo v1, "ro.vendor.audio.us.proximity"
 
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v1, v3}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 481
+    const-string/jumbo v1, "ro.audio.us.proximity"
+
+    invoke-static {v1, v3}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    .line 480
+    :goto_0
+    sput-boolean v1, Lcom/android/keyguard/MiuiKeyguardUtils;->sIsEllipticProximity:Z
+
+    .line 530
+    const-string/jumbo v1, "gxzw_property"
+
+    invoke-static {v1, v3}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 480
-    const-string/jumbo v1, "ro.audio.us.proximity"
+    .line 531
+    const-string/jumbo v1, "cepheus"
 
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+    sget-object v2, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
 
-    move-result v1
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 479
-    :goto_0
-    sput-boolean v1, Lcom/android/keyguard/MiuiKeyguardUtils;->sIsEllipticProximity:Z
+    move-result v2
 
-    .line 528
-    const-string/jumbo v1, "gxzw_property"
+    .line 530
+    :cond_0
+    sput-boolean v2, Lcom/android/keyguard/MiuiKeyguardUtils;->GXZW_SENSOR:Z
 
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v1
-
-    sput-boolean v1, Lcom/android/keyguard/MiuiKeyguardUtils;->GXZW_SENSOR:Z
-
-    .line 536
+    .line 539
     new-instance v0, Ljava/io/File;
 
     const-string/jumbo v1, "/sys/class/power_supply/wireless/signal_strength"
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 537
+    .line 540
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -310,37 +325,37 @@
 
     sput-boolean v1, Lcom/android/keyguard/MiuiKeyguardUtils;->SUPPORT_WIRELESS_CHARGE:Z
 
-    .line 650
+    .line 653
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1c
 
-    if-lt v1, v2, :cond_1
+    if-lt v1, v2, :cond_2
 
     const-string/jumbo v1, "doze_always_on"
 
     :goto_1
     sput-object v1, Lcom/android/keyguard/MiuiKeyguardUtils;->AOD_MODE:Ljava/lang/String;
 
-    .line 795
-    sput v3, Lcom/android/keyguard/MiuiKeyguardUtils;->sYearOfStatistics:I
+    .line 798
+    sput v4, Lcom/android/keyguard/MiuiKeyguardUtils;->sYearOfStatistics:I
 
-    .line 796
-    sput v3, Lcom/android/keyguard/MiuiKeyguardUtils;->sDayOfStatistics:I
+    .line 799
+    sput v4, Lcom/android/keyguard/MiuiKeyguardUtils;->sDayOfStatistics:I
 
     .line 61
     return-void
 
-    .line 479
     .end local v0    # "file":Ljava/io/File;
-    :cond_0
-    const/4 v1, 0x1
+    :cond_1
+    move v1, v2
 
+    .line 480
     goto :goto_0
 
-    .line 650
+    .line 653
     .restart local v0    # "file":Ljava/io/File;
-    :cond_1
+    :cond_2
     const-string/jumbo v1, "aod_mode"
 
     goto :goto_1
@@ -366,7 +381,7 @@
 
     const/high16 v7, 0x3f800000    # 1.0f
 
-    .line 404
+    .line 405
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v2
@@ -375,7 +390,7 @@
 
     div-float v0, v2, v4
 
-    .line 405
+    .line 406
     .local v0, "alphaDown":F
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
@@ -385,7 +400,7 @@
 
     div-float v1, v2, v4
 
-    .line 406
+    .line 407
     .local v1, "alphaUp":F
     add-float v2, v0, v1
 
@@ -397,7 +412,7 @@
 
     float-to-int v2, v2
 
-    .line 407
+    .line 408
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v3
@@ -430,7 +445,7 @@
 
     float-to-int v3, v3
 
-    .line 408
+    .line 409
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
 
     move-result v4
@@ -463,7 +478,7 @@
 
     float-to-int v4, v4
 
-    .line 409
+    .line 410
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
 
     move-result v5
@@ -496,7 +511,7 @@
 
     float-to-int v5, v5
 
-    .line 406
+    .line 407
     invoke-static {v2, v3, v4, v5}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v2
@@ -512,10 +527,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 712
+    .line 715
     if-eqz p1, :cond_0
 
-    .line 713
+    .line 716
     invoke-static {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     move-result-object v0
@@ -530,7 +545,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 719
+    .line 722
     :cond_0
     invoke-static {p0}, Lcom/android/keyguard/MiuiKeyguardUtils;->isGreenKidActive(Landroid/content/Context;)Z
 
@@ -538,21 +553,21 @@
 
     if-eqz v0, :cond_2
 
-    .line 720
+    .line 723
     const-string/jumbo v0, "MiuiKeyguardUtils"
 
     const-string/jumbo v1, "Can\'t switch user when green kid active."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 721
+    .line 724
     return v2
 
-    .line 715
+    .line 718
     :cond_1
     return v2
 
-    .line 724
+    .line 727
     :cond_2
     invoke-static {p0}, Lcom/android/keyguard/MiuiKeyguardUtils;->isPhoneCalling(Landroid/content/Context;)Z
 
@@ -560,17 +575,17 @@
 
     if-eqz v0, :cond_3
 
-    .line 725
+    .line 728
     const-string/jumbo v0, "MiuiKeyguardUtils"
 
     const-string/jumbo v1, "Can\'t switch user when phone calling."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 726
+    .line 729
     return v2
 
-    .line 728
+    .line 731
     :cond_3
     const/4 v0, 0x1
 
@@ -586,19 +601,19 @@
 
     const/4 v6, 0x0
 
-    .line 383
+    .line 384
     if-nez p0, :cond_0
 
-    .line 384
+    .line 385
     return-object v2
 
-    .line 386
+    .line 387
     :cond_0
     instance-of v2, p0, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v2, :cond_1
 
-    .line 387
+    .line 388
     check-cast p0, Landroid/graphics/drawable/BitmapDrawable;
 
     .end local p0    # "drawable":Landroid/graphics/drawable/Drawable;
@@ -608,19 +623,19 @@
 
     return-object v2
 
-    .line 391
+    .line 392
     .restart local p0    # "drawable":Landroid/graphics/drawable/Drawable;
     :cond_1
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v3
 
-    .line 392
+    .line 393
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v4
 
-    .line 393
+    .line 394
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getOpacity()I
 
     move-result v2
@@ -631,39 +646,39 @@
 
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    .line 389
+    .line 390
     :goto_0
     invoke-static {v3, v4, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 395
+    .line 396
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 396
+    .line 397
     .local v1, "canvas":Landroid/graphics/Canvas;
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v2
 
-    .line 397
+    .line 398
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v3
 
-    .line 396
+    .line 397
     invoke-virtual {p0, v6, v6, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 398
+    .line 399
     invoke-virtual {p0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 399
+    .line 400
     return-object v0
 
-    .line 394
+    .line 395
     .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     .end local v1    # "canvas":Landroid/graphics/Canvas;
     :cond_2
@@ -677,29 +692,29 @@
     .param p0, "time"    # I
 
     .prologue
-    .line 508
+    .line 509
     const-string/jumbo v0, ""
 
-    .line 509
+    .line 510
     .local v0, "str":Ljava/lang/String;
     const/16 v1, 0xa
 
     if-lt p0, v1, :cond_0
 
-    .line 510
+    .line 511
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 516
+    .line 517
     :goto_0
     return-object v0
 
-    .line 511
+    .line 512
     :cond_0
     if-lez p0, :cond_1
 
-    .line 512
+    .line 513
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -724,7 +739,7 @@
 
     goto :goto_0
 
-    .line 514
+    .line 515
     :cond_1
     const-string/jumbo v0, "00"
 
@@ -741,33 +756,33 @@
 
     const/16 v5, -0x2710
 
-    .line 783
+    .line 786
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
 
-    .line 784
+    .line 787
     const-string/jumbo v4, "second_user_id"
 
-    .line 783
+    .line 786
     invoke-static {v3, v4, v5, v6}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v1
 
-    .line 785
+    .line 788
     .local v1, "secondSpaceId":I
     const/4 v2, 0x0
 
-    .line 786
+    .line 789
     .local v2, "userId":I
     if-eq v1, v5, :cond_0
 
-    .line 787
+    .line 790
     invoke-static {p0, v1}, Landroid/security/FingerprintIdUtils;->getUserFingerprintIds(Landroid/content/Context;I)Ljava/util/HashMap;
 
     move-result-object v0
 
-    .line 788
+    .line 791
     .local v0, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Integer;>;"
     if-eqz v0, :cond_0
 
@@ -787,7 +802,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 789
+    .line 792
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v3
@@ -802,7 +817,7 @@
 
     move-result v2
 
-    .line 792
+    .line 795
     .end local v0    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Integer;>;"
     :cond_0
     return v2
@@ -812,19 +827,19 @@
     .locals 1
 
     .prologue
-    .line 577
+    .line 580
     invoke-static {}, Lcom/android/keyguard/MiuiKeyguardUtils;->hasNavigationBar()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 579
+    .line 582
     const-string/jumbo v0, "camera_preview"
 
     return-object v0
 
-    .line 583
+    .line 586
     :cond_0
     sget-boolean v0, Lcom/android/systemui/Constants;->IS_NOTCH:Z
 
@@ -834,12 +849,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 584
+    .line 587
     const-string/jumbo v0, "camera_preview_notch_nvirtualkey"
 
     return-object v0
 
-    .line 586
+    .line 589
     :cond_1
     const-string/jumbo v0, "camera_preview_nvirtualkey"
 
@@ -853,19 +868,19 @@
     .param p2, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 560
+    .line 563
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 561
+    .line 564
     .local v2, "manager":Landroid/content/pm/PackageManager;
     invoke-virtual {v2, p1}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;
 
     move-result-object v4
 
-    .line 562
+    .line 565
     .local v4, "resources":Landroid/content/res/Resources;
     const-string/jumbo v5, "drawable"
 
@@ -873,7 +888,7 @@
 
     move-result v3
 
-    .line 563
+    .line 566
     .local v3, "resId":I
     invoke-virtual {v4, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
     :try_end_0
@@ -881,11 +896,11 @@
 
     move-result-object v0
 
-    .line 564
+    .line 567
     .local v0, "drawable":Landroid/graphics/drawable/Drawable;
     return-object v0
 
-    .line 565
+    .line 568
     .end local v0    # "drawable":Landroid/graphics/drawable/Drawable;
     .end local v2    # "manager":Landroid/content/pm/PackageManager;
     .end local v3    # "resId":I
@@ -893,7 +908,7 @@
     :catch_0
     move-exception v1
 
-    .line 566
+    .line 569
     .local v1, "e":Ljava/lang/Exception;
     const-string/jumbo v5, "miui_keyguard"
 
@@ -901,10 +916,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 567
+    .line 570
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 569
+    .line 572
     const/4 v5, 0x0
 
     return-object v5
@@ -920,39 +935,39 @@
 
     const/4 v4, 0x1
 
-    .line 232
+    .line 233
     if-nez p1, :cond_0
 
-    .line 233
+    .line 234
     return v5
 
-    .line 236
+    .line 237
     :cond_0
     :try_start_0
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
 
-    .line 237
+    .line 238
     .local v2, "width":I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v1
 
-    .line 238
+    .line 239
     .local v1, "height":I
     :goto_0
     if-le v2, v4, :cond_2
 
-    .line 239
+    .line 240
     div-int/lit8 v2, v2, 0x2
 
-    .line 240
+    .line 241
     if-ge v2, v4, :cond_1
 
     const/4 v2, 0x1
 
-    .line 241
+    .line 242
     :cond_1
     const/4 v3, 0x1
 
@@ -962,20 +977,20 @@
 
     goto :goto_0
 
-    .line 243
+    .line 244
     :cond_2
     :goto_1
     if-le v1, v4, :cond_4
 
-    .line 244
+    .line 245
     div-int/lit8 v1, v1, 0x2
 
-    .line 245
+    .line 246
     if-ge v1, v4, :cond_3
 
     const/4 v1, 0x1
 
-    .line 246
+    .line 247
     :cond_3
     const/4 v3, 0x1
 
@@ -985,7 +1000,7 @@
 
     goto :goto_1
 
-    .line 248
+    .line 249
     :cond_4
     const/4 v3, 0x0
 
@@ -998,19 +1013,19 @@
 
     move-result v3
 
-    .line 252
+    .line 253
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 248
+    .line 249
     return v3
 
-    .line 249
+    .line 250
     .end local v1    # "height":I
     .end local v2    # "width":I
     :catch_0
     move-exception v0
 
-    .line 250
+    .line 251
     .local v0, "e":Ljava/lang/Exception;
     :try_start_1
     const-string/jumbo v3, "miui_keyguard"
@@ -1021,21 +1036,21 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 252
+    .line 253
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 254
+    .line 255
     return v5
 
-    .line 251
+    .line 252
     .end local v0    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v3
 
-    .line 252
+    .line 253
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 251
+    .line 252
     throw v3
 .end method
 
@@ -1045,12 +1060,12 @@
     .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 378
+    .line 379
     invoke-static {p1}, Lcom/android/keyguard/MiuiKeyguardUtils;->drawable2Bitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 379
+    .line 380
     .local v0, "background":Landroid/graphics/Bitmap;
     invoke-static {p0, v0}, Lcom/android/keyguard/MiuiKeyguardUtils;->getFastBlurColor(Landroid/content/Context;Landroid/graphics/Bitmap;)I
 
@@ -1076,14 +1091,14 @@
     .end annotation
 
     .prologue
-    .line 317
+    .line 318
     const/4 v6, 0x0
 
-    .line 318
+    .line 319
     .local v6, "file":Ljava/io/File;
     const/4 v9, 0x0
 
-    .line 319
+    .line 320
     .local v9, "previewFile":Ljava/io/File;
     invoke-static/range {p0 .. p0}, Lcom/android/keyguard/MiuiKeyguardUtils;->useDefaultWallpaper(Landroid/content/Context;)Z
 
@@ -1091,7 +1106,7 @@
 
     if-eqz v15, :cond_3
 
-    .line 320
+    .line 321
     new-instance v6, Ljava/io/File;
 
     .end local v6    # "file":Ljava/io/File;
@@ -1099,7 +1114,7 @@
 
     invoke-direct {v6, v15}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 321
+    .line 322
     .local v6, "file":Ljava/io/File;
     new-instance v9, Ljava/io/File;
 
@@ -1108,7 +1123,7 @@
 
     invoke-direct {v9, v15}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 327
+    .line 328
     .end local v6    # "file":Ljava/io/File;
     :cond_0
     :goto_0
@@ -1122,7 +1137,7 @@
 
     if-nez v9, :cond_4
 
-    .line 328
+    .line 329
     :cond_1
     invoke-static {}, Lmiui/content/res/ThemeResources;->getSystem()Lmiui/content/res/ThemeResourcesSystem;
 
@@ -1132,11 +1147,11 @@
 
     move-result-object v6
 
-    .line 329
+    .line 330
     .restart local v6    # "file":Ljava/io/File;
     move-object v9, v6
 
-    .line 332
+    .line 333
     .end local v6    # "file":Ljava/io/File;
     :goto_1
     if-eqz v6, :cond_2
@@ -1149,7 +1164,7 @@
 
     if-nez v9, :cond_5
 
-    .line 334
+    .line 335
     :cond_2
     if-eqz v6, :cond_6
 
@@ -1157,7 +1172,7 @@
 
     move-result-object v7
 
-    .line 335
+    .line 336
     .local v7, "filePath":Ljava/lang/String;
     :goto_2
     if-eqz v9, :cond_7
@@ -1166,7 +1181,7 @@
 
     move-result-object v10
 
-    .line 336
+    .line 337
     .local v10, "previewPath":Ljava/lang/String;
     :goto_3
     const-string/jumbo v15, "ThemeResources"
@@ -1187,10 +1202,10 @@
 
     move-result-object v16
 
-    .line 337
+    .line 338
     const-string/jumbo v17, " previewPath = "
 
-    .line 336
+    .line 337
     invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v16
@@ -1207,12 +1222,12 @@
 
     invoke-static/range {v15 .. v16}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 338
+    .line 339
     const/4 v15, 0x0
 
     return-object v15
 
-    .line 322
+    .line 323
     .end local v7    # "filePath":Ljava/lang/String;
     .end local v10    # "previewPath":Ljava/lang/String;
     .local v6, "file":Ljava/io/File;
@@ -1224,7 +1239,7 @@
 
     if-eqz v15, :cond_0
 
-    .line 323
+    .line 324
     new-instance v6, Ljava/io/File;
 
     .end local v6    # "file":Ljava/io/File;
@@ -1232,7 +1247,7 @@
 
     invoke-direct {v6, v15}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 324
+    .line 325
     .local v6, "file":Ljava/io/File;
     new-instance v9, Ljava/io/File;
 
@@ -1244,7 +1259,7 @@
     .local v9, "previewFile":Ljava/io/File;
     goto :goto_0
 
-    .line 327
+    .line 328
     .end local v6    # "file":Ljava/io/File;
     .end local v9    # "previewFile":Ljava/io/File;
     :cond_4
@@ -1256,7 +1271,7 @@
 
     goto :goto_1
 
-    .line 332
+    .line 333
     :cond_5
     invoke-virtual {v9}, Ljava/io/File;->exists()Z
 
@@ -1264,7 +1279,7 @@
 
     if-eqz v15, :cond_2
 
-    .line 342
+    .line 343
     sget-wide v16, Lcom/android/keyguard/MiuiKeyguardUtils;->sLockWallpaperModifiedTime:J
 
     invoke-virtual {v6}, Ljava/io/File;->lastModified()J
@@ -1279,7 +1294,7 @@
 
     if-eqz v15, :cond_8
 
-    .line 343
+    .line 344
     sget-object v15, Lcom/android/keyguard/MiuiKeyguardUtils;->sLockWallpaperCache:Landroid/util/Pair;
 
     iget-object v15, v15, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -1296,10 +1311,10 @@
 
     move-result v15
 
-    .line 342
+    .line 343
     if-eqz v15, :cond_8
 
-    .line 343
+    .line 344
     sget-object v15, Lcom/android/keyguard/MiuiKeyguardUtils;->sLockWallpaperCache:Landroid/util/Pair;
 
     iget-object v15, v15, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -1308,29 +1323,29 @@
 
     move-result v15
 
-    .line 342
+    .line 343
     if-eqz v15, :cond_8
 
-    .line 344
+    .line 345
     sget-object v15, Lcom/android/keyguard/MiuiKeyguardUtils;->sLockWallpaperCache:Landroid/util/Pair;
 
     return-object v15
 
-    .line 334
+    .line 335
     :cond_6
     const-string/jumbo v7, "null"
 
     .restart local v7    # "filePath":Ljava/lang/String;
     goto/16 :goto_2
 
-    .line 335
+    .line 336
     :cond_7
     const-string/jumbo v10, "null"
 
     .restart local v10    # "previewPath":Ljava/lang/String;
     goto/16 :goto_3
 
-    .line 348
+    .line 349
     .end local v7    # "filePath":Ljava/lang/String;
     .end local v10    # "previewPath":Ljava/lang/String;
     :cond_8
@@ -1338,7 +1353,7 @@
 
     sput-object v15, Lcom/android/keyguard/MiuiKeyguardUtils;->sLockWallpaperCache:Landroid/util/Pair;
 
-    .line 350
+    .line 351
     :try_start_0
     const-string/jumbo v15, "window"
 
@@ -1350,34 +1365,34 @@
 
     check-cast v14, Landroid/view/WindowManager;
 
-    .line 351
+    .line 352
     .local v14, "windowManager":Landroid/view/WindowManager;
     invoke-interface {v14}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v3
 
-    .line 352
+    .line 353
     .local v3, "display":Landroid/view/Display;
     new-instance v11, Landroid/graphics/Point;
 
     invoke-direct {v11}, Landroid/graphics/Point;-><init>()V
 
-    .line 353
+    .line 354
     .local v11, "size":Landroid/graphics/Point;
     invoke-static {v3, v11}, Lcom/android/keyguard/MiuiKeyguardUtils;->getRealSize(Landroid/view/Display;Landroid/graphics/Point;)V
 
-    .line 354
+    .line 355
     iget v13, v11, Landroid/graphics/Point;->x:I
 
-    .line 355
+    .line 356
     .local v13, "width":I
     iget v8, v11, Landroid/graphics/Point;->y:I
 
-    .line 356
+    .line 357
     .local v8, "height":I
     if-le v13, v8, :cond_9
 
-    .line 357
+    .line 358
     const-string/jumbo v15, "LockWallpaper"
 
     new-instance v16, Ljava/lang/StringBuilder;
@@ -1414,17 +1429,17 @@
 
     invoke-static/range {v15 .. v16}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 358
+    .line 359
     move v12, v13
 
-    .line 359
+    .line 360
     .local v12, "tmp":I
     move v13, v8
 
-    .line 360
+    .line 361
     move v8, v12
 
-    .line 363
+    .line 364
     .end local v12    # "tmp":I
     :cond_9
     invoke-virtual {v9}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -1439,11 +1454,11 @@
 
     move-result-object v2
 
-    .line 364
+    .line 365
     .local v2, "bitmap":Landroid/graphics/Bitmap;
     if-eqz v2, :cond_a
 
-    .line 365
+    .line 366
     new-instance v15, Landroid/util/Pair;
 
     new-instance v16, Landroid/graphics/drawable/BitmapDrawable;
@@ -1464,7 +1479,7 @@
 
     sput-object v15, Lcom/android/keyguard/MiuiKeyguardUtils;->sLockWallpaperCache:Landroid/util/Pair;
 
-    .line 366
+    .line 367
     invoke-virtual {v6}, Ljava/io/File;->lastModified()J
 
     move-result-wide v16
@@ -1474,7 +1489,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 374
+    .line 375
     .end local v2    # "bitmap":Landroid/graphics/Bitmap;
     .end local v3    # "display":Landroid/view/Display;
     .end local v8    # "height":I
@@ -1487,11 +1502,11 @@
 
     return-object v15
 
-    .line 370
+    .line 371
     :catch_0
     move-exception v5
 
-    .line 371
+    .line 372
     .local v5, "error":Ljava/lang/OutOfMemoryError;
     const-string/jumbo v15, "ThemeResources"
 
@@ -1505,12 +1520,12 @@
 
     goto :goto_4
 
-    .line 368
+    .line 369
     .end local v5    # "error":Ljava/lang/OutOfMemoryError;
     :catch_1
     move-exception v4
 
-    .line 369
+    .line 370
     .local v4, "e":Ljava/lang/Exception;
     const-string/jumbo v15, "ThemeResources"
 
@@ -1532,14 +1547,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 267
+    .line 268
     invoke-static {p0}, Lcom/android/keyguard/MiuiKeyguardUtils;->useSystemLiveWallpaper(Landroid/content/Context;)Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
-    .line 268
+    .line 269
     const-string/jumbo v5, "wallpaper"
 
     invoke-virtual {p0, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1548,17 +1563,17 @@
 
     check-cast v3, Landroid/app/WallpaperManager;
 
-    .line 269
+    .line 270
     .local v3, "wpm":Landroid/app/WallpaperManager;
     invoke-virtual {v3}, Landroid/app/WallpaperManager;->getWallpaperInfo()Landroid/app/WallpaperInfo;
 
     move-result-object v0
 
-    .line 270
+    .line 271
     .local v0, "paperInfo":Landroid/app/WallpaperInfo;
     if-eqz v0, :cond_1
 
-    .line 271
+    .line 272
     const-string/jumbo v4, "com.miui.miwallpaper.MiWallpaper"
 
     invoke-virtual {v0}, Landroid/app/WallpaperInfo;->getServiceName()Ljava/lang/String;
@@ -1571,29 +1586,29 @@
 
     if-eqz v4, :cond_0
 
-    .line 272
+    .line 273
     invoke-static {}, Lcom/android/keyguard/MiuiKeyguardUtils;->isMiwallpaperPreviewExist()Z
 
     move-result v4
 
-    .line 271
+    .line 272
     if-eqz v4, :cond_0
 
-    .line 273
+    .line 274
     const-string/jumbo v4, "/data/system/theme/miwallpaper_preview"
 
     invoke-static {p0, v4}, Lcom/android/keyguard/MiuiKeyguardUtils;->loadDrawable(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 274
+    .line 275
     .local v1, "preview":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_0
 
-    .line 275
+    .line 276
     return-object v1
 
-    .line 278
+    .line 279
     .end local v1    # "preview":Landroid/graphics/drawable/Drawable;
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -1606,7 +1621,7 @@
 
     return-object v4
 
-    .line 281
+    .line 282
     .end local v0    # "paperInfo":Landroid/app/WallpaperInfo;
     .end local v3    # "wpm":Landroid/app/WallpaperManager;
     :cond_1
@@ -1614,7 +1629,7 @@
 
     move-result-object v2
 
-    .line 282
+    .line 283
     .local v2, "result":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/io/File;Landroid/graphics/drawable/Drawable;>;"
     if-nez v2, :cond_2
 
@@ -1633,7 +1648,7 @@
     .locals 2
 
     .prologue
-    .line 215
+    .line 216
     invoke-static {}, Lmiui/telephony/TelephonyManager;->getDefault()Lmiui/telephony/TelephonyManager;
 
     move-result-object v1
@@ -1642,7 +1657,7 @@
 
     move-result v0
 
-    .line 216
+    .line 217
     .local v0, "phoneCount":I
     if-gtz v0, :cond_0
 
@@ -1659,7 +1674,7 @@
     .param p1, "outPoint"    # Landroid/graphics/Point;
 
     .prologue
-    .line 308
+    .line 309
     :try_start_0
     const-class v2, Landroid/view/Display;
 
@@ -1685,7 +1700,7 @@
 
     move-result-object v1
 
-    .line 309
+    .line 310
     .local v1, "method":Ljava/lang/reflect/Method;
     const/4 v2, 0x2
 
@@ -1709,16 +1724,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 306
+    .line 307
     .end local v1    # "method":Ljava/lang/reflect/Method;
     :goto_0
     return-void
 
-    .line 310
+    .line 311
     :catch_0
     move-exception v0
 
-    .line 311
+    .line 312
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v2, "LockWallpaper"
 
@@ -1726,7 +1741,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 312
+    .line 313
     invoke-virtual {p0, p1}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
     goto :goto_0
@@ -1748,7 +1763,7 @@
     .end annotation
 
     .prologue
-    .line 135
+    .line 136
     const-string/jumbo v2, "user"
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1757,13 +1772,13 @@
 
     check-cast v0, Landroid/os/UserManager;
 
-    .line 136
+    .line 137
     .local v0, "userManager":Landroid/os/UserManager;
     invoke-virtual {v0}, Landroid/os/UserManager;->getUsers()Ljava/util/List;
 
     move-result-object v1
 
-    .line 137
+    .line 138
     .local v1, "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     return-object v1
 .end method
@@ -1774,7 +1789,7 @@
     .param p1, "source"    # Ljava/lang/String;
 
     .prologue
-    .line 733
+    .line 736
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 
@@ -1782,7 +1797,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 734
+    .line 737
     .local v1, "intent":Landroid/content/Intent;
     const-string/jumbo v2, "showTime"
 
@@ -1796,7 +1811,7 @@
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 735
+    .line 738
     const-string/jumbo v2, "startTime"
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -1805,34 +1820,34 @@
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 736
+    .line 739
     const-string/jumbo v2, "from"
 
     invoke-virtual {v1, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 737
+    .line 740
     sget-object v2, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 731
+    .line 734
     .end local v1    # "intent":Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 738
+    .line 741
     :catch_0
     move-exception v0
 
-    .line 739
+    .line 742
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v2, "keyguard_goto_lockscreen_magazine_fail"
 
     invoke-static {v2}, Lcom/android/keyguard/AnalyticsHelper;->record(Ljava/lang/String;)V
 
-    .line 740
+    .line 743
     const-string/jumbo v2, "miui_keyguard"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
@@ -1848,12 +1863,12 @@
     .locals 3
 
     .prologue
-    .line 220
+    .line 221
     sget-object v1, Lcom/android/keyguard/MiuiKeyguardUtils;->sWindowManager:Landroid/view/IWindowManager;
 
     if-nez v1, :cond_0
 
-    .line 221
+    .line 222
     const-string/jumbo v1, "window"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1866,7 +1881,7 @@
 
     sput-object v1, Lcom/android/keyguard/MiuiKeyguardUtils;->sWindowManager:Landroid/view/IWindowManager;
 
-    .line 223
+    .line 224
     :try_start_0
     sget-object v1, Lcom/android/keyguard/MiuiKeyguardUtils;->sWindowManager:Landroid/view/IWindowManager;
 
@@ -1878,7 +1893,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 228
+    .line 229
     .local v0, "ex":Ljava/lang/Exception;
     :cond_0
     :goto_0
@@ -1886,12 +1901,12 @@
 
     return v1
 
-    .line 224
+    .line 225
     .end local v0    # "ex":Ljava/lang/Exception;
     :catch_0
     move-exception v0
 
-    .line 225
+    .line 226
     .restart local v0    # "ex":Ljava/lang/Exception;
     const-string/jumbo v1, "miui_keyguard"
 
@@ -1907,19 +1922,19 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 623
+    .line 626
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v11
 
-    .line 624
+    .line 627
     sget-object v12, Lcom/android/keyguard/MiuiKeyguardUtils;->AOD_MODE:Ljava/lang/String;
 
     const/4 v13, 0x0
 
     const/4 v14, -0x2
 
-    .line 623
+    .line 626
     invoke-static {v11, v12, v13, v14}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v11
@@ -1928,56 +1943,56 @@
 
     const/4 v1, 0x1
 
-    .line 625
+    .line 628
     .local v1, "disableAodClock":Z
     :goto_0
     if-eqz v1, :cond_1
 
-    .line 626
+    .line 629
     const/4 v11, 0x1
 
     return v11
 
-    .line 623
+    .line 626
     .end local v1    # "disableAodClock":Z
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 628
+    .line 631
     .restart local v1    # "disableAodClock":Z
     :cond_1
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v11
 
-    .line 629
+    .line 632
     const-string/jumbo v12, "aod_mode_time"
 
     const/4 v13, 0x0
 
     const/4 v14, -0x2
 
-    .line 628
+    .line 631
     invoke-static {v11, v12, v13, v14}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v11
 
-    .line 629
+    .line 632
     const/4 v12, 0x1
 
-    .line 628
+    .line 631
     if-ne v11, v12, :cond_3
 
     const/4 v10, 0x1
 
-    .line 630
+    .line 633
     .local v10, "timeSet":Z
     :goto_1
     if-eqz v10, :cond_6
 
-    .line 631
+    .line 634
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v11
@@ -1994,13 +2009,13 @@
 
     int-to-long v12, v11
 
-    .line 632
+    .line 635
     const-wide/32 v14, 0xea60
 
-    .line 631
+    .line 634
     mul-long v8, v12, v14
 
-    .line 633
+    .line 636
     .local v8, "startTime":J
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2018,19 +2033,19 @@
 
     int-to-long v12, v11
 
-    .line 634
+    .line 637
     const-wide/32 v14, 0xea60
 
-    .line 633
+    .line 636
     mul-long v2, v12, v14
 
-    .line 636
+    .line 639
     .local v2, "endTime":J
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 637
+    .line 640
     .local v0, "c":Ljava/util/Calendar;
     const/16 v11, 0xb
 
@@ -2038,7 +2053,7 @@
 
     move-result v4
 
-    .line 638
+    .line 641
     .local v4, "hour":I
     const/16 v11, 0xc
 
@@ -2046,7 +2061,7 @@
 
     move-result v5
 
-    .line 639
+    .line 642
     .local v5, "minute":I
     mul-int/lit8 v11, v4, 0x3c
 
@@ -2062,7 +2077,7 @@
 
     add-long v6, v12, v14
 
-    .line 642
+    .line 645
     .local v6, "now":J
     cmp-long v11, v8, v2
 
@@ -2082,7 +2097,7 @@
     :goto_2
     return v11
 
-    .line 628
+    .line 631
     .end local v0    # "c":Ljava/util/Calendar;
     .end local v2    # "endTime":J
     .end local v4    # "hour":I
@@ -2095,7 +2110,7 @@
 
     goto :goto_1
 
-    .line 643
+    .line 646
     .restart local v0    # "c":Ljava/util/Calendar;
     .restart local v2    # "endTime":J
     .restart local v4    # "hour":I
@@ -2125,7 +2140,7 @@
 
     goto :goto_2
 
-    .line 645
+    .line 648
     .end local v0    # "c":Ljava/util/Calendar;
     .end local v2    # "endTime":J
     .end local v4    # "hour":I
@@ -2146,7 +2161,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 195
+    .line 196
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -2158,14 +2173,14 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 196
+    .line 197
     return v3
 
-    .line 197
+    .line 198
     :catch_0
     move-exception v0
 
-    .line 198
+    .line 199
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string/jumbo v1, "miui_keyguard"
 
@@ -2189,7 +2204,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 200
+    .line 201
     const/4 v1, 0x0
 
     return v1
@@ -2199,7 +2214,7 @@
     .locals 1
 
     .prologue
-    .line 897
+    .line 900
     invoke-static {}, Lcom/android/systemui/Dependency;->getHost()Lcom/android/systemui/doze/DozeHost;
 
     move-result-object v0
@@ -2228,19 +2243,19 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 163
+    .line 164
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sFingerprintHelper:Lcom/android/keyguard/FingerprintHelper;
 
     if-nez v0, :cond_0
 
-    .line 164
+    .line 165
     new-instance v0, Lcom/android/keyguard/FingerprintHelper;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/FingerprintHelper;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sFingerprintHelper:Lcom/android/keyguard/FingerprintHelper;
 
-    .line 166
+    .line 167
     :cond_0
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sFingerprintHelper:Lcom/android/keyguard/FingerprintHelper;
 
@@ -2256,7 +2271,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 679
+    .line 682
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -2272,7 +2287,7 @@
     .locals 1
 
     .prologue
-    .line 530
+    .line 533
     sget-boolean v0, Lcom/android/keyguard/MiuiKeyguardUtils;->GXZW_SENSOR:Z
 
     return v0
@@ -2282,7 +2297,7 @@
     .locals 2
 
     .prologue
-    .line 141
+    .line 142
     const-string/jumbo v0, "IN"
 
     invoke-static {}, Lmiui/os/Build;->getRegion()Ljava/lang/String;
@@ -2303,7 +2318,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 779
+    .line 782
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -2328,7 +2343,7 @@
     .locals 1
 
     .prologue
-    .line 749
+    .line 752
     sget-boolean v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sWallpaperPreviewAvailable:Z
 
     return v0
@@ -2338,14 +2353,14 @@
     .locals 2
 
     .prologue
-    .line 262
+    .line 263
     new-instance v0, Ljava/io/File;
 
     const-string/jumbo v1, "/data/system/theme/miwallpaper_preview"
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 263
+    .line 264
     .local v0, "wallpaperPreview":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -2358,7 +2373,7 @@
     .locals 2
 
     .prologue
-    .line 489
+    .line 490
     const-string/jumbo v0, "sys.power.nonui"
 
     const/4 v1, 0x0
@@ -2377,37 +2392,37 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 691
+    .line 694
     const-string/jumbo v3, "phone"
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 690
+    .line 693
     check-cast v1, Landroid/telephony/TelephonyManager;
 
-    .line 692
+    .line 695
     .local v1, "telephonyManager":Landroid/telephony/TelephonyManager;
     invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getCallState()I
 
     move-result v0
 
-    .line 693
+    .line 696
     .local v0, "callState":I
     if-eq v0, v2, :cond_0
 
-    .line 694
+    .line 697
     const/4 v3, 0x2
 
     if-ne v0, v3, :cond_1
 
-    .line 693
+    .line 696
     :cond_0
     :goto_0
     return v2
 
-    .line 694
+    .line 697
     :cond_1
     const/4 v2, 0x0
 
@@ -2419,7 +2434,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 483
+    .line 484
     const-string/jumbo v2, "sensor"
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2428,7 +2443,7 @@
 
     check-cast v1, Landroid/hardware/SensorManager;
 
-    .line 484
+    .line 485
     .local v1, "sensorManager":Landroid/hardware/SensorManager;
     const/16 v2, 0x8
 
@@ -2436,7 +2451,7 @@
 
     move-result-object v0
 
-    .line 485
+    .line 486
     .local v0, "sensor":Landroid/hardware/Sensor;
     if-eqz v0, :cond_0
 
@@ -2458,7 +2473,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 879
+    .line 882
     sget-object v5, Lcom/android/keyguard/MiuiKeyguardUtils;->sSCSlideNotOpenCameraList:Ljava/util/List;
 
     invoke-interface {v5}, Ljava/util/List;->isEmpty()Z
@@ -2467,7 +2482,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 880
+    .line 883
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -2484,7 +2499,7 @@
 
     sput-object v5, Lcom/android/keyguard/MiuiKeyguardUtils;->sSCSlideNotOpenCameraList:Ljava/util/List;
 
-    .line 883
+    .line 886
     :cond_0
     :try_start_0
     const-string/jumbo v5, "activity"
@@ -2495,7 +2510,7 @@
 
     check-cast v3, Landroid/app/ActivityManager;
 
-    .line 884
+    .line 887
     .local v3, "manager":Landroid/app/ActivityManager;
     const/4 v5, 0x1
 
@@ -2503,7 +2518,7 @@
 
     move-result-object v4
 
-    .line 885
+    .line 888
     .local v4, "tasks":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RunningTaskInfo;>;"
     if-eqz v4, :cond_1
 
@@ -2513,14 +2528,14 @@
 
     if-eqz v5, :cond_2
 
-    .line 893
+    .line 896
     .end local v3    # "manager":Landroid/app/ActivityManager;
     .end local v4    # "tasks":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RunningTaskInfo;>;"
     :cond_1
     :goto_0
     return v8
 
-    .line 886
+    .line 889
     .restart local v3    # "manager":Landroid/app/ActivityManager;
     .restart local v4    # "tasks":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RunningTaskInfo;>;"
     :cond_2
@@ -2534,7 +2549,7 @@
 
     iget-object v1, v5, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
 
-    .line 887
+    .line 890
     .local v1, "cn":Landroid/content/ComponentName;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -2552,7 +2567,7 @@
 
     iget-object v0, v5, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 888
+    .line 891
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
     sget-object v5, Lcom/android/keyguard/MiuiKeyguardUtils;->sSCSlideNotOpenCameraList:Ljava/util/List;
 
@@ -2566,7 +2581,7 @@
 
     return v5
 
-    .line 890
+    .line 893
     .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v1    # "cn":Landroid/content/ComponentName;
     .end local v3    # "manager":Landroid/app/ActivityManager;
@@ -2574,7 +2589,7 @@
     :catch_0
     move-exception v2
 
-    .line 891
+    .line 894
     .local v2, "e":Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -2585,7 +2600,7 @@
     .locals 1
 
     .prologue
-    .line 603
+    .line 606
     sget-boolean v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sIsScreenTurnOnDelayed:Z
 
     return v0
@@ -2596,12 +2611,12 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 413
+    .line 414
     sget-boolean v0, Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z
 
     if-eqz v0, :cond_7
 
-    .line 414
+    .line 415
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sGlobalDeviceFaceJiajiaSupport:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -2618,7 +2633,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 415
+    .line 416
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -2636,7 +2651,7 @@
 
     sput-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sGlobalDeviceFaceJiajiaSupport:Ljava/util/List;
 
-    .line 416
+    .line 417
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2653,7 +2668,7 @@
 
     sput-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sGlobalRegionFaceJiajiaSupport:Ljava/util/List;
 
-    .line 418
+    .line 419
     :cond_1
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sGlobalDeviceSenseTimeSupport:Ljava/util/List;
 
@@ -2671,7 +2686,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 419
+    .line 420
     :cond_2
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -2689,7 +2704,7 @@
 
     sput-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sGlobalDeviceSenseTimeSupport:Ljava/util/List;
 
-    .line 420
+    .line 421
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2706,7 +2721,7 @@
 
     sput-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sGlobalRegionSenseTimeSupport:Ljava/util/List;
 
-    .line 422
+    .line 423
     :cond_3
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sGlobalDeviceFaceJiajiaSupport:Ljava/util/List;
 
@@ -2730,7 +2745,7 @@
 
     if-nez v0, :cond_5
 
-    .line 423
+    .line 424
     :cond_4
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sGlobalDeviceSenseTimeSupport:Ljava/util/List;
 
@@ -2752,7 +2767,7 @@
 
     move-result v0
 
-    .line 422
+    .line 423
     :goto_0
     return v0
 
@@ -2761,13 +2776,13 @@
 
     goto :goto_0
 
-    .line 423
+    .line 424
     :cond_6
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 426
+    .line 427
     :cond_7
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportFace:Ljava/util/List;
 
@@ -2777,7 +2792,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 427
+    .line 428
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2794,7 +2809,7 @@
 
     sput-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportFace:Ljava/util/List;
 
-    .line 429
+    .line 430
     :cond_8
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportFace:Ljava/util/List;
 
@@ -2812,7 +2827,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 434
+    .line 435
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceUseCamera1:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -2821,7 +2836,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 435
+    .line 436
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2838,7 +2853,7 @@
 
     sput-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceUseCamera1:Ljava/util/List;
 
-    .line 437
+    .line 438
     :cond_0
     invoke-static {p0}, Lcom/android/keyguard/MiuiKeyguardUtils;->isSupportFaceUnlock(Landroid/content/Context;)Z
 
@@ -2868,7 +2883,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 459
+    .line 460
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportNewPickupSensorByXiaomi:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -2877,7 +2892,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 460
+    .line 461
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2894,7 +2909,7 @@
 
     sput-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportNewPickupSensorByXiaomi:Ljava/util/List;
 
-    .line 462
+    .line 463
     :cond_0
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportNewPickupSensorByXiaomi:Ljava/util/List;
 
@@ -2912,7 +2927,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 452
+    .line 453
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportPickupByXiaomi:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -2921,7 +2936,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 453
+    .line 454
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2938,7 +2953,7 @@
 
     sput-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportPickupByXiaomi:Ljava/util/List;
 
-    .line 455
+    .line 456
     :cond_0
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportPickupByXiaomi:Ljava/util/List;
 
@@ -2958,7 +2973,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 466
+    .line 467
     const-string/jumbo v1, "ursa"
 
     sget-object v2, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
@@ -2969,20 +2984,20 @@
 
     if-eqz v1, :cond_1
 
-    .line 467
+    .line 468
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 468
+    .line 469
     const-string/jumbo v2, "face_unlock_model"
 
-    .line 469
+    .line 470
     invoke-static {}, Lcom/android/keyguard/LockPatternUtilsWrapper;->getCurrentUser()I
 
     move-result v3
 
-    .line 467
+    .line 468
     invoke-static {v1, v2, v0, v3}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v1
@@ -2994,7 +3009,7 @@
     :cond_0
     return v0
 
-    .line 471
+    .line 472
     :cond_1
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportScreenOnDelay:Ljava/util/List;
 
@@ -3004,7 +3019,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 472
+    .line 473
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -3021,7 +3036,7 @@
 
     sput-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportScreenOnDelay:Ljava/util/List;
 
-    .line 474
+    .line 475
     :cond_2
     sget-object v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sDeviceSupportScreenOnDelay:Ljava/util/List;
 
@@ -3039,7 +3054,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 521
+    .line 522
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -3050,6 +3065,15 @@
 
     move-result v0
 
+    if-nez v0, :cond_0
+
+    const-string v0, "enable_vertical_clock"
+
+    invoke-static {v0, p0}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
+
+    move-result v0
+
+    :cond_0
     return v0
 .end method
 
@@ -3062,7 +3086,7 @@
 
     const/4 v7, 0x0
 
-    .line 545
+    .line 548
     :try_start_0
     const-string/jumbo v5, "activity"
 
@@ -3072,7 +3096,7 @@
 
     check-cast v3, Landroid/app/ActivityManager;
 
-    .line 546
+    .line 549
     .local v3, "manager":Landroid/app/ActivityManager;
     const/4 v5, 0x1
 
@@ -3080,7 +3104,7 @@
 
     move-result-object v4
 
-    .line 547
+    .line 550
     .local v4, "tasks":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RunningTaskInfo;>;"
     if-eqz v4, :cond_1
 
@@ -3090,7 +3114,7 @@
 
     if-lez v5, :cond_1
 
-    .line 548
+    .line 551
     const/4 v5, 0x1
 
     invoke-virtual {v3, v5}, Landroid/app/ActivityManager;->getRunningTasks(I)Ljava/util/List;
@@ -3107,7 +3131,7 @@
 
     iget-object v1, v5, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
 
-    .line 549
+    .line 552
     .local v1, "cn":Landroid/content/ComponentName;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -3125,7 +3149,7 @@
 
     iget-object v0, v5, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 550
+    .line 553
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
     iget v5, v0, Landroid/content/pm/ApplicationInfo;->flags:I
     :try_end_0
@@ -3145,7 +3169,7 @@
 
     goto :goto_0
 
-    .line 552
+    .line 555
     .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v1    # "cn":Landroid/content/ComponentName;
     .end local v3    # "manager":Landroid/app/ActivityManager;
@@ -3153,11 +3177,11 @@
     :catch_0
     move-exception v2
 
-    .line 553
+    .line 556
     .local v2, "e":Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 555
+    .line 558
     .end local v2    # "e":Ljava/lang/Exception;
     :cond_1
     return v7
@@ -3169,10 +3193,10 @@
     .param p1, "strAry"    # [Ljava/lang/String;
 
     .prologue
-    .line 493
+    .line 494
     const-string/jumbo v1, ""
 
-    .line 494
+    .line 495
     .local v1, "result":Ljava/lang/String;
     const/4 v0, 0x0
 
@@ -3182,7 +3206,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 495
+    .line 496
     aget-object v2, p1, v0
 
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -3191,24 +3215,24 @@
 
     if-nez v2, :cond_0
 
-    .line 496
+    .line 497
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 497
+    .line 498
     aget-object v1, p1, v0
 
-    .line 494
+    .line 495
     :cond_0
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 499
+    .line 500
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -3234,7 +3258,7 @@
 
     goto :goto_1
 
-    .line 504
+    .line 505
     :cond_2
     return-object v1
 .end method
@@ -3247,10 +3271,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 286
+    .line 287
     const/4 v0, 0x0
 
-    .line 288
+    .line 289
     .local v0, "b":Landroid/graphics/Bitmap;
     const/4 v2, 0x0
 
@@ -3261,11 +3285,11 @@
 
     move-result-object v0
 
-    .line 292
+    .line 293
     .local v0, "b":Landroid/graphics/Bitmap;
     if-eqz v0, :cond_0
 
-    .line 293
+    .line 294
     new-instance v2, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3276,16 +3300,16 @@
 
     return-object v2
 
-    .line 289
+    .line 290
     .local v0, "b":Landroid/graphics/Bitmap;
     :catch_0
     move-exception v1
 
-    .line 290
+    .line 291
     .local v1, "e":Ljava/io/IOException;
     return-object v3
 
-    .line 295
+    .line 296
     .end local v1    # "e":Ljava/io/IOException;
     .local v0, "b":Landroid/graphics/Bitmap;
     :cond_0
@@ -3300,30 +3324,30 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 176
+    .line 177
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
 
     if-ge v1, v2, :cond_0
 
-    .line 177
+    .line 178
     return-object p0
 
-    .line 179
+    .line 180
     :cond_0
     if-nez p0, :cond_1
 
-    .line 180
+    .line 181
     return-object v3
 
-    .line 181
+    .line 182
     :cond_1
     const/4 v1, -0x2
 
     if-eq p1, v1, :cond_2
 
-    .line 182
+    .line 183
     const-string/jumbo v1, "content"
 
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -3334,22 +3358,22 @@
 
     move-result v1
 
-    .line 181
+    .line 182
     if-eqz v1, :cond_2
 
-    .line 183
+    .line 184
     invoke-static {p0}, Lcom/android/keyguard/MiuiKeyguardUtils;->uriHasUserId(Landroid/net/Uri;)Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 185
+    .line 186
     invoke-virtual {p0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    .line 186
+    .line 187
     .local v0, "builder":Landroid/net/Uri$Builder;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3385,14 +3409,14 @@
 
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->encodedAuthority(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 187
+    .line 188
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v1
 
     return-object v1
 
-    .line 190
+    .line 191
     .end local v0    # "builder":Landroid/net/Uri$Builder;
     :cond_2
     return-object p0
@@ -3408,22 +3432,22 @@
 
     const/4 v1, 0x0
 
-    .line 698
+    .line 701
     if-eqz p0, :cond_0
 
-    .line 699
+    .line 702
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x19
 
     if-ge v2, v3, :cond_1
 
-    .line 698
+    .line 701
     :cond_0
     :goto_0
     return v0
 
-    .line 700
+    .line 703
     :cond_1
     if-eqz p0, :cond_2
 
@@ -3444,14 +3468,14 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 799
+    .line 802
     new-instance v4, Landroid/security/MiuiLockPatternUtils;
 
     move-object/from16 v0, p0
 
     invoke-direct {v4, v0}, Landroid/security/MiuiLockPatternUtils;-><init>(Landroid/content/Context;)V
 
-    .line 800
+    .line 803
     .local v4, "lockPatternUtils":Landroid/security/MiuiLockPatternUtils;
     invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getCurrentUser()I
 
@@ -3463,7 +3487,7 @@
 
     if-nez v13, :cond_1
 
-    .line 801
+    .line 804
     invoke-static/range {p0 .. p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     move-result-object v13
@@ -3472,23 +3496,23 @@
 
     move-result v3
 
-    .line 802
+    .line 805
     .local v3, "isSecure":Z
     :goto_0
     if-nez v3, :cond_0
 
-    .line 803
+    .line 806
     const-string/jumbo v13, "none"
 
     invoke-static {v13}, Lcom/android/keyguard/AnalyticsHelper;->recordUnlockWay(Ljava/lang/String;)V
 
-    .line 805
+    .line 808
     :cond_0
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v2
 
-    .line 806
+    .line 809
     .local v2, "calendar":Ljava/util/Calendar;
     sget v13, Lcom/android/keyguard/MiuiKeyguardUtils;->sYearOfStatistics:I
 
@@ -3500,7 +3524,7 @@
 
     if-ne v13, v14, :cond_2
 
-    .line 807
+    .line 810
     sget v13, Lcom/android/keyguard/MiuiKeyguardUtils;->sDayOfStatistics:I
 
     const/4 v14, 0x6
@@ -3511,10 +3535,10 @@
 
     if-ne v13, v14, :cond_2
 
-    .line 808
+    .line 811
     return-void
 
-    .line 800
+    .line 803
     .end local v2    # "calendar":Ljava/util/Calendar;
     .end local v3    # "isSecure":Z
     :cond_1
@@ -3522,7 +3546,7 @@
 
     goto :goto_0
 
-    .line 811
+    .line 814
     .restart local v2    # "calendar":Ljava/util/Calendar;
     .restart local v3    # "isSecure":Z
     :cond_2
@@ -3534,7 +3558,7 @@
 
     sput v13, Lcom/android/keyguard/MiuiKeyguardUtils;->sYearOfStatistics:I
 
-    .line 812
+    .line 815
     const/4 v13, 0x6
 
     invoke-virtual {v2, v13}, Ljava/util/Calendar;->get(I)I
@@ -3543,44 +3567,44 @@
 
     sput v13, Lcom/android/keyguard/MiuiKeyguardUtils;->sDayOfStatistics:I
 
-    .line 813
+    .line 816
     new-instance v5, Lcom/android/keyguard/LockPatternUtilsWrapper;
 
     invoke-direct {v5, v4}, Lcom/android/keyguard/LockPatternUtilsWrapper;-><init>(Lcom/android/internal/widget/LockPatternUtils;)V
 
-    .line 814
+    .line 817
     .local v5, "lockPatternUtilsWrapper":Lcom/android/keyguard/LockPatternUtilsWrapper;
     const-string/jumbo v11, "unsecure"
 
-    .line 815
+    .line 818
     .local v11, "secureType":Ljava/lang/String;
     if-eqz v3, :cond_3
 
-    .line 816
+    .line 819
     invoke-virtual {v5}, Lcom/android/keyguard/LockPatternUtilsWrapper;->getActivePasswordQuality()I
 
     move-result v13
 
     sparse-switch v13, :sswitch_data_0
 
-    .line 831
+    .line 834
     :cond_3
     :goto_1
     const-string/jumbo v13, "keyguard_secure_type"
 
     invoke-static {v13, v11}, Lcom/android/keyguard/AnalyticsHelper;->recordEnum(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 833
+    .line 836
     invoke-static/range {p0 .. p0}, Lcom/android/keyguard/MiuiKeyguardUtils;->isSupportFaceUnlock(Landroid/content/Context;)Z
 
     move-result v13
 
     if-eqz v13, :cond_5
 
-    .line 834
+    .line 837
     const-string/jumbo v12, "unsecure"
 
-    .line 835
+    .line 838
     .local v12, "state":Ljava/lang/String;
     invoke-static/range {p0 .. p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -3592,7 +3616,7 @@
 
     if-eqz v13, :cond_9
 
-    .line 836
+    .line 839
     invoke-static/range {p0 .. p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     move-result-object v13
@@ -3601,38 +3625,38 @@
 
     move-result v13
 
-    .line 835
+    .line 838
     if-eqz v13, :cond_9
 
-    .line 837
+    .line 840
     const-string/jumbo v12, "enable"
 
-    .line 842
+    .line 845
     :cond_4
     :goto_2
     const-string/jumbo v13, "face_unlock_state"
 
     invoke-static {v13, v12}, Lcom/android/keyguard/AnalyticsHelper;->recordEnum(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 843
+    .line 846
     const-string/jumbo v13, "face_unlock_notification_toggle"
 
-    .line 844
+    .line 847
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v14
 
-    .line 845
+    .line 848
     const-string/jumbo v15, "face_unlock_by_notification_screen_on"
 
-    .line 846
+    .line 849
     invoke-static {}, Lcom/android/keyguard/LockPatternUtilsWrapper;->getCurrentUser()I
 
     move-result v16
 
     const/16 v17, 0x0
 
-    .line 843
+    .line 846
     move/from16 v0, v17
 
     move/from16 v1, v16
@@ -3647,14 +3671,14 @@
 
     invoke-static {v13, v14}, Lcom/android/keyguard/AnalyticsHelper;->recordEnum(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 849
+    .line 852
     .end local v12    # "state":Ljava/lang/String;
     :cond_5
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v13
 
-    .line 850
+    .line 853
     const-string/jumbo v14, "wakeup_for_keyguard_notification"
 
     invoke-static {}, Lcom/android/keyguard/LockPatternUtilsWrapper;->getCurrentUser()I
@@ -3663,26 +3687,26 @@
 
     const/16 v16, 0x1
 
-    .line 849
+    .line 852
     move/from16 v0, v16
 
     invoke-static {v13, v14, v0, v15}, Landroid/provider/MiuiSettings$System;->getBooleanForUser(Landroid/content/ContentResolver;Ljava/lang/String;ZI)Z
 
     move-result v10
 
-    .line 851
+    .line 854
     .local v10, "screenOnWhenNotification":Z
     const-string/jumbo v13, "keyguard_screen_on_when_notification"
 
-    .line 852
+    .line 855
     invoke-static {v10}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
 
     move-result-object v14
 
-    .line 851
+    .line 854
     invoke-static {v13, v14}, Lcom/android/keyguard/AnalyticsHelper;->recordEnum(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 854
+    .line 857
     new-instance v13, Lcom/android/keyguard/LockPatternUtilsWrapper;
 
     invoke-direct {v13, v4}, Lcom/android/keyguard/LockPatternUtilsWrapper;-><init>(Lcom/android/internal/widget/LockPatternUtils;)V
@@ -3691,7 +3715,7 @@
 
     move-result v6
 
-    .line 855
+    .line 858
     .local v6, "ownerInfoEnabled":Z
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
@@ -3701,11 +3725,11 @@
 
     move-result-object v7
 
-    .line 856
+    .line 859
     .local v7, "ownerInfoString":Ljava/lang/String;
     const-string/jumbo v14, "keyguard_has_owner_info"
 
-    .line 857
+    .line 860
     if-eqz v6, :cond_6
 
     invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -3722,15 +3746,15 @@
 
     move-result-object v13
 
-    .line 856
+    .line 859
     invoke-static {v14, v13}, Lcom/android/keyguard/AnalyticsHelper;->recordEnum(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 859
+    .line 862
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v13
 
-    .line 860
+    .line 863
     const-string/jumbo v14, "screen_off_timeout"
 
     const-wide/16 v16, 0x7530
@@ -3739,14 +3763,14 @@
 
     move-result v15
 
-    .line 859
+    .line 862
     move-wide/from16 v0, v16
 
     invoke-static {v13, v14, v0, v1, v15}, Landroid/provider/Settings$System;->getLongForUser(Landroid/content/ContentResolver;Ljava/lang/String;JI)J
 
     move-result-wide v8
 
-    .line 861
+    .line 864
     .local v8, "screenOffTimeout":J
     const-string/jumbo v13, "keyguard_auto_lock"
 
@@ -3756,65 +3780,65 @@
 
     invoke-static {v13, v14}, Lcom/android/keyguard/AnalyticsHelper;->recordEnum(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 863
+    .line 866
     invoke-static/range {p0 .. p0}, Lcom/android/keyguard/MiuiKeyguardUtils;->isFingerprintHardwareAvailable(Landroid/content/Context;)Z
 
     move-result v13
 
     if-eqz v13, :cond_8
 
-    .line 864
+    .line 867
     const-string/jumbo v12, "not_secure"
 
-    .line 865
+    .line 868
     .restart local v12    # "state":Ljava/lang/String;
     if-eqz v3, :cond_7
 
-    .line 866
+    .line 869
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v13
 
-    .line 867
+    .line 870
     const-string/jumbo v14, "miui_keyguard"
 
-    .line 868
+    .line 871
     invoke-static {}, Lcom/android/keyguard/LockPatternUtilsWrapper;->getCurrentUser()I
 
     move-result v15
 
-    .line 867
+    .line 870
     const/16 v16, 0x2
 
-    .line 866
+    .line 869
     move/from16 v0, v16
 
     invoke-static {v13, v14, v0, v15}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v13
 
-    .line 868
+    .line 871
     const/4 v14, 0x2
 
-    .line 866
+    .line 869
     if-ne v13, v14, :cond_b
 
-    .line 869
+    .line 872
     const-string/jumbo v12, "enabled"
 
-    .line 874
+    .line 877
     :cond_7
     :goto_4
     const-string/jumbo v13, "keyguard_fingerprint_state_new"
 
     invoke-static {v13, v12}, Lcom/android/keyguard/AnalyticsHelper;->recordEnum(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 797
+    .line 800
     .end local v12    # "state":Ljava/lang/String;
     :cond_8
     return-void
 
-    .line 818
+    .line 821
     .end local v6    # "ownerInfoEnabled":Z
     .end local v7    # "ownerInfoString":Ljava/lang/String;
     .end local v8    # "screenOffTimeout":J
@@ -3824,19 +3848,19 @@
 
     goto/16 :goto_1
 
-    .line 822
+    .line 825
     :sswitch_1
     const-string/jumbo v11, "numeric"
 
     goto/16 :goto_1
 
-    .line 827
+    .line 830
     :sswitch_2
     const-string/jumbo v11, "mixed"
 
     goto/16 :goto_1
 
-    .line 839
+    .line 842
     .restart local v12    # "state":Ljava/lang/String;
     :cond_9
     invoke-static/range {p0 .. p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -3849,12 +3873,12 @@
 
     if-eqz v13, :cond_4
 
-    .line 840
+    .line 843
     const-string/jumbo v12, "disable"
 
     goto/16 :goto_2
 
-    .line 857
+    .line 860
     .end local v12    # "state":Ljava/lang/String;
     .restart local v6    # "ownerInfoEnabled":Z
     .restart local v7    # "ownerInfoString":Ljava/lang/String;
@@ -3864,7 +3888,7 @@
 
     goto :goto_3
 
-    .line 871
+    .line 874
     .restart local v8    # "screenOffTimeout":J
     .restart local v12    # "state":Ljava/lang/String;
     :cond_b
@@ -3872,7 +3896,7 @@
 
     goto :goto_4
 
-    .line 816
+    .line 819
     nop
 
     :sswitch_data_0
@@ -3891,7 +3915,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 753
+    .line 756
     invoke-static {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     move-result-object v6
@@ -3900,35 +3924,35 @@
 
     move-result-object v5
 
-    .line 754
+    .line 757
     .local v5, "wallpaperInfo":Lcom/android/keyguard/wallpaper/mode/WallpaperInfo;
     if-eqz v5, :cond_0
 
-    .line 755
+    .line 758
     iget-object v0, v5, Lcom/android/keyguard/wallpaper/mode/WallpaperInfo;->authority:Ljava/lang/String;
 
-    .line 756
+    .line 759
     .local v0, "authority":Ljava/lang/String;
     iget-boolean v6, v5, Lcom/android/keyguard/wallpaper/mode/WallpaperInfo;->isLockScreenMagazine:Z
 
     if-eqz v6, :cond_0
 
-    .line 757
+    .line 760
     const-string/jumbo v6, "com.xiaomi.ad.LockScreenAdProvider"
 
     invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    .line 756
+    .line 759
     if-eqz v6, :cond_0
 
-    .line 758
+    .line 761
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v6
 
-    .line 759
+    .line 762
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -3951,22 +3975,22 @@
 
     move-result-object v7
 
-    .line 758
+    .line 761
     invoke-virtual {v6, v7}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v4
 
-    .line 760
+    .line 763
     .local v4, "provider":Landroid/content/IContentProvider;
     if-eqz v4, :cond_0
 
-    .line 762
+    .line 765
     :try_start_0
     new-instance v3, Lorg/json/JSONObject;
 
     invoke-direct {v3}, Lorg/json/JSONObject;-><init>()V
 
-    .line 763
+    .line 766
     .local v3, "jo":Lorg/json/JSONObject;
     const-string/jumbo v6, "key"
 
@@ -3974,19 +3998,19 @@
 
     invoke-virtual {v3, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 764
+    .line 767
     const-string/jumbo v6, "event"
 
     const/4 v7, 0x1
 
     invoke-virtual {v3, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    .line 765
+    .line 768
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 766
+    .line 769
     .local v2, "extras":Landroid/os/Bundle;
     const-string/jumbo v6, "request_json"
 
@@ -3996,7 +4020,7 @@
 
     invoke-virtual {v2, v6, v7}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 767
+    .line 770
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v6
@@ -4010,14 +4034,14 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 771
+    .line 774
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v6
 
     invoke-virtual {v6, v4}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 752
+    .line 755
     .end local v0    # "authority":Ljava/lang/String;
     .end local v2    # "extras":Landroid/os/Bundle;
     .end local v3    # "jo":Lorg/json/JSONObject;
@@ -4026,13 +4050,13 @@
     :goto_0
     return-void
 
-    .line 768
+    .line 771
     .restart local v0    # "authority":Ljava/lang/String;
     .restart local v4    # "provider":Landroid/content/IContentProvider;
     :catch_0
     move-exception v1
 
-    .line 769
+    .line 772
     .local v1, "e":Ljava/lang/Exception;
     :try_start_1
     const-string/jumbo v6, "miui_keyguard"
@@ -4045,7 +4069,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 771
+    .line 774
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v6
@@ -4054,19 +4078,19 @@
 
     goto :goto_0
 
-    .line 770
+    .line 773
     .end local v1    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v6
 
-    .line 771
+    .line 774
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v7
 
     invoke-virtual {v7, v4}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 770
+    .line 773
     throw v6
 .end method
 
@@ -4075,7 +4099,7 @@
     .param p0, "property"    # Ljava/lang/String;
 
     .prologue
-    .line 592
+    .line 595
     sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
 
     const-string/jumbo v1, "wayne"
@@ -4106,7 +4130,7 @@
 
     if-nez v0, :cond_0
 
-    .line 593
+    .line 596
     sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
 
     const-string/jumbo v1, "tulip"
@@ -4115,10 +4139,10 @@
 
     move-result v0
 
-    .line 592
+    .line 595
     if-nez v0, :cond_0
 
-    .line 593
+    .line 596
     sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
 
     const-string/jumbo v1, "clover"
@@ -4127,16 +4151,16 @@
 
     move-result v0
 
-    .line 592
+    .line 595
     if-eqz v0, :cond_1
 
-    .line 594
+    .line 597
     :cond_0
     const-string/jumbo v0, "sys.camera.face.unlock"
 
     invoke-static {v0, p0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 591
+    .line 594
     :cond_1
     return-void
 .end method
@@ -4146,10 +4170,10 @@
     .param p0, "isFullScreenGestureOpened"    # Z
 
     .prologue
-    .line 573
+    .line 576
     sput-boolean p0, Lcom/android/keyguard/MiuiKeyguardUtils;->sIsFullScreenGestureOpened:Z
 
-    .line 572
+    .line 575
     return-void
 .end method
 
@@ -4158,10 +4182,10 @@
     .param p0, "isWallpaperPreviewAvailable"    # Z
 
     .prologue
-    .line 745
+    .line 748
     sput-boolean p0, Lcom/android/keyguard/MiuiKeyguardUtils;->sWallpaperPreviewAvailable:Z
 
-    .line 744
+    .line 747
     return-void
 .end method
 
@@ -4170,10 +4194,10 @@
     .param p0, "isScreenTurnOnDelayed"    # Z
 
     .prologue
-    .line 599
+    .line 602
     sput-boolean p0, Lcom/android/keyguard/MiuiKeyguardUtils;->sIsScreenTurnOnDelayed:Z
 
-    .line 598
+    .line 601
     return-void
 .end method
 
@@ -4181,24 +4205,24 @@
     .locals 2
 
     .prologue
-    .line 658
+    .line 661
     sget-boolean v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sHasSetAuth:Z
 
     if-nez v0, :cond_0
 
-    .line 659
+    .line 662
     const-string/jumbo v0, "sys.miui.user_authenticated"
 
     const-string/jumbo v1, "true"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 660
+    .line 663
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/keyguard/MiuiKeyguardUtils;->sHasSetAuth:Z
 
-    .line 657
+    .line 660
     :cond_0
     return-void
 .end method
@@ -4207,14 +4231,14 @@
     .locals 2
 
     .prologue
-    .line 210
+    .line 211
     const-string/jumbo v0, "sys.miui.user_authenticated_sec"
 
     const-string/jumbo v1, "true"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 209
+    .line 210
     return-void
 .end method
 
@@ -4225,7 +4249,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 448
+    .line 449
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -4240,7 +4264,7 @@
 
     move-result v0
 
-    .line 449
+    .line 450
     .local v0, "id":I
     if-lez v0, :cond_0
 
@@ -4260,7 +4284,7 @@
     .locals 1
 
     .prologue
-    .line 540
+    .line 543
     sget-boolean v0, Lcom/android/keyguard/MiuiKeyguardUtils;->SUPPORT_WIRELESS_CHARGE:Z
 
     return v0
@@ -4273,13 +4297,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 170
+    .line 171
     if-nez p0, :cond_0
 
-    .line 171
+    .line 172
     return v0
 
-    .line 172
+    .line 173
     :cond_0
     invoke-virtual {p0}, Landroid/net/Uri;->getUserInfo()Ljava/lang/String;
 
@@ -4305,7 +4329,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 129
+    .line 130
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -4318,7 +4342,7 @@
 
     move-result-object v0
 
-    .line 130
+    .line 131
     .local v0, "status":Ljava/lang/String;
     const-string/jumbo v1, "com.miui.home.none_provider"
 
@@ -4334,7 +4358,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 124
+    .line 125
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -4345,7 +4369,7 @@
 
     move-result-object v0
 
-    .line 125
+    .line 126
     .local v0, "status":Ljava/lang/String;
     const-string/jumbo v1, "com.android.thememanager.theme_lock_video_wallpaper"
 
@@ -4361,7 +4385,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 119
+    .line 120
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -4372,7 +4396,7 @@
 
     move-result-object v0
 
-    .line 120
+    .line 121
     .local v0, "status":Ljava/lang/String;
     const-string/jumbo v1, "com.android.thememanager.theme_lock_live_wallpaper"
 

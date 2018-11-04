@@ -33,18 +33,18 @@
     .param p3, "opts"    # Landroid/app/ActivityOptions;
 
     .prologue
-    .line 204
+    .line 205
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 205
+    .line 206
     iput-object p2, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->mLaunchIntent:Landroid/content/Intent;
 
-    .line 206
+    .line 207
     iput-object p3, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->mOpts:Landroid/app/ActivityOptions;
 
-    .line 204
+    .line 205
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .locals 6
 
     .prologue
-    .line 212
+    .line 213
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -70,15 +70,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 210
+    .line 211
     :goto_0
     return-void
 
-    .line 224
+    .line 225
     :catch_0
     move-exception v0
 
-    .line 225
+    .line 226
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v1, "RecentsActivity"
 

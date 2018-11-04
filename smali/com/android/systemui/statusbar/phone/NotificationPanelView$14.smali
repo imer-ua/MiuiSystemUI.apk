@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 463
+    .line 474
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$14;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,17 +42,17 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 467
+    .line 478
     invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isOwnerUser()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 468
+    .line 479
     return-void
 
-    .line 472
+    .line 483
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -63,10 +63,10 @@
 
     invoke-interface {v1, v2}, Landroid/app/IActivityManager;->switchUser(I)Z
 
-    .line 473
+    .line 484
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$14;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get24(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/View;
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get28(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/View;
 
     move-result-object v1
 
@@ -76,15 +76,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 466
+    .line 477
     :goto_0
     return-void
 
-    .line 474
+    .line 485
     :catch_0
     move-exception v0
 
-    .line 475
+    .line 486
     .local v0, "e":Landroid/os/RemoteException;
     sget-object v1, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->TAG:Ljava/lang/String;
 

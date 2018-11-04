@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     .prologue
-    .line 717
+    .line 731
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$5;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 721
+    .line 735
     const-string/jumbo v0, "action_set_icon_transparent"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -61,7 +61,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 722
+    .line 736
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$5;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-get7(Lcom/android/keyguard/fod/MiuiGxzwIconView;)Z
@@ -70,17 +70,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 723
+    .line 737
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$5;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-wrap1(Lcom/android/keyguard/fod/MiuiGxzwIconView;)V
 
-    .line 720
+    .line 734
     :cond_0
     :goto_0
     return-void
 
-    .line 725
+    .line 739
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$5;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 

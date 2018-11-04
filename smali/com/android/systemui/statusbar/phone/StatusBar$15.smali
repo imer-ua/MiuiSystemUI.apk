@@ -1,6 +1,9 @@
 .class Lcom/android/systemui/statusbar/phone/StatusBar$15;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "StatusBar.java"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -24,102 +27,26 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1878
+    .line 1372
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$15;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public onClick(Landroid/view/View;)V
+    .locals 1
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1881
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .line 1374
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$15;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->toggleRecentApps()V
 
-    .line 1882
-    .local v0, "action":Ljava/lang/String;
-    const-string/jumbo v1, "com.miui.app.ExtraStatusBarManager.TRIGGER_TOGGLE_SCREEN_BUTTONS"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 1883
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$15;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get35(Lcom/android/systemui/statusbar/phone/StatusBar;)Lmiui/app/ToggleManager;
-
-    move-result-object v1
-
-    const/16 v2, 0x14
-
-    invoke-virtual {v1, v2}, Lmiui/app/ToggleManager;->performToggle(I)Z
-
-    .line 1880
-    :cond_0
-    :goto_0
+    .line 1373
     return-void
-
-    .line 1884
-    :cond_1
-    const-string/jumbo v1, "com.miui.app.ExtraStatusBarManager.TRIGGER_TOGGLE_LOCK"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 1885
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$15;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get35(Lcom/android/systemui/statusbar/phone/StatusBar;)Lmiui/app/ToggleManager;
-
-    move-result-object v1
-
-    const/16 v2, 0xa
-
-    invoke-virtual {v1, v2}, Lmiui/app/ToggleManager;->performToggle(I)Z
-
-    goto :goto_0
-
-    .line 1886
-    :cond_2
-    const-string/jumbo v1, "com.miui.app.ExtraStatusBarManager.action_TRIGGER_TOGGLE"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 1887
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$15;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get35(Lcom/android/systemui/statusbar/phone/StatusBar;)Lmiui/app/ToggleManager;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID"
-
-    const/4 v3, -0x1
-
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Lmiui/app/ToggleManager;->performToggle(I)Z
-
-    goto :goto_0
 .end method

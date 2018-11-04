@@ -37,7 +37,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     .prologue
-    .line 300
+    .line 301
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$13;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,12 +52,12 @@
     .param p1, "button"    # Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;
 
     .prologue
-    .line 303
+    .line 304
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$13;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-wrap6(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;)V
 
-    .line 302
+    .line 303
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .param p1, "button"    # Ljava/lang/Object;
 
     .prologue
-    .line 302
+    .line 303
     check-cast p1, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton;
 
     .end local p1    # "button":Ljava/lang/Object;

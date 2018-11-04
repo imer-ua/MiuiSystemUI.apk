@@ -30,7 +30,7 @@
     .param p2, "val$wallPaperPlayer"    # Landroid/media/MediaPlayer;
 
     .prologue
-    .line 523
+    .line 534
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;->val$wallPaperPlayer:Landroid/media/MediaPlayer;
@@ -46,11 +46,11 @@
     .locals 1
 
     .prologue
-    .line 527
+    .line 538
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;->val$wallPaperPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
 
-    .line 525
+    .line 536
     return-void
 .end method

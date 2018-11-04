@@ -1236,12 +1236,12 @@ Slide down to lock"</string>
     <string name="status_bar_recent_guide_top">Slide up to close</string>
     <string name="status_bar_recent_guide_bottom">Slide down to lock</string>
     <string name="share">Share</string>
-    <string name="status_bar_date_format">"EEEE
-MMMM d"</string>
-    <string name="status_bar_date_format_12">"EEEE
-MMMM d"</string>
-    <string name="status_bar_clock_date_format">EEEE, MMMM d</string>
-    <string name="status_bar_clock_date_format_12">EEEE, MMMM d</string>
+    <string name="status_bar_date_format">"E
+MMM d"</string>
+    <string name="status_bar_date_format_12">"E
+MMM d"</string>
+    <string name="status_bar_clock_date_format">E, MMM d</string>
+    <string name="status_bar_clock_date_format_12">E, MMM d</string>
     <string name="status_bar_clock_date_time_format">H:mm d MMMM</string>
     <string name="status_bar_clock_date_time_format_12">h:mmaa d MMMM</string>
     <string name="stat_sys_data_connected_1x_half">1X</string>

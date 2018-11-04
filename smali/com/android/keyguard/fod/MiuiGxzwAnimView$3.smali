@@ -29,17 +29,17 @@
     .param p1, "this$0"    # Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     .prologue
-    .line 466
+    .line 468
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$3;->this$0:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 468
+    .line 470
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$3;->cancel:Z
 
-    .line 466
+    .line 468
     return-void
 .end method
 
@@ -50,19 +50,19 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 485
+    .line 487
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$3;->this$0:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->-set0(Lcom/android/keyguard/fod/MiuiGxzwAnimView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 486
+    .line 488
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$3;->cancel:Z
 
-    .line 484
+    .line 486
     return-void
 .end method
 
@@ -71,24 +71,24 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 477
+    .line 479
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$3;->this$0:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->-set0(Lcom/android/keyguard/fod/MiuiGxzwAnimView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 478
+    .line 480
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$3;->cancel:Z
 
     if-nez v0, :cond_0
 
-    .line 479
+    .line 481
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$3;->this$0:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->-wrap0(Lcom/android/keyguard/fod/MiuiGxzwAnimView;)V
 
-    .line 476
+    .line 478
     :cond_0
     return-void
 .end method
@@ -98,7 +98,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 490
+    .line 492
     return-void
 .end method
 
@@ -107,6 +107,6 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 471
+    .line 473
     return-void
 .end method

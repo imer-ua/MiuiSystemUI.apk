@@ -1121,8 +1121,8 @@
     <string name="wireless_charge_current">Φόρτιση</string>
     <string name="structure_face_data_input_timeout_title">Προσπαθήστε ξανά</string>
     <string name="structure_face_data_input_timeout_msg">Αδύνατη η εγγραφή. Προσπάθησε ξανά.</string>
-    <string name="structure_face_hardware_abnormal_title">Laser σφάλμα</string>
-    <string name="structure_face_hardware_abnormal_msg">Δεν είναι δυνατή η καταγραφή δεδομένων προσώπου λόγω σφάλματος λέιζερ. Επικοινωνήστε με την υπηρεσία εξυπηρέτησης πελατών για να λάβετε βοήθεια.</string>
+    <string name="structure_face_hardware_abnormal_title">Σφάλμα Υλικού</string>
+    <string name="structure_face_hardware_abnormal_msg">Παρουσιάστηκε σφάλμα υλικού. Επανεκκινήστε τη συσκευή σας. Εάν αυτό δεν σας βοηθήσει, καλέστε 400-100-5678 για βοήθεια.</string>
     <string name="structure_face_hardware_abnormal_btn">Εντάξει</string>
     <string name="structure_face_modules_abnormal_title">Σφάλμα οπτικής μονάδας</string>
     <string name="structure_face_modules_abnormal_msg">Δεν είναι δυνατή η καταγραφή δεδομένων προσώπου λόγω σφάλματος οπτικής μονάδας. Επανεκκινήστε τη συσκευή σας και δοκιμάστε ξανά.</string>
@@ -1765,4 +1765,7 @@
     <string name="wifi_disabled_by_recommendation_provider">Δεν είναι συνδεδεμένο λόγω δικτύου χαμηλής ποιότητας</string>
     <string name="wifi_no_internet_no_reconnect">Δεν είναι δυνατή η σύνδεση στο διαδίκτυο</string>
     <string name="lockscreen_storage_locked">Ξεκλείδωμα για όλες τις λειτουργίες και δεδομένα</string>
+    <string name="enable_atrace">Ενεργοποίηση ATrace</string>
+    <string name="enable_atrace_summary">Καταγραφή συμβάντων πυρήνα με χρήση ATrace</string>
+    <string name="structure_face_unlock_tof_covered">Αδύνατη η η προσθήκη δεδομένων προσώπου. Μετακινηθείτε πιο μακριά από την οθόνη.</string>
 </resources>

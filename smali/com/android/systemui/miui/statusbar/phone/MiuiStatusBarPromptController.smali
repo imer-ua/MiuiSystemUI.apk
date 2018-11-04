@@ -80,21 +80,21 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 21
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
+    .line 35
     iput v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarModeState:I
 
-    .line 37
+    .line 36
     iput v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mTopStatusBarModeState:I
 
-    .line 42
+    .line 41
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mSilentModeDefault:I
 
-    .line 44
+    .line 43
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     const/4 v1, 0x0
@@ -103,21 +103,21 @@
 
     iput-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mHandler:Ljava/lang/ref/WeakReference;
 
-    .line 45
+    .line 44
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
-    .line 46
+    .line 45
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mPromptStateChangedListeners:Ljava/util/Map;
 
-    .line 21
+    .line 20
     return-void
 .end method
 
@@ -125,7 +125,7 @@
     .locals 2
 
     .prologue
-    .line 346
+    .line 345
     iget-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mHandler:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -134,7 +134,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 347
+    .line 346
     iget-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mHandler:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -149,11 +149,11 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 345
+    .line 344
     :goto_0
     return-void
 
-    .line 353
+    .line 352
     :cond_0
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
@@ -165,12 +165,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 354
+    .line 353
     invoke-direct {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showPrompt()V
 
     goto :goto_0
 
-    .line 356
+    .line 355
     :cond_1
     const-string/jumbo v0, "MiuiStatusBarPrompt"
 
@@ -187,30 +187,30 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 379
+    .line 378
     const/16 v0, 0x20
 
     .local v0, "i":I
     :goto_0
     if-lez v0, :cond_1
 
-    .line 380
+    .line 379
     invoke-virtual {p0, v0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->isShowingState(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 381
+    .line 380
     return v0
 
-    .line 379
+    .line 378
     :cond_0
     shr-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 384
+    .line 383
     :cond_1
     return v2
 .end method
@@ -222,17 +222,17 @@
     .prologue
     const/4 v5, -0x1
 
-    .line 291
+    .line 290
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
     if-nez v3, :cond_0
 
-    .line 292
+    .line 291
     return-void
 
-    .line 294
+    .line 293
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->getContext()Landroid/content/Context;
 
@@ -246,67 +246,67 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 295
+    .line 294
     .local v0, "am":Landroid/media/AudioManager;
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
 
     move-result v2
 
-    .line 296
+    .line 295
     .local v2, "silentMode":I
     if-eqz p1, :cond_3
 
-    .line 297
+    .line 296
     const/4 v3, 0x2
 
     if-eq v2, v3, :cond_2
 
     const/4 v1, 0x1
 
-    .line 298
+    .line 297
     .local v1, "isSilentDefault":Z
     :goto_0
     iput v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mSilentModeDefault:I
 
-    .line 299
+    .line 298
     if-eq p1, v1, :cond_1
 
-    .line 300
+    .line 299
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 290
+    .line 289
     .end local v1    # "isSilentDefault":Z
     :cond_1
     :goto_1
     return-void
 
-    .line 297
+    .line 296
     :cond_2
     const/4 v1, 0x0
 
     .restart local v1    # "isSilentDefault":Z
     goto :goto_0
 
-    .line 302
+    .line 301
     .end local v1    # "isSilentDefault":Z
     :cond_3
     iget v3, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mSilentModeDefault:I
 
     if-eq v3, v5, :cond_1
 
-    .line 304
+    .line 303
     iget v3, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mSilentModeDefault:I
 
     if-eq v3, v2, :cond_4
 
-    .line 305
+    .line 304
     iget v3, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mSilentModeDefault:I
 
     invoke-virtual {v0, v3}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 307
+    .line 306
     :cond_4
     iput v5, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mSilentModeDefault:I
 
@@ -321,12 +321,12 @@
 
     const/4 v6, 0x0
 
-    .line 327
+    .line 326
     invoke-direct {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->getTopPriorityState()I
 
     move-result v3
 
-    .line 328
+    .line 327
     .local v3, "topState":I
     const/4 v4, 0x4
 
@@ -337,7 +337,7 @@
     :goto_0
     invoke-virtual {p0, v4}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToRecorderView(Z)V
 
-    .line 329
+    .line 328
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_1
@@ -347,7 +347,7 @@
     :goto_1
     invoke-virtual {p0, v4}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToSafeBar(Z)V
 
-    .line 330
+    .line 329
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_2
@@ -357,7 +357,7 @@
     :goto_2
     invoke-virtual {p0, v4}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToDriveMode(Z)V
 
-    .line 331
+    .line 330
     const/16 v4, 0x20
 
     if-ne v3, v4, :cond_3
@@ -367,7 +367,7 @@
     :goto_3
     invoke-virtual {p0, v4}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToInCall(Z)V
 
-    .line 332
+    .line 331
     if-ne v3, v5, :cond_4
 
     move v4, v5
@@ -375,27 +375,34 @@
     :goto_4
     invoke-virtual {p0, v4}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToMulti(Z)V
 
-    .line 333
+    .line 332
     const/16 v4, 0x10
 
     if-ne v3, v4, :cond_5
 
+    move v4, v5
+
     :goto_5
-    invoke-virtual {p0, v5}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToSosBar(Z)V
+    invoke-virtual {p0, v4}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToSosBar(Z)V
 
-    .line 335
-    iget v4, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mTopStatusBarModeState:I
-
-    if-eq v3, v4, :cond_7
-
-    .line 336
+    .line 334
     if-nez v3, :cond_6
 
     const/4 v0, 0x1
 
-    .line 338
+    .line 335
     .local v0, "isNormalMode":Z
     :goto_6
+    iget v4, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mTopStatusBarModeState:I
+
+    if-nez v4, :cond_7
+
+    :goto_7
+    xor-int v4, v0, v5
+
+    if-eqz v4, :cond_8
+
+    .line 337
     iget-object v4, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mPromptStateChangedListeners:Ljava/util/Map;
 
     invoke-interface {v4}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -407,12 +414,12 @@
     move-result-object v2
 
     .local v2, "listener$iterator":Ljava/util/Iterator;
-    :goto_7
+    :goto_8
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_8
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -420,11 +427,11 @@
 
     check-cast v1, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController$OnPromptStateChangedListener;
 
-    .line 339
+    .line 338
     .local v1, "listener":Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController$OnPromptStateChangedListener;
     invoke-interface {v1, v0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController$OnPromptStateChangedListener;->onPromptStateChanged(Z)V
 
-    goto :goto_7
+    goto :goto_8
 
     .end local v0    # "isNormalMode":Z
     .end local v1    # "listener":Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController$OnPromptStateChangedListener;
@@ -432,52 +439,57 @@
     :cond_0
     move v4, v6
 
-    .line 328
+    .line 327
     goto :goto_0
 
     :cond_1
     move v4, v6
 
-    .line 329
+    .line 328
     goto :goto_1
 
     :cond_2
     move v4, v6
 
-    .line 330
+    .line 329
     goto :goto_2
 
     :cond_3
     move v4, v6
 
-    .line 331
+    .line 330
     goto :goto_3
 
     :cond_4
     move v4, v6
 
-    .line 332
+    .line 331
     goto :goto_4
 
     :cond_5
-    move v5, v6
+    move v4, v6
 
-    .line 333
+    .line 332
     goto :goto_5
 
-    .line 336
+    .line 334
     :cond_6
     const/4 v0, 0x0
 
     .restart local v0    # "isNormalMode":Z
     goto :goto_6
 
-    .line 342
-    .end local v0    # "isNormalMode":Z
     :cond_7
+    move v5, v6
+
+    .line 335
+    goto :goto_7
+
+    .line 341
+    :cond_8
     iput v3, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mTopStatusBarModeState:I
 
-    .line 326
+    .line 325
     return-void
 .end method
 
@@ -489,12 +501,12 @@
     .param p2, "listener"    # Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController$OnPromptStateChangedListener;
 
     .prologue
-    .line 60
+    .line 59
     iget-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mPromptStateChangedListeners:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 59
+    .line 58
     return-void
 .end method
 
@@ -507,7 +519,7 @@
     .param p5, "listener"    # Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController$OnPromptStateChangedListener;
 
     .prologue
-    .line 55
+    .line 54
     iget-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     new-instance v1, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptImpl;
@@ -516,10 +528,10 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 56
+    .line 55
     invoke-virtual {p0, p1, p5}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->addPromptStateChangedListener(Ljava/lang/String;Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController$OnPromptStateChangedListener;)V
 
-    .line 54
+    .line 53
     return-void
 .end method
 
@@ -527,7 +539,7 @@
     .locals 3
 
     .prologue
-    .line 197
+    .line 196
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -552,7 +564,7 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 198
+    .line 197
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->blockClickAction()Z
 
@@ -560,15 +572,15 @@
 
     if-eqz v2, :cond_0
 
-    .line 199
+    .line 198
     iput-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mLastClickablePrompt:Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 200
+    .line 199
     const/4 v2, 0x1
 
     return v2
 
-    .line 203
+    .line 202
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_1
     const/4 v2, 0x0
@@ -581,25 +593,25 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 368
+    .line 367
     invoke-virtual {p0, p1}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->isShowingState(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 369
+    .line 368
     iget v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarModeState:I
 
     sub-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarModeState:I
 
-    .line 371
+    .line 370
     :cond_0
     invoke-direct {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->dispatchShowPrompt()V
 
-    .line 367
+    .line 366
     return-void
 .end method
 
@@ -611,7 +623,7 @@
 
     const/4 v8, 0x0
 
-    .line 312
+    .line 311
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -622,16 +634,16 @@
 
     if-eqz v3, :cond_0
 
-    .line 313
+    .line 312
     const-string/jumbo v2, ""
 
-    .line 314
+    .line 313
     .local v2, "title":Ljava/lang/String;
     iget v3, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mRecorderState:I
 
     if-ne v3, v9, :cond_1
 
-    .line 315
+    .line 314
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -642,7 +654,7 @@
 
     move-result-object v2
 
-    .line 316
+    .line 315
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
@@ -651,18 +663,18 @@
 
     sub-long v0, v4, v6
 
-    .line 317
+    .line 316
     .local v0, "duration":J
     invoke-virtual {p0, v2, v9, v0, v1}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToRecorderView(Ljava/lang/String;ZJ)V
 
-    .line 311
+    .line 310
     .end local v0    # "duration":J
     .end local v2    # "title":Ljava/lang/String;
     :cond_0
     :goto_0
     return-void
 
-    .line 318
+    .line 317
     .restart local v2    # "title":Ljava/lang/String;
     :cond_1
     iget v3, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mRecorderState:I
@@ -671,7 +683,7 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 319
+    .line 318
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -682,14 +694,14 @@
 
     move-result-object v2
 
-    .line 320
+    .line 319
     iget-wide v4, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mRecordingPausedTime:J
 
     iget-wide v6, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mRecordingStartTime:J
 
     sub-long v0, v4, v6
 
-    .line 321
+    .line 320
     .restart local v0    # "duration":J
     invoke-virtual {p0, v2, v8, v0, v1}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToRecorderView(Ljava/lang/String;ZJ)V
 
@@ -702,7 +714,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 216
+    .line 215
     iget-object v3, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v3}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -727,20 +739,20 @@
 
     check-cast v1, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 217
+    .line 216
     .local v1, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v1}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 218
+    .line 217
     .local v0, "context":Landroid/content/Context;
     if-eqz v0, :cond_0
 
-    .line 219
+    .line 218
     return-object v0
 
-    .line 222
+    .line 221
     .end local v0    # "context":Landroid/content/Context;
     .end local v1    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_1
@@ -753,20 +765,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 208
+    .line 207
     iget-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mLastClickablePrompt:Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
     if-eqz v0, :cond_0
 
-    .line 209
+    .line 208
     iget-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mLastClickablePrompt:Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
     invoke-interface {v0}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->handleClickAction()V
 
-    .line 210
+    .line 209
     iput-object v1, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mLastClickablePrompt:Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 207
+    .line 206
     :cond_0
     return-void
 .end method
@@ -775,12 +787,12 @@
     .locals 3
 
     .prologue
-    .line 168
+    .line 167
     const/16 v2, 0x20
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->clearState(I)V
 
-    .line 169
+    .line 168
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -805,13 +817,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 170
+    .line 169
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->hideReturnToInCallScreenButton()V
 
     goto :goto_0
 
-    .line 167
+    .line 166
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -821,12 +833,12 @@
     .locals 3
 
     .prologue
-    .line 72
+    .line 71
     const/4 v2, 0x4
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->clearState(I)V
 
-    .line 73
+    .line 72
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -851,13 +863,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 74
+    .line 73
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->hideReturnToRecorderView()V
 
     goto :goto_0
 
-    .line 71
+    .line 70
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -867,12 +879,12 @@
     .locals 3
 
     .prologue
-    .line 103
+    .line 102
     const/16 v2, 0x8
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->clearState(I)V
 
-    .line 104
+    .line 103
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -897,13 +909,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 105
+    .line 104
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->hideSafePayStatusBar()V
 
     goto :goto_0
 
-    .line 102
+    .line 101
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -913,12 +925,12 @@
     .locals 3
 
     .prologue
-    .line 119
+    .line 118
     const/16 v2, 0x10
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->clearState(I)V
 
-    .line 120
+    .line 119
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -943,13 +955,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 121
+    .line 120
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->hideSosStatusBar()V
 
     goto :goto_0
 
-    .line 118
+    .line 117
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -960,7 +972,7 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 375
+    .line 374
     iget v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarModeState:I
 
     and-int/2addr v0, p1
@@ -982,7 +994,7 @@
     .locals 3
 
     .prologue
-    .line 183
+    .line 182
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1007,13 +1019,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 184
+    .line 183
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->makeReturnToInCallScreenButtonGone()V
 
     goto :goto_0
 
-    .line 182
+    .line 181
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1023,7 +1035,7 @@
     .locals 3
 
     .prologue
-    .line 176
+    .line 175
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1048,13 +1060,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 177
+    .line 176
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->makeReturnToInCallScreenButtonVisible()V
 
     goto :goto_0
 
-    .line 175
+    .line 174
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1065,14 +1077,14 @@
     .param p1, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 50
+    .line 49
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mHandler:Ljava/lang/ref/WeakReference;
 
-    .line 49
+    .line 48
     return-void
 .end method
 
@@ -1081,25 +1093,25 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 361
+    .line 360
     invoke-virtual {p0, p1}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->isShowingState(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 362
+    .line 361
     iget v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarModeState:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarModeState:I
 
-    .line 364
+    .line 363
     :cond_0
     invoke-direct {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->dispatchShowPrompt()V
 
-    .line 360
+    .line 359
     return-void
 .end method
 
@@ -1112,7 +1124,7 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 226
+    .line 225
     const-string/jumbo v6, "com.miui.app.ExtraStatusBarManager.action_status_recorder"
 
     invoke-virtual {v6, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1121,36 +1133,36 @@
 
     if-eqz v6, :cond_3
 
-    .line 227
+    .line 226
     packed-switch p1, :pswitch_data_0
 
-    .line 225
+    .line 224
     :cond_0
     :goto_0
     return-void
 
-    .line 229
+    .line 228
     :pswitch_0
     invoke-direct {p0, v10}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->setSilenceWhenRecording(Z)V
 
-    .line 230
+    .line 229
     iput v10, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mRecorderState:I
 
-    .line 231
+    .line 230
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->hideReturnToRecorderView()V
 
     goto :goto_0
 
-    .line 234
+    .line 233
     :pswitch_1
     iput v10, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mRecorderState:I
 
-    .line 235
+    .line 234
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->hideReturnToRecorderView()V
 
     goto :goto_0
 
-    .line 238
+    .line 237
     :pswitch_2
     const-string/jumbo v6, "com.miui.app.ExtraStatusBarManager.extra_recorder_duration"
 
@@ -1160,7 +1172,7 @@
 
     move-result-wide v2
 
-    .line 239
+    .line 238
     .local v2, "d":J
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -1168,30 +1180,30 @@
 
     iput-wide v6, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mRecordingPausedTime:J
 
-    .line 240
+    .line 239
     iget-wide v6, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mRecordingPausedTime:J
 
     sub-long/2addr v6, v2
 
     iput-wide v6, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mRecordingStartTime:J
 
-    .line 241
+    .line 240
     const-string/jumbo v6, "com.miui.app.ExtraStatusBarManager.extra_recorder_title"
 
     invoke-virtual {p3, v6}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 243
+    .line 242
     .local v5, "title":Ljava/lang/String;
     const-string/jumbo v6, "com.miui.app.ExtraStatusBarManager.extra_recorder_timer_on_off"
 
-    .line 242
+    .line 241
     invoke-virtual {p3, v6, v10}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 
-    .line 244
+    .line 243
     .local v1, "enable":Z
     if-eqz v1, :cond_1
 
@@ -1200,18 +1212,18 @@
     :goto_1
     iput v6, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mRecorderState:I
 
-    .line 245
+    .line 244
     invoke-virtual {p0, v5, v1, v2, v3}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToRecorderView(Ljava/lang/String;ZJ)V
 
     goto :goto_0
 
-    .line 244
+    .line 243
     :cond_1
     const/4 v6, 0x2
 
     goto :goto_1
 
-    .line 248
+    .line 247
     .end local v1    # "enable":Z
     .end local v2    # "d":J
     .end local v5    # "title":Ljava/lang/String;
@@ -1222,7 +1234,7 @@
 
     move-result v0
 
-    .line 249
+    .line 248
     .local v0, "changedByUser":Z
     const-string/jumbo v6, "com.miui.app.ExtraStatusBarManager.extra_recorder_enter_silent_mode"
 
@@ -1230,24 +1242,24 @@
 
     move-result v4
 
-    .line 250
+    .line 249
     .local v4, "enterSilent":Z
     if-eqz v0, :cond_2
 
-    .line 251
+    .line 250
     const/4 v6, -0x1
 
     iput v6, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mSilentModeDefault:I
 
     goto :goto_0
 
-    .line 253
+    .line 252
     :cond_2
     invoke-direct {p0, v4}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->setSilenceWhenRecording(Z)V
 
     goto :goto_0
 
-    .line 259
+    .line 258
     .end local v0    # "changedByUser":Z
     .end local v4    # "enterSilent":Z
     :cond_3
@@ -1259,25 +1271,25 @@
 
     if-eqz v6, :cond_4
 
-    .line 260
+    .line 259
     packed-switch p1, :pswitch_data_1
 
     :pswitch_4
     goto :goto_0
 
-    .line 262
+    .line 261
     :pswitch_5
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->hideSafePayStatusBar()V
 
     goto :goto_0
 
-    .line 267
+    .line 266
     :pswitch_6
     invoke-virtual {p0, p1, p3}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showSafePayStatusBar(ILandroid/os/Bundle;)V
 
     goto :goto_0
 
-    .line 272
+    .line 271
     :cond_4
     const-string/jumbo v6, "com.miui.app.ExtraStatusBarManager.action_status_sos"
 
@@ -1287,24 +1299,24 @@
 
     if-eqz v6, :cond_0
 
-    .line 273
+    .line 272
     packed-switch p1, :pswitch_data_2
 
     goto :goto_0
 
-    .line 278
+    .line 277
     :pswitch_7
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->hideSosStatusBar()V
 
     goto :goto_0
 
-    .line 275
+    .line 274
     :pswitch_8
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showSosStatusBar()V
 
     goto :goto_0
 
-    .line 227
+    .line 226
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -1313,7 +1325,7 @@
         :pswitch_0
     .end packed-switch
 
-    .line 260
+    .line 259
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_5
@@ -1323,7 +1335,7 @@
         :pswitch_6
     .end packed-switch
 
-    .line 273
+    .line 272
     :pswitch_data_2
     .packed-switch 0x0
         :pswitch_7
@@ -1336,7 +1348,7 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 134
+    .line 133
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1361,13 +1373,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 135
+    .line 134
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0, p1}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showReturnToDriveMode(Z)V
 
     goto :goto_0
 
-    .line 133
+    .line 132
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1381,13 +1393,13 @@
     .prologue
     const/4 v2, 0x2
 
-    .line 141
+    .line 140
     if-eqz p1, :cond_0
 
-    .line 142
+    .line 141
     invoke-virtual {p0, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->setState(I)V
 
-    .line 146
+    .line 145
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
@@ -1413,13 +1425,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 147
+    .line 146
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0, p1, p2}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showReturnToDriveModeView(ZZ)V
 
     goto :goto_1
 
-    .line 144
+    .line 143
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     .end local v1    # "statusBarPrompt$iterator":Ljava/util/Iterator;
     :cond_0
@@ -1427,7 +1439,7 @@
 
     goto :goto_0
 
-    .line 140
+    .line 139
     .restart local v1    # "statusBarPrompt$iterator":Ljava/util/Iterator;
     :cond_1
     return-void
@@ -1438,7 +1450,7 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 153
+    .line 152
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1463,13 +1475,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 154
+    .line 153
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0, p1}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showReturnToInCall(Z)V
 
     goto :goto_0
 
-    .line 152
+    .line 151
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1481,12 +1493,12 @@
     .param p2, "baseTime"    # J
 
     .prologue
-    .line 160
+    .line 159
     const/16 v2, 0x20
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->setState(I)V
 
-    .line 161
+    .line 160
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1511,13 +1523,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 162
+    .line 161
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0, p1, p2, p3}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showReturnToInCallScreenButton(Ljava/lang/String;J)V
 
     goto :goto_0
 
-    .line 159
+    .line 158
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1528,7 +1540,7 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 190
+    .line 189
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1553,13 +1565,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 191
+    .line 190
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0, p1}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showReturnToMulti(Z)V
 
     goto :goto_0
 
-    .line 189
+    .line 188
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1572,12 +1584,12 @@
     .param p3, "duration"    # J
 
     .prologue
-    .line 80
+    .line 79
     const/4 v2, 0x4
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->setState(I)V
 
-    .line 81
+    .line 80
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1602,13 +1614,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 82
+    .line 81
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showReturnToRecorderView(Ljava/lang/String;ZJ)V
 
     goto :goto_0
 
-    .line 79
+    .line 78
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1619,7 +1631,7 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 65
+    .line 64
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1644,13 +1656,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 66
+    .line 65
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0, p1}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showReturnToRecorderView(Z)V
 
     goto :goto_0
 
-    .line 64
+    .line 63
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1661,7 +1673,7 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 88
+    .line 87
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1686,13 +1698,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 89
+    .line 88
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0, p1}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showReturnToSafeBar(Z)V
 
     goto :goto_0
 
-    .line 87
+    .line 86
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1703,7 +1715,7 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 127
+    .line 126
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1728,13 +1740,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 128
+    .line 127
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0, p1}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showReturnToSosBar(Z)V
 
     goto :goto_0
 
-    .line 126
+    .line 125
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1746,12 +1758,12 @@
     .param p2, "ext"    # Landroid/os/Bundle;
 
     .prologue
-    .line 95
+    .line 94
     const/16 v2, 0x8
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->setState(I)V
 
-    .line 96
+    .line 95
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1776,13 +1788,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 97
+    .line 96
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0, p1, p2}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showSafePayStatusBar(ILandroid/os/Bundle;)V
 
     goto :goto_0
 
-    .line 94
+    .line 93
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void
@@ -1792,12 +1804,12 @@
     .locals 3
 
     .prologue
-    .line 111
+    .line 110
     const/16 v2, 0x10
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->setState(I)V
 
-    .line 112
+    .line 111
     iget-object v2, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->mStatusBarPrompts:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1822,13 +1834,13 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
 
-    .line 113
+    .line 112
     .local v0, "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     invoke-interface {v0}, Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;->showSosStatusBar()V
 
     goto :goto_0
 
-    .line 110
+    .line 109
     .end local v0    # "statusBarPrompt":Lcom/android/systemui/miui/statusbar/phone/IMiuiStatusBarPrompt;
     :cond_0
     return-void

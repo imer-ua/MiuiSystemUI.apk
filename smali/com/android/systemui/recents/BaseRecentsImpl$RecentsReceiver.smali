@@ -35,87 +35,87 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/BaseRecentsImpl;
 
     .prologue
-    .line 1831
+    .line 1836
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 1836
+    .line 1841
     const/16 v0, 0x9
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 1837
+    .line 1842
     const-string/jumbo v1, "com.miui.home"
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 1838
+    .line 1843
     const-string/jumbo v1, "com.miui.securitycenter"
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    .line 1839
+    .line 1844
     const-string/jumbo v1, "com.miui.touchassistant"
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 1840
+    .line 1845
     const-string/jumbo v1, "com.android.snapshot"
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    .line 1841
+    .line 1846
     const-string/jumbo v1, "com.android.keyguard"
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    .line 1842
+    .line 1847
     const-string/jumbo v1, "com.android.systemui"
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    .line 1843
+    .line 1848
     const-string/jumbo v1, "com.mi.android.globallauncher"
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    .line 1844
+    .line 1849
     const-string/jumbo v1, "com.xiaomi.mihomemanager"
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    .line 1845
+    .line 1850
     const-string/jumbo v1, "com.miui.voiceassist"
 
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    .line 1836
+    .line 1841
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;->pkgsAllowCallClear:Ljava/util/List;
 
-    .line 1831
+    .line 1836
     return-void
 .end method
 
@@ -137,7 +137,7 @@
     .end annotation
 
     .prologue
-    .line 1914
+    .line 1919
     .local p1, "packages":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p3, "taskinfos":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RecentTaskInfo;>;"
     invoke-static {}, Lcom/android/internal/os/BackgroundThread;->getHandler()Landroid/os/Handler;
@@ -150,7 +150,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1913
+    .line 1918
     return-void
 .end method
 
@@ -167,7 +167,7 @@
 
     const/4 v4, 0x0
 
-    .line 1936
+    .line 1941
     new-instance v8, Lmiui/widget/CircleProgressBar;
 
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
@@ -176,7 +176,7 @@
 
     invoke-direct {v8, v2}, Lmiui/widget/CircleProgressBar;-><init>(Landroid/content/Context;)V
 
-    .line 1938
+    .line 1943
     .local v8, "clearButton":Lmiui/widget/CircleProgressBar;
     new-array v2, v5, [I
 
@@ -184,7 +184,7 @@
 
     aput v3, v2, v4
 
-    .line 1939
+    .line 1944
     new-array v3, v5, [I
 
     const v6, 0x9020084
@@ -193,10 +193,10 @@
 
     const/4 v6, 0x0
 
-    .line 1937
+    .line 1942
     invoke-virtual {v8, v2, v3, v6}, Lmiui/widget/CircleProgressBar;->setDrawablesForLevels([I[I[I)V
 
-    .line 1940
+    .line 1945
     invoke-static {}, Lmiui/util/HardwareInfo;->getTotalPhysicalMemory()J
 
     move-result-wide v2
@@ -207,7 +207,7 @@
 
     invoke-virtual {v8, v2}, Lmiui/widget/CircleProgressBar;->setMax(I)V
 
-    .line 1941
+    .line 1946
     invoke-static {}, Lmiui/util/HardwareInfo;->getTotalPhysicalMemory()J
 
     move-result-wide v2
@@ -220,7 +220,7 @@
 
     invoke-virtual {v8, v2}, Lmiui/widget/CircleProgressBar;->setProgress(I)V
 
-    .line 1942
+    .line 1947
     const-string/jumbo v2, "RecentsReceiver"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -247,7 +247,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1944
+    .line 1949
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v2, v2, Lcom/android/systemui/recents/BaseRecentsImpl;->mContext:Landroid/content/Context;
@@ -260,25 +260,25 @@
 
     check-cast v9, Landroid/view/WindowManager;
 
-    .line 1945
+    .line 1950
     .local v9, "wm":Landroid/view/WindowManager;
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 1948
+    .line 1953
     const/16 v3, 0x7d6
 
     move v2, v1
 
-    .line 1945
+    .line 1950
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 1951
+    .line 1956
     .local v0, "params":Landroid/view/WindowManager$LayoutParams;
     const/16 v1, 0x51
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 1952
+    .line 1957
     iget-object v1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v1, v1, Lcom/android/systemui/recents/BaseRecentsImpl;->mContext:Landroid/content/Context;
@@ -295,20 +295,20 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    .line 1953
+    .line 1958
     const v1, 0x91101db
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 1954
+    .line 1959
     const/16 v1, 0x10
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    .line 1955
+    .line 1960
     invoke-interface {v9, v8, v0}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1957
+    .line 1962
     new-instance v2, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$2;
 
     move-object v3, p0
@@ -321,13 +321,13 @@
 
     invoke-direct/range {v2 .. v7}, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$2;-><init>(Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;Lmiui/widget/CircleProgressBar;Landroid/view/WindowManager;J)V
 
-    .line 1979
+    .line 1984
     const-wide/16 v4, 0xfa
 
-    .line 1957
+    .line 1962
     invoke-virtual {v8, v2, v4, v5}, Lmiui/widget/CircleProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1935
+    .line 1940
     return-void
 .end method
 
@@ -339,12 +339,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1853
+    .line 1858
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1854
+    .line 1859
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v5, "com.android.systemui.taskmanager.Clear"
 
@@ -354,12 +354,12 @@
 
     if-eqz v5, :cond_0
 
-    .line 1855
+    .line 1860
     invoke-virtual {p2}, Landroid/content/Intent;->getSender()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1856
+    .line 1861
     .local v3, "sender":Ljava/lang/String;
     const-string/jumbo v5, "RecentsReceiver"
 
@@ -383,7 +383,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1857
+    .line 1862
     iget-object v5, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;->pkgsAllowCallClear:Ljava/util/List;
 
     invoke-interface {v5, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -392,7 +392,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 1858
+    .line 1863
     const-string/jumbo v5, "show_toast"
 
     const/4 v6, 0x0
@@ -401,7 +401,7 @@
 
     move-result v4
 
-    .line 1859
+    .line 1864
     .local v4, "showToast":Z
     const-string/jumbo v5, "protected_pkgnames"
 
@@ -409,7 +409,7 @@
 
     move-result-object v2
 
-    .line 1860
+    .line 1865
     .local v2, "protectedPkgNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string/jumbo v5, "clean_type"
 
@@ -419,7 +419,7 @@
 
     move-result v1
 
-    .line 1861
+    .line 1866
     .local v1, "cleanType":I
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
@@ -431,7 +431,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 1862
+    .line 1867
     invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
 
     move-result-object v5
@@ -442,7 +442,7 @@
 
     invoke-virtual {v5, v6}, Lcom/android/systemui/recents/events/RecentsEventBus;->post(Lcom/android/systemui/recents/events/RecentsEventBus$Event;)V
 
-    .line 1852
+    .line 1857
     .end local v1    # "cleanType":I
     .end local v2    # "protectedPkgNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v3    # "sender":Ljava/lang/String;
@@ -451,7 +451,7 @@
     :goto_0
     return-void
 
-    .line 1864
+    .line 1869
     .restart local v1    # "cleanType":I
     .restart local v2    # "protectedPkgNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .restart local v3    # "sender":Ljava/lang/String;
@@ -461,7 +461,7 @@
 
     goto :goto_0
 
-    .line 1867
+    .line 1872
     .end local v1    # "cleanType":I
     .end local v2    # "protectedPkgNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v4    # "showToast":Z
@@ -506,15 +506,15 @@
     .end annotation
 
     .prologue
-    .line 1873
+    .line 1878
     .local p2, "pPkgs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const-wide/16 v6, 0x0
 
-    .line 1874
+    .line 1879
     .local v6, "freeAtFirst":J
     if-eqz p1, :cond_0
 
-    .line 1875
+    .line 1880
     invoke-static {}, Lmiui/util/HardwareInfo;->getFreeMemory()J
 
     move-result-wide v12
@@ -523,7 +523,7 @@
 
     div-long v6, v12, v14
 
-    .line 1876
+    .line 1881
     const-string/jumbo v11, "RecentsReceiver"
 
     new-instance v12, Ljava/lang/StringBuilder;
@@ -550,7 +550,7 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1880
+    .line 1885
     :cond_0
     move-object/from16 v0, p0
 
@@ -566,7 +566,7 @@
 
     move-result v12
 
-    .line 1881
+    .line 1886
     new-instance v13, Landroid/util/ArraySet;
 
     invoke-direct {v13}, Landroid/util/ArraySet;-><init>()V
@@ -575,27 +575,27 @@
 
     const/4 v15, 0x0
 
-    .line 1880
+    .line 1885
     invoke-virtual {v11, v12, v14, v15, v13}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getRecentTasks(IIZLandroid/util/ArraySet;)Ljava/util/List;
 
     move-result-object v10
 
-    .line 1883
+    .line 1888
     .local v10, "taskinfos":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RecentTaskInfo;>;"
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1884
+    .line 1889
     .local v9, "protectedPkgNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-eqz p2, :cond_1
 
-    .line 1885
+    .line 1890
     move-object/from16 v0, p2
 
     invoke-virtual {v9, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 1888
+    .line 1893
     :cond_1
     :try_start_0
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
@@ -608,23 +608,23 @@
 
     if-eqz v11, :cond_3
 
-    .line 1890
+    .line 1895
     const/4 v11, 0x3
 
     const/4 v12, 0x3
 
     const/4 v13, 0x0
 
-    .line 1889
+    .line 1894
     invoke-static {v11, v12, v13}, Landroid/app/ActivityManagerCompat;->getStackInfo(III)Landroid/app/ActivityManager$StackInfo;
 
     move-result-object v2
 
-    .line 1891
+    .line 1896
     .local v2, "dockedStackInfo":Landroid/app/ActivityManager$StackInfo;
     iget-object v3, v2, Landroid/app/ActivityManager$StackInfo;->topActivity:Landroid/content/ComponentName;
 
-    .line 1892
+    .line 1897
     .local v3, "dockedTopActivity":Landroid/content/ComponentName;
     if-eqz v3, :cond_2
 
@@ -632,14 +632,14 @@
 
     if-eqz v11, :cond_2
 
-    .line 1893
+    .line 1898
     invoke-virtual {v3}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v11
 
     invoke-virtual {v9, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1896
+    .line 1901
     :cond_2
     const/4 v11, 0x1
 
@@ -647,16 +647,16 @@
 
     const/4 v13, 0x0
 
-    .line 1895
+    .line 1900
     invoke-static {v11, v12, v13}, Landroid/app/ActivityManagerCompat;->getStackInfo(III)Landroid/app/ActivityManager$StackInfo;
 
     move-result-object v5
 
-    .line 1897
+    .line 1902
     .local v5, "fullScreenStackInfo":Landroid/app/ActivityManager$StackInfo;
     iget-object v8, v5, Landroid/app/ActivityManager$StackInfo;->topActivity:Landroid/content/ComponentName;
 
-    .line 1898
+    .line 1903
     .local v8, "fullScreenTopActivity":Landroid/content/ComponentName;
     if-eqz v8, :cond_3
 
@@ -664,7 +664,7 @@
 
     if-eqz v11, :cond_3
 
-    .line 1899
+    .line 1904
     invoke-virtual {v8}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v11
@@ -673,7 +673,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1906
+    .line 1911
     .end local v2    # "dockedStackInfo":Landroid/app/ActivityManager$StackInfo;
     .end local v3    # "dockedTopActivity":Landroid/content/ComponentName;
     .end local v5    # "fullScreenStackInfo":Landroid/app/ActivityManager$StackInfo;
@@ -686,23 +686,23 @@
 
     invoke-direct {v0, v9, v1, v10}, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;->doClear(Ljava/util/List;ILjava/util/List;)V
 
-    .line 1908
+    .line 1913
     if-eqz p1, :cond_4
 
-    .line 1909
+    .line 1914
     move-object/from16 v0, p0
 
     invoke-direct {v0, v6, v7}, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;->showCleanEndMsg(J)V
 
-    .line 1872
+    .line 1877
     :cond_4
     return-void
 
-    .line 1902
+    .line 1907
     :catch_0
     move-exception v4
 
-    .line 1903
+    .line 1908
     .local v4, "e":Ljava/lang/Exception;
     const-string/jumbo v11, "RecentsReceiver"
 

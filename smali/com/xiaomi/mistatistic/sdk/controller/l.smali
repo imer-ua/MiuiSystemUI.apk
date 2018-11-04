@@ -191,6 +191,9 @@
 
     invoke-direct {v6, p1, v0, p6, p7}, Lcom/xiaomi/mistatistic/sdk/controller/asyncjobs/c;-><init>(Ljava/lang/String;Lcom/xiaomi/mistatistic/sdk/controller/asyncjobs/c$a;IZ)V
 
+    .line 110
+    invoke-virtual {v6}, Lcom/xiaomi/mistatistic/sdk/controller/asyncjobs/c;->a()V
+
     .line 111
     return-void
 .end method

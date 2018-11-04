@@ -7330,7 +7330,13 @@
 
     if-eqz v2, :cond_0
 
-    if-nez p1, :cond_2
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isMediaNotification()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
 
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mEntry:Lcom/android/systemui/statusbar/NotificationData$Entry;
@@ -8805,7 +8811,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     .line 2139
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
@@ -8823,7 +8829,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     .line 2144
     :cond_1
@@ -8850,7 +8856,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
     .line 2124
     :cond_3
@@ -8902,14 +8908,17 @@
 
     if-eqz v0, :cond_6
 
-    .line 2133
-    iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getEntry()Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    const v1, 0x90202bf
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setCustomBackground(I)V
+    iget-object v0, v0, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
-    goto :goto_0
+    invoke-static {v0}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->isInCallUINotification(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
 
     .line 2135
     :cond_6
@@ -8919,8 +8928,18 @@
 
     goto :goto_0
 
-    .line 2141
+    .line 2133
     :cond_7
+    iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
+
+    const v1, 0x90202bf
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setCustomBackground(I)V
+
+    goto :goto_0
+
+    .line 2141
+    :cond_8
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
     .line 2142
@@ -8934,12 +8953,12 @@
     goto :goto_0
 
     .line 2147
-    :cond_8
+    :cond_9
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isCustomViewNotification()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
     .line 2148
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
@@ -8949,19 +8968,19 @@
     goto :goto_0
 
     .line 2149
-    :cond_9
+    :cond_a
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isChildInGroup()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
     .line 2151
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isExpanded()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     .line 2152
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
@@ -8981,10 +9000,10 @@
 
     invoke-virtual {v0, v3, v1, v2}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setCustomBackground(IZZ)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 2156
-    :cond_a
+    :cond_b
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getNotificationParent()Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     move-result-object v0
@@ -8993,7 +9012,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
     .line 2158
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isGroupExpansionChanging()Z
@@ -9015,7 +9034,7 @@
     goto/16 :goto_0
 
     .line 2163
-    :cond_b
+    :cond_c
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setVisibility(I)V
@@ -9023,19 +9042,19 @@
     goto/16 :goto_0
 
     .line 2166
-    :cond_c
+    :cond_d
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isSummaryWithChildren()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_f
 
     .line 2168
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isGroupExpanded()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
     .line 2169
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
@@ -9056,7 +9075,7 @@
     goto/16 :goto_0
 
     .line 2173
-    :cond_d
+    :cond_e
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
     invoke-virtual {v0, v4}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setVisibility(I)V
@@ -9069,27 +9088,27 @@
     goto/16 :goto_0
 
     .line 2178
-    :cond_e
+    :cond_f
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isExpanded()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isContentExpandable()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isSystemExpanded()Z
 
     move-result v0
 
     if-eqz v0, :cond_10
 
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isContentExpandable()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isSystemExpanded()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_11
+
     .line 2184
-    :cond_f
+    :cond_10
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
     invoke-virtual {v0, v4}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setVisibility(I)V
@@ -9102,14 +9121,14 @@
     goto/16 :goto_0
 
     .line 2179
-    :cond_10
+    :cond_11
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mStatusBarNotification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     invoke-virtual {v0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->isShowMiuiAction()Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_10
 
     .line 2180
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
@@ -9130,7 +9149,7 @@
     goto/16 :goto_0
 
     .line 2189
-    :cond_11
+    :cond_12
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
     const v1, 0x90202b1

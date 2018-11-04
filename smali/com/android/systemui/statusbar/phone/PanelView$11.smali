@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/PanelView;
 
     .prologue
-    .line 1175
+    .line 1181
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PanelView$11;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 1178
+    .line 1184
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PanelView$11;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,6 +57,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/PanelView;->setExpandedHeightInternal(F)V
 
-    .line 1177
+    .line 1183
     return-void
 .end method

@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/recents/BaseRecentsImpl$H;
 
     .prologue
-    .line 1782
+    .line 1787
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H$1;->this$1:Lcom/android/systemui/recents/BaseRecentsImpl$H;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 1785
+    .line 1790
     iget-object v0, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H$1;->this$1:Lcom/android/systemui/recents/BaseRecentsImpl$H;
 
     iget-object v0, v0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1786
+    .line 1791
     iget-object v0, p0, Lcom/android/systemui/recents/BaseRecentsImpl$H$1;->this$1:Lcom/android/systemui/recents/BaseRecentsImpl$H;
 
     iget-object v0, v0, Lcom/android/systemui/recents/BaseRecentsImpl$H;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
@@ -65,7 +65,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->performHapticFeedback(I)Z
 
-    .line 1784
+    .line 1789
     :cond_0
     return-void
 .end method

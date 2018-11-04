@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/RoundedCorners;
 
     .prologue
-    .line 284
+    .line 286
     iput-object p1, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,12 +44,12 @@
 
     const/4 v2, 0x0
 
-    .line 287
+    .line 289
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 288
+    .line 290
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.USER_SWITCHED"
 
@@ -59,7 +59,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 289
+    .line 291
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v1}, Lcom/android/systemui/RoundedCorners;->-get9(Lcom/android/systemui/RoundedCorners;)Lcom/android/systemui/qs/SecureSetting;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/qs/SecureSetting;->setUserId(I)V
 
-    .line 290
+    .line 292
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
 
     iget-object v3, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
@@ -87,7 +87,7 @@
 
     invoke-static {v1, v3}, Lcom/android/systemui/RoundedCorners;->-wrap0(Lcom/android/systemui/RoundedCorners;I)V
 
-    .line 291
+    .line 293
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v1}, Lcom/android/systemui/RoundedCorners;->-get2(Lcom/android/systemui/RoundedCorners;)Landroid/database/ContentObserver;
@@ -96,7 +96,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 292
+    .line 294
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v1}, Lcom/android/systemui/RoundedCorners;->-get2(Lcom/android/systemui/RoundedCorners;)Landroid/database/ContentObserver;
@@ -105,12 +105,12 @@
 
     invoke-virtual {v1, v2}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 286
+    .line 288
     :cond_0
     :goto_0
     return-void
 
-    .line 294
+    .line 296
     :cond_1
     const-string/jumbo v1, "miui.action.handymode_change"
 
@@ -120,7 +120,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 295
+    .line 297
     iget-object v4, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
 
     const-string/jumbo v1, "handymode"
@@ -136,7 +136,7 @@
     :goto_1
     invoke-static {v4, v1}, Lcom/android/systemui/RoundedCorners;->-set2(Lcom/android/systemui/RoundedCorners;Z)Z
 
-    .line 296
+    .line 298
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v1}, Lcom/android/systemui/RoundedCorners;->-get8(Lcom/android/systemui/RoundedCorners;)Landroid/widget/ImageView;
@@ -145,7 +145,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 297
+    .line 299
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v1}, Lcom/android/systemui/RoundedCorners;->-get8(Lcom/android/systemui/RoundedCorners;)Landroid/widget/ImageView;
@@ -165,7 +165,7 @@
     :goto_2
     invoke-virtual {v4, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 299
+    .line 301
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
 
@@ -175,7 +175,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 300
+    .line 302
     iget-object v1, p0, Lcom/android/systemui/RoundedCorners$6;->this$0:Lcom/android/systemui/RoundedCorners;
 
     invoke-static {v1}, Lcom/android/systemui/RoundedCorners;->-get7(Lcom/android/systemui/RoundedCorners;)Landroid/widget/ImageView;
@@ -198,18 +198,18 @@
     :cond_3
     move v1, v2
 
-    .line 295
+    .line 297
     goto :goto_1
 
     :cond_4
     move v1, v2
 
-    .line 297
+    .line 299
     goto :goto_2
 
     :cond_5
     move v3, v2
 
-    .line 300
+    .line 302
     goto :goto_3
 .end method

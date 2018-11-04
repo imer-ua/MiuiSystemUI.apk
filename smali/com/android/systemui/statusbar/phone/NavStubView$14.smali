@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 1775
+    .line 1784
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$14;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1779
+    .line 1788
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$14;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
@@ -49,7 +49,7 @@
 
     invoke-interface {v1}, Lcom/android/systemui/fsgesture/IFsGestureCallback;->notifyMiuiAnimationEnd()V
 
-    .line 1780
+    .line 1789
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$14;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get15(Lcom/android/systemui/statusbar/phone/NavStubView;)Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;
@@ -62,15 +62,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1777
+    .line 1786
     :goto_0
     return-void
 
-    .line 1781
+    .line 1790
     :catch_0
     move-exception v0
 
-    .line 1782
+    .line 1791
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 

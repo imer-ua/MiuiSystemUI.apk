@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 804
+    .line 809
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$7;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,7 +40,7 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 807
+    .line 812
     iget-object v0, p0, Lcom/android/systemui/recents/BaseRecentsImpl$7;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v0}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get7(Lcom/android/systemui/recents/BaseRecentsImpl;)Z
@@ -49,12 +49,12 @@
 
     if-nez v0, :cond_0
 
-    .line 808
+    .line 813
     iget-object v0, p0, Lcom/android/systemui/recents/BaseRecentsImpl$7;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v0}, Lcom/android/systemui/recents/BaseRecentsImpl;->-wrap8(Lcom/android/systemui/recents/BaseRecentsImpl;)V
 
-    .line 806
+    .line 811
     :cond_0
     return-void
 .end method

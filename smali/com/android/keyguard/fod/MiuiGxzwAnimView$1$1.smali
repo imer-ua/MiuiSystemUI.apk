@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/keyguard/fod/MiuiGxzwAnimView$1;
 
     .prologue
-    .line 288
+    .line 290
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$1$1;->this$1:Lcom/android/keyguard/fod/MiuiGxzwAnimView$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,13 @@
     .locals 1
 
     .prologue
-    .line 291
+    .line 293
     invoke-static {}, Lcom/android/keyguard/fod/MiuiGxzwManager;->getInstance()Lcom/android/keyguard/fod/MiuiGxzwManager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwManager;->releaseDrawWackLock()V
 
-    .line 290
+    .line 292
     return-void
 .end method

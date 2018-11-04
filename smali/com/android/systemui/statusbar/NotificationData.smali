@@ -172,20 +172,20 @@
     .param p1, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 775
+    .line 778
     const/4 v1, 0x0
 
-    .line 776
+    .line 779
     .local v1, "count":I
     const/4 v4, 0x0
 
-    .line 777
+    .line 780
     .local v4, "removeEntry":Lcom/android/systemui/statusbar/NotificationData$Entry;
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationData;->mEntries:Landroid/util/ArrayMap;
 
     monitor-enter v6
 
-    .line 778
+    .line 781
     :try_start_0
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationData;->mEntries:Landroid/util/ArrayMap;
 
@@ -193,7 +193,7 @@
 
     move-result v0
 
-    .line 779
+    .line 782
     .local v0, "M":I
     const/4 v3, 0x0
 
@@ -202,7 +202,7 @@
     :goto_0
     if-ge v3, v0, :cond_1
 
-    .line 780
+    .line 783
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationData;->mEntries:Landroid/util/ArrayMap;
 
     invoke-virtual {v5, v3}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
@@ -211,7 +211,7 @@
 
     check-cast v2, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 781
+    .line 784
     .local v2, "entry":Lcom/android/systemui/statusbar/NotificationData$Entry;
     iget-object v5, v2, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
@@ -225,17 +225,17 @@
 
     if-eqz v5, :cond_0
 
-    .line 782
+    .line 785
     add-int/lit8 v1, v1, 0x1
 
-    .line 783
+    .line 786
     invoke-direct {p0, v4, v2}, Lcom/android/systemui/statusbar/NotificationData;->shouldRemove(Lcom/android/systemui/statusbar/NotificationData$Entry;Lcom/android/systemui/statusbar/NotificationData$Entry;)Lcom/android/systemui/statusbar/NotificationData$Entry;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v4
 
-    .line 779
+    .line 782
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
@@ -245,23 +245,23 @@
     :cond_1
     monitor-exit v6
 
-    .line 788
+    .line 791
     const/16 v5, 0xa
 
     if-lt v1, v5, :cond_2
 
     if-eqz v4, :cond_2
 
-    .line 789
+    .line 792
     iget-object v5, v4, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     invoke-virtual {p0, v5}, Lcom/android/systemui/statusbar/NotificationData;->performRemoveNotification(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)V
 
-    .line 774
+    .line 777
     :cond_2
     return-void
 
-    .line 777
+    .line 780
     .end local v0    # "M":I
     .end local v3    # "i":I
     :catchall_0
@@ -277,12 +277,12 @@
     .param p1, "notification"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
-    .line 768
+    .line 771
     invoke-virtual {p1}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getFoldPackageName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 769
+    .line 772
     .local v1, "pkgName":Ljava/lang/String;
     const-class v2, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
 
@@ -292,7 +292,7 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
 
-    .line 770
+    .line 773
     .local v0, "packageScoreCache":Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
     invoke-virtual {v0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->containsPkg(Ljava/lang/String;)Z
 
@@ -305,7 +305,7 @@
     :goto_0
     invoke-virtual {p1, v2}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->setNewlyNotification(Z)V
 
-    .line 771
+    .line 774
     invoke-virtual {v0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->addShow(Ljava/lang/String;)Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     move-result-object v2
@@ -316,10 +316,10 @@
 
     invoke-virtual {p1, v2}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->setShowSum(I)V
 
-    .line 767
+    .line 770
     return-void
 
-    .line 770
+    .line 773
     :cond_0
     const/4 v2, 0x1
 
@@ -599,6 +599,78 @@
 
     move-result-object v1
 
+    .line 765
+    const-string/jumbo v2, " isEnableFloat="
+
+    .line 760
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    .line 765
+    invoke-virtual {v0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
+
+    move-result-object v2
+
+    iget-object v2, v2, Landroid/app/Notification;->extraNotification:Landroid/app/MiuiNotification;
+
+    invoke-virtual {v2}, Landroid/app/MiuiNotification;->isEnableFloat()Z
+
+    move-result v2
+
+    .line 760
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    .line 766
+    const-string/jumbo v2, " isEnableKeyguard="
+
+    .line 760
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    .line 766
+    invoke-virtual {v0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
+
+    move-result-object v2
+
+    iget-object v2, v2, Landroid/app/Notification;->extraNotification:Landroid/app/MiuiNotification;
+
+    invoke-virtual {v2}, Landroid/app/MiuiNotification;->isEnableKeyguard()Z
+
+    move-result v2
+
+    .line 760
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    .line 767
+    const-string/jumbo v2, " messageCount="
+
+    .line 760
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    .line 767
+    invoke-virtual {v0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
+
+    move-result-object v2
+
+    iget-object v2, v2, Landroid/app/Notification;->extraNotification:Landroid/app/MiuiNotification;
+
+    invoke-virtual {v2}, Landroid/app/MiuiNotification;->getMessageCount()I
+
+    move-result v2
+
+    .line 760
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -719,18 +791,18 @@
     .param p2, "entry2"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .prologue
-    .line 814
+    .line 817
     if-nez p1, :cond_0
 
     return-object p2
 
-    .line 815
+    .line 818
     :cond_0
     if-nez p2, :cond_1
 
     return-object p1
 
-    .line 817
+    .line 820
     :cond_1
     iget-object v4, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
@@ -738,7 +810,7 @@
 
     move-result v0
 
-    .line 818
+    .line 821
     .local v0, "isFold1":Z
     iget-object v4, p2, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
@@ -746,22 +818,22 @@
 
     move-result v1
 
-    .line 819
+    .line 822
     .local v1, "isFold2":Z
     if-eq v0, v1, :cond_3
 
-    .line 820
+    .line 823
     if-eqz v0, :cond_2
 
     return-object p1
 
-    .line 821
+    .line 824
     :cond_2
     if-eqz v1, :cond_3
 
     return-object p2
 
-    .line 824
+    .line 827
     :cond_3
     iget-object v4, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
@@ -773,7 +845,7 @@
 
     move-result v2
 
-    .line 825
+    .line 828
     .local v2, "isGroupSummary1":Z
     iget-object v4, p2, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
@@ -785,22 +857,22 @@
 
     move-result v3
 
-    .line 826
+    .line 829
     .local v3, "isGroupSummary2":Z
     if-eq v2, v3, :cond_5
 
-    .line 827
+    .line 830
     if-eqz v2, :cond_4
 
     return-object p2
 
-    .line 828
+    .line 831
     :cond_4
     if-eqz v3, :cond_5
 
     return-object p1
 
-    .line 831
+    .line 834
     :cond_5
     iget-wide v4, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->firstWhen:J
 
@@ -2067,7 +2139,7 @@
     .param p1, "n"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
-    .line 794
+    .line 797
     invoke-virtual {p1}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getKey()Ljava/lang/String;
 
     move-result-object v0
@@ -2076,7 +2148,7 @@
 
     move-result v10
 
-    .line 795
+    .line 798
     .local v10, "rank":I
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/NotificationData;->getActiveNotifications()Ljava/util/ArrayList;
 
@@ -2086,7 +2158,7 @@
 
     move-result v8
 
-    .line 796
+    .line 799
     .local v8, "count":I
     invoke-virtual {p1}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getKey()Ljava/lang/String;
 
@@ -2098,11 +2170,11 @@
 
     move-result-object v7
 
-    .line 799
+    .line 802
     .local v7, "nv":Lcom/android/internal/statusbar/NotificationVisibility;
     const/4 v6, 0x3
 
-    .line 800
+    .line 803
     .local v6, "dismissalSurface":I
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationData;->mHeadsUpManager:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
@@ -2117,14 +2189,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 801
+    .line 804
     const/4 v6, 0x1
 
-    .line 806
+    .line 809
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationData;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
-    .line 807
+    .line 810
     invoke-virtual {p1}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getBasePkg()Ljava/lang/String;
 
     move-result-object v1
@@ -2145,16 +2217,16 @@
 
     move-result-object v5
 
-    .line 806
+    .line 809
     invoke-static/range {v0 .. v7}, Lcom/android/internal/statusbar/StatusBarServiceCompat;->onNotificationClear(Lcom/android/internal/statusbar/IStatusBarService;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;ILcom/android/internal/statusbar/NotificationVisibility;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 793
+    .line 796
     :goto_0
     return-void
 
-    .line 808
+    .line 811
     :catch_0
     move-exception v9
 

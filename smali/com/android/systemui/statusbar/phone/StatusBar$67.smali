@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->postStartActivityDismissingKeyguard(Landroid/app/PendingIntent;)V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->postQSRunnableDismissingKeyguard(Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-.field final synthetic val$intent:Landroid/app/PendingIntent;
+.field final synthetic val$runnable:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/app/PendingIntent;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Ljava/lang/Runnable;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
-    .param p2, "val$intent"    # Landroid/app/PendingIntent;
+    .param p2, "val$runnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 5467
+    .line 5462
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->val$intent:Landroid/app/PendingIntent;
+    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->val$runnable:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,16 +43,38 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 6
 
     .prologue
-    .line 5469
+    const/4 v3, 0x0
+
+    .line 5464
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->val$intent:Landroid/app/PendingIntent;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->startPendingIntentDismissingKeyguard(Landroid/app/PendingIntent;)V
+    iput-boolean v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mLeaveOpenOnKeyguardHide:Z
 
-    .line 5468
+    .line 5465
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    .line 5466
+    new-instance v1, Lcom/android/systemui/statusbar/phone/StatusBar$67$1;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->val$runnable:Ljava/lang/Runnable;
+
+    invoke-direct {v1, p0, v2}, Lcom/android/systemui/statusbar/phone/StatusBar$67$1;-><init>(Lcom/android/systemui/statusbar/phone/StatusBar$67;Ljava/lang/Runnable;)V
+
+    .line 5470
+    const/4 v2, 0x0
+
+    move v4, v3
+
+    move v5, v3
+
+    .line 5465
+    invoke-virtual/range {v0 .. v5}, Lcom/android/systemui/statusbar/phone/StatusBar;->executeRunnableDismissingKeyguard(Ljava/lang/Runnable;Ljava/lang/Runnable;ZZZ)V
+
+    .line 5463
     return-void
 .end method

@@ -56,7 +56,7 @@
 
     const-string v2, "flash_time"
 
-    invoke-static {v4, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyTime(Landroid/content/Context;Ljava/lang/String;)J
+    invoke-static {v2, v4}, Landroid/preference/MiuiCoreSettingsPreference;->gKT(Ljava/lang/String;Landroid/content/Context;)J
 
     move-result-wide v2
 
@@ -85,7 +85,7 @@
 
     const-string v2, "flash_time_off"
 
-    invoke-static {v4, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyTime(Landroid/content/Context;Ljava/lang/String;)J
+    invoke-static {v2, v4}, Landroid/preference/MiuiCoreSettingsPreference;->gKT(Ljava/lang/String;Landroid/content/Context;)J
 
     move-result-wide v2
 
@@ -114,7 +114,7 @@
 
     const-string v2, "flash_time_on"
 
-    invoke-static {v4, v2}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyTime(Landroid/content/Context;Ljava/lang/String;)J
+    invoke-static {v2, v4}, Landroid/preference/MiuiCoreSettingsPreference;->gKT(Ljava/lang/String;Landroid/content/Context;)J
 
     move-result-wide v2
 

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 2054
+    .line 2063
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$20;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 2057
+    .line 2066
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -53,11 +53,11 @@
 
     move-result v1
 
-    .line 2058
+    .line 2067
     .local v1, "animatedValue":F
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 2059
+    .line 2068
     .local v0, "alpha":F
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
@@ -67,6 +67,6 @@
 
     invoke-virtual {v2, v3, v0, v1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->changeAlphaScaleForFsGesture(Ljava/lang/String;FF)V
 
-    .line 2056
+    .line 2065
     return-void
 .end method

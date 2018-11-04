@@ -1083,7 +1083,7 @@
     .param p2, "state"    # I
 
     .prologue
-    const v1, 0x1080446
+    const v1, 0x1080448
 
     .line 571
     invoke-virtual {p1}, Landroid/os/storage/DiskInfo;->isSd()Z
@@ -1111,7 +1111,7 @@
     if-eqz v0, :cond_1
 
     .line 580
-    const v0, 0x108045c
+    const v0, 0x108045e
 
     return v0
 
@@ -1479,7 +1479,7 @@
     move-result-object v6
 
     .line 554
-    const v7, 0x1080446
+    const v7, 0x1080448
 
     .line 553
     invoke-virtual {v6, v7}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
@@ -1687,7 +1687,7 @@
     move-result-object v4
 
     .line 503
-    const v5, 0x1080446
+    const v5, 0x1080448
 
     .line 502
     invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
@@ -2399,7 +2399,7 @@
     move-result-object v10
 
     .line 387
-    const v11, 0x1080350
+    const v11, 0x1080352
 
     invoke-direct {v8, v11, v9, v10}, Landroid/app/Notification$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
@@ -2852,7 +2852,7 @@
     move-result-object v8
 
     .line 213
-    const v9, 0x1080446
+    const v9, 0x1080448
 
     .line 212
     invoke-virtual {v8, v9}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;

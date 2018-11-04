@@ -29,7 +29,7 @@
     .param p1, "$anonymous0"    # Ljava/lang/String;
 
     .prologue
-    .line 177
+    .line 185
     invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -42,7 +42,7 @@
     .param p1, "object"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 185
+    .line 193
     invoke-static {p1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get6(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)F
 
     move-result v0
@@ -59,7 +59,7 @@
     .param p1, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 184
+    .line 192
     check-cast p1, Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .end local p1    # "object":Ljava/lang/Object;
@@ -76,10 +76,10 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 180
+    .line 188
     invoke-static {p1, p2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-wrap1(Lcom/android/systemui/statusbar/phone/NotificationPanelView;F)V
 
-    .line 179
+    .line 187
     return-void
 .end method
 
@@ -89,7 +89,7 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 179
+    .line 187
     check-cast p1, Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .end local p1    # "object":Ljava/lang/Object;

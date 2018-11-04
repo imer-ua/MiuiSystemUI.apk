@@ -80,37 +80,35 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 38
+    const-string/jumbo v0, "com.xiaomi.xmsf.push.service.IHttpService"
+
+    .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 59
+    .line 61
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
 
     return v0
 
+    .line 43
     :sswitch_0
-    const-string/jumbo v0, "com.xiaomi.xmsf.push.service.IHttpService"
-
-    .line 42
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 43
+    .line 44
     return v2
 
+    .line 48
     :sswitch_1
-    const-string/jumbo v0, "com.xiaomi.xmsf.push.service.IHttpService"
-
-    .line 47
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 49
+    .line 50
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 51
+    .line 52
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -119,28 +117,26 @@
 
     move-result-object v1
 
-    .line 52
+    .line 53
     invoke-virtual {p2, v1}, Landroid/os/Parcel;->readHashMap(Ljava/lang/ClassLoader;)Ljava/util/HashMap;
 
     move-result-object v1
 
-    .line 53
+    .line 54
     invoke-virtual {p0, v0, v1}, Lcom/xiaomi/xmsf/push/service/a$a;->a(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 54
+    .line 55
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 55
+    .line 56
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 56
+    .line 57
     return v2
 
-    .line 38
-    nop
-
+    .line 39
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

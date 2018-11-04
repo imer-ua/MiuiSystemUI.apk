@@ -35,7 +35,7 @@
     .param p1, "this$1"    # Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver;
 
     .prologue
-    .line 377
+    .line 424
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver$1;->this$1:Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +50,7 @@
     .param p1, "voids"    # [Ljava/lang/Void;
 
     .prologue
-    .line 381
+    .line 428
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver$1;->this$1:Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver;
 
     iget-object v0, v0, Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver;->this$0:Lcom/android/keyguard/fod/MiuiGxzwOverlayView;
@@ -71,7 +71,7 @@
     .param p1, "voids"    # [Ljava/lang/Object;
 
     .prologue
-    .line 380
+    .line 427
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "voids":[Ljava/lang/Object;
@@ -87,7 +87,7 @@
     .param p1, "alpha"    # Ljava/lang/Float;
 
     .prologue
-    .line 386
+    .line 433
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver$1;->this$1:Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver;
 
     iget-object v0, v0, Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver;->this$0:Lcom/android/keyguard/fod/MiuiGxzwOverlayView;
@@ -98,7 +98,7 @@
 
     invoke-static {v0, v1}, Lcom/android/keyguard/fod/MiuiGxzwOverlayView;->-set0(Lcom/android/keyguard/fod/MiuiGxzwOverlayView;F)F
 
-    .line 387
+    .line 434
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver$1;->this$1:Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver;
 
     iget-object v0, v0, Lcom/android/keyguard/fod/MiuiGxzwOverlayView$BrightnessFileObserver;->this$0:Lcom/android/keyguard/fod/MiuiGxzwOverlayView;
@@ -109,7 +109,7 @@
 
     invoke-static {v0, v1}, Lcom/android/keyguard/fod/MiuiGxzwOverlayView;->-wrap2(Lcom/android/keyguard/fod/MiuiGxzwOverlayView;F)V
 
-    .line 385
+    .line 432
     return-void
 .end method
 
@@ -118,7 +118,7 @@
     .param p1, "alpha"    # Ljava/lang/Object;
 
     .prologue
-    .line 385
+    .line 432
     check-cast p1, Ljava/lang/Float;
 
     .end local p1    # "alpha":Ljava/lang/Object;

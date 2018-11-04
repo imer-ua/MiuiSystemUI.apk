@@ -54,9 +54,32 @@
 
     move-result-object v3
 
-    if-ne p1, v3, :cond_2
+    if-eq p1, v3, :cond_0
+
+    sget-boolean v3, Lcom/android/systemui/Constants;->IS_TABLET:Z
+
+    if-nez v3, :cond_3
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/HeaderView$1;->this$0:Lcom/android/systemui/statusbar/HeaderView;
+
+    invoke-static {v3}, Lcom/android/systemui/statusbar/HeaderView;->-get3(Lcom/android/systemui/statusbar/HeaderView;)I
+
+    move-result v3
+
+    const/4 v4, 0x2
+
+    if-ne v3, v4, :cond_3
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/HeaderView$1;->this$0:Lcom/android/systemui/statusbar/HeaderView;
+
+    invoke-static {v3}, Lcom/android/systemui/statusbar/HeaderView;->-get2(Lcom/android/systemui/statusbar/HeaderView;)Lcom/android/systemui/statusbar/policy/Clock;
+
+    move-result-object v3
+
+    if-ne p1, v3, :cond_3
 
     .line 262
+    :cond_0
     new-instance v2, Landroid/content/Intent;
 
     const-string/jumbo v3, "android.intent.action.MAIN"
@@ -79,9 +102,9 @@
 
     .line 270
     .end local v2    # "intent":Landroid/content/Intent;
-    :cond_0
+    :cond_1
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     .line 271
     const/high16 v3, 0x10000000
@@ -101,20 +124,20 @@
     invoke-interface {v3, v1, v4}, Lcom/android/systemui/plugins/ActivityStarter;->startActivity(Landroid/content/Intent;Z)V
 
     .line 258
-    :cond_1
+    :cond_2
     :goto_1
     return-void
 
     .line 264
     .restart local v1    # "intent":Landroid/content/Intent;
-    :cond_2
+    :cond_3
     iget-object v3, p0, Lcom/android/systemui/statusbar/HeaderView$1;->this$0:Lcom/android/systemui/statusbar/HeaderView;
 
     invoke-static {v3}, Lcom/android/systemui/statusbar/HeaderView;->-get2(Lcom/android/systemui/statusbar/HeaderView;)Lcom/android/systemui/statusbar/policy/Clock;
 
     move-result-object v3
 
-    if-ne p1, v3, :cond_3
+    if-ne p1, v3, :cond_4
 
     .line 265
     new-instance v2, Landroid/content/Intent;
@@ -143,15 +166,15 @@
 
     .line 267
     .local v1, "intent":Landroid/content/Intent;
-    :cond_3
+    :cond_4
     :try_start_4
     iget-object v3, p0, Lcom/android/systemui/statusbar/HeaderView$1;->this$0:Lcom/android/systemui/statusbar/HeaderView;
 
-    invoke-static {v3}, Lcom/android/systemui/statusbar/HeaderView;->-get3(Lcom/android/systemui/statusbar/HeaderView;)Landroid/widget/ImageView;
+    invoke-static {v3}, Lcom/android/systemui/statusbar/HeaderView;->-get4(Lcom/android/systemui/statusbar/HeaderView;)Landroid/widget/ImageView;
 
     move-result-object v3
 
-    if-ne p1, v3, :cond_0
+    if-ne p1, v3, :cond_1
 
     .line 268
     iget-object v3, p0, Lcom/android/systemui/statusbar/HeaderView$1;->this$0:Lcom/android/systemui/statusbar/HeaderView;

@@ -35,126 +35,117 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .locals 4
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 731
+    .line 666
     iget-object v1, p0, Lcom/android/systemui/smartnet/SmartNet$Receiver;->this$0:Lcom/android/systemui/smartnet/SmartNet;
 
-    .line 732
+    .line 667
     .local v1, "mSmartNet":Lcom/android/systemui/smartnet/SmartNet;
-    new-instance v2, Lcom/android/systemui/smartnet/SmartNetCore;
-
-    invoke-direct {v2, p1}, Lcom/android/systemui/smartnet/SmartNetCore;-><init>(Landroid/content/Context;)V
-
-    .line 733
-    .local v2, "mSmartNetCore":Lcom/android/systemui/smartnet/SmartNetCore;
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 735
+    .line 669
     .local v0, "mIntent":Ljava/lang/String;
-    const-string v3, "android.intent.action.PHONE_STATE"
+    const-string v2, "android.intent.action.PHONE_STATE"
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
-    .line 736
-    iget-object v3, p0, Lcom/android/systemui/smartnet/SmartNet$Receiver;->this$0:Lcom/android/systemui/smartnet/SmartNet;
+    .line 670
+    iget-object v2, p0, Lcom/android/systemui/smartnet/SmartNet$Receiver;->this$0:Lcom/android/systemui/smartnet/SmartNet;
 
-    invoke-virtual {v3, p2}, Lcom/android/systemui/smartnet/SmartNet;->CallIntentAction(Landroid/content/Intent;)V
+    invoke-virtual {v2, p2}, Lcom/android/systemui/smartnet/SmartNet;->CallIntentAction(Landroid/content/Intent;)V
 
-    .line 744
+    .line 678
     :cond_0
-    const-string v3, "android.intent.action.ANY_DATA_STATE"
+    const-string v2, "android.intent.action.ANY_DATA_STATE"
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_1
+    if-nez v2, :cond_1
 
-    const-string v3, "my.settings.CHANGE_SMART_MOBILE_NETWORK"
+    const-string v2, "my.settings.CHANGE_SMART_MOBILE_NETWORK"
 
-    .line 745
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 679
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_1
+    if-nez v2, :cond_1
 
-    const-string v3, "android.intent.action.BOOT_COMPLETED"
+    const-string v2, "android.intent.action.BOOT_COMPLETED"
 
-    .line 746
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 680
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    .line 747
+    .line 681
     :cond_1
     invoke-virtual {v1}, Lcom/android/systemui/smartnet/SmartNet;->handleMobileData()V
 
-    .line 748
-    invoke-virtual {v2}, Lcom/android/systemui/smartnet/SmartNetCore;->hA()V
-
-    .line 750
+    .line 683
     :cond_2
-    const-string v3, "android.intent.action.SCREEN_ON"
+    const-string v2, "android.intent.action.SCREEN_ON"
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_3
+    if-eqz v2, :cond_3
 
-    .line 751
-    iget-object v3, p0, Lcom/android/systemui/smartnet/SmartNet$Receiver;->this$0:Lcom/android/systemui/smartnet/SmartNet;
+    .line 684
+    iget-object v2, p0, Lcom/android/systemui/smartnet/SmartNet$Receiver;->this$0:Lcom/android/systemui/smartnet/SmartNet;
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    invoke-static {v3, v4}, Lcom/android/systemui/smartnet/SmartNet;->access$1400(Lcom/android/systemui/smartnet/SmartNet;Z)V
+    invoke-static {v2, v3}, Lcom/android/systemui/smartnet/SmartNet;->access$1400(Lcom/android/systemui/smartnet/SmartNet;Z)V
 
-    .line 753
+    .line 686
     :cond_3
-    const-string v3, "android.intent.action.SCREEN_OFF"
+    const-string v2, "android.intent.action.SCREEN_OFF"
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
-    .line 754
-    iget-object v3, p0, Lcom/android/systemui/smartnet/SmartNet$Receiver;->this$0:Lcom/android/systemui/smartnet/SmartNet;
+    .line 687
+    iget-object v2, p0, Lcom/android/systemui/smartnet/SmartNet$Receiver;->this$0:Lcom/android/systemui/smartnet/SmartNet;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    invoke-static {v3, v4}, Lcom/android/systemui/smartnet/SmartNet;->access$1400(Lcom/android/systemui/smartnet/SmartNet;Z)V
+    invoke-static {v2, v3}, Lcom/android/systemui/smartnet/SmartNet;->access$1400(Lcom/android/systemui/smartnet/SmartNet;Z)V
 
-    .line 757
+    .line 690
     :cond_4
-    const-string v3, "android.intent.action.BATTERY_CHANGED"
+    const-string v2, "android.intent.action.BATTERY_CHANGED"
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_5
+    if-eqz v2, :cond_5
 
-    .line 758
-    iget-object v3, p0, Lcom/android/systemui/smartnet/SmartNet$Receiver;->this$0:Lcom/android/systemui/smartnet/SmartNet;
+    .line 691
+    iget-object v2, p0, Lcom/android/systemui/smartnet/SmartNet$Receiver;->this$0:Lcom/android/systemui/smartnet/SmartNet;
 
-    invoke-static {v3, p2}, Lcom/android/systemui/smartnet/SmartNet;->access$1500(Lcom/android/systemui/smartnet/SmartNet;Landroid/content/Intent;)V
+    invoke-static {v2, p2}, Lcom/android/systemui/smartnet/SmartNet;->access$1500(Lcom/android/systemui/smartnet/SmartNet;Landroid/content/Intent;)V
 
-    .line 761
+    .line 694
     :cond_5
     return-void
 .end method

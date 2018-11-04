@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     .prologue
-    .line 459
+    .line 461
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$2;->this$0:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 462
+    .line 464
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -53,12 +53,12 @@
 
     move-result v0
 
-    .line 463
+    .line 465
     .local v0, "alpha":F
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$2;->this$0:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v1, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->setAlpha(F)V
 
-    .line 461
+    .line 463
     return-void
 .end method

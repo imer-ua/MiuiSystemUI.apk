@@ -35,7 +35,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     .prologue
-    .line 887
+    .line 889
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$17;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +50,7 @@
     .param p1, "params"    # [Ljava/lang/Object;
 
     .prologue
-    .line 889
+    .line 891
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "params":[Ljava/lang/Object;
@@ -66,7 +66,7 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
-    .line 890
+    .line 892
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$17;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get5(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Landroid/content/Context;
@@ -89,7 +89,7 @@
 
     move-result-object v0
 
-    .line 891
+    .line 893
     .local v0, "result":Ljava/lang/String;
     return-object v0
 .end method
@@ -99,7 +99,7 @@
     .param p1, "result"    # Ljava/lang/Object;
 
     .prologue
-    .line 895
+    .line 897
     check-cast p1, Ljava/lang/String;
 
     .end local p1    # "result":Ljava/lang/Object;
@@ -115,15 +115,15 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 896
+    .line 898
     invoke-super {p0, p1}, Landroid/os/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
 
-    .line 897
+    .line 899
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$17;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-set1(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 898
+    .line 900
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$17;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getWindowToken()Landroid/os/IBinder;
@@ -132,7 +132,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 899
+    .line 901
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$17;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get3(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;
@@ -159,12 +159,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->setChargingInfo(Ljava/lang/String;II)V
 
-    .line 901
+    .line 903
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$17;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0, v4}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-set0(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Landroid/os/AsyncTask;)Landroid/os/AsyncTask;
 
-    .line 895
+    .line 897
     return-void
 .end method

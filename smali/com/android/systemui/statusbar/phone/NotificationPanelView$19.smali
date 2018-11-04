@@ -1,19 +1,27 @@
 .class Lcom/android/systemui/statusbar/phone/NotificationPanelView$19;
-.super Ljava/lang/Object;
+.super Landroid/os/AsyncTask;
 .source "NotificationPanelView.java"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->startQsSizeChangeAnimation(II)V
+    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->updateResources(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x0
     name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/os/AsyncTask",
+        "<",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        ">;"
+    }
 .end annotation
 
 
@@ -27,60 +35,48 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 785
+    .line 661
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$19;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
+.method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .param p1, "params"    # [Ljava/lang/Object;
 
     .prologue
-    .line 788
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$19;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    .line 663
+    check-cast p1, [Ljava/lang/Void;
 
-    const/4 v2, 0x0
+    .end local p1    # "params":[Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$19;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
 
-    invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->requestScrollerTopPaddingUpdate(Z)V
+    move-result-object v0
 
-    .line 789
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$19;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    return-object v0
+.end method
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->requestPanelHeightUpdate()V
+.method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
+    .locals 1
+    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 790
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$19;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    .prologue
+    .line 664
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$19;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get20(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get29(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->updateWallpaperBlurColor()V
 
-    move-result-object v1
+    .line 665
+    const/4 v0, 0x0
 
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    .line 791
-    .local v0, "height":I
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$19;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
-
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get19(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/plugins/qs/QS;
-
-    move-result-object v1
-
-    invoke-interface {v1, v0}, Lcom/android/systemui/plugins/qs/QS;->setHeightOverride(I)V
-
-    .line 787
-    return-void
+    return-object v0
 .end method

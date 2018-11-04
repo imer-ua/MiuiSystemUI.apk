@@ -33,21 +33,21 @@
     .param p4, "backgroundRes"    # I
 
     .prologue
-    .line 156
+    .line 158
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 157
+    .line 159
     iput p1, p0, Lcom/android/systemui/RoundedCorners$RoundCornerData;->gravity:I
 
-    .line 158
+    .line 160
     iput p2, p0, Lcom/android/systemui/RoundedCorners$RoundCornerData;->width:I
 
-    .line 159
+    .line 161
     iput p3, p0, Lcom/android/systemui/RoundedCorners$RoundCornerData;->height:I
 
-    .line 160
+    .line 162
     iput p4, p0, Lcom/android/systemui/RoundedCorners$RoundCornerData;->backgroundRes:I
 
-    .line 156
+    .line 158
     return-void
 .end method

@@ -1295,6 +1295,7 @@
     <public type="drawable" name="notification_bg_low_pressed" id="0x09020299" />
     <public type="drawable" name="notification_bg_normal" id="0x0902029a" />
     <public type="drawable" name="notification_bg_normal_pressed" id="0x0902029b" />
+    <public type="drawable" name="notification_reply_send" id="0x090202b4" />
     <public type="drawable" name="notify_panel_notification_icon_bg" id="0x090202b9" />
     <public type="drawable" name="remote" id="0x0902030a" />
     <public type="drawable" name="screen_button_notification_icon" id="0x09020317" />
@@ -1466,6 +1467,12 @@
     <public type="drawable" name="action_button_long_screenshot_pressed_light" id="0x09020057" />
     <public type="drawable" name="app_calculator" id="0x0902005b" />
     <public type="drawable" name="app_note" id="0x0902005c" />
+    <public type="drawable" name="ble_unlock_statusbar_icon_unverified" id="0x09020066" />
+    <public type="drawable" name="ble_unlock_statusbar_icon_unverified_dark" id="0x09020067" />
+    <public type="drawable" name="ble_unlock_statusbar_icon_verified_far" id="0x09020068" />
+    <public type="drawable" name="ble_unlock_statusbar_icon_verified_far_dark" id="0x09020069" />
+    <public type="drawable" name="ble_unlock_statusbar_icon_verified_near" id="0x0902006a" />
+    <public type="drawable" name="ble_unlock_statusbar_icon_verified_near_dark" id="0x0902006b" />
     <public type="drawable" name="brightness_mirror_bg" id="0x0902006c" />
     <public type="drawable" name="brightness_mirror_bg_land" id="0x0902006d" />
     <public type="drawable" name="btn_clear_all" id="0x09020075" />
@@ -1753,12 +1760,6 @@
     <public type="drawable" name="battery_low_19_percent" id="0x09020063" />
     <public type="drawable" name="battery_low_4_percent" id="0x09020064" />
     <public type="drawable" name="battery_low_9_percent" id="0x09020065" />
-    <public type="drawable" name="ble_unlock_statusbar_icon_unverified" id="0x09020066" />
-    <public type="drawable" name="ble_unlock_statusbar_icon_unverified_dark" id="0x09020067" />
-    <public type="drawable" name="ble_unlock_statusbar_icon_verified_far" id="0x09020068" />
-    <public type="drawable" name="ble_unlock_statusbar_icon_verified_far_dark" id="0x09020069" />
-    <public type="drawable" name="ble_unlock_statusbar_icon_verified_near" id="0x0902006a" />
-    <public type="drawable" name="ble_unlock_statusbar_icon_verified_near_dark" id="0x0902006b" />
     <public type="drawable" name="bugreport_btn_bg_normal" id="0x09020078" />
     <public type="drawable" name="bugreport_btn_bg_pressed" id="0x09020079" />
     <public type="drawable" name="camera_img" id="0x0902007e" />
@@ -1871,7 +1872,6 @@
     <public type="drawable" name="notch_quicksearch_n" id="0x0902028c" />
     <public type="drawable" name="notch_quicksearch_p" id="0x0902028d" />
     <public type="drawable" name="notch_state_bg" id="0x09020291" />
-    <public type="drawable" name="notification_reply_send" id="0x090202b4" />
     <public type="drawable" name="notifications_clear_all" id="0x090202b7" />
     <public type="drawable" name="numeric_dot_empty" id="0x090202ba" />
     <public type="drawable" name="numeric_dot_occupied" id="0x090202bb" />
@@ -3544,7 +3544,9 @@
     <public type="bool" name="config_enableLockBeforeUnlockScreen" id="0x090d0041" />
     <public type="bool" name="config_flash_camera" id="0x090d0042" />
     <public type="bool" name="show_battery_digit_full" id="0x090d0043" />
-    <public type="bool" name="enable_pbap_pce_profile" id="0x090d0044" />
+    <public type="bool" name="status_bar_notification_icons_peeking" id="0x090d0044" />
+    <public type="bool" name="status_bar_notification_icons_peeking_extra_padding" id="0x090d0045" />
+    <public type="bool" name="enable_pbap_pce_profile" id="0x090d0046" />
     <public type="bool" name="kg_sim_puk_account_full_screen" id="0x090d003e" />
     <public type="integer" name="miui_volume_expand_animation_duration" id="0x090e0000" />
     <public type="integer" name="miui_volume_transition_duration_short" id="0x090e0001" />
@@ -3623,6 +3625,8 @@
     <public type="integer" name="config_charging_temp_warning_level" id="0x090e004b" />
     <public type="integer" name="keyguard_status_bar_color_mode" id="0x090e004c" />
     <public type="integer" name="flash_on_value" id="0x090e004e" />
+    <public type="integer" name="status_bar_notification_icons_size_hint" id="0x090e004f" />
+    <public type="integer" name="status_bar_notification_icons_peeking_duration" id="0x090e0050" />
     <public type="integer" name="kg_selector_gravity" id="0x090e004d" />
     <public type="integer" name="quick_settings_max_rows" id="0x090e0042" />
     <public type="dimen" name="miui_volume_button_size" id="0x090f0000" />
@@ -6616,212 +6620,215 @@
     <public type="string" name="wifi_disabled_by_recommendation_provider" id="0x09100728" />
     <public type="string" name="wifi_no_internet_no_reconnect" id="0x09100729" />
     <public type="string" name="lockscreen_storage_locked" id="0x0910072a" />
+    <public type="string" name="enable_atrace" id="0x0910072b" />
+    <public type="string" name="enable_atrace_summary" id="0x0910072c" />
+    <public type="string" name="structure_face_unlock_tof_covered" id="0x0910072d" />
     <public type="string" name="notification_num_channels" id="0x09100340" />
-    <public type="string" name="abc_menu_ctrl_shortcut_label" id="0x0910072b" />
-    <public type="string" name="abc_menu_delete_shortcut_label" id="0x0910072c" />
-    <public type="string" name="abc_menu_enter_shortcut_label" id="0x0910072d" />
-    <public type="string" name="abc_menu_function_shortcut_label" id="0x0910072e" />
-    <public type="string" name="abc_menu_space_shortcut_label" id="0x0910072f" />
-    <public type="string" name="abc_prepend_shortcut_label" id="0x09100730" />
-    <public type="string" name="accessibility_data_four_bars" id="0x09100731" />
-    <public type="string" name="accessibility_desc_app_allow_block" id="0x09100732" />
-    <public type="string" name="accessibility_desc_app_unallow_block" id="0x09100733" />
-    <public type="string" name="accessibility_desc_block_notification" id="0x09100734" />
-    <public type="string" name="accessibility_desc_cancel_block" id="0x09100735" />
-    <public type="string" name="accessibility_desc_check_block_notification" id="0x09100736" />
-    <public type="string" name="accessibility_desc_confirm_block" id="0x09100737" />
-    <public type="string" name="accessibility_desc_details_page" id="0x09100738" />
-    <public type="string" name="accessibility_desc_reconfirm_block" id="0x09100739" />
-    <public type="string" name="accessibility_desc_select_block_notification" id="0x0910073a" />
-    <public type="string" name="accessibility_desc_uncheck_block_notification" id="0x0910073b" />
-    <public type="string" name="accessibility_desc_weather_temperature" id="0x0910073c" />
-    <public type="string" name="accessibility_manual_zen_less_time" id="0x0910073d" />
-    <public type="string" name="accessibility_manual_zen_more_time" id="0x0910073e" />
-    <public type="string" name="accessibility_phone_four_bars" id="0x0910073f" />
-    <public type="string" name="accessibility_recent_task_enter" id="0x09100740" />
-    <public type="string" name="accessibility_recent_task_first_enter_tips" id="0x09100741" />
-    <public type="string" name="accessibility_wifi_security_type_none" id="0x09100742" />
-    <public type="string" name="accessibility_wifi_security_type_secured" id="0x09100743" />
-    <public type="string" name="available_via_carrier" id="0x09100744" />
-    <public type="string" name="block_record_notification_more_text" id="0x09100745" />
-    <public type="string" name="bluetooth_active_battery_level" id="0x09100746" />
-    <public type="string" name="bluetooth_active_no_battery_level" id="0x09100747" />
-    <public type="string" name="bluetooth_battery_level" id="0x09100748" />
-    <public type="string" name="bluetooth_connected_battery_level" id="0x09100749" />
-    <public type="string" name="bluetooth_connected_no_a2dp_battery_level" id="0x0910074a" />
-    <public type="string" name="bluetooth_connected_no_headset_battery_level" id="0x0910074b" />
-    <public type="string" name="bluetooth_connected_no_headset_no_a2dp_battery_level" id="0x0910074c" />
-    <public type="string" name="bluetooth_hearing_aid_profile_summary_connected" id="0x0910074d" />
-    <public type="string" name="bluetooth_hearing_aid_profile_summary_use_for" id="0x0910074e" />
-    <public type="string" name="bluetooth_hearingaid_left_battery_level" id="0x0910074f" />
-    <public type="string" name="bluetooth_hearingaid_left_pairing_message" id="0x09100750" />
-    <public type="string" name="bluetooth_hearingaid_right_battery_level" id="0x09100751" />
-    <public type="string" name="bluetooth_hearingaid_right_pairing_message" id="0x09100752" />
-    <public type="string" name="bluetooth_profile_hearing_aid" id="0x09100753" />
-    <public type="string" name="bluetooth_show_devices_without_names" id="0x09100754" />
-    <public type="string" name="bluetooth_show_devices_without_names_summary" id="0x09100755" />
-    <public type="string" name="bluetooth_talkback_headphone" id="0x09100756" />
-    <public type="string" name="bluetooth_talkback_imaging" id="0x09100757" />
-    <public type="string" name="bluetooth_talkback_input_peripheral" id="0x09100758" />
-    <public type="string" name="bluetooth_talkback_phone" id="0x09100759" />
-    <public type="string" name="button_emoji_creature" id="0x0910075a" />
-    <public type="string" name="button_emoji_lifestyle" id="0x0910075b" />
-    <public type="string" name="button_emoji_smiley" id="0x0910075c" />
-    <public type="string" name="button_emoji_symbol" id="0x0910075d" />
-    <public type="string" name="button_emoji_text" id="0x0910075e" />
-    <public type="string" name="button_fold" id="0x0910075f" />
-    <public type="string" name="button_next_slide" id="0x09100760" />
-    <public type="string" name="button_pre_slide" id="0x09100761" />
-    <public type="string" name="button_resend_message" id="0x09100762" />
-    <public type="string" name="button_unfold" id="0x09100763" />
-    <public type="string" name="click_expand" id="0x09100764" />
-    <public type="string" name="connected_via_carrier" id="0x09100765" />
-    <public type="string" name="cowboy" id="0x09100766" />
-    <public type="string" name="dialog_message_fake_cell_detect_error" id="0x09100767" />
-    <public type="string" name="dialog_title_fake_cell_detect_error" id="0x09100768" />
-    <public type="string" name="draft" id="0x09100769" />
-    <public type="string" name="enable_gpu_debug_layers" id="0x0910076a" />
-    <public type="string" name="enable_gpu_debug_layers_summary" id="0x0910076b" />
-    <public type="string" name="enter_special_mode_message" id="0x0910076c" />
-    <public type="string" name="enter_special_mode_title" id="0x0910076d" />
-    <public type="string" name="exit_special_mode_message" id="0x0910076e" />
-    <public type="string" name="exit_special_mode_title" id="0x0910076f" />
-    <public type="string" name="expand_button_title" id="0x09100770" />
-    <public type="string" name="fake_cell_alert_detect_error" id="0x09100771" />
-    <public type="string" name="icelatte" id="0x09100772" />
-    <public type="string" name="ims_reg_status_not_registered" id="0x09100773" />
-    <public type="string" name="ims_reg_status_registered" id="0x09100774" />
-    <public type="string" name="ims_reg_title" id="0x09100775" />
-    <public type="string" name="keyguard_left_bankcard" id="0x09100776" />
-    <public type="string" name="keyguard_left_buscard" id="0x09100777" />
-    <public type="string" name="loading_desktop" id="0x09100778" />
-    <public type="string" name="no_sim_card" id="0x09100779" />
-    <public type="string" name="notch_status_bar_date_format_12" id="0x0910077a" />
-    <public type="string" name="power_discharge_by" id="0x0910077b" />
-    <public type="string" name="power_discharge_by_enhanced" id="0x0910077c" />
-    <public type="string" name="power_discharge_by_only" id="0x0910077d" />
-    <public type="string" name="power_discharge_by_only_enhanced" id="0x0910077e" />
-    <public type="string" name="power_discharging_duration_enhanced" id="0x0910077f" />
-    <public type="string" name="power_remaining_duration_only_enhanced" id="0x09100780" />
-    <public type="string" name="power_remaining_duration_only_shutdown_imminent" id="0x09100781" />
-    <public type="string" name="power_remaining_duration_shutdown_imminent" id="0x09100782" />
-    <public type="string" name="power_remaining_less_than_duration" id="0x09100783" />
-    <public type="string" name="power_remaining_less_than_duration_only" id="0x09100784" />
-    <public type="string" name="power_remaining_more_than_subtext" id="0x09100785" />
-    <public type="string" name="power_remaining_only_more_than_subtext" id="0x09100786" />
-    <public type="string" name="private_dns_mode_off" id="0x09100787" />
-    <public type="string" name="private_dns_mode_opportunistic" id="0x09100788" />
-    <public type="string" name="private_dns_mode_provider_failure" id="0x09100789" />
-    <public type="string" name="private_dns_mode_provider_hostname_hint" id="0x0910078a" />
-    <public type="string" name="prompt_failure" id="0x0910078b" />
-    <public type="string" name="prompt_return_to_split" id="0x0910078c" />
-    <public type="string" name="screenshot_failed_text" id="0x0910078d" />
-    <public type="string" name="screenshot_toalbum_txt" id="0x0910078e" />
-    <public type="string" name="select_private_dns_configuration_dialog_title" id="0x0910078f" />
-    <public type="string" name="settings_toggle_position_divider_page" id="0x09100790" />
-    <public type="string" name="special_mode_cancel" id="0x09100791" />
-    <public type="string" name="special_mode_ok" id="0x09100792" />
-    <public type="string" name="speed_label_fast" id="0x09100793" />
-    <public type="string" name="speed_label_medium" id="0x09100794" />
-    <public type="string" name="speed_label_slow" id="0x09100795" />
-    <public type="string" name="speed_label_very_fast" id="0x09100796" />
-    <public type="string" name="speed_label_very_slow" id="0x09100797" />
-    <public type="string" name="standby_bucket_summary" id="0x09100798" />
-    <public type="string" name="status_unavailable" id="0x09100799" />
-    <public type="string" name="tethering_hardware_offload" id="0x0910079a" />
-    <public type="string" name="tethering_hardware_offload_summary" id="0x0910079b" />
-    <public type="string" name="time_unit_just_now" id="0x0910079c" />
-    <public type="string" name="wapi_all_sel_mode" id="0x0910079d" />
-    <public type="string" name="wapi_auto_sel_cert_fail" id="0x0910079e" />
-    <public type="string" name="wapi_cert_is_not_exist" id="0x0910079f" />
-    <public type="string" name="wapi_cert_is_not_selected" id="0x091007a0" />
-    <public type="string" name="wapi_cert_manage_error" id="0x091007a1" />
-    <public type="string" name="wapi_cert_manage_summary" id="0x091007a2" />
-    <public type="string" name="wapi_cert_manage_title" id="0x091007a3" />
-    <public type="string" name="wapi_cert_roaming" id="0x091007a4" />
-    <public type="string" name="wapi_no" id="0x091007a5" />
-    <public type="string" name="wapi_no_vaild_cert" id="0x091007a6" />
-    <public type="string" name="wapi_password_hex_format_add" id="0x091007a7" />
-    <public type="string" name="wapi_password_is_empty" id="0x091007a8" />
-    <public type="string" name="wapi_password_is_not_hex_format" id="0x091007a9" />
-    <public type="string" name="wapi_password_length_is_max" id="0x091007aa" />
-    <public type="string" name="wapi_password_length_is_min" id="0x091007ab" />
-    <public type="string" name="wapi_password_length_is_min_to_max" id="0x091007ac" />
-    <public type="string" name="wapi_yes" id="0x091007ad" />
-    <public type="string" name="wifi_ap_unable_to_handle_new_sta" id="0x091007ae" />
-    <public type="string" name="wifi_auto_sel_wapi_cert" id="0x091007af" />
-    <public type="string" name="wifi_cant_connect" id="0x091007b0" />
-    <public type="string" name="wifi_cant_connect_to_ap" id="0x091007b1" />
-    <public type="string" name="wifi_check_password_try_again" id="0x091007b2" />
-    <public type="string" name="wifi_connected_mac_randomization" id="0x091007b3" />
-    <public type="string" name="wifi_connected_mac_randomization_summary" id="0x091007b4" />
-    <public type="string" name="wifi_coverage_extend" id="0x091007b5" />
-    <public type="string" name="wifi_coverage_extend_summary" id="0x091007b6" />
-    <public type="string" name="wifi_hand_sel_wapi_cert" id="0x091007b7" />
-    <public type="string" name="wifi_metered_label" id="0x091007b8" />
-    <public type="string" name="wifi_security_wapi_psk_hexadecimal" id="0x091007b9" />
-    <public type="string" name="wifi_ssid_is_empty" id="0x091007ba" />
-    <public type="string" name="wifi_ssid_length_is_max" id="0x091007bb" />
-    <public type="string" name="wifi_status_mac_randomized" id="0x091007bc" />
-    <public type="string" name="wifi_status_no_internet" id="0x091007bd" />
-    <public type="string" name="wifi_status_sign_in_required" id="0x091007be" />
-    <public type="string" name="wifi_unmetered_label" id="0x091007bf" />
-    <public type="string" name="wifi_wapi_as_certificate" id="0x091007c0" />
-    <public type="string" name="wifi_wapi_cert_mode_hand_text" id="0x091007c1" />
-    <public type="string" name="wifi_wapi_certification_dont_exist" id="0x091007c2" />
-    <public type="string" name="wifi_wapi_fail_to_auth" id="0x091007c3" />
-    <public type="string" name="wifi_wapi_fail_to_init" id="0x091007c4" />
-    <public type="string" name="wifi_wapi_psk_type" id="0x091007c5" />
-    <public type="string" name="wifi_wapi_user_certificate" id="0x091007c6" />
-    <public type="string" name="zen_interruption_level_priority" id="0x091007c7" />
-    <public type="string" name="zen_mode_duration_always_prompt_title" id="0x091007c8" />
-    <public type="string" name="zen_mode_duration_settings_title" id="0x091007c9" />
-    <public type="string" name="zen_mode_enable_dialog_turn_on" id="0x091007ca" />
-    <public type="string" name="zen_mode_settings_summary_off" id="0x091007cb" />
-    <public type="string" name="zen_mode_settings_turn_on_dialog_title" id="0x091007cc" />
-    <public type="string" name="mr_user_route_category_name" id="0x091007cd" />
-    <public type="string" name="lland" id="0x091007ce" />
-    <public type="string" name="keyboard_shortcut_group_applications_im" id="0x091007cf" />
-    <public type="string" name="wifi_auth_password_wrong" id="0x091007d0" />
-    <public type="string" name="notification_group_title_text" id="0x091007d1" />
-    <public type="string" name="battery_meter_very_low_overlay_symbol" id="0x091007d2" />
-    <public type="string" name="time_zone_gmt" id="0x091007d3" />
-    <public type="string" name="lb_playback_controls_thumb_down_outline" id="0x091007d4" />
-    <public type="string" name="lb_playback_controls_thumb_up" id="0x091007d5" />
-    <public type="string" name="lb_playback_controls_thumb_up_outline" id="0x091007d6" />
-    <public type="string" name="lb_playback_time_separator" id="0x091007d7" />
-    <public type="string" name="lb_search_bar_hint" id="0x091007d8" />
-    <public type="string" name="lb_search_bar_hint_speech" id="0x091007d9" />
-    <public type="string" name="lb_search_bar_hint_with_title" id="0x091007da" />
-    <public type="string" name="lb_search_bar_hint_with_title_speech" id="0x091007db" />
-    <public type="string" name="mr_button_content_description" id="0x091007dc" />
-    <public type="string" name="mr_cast_button_connected" id="0x091007dd" />
-    <public type="string" name="mr_cast_button_connecting" id="0x091007de" />
-    <public type="string" name="mr_cast_button_disconnected" id="0x091007df" />
-    <public type="string" name="mr_chooser_searching" id="0x091007e0" />
-    <public type="string" name="mr_chooser_title" id="0x091007e1" />
-    <public type="string" name="mr_controller_album_art" id="0x091007e2" />
-    <public type="string" name="mr_controller_casting_screen" id="0x091007e3" />
-    <public type="string" name="mr_controller_close_description" id="0x091007e4" />
-    <public type="string" name="mr_controller_collapse_group" id="0x091007e5" />
-    <public type="string" name="mr_controller_disconnect" id="0x091007e6" />
-    <public type="string" name="mr_controller_expand_group" id="0x091007e7" />
-    <public type="string" name="mr_controller_no_info_available" id="0x091007e8" />
-    <public type="string" name="mr_controller_no_media_selected" id="0x091007e9" />
-    <public type="string" name="mr_controller_pause" id="0x091007ea" />
-    <public type="string" name="mr_controller_play" id="0x091007eb" />
-    <public type="string" name="mr_controller_stop" id="0x091007ec" />
-    <public type="string" name="mr_controller_stop_casting" id="0x091007ed" />
-    <public type="string" name="mr_controller_volume_slider" id="0x091007ee" />
-    <public type="string" name="mr_system_route_name" id="0x091007ef" />
-    <public type="string" name="orb_search_action" id="0x091007f0" />
-    <public type="string" name="bluetooth_talkback_bluetooth" id="0x091007f1" />
-    <public type="string" name="bluetooth_talkback_computer" id="0x091007f2" />
-    <public type="string" name="bluetooth_talkback_headset" id="0x091007f3" />
-    <public type="string" name="okay" id="0x091007f4" />
-    <public type="string" name="private_dns_mode_provider" id="0x091007f5" />
-    <public type="string" name="select_private_dns_configuration_title" id="0x091007f6" />
-    <public type="string" name="speed_label_okay" id="0x091007f7" />
+    <public type="string" name="abc_menu_ctrl_shortcut_label" id="0x0910072e" />
+    <public type="string" name="abc_menu_delete_shortcut_label" id="0x0910072f" />
+    <public type="string" name="abc_menu_enter_shortcut_label" id="0x09100730" />
+    <public type="string" name="abc_menu_function_shortcut_label" id="0x09100731" />
+    <public type="string" name="abc_menu_space_shortcut_label" id="0x09100732" />
+    <public type="string" name="abc_prepend_shortcut_label" id="0x09100733" />
+    <public type="string" name="accessibility_data_four_bars" id="0x09100734" />
+    <public type="string" name="accessibility_desc_app_allow_block" id="0x09100735" />
+    <public type="string" name="accessibility_desc_app_unallow_block" id="0x09100736" />
+    <public type="string" name="accessibility_desc_block_notification" id="0x09100737" />
+    <public type="string" name="accessibility_desc_cancel_block" id="0x09100738" />
+    <public type="string" name="accessibility_desc_check_block_notification" id="0x09100739" />
+    <public type="string" name="accessibility_desc_confirm_block" id="0x0910073a" />
+    <public type="string" name="accessibility_desc_details_page" id="0x0910073b" />
+    <public type="string" name="accessibility_desc_reconfirm_block" id="0x0910073c" />
+    <public type="string" name="accessibility_desc_select_block_notification" id="0x0910073d" />
+    <public type="string" name="accessibility_desc_uncheck_block_notification" id="0x0910073e" />
+    <public type="string" name="accessibility_desc_weather_temperature" id="0x0910073f" />
+    <public type="string" name="accessibility_manual_zen_less_time" id="0x09100740" />
+    <public type="string" name="accessibility_manual_zen_more_time" id="0x09100741" />
+    <public type="string" name="accessibility_phone_four_bars" id="0x09100742" />
+    <public type="string" name="accessibility_recent_task_enter" id="0x09100743" />
+    <public type="string" name="accessibility_recent_task_first_enter_tips" id="0x09100744" />
+    <public type="string" name="accessibility_wifi_security_type_none" id="0x09100745" />
+    <public type="string" name="accessibility_wifi_security_type_secured" id="0x09100746" />
+    <public type="string" name="available_via_carrier" id="0x09100747" />
+    <public type="string" name="block_record_notification_more_text" id="0x09100748" />
+    <public type="string" name="bluetooth_active_battery_level" id="0x09100749" />
+    <public type="string" name="bluetooth_active_no_battery_level" id="0x0910074a" />
+    <public type="string" name="bluetooth_battery_level" id="0x0910074b" />
+    <public type="string" name="bluetooth_connected_battery_level" id="0x0910074c" />
+    <public type="string" name="bluetooth_connected_no_a2dp_battery_level" id="0x0910074d" />
+    <public type="string" name="bluetooth_connected_no_headset_battery_level" id="0x0910074e" />
+    <public type="string" name="bluetooth_connected_no_headset_no_a2dp_battery_level" id="0x0910074f" />
+    <public type="string" name="bluetooth_hearing_aid_profile_summary_connected" id="0x09100750" />
+    <public type="string" name="bluetooth_hearing_aid_profile_summary_use_for" id="0x09100751" />
+    <public type="string" name="bluetooth_hearingaid_left_battery_level" id="0x09100752" />
+    <public type="string" name="bluetooth_hearingaid_left_pairing_message" id="0x09100753" />
+    <public type="string" name="bluetooth_hearingaid_right_battery_level" id="0x09100754" />
+    <public type="string" name="bluetooth_hearingaid_right_pairing_message" id="0x09100755" />
+    <public type="string" name="bluetooth_profile_hearing_aid" id="0x09100756" />
+    <public type="string" name="bluetooth_show_devices_without_names" id="0x09100757" />
+    <public type="string" name="bluetooth_show_devices_without_names_summary" id="0x09100758" />
+    <public type="string" name="bluetooth_talkback_headphone" id="0x09100759" />
+    <public type="string" name="bluetooth_talkback_imaging" id="0x0910075a" />
+    <public type="string" name="bluetooth_talkback_input_peripheral" id="0x0910075b" />
+    <public type="string" name="bluetooth_talkback_phone" id="0x0910075c" />
+    <public type="string" name="button_emoji_creature" id="0x0910075d" />
+    <public type="string" name="button_emoji_lifestyle" id="0x0910075e" />
+    <public type="string" name="button_emoji_smiley" id="0x0910075f" />
+    <public type="string" name="button_emoji_symbol" id="0x09100760" />
+    <public type="string" name="button_emoji_text" id="0x09100761" />
+    <public type="string" name="button_fold" id="0x09100762" />
+    <public type="string" name="button_next_slide" id="0x09100763" />
+    <public type="string" name="button_pre_slide" id="0x09100764" />
+    <public type="string" name="button_resend_message" id="0x09100765" />
+    <public type="string" name="button_unfold" id="0x09100766" />
+    <public type="string" name="click_expand" id="0x09100767" />
+    <public type="string" name="connected_via_carrier" id="0x09100768" />
+    <public type="string" name="cowboy" id="0x09100769" />
+    <public type="string" name="dialog_message_fake_cell_detect_error" id="0x0910076a" />
+    <public type="string" name="dialog_title_fake_cell_detect_error" id="0x0910076b" />
+    <public type="string" name="draft" id="0x0910076c" />
+    <public type="string" name="enable_gpu_debug_layers" id="0x0910076d" />
+    <public type="string" name="enable_gpu_debug_layers_summary" id="0x0910076e" />
+    <public type="string" name="enter_special_mode_message" id="0x0910076f" />
+    <public type="string" name="enter_special_mode_title" id="0x09100770" />
+    <public type="string" name="exit_special_mode_message" id="0x09100771" />
+    <public type="string" name="exit_special_mode_title" id="0x09100772" />
+    <public type="string" name="expand_button_title" id="0x09100773" />
+    <public type="string" name="fake_cell_alert_detect_error" id="0x09100774" />
+    <public type="string" name="icelatte" id="0x09100775" />
+    <public type="string" name="ims_reg_status_not_registered" id="0x09100776" />
+    <public type="string" name="ims_reg_status_registered" id="0x09100777" />
+    <public type="string" name="ims_reg_title" id="0x09100778" />
+    <public type="string" name="keyguard_left_bankcard" id="0x09100779" />
+    <public type="string" name="keyguard_left_buscard" id="0x0910077a" />
+    <public type="string" name="loading_desktop" id="0x0910077b" />
+    <public type="string" name="no_sim_card" id="0x0910077c" />
+    <public type="string" name="notch_status_bar_date_format_12" id="0x0910077d" />
+    <public type="string" name="power_discharge_by" id="0x0910077e" />
+    <public type="string" name="power_discharge_by_enhanced" id="0x0910077f" />
+    <public type="string" name="power_discharge_by_only" id="0x09100780" />
+    <public type="string" name="power_discharge_by_only_enhanced" id="0x09100781" />
+    <public type="string" name="power_discharging_duration_enhanced" id="0x09100782" />
+    <public type="string" name="power_remaining_duration_only_enhanced" id="0x09100783" />
+    <public type="string" name="power_remaining_duration_only_shutdown_imminent" id="0x09100784" />
+    <public type="string" name="power_remaining_duration_shutdown_imminent" id="0x09100785" />
+    <public type="string" name="power_remaining_less_than_duration" id="0x09100786" />
+    <public type="string" name="power_remaining_less_than_duration_only" id="0x09100787" />
+    <public type="string" name="power_remaining_more_than_subtext" id="0x09100788" />
+    <public type="string" name="power_remaining_only_more_than_subtext" id="0x09100789" />
+    <public type="string" name="private_dns_mode_off" id="0x0910078a" />
+    <public type="string" name="private_dns_mode_opportunistic" id="0x0910078b" />
+    <public type="string" name="private_dns_mode_provider_failure" id="0x0910078c" />
+    <public type="string" name="private_dns_mode_provider_hostname_hint" id="0x0910078d" />
+    <public type="string" name="prompt_failure" id="0x0910078e" />
+    <public type="string" name="prompt_return_to_split" id="0x0910078f" />
+    <public type="string" name="screenshot_failed_text" id="0x09100790" />
+    <public type="string" name="screenshot_toalbum_txt" id="0x09100791" />
+    <public type="string" name="select_private_dns_configuration_dialog_title" id="0x09100792" />
+    <public type="string" name="settings_toggle_position_divider_page" id="0x09100793" />
+    <public type="string" name="special_mode_cancel" id="0x09100794" />
+    <public type="string" name="special_mode_ok" id="0x09100795" />
+    <public type="string" name="speed_label_fast" id="0x09100796" />
+    <public type="string" name="speed_label_medium" id="0x09100797" />
+    <public type="string" name="speed_label_slow" id="0x09100798" />
+    <public type="string" name="speed_label_very_fast" id="0x09100799" />
+    <public type="string" name="speed_label_very_slow" id="0x0910079a" />
+    <public type="string" name="standby_bucket_summary" id="0x0910079b" />
+    <public type="string" name="status_unavailable" id="0x0910079c" />
+    <public type="string" name="tethering_hardware_offload" id="0x0910079d" />
+    <public type="string" name="tethering_hardware_offload_summary" id="0x0910079e" />
+    <public type="string" name="time_unit_just_now" id="0x0910079f" />
+    <public type="string" name="wapi_all_sel_mode" id="0x091007a0" />
+    <public type="string" name="wapi_auto_sel_cert_fail" id="0x091007a1" />
+    <public type="string" name="wapi_cert_is_not_exist" id="0x091007a2" />
+    <public type="string" name="wapi_cert_is_not_selected" id="0x091007a3" />
+    <public type="string" name="wapi_cert_manage_error" id="0x091007a4" />
+    <public type="string" name="wapi_cert_manage_summary" id="0x091007a5" />
+    <public type="string" name="wapi_cert_manage_title" id="0x091007a6" />
+    <public type="string" name="wapi_cert_roaming" id="0x091007a7" />
+    <public type="string" name="wapi_no" id="0x091007a8" />
+    <public type="string" name="wapi_no_vaild_cert" id="0x091007a9" />
+    <public type="string" name="wapi_password_hex_format_add" id="0x091007aa" />
+    <public type="string" name="wapi_password_is_empty" id="0x091007ab" />
+    <public type="string" name="wapi_password_is_not_hex_format" id="0x091007ac" />
+    <public type="string" name="wapi_password_length_is_max" id="0x091007ad" />
+    <public type="string" name="wapi_password_length_is_min" id="0x091007ae" />
+    <public type="string" name="wapi_password_length_is_min_to_max" id="0x091007af" />
+    <public type="string" name="wapi_yes" id="0x091007b0" />
+    <public type="string" name="wifi_ap_unable_to_handle_new_sta" id="0x091007b1" />
+    <public type="string" name="wifi_auto_sel_wapi_cert" id="0x091007b2" />
+    <public type="string" name="wifi_cant_connect" id="0x091007b3" />
+    <public type="string" name="wifi_cant_connect_to_ap" id="0x091007b4" />
+    <public type="string" name="wifi_check_password_try_again" id="0x091007b5" />
+    <public type="string" name="wifi_connected_mac_randomization" id="0x091007b6" />
+    <public type="string" name="wifi_connected_mac_randomization_summary" id="0x091007b7" />
+    <public type="string" name="wifi_coverage_extend" id="0x091007b8" />
+    <public type="string" name="wifi_coverage_extend_summary" id="0x091007b9" />
+    <public type="string" name="wifi_hand_sel_wapi_cert" id="0x091007ba" />
+    <public type="string" name="wifi_metered_label" id="0x091007bb" />
+    <public type="string" name="wifi_security_wapi_psk_hexadecimal" id="0x091007bc" />
+    <public type="string" name="wifi_ssid_is_empty" id="0x091007bd" />
+    <public type="string" name="wifi_ssid_length_is_max" id="0x091007be" />
+    <public type="string" name="wifi_status_mac_randomized" id="0x091007bf" />
+    <public type="string" name="wifi_status_no_internet" id="0x091007c0" />
+    <public type="string" name="wifi_status_sign_in_required" id="0x091007c1" />
+    <public type="string" name="wifi_unmetered_label" id="0x091007c2" />
+    <public type="string" name="wifi_wapi_as_certificate" id="0x091007c3" />
+    <public type="string" name="wifi_wapi_cert_mode_hand_text" id="0x091007c4" />
+    <public type="string" name="wifi_wapi_certification_dont_exist" id="0x091007c5" />
+    <public type="string" name="wifi_wapi_fail_to_auth" id="0x091007c6" />
+    <public type="string" name="wifi_wapi_fail_to_init" id="0x091007c7" />
+    <public type="string" name="wifi_wapi_psk_type" id="0x091007c8" />
+    <public type="string" name="wifi_wapi_user_certificate" id="0x091007c9" />
+    <public type="string" name="zen_interruption_level_priority" id="0x091007ca" />
+    <public type="string" name="zen_mode_duration_always_prompt_title" id="0x091007cb" />
+    <public type="string" name="zen_mode_duration_settings_title" id="0x091007cc" />
+    <public type="string" name="zen_mode_enable_dialog_turn_on" id="0x091007cd" />
+    <public type="string" name="zen_mode_settings_summary_off" id="0x091007ce" />
+    <public type="string" name="zen_mode_settings_turn_on_dialog_title" id="0x091007cf" />
+    <public type="string" name="mr_user_route_category_name" id="0x091007d0" />
+    <public type="string" name="lland" id="0x091007d1" />
+    <public type="string" name="keyboard_shortcut_group_applications_im" id="0x091007d2" />
+    <public type="string" name="wifi_auth_password_wrong" id="0x091007d3" />
+    <public type="string" name="notification_group_title_text" id="0x091007d4" />
+    <public type="string" name="battery_meter_very_low_overlay_symbol" id="0x091007d5" />
+    <public type="string" name="time_zone_gmt" id="0x091007d6" />
+    <public type="string" name="lb_playback_controls_thumb_down_outline" id="0x091007d7" />
+    <public type="string" name="lb_playback_controls_thumb_up" id="0x091007d8" />
+    <public type="string" name="lb_playback_controls_thumb_up_outline" id="0x091007d9" />
+    <public type="string" name="lb_playback_time_separator" id="0x091007da" />
+    <public type="string" name="lb_search_bar_hint" id="0x091007db" />
+    <public type="string" name="lb_search_bar_hint_speech" id="0x091007dc" />
+    <public type="string" name="lb_search_bar_hint_with_title" id="0x091007dd" />
+    <public type="string" name="lb_search_bar_hint_with_title_speech" id="0x091007de" />
+    <public type="string" name="mr_button_content_description" id="0x091007df" />
+    <public type="string" name="mr_cast_button_connected" id="0x091007e0" />
+    <public type="string" name="mr_cast_button_connecting" id="0x091007e1" />
+    <public type="string" name="mr_cast_button_disconnected" id="0x091007e2" />
+    <public type="string" name="mr_chooser_searching" id="0x091007e3" />
+    <public type="string" name="mr_chooser_title" id="0x091007e4" />
+    <public type="string" name="mr_controller_album_art" id="0x091007e5" />
+    <public type="string" name="mr_controller_casting_screen" id="0x091007e6" />
+    <public type="string" name="mr_controller_close_description" id="0x091007e7" />
+    <public type="string" name="mr_controller_collapse_group" id="0x091007e8" />
+    <public type="string" name="mr_controller_disconnect" id="0x091007e9" />
+    <public type="string" name="mr_controller_expand_group" id="0x091007ea" />
+    <public type="string" name="mr_controller_no_info_available" id="0x091007eb" />
+    <public type="string" name="mr_controller_no_media_selected" id="0x091007ec" />
+    <public type="string" name="mr_controller_pause" id="0x091007ed" />
+    <public type="string" name="mr_controller_play" id="0x091007ee" />
+    <public type="string" name="mr_controller_stop" id="0x091007ef" />
+    <public type="string" name="mr_controller_stop_casting" id="0x091007f0" />
+    <public type="string" name="mr_controller_volume_slider" id="0x091007f1" />
+    <public type="string" name="mr_system_route_name" id="0x091007f2" />
+    <public type="string" name="orb_search_action" id="0x091007f3" />
+    <public type="string" name="bluetooth_talkback_bluetooth" id="0x091007f4" />
+    <public type="string" name="bluetooth_talkback_computer" id="0x091007f5" />
+    <public type="string" name="bluetooth_talkback_headset" id="0x091007f6" />
+    <public type="string" name="okay" id="0x091007f7" />
+    <public type="string" name="private_dns_mode_provider" id="0x091007f8" />
+    <public type="string" name="select_private_dns_configuration_title" id="0x091007f9" />
+    <public type="string" name="speed_label_okay" id="0x091007fa" />
     <public type="string" name="status_bar_date_formatter" id="0x09100048" />
     <public type="style" name="Widget.SeekBar.MiuiVolume" id="0x09110000" />
     <public type="style" name="Widget.SeekBar.MiuiVolume.Timer" id="0x09110001" />
@@ -7296,6 +7303,7 @@
     <public type="style" name="Theme.Main" id="0x091101ee" />
     <public type="style" name="wireless_charge_slowly_dialog" id="0x091101ef" />
     <public type="style" name="StatusBarClockContainerStyle" id="0x091101f0" />
+    <public type="style" name="StatusBarNotificationIconContainerStyle" id="0x091101f1" />
     <public type="style" name="Platform.V11.AppCompat" id="0x09110146" />
     <public type="style" name="Platform.V11.AppCompat.Light" id="0x09110147" />
     <public type="style" name="Base.V11.Theme.AppCompat.Dialog" id="0x09110148" />

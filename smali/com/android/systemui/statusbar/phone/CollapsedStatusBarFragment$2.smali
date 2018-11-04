@@ -30,7 +30,7 @@
     .param p2, "val$v"    # Landroid/view/View;
 
     .prologue
-    .line 382
+    .line 381
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$2;->this$0:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$2;->val$v:Landroid/view/View;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 385
+    .line 384
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$2;->val$v:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 384
+    .line 383
     return-void
 .end method

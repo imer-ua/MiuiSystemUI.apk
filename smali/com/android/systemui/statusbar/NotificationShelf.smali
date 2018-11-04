@@ -690,16 +690,16 @@
 .end method
 
 .method private setOpenedAmount(F)V
-    .locals 9
+    .locals 10
     .param p1, "openedAmount"    # F
 
     .prologue
     const/4 v6, 0x0
 
-    .line 535
-    const/high16 v7, 0x3f800000    # 1.0f
+    const/high16 v9, 0x3f800000    # 1.0f
 
-    cmpl-float v7, p1, v7
+    .line 535
+    cmpl-float v7, p1, v9
 
     if-nez v7, :cond_0
 
@@ -824,9 +824,7 @@
     int-to-float v7, v7
 
     .line 554
-    const v8, 0x3f99999a    # 1.2f
-
-    mul-float/2addr v7, v8
+    mul-float/2addr v7, v9
 
     sub-float/2addr v6, v7
 

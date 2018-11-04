@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/PanelView;
 
     .prologue
-    .line 1038
+    .line 1044
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 1041
+    .line 1047
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PanelView;->-get2(Lcom/android/systemui/statusbar/phone/PanelView;)Z
@@ -50,7 +50,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1042
+    .line 1048
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PanelView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -59,10 +59,10 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1043
+    .line 1049
     return-void
 
-    .line 1045
+    .line 1051
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
@@ -76,7 +76,7 @@
 
     move-result v0
 
-    .line 1046
+    .line 1052
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/PanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -85,10 +85,10 @@
 
     move-result v1
 
-    .line 1045
+    .line 1051
     if-eq v0, v1, :cond_1
 
-    .line 1047
+    .line 1053
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PanelView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -97,7 +97,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1048
+    .line 1054
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PanelView;->-get0(Lcom/android/systemui/statusbar/phone/PanelView;)Z
@@ -106,12 +106,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 1049
+    .line 1055
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PanelView;->-wrap0(Lcom/android/systemui/statusbar/phone/PanelView;)V
 
-    .line 1050
+    .line 1056
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     const/4 v1, 0x0
@@ -120,7 +120,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/PanelView;->fling(FZ)V
 
-    .line 1054
+    .line 1060
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
@@ -128,11 +128,11 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->-set0(Lcom/android/systemui/statusbar/phone/PanelView;Z)Z
 
-    .line 1040
+    .line 1046
     :cond_1
     return-void
 
-    .line 1052
+    .line 1058
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 

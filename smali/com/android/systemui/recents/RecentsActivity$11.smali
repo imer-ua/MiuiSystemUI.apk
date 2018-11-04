@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 568
+    .line 569
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$11;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +43,12 @@
     .param p2, "insets"    # Landroid/view/WindowInsets;
 
     .prologue
-    .line 571
+    .line 572
     invoke-virtual {p2}, Landroid/view/WindowInsets;->getSystemWindowInsets()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 572
+    .line 573
     .local v1, "systemWindowInsets":Landroid/graphics/Rect;
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -56,7 +56,7 @@
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 573
+    .line 574
     .local v0, "lp":Landroid/view/ViewGroup$MarginLayoutParams;
     iget v2, v1, Landroid/graphics/Rect;->left:I
 
@@ -68,6 +68,6 @@
 
     invoke-virtual {v0, v2, v5, v3, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 574
+    .line 575
     return-object p2
 .end method

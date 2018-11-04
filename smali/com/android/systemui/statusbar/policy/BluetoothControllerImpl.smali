@@ -301,7 +301,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 336
+    .line 337
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mCachedState:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -310,11 +310,11 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;
 
-    .line 337
+    .line 338
     .local v0, "state":Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;
     if-nez v0, :cond_0
 
-    .line 338
+    .line 339
     new-instance v0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;
 
     .end local v0    # "state":Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;
@@ -322,21 +322,21 @@
 
     invoke-direct {v0, p1, v1, v2}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;-><init>(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;Landroid/os/Handler;Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;)V
 
-    .line 339
+    .line 340
     .restart local v0    # "state":Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mBgHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 340
+    .line 341
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mCachedState:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 341
+    .line 342
     return-object v0
 
-    .line 343
+    .line 344
     :cond_0
     return-object v0
 .end method
@@ -466,12 +466,12 @@
 .end method
 
 .method private updateConnected()V
-    .locals 7
+    .locals 8
 
     .prologue
-    const/4 v6, 0x2
+    const/4 v7, 0x2
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     .line 239
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mLocalBluetoothManager:Lcom/android/settingslib/bluetooth/LocalBluetoothManager;
@@ -498,7 +498,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 246
+    .line 247
     :cond_0
     :goto_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->getDevices()Ljava/util/Collection;
@@ -507,7 +507,7 @@
 
     iput-object v4, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mCachedDevices:Ljava/util/Collection;
 
-    .line 247
+    .line 248
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mCachedDevices:Ljava/util/Collection;
 
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -529,20 +529,20 @@
 
     check-cast v0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
-    .line 248
+    .line 249
     .local v0, "device":Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
     invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getMaxConnectionState()I
 
     move-result v2
 
-    .line 249
+    .line 250
     .local v2, "maxDeviceState":I
     if-le v2, v3, :cond_2
 
-    .line 250
+    .line 251
     move v3, v2
 
-    .line 252
+    .line 253
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mLastDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
@@ -554,7 +554,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 254
+    .line 255
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mLastDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     goto :goto_1
@@ -564,37 +564,44 @@
     .end local v1    # "device$iterator":Ljava/util/Iterator;
     .end local v2    # "maxDeviceState":I
     :cond_3
-    iput-object v5, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mLastDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+    iget-object v4, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mCachedState:Ljava/util/WeakHashMap;
+
+    iget-object v5, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mLastDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+
+    invoke-virtual {v4, v5}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 243
+    iput-object v6, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mLastDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     goto :goto_0
 
-    .line 258
+    .line 259
     .restart local v1    # "device$iterator":Ljava/util/Iterator;
     :cond_4
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mLastDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     if-nez v4, :cond_5
 
-    if-ne v3, v6, :cond_5
+    if-ne v3, v7, :cond_5
 
-    .line 261
+    .line 262
     const/4 v3, 0x0
 
-    .line 263
+    .line 264
     :cond_5
     iget v4, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mConnectionState:I
 
     if-eq v3, v4, :cond_6
 
-    .line 264
+    .line 265
     iput v3, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mConnectionState:I
 
-    .line 265
+    .line 266
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mHandler:Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;
 
-    invoke-virtual {v4, v6}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;->sendEmptyMessage(I)Z
+    invoke-virtual {v4, v7}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;->sendEmptyMessage(I)Z
 
-    .line 267
+    .line 268
     :cond_6
     const-string/jumbo v4, "BluetoothController"
 
@@ -1108,44 +1115,44 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 272
+    .line 273
     const/16 v1, 0xc
 
     if-eq p1, v1, :cond_0
 
-    .line 273
+    .line 274
     const/16 v1, 0xb
 
     if-ne p1, v1, :cond_2
 
-    .line 272
+    .line 273
     :cond_0
     :goto_0
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mEnabled:Z
 
-    .line 274
+    .line 275
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mEnabled:Z
 
     if-nez v0, :cond_1
 
-    .line 275
+    .line 276
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->clearCachedDevices()V
 
-    .line 277
+    .line 278
     :cond_1
     iput p1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mState:I
 
-    .line 278
+    .line 279
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mHandler:Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;->sendEmptyMessage(I)Z
 
-    .line 271
+    .line 272
     return-void
 
-    .line 273
+    .line 274
     :cond_2
     const/4 v0, 0x0
 
@@ -1158,32 +1165,32 @@
     .param p2, "state"    # I
 
     .prologue
-    .line 324
+    .line 325
     const-string/jumbo v0, "BluetoothController"
 
     const-string/jumbo v1, "onConnectionStateChanged"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 325
+    .line 326
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mCachedState:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 326
+    .line 327
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mLastDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
-    .line 327
+    .line 328
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->updateConnected()V
 
-    .line 328
+    .line 329
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mHandler:Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;->sendEmptyMessage(I)Z
 
-    .line 323
+    .line 324
     return-void
 .end method
 
@@ -1192,27 +1199,27 @@
     .param p1, "cachedDevice"    # Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     .prologue
-    .line 288
+    .line 289
     const-string/jumbo v0, "BluetoothController"
 
     const-string/jumbo v1, "onDeviceAdded"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 289
+    .line 290
     invoke-virtual {p1, p0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->registerCallback(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice$Callback;)V
 
-    .line 290
+    .line 291
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->updateConnected()V
 
-    .line 291
+    .line 292
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mHandler:Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;->sendEmptyMessage(I)Z
 
-    .line 287
+    .line 288
     return-void
 .end method
 
@@ -1220,7 +1227,7 @@
     .locals 2
 
     .prologue
-    .line 312
+    .line 313
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mBgHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$2;
@@ -1229,7 +1236,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 311
+    .line 312
     return-void
 .end method
 
@@ -1239,29 +1246,29 @@
     .param p2, "bondState"    # I
 
     .prologue
-    .line 304
+    .line 305
     const-string/jumbo v0, "BluetoothController"
 
     const-string/jumbo v1, "onDeviceBondStateChanged"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 305
+    .line 306
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mCachedState:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 306
+    .line 307
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->updateConnected()V
 
-    .line 307
+    .line 308
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mHandler:Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;->sendEmptyMessage(I)Z
 
-    .line 303
+    .line 304
     return-void
 .end method
 
@@ -1270,29 +1277,29 @@
     .param p1, "cachedDevice"    # Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     .prologue
-    .line 296
+    .line 297
     const-string/jumbo v0, "BluetoothController"
 
     const-string/jumbo v1, "onDeviceDeleted"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 297
+    .line 298
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mCachedState:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 298
+    .line 299
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->updateConnected()V
 
-    .line 299
+    .line 300
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->mHandler:Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$H;->sendEmptyMessage(I)Z
 
-    .line 295
+    .line 296
     return-void
 .end method
 
@@ -1301,7 +1308,7 @@
     .param p1, "started"    # Z
 
     .prologue
-    .line 282
+    .line 283
     return-void
 .end method
 

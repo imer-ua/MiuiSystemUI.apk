@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->postStartActivityDismissingKeyguard(Landroid/content/Intent;I)V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->postStartActivityDismissingKeyguard(Landroid/app/PendingIntent;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-.field final synthetic val$intent:Landroid/content/Intent;
+.field final synthetic val$intent:Landroid/app/PendingIntent;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/content/Intent;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/app/PendingIntent;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
-    .param p2, "val$intent"    # Landroid/content/Intent;
+    .param p2, "val$intent"    # Landroid/app/PendingIntent;
 
     .prologue
-    .line 5476
+    .line 5477
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$68;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$68;->val$intent:Landroid/content/Intent;
+    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$68;->val$intent:Landroid/app/PendingIntent;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,18 +43,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 5478
+    .line 5479
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$68;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$68;->val$intent:Landroid/content/Intent;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$68;->val$intent:Landroid/app/PendingIntent;
 
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->startPendingIntentDismissingKeyguard(Landroid/app/PendingIntent;)V
 
-    invoke-static {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap13(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/content/Intent;Z)V
-
-    .line 5477
+    .line 5478
     return-void
 .end method

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final enable_pbap_pce_profile:I = 0x90d0044
+.field public static final enable_pbap_pce_profile:I = 0x90d0046
 
 
 # direct methods

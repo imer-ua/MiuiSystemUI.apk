@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Lcom/android/systemui/SwipeHelper$LongPressListener;
+.implements Lcom/android/systemui/statusbar/NotificationInfo$ClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->getNotificationLongClicker()Lcom/android/systemui/SwipeHelper$LongPressListener;
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->bindGuts(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,35 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
+.field final synthetic val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
+
+.field final synthetic val$item:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
+
+.field final synthetic val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+
+.field final synthetic val$userHandle:Landroid/os/UserHandle;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/NotificationGuts;Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;Landroid/os/UserHandle;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
+    .param p2, "val$row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+    .param p3, "val$guts"    # Lcom/android/systemui/statusbar/NotificationGuts;
+    .param p4, "val$item"    # Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
+    .param p5, "val$userHandle"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 7888
+    .line 7851
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+
+    iput-object p3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
+
+    iput-object p4, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$item:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
+
+    iput-object p5, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$userHandle:Landroid/os/UserHandle;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,116 +57,108 @@
 
 
 # virtual methods
-.method public onLongPress(Landroid/view/View;IILcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;)Z
-    .locals 4
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
-    .param p4, "item"    # Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
+.method public onClickCheckSave(Ljava/lang/Runnable;)V
+    .locals 2
+    .param p1, "saveImportance"    # Ljava/lang/Runnable;
 
     .prologue
-    const/4 v3, 0x0
+    .line 7866
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 7892
-    instance-of v1, p1, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$userHandle:Landroid/os/UserHandle;
 
-    if-nez v1, :cond_0
-
-    .line 7893
-    return v3
-
-    .line 7895
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    if-nez v1, :cond_1
-
-    .line 7896
-    const-string/jumbo v1, "StatusBar"
-
-    const-string/jumbo v2, "Trying to show notification guts, but not attached to window"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 7897
-    return v3
-
-    :cond_1
-    move-object v0, p1
-
-    .line 7900
-    check-cast v0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-
-    .line 7901
-    .local v0, "row":Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isDark()Z
+    invoke-virtual {v1}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->isLockscreenPublicMode(I)Z
 
-    .line 7902
-    return v3
+    move-result v0
 
-    .line 7905
-    :cond_2
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isExpandable()Z
+    if-eqz v0, :cond_1
 
-    move-result v1
+    .line 7867
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    if-eqz v1, :cond_3
+    iget v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mState:I
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->isKeyguardShowing()Z
-
-    move-result v1
-
-    invoke-static {v1}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->isExpandingEnabled(Z)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    .line 7910
-    :cond_3
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->isKeyguardShowing()Z
-
-    move-result v1
-
-    invoke-static {v1}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->isExpandingEnabled(Z)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    .line 7911
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-static {v1, v0, p2, p3, p4}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap3(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;IILcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;)Z
-
-    move-result v1
-
-    return v1
-
-    .line 7906
-    :cond_4
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getExpandClickListener()Landroid/view/View$OnClickListener;
-
-    move-result-object v1
-
-    invoke-interface {v1, v0}, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
-
-    .line 7907
     const/4 v1, 0x1
 
-    return v1
+    if-eq v0, v1, :cond_0
 
-    .line 7914
-    :cond_5
-    return v3
+    .line 7868
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mState:I
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_1
+
+    .line 7869
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    new-instance v1, Lcom/android/systemui/statusbar/phone/StatusBar$81$1;
+
+    invoke-direct {v1, p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBar$81$1;-><init>(Lcom/android/systemui/statusbar/phone/StatusBar$81;Ljava/lang/Runnable;)V
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->onLockedNotificationImportanceChange(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;)V
+
+    .line 7864
+    :goto_0
+    return-void
+
+    .line 7876
+    :cond_1
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+
+    goto :goto_0
+.end method
+
+.method public onClickDone(Landroid/view/View;)V
+    .locals 3
+    .param p1, "v"    # Landroid/view/View;
+
+    .prologue
+    .line 7860
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
+
+    invoke-static {v0, v1, v2, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap28(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/NotificationGuts;Landroid/view/View;)V
+
+    .line 7859
+    return-void
+.end method
+
+.method public onClickSettings(Landroid/view/View;Landroid/app/NotificationChannelCompat;I)V
+    .locals 3
+    .param p1, "v"    # Landroid/view/View;
+    .param p2, "channel"    # Landroid/app/NotificationChannelCompat;
+    .param p3, "appUid"    # I
+
+    .prologue
+    .line 7854
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
+
+    invoke-static {v0, v1, v2, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap28(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/NotificationGuts;Landroid/view/View;)V
+
+    .line 7855
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->val$item:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
+
+    invoke-static {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap18(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;)V
+
+    .line 7853
+    return-void
 .end method

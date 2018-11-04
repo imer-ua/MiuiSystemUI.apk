@@ -59,30 +59,30 @@
     .param p2, "uiHandler"    # Landroid/os/Handler;
 
     .prologue
-    .line 353
+    .line 354
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 350
+    .line 351
     const/16 v0, 0xa
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mBondState:I
 
-    .line 351
+    .line 352
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mMaxConnectionState:I
 
-    .line 354
+    .line 355
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mDevice:Ljava/lang/ref/WeakReference;
 
-    .line 355
+    .line 356
     iput-object p2, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mUiHandler:Landroid/os/Handler;
 
-    .line 353
+    .line 354
     return-void
 .end method
 
@@ -105,7 +105,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 360
+    .line 361
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mDevice:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -114,45 +114,45 @@
 
     check-cast v0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
-    .line 361
+    .line 362
     .local v0, "device":Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
     if-eqz v0, :cond_0
 
-    .line 362
+    .line 363
     invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getBondState()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mBondState:I
 
-    .line 363
+    .line 364
     invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getMaxConnectionState()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mMaxConnectionState:I
 
-    .line 368
+    .line 369
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mUiHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 369
+    .line 370
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mUiHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 359
+    .line 360
     return-void
 
-    .line 365
+    .line 366
     :cond_0
     const/16 v1, 0xa
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mBondState:I
 
-    .line 366
+    .line 367
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->mMaxConnectionState:I

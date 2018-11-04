@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 505
+    .line 506
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$5;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,26 +40,26 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 508
+    .line 509
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$5;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/RecentsActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 509
+    .line 510
     const-string/jumbo v2, "sc_status"
 
     const/4 v3, -0x1
 
     const/4 v4, -0x2
 
-    .line 508
+    .line 509
     invoke-static {v1, v2, v3, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
-    .line 510
+    .line 511
     .local v0, "status":I
     if-nez v0, :cond_0
 
@@ -71,12 +71,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 511
+    .line 512
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$5;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/RecentsActivity;->finish()V
 
-    .line 507
+    .line 508
     :cond_0
     return-void
 .end method

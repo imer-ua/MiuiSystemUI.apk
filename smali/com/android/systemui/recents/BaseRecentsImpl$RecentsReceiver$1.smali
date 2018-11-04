@@ -34,7 +34,7 @@
     .param p2, "val$cleanType"    # I
 
     .prologue
-    .line 1914
+    .line 1919
     .local p3, "val$packages":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .local p4, "val$taskinfos":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RecentTaskInfo;>;"
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$1;->this$1:Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver;
@@ -58,31 +58,31 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 1918
+    .line 1923
     iget v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$1;->val$cleanType:I
 
     if-nez v4, :cond_0
 
-    .line 1919
+    .line 1924
     new-instance v0, Lmiui/process/ProcessConfig;
 
     const/4 v4, 0x4
 
     invoke-direct {v0, v4}, Lmiui/process/ProcessConfig;-><init>(I)V
 
-    .line 1920
+    .line 1925
     .local v0, "processConfig":Lmiui/process/ProcessConfig;
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$1;->val$packages:Ljava/util/List;
 
     invoke-virtual {v0, v4}, Lmiui/process/ProcessConfig;->setWhiteList(Ljava/util/List;)V
 
-    .line 1924
+    .line 1929
     :goto_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1925
+    .line 1930
     .local v1, "removingTaskIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$1;->val$taskinfos:Ljava/util/List;
 
@@ -104,7 +104,7 @@
 
     check-cast v2, Landroid/app/ActivityManager$RecentTaskInfo;
 
-    .line 1926
+    .line 1931
     .local v2, "task":Landroid/app/ActivityManager$RecentTaskInfo;
     iget v4, v2, Landroid/app/ActivityManager$RecentTaskInfo;->persistentId:I
 
@@ -116,7 +116,7 @@
 
     goto :goto_1
 
-    .line 1922
+    .line 1927
     .end local v0    # "processConfig":Lmiui/process/ProcessConfig;
     .end local v1    # "removingTaskIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     .end local v2    # "task":Landroid/app/ActivityManager$RecentTaskInfo;
@@ -129,18 +129,18 @@
     .restart local v0    # "processConfig":Lmiui/process/ProcessConfig;
     goto :goto_0
 
-    .line 1928
+    .line 1933
     .restart local v1    # "removingTaskIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     .restart local v3    # "task$iterator":Ljava/util/Iterator;
     :cond_1
     invoke-virtual {v0, v5}, Lmiui/process/ProcessConfig;->setRemoveTaskNeeded(Z)V
 
-    .line 1929
+    .line 1934
     invoke-virtual {v0, v1}, Lmiui/process/ProcessConfig;->setRemovingTaskIdList(Ljava/util/List;)V
 
-    .line 1930
+    .line 1935
     invoke-static {v0}, Lmiui/process/ProcessManager;->kill(Lmiui/process/ProcessConfig;)Z
 
-    .line 1916
+    .line 1921
     return-void
 .end method

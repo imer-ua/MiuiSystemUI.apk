@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     .prologue
-    .line 278
+    .line 280
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$1;->this$0:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 4
 
     .prologue
-    .line 299
+    .line 301
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$1;->this$0:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->-get1(Lcom/android/keyguard/fod/MiuiGxzwAnimView;)Landroid/os/Handler;
@@ -52,15 +52,15 @@
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView$1$2;-><init>(Lcom/android/keyguard/fod/MiuiGxzwAnimView$1;)V
 
-    .line 304
+    .line 306
     invoke-static {}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->-get0()J
 
     move-result-wide v2
 
-    .line 299
+    .line 301
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 297
+    .line 299
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .locals 4
 
     .prologue
-    .line 288
+    .line 290
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView$1;->this$0:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->-get1(Lcom/android/keyguard/fod/MiuiGxzwAnimView;)Landroid/os/Handler;
@@ -79,15 +79,15 @@
 
     invoke-direct {v1, p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView$1$1;-><init>(Lcom/android/keyguard/fod/MiuiGxzwAnimView$1;)V
 
-    .line 293
+    .line 295
     invoke-static {}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->-get0()J
 
     move-result-wide v2
 
-    .line 288
+    .line 290
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 286
+    .line 288
     return-void
 .end method
 
@@ -95,13 +95,13 @@
     .locals 1
 
     .prologue
-    .line 282
+    .line 284
     invoke-static {}, Lcom/android/keyguard/fod/MiuiGxzwManager;->getInstance()Lcom/android/keyguard/fod/MiuiGxzwManager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwManager;->requestDrawWackLock()V
 
-    .line 281
+    .line 283
     return-void
 .end method

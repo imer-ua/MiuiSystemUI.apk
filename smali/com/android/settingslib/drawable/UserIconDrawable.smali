@@ -186,7 +186,7 @@
     move-result-object v2
 
     .line 78
-    const v3, 0x1080333
+    const v3, 0x1080335
 
     .line 77
     invoke-virtual {v1, v3, v0, v2}, Landroid/content/res/Resources;->getDrawableForDensity(IILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;

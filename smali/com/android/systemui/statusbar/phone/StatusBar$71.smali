@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->fadeViewWhenUnlockByGxzw(Landroid/view/View;Ljava/lang/Runnable;)V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->fadeKeyguardWhenUnlockByGxzw(Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,8 +18,6 @@
 
 
 # instance fields
-.field private cancel:Z
-
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
 .field final synthetic val$finished:Ljava/lang/Runnable;
@@ -27,81 +25,45 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Ljava/lang/Runnable;)V
-    .locals 1
+    .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
     .param p2, "val$finished"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 5822
+    .line 5817
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$71;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$71;->val$finished:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5824
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$71;->cancel:Z
-
-    .line 5822
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 5840
-    const/4 v0, 0x1
+    .line 5820
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$71;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$71;->cancel:Z
+    const/4 v1, 0x0
 
-    .line 5839
-    return-void
-.end method
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set5(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
-
-    .prologue
-    .line 5833
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$71;->cancel:Z
-
-    if-nez v0, :cond_0
-
+    .line 5821
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$71;->val$finished:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 5834
+    .line 5822
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$71;->val$finished:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 5832
+    .line 5819
     :cond_0
-    return-void
-.end method
-
-.method public onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
-
-    .prologue
-    .line 5844
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
-
-    .prologue
-    .line 5827
     return-void
 .end method

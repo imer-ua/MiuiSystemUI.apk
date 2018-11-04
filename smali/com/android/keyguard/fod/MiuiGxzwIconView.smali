@@ -60,6 +60,8 @@
 
 .field private mHandler:Landroid/os/Handler;
 
+.field private mHasPressureSensor:Z
+
 .field private mHighlightView:Landroid/view/View;
 
 .field private mIntentFilter:Landroid/content/IntentFilter;
@@ -241,7 +243,7 @@
 
     const/4 v1, 0x0
 
-    .line 115
+    .line 117
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 67
@@ -274,58 +276,58 @@
     .line 95
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPortraitOrientation:Z
 
-    .line 100
+    .line 102
     new-instance v0, Lcom/android/keyguard/fod/MiuiGxzwIconView$1;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView$1;-><init>(Lcom/android/keyguard/fod/MiuiGxzwIconView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHandler:Landroid/os/Handler;
 
-    .line 415
+    .line 429
     new-instance v0, Lcom/android/keyguard/fod/MiuiGxzwIconView$2;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView$2;-><init>(Lcom/android/keyguard/fod/MiuiGxzwIconView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGotoUnlockRunnable:Ljava/lang/Runnable;
 
-    .line 575
+    .line 589
     new-instance v0, Lcom/android/keyguard/fod/MiuiGxzwIconView$3;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView$3;-><init>(Lcom/android/keyguard/fod/MiuiGxzwIconView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPutUpSensorListener:Landroid/hardware/SensorEventListener;
 
-    .line 602
+    .line 616
     const/4 v0, 0x7
 
     iput v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->FINGERPRINT_ERROR_LOCKOUT:I
 
-    .line 603
+    .line 617
     const/16 v0, 0x9
 
     iput v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->FINGERPRINT_ERROR_LOCKOUT_PERMANENT_FOR_O:I
 
-    .line 605
+    .line 619
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mAuthFailedSignal:Z
 
-    .line 606
+    .line 620
     new-instance v0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;-><init>(Lcom/android/keyguard/fod/MiuiGxzwIconView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardUpdateMonitorCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 717
+    .line 731
     new-instance v0, Lcom/android/keyguard/fod/MiuiGxzwIconView$5;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView$5;-><init>(Lcom/android/keyguard/fod/MiuiGxzwIconView;)V
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 116
+    .line 118
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->initView()V
 
-    .line 114
+    .line 116
     return-void
 .end method
 
@@ -333,13 +335,13 @@
     .locals 0
 
     .prologue
-    .line 502
+    .line 516
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->setGxzwIconTransparent()V
 
-    .line 503
+    .line 517
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->unscheduleSetIconTransparen()V
 
-    .line 501
+    .line 515
     return-void
 .end method
 
@@ -349,7 +351,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 120
+    .line 122
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -362,7 +364,7 @@
 
     invoke-virtual {v3, v4, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    .line 121
+    .line 123
     const v3, 0x9120194
 
     invoke-virtual {p0, v3}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->findViewById(I)Landroid/view/View;
@@ -371,12 +373,12 @@
 
     iput-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHighlightView:Landroid/view/View;
 
-    .line 122
+    .line 124
     iget-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHighlightView:Landroid/view/View;
 
     invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 123
+    .line 125
     new-instance v3, Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
@@ -387,10 +389,10 @@
 
     iput-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
-    .line 125
+    .line 127
     invoke-virtual {p0, p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 127
+    .line 129
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -405,7 +407,7 @@
 
     iput-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mSensorManager:Landroid/hardware/SensorManager;
 
-    .line 128
+    .line 130
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -420,7 +422,7 @@
 
     iput-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPowerManager:Landroid/os/PowerManager;
 
-    .line 129
+    .line 131
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -435,19 +437,19 @@
 
     iput-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mVibrator:Landroid/os/Vibrator;
 
-    .line 131
+    .line 133
     iput v6, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconX:I
 
-    .line 132
+    .line 134
     iput v6, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconY:I
 
-    .line 133
+    .line 135
     iput v6, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconWidth:I
 
-    .line 134
+    .line 136
     iput v6, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconHeight:I
 
-    .line 135
+    .line 137
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -460,38 +462,38 @@
 
     check-cast v1, Landroid/hardware/display/DisplayManager;
 
-    .line 136
+    .line 138
     .local v1, "displayManager":Landroid/hardware/display/DisplayManager;
     invoke-virtual {v1, v6}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
 
     move-result-object v0
 
-    .line 137
+    .line 139
     .local v0, "display":Landroid/view/Display;
     new-instance v2, Landroid/graphics/Point;
 
     invoke-direct {v2}, Landroid/graphics/Point;-><init>()V
 
-    .line 138
+    .line 140
     .local v2, "point":Landroid/graphics/Point;
     invoke-virtual {v0, v2}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
-    .line 139
+    .line 141
     iget v3, v2, Landroid/graphics/Point;->x:I
 
     iput v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mScreenWidth:I
 
-    .line 140
+    .line 142
     iget v3, v2, Landroid/graphics/Point;->y:I
 
     iput v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mScreenHeight:I
 
-    .line 142
+    .line 144
     const/16 v3, 0x1304
 
     invoke-virtual {p0, v3}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->setSystemUiVisibility(I)V
 
-    .line 147
+    .line 149
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -502,14 +504,14 @@
 
     iput-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 148
+    .line 150
     iget-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     iget-object v4, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardUpdateMonitorCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 
     invoke-virtual {v3, v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 149
+    .line 151
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -524,7 +526,7 @@
 
     iput-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    .line 151
+    .line 153
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -539,7 +541,7 @@
 
     iput-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 152
+    .line 154
     new-instance v3, Landroid/content/IntentFilter;
 
     const-string/jumbo v4, "action_set_icon_transparent"
@@ -548,12 +550,12 @@
 
     iput-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mIntentFilter:Landroid/content/IntentFilter;
 
-    .line 153
+    .line 155
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
-    .line 154
+    .line 156
     new-instance v4, Landroid/content/Intent;
 
     const-string/jumbo v5, "action_set_icon_transparent"
@@ -562,14 +564,21 @@
 
     const/high16 v5, 0x10000000
 
-    .line 153
+    .line 155
     invoke-static {v3, v6, v4, v5}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPendingIntent:Landroid/app/PendingIntent;
 
-    .line 119
+    .line 158
+    invoke-static {}, Lcom/android/keyguard/fod/MiuiGxzwUtils;->hasPressureSensor()Z
+
+    move-result v3
+
+    iput-boolean v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHasPressureSensor:Z
+
+    .line 121
     return-void
 .end method
 
@@ -582,18 +591,18 @@
 
     const/high16 v4, -0x3d880000    # -62.0f
 
-    .line 367
+    .line 372
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
-    .line 368
+    .line 373
     .local v0, "x":F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v1
 
-    .line 369
+    .line 374
     .local v1, "y":F
     cmpl-float v3, v0, v4
 
@@ -603,7 +612,7 @@
 
     if-ltz v3, :cond_0
 
-    .line 370
+    .line 375
     iget v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconWidth:I
 
     add-int/lit8 v3, v3, 0x3e
@@ -626,7 +635,7 @@
 
     const/4 v2, 0x1
 
-    .line 369
+    .line 374
     :cond_0
     return v2
 .end method
@@ -639,20 +648,20 @@
 
     const/4 v6, 0x1
 
-    .line 383
+    .line 388
     const-string/jumbo v2, "MiuiGxzwViewIcon"
 
     const-string/jumbo v3, "onTouchDown"
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 385
+    .line 390
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->turnOnAodIfScreenOff()V
 
-    .line 386
+    .line 391
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->setGxzwIconOpaque()V
 
-    .line 388
+    .line 393
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mFingerprintLockout:Z
 
     if-nez v2, :cond_0
@@ -661,7 +670,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 389
+    .line 394
     :cond_0
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHandler:Landroid/os/Handler;
 
@@ -671,14 +680,14 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 392
+    .line 397
     :cond_1
     iput-boolean v6, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mTouchDown:Z
 
-    .line 393
+    .line 398
     iput-boolean v6, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mNeedVibrator:Z
 
-    .line 395
+    .line 400
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -691,7 +700,7 @@
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 396
+    .line 401
     .local v1, "wm":Landroid/view/WindowManager;
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -699,29 +708,29 @@
 
     check-cast v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 397
+    .line 402
     .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     const/high16 v2, 0x3f800000    # 1.0f
 
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->alpha:F
 
-    .line 398
+    .line 403
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->isAttachedToWindow()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 399
+    .line 404
     invoke-interface {v1, p0, v0}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 402
+    .line 407
     :cond_2
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDozing:Z
 
     if-eqz v2, :cond_3
 
-    .line 403
+    .line 408
     invoke-static {}, Lcom/android/keyguard/fod/MiuiGxzwManager;->getInstance()Lcom/android/keyguard/fod/MiuiGxzwManager;
 
     move-result-object v2
@@ -730,18 +739,18 @@
 
     invoke-virtual {v2, v4, v5}, Lcom/android/keyguard/fod/MiuiGxzwManager;->requestDrawWackLock(J)V
 
-    .line 406
+    .line 411
     :cond_3
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mCollectGxzwListener:Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
 
     if-eqz v2, :cond_4
 
-    .line 407
+    .line 412
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mCollectGxzwListener:Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
 
     invoke-interface {v2, v6}, Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;->onCollectStateChange(Z)V
 
-    .line 409
+    .line 414
     :cond_4
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
@@ -749,20 +758,53 @@
 
     invoke-static {v2}, Lcom/android/keyguard/KeyguardCompatibilityHelperForP;->saveShowTouchesState(Landroid/content/Context;)V
 
-    .line 411
+    .line 416
+    iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHasPressureSensor:Z
+
+    if-eqz v2, :cond_6
+
+    .line 417
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v7}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 412
+    .line 418
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v4, 0x1f4
 
     invoke-virtual {v2, v7, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 381
+    .line 386
+    :cond_5
+    :goto_0
     return-void
+
+    .line 420
+    :cond_6
+    iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mEnrolling:Z
+
+    if-nez v2, :cond_7
+
+    .line 421
+    iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mVibrator:Landroid/os/Vibrator;
+
+    const-wide/16 v4, 0xc
+
+    invoke-virtual {v2, v4, v5}, Landroid/os/Vibrator;->vibrate(J)V
+
+    .line 423
+    :cond_7
+    iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardAuthen:Z
+
+    if-eqz v2, :cond_5
+
+    .line 424
+    iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
+
+    invoke-virtual {v2}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startRecognizingAnim()V
+
+    goto :goto_0
 .end method
 
 .method private onTouchUp(Z)V
@@ -772,40 +814,40 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 429
+    .line 443
     const-string/jumbo v3, "MiuiGxzwViewIcon"
 
     const-string/jumbo v4, "onTouchUp"
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 431
+    .line 445
     iget-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHandler:Landroid/os/Handler;
 
     iget-object v4, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGotoUnlockRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 432
+    .line 446
     iget-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mCollectGxzwListener:Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
 
     if-eqz v3, :cond_0
 
-    .line 433
+    .line 447
     iget-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mCollectGxzwListener:Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
 
     invoke-interface {v3, v2}, Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;->onCollectStateChange(Z)V
 
-    .line 435
+    .line 449
     :cond_0
     iput-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mTouchDown:Z
 
-    .line 436
+    .line 450
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mNeedVibrator:Z
 
-    .line 438
+    .line 452
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -818,7 +860,7 @@
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 439
+    .line 453
     .local v1, "wm":Landroid/view/WindowManager;
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -826,29 +868,29 @@
 
     check-cast v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 440
+    .line 454
     .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     const/4 v3, 0x0
 
     iput v3, v0, Landroid/view/WindowManager$LayoutParams;->alpha:F
 
-    .line 441
+    .line 455
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->isAttachedToWindow()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 442
+    .line 456
     invoke-interface {v1, p0, v0}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 445
+    .line 459
     :cond_1
     iget-boolean v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDozing:Z
 
     if-eqz v3, :cond_2
 
-    .line 446
+    .line 460
     invoke-static {}, Lcom/android/keyguard/fod/MiuiGxzwManager;->getInstance()Lcom/android/keyguard/fod/MiuiGxzwManager;
 
     move-result-object v3
@@ -857,7 +899,7 @@
 
     invoke-virtual {v3, v4, v5}, Lcom/android/keyguard/fod/MiuiGxzwManager;->requestDrawWackLock(J)V
 
-    .line 448
+    .line 462
     :cond_2
     if-eqz p1, :cond_4
 
@@ -865,36 +907,36 @@
 
     if-eqz v3, :cond_4
 
-    .line 449
+    .line 463
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v2}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startBackAnim()V
 
-    .line 455
+    .line 469
     :cond_3
     :goto_0
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v2}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->stopTip()V
 
-    .line 457
+    .line 471
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
     invoke-static {v2}, Lcom/android/keyguard/KeyguardCompatibilityHelperForP;->restoreShowTouchesState(Landroid/content/Context;)V
 
-    .line 459
+    .line 473
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHandler:Landroid/os/Handler;
 
     const/16 v3, 0x3e9
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 427
+    .line 441
     return-void
 
-    .line 451
+    .line 465
     :cond_4
     iget-boolean v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardAuthen:Z
 
@@ -911,7 +953,7 @@
     :cond_5
     if-nez v2, :cond_3
 
-    .line 452
+    .line 466
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v2}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->stopAnim()V
@@ -923,22 +965,22 @@
     .locals 4
 
     .prologue
-    .line 463
+    .line 477
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mSensorManager:Landroid/hardware/SensorManager;
 
     if-nez v1, :cond_0
 
-    .line 464
+    .line 478
     const-string/jumbo v1, "MiuiGxzwViewIcon"
 
     const-string/jumbo v2, "sensor not supported"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 465
+    .line 479
     return-void
 
-    .line 468
+    .line 482
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -950,11 +992,11 @@
 
     move-result-object v0
 
-    .line 469
+    .line 483
     .local v0, "sensor":Landroid/hardware/Sensor;
     if-eqz v0, :cond_1
 
-    .line 470
+    .line 484
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mSensorManager:Landroid/hardware/SensorManager;
 
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPutUpSensorListener:Landroid/hardware/SensorEventListener;
@@ -963,11 +1005,11 @@
 
     invoke-virtual {v1, v2, v0, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 462
+    .line 476
     :goto_0
     return-void
 
-    .line 472
+    .line 486
     :cond_1
     const-string/jumbo v1, "MiuiGxzwViewIcon"
 
@@ -982,24 +1024,24 @@
     .locals 6
 
     .prologue
-    .line 487
+    .line 501
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "scheduleSetIconTransparen"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 489
+    .line 503
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPendingIntent:Landroid/app/PendingIntent;
 
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 490
+    .line 504
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 491
+    .line 505
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -1010,12 +1052,12 @@
 
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPendingIntent:Landroid/app/PendingIntent;
 
-    .line 490
+    .line 504
     const/4 v4, 0x2
 
     invoke-virtual {v0, v4, v2, v3, v1}, Landroid/app/AlarmManager;->setExact(IJLandroid/app/PendingIntent;)V
 
-    .line 485
+    .line 499
     return-void
 .end method
 
@@ -1025,15 +1067,55 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 530
+    .line 544
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "setGxzwIconOpaque"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 532
+    .line 546
     const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-direct {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->updateGxzwIconAlpha(F)V
+
+    .line 547
+    iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mCollectGxzwListener:Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconTransparent:Z
+
+    if-eqz v0, :cond_0
+
+    .line 548
+    iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mCollectGxzwListener:Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
+
+    invoke-interface {v0, v2}, Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;->onIconStateChange(Z)V
+
+    .line 550
+    :cond_0
+    iput-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconTransparent:Z
+
+    .line 542
+    return-void
+.end method
+
+.method private setGxzwIconTransparent()V
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 530
+    const-string/jumbo v0, "MiuiGxzwViewIcon"
+
+    const-string/jumbo v1, "setGxzwIconTransparent"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 532
+    const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->updateGxzwIconAlpha(F)V
 
@@ -1044,54 +1126,14 @@
 
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconTransparent:Z
 
-    if-eqz v0, :cond_0
-
-    .line 534
-    iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mCollectGxzwListener:Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
-
-    invoke-interface {v0, v2}, Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;->onIconStateChange(Z)V
-
-    .line 536
-    :cond_0
-    iput-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconTransparent:Z
-
-    .line 528
-    return-void
-.end method
-
-.method private setGxzwIconTransparent()V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x1
-
-    .line 516
-    const-string/jumbo v0, "MiuiGxzwViewIcon"
-
-    const-string/jumbo v1, "setGxzwIconTransparent"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 518
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->updateGxzwIconAlpha(F)V
-
-    .line 519
-    iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mCollectGxzwListener:Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconTransparent:Z
-
     if-eqz v0, :cond_2
 
-    .line 522
+    .line 536
     :cond_0
     :goto_0
     iput-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconTransparent:Z
 
-    .line 523
+    .line 537
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1102,14 +1144,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 524
+    .line 538
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->turnOffScreenIfInAod()V
 
-    .line 514
+    .line 528
     :cond_1
     return-void
 
-    .line 520
+    .line 534
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mCollectGxzwListener:Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
 
@@ -1122,7 +1164,7 @@
     .locals 3
 
     .prologue
-    .line 570
+    .line 584
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -1137,7 +1179,7 @@
 
     move-result-object v0
 
-    .line 571
+    .line 585
     .local v0, "app":Lcom/android/systemui/SystemUIApplication;
     const-class v2, Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -1147,11 +1189,11 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 572
+    .line 586
     .local v1, "statusBar":Lcom/android/systemui/statusbar/phone/StatusBar;
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->collapsePanels()V
 
-    .line 569
+    .line 583
     return-void
 .end method
 
@@ -1159,21 +1201,21 @@
     .locals 1
 
     .prologue
-    .line 507
+    .line 521
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDozing:Z
 
     if-eqz v0, :cond_0
 
-    .line 508
+    .line 522
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->setGxzwIconOpaque()V
 
-    .line 509
+    .line 523
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->scheduleSetIconTransparen()V
 
-    .line 510
+    .line 524
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->turnOnAodIfScreenOff()V
 
-    .line 506
+    .line 520
     :cond_0
     return-void
 .end method
@@ -1184,27 +1226,27 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 541
+    .line 555
     const-string/jumbo v2, "MiuiGxzwViewIcon"
 
     const-string/jumbo v3, "turnOffScreenIfInAod"
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 543
+    .line 557
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
     invoke-virtual {v2, v4}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
 
     move-result-object v0
 
-    .line 544
+    .line 558
     .local v0, "display":Landroid/view/Display;
     invoke-virtual {v0}, Landroid/view/Display;->getState()I
 
     move-result v1
 
-    .line 545
+    .line 559
     .local v1, "state":I
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDozing:Z
 
@@ -1218,7 +1260,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 546
+    .line 560
     :cond_0
     invoke-static {}, Lcom/android/systemui/Dependency;->getHost()Lcom/android/systemui/doze/DozeHost;
 
@@ -1226,7 +1268,7 @@
 
     invoke-interface {v2, v4}, Lcom/android/systemui/doze/DozeHost;->fireAodState(Z)V
 
-    .line 539
+    .line 553
     :cond_1
     return-void
 .end method
@@ -1237,14 +1279,14 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 552
+    .line 566
     const-string/jumbo v2, "MiuiGxzwViewIcon"
 
     const-string/jumbo v3, "turnOnAodIfScreenOff"
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 554
+    .line 568
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
     const/4 v3, 0x0
@@ -1253,13 +1295,13 @@
 
     move-result-object v0
 
-    .line 555
+    .line 569
     .local v0, "display":Landroid/view/Display;
     invoke-virtual {v0}, Landroid/view/Display;->getState()I
 
     move-result v1
 
-    .line 556
+    .line 570
     .local v1, "state":I
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDozing:Z
 
@@ -1267,14 +1309,14 @@
 
     if-ne v1, v4, :cond_0
 
-    .line 557
+    .line 571
     invoke-static {}, Lcom/android/systemui/Dependency;->getHost()Lcom/android/systemui/doze/DozeHost;
 
     move-result-object v2
 
     invoke-interface {v2, v4}, Lcom/android/systemui/doze/DozeHost;->fireAodState(Z)V
 
-    .line 550
+    .line 564
     :cond_0
     return-void
 .end method
@@ -1283,22 +1325,22 @@
     .locals 2
 
     .prologue
-    .line 477
+    .line 491
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mSensorManager:Landroid/hardware/SensorManager;
 
     if-nez v0, :cond_0
 
-    .line 478
+    .line 492
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "sensor not supported"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 479
+    .line 493
     return-void
 
-    .line 482
+    .line 496
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -1306,7 +1348,7 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
-    .line 476
+    .line 490
     return-void
 .end method
 
@@ -1314,21 +1356,21 @@
     .locals 2
 
     .prologue
-    .line 496
+    .line 510
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "unscheduleSetIconTransparen"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 498
+    .line 512
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPendingIntent:Landroid/app/PendingIntent;
 
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 494
+    .line 508
     return-void
 .end method
 
@@ -1337,12 +1379,12 @@
     .param p1, "alpha"    # F
 
     .prologue
-    .line 562
+    .line 576
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v0, p1}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->setAlpha(F)V
 
-    .line 561
+    .line 575
     return-void
 .end method
 
@@ -1351,27 +1393,27 @@
     .param p1, "lp"    # Landroid/view/WindowManager$LayoutParams;
 
     .prologue
-    .line 755
+    .line 769
     iget-boolean v9, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPortraitOrientation:Z
 
     if-eqz v9, :cond_2
 
-    .line 756
+    .line 770
     iget v7, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconX:I
 
-    .line 757
+    .line 771
     .local v7, "x":I
     iget v8, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconY:I
 
-    .line 758
+    .line 772
     .local v8, "y":I
     iget v6, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconWidth:I
 
-    .line 759
+    .line 773
     .local v6, "width":I
     iget v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconHeight:I
 
-    .line 767
+    .line 781
     .local v2, "height":I
     :goto_0
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
@@ -1386,7 +1428,7 @@
 
     check-cast v1, Landroid/hardware/display/DisplayManager;
 
-    .line 768
+    .line 782
     .local v1, "displayManager":Landroid/hardware/display/DisplayManager;
     const/4 v9, 0x0
 
@@ -1394,13 +1436,13 @@
 
     move-result-object v0
 
-    .line 769
+    .line 783
     .local v0, "display":Landroid/view/Display;
     invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
 
     move-result v3
 
-    .line 770
+    .line 784
     .local v3, "rotation":I
     iget-boolean v9, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardAuthen:Z
 
@@ -1414,7 +1456,7 @@
 
     if-ne v3, v9, :cond_1
 
-    .line 771
+    .line 785
     :cond_0
     iget-boolean v9, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPortraitOrientation:Z
 
@@ -1422,7 +1464,7 @@
 
     iget v5, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mScreenWidth:I
 
-    .line 772
+    .line 786
     .local v5, "screenWidth":I
     :goto_1
     iget-boolean v9, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPortraitOrientation:Z
@@ -1431,37 +1473,37 @@
 
     iget v4, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mScreenHeight:I
 
-    .line 773
+    .line 787
     .local v4, "screenHeight":I
     :goto_2
     sub-int v9, v5, v7
 
     sub-int v7, v9, v6
 
-    .line 774
+    .line 788
     sub-int v9, v4, v8
 
     sub-int v8, v9, v2
 
-    .line 777
+    .line 791
     .end local v4    # "screenHeight":I
     .end local v5    # "screenWidth":I
     :cond_1
     iput v6, p1, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    .line 778
+    .line 792
     iput v2, p1, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 779
+    .line 793
     iput v7, p1, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 780
+    .line 794
     iput v8, p1, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    .line 753
+    .line 767
     return-void
 
-    .line 761
+    .line 775
     .end local v0    # "display":Landroid/view/Display;
     .end local v1    # "displayManager":Landroid/hardware/display/DisplayManager;
     .end local v2    # "height":I
@@ -1472,22 +1514,22 @@
     :cond_2
     iget v8, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconX:I
 
-    .line 762
+    .line 776
     .restart local v8    # "y":I
     iget v7, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconY:I
 
-    .line 763
+    .line 777
     .restart local v7    # "x":I
     iget v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconWidth:I
 
-    .line 764
+    .line 778
     .restart local v2    # "height":I
     iget v6, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconHeight:I
 
     .restart local v6    # "width":I
     goto :goto_0
 
-    .line 771
+    .line 785
     .restart local v0    # "display":Landroid/view/Display;
     .restart local v1    # "displayManager":Landroid/hardware/display/DisplayManager;
     .restart local v3    # "rotation":I
@@ -1497,7 +1539,7 @@
     .restart local v5    # "screenWidth":I
     goto :goto_1
 
-    .line 772
+    .line 786
     :cond_4
     iget v4, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mScreenWidth:I
 
@@ -1509,7 +1551,7 @@
     .param p1, "portraitOrientation"    # Z
 
     .prologue
-    .line 744
+    .line 758
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPortraitOrientation:Z
 
     if-eq p1, v2, :cond_0
@@ -1520,21 +1562,21 @@
 
     if-eqz v2, :cond_0
 
-    .line 745
+    .line 759
     iput-boolean p1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPortraitOrientation:Z
 
-    .line 746
+    .line 760
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 747
+    .line 761
     .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     invoke-direct {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->updateLpByOrientation(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 748
+    .line 762
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -1547,11 +1589,11 @@
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 749
+    .line 763
     .local v1, "wm":Landroid/view/WindowManager;
     invoke-interface {v1, p0, v0}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 743
+    .line 757
     .end local v0    # "lp":Landroid/view/WindowManager$LayoutParams;
     .end local v1    # "wm":Landroid/view/WindowManager;
     :cond_0
@@ -1562,7 +1604,7 @@
     .locals 4
 
     .prologue
-    .line 566
+    .line 580
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -1573,7 +1615,7 @@
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 565
+    .line 579
     return-void
 .end method
 
@@ -1585,15 +1627,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 207
+    .line 212
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mShowed:Z
 
     if-nez v1, :cond_0
 
-    .line 208
+    .line 213
     return-void
 
-    .line 211
+    .line 216
     :cond_0
     const-string/jumbo v1, "MiuiGxzwViewIcon"
 
@@ -1601,25 +1643,25 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 214
+    .line 219
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDozing:Z
 
     if-eqz v1, :cond_1
 
-    .line 215
+    .line 220
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->setGxzwIconOpaque()V
 
-    .line 216
+    .line 221
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->unregisterPutUpSensor()V
 
-    .line 217
+    .line 222
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->unscheduleSetIconTransparen()V
 
-    .line 220
+    .line 225
     :cond_1
     invoke-direct {p0, v3}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->onTouchUp(Z)V
 
-    .line 222
+    .line 227
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1632,7 +1674,7 @@
 
     check-cast v0, Landroid/view/WindowManager;
 
-    .line 223
+    .line 228
     .local v0, "wm":Landroid/view/WindowManager;
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->isAttachedToWindow()Z
 
@@ -1640,24 +1682,24 @@
 
     if-eqz v1, :cond_2
 
-    .line 224
+    .line 229
     invoke-interface {v0, p0}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
 
-    .line 226
+    .line 231
     :cond_2
     const/16 v1, 0x8
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->setVisibility(I)V
 
-    .line 227
+    .line 232
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v1}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->dismiss()V
 
-    .line 228
+    .line 233
     iput-boolean v3, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mShowed:Z
 
-    .line 206
+    .line 211
     return-void
 .end method
 
@@ -1666,7 +1708,7 @@
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 692
+    .line 706
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1707,21 +1749,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 695
+    .line 709
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 702
+    .line 716
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
     return v0
 
-    .line 697
+    .line 711
     :pswitch_0
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
@@ -1729,16 +1771,16 @@
 
     if-nez v0, :cond_0
 
-    .line 698
+    .line 712
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->showFingerprintIcon()V
 
-    .line 700
+    .line 714
     :cond_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 695
+    .line 709
     :pswitch_data_0
     .packed-switch 0x162
         :pswitch_0
@@ -1752,22 +1794,22 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 738
+    .line 752
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 739
+    .line 753
     iget v1, p1, Landroid/content/res/Configuration;->orientation:I
 
     if-eq v1, v0, :cond_0
 
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardAuthen:Z
 
-    .line 740
+    .line 754
     .local v0, "portraitOrientation":Z
     :cond_0
     invoke-direct {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->updateOrientation(Z)V
 
-    .line 737
+    .line 751
     return-void
 .end method
 
@@ -1778,15 +1820,15 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 288
+    .line 293
     iput-boolean p1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardAuthen:Z
 
-    .line 289
+    .line 294
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v1, p1}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->onKeyguardAuthen(Z)V
 
-    .line 290
+    .line 295
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1803,15 +1845,15 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 291
+    .line 296
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardAuthen:Z
 
-    .line 292
+    .line 297
     .local v0, "portraitOrientation":Z
     :cond_0
     invoke-direct {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->updateOrientation(Z)V
 
-    .line 287
+    .line 292
     return-void
 .end method
 
@@ -1819,19 +1861,19 @@
     .locals 2
 
     .prologue
-    .line 283
+    .line 288
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "onScreenTurnedOff"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 284
+    .line 289
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mScreenOn:Z
 
-    .line 281
+    .line 286
     return-void
 .end method
 
@@ -1839,19 +1881,19 @@
     .locals 2
 
     .prologue
-    .line 277
+    .line 282
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "onScreenTurnedOn"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 278
+    .line 283
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mScreenOn:Z
 
-    .line 275
+    .line 280
     return-void
 .end method
 
@@ -1865,7 +1907,7 @@
 
     const/4 v4, 0x0
 
-    .line 306
+    .line 311
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1892,24 +1934,24 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 308
+    .line 313
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mShowed:Z
 
     if-nez v0, :cond_0
 
-    .line 309
+    .line 314
     return v4
 
-    .line 312
+    .line 317
     :cond_0
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDozing:Z
 
     if-eqz v0, :cond_2
 
-    .line 313
+    .line 318
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->scheduleSetIconTransparen()V
 
-    .line 318
+    .line 323
     :goto_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1917,18 +1959,18 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 363
+    .line 368
     :cond_1
     :goto_1
     return v5
 
-    .line 315
+    .line 320
     :cond_2
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->userActivity()V
 
     goto :goto_0
 
-    .line 320
+    .line 325
     :pswitch_0
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
@@ -1966,7 +2008,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 322
+    .line 327
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mTouchDown:Z
 
     if-nez v0, :cond_1
@@ -1975,16 +2017,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 323
+    .line 328
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->onTouchDown()V
 
     goto :goto_1
 
-    .line 327
+    .line 332
     :pswitch_1
     iput v4, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPressureValue:I
 
-    .line 328
+    .line 333
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2021,7 +2063,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 329
+    .line 334
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mTouchDown:Z
 
     if-eqz v0, :cond_1
@@ -2030,12 +2072,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 330
+    .line 335
     invoke-direct {p0, v5}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->onTouchUp(Z)V
 
     goto :goto_1
 
-    .line 334
+    .line 339
     :pswitch_2
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getPressure()F
 
@@ -2049,7 +2091,7 @@
 
     iput v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPressureValue:I
 
-    .line 336
+    .line 341
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2074,7 +2116,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 339
+    .line 344
     iget v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPressureValue:I
 
     const/16 v1, 0x46
@@ -2089,40 +2131,44 @@
 
     if-eqz v0, :cond_5
 
-    .line 341
+    iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHasPressureSensor:Z
+
+    if-eqz v0, :cond_5
+
+    .line 346
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "pressure value is more than 70, vibrator!!!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 345
+    .line 350
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mEnrolling:Z
 
     if-nez v0, :cond_3
 
-    .line 346
+    .line 351
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mVibrator:Landroid/os/Vibrator;
 
     const-wide/16 v2, 0xc
 
     invoke-virtual {v0, v2, v3}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 348
+    .line 353
     :cond_3
     iput-boolean v4, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mNeedVibrator:Z
 
-    .line 350
+    .line 355
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardAuthen:Z
 
     if-eqz v0, :cond_4
 
-    .line 351
+    .line 356
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startRecognizingAnim()V
 
-    .line 354
+    .line 359
     :cond_4
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mHandler:Landroid/os/Handler;
 
@@ -2130,7 +2176,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 357
+    .line 362
     :cond_5
     invoke-direct {p0, p2}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->isInValidRegion(Landroid/view/MotionEvent;)Z
 
@@ -2146,12 +2192,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 358
+    .line 363
     invoke-direct {p0, v5}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->onTouchUp(Z)V
 
     goto/16 :goto_1
 
-    .line 318
+    .line 323
     nop
 
     :pswitch_data_0
@@ -2168,10 +2214,10 @@
     .param p1, "l"    # Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
 
     .prologue
-    .line 272
+    .line 277
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mCollectGxzwListener:Lcom/android/keyguard/fod/MiuiGxzwIconView$CollectGxzwListener;
 
-    .line 271
+    .line 276
     return-void
 .end method
 
@@ -2180,15 +2226,15 @@
     .param p1, "enrolling"    # Z
 
     .prologue
-    .line 296
+    .line 301
     iput-boolean p1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mEnrolling:Z
 
-    .line 297
+    .line 302
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v0, p1}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->setEnrolling(Z)V
 
-    .line 295
+    .line 300
     return-void
 .end method
 
@@ -2197,10 +2243,10 @@
     .param p1, "lockout"    # Z
 
     .prologue
-    .line 301
+    .line 306
     iput-boolean p1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mUnlockLockout:Z
 
-    .line 300
+    .line 305
     return-void
 .end method
 
@@ -2213,15 +2259,15 @@
 
     const/4 v7, 0x0
 
-    .line 158
+    .line 162
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mShowed:Z
 
     if-eqz v2, :cond_0
 
-    .line 159
+    .line 163
     return-void
 
-    .line 162
+    .line 166
     :cond_0
     const-string/jumbo v2, "MiuiGxzwViewIcon"
 
@@ -2229,18 +2275,18 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
+    .line 169
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mShowed:Z
 
-    .line 166
+    .line 170
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mNeedVibrator:Z
 
-    .line 167
+    .line 171
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v2, p1}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->show(Z)V
 
-    .line 169
+    .line 173
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -2253,7 +2299,7 @@
 
     check-cast v6, Landroid/view/WindowManager;
 
-    .line 171
+    .line 175
     .local v6, "wm":Landroid/view/WindowManager;
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
@@ -2271,75 +2317,78 @@
 
     if-eq v2, v1, :cond_1
 
-    .line 172
+    .line 176
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mKeyguardAuthen:Z
 
-    .line 171
+    .line 175
     :cond_1
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mPortraitOrientation:Z
 
-    .line 173
+    .line 177
     iput v7, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconX:I
 
-    .line 174
+    .line 178
     iput v7, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconY:I
 
-    .line 175
+    .line 179
     iput v7, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconWidth:I
 
-    .line 176
+    .line 180
     iput v7, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconHeight:I
 
-    .line 178
+    .line 182
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     iget v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconWidth:I
 
     iget v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mGxzwIconHeight:I
 
-    .line 179
+    .line 183
     const/16 v3, 0x7e2
 
-    .line 180
-    const v4, 0x1010108
-
     .line 184
+    const v4, 0x1000608
+
+    .line 188
     const/4 v5, -0x2
 
-    .line 178
+    .line 182
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 185
+    .line 189
     .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
+    invoke-static {v0}, Lcom/android/keyguard/KeyguardCompatibilityHelperForP;->setLayoutInDisplayCutoutMode(Landroid/view/WindowManager$LayoutParams;)V
+
+    .line 190
     const/16 v1, 0x33
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 186
+    .line 191
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->alpha:F
 
-    .line 187
+    .line 192
     invoke-direct {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->updateLpByOrientation(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 188
+    .line 193
     const-string/jumbo v1, "gxzw_icon"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 189
+    .line 194
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDozing:Z
 
     if-eqz v1, :cond_2
 
-    .line 190
+    .line 195
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->registerPutUpSensor()V
 
-    .line 191
+    .line 196
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->scheduleSetIconTransparen()V
 
-    .line 192
+    .line 197
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -2350,14 +2399,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 194
+    .line 199
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     and-int/lit8 v1, v1, -0x9
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 195
+    .line 200
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const/high16 v2, 0x20000
@@ -2366,14 +2415,14 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 196
+    .line 201
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     or-int/lit8 v1, v1, 0x20
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 198
+    .line 203
     :cond_2
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->isAttachedToWindow()Z
 
@@ -2381,18 +2430,18 @@
 
     if-eqz v1, :cond_4
 
-    .line 199
+    .line 204
     invoke-interface {v6, p0, v0}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 203
+    .line 208
     :cond_3
     :goto_0
     invoke-virtual {p0, v7}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->setVisibility(I)V
 
-    .line 157
+    .line 161
     return-void
 
-    .line 200
+    .line 205
     :cond_4
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getParent()Landroid/view/ViewParent;
 
@@ -2400,7 +2449,7 @@
 
     if-nez v1, :cond_3
 
-    .line 201
+    .line 206
     invoke-interface {v6, p0, v0}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
@@ -2410,38 +2459,38 @@
     .locals 4
 
     .prologue
-    .line 249
+    .line 254
     const-string/jumbo v2, "MiuiGxzwViewIcon"
 
     const-string/jumbo v3, "stopDozing"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 251
+    .line 256
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mMiuiGxzwAnimView:Lcom/android/keyguard/fod/MiuiGxzwAnimView;
 
     invoke-virtual {v2}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->stopDozing()V
 
-    .line 252
+    .line 257
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mDozing:Z
 
-    .line 254
+    .line 259
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView;->mShowed:Z
 
     if-eqz v2, :cond_0
 
-    .line 255
+    .line 260
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->setGxzwIconOpaque()V
 
-    .line 256
+    .line 261
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->unregisterPutUpSensor()V
 
-    .line 257
+    .line 262
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->unscheduleSetIconTransparen()V
 
-    .line 258
+    .line 263
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -2450,7 +2499,7 @@
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 260
+    .line 265
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -2463,7 +2512,7 @@
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 261
+    .line 266
     .local v1, "wm":Landroid/view/WindowManager;
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2471,7 +2520,7 @@
 
     check-cast v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 262
+    .line 267
     .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     iget v2, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -2479,7 +2528,7 @@
 
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 263
+    .line 268
     iget v2, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const v3, -0x20001
@@ -2488,24 +2537,24 @@
 
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 264
+    .line 269
     iget v2, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     and-int/lit8 v2, v2, -0x21
 
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 265
+    .line 270
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->isAttachedToWindow()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 266
+    .line 271
     invoke-interface {v1, p0, v0}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 247
+    .line 252
     .end local v0    # "lp":Landroid/view/WindowManager$LayoutParams;
     .end local v1    # "wm":Landroid/view/WindowManager;
     :cond_0

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->inflateDismissView()V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->inflateFoldView()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 2064
+    .line 2048
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$52;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,29 +38,15 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 1
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 2067
+    .line 2051
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$52;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap22(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    const/16 v1, 0x94
-
-    invoke-static {v0, v1}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;I)V
-
-    .line 2068
-    sget-object v0, Lcom/android/systemui/statistic/ScenarioConstants;->SCENARIO_CLEAR_ALL_NOTI:Lcom/android/systemui/statistic/ScenarioTrackUtil$SystemUIEventScenario;
-
-    invoke-static {v0}, Lcom/android/systemui/statistic/ScenarioTrackUtil;->beginScenario(Lcom/android/systemui/statistic/ScenarioTrackUtil$SystemUIEventScenario;)V
-
-    .line 2069
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$52;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->clearAllNotifications()V
-
-    .line 2066
+    .line 2050
     return-void
 .end method

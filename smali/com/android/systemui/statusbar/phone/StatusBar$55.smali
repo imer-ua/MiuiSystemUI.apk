@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Lcom/android/systemui/statusbar/RemoteInputController$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->startKeyguard()V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->performDismissAllAnimations(Ljava/util/ArrayList;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 2247
+    .line 2191
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,77 +37,15 @@
 
 
 # virtual methods
-.method public onRemoteInputActive(Z)V
-    .locals 0
-    .param p1, "active"    # Z
+.method public run()V
+    .locals 1
 
     .prologue
-    .line 2268
+    .line 2194
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap10(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+
+    .line 2193
     return-void
-.end method
-
-.method public onRemoteInputSent(Lcom/android/systemui/statusbar/NotificationData$Entry;)V
-    .locals 4
-    .param p1, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
-
-    .prologue
-    .line 2250
-    sget-boolean v0, Lcom/android/systemui/statusbar/phone/StatusBar;->FORCE_REMOTE_INPUT_HISTORY:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mKeysKeptForRemoteInput:Landroid/util/ArraySet;
-
-    iget-object v1, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->key:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 2251
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget-object v1, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->key:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->removeNotification(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$RankingMap;)V
-
-    .line 2249
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 2252
-    :cond_1
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mRemoteInputEntriesToRemoveOnCollapse:Landroid/util/ArraySet;
-
-    invoke-virtual {v0, p1}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2257
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
-
-    new-instance v1, Lcom/android/systemui/statusbar/phone/StatusBar$55$1;
-
-    invoke-direct {v1, p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBar$55$1;-><init>(Lcom/android/systemui/statusbar/phone/StatusBar$55;Lcom/android/systemui/statusbar/NotificationData$Entry;)V
-
-    .line 2263
-    const-wide/16 v2, 0xc8
-
-    .line 2257
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    goto :goto_0
 .end method

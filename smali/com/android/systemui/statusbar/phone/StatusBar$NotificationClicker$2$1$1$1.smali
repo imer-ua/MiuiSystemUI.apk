@@ -30,7 +30,7 @@
     .param p2, "val$parentToCancelFinal"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
-    .line 8664
+    .line 8676
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2$1$1$1;->this$4:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2$1$1;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2$1$1$1;->val$parentToCancelFinal:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 8667
+    .line 8679
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2$1$1$1;->this$4:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2$1$1;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2$1$1;->this$3:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2$1;
@@ -61,6 +61,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->performRemoveNotification(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)V
 
-    .line 8666
+    .line 8678
     return-void
 .end method

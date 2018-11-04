@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 432
+    .line 434
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$4;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,16 +46,16 @@
 
     const v4, 0x3f4ccccd    # 0.8f
 
-    .line 435
+    .line 437
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v1
 
-    .line 436
+    .line 438
     .local v1, "fraction":F
     move v0, v1
 
-    .line 437
+    .line 439
     .local v0, "alpha":F
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NavStubView$4;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
@@ -69,7 +69,7 @@
 
     add-float v2, v4, v3
 
-    .line 438
+    .line 440
     .local v2, "scale":F
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
@@ -79,7 +79,7 @@
 
     invoke-virtual {v3, v4, v1, v2}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->changeAlphaScaleForFsGesture(Ljava/lang/String;FF)V
 
-    .line 439
+    .line 441
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NavStubView$4;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     sub-float v4, v5, v1
@@ -88,6 +88,6 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-wrap4(Lcom/android/systemui/statusbar/phone/NavStubView;F)V
 
-    .line 434
+    .line 436
     return-void
 .end method

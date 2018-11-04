@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     .prologue
-    .line 604
+    .line 605
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "running"    # Z
 
     .prologue
-    .line 632
+    .line 633
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .param p1, "why"    # I
 
     .prologue
-    .line 615
+    .line 616
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .param p1, "showing"    # Z
 
     .prologue
-    .line 628
+    .line 629
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 655
+    .line 656
     const-string/jumbo v6, "is_pad"
 
     invoke-static {v6, v8}, Lmiui/util/FeatureParser;->getBoolean(Ljava/lang/String;Z)Z
@@ -77,20 +77,20 @@
 
     if-eqz v6, :cond_0
 
-    .line 656
+    .line 657
     return-void
 
-    .line 659
+    .line 660
     :cond_0
     iget v6, p1, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->status:I
 
-    .line 660
+    .line 661
     const/4 v7, 0x2
 
-    .line 659
+    .line 660
     if-eq v6, v7, :cond_4
 
-    .line 661
+    .line 662
     iget v6, p1, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->status:I
 
     const/4 v7, 0x5
@@ -99,7 +99,7 @@
 
     const/4 v1, 0x1
 
-    .line 663
+    .line 664
     .local v1, "isChargingOrFull":Z
     :goto_0
     invoke-virtual {p1}, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->isPluggedIn()Z
@@ -110,23 +110,23 @@
 
     move v3, v1
 
-    .line 664
+    .line 665
     :goto_1
     iget v0, p1, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->level:I
 
-    .line 665
+    .line 666
     .local v0, "batteryLevel":I
     iget v5, p1, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->voltage:I
 
-    .line 666
+    .line 667
     .local v5, "voltage":I
     iget v4, p1, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->temperature:I
 
-    .line 667
+    .line 668
     .local v4, "temperature":I
     iget v2, p1, Lcom/android/keyguard/KeyguardUpdateMonitor$BatteryStatus;->maxChargingWattage:I
 
-    .line 668
+    .line 669
     .local v2, "maxChargingWattage":I
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -136,7 +136,7 @@
 
     invoke-virtual {v6, v0, v8}, Lcom/android/keyguard/charge/MiuiKeyguardChargingView;->setChargingLevel(IZ)V
 
-    .line 669
+    .line 670
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v6}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get14(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)I
@@ -145,7 +145,7 @@
 
     if-eq v4, v6, :cond_1
 
-    .line 670
+    .line 671
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v6}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get3(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;
@@ -160,7 +160,7 @@
 
     invoke-virtual {v6, v7, v4, v0}, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->setChargingInfo(Ljava/lang/String;II)V
 
-    .line 673
+    .line 674
     :cond_1
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -178,23 +178,23 @@
 
     if-eq v0, v6, :cond_7
 
-    .line 675
+    .line 676
     :cond_2
     :goto_2
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v6, v3, v0, v4}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-wrap3(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;ZII)V
 
-    .line 676
+    .line 677
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v6, v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-set2(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;I)I
 
-    .line 654
+    .line 655
     :cond_3
     return-void
 
-    .line 659
+    .line 660
     .end local v0    # "batteryLevel":I
     .end local v1    # "isChargingOrFull":Z
     .end local v2    # "maxChargingWattage":I
@@ -206,7 +206,7 @@
     .restart local v1    # "isChargingOrFull":Z
     goto :goto_0
 
-    .line 661
+    .line 662
     .end local v1    # "isChargingOrFull":Z
     :cond_5
     const/4 v1, 0x0
@@ -214,14 +214,14 @@
     .restart local v1    # "isChargingOrFull":Z
     goto :goto_0
 
-    .line 663
+    .line 664
     :cond_6
     const/4 v3, 0x0
 
     .local v3, "pluggedIn":Z
     goto :goto_1
 
-    .line 674
+    .line 675
     .end local v3    # "pluggedIn":Z
     .restart local v0    # "batteryLevel":I
     .restart local v2    # "maxChargingWattage":I
@@ -243,7 +243,7 @@
     .locals 1
 
     .prologue
-    .line 650
+    .line 651
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get10(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -256,7 +256,7 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/MiuiKeyguardMoveLeftView;->initLeftView()V
 
-    .line 649
+    .line 650
     return-void
 .end method
 
@@ -264,12 +264,12 @@
     .locals 1
 
     .prologue
-    .line 624
+    .line 625
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-wrap1(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    .line 623
+    .line 624
     return-void
 .end method
 
@@ -277,7 +277,7 @@
     .locals 0
 
     .prologue
-    .line 619
+    .line 620
     return-void
 .end method
 
@@ -285,7 +285,7 @@
     .locals 0
 
     .prologue
-    .line 611
+    .line 612
     return-void
 .end method
 
@@ -294,7 +294,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 636
+    .line 637
     return-void
 .end method
 
@@ -303,12 +303,12 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 607
+    .line 608
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-wrap7(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    .line 606
+    .line 607
     return-void
 .end method
 
@@ -316,7 +316,7 @@
     .locals 2
 
     .prologue
-    .line 641
+    .line 642
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get10(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -329,7 +329,7 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/MiuiKeyguardMoveLeftView;->initLeftView()V
 
-    .line 642
+    .line 643
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get10(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -342,23 +342,23 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/MiuiKeyguardMoveLeftView;->uploadLeftItemData()V
 
-    .line 643
+    .line 644
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-set5(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Z)Z
 
-    .line 644
+    .line 645
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-wrap7(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    .line 645
+    .line 646
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateLeftAffordance()V
 
-    .line 640
+    .line 641
     return-void
 .end method

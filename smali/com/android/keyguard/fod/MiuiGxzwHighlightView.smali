@@ -3,11 +3,30 @@
 .source "MiuiGxzwHighlightView.java"
 
 
+# static fields
+.field private static final LIGHT_TIP_COLOR:I
+
+
 # instance fields
 .field private mPaint:Landroid/graphics/Paint;
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 20
+    invoke-static {}, Lcom/android/keyguard/fod/MiuiGxzwUtils;->getGxzwCircleColor()I
+
+    move-result v0
+
+    sput v0, Lcom/android/keyguard/fod/MiuiGxzwHighlightView;->LIGHT_TIP_COLOR:I
+
+    .line 16
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
     .param p1, "context"    # Landroid/content/Context;
@@ -76,7 +95,7 @@
     .line 60
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwHighlightView;->mPaint:Landroid/graphics/Paint;
 
-    const v1, -0xff0001
+    sget v1, Lcom/android/keyguard/fod/MiuiGxzwHighlightView;->LIGHT_TIP_COLOR:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 

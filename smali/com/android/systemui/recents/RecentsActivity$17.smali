@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 1529
+    .line 1533
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$17;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,7 +41,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1532
+    .line 1536
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$17;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-get0(Lcom/android/systemui/recents/RecentsActivity;)Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
@@ -50,7 +50,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1533
+    .line 1537
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$17;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-get0(Lcom/android/systemui/recents/RecentsActivity;)Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
@@ -59,14 +59,14 @@
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->decrement()V
 
-    .line 1534
+    .line 1538
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$17;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-get0(Lcom/android/systemui/recents/RecentsActivity;)Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     move-result-object v0
 
-    .line 1535
+    .line 1539
     .local v0, "ensureFlushTrigger":Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$17;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -78,24 +78,24 @@
 
     invoke-direct {v2, p0, v0}, Lcom/android/systemui/recents/RecentsActivity$17$1;-><init>(Lcom/android/systemui/recents/RecentsActivity$17;Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;)V
 
-    .line 1540
+    .line 1544
     const-wide/16 v4, 0x12c
 
-    .line 1535
+    .line 1539
     invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1541
+    .line 1545
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$17;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-static {v1, v3}, Lcom/android/systemui/recents/RecentsActivity;->-set0(Lcom/android/systemui/recents/RecentsActivity;Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;)Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
-    .line 1543
+    .line 1547
     .end local v0    # "ensureFlushTrigger":Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$17;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-wrap2(Lcom/android/systemui/recents/RecentsActivity;)V
 
-    .line 1531
+    .line 1535
     return-void
 .end method

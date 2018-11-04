@@ -33,7 +33,7 @@
     .param p3, "val$ctx"    # Landroid/content/Context;
 
     .prologue
-    .line 1404
+    .line 1408
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$14;->val$pkgName:Ljava/lang/String;
 
     iput-object p2, p0, Lcom/android/systemui/recents/RecentsActivity$14;->val$bgControl:Ljava/lang/String;
@@ -51,38 +51,38 @@
     .locals 7
 
     .prologue
-    .line 1407
+    .line 1411
     invoke-static {}, Lmiui/securityspace/CrossUserUtils;->getCurrentUserId()I
 
     move-result v2
 
-    .line 1408
+    .line 1412
     .local v2, "userId":I
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1409
+    .line 1413
     .local v0, "bundle":Landroid/os/Bundle;
     const-string/jumbo v3, "userId"
 
     invoke-virtual {v0, v3, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1410
+    .line 1414
     const-string/jumbo v3, "pkgName"
 
     iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity$14;->val$pkgName:Ljava/lang/String;
 
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1411
+    .line 1415
     const-string/jumbo v3, "bgControl"
 
     iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity$14;->val$bgControl:Ljava/lang/String;
 
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1413
+    .line 1417
     :try_start_0
     iget-object v3, p0, Lcom/android/systemui/recents/RecentsActivity$14;->val$ctx:Landroid/content/Context;
 
@@ -102,25 +102,25 @@
 
     move-result-object v4
 
-    .line 1414
+    .line 1418
     const-string/jumbo v5, "userTableupdate"
 
     const/4 v6, 0x0
 
-    .line 1413
+    .line 1417
     invoke-virtual {v3, v4, v5, v6, v0}, Landroid/content/ContentResolver;->call(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1406
+    .line 1410
     :goto_0
     return-void
 
-    .line 1415
+    .line 1419
     :catch_0
     move-exception v1
 
-    .line 1416
+    .line 1420
     .local v1, "ex":Ljava/lang/IllegalArgumentException;
     invoke-virtual {v1}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
 

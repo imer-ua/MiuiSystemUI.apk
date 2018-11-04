@@ -107,12 +107,12 @@
     .locals 2
 
     .prologue
-    .line 41
+    .line 42
     const-wide/16 v0, 0x64
 
     sput-wide v0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->AOD_DOZE_SUSPEND_DELAY:J
 
-    .line 35
+    .line 36
     return-void
 .end method
 
@@ -126,45 +126,45 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 79
+    .line 80
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 43
+    .line 44
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShowing:Z
 
-    .line 61
+    .line 62
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
-    .line 62
+    .line 63
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mHandler:Landroid/os/Handler;
 
-    .line 65
+    .line 66
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDisplayState:I
 
-    .line 69
+    .line 70
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
-    .line 73
+    .line 74
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLightIcon:Z
 
-    .line 74
+    .line 75
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mPortraitOrientation:Z
 
-    .line 76
+    .line 77
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozingIconAnimDone:Z
 
-    .line 80
+    .line 81
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->initView()V
 
-    .line 78
+    .line 79
     return-void
 .end method
 
@@ -174,7 +174,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 84
+    .line 85
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -187,7 +187,7 @@
 
     invoke-virtual {v0, v3, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    .line 86
+    .line 87
     const v0, 0x9120193
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->findViewById(I)Landroid/view/View;
@@ -198,7 +198,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mSurfaceView:Landroid/view/SurfaceView;
 
-    .line 87
+    .line 88
     new-instance v0, Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
@@ -209,30 +209,30 @@
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
-    .line 89
+    .line 90
     iput v5, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconX:I
 
-    .line 90
+    .line 91
     iput v5, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconY:I
 
-    .line 91
+    .line 92
     iput v5, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconWidth:I
 
-    .line 92
+    .line 93
     iput v5, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconHeight:I
 
-    .line 93
+    .line 94
     iput v5, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwAnimWidth:I
 
-    .line 94
+    .line 95
     iput v5, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwAnimHeight:I
 
-    .line 96
+    .line 97
     const/16 v0, 0x1304
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->setSystemUiVisibility(I)V
 
-    .line 101
+    .line 102
     new-instance v0, Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;
 
     iget-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mSurfaceView:Landroid/view/SurfaceView;
@@ -241,14 +241,14 @@
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwFrameAnimation:Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;
 
-    .line 102
+    .line 103
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwFrameAnimation:Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;
 
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;->setMode(I)V
 
-    .line 104
+    .line 105
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -263,7 +263,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mWindowManager:Landroid/view/WindowManager;
 
-    .line 105
+    .line 106
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -278,14 +278,14 @@
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    .line 106
+    .line 107
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
     iget-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p0, v3}, Landroid/hardware/display/DisplayManager;->registerDisplayListener(Landroid/hardware/display/DisplayManager$DisplayListener;Landroid/os/Handler;)V
 
-    .line 107
+    .line 108
     new-instance v0, Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
 
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
@@ -298,7 +298,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
 
-    .line 109
+    .line 110
     iget v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconX:I
 
     iget v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwAnimWidth:I
@@ -311,7 +311,7 @@
 
     sub-int v9, v0, v3
 
-    .line 110
+    .line 111
     .local v9, "x":I
     iget v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconY:I
 
@@ -325,15 +325,15 @@
 
     sub-int v10, v0, v3
 
-    .line 111
+    .line 112
     .local v10, "y":I
     iget v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwAnimWidth:I
 
-    .line 112
+    .line 113
     .local v1, "width":I
     iget v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwAnimHeight:I
 
-    .line 113
+    .line 114
     .local v2, "height":I
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
 
@@ -347,79 +347,84 @@
 
     check-cast v7, Landroid/hardware/display/DisplayManager;
 
-    .line 114
+    .line 115
     .local v7, "displayManager":Landroid/hardware/display/DisplayManager;
     invoke-virtual {v7, v5}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
 
     move-result-object v6
 
-    .line 115
+    .line 116
     .local v6, "display":Landroid/view/Display;
     new-instance v8, Landroid/graphics/Point;
 
     invoke-direct {v8}, Landroid/graphics/Point;-><init>()V
 
-    .line 116
+    .line 117
     .local v8, "point":Landroid/graphics/Point;
     invoke-virtual {v6, v8}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
-    .line 117
+    .line 118
     iget v0, v8, Landroid/graphics/Point;->x:I
 
     iput v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mScreenWidth:I
 
-    .line 118
+    .line 119
     iget v0, v8, Landroid/graphics/Point;->y:I
 
     iput v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mScreenHeight:I
 
-    .line 119
+    .line 120
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 120
+    .line 121
     const/16 v3, 0x7df
 
-    .line 121
-    const v4, 0x1010118
+    .line 122
+    const v4, 0x1000618
 
-    .line 126
+    .line 127
     const/4 v5, -0x2
 
-    .line 119
+    .line 120
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
-    .line 127
+    .line 128
+    iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
+
+    invoke-static {v0}, Lcom/android/keyguard/KeyguardCompatibilityHelperForP;->setLayoutInDisplayCutoutMode(Landroid/view/WindowManager$LayoutParams;)V
+
+    .line 129
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardCompatibilityHelperForO;->setFlag(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 128
+    .line 130
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     const/16 v3, 0x33
 
     iput v3, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 129
+    .line 131
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     iput v9, v0, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 130
+    .line 132
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     iput v10, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    .line 131
+    .line 133
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     const-string/jumbo v3, "gxzw_anim"
 
     invoke-virtual {v0, v3}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 133
+    .line 135
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -430,7 +435,7 @@
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 83
+    .line 84
     return-void
 .end method
 
@@ -438,35 +443,35 @@
     .locals 1
 
     .prologue
-    .line 185
+    .line 187
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwFrameAnimation:Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;->stopAnimation()V
 
-    .line 186
+    .line 188
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwFrameAnimation:Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;->clean()V
 
-    .line 187
+    .line 189
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->isAttachedToWindow()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 188
+    .line 190
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mWindowManager:Landroid/view/WindowManager;
 
     invoke-interface {v0, p0}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
 
-    .line 190
+    .line 192
     :cond_0
     const/16 v0, 0x8
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->setVisibility(I)V
 
-    .line 184
+    .line 186
     return-void
 .end method
 
@@ -474,7 +479,7 @@
     .locals 4
 
     .prologue
-    .line 452
+    .line 454
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
@@ -487,12 +492,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 453
+    .line 455
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 456
+    .line 458
     :cond_0
     const/4 v0, 0x2
 
@@ -516,14 +521,14 @@
 
     iput-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
-    .line 457
+    .line 459
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0x12c
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 458
+    .line 460
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lmiui/view/animation/QuarticEaseOutInterpolator;
@@ -532,7 +537,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 459
+    .line 461
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/android/keyguard/fod/MiuiGxzwAnimView$2;
@@ -541,7 +546,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 466
+    .line 468
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/android/keyguard/fod/MiuiGxzwAnimView$3;
@@ -550,12 +555,12 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 494
+    .line 496
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 451
+    .line 453
     return-void
 .end method
 
@@ -563,12 +568,12 @@
     .locals 12
 
     .prologue
-    .line 514
+    .line 516
     iget-boolean v9, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mPortraitOrientation:Z
 
     if-eqz v9, :cond_2
 
-    .line 515
+    .line 517
     iget v9, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconX:I
 
     iget v10, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwAnimWidth:I
@@ -581,7 +586,7 @@
 
     sub-int v7, v9, v10
 
-    .line 516
+    .line 518
     .local v7, "x":I
     iget v9, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconY:I
 
@@ -595,15 +600,15 @@
 
     sub-int v8, v9, v10
 
-    .line 517
+    .line 519
     .local v8, "y":I
     iget v6, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwAnimWidth:I
 
-    .line 518
+    .line 520
     .local v6, "width":I
     iget v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwAnimHeight:I
 
-    .line 526
+    .line 528
     .local v2, "height":I
     :goto_0
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
@@ -618,7 +623,7 @@
 
     check-cast v1, Landroid/hardware/display/DisplayManager;
 
-    .line 527
+    .line 529
     .local v1, "displayManager":Landroid/hardware/display/DisplayManager;
     const/4 v9, 0x0
 
@@ -626,13 +631,13 @@
 
     move-result-object v0
 
-    .line 528
+    .line 530
     .local v0, "display":Landroid/view/Display;
     invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
 
     move-result v3
 
-    .line 529
+    .line 531
     .local v3, "rotation":I
     iget-boolean v9, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardAuthen:Z
 
@@ -646,7 +651,7 @@
 
     if-ne v3, v9, :cond_1
 
-    .line 530
+    .line 532
     :cond_0
     iget-boolean v9, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mPortraitOrientation:Z
 
@@ -654,7 +659,7 @@
 
     iget v5, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mScreenWidth:I
 
-    .line 531
+    .line 533
     .local v5, "screenWidth":I
     :goto_1
     iget-boolean v9, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mPortraitOrientation:Z
@@ -663,19 +668,19 @@
 
     iget v4, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mScreenHeight:I
 
-    .line 532
+    .line 534
     .local v4, "screenHeight":I
     :goto_2
     sub-int v9, v5, v7
 
     sub-int v7, v9, v6
 
-    .line 533
+    .line 535
     sub-int v9, v4, v8
 
     sub-int v8, v9, v2
 
-    .line 536
+    .line 538
     .end local v4    # "screenHeight":I
     .end local v5    # "screenWidth":I
     :cond_1
@@ -683,25 +688,25 @@
 
     iput v6, v9, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    .line 537
+    .line 539
     iget-object v9, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     iput v2, v9, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 538
+    .line 540
     iget-object v9, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     iput v7, v9, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 539
+    .line 541
     iget-object v9, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     iput v8, v9, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    .line 512
+    .line 514
     return-void
 
-    .line 520
+    .line 522
     .end local v0    # "display":Landroid/view/Display;
     .end local v1    # "displayManager":Landroid/hardware/display/DisplayManager;
     .end local v2    # "height":I
@@ -722,7 +727,7 @@
 
     sub-int v8, v9, v10
 
-    .line 521
+    .line 523
     .restart local v8    # "y":I
     iget v9, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconY:I
 
@@ -736,18 +741,18 @@
 
     sub-int v7, v9, v10
 
-    .line 522
+    .line 524
     .restart local v7    # "x":I
     iget v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwAnimWidth:I
 
-    .line 523
+    .line 525
     .restart local v2    # "height":I
     iget v6, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwAnimHeight:I
 
     .restart local v6    # "width":I
     goto :goto_0
 
-    .line 530
+    .line 532
     .restart local v0    # "display":Landroid/view/Display;
     .restart local v1    # "displayManager":Landroid/hardware/display/DisplayManager;
     .restart local v3    # "rotation":I
@@ -757,7 +762,7 @@
     .restart local v5    # "screenWidth":I
     goto :goto_1
 
-    .line 531
+    .line 533
     :cond_4
     iget v4, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mScreenWidth:I
 
@@ -769,7 +774,7 @@
     .param p1, "portraitOrientation"    # Z
 
     .prologue
-    .line 505
+    .line 507
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mPortraitOrientation:Z
 
     if-eq p1, v0, :cond_0
@@ -780,20 +785,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 506
+    .line 508
     iput-boolean p1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mPortraitOrientation:Z
 
-    .line 507
+    .line 509
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->updateLpByOrientation()V
 
-    .line 508
+    .line 510
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mWindowManager:Landroid/view/WindowManager;
 
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     invoke-interface {v0, p0, v1}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 504
+    .line 506
     :cond_0
     return-void
 .end method
@@ -804,31 +809,31 @@
     .locals 2
 
     .prologue
-    .line 170
+    .line 172
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShowing:Z
 
     if-nez v0, :cond_0
 
-    .line 171
+    .line 173
     return-void
 
-    .line 173
+    .line 175
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShowing:Z
 
-    .line 174
+    .line 176
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v0, p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->unregisterWallpaperChangeCallback(Lcom/android/keyguard/KeyguardUpdateMonitor$WallpaperChangeCallback;)V
 
-    .line 175
+    .line 177
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->dismiss()V
 
-    .line 177
+    .line 179
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardAuthen:Z
 
     if-eqz v0, :cond_1
@@ -845,14 +850,14 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 178
+    .line 180
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startFadeAniamtion()V
 
-    .line 169
+    .line 171
     :goto_0
     return-void
 
-    .line 180
+    .line 182
     :cond_1
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->removeViewFromWindow()V
 
@@ -864,7 +869,7 @@
     .param p1, "aod"    # Z
 
     .prologue
-    .line 337
+    .line 339
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwFrameAnimation:Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;
 
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
@@ -879,10 +884,10 @@
 
     invoke-virtual {v0, v1, v3, v2}, Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;->draw(IZF)V
 
-    .line 338
+    .line 340
     if-eqz p1, :cond_0
 
-    .line 339
+    .line 341
     invoke-static {}, Lcom/android/keyguard/fod/MiuiGxzwManager;->getInstance()Lcom/android/keyguard/fod/MiuiGxzwManager;
 
     move-result-object v0
@@ -891,7 +896,7 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/android/keyguard/fod/MiuiGxzwManager;->requestDrawWackLock(J)V
 
-    .line 336
+    .line 338
     :cond_0
     return-void
 .end method
@@ -903,22 +908,22 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 499
+    .line 501
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 500
+    .line 502
     iget v1, p1, Landroid/content/res/Configuration;->orientation:I
 
     if-eq v1, v0, :cond_0
 
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardAuthen:Z
 
-    .line 501
+    .line 503
     .local v0, "portraitOrientation":Z
     :cond_0
     invoke-direct {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->updateOrientation(Z)V
 
-    .line 498
+    .line 500
     return-void
 .end method
 
@@ -927,7 +932,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 385
+    .line 387
     return-void
 .end method
 
@@ -946,27 +951,27 @@
 
     const/4 v6, 0x1
 
-    .line 396
+    .line 398
     if-nez p1, :cond_1
 
-    .line 397
+    .line 399
     iget-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
     invoke-virtual {v3, p1}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
 
     move-result-object v0
 
-    .line 398
+    .line 400
     .local v0, "display":Landroid/view/Display;
     invoke-virtual {v0}, Landroid/view/Display;->getState()I
 
     move-result v1
 
-    .line 399
+    .line 401
     .local v1, "newState":I
     iget v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDisplayState:I
 
-    .line 401
+    .line 403
     .local v2, "oldState":I
     const-string/jumbo v3, "MiuiGxzwAnimView"
 
@@ -1000,7 +1005,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 403
+    .line 405
     iget-boolean v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardAuthen:Z
 
     if-eqz v3, :cond_0
@@ -1009,108 +1014,108 @@
 
     if-eqz v3, :cond_0
 
-    .line 404
+    .line 406
     if-ne v2, v6, :cond_2
 
     if-ne v1, v8, :cond_2
 
-    .line 406
+    .line 408
     invoke-virtual {p0, v7}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startIconAnim(Z)V
 
-    .line 434
+    .line 436
     :cond_0
     :goto_0
     iput v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDisplayState:I
 
-    .line 395
+    .line 397
     .end local v0    # "display":Landroid/view/Display;
     .end local v1    # "newState":I
     .end local v2    # "oldState":I
     :cond_1
     return-void
 
-    .line 407
+    .line 409
     .restart local v0    # "display":Landroid/view/Display;
     .restart local v1    # "newState":I
     .restart local v2    # "oldState":I
     :cond_2
     if-ne v2, v6, :cond_4
 
-    .line 408
+    .line 410
     if-eq v1, v9, :cond_3
 
     if-ne v1, v10, :cond_4
 
-    .line 410
+    .line 412
     :cond_3
     iget-boolean v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozingIconAnimDone:Z
 
     if-nez v3, :cond_0
 
-    .line 411
+    .line 413
     iput-boolean v6, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozingIconAnimDone:Z
 
-    .line 412
+    .line 414
     invoke-virtual {p0, v6}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startIconAnim(Z)V
 
     goto :goto_0
 
-    .line 414
+    .line 416
     :cond_4
     if-ne v2, v8, :cond_7
 
-    .line 415
+    .line 417
     if-eq v1, v9, :cond_5
 
     if-ne v1, v10, :cond_7
 
-    .line 417
+    .line 419
     :cond_5
     iget-boolean v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozingIconAnimDone:Z
 
     if-eqz v3, :cond_6
 
-    .line 418
+    .line 420
     iput-boolean v7, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
-    .line 419
+    .line 421
     iget-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v3}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->stopTipAnim()V
 
-    .line 420
+    .line 422
     invoke-virtual {p0, v6}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->drawFingerprintIcon(Z)V
 
     goto :goto_0
 
-    .line 422
+    .line 424
     :cond_6
     iput-boolean v6, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozingIconAnimDone:Z
 
-    .line 423
+    .line 425
     invoke-virtual {p0, v6}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startIconAnim(Z)V
 
     goto :goto_0
 
-    .line 425
+    .line 427
     :cond_7
     if-eq v2, v9, :cond_8
 
     if-ne v2, v10, :cond_0
 
-    .line 426
+    .line 428
     :cond_8
     if-ne v1, v8, :cond_0
 
-    .line 428
+    .line 430
     iput-boolean v7, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
-    .line 429
+    .line 431
     iget-object v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v3}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->stopTipAnim()V
 
-    .line 430
+    .line 432
     invoke-virtual {p0, v7}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->drawFingerprintIcon(Z)V
 
     goto :goto_0
@@ -1121,7 +1126,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 390
+    .line 392
     return-void
 .end method
 
@@ -1132,15 +1137,15 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 205
+    .line 207
     iput-boolean p1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardAuthen:Z
 
-    .line 206
+    .line 208
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v1, p1}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->onKeyguardAuthen(Z)V
 
-    .line 207
+    .line 209
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShowing:Z
 
     if-eqz v1, :cond_0
@@ -1149,12 +1154,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 208
+    .line 210
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->drawFingerprintIcon(Z)V
 
-    .line 210
+    .line 212
     :cond_0
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
 
@@ -1172,20 +1177,20 @@
 
     if-eq v1, v0, :cond_1
 
-    .line 211
+    .line 213
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardAuthen:Z
 
-    .line 212
+    .line 214
     .local v0, "portraitOrientation":Z
     :cond_1
     invoke-direct {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->updateOrientation(Z)V
 
-    .line 213
+    .line 215
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
 
     invoke-virtual {v1, p1}, Lcom/android/keyguard/fod/MiuiGxzwAnimManager;->onKeyguardAuthen(Z)V
 
-    .line 204
+    .line 206
     return-void
 .end method
 
@@ -1194,29 +1199,29 @@
     .param p1, "succeed"    # Z
 
     .prologue
-    .line 440
+    .line 442
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isLightWallpaperGxzw()Z
 
     move-result v0
 
-    .line 441
+    .line 443
     .local v0, "newLightWallpaperGxzw":Z
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLightWallpaperGxzw:Z
 
-    .line 442
+    .line 444
     .local v1, "oldLightWallpaperGxzw":Z
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLightWallpaperGxzw:Z
 
-    .line 443
+    .line 445
     if-eq v1, v0, :cond_0
 
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
     if-eqz v2, :cond_1
 
-    .line 448
+    .line 450
     :cond_0
     :goto_0
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
@@ -1225,26 +1230,26 @@
 
     invoke-virtual {v2, v3}, Lcom/android/keyguard/fod/MiuiGxzwAnimManager;->setLightWallpaperGxzw(Z)V
 
-    .line 439
+    .line 441
     return-void
 
-    .line 443
+    .line 445
     :cond_1
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShowing:Z
 
     if-eqz v2, :cond_0
 
-    .line 444
+    .line 446
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
-    .line 445
+    .line 447
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v2}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->stopTipAnim()V
 
-    .line 446
+    .line 448
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
     invoke-virtual {p0, v2}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->drawFingerprintIcon(Z)V
@@ -1257,31 +1262,31 @@
     .param p1, "alpha"    # F
 
     .prologue
-    .line 345
+    .line 347
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     iput p1, v0, Landroid/view/WindowManager$LayoutParams;->alpha:F
 
-    .line 346
+    .line 348
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->isAttachedToWindow()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 347
+    .line 349
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mWindowManager:Landroid/view/WindowManager;
 
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     invoke-interface {v0, p0, v1}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 348
+    .line 350
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v0, p1}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->setAlpha(F)V
 
-    .line 344
+    .line 346
     :cond_0
     return-void
 .end method
@@ -1291,26 +1296,26 @@
     .param p1, "enrolling"    # Z
 
     .prologue
-    .line 329
+    .line 331
     iput-boolean p1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mEnrolling:Z
 
-    .line 330
+    .line 332
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShowing:Z
 
     if-eqz v0, :cond_0
 
-    .line 331
+    .line 333
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->drawFingerprintIcon(Z)V
 
-    .line 333
+    .line 335
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
 
     invoke-virtual {v0, p1}, Lcom/android/keyguard/fod/MiuiGxzwAnimManager;->setEnrolling(Z)V
 
-    .line 328
+    .line 330
     return-void
 .end method
 
@@ -1325,15 +1330,15 @@
 
     const/4 v3, 0x0
 
-    .line 137
+    .line 139
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShowing:Z
 
     if-eqz v1, :cond_0
 
-    .line 138
+    .line 140
     return-void
 
-    .line 140
+    .line 142
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
@@ -1347,31 +1352,31 @@
 
     if-eqz v1, :cond_1
 
-    .line 141
+    .line 143
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 144
+    .line 146
     :cond_1
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShowing:Z
 
-    .line 145
+    .line 147
     iput-boolean p1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLightIcon:Z
 
-    .line 146
+    .line 148
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
 
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLightIcon:Z
 
     invoke-virtual {v1, v2}, Lcom/android/keyguard/fod/MiuiGxzwAnimManager;->setLightIcon(Z)V
 
-    .line 148
+    .line 150
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v1, p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerWallpaperChangeCallback(Lcom/android/keyguard/KeyguardUpdateMonitor$WallpaperChangeCallback;)V
 
-    .line 149
+    .line 151
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1388,69 +1393,69 @@
 
     if-eq v1, v0, :cond_2
 
-    .line 150
+    .line 152
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardAuthen:Z
 
-    .line 149
+    .line 151
     :cond_2
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mPortraitOrientation:Z
 
-    .line 151
+    .line 153
     iput v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconX:I
 
-    .line 152
+    .line 154
     iput v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconY:I
 
-    .line 153
+    .line 155
     iput v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconWidth:I
 
-    .line 154
+    .line 156
     iput v3, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mGxzwIconHeight:I
 
-    .line 155
+    .line 157
     invoke-direct {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->updateLpByOrientation()V
 
-    .line 156
+    .line 158
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     iput v4, v0, Landroid/view/WindowManager$LayoutParams;->alpha:F
 
-    .line 158
+    .line 160
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->isAttachedToWindow()Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    .line 159
+    .line 161
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mWindowManager:Landroid/view/WindowManager;
 
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     invoke-interface {v0, p0, v1}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 160
+    .line 162
     invoke-virtual {p0, v4}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->setAlpha(F)V
 
-    .line 161
+    .line 163
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->drawFingerprintIcon(Z)V
 
-    .line 165
+    .line 167
     :cond_3
     :goto_0
     invoke-virtual {p0, v3}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->setVisibility(I)V
 
-    .line 166
+    .line 168
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->show()V
 
-    .line 136
+    .line 138
     return-void
 
-    .line 162
+    .line 164
     :cond_4
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getParent()Landroid/view/ViewParent;
 
@@ -1458,7 +1463,7 @@
 
     if-nez v0, :cond_3
 
-    .line 163
+    .line 165
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mWindowManager:Landroid/view/WindowManager;
 
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLayoutParams:Landroid/view/WindowManager$LayoutParams;
@@ -1472,7 +1477,7 @@
     .locals 4
 
     .prologue
-    .line 324
+    .line 326
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
@@ -1481,7 +1486,7 @@
 
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLightWallpaperGxzw:Z
 
-    .line 325
+    .line 327
     :goto_0
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
 
@@ -1495,13 +1500,13 @@
 
     const/high16 v3, 0x43820000    # 260.0f
 
-    .line 324
+    .line 326
     invoke-virtual {v1, v0, v2, v3}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->startTipAnim(ZLjava/lang/String;F)V
 
-    .line 323
+    .line 325
     return-void
 
-    .line 324
+    .line 326
     :cond_0
     const/4 v0, 0x0
 
@@ -1514,10 +1519,10 @@
     .param p2, "args"    # Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;
 
     .prologue
-    .line 271
+    .line 273
     iget-object v1, p2, Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;->res:[I
 
-    .line 272
+    .line 274
     .local v1, "res":[I
     if-eqz v1, :cond_1
 
@@ -1525,7 +1530,7 @@
 
     if-lez v0, :cond_1
 
-    .line 273
+    .line 275
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwFrameAnimation:Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;
 
     iget-boolean v0, p2, Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;->repeat:Z
@@ -1537,27 +1542,27 @@
     :goto_0
     invoke-virtual {v2, v0}, Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;->setMode(I)V
 
-    .line 274
+    .line 276
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwFrameAnimation:Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;
 
     iget v2, p2, Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;->frameInterval:I
 
     invoke-virtual {v0, v2}, Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;->setFrameInterval(I)V
 
-    .line 275
+    .line 277
     const/4 v5, 0x0
 
-    .line 276
+    .line 278
     .local v5, "listener":Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation$FrameAnimationListener;
     if-eqz p1, :cond_0
 
-    .line 278
+    .line 280
     new-instance v5, Lcom/android/keyguard/fod/MiuiGxzwAnimView$1;
 
     .end local v5    # "listener":Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation$FrameAnimationListener;
     invoke-direct {v5, p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView$1;-><init>(Lcom/android/keyguard/fod/MiuiGxzwAnimView;)V
 
-    .line 308
+    .line 310
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwFrameAnimation:Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;
 
@@ -1565,19 +1570,19 @@
 
     iget v3, p2, Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;->backgroundRes:I
 
-    .line 309
+    .line 311
     iget v4, p2, Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;->backgroundFrame:I
 
     iget-object v6, p2, Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;->customerDrawBitmap:Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation$CustomerDrawBitmap;
 
-    .line 308
+    .line 310
     invoke-virtual/range {v0 .. v6}, Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;->startAnimation([IIIILcom/android/keyguard/fod/MiuiGxzwFrameAnimation$FrameAnimationListener;Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation$CustomerDrawBitmap;)V
 
-    .line 270
+    .line 272
     :cond_1
     return-void
 
-    .line 273
+    .line 275
     :cond_2
     const/4 v0, 0x1
 
@@ -1588,7 +1593,7 @@
     .locals 4
 
     .prologue
-    .line 255
+    .line 257
     const-string/jumbo v1, "MiuiGxzwAnimView"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1613,17 +1618,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 257
+    .line 259
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
     if-eqz v1, :cond_0
 
-    .line 258
+    .line 260
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
-    .line 260
+    .line 262
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
 
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
@@ -1632,29 +1637,29 @@
 
     move-result-object v0
 
-    .line 261
+    .line 263
     .local v0, "args":Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
     invoke-virtual {p0, v1, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startAnim(ZLcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;)V
 
-    .line 263
+    .line 265
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v1}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->stopTipAnim()V
 
-    .line 253
+    .line 255
     .end local v0    # "args":Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;
     :goto_0
     return-void
 
-    .line 265
+    .line 267
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v1}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->stopTipAnim()V
 
-    .line 266
+    .line 268
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->drawFingerprintIcon(Z)V
@@ -1666,19 +1671,19 @@
     .locals 5
 
     .prologue
-    .line 242
+    .line 244
     const-string/jumbo v1, "MiuiGxzwAnimView"
 
     const-string/jumbo v2, "startFalseAnim"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 244
+    .line 246
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
-    .line 246
+    .line 248
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
 
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
@@ -1687,13 +1692,13 @@
 
     move-result-object v0
 
-    .line 247
+    .line 249
     .local v0, "args":Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
     invoke-virtual {p0, v1, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startAnim(ZLcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;)V
 
-    .line 249
+    .line 251
     iget-object v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
@@ -1702,7 +1707,7 @@
 
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mLightWallpaperGxzw:Z
 
-    .line 250
+    .line 252
     :goto_0
     invoke-virtual {p0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->getContext()Landroid/content/Context;
 
@@ -1722,13 +1727,13 @@
 
     int-to-float v4, v4
 
-    .line 249
+    .line 251
     invoke-virtual {v2, v1, v3, v4}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->startTipAnim(ZLjava/lang/String;F)V
 
-    .line 240
+    .line 242
     return-void
 
-    .line 249
+    .line 251
     :cond_0
     const/4 v1, 0x0
 
@@ -1740,35 +1745,35 @@
     .param p1, "aod"    # Z
 
     .prologue
-    .line 218
+    .line 220
     const-string/jumbo v1, "MiuiGxzwAnimView"
 
     const-string/jumbo v2, "startIconAnim"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 220
+    .line 222
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
-    .line 222
+    .line 224
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
 
     invoke-virtual {v1, p1}, Lcom/android/keyguard/fod/MiuiGxzwAnimManager;->getIconAnimArgs(Z)Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;
 
     move-result-object v0
 
-    .line 223
+    .line 225
     .local v0, "args":Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;
     invoke-virtual {p0, p1, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startAnim(ZLcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;)V
 
-    .line 225
+    .line 227
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v1}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->stopTipAnim()V
 
-    .line 216
+    .line 218
     return-void
 .end method
 
@@ -1776,19 +1781,19 @@
     .locals 3
 
     .prologue
-    .line 230
+    .line 232
     const-string/jumbo v1, "MiuiGxzwAnimView"
 
     const-string/jumbo v2, "startRecognizingAnim"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 232
+    .line 234
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
-    .line 234
+    .line 236
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
 
     iget-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
@@ -1797,18 +1802,18 @@
 
     move-result-object v0
 
-    .line 235
+    .line 237
     .local v0, "args":Lcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;
     iget-boolean v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
     invoke-virtual {p0, v1, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startAnim(ZLcom/android/keyguard/fod/MiuiGxzwAnimManager$MiuiGxzwAnimArgs;)V
 
-    .line 237
+    .line 239
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v1}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->stopTipAnim()V
 
-    .line 228
+    .line 230
     return-void
 .end method
 
@@ -1816,22 +1821,22 @@
     .locals 1
 
     .prologue
-    .line 314
+    .line 316
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
-    .line 315
+    .line 317
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwFrameAnimation:Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwFrameAnimation;->stopAnimation()V
 
-    .line 316
+    .line 318
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->stopTipAnim()V
 
-    .line 313
+    .line 315
     return-void
 .end method
 
@@ -1841,18 +1846,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 199
+    .line 201
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozingIconAnimDone:Z
 
-    .line 200
+    .line 202
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
-    .line 201
+    .line 203
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwAnimManager:Lcom/android/keyguard/fod/MiuiGxzwAnimManager;
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimManager;->stopDozing()V
 
-    .line 198
+    .line 200
     return-void
 .end method
 
@@ -1860,12 +1865,12 @@
     .locals 1
 
     .prologue
-    .line 320
+    .line 322
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->stopTipAnim()V
 
-    .line 319
+    .line 321
     return-void
 .end method
 
@@ -1877,14 +1882,14 @@
     .param p4, "height"    # I
 
     .prologue
-    .line 373
+    .line 375
     const-string/jumbo v0, "MiuiGxzwAnimView"
 
     const-string/jumbo v1, "surfaceChanged"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 371
+    .line 373
     return-void
 .end method
 
@@ -1895,14 +1900,14 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 355
+    .line 357
     const-string/jumbo v0, "MiuiGxzwAnimView"
 
     const-string/jumbo v1, "surfaceCreated"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 357
+    .line 359
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mKeyguardAuthen:Z
 
     if-eqz v0, :cond_2
@@ -1911,7 +1916,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 358
+    .line 360
     iget v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDisplayState:I
 
     const/4 v1, 0x3
@@ -1924,35 +1929,35 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 359
+    .line 361
     :cond_0
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozingIconAnimDone:Z
 
     if-nez v0, :cond_1
 
-    .line 360
+    .line 362
     iput-boolean v2, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozingIconAnimDone:Z
 
-    .line 361
+    .line 363
     invoke-virtual {p0, v2}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startIconAnim(Z)V
 
-    .line 353
+    .line 355
     :cond_1
     :goto_0
     return-void
 
-    .line 364
+    .line 366
     :cond_2
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mShouldShowBackAnim:Z
 
-    .line 365
+    .line 367
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mMiuiGxzwTipView:Lcom/android/keyguard/fod/MiuiGxzwTipView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwTipView;->stopTipAnim()V
 
-    .line 366
+    .line 368
     iget-boolean v0, p0, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->mDozing:Z
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->drawFingerprintIcon(Z)V
@@ -1965,13 +1970,13 @@
     .param p1, "holder"    # Landroid/view/SurfaceHolder;
 
     .prologue
-    .line 380
+    .line 382
     const-string/jumbo v0, "MiuiGxzwAnimView"
 
     const-string/jumbo v1, "surfaceDestroyed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 378
+    .line 380
     return-void
 .end method

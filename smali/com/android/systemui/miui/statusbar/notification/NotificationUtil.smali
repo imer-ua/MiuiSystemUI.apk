@@ -458,10 +458,10 @@
 
     const/4 v6, 0x0
 
-    .line 402
+    .line 406
     const/4 v0, 0x0
 
-    .line 404
+    .line 408
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     instance-of v3, p0, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -469,10 +469,10 @@
 
     move-object v1, p0
 
-    .line 405
+    .line 409
     check-cast v1, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 406
+    .line 410
     .local v1, "bitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     invoke-virtual {v1}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
@@ -480,14 +480,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 407
+    .line 411
     invoke-virtual {v1}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v3
 
     return-object v3
 
-    .line 411
+    .line 415
     .end local v1    # "bitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -502,7 +502,7 @@
 
     if-gtz v3, :cond_2
 
-    .line 412
+    .line 416
     :cond_1
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -510,14 +510,14 @@
 
     move-result-object v0
 
-    .line 417
+    .line 421
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     :goto_0
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 418
+    .line 422
     .local v2, "canvas":Landroid/graphics/Canvas;
     invoke-virtual {v2}, Landroid/graphics/Canvas;->getWidth()I
 
@@ -529,13 +529,13 @@
 
     invoke-virtual {p0, v6, v6, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 419
+    .line 423
     invoke-virtual {p0, v2}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 420
+    .line 424
     return-object v0
 
-    .line 414
+    .line 418
     .end local v2    # "canvas":Landroid/graphics/Canvas;
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     :cond_2
@@ -661,17 +661,17 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 456
+    .line 462
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1b
 
     if-lt v0, v1, :cond_0
 
-    .line 457
+    .line 463
     const v0, 0x91004fb
 
-    .line 456
+    .line 462
     :goto_0
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -679,7 +679,7 @@
 
     return-object v0
 
-    .line 458
+    .line 464
     :cond_0
     const v0, 0x9100330
 
@@ -783,7 +783,7 @@
     .param p0, "notification"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
-    .line 354
+    .line 358
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
 
     move-result-object v1
@@ -794,7 +794,7 @@
 
     move-result-object v0
 
-    .line 355
+    .line 359
     .local v0, "className":Ljava/lang/CharSequence;
     if-nez v0, :cond_0
 
@@ -891,18 +891,18 @@
     .param p1, "sbn"    # Landroid/service/notification/StatusBarNotification;
 
     .prologue
-    .line 433
+    .line 437
     invoke-virtual {p1, p0}, Landroid/service/notification/StatusBarNotification;->getPackageContext(Landroid/content/Context;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 434
+    .line 438
     .local v0, "packageContext":Landroid/content/Context;
     sget v1, Lmiui/R$style;->Theme_Light_RemoteViews:I
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->setTheme(I)V
 
-    .line 435
+    .line 439
     return-object v0
 .end method
 
@@ -1106,23 +1106,23 @@
     .param p1, "sbn"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
-    .line 392
+    .line 396
     invoke-static {p1}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->isXmsf(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 393
+    .line 397
     invoke-static {p0, p1}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->getRowIcon(Landroid/content/Context;Lcom/android/systemui/miui/statusbar/ExpandedNotification;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 394
+    .line 398
     .local v0, "drawable":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_0
 
-    .line 395
+    .line 399
     invoke-static {v0}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->drawable2Bitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
 
     move-result-object v1
@@ -1133,7 +1133,7 @@
 
     return-object v1
 
-    .line 398
+    .line 402
     .end local v0    # "drawable":Landroid/graphics/drawable/Drawable;
     :cond_0
     invoke-virtual {p1}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
@@ -1152,19 +1152,19 @@
     .param p0, "notification"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
-    .line 443
+    .line 447
     invoke-static {p0}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->canSendNotificationForTargetPkg(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 444
+    .line 448
     invoke-static {}, Landroid/app/ActivityThread;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v2
 
-    .line 446
+    .line 450
     .local v2, "pm":Landroid/content/pm/IPackageManager;
     :try_start_0
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getPackageName()Ljava/lang/String;
@@ -1185,20 +1185,23 @@
 
     move-result-object v1
 
-    .line 447
+    .line 451
     .local v1, "info":Landroid/content/pm/ApplicationInfo;
+    if-eqz v1, :cond_0
+
+    .line 452
     iget v3, v1, Landroid/content/pm/ApplicationInfo;->uid:I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return v3
 
-    .line 448
+    .line 454
     .end local v1    # "info":Landroid/content/pm/ApplicationInfo;
     :catch_0
     move-exception v0
 
-    .line 449
+    .line 455
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v3, "NotificationUtil"
 
@@ -1206,7 +1209,7 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 452
+    .line 458
     .end local v0    # "e":Ljava/lang/Exception;
     .end local v2    # "pm":Landroid/content/pm/IPackageManager;
     :cond_0
@@ -1262,13 +1265,13 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 381
+    .line 385
     if-nez p0, :cond_0
 
-    .line 382
+    .line 386
     return v4
 
-    .line 384
+    .line 388
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
 
@@ -1276,7 +1279,7 @@
 
     iget-object v0, v3, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
-    .line 385
+    .line 389
     .local v0, "extras":Landroid/os/Bundle;
     const-string/jumbo v3, "android.progressMax"
 
@@ -1284,7 +1287,7 @@
 
     move-result v2
 
-    .line 386
+    .line 390
     .local v2, "max":I
     const-string/jumbo v3, "android.progressIndeterminate"
 
@@ -1292,7 +1295,7 @@
 
     move-result v1
 
-    .line 387
+    .line 391
     .local v1, "ind":Z
     if-nez v2, :cond_1
 
@@ -1366,7 +1369,7 @@
 
     const/4 v1, 0x0
 
-    .line 428
+    .line 432
     if-eqz p0, :cond_2
 
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
@@ -1377,7 +1380,7 @@
 
     if-nez v2, :cond_0
 
-    .line 429
+    .line 433
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
 
     move-result-object v2
@@ -1386,7 +1389,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 428
+    .line 432
     :cond_0
     :goto_0
     return v0
@@ -1394,13 +1397,13 @@
     :cond_1
     move v0, v1
 
-    .line 429
+    .line 433
     goto :goto_0
 
     :cond_2
     move v0, v1
 
-    .line 428
+    .line 432
     goto :goto_0
 .end method
 
@@ -1411,7 +1414,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 439
+    .line 443
     sget-boolean v1, Lcom/android/systemui/Constants;->SHOW_NOTIFICATION_HEADER:Z
 
     if-eqz v1, :cond_0
@@ -1484,12 +1487,12 @@
 
     const/4 v2, 0x0
 
-    .line 339
+    .line 343
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getId()I
 
     move-result v0
 
-    .line 340
+    .line 344
     .local v0, "id":I
     const-string/jumbo v3, "android"
 
@@ -1503,7 +1506,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 341
+    .line 345
     const v3, 0x1040445
 
     if-eq v0, v3, :cond_0
@@ -1512,7 +1515,7 @@
 
     if-ne v0, v3, :cond_1
 
-    .line 340
+    .line 344
     :cond_0
     :goto_0
     return v1
@@ -1520,14 +1523,33 @@
     :cond_1
     move v1, v2
 
-    .line 341
+    .line 345
     goto :goto_0
 
     :cond_2
     move v1, v2
 
-    .line 340
+    .line 344
     goto :goto_0
+.end method
+
+.method public static isInCallUINotification(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)Z
+    .locals 2
+    .param p0, "notification"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
+
+    .prologue
+    .line 333
+    const-string/jumbo v0, "com.android.incallui"
+
+    invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static isLastQsCovered()Z
@@ -1545,7 +1567,7 @@
     .param p0, "notification"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
-    .line 424
+    .line 428
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
@@ -1572,18 +1594,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 345
+    .line 349
     if-nez p0, :cond_0
 
     return v1
 
-    .line 346
+    .line 350
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getBasePkg()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 347
+    .line 351
     .local v0, "basePkg":Ljava/lang/String;
     const-string/jumbo v2, "com.android.phone"
 
@@ -1593,27 +1615,27 @@
 
     if-nez v2, :cond_1
 
-    .line 348
+    .line 352
     const-string/jumbo v2, "com.android.server.telecom"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    .line 347
+    .line 351
     if-nez v2, :cond_1
 
-    .line 349
+    .line 353
     const-string/jumbo v2, "com.miui.voip"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    .line 347
+    .line 351
     if-eqz v2, :cond_2
 
-    .line 350
+    .line 354
     :cond_1
     const-string/jumbo v1, "missed_call"
 
@@ -1625,7 +1647,7 @@
 
     move-result v1
 
-    .line 347
+    .line 351
     :cond_2
     return v1
 .end method
@@ -1635,12 +1657,12 @@
     .param p0, "notification"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
-    .line 333
+    .line 337
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 334
+    .line 338
     .local v0, "pkg":Ljava/lang/String;
     const-string/jumbo v1, "com.android.incallui"
 
@@ -1658,14 +1680,14 @@
 
     if-nez v1, :cond_0
 
-    .line 335
+    .line 339
     const-string/jumbo v1, "com.android.server.telecom"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 334
+    .line 338
     :goto_0
     return v1
 
@@ -1933,7 +1955,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 371
+    .line 375
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
 
     move-result-object v3
@@ -1944,7 +1966,7 @@
 
     move-result v0
 
-    .line 372
+    .line 376
     .local v0, "newCount":I
     invoke-virtual {p1}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
 
@@ -1956,7 +1978,7 @@
 
     move-result v1
 
-    .line 373
+    .line 377
     .local v1, "oldCount":I
     if-ne v0, v1, :cond_0
 
@@ -1987,10 +2009,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 363
+    .line 367
     if-eqz p0, :cond_0
 
-    .line 364
+    .line 368
     const-string/jumbo v1, "com.android.systemui"
 
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getPackageName()Ljava/lang/String;
@@ -2003,12 +2025,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 363
+    .line 367
     :cond_0
     :goto_0
     return v0
 
-    .line 365
+    .line 369
     :cond_1
     invoke-static {p0}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->hasProgressbar(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)Z
 
@@ -2016,15 +2038,15 @@
 
     if-nez v1, :cond_0
 
-    .line 366
+    .line 370
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->isClearable()Z
 
     move-result v1
 
-    .line 363
+    .line 367
     if-eqz v1, :cond_0
 
-    .line 367
+    .line 371
     invoke-virtual {p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->isFold()Z
 
     move-result v1
@@ -2041,7 +2063,7 @@
     .param p0, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .prologue
-    .line 359
+    .line 363
     if-eqz p0, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
@@ -2064,7 +2086,7 @@
     .param p0, "notification"    # Landroid/app/Notification;
 
     .prologue
-    .line 478
+    .line 484
     iget-object v1, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     const-string/jumbo v2, "android.subText"
@@ -2073,7 +2095,7 @@
 
     move-result-object v0
 
-    .line 479
+    .line 485
     .local v0, "subText":Ljava/lang/CharSequence;
     if-eqz v0, :cond_0
 
@@ -2093,7 +2115,7 @@
     .param p0, "notification"    # Landroid/app/Notification;
 
     .prologue
-    .line 470
+    .line 476
     iget-object v1, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     const-string/jumbo v2, "android.text"
@@ -2102,11 +2124,11 @@
 
     move-result-object v0
 
-    .line 471
+    .line 477
     .local v0, "content":Ljava/lang/CharSequence;
     if-nez v0, :cond_0
 
-    .line 472
+    .line 478
     iget-object v1, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     const-string/jumbo v2, "android.bigText"
@@ -2115,7 +2137,7 @@
 
     move-result-object v0
 
-    .line 474
+    .line 480
     :cond_0
     if-eqz v0, :cond_1
 
@@ -2135,7 +2157,7 @@
     .param p0, "notification"    # Landroid/app/Notification;
 
     .prologue
-    .line 462
+    .line 468
     iget-object v1, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     const-string/jumbo v2, "android.title"
@@ -2144,11 +2166,11 @@
 
     move-result-object v0
 
-    .line 463
+    .line 469
     .local v0, "title":Ljava/lang/CharSequence;
     if-nez v0, :cond_0
 
-    .line 464
+    .line 470
     iget-object v1, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     const-string/jumbo v2, "android.title.big"
@@ -2157,7 +2179,7 @@
 
     move-result-object v0
 
-    .line 466
+    .line 472
     :cond_0
     if-eqz v0, :cond_1
 

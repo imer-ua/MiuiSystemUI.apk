@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/BaseRecentsImpl;
 
     .prologue
-    .line 626
+    .line 631
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 629
+    .line 634
     const-string/jumbo v3, "android.intent.action.USER_SWITCHED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -53,7 +53,7 @@
 
     if-eqz v3, :cond_6
 
-    .line 630
+    .line 635
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v3}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get4(Lcom/android/systemui/recents/BaseRecentsImpl;)Z
@@ -62,10 +62,10 @@
 
     if-nez v3, :cond_0
 
-    .line 631
+    .line 636
     return-void
 
-    .line 633
+    .line 638
     :cond_0
     const-string/jumbo v3, "android.intent.extra.user_handle"
 
@@ -75,7 +75,7 @@
 
     move-result v0
 
-    .line 634
+    .line 639
     .local v0, "currentId":I
     invoke-static {}, Landroid/os/Process;->myUid()I
 
@@ -87,14 +87,14 @@
 
     if-ne v3, v0, :cond_4
 
-    .line 635
+    .line 640
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     const/4 v4, 0x0
 
     invoke-static {v3, v4}, Lcom/android/systemui/recents/BaseRecentsImpl;->-set2(Lcom/android/systemui/recents/BaseRecentsImpl;Z)Z
 
-    .line 636
+    .line 641
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v3, v3, Lcom/android/systemui/recents/BaseRecentsImpl;->mContext:Landroid/content/Context;
@@ -103,15 +103,15 @@
 
     move-result-object v3
 
-    .line 637
+    .line 642
     const-string/jumbo v4, "force_fsg_nav_bar"
 
-    .line 636
+    .line 641
     invoke-static {v3, v4}, Landroid/provider/MiuiSettings$Global;->getBoolean(Landroid/content/ContentResolver;Ljava/lang/String;)Z
 
     move-result v2
 
-    .line 638
+    .line 643
     .local v2, "isOpen":Z
     if-eqz v2, :cond_1
 
@@ -123,14 +123,14 @@
 
     if-eqz v3, :cond_2
 
-    .line 628
+    .line 633
     .end local v0    # "currentId":I
     .end local v2    # "isOpen":Z
     :cond_1
     :goto_0
     return-void
 
-    .line 640
+    .line 645
     .restart local v0    # "currentId":I
     .restart local v2    # "isOpen":Z
     :cond_2
@@ -143,7 +143,7 @@
 
     if-nez v3, :cond_3
 
-    .line 641
+    .line 646
     const-string/jumbo v3, "RecentsImpl"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -174,7 +174,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 642
+    .line 647
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     new-instance v4, Lcom/android/systemui/statusbar/phone/NavStubView;
@@ -187,7 +187,7 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/recents/BaseRecentsImpl;->-set4(Lcom/android/systemui/recents/BaseRecentsImpl;Lcom/android/systemui/statusbar/phone/NavStubView;)Lcom/android/systemui/statusbar/phone/NavStubView;
 
-    .line 643
+    .line 648
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v3}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get13(Lcom/android/systemui/recents/BaseRecentsImpl;)Landroid/view/WindowManager;
@@ -218,7 +218,7 @@
 
     invoke-interface {v3, v4, v5}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 645
+    .line 650
     :cond_3
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -228,17 +228,17 @@
 
     goto :goto_0
 
-    .line 646
+    .line 651
     :catch_0
     move-exception v1
 
-    .line 647
+    .line 652
     .local v1, "e":Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 
-    .line 651
+    .line 656
     .end local v1    # "e":Ljava/lang/Exception;
     .end local v2    # "isOpen":Z
     :cond_4
@@ -248,7 +248,7 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/recents/BaseRecentsImpl;->-set2(Lcom/android/systemui/recents/BaseRecentsImpl;Z)Z
 
-    .line 653
+    .line 658
     :try_start_1
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -258,7 +258,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 654
+    .line 659
     const-string/jumbo v3, "RecentsImpl"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -289,7 +289,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 655
+    .line 660
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v3}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get13(Lcom/android/systemui/recents/BaseRecentsImpl;)Landroid/view/WindowManager;
@@ -304,14 +304,14 @@
 
     invoke-interface {v3, v4}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
-    .line 656
+    .line 661
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     const/4 v4, 0x0
 
     invoke-static {v3, v4}, Lcom/android/systemui/recents/BaseRecentsImpl;->-set4(Lcom/android/systemui/recents/BaseRecentsImpl;Lcom/android/systemui/statusbar/phone/NavStubView;)Lcom/android/systemui/statusbar/phone/NavStubView;
 
-    .line 658
+    .line 663
     :cond_5
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -321,17 +321,17 @@
 
     goto/16 :goto_0
 
-    .line 659
+    .line 664
     :catch_1
     move-exception v1
 
-    .line 660
+    .line 665
     .restart local v1    # "e":Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     goto/16 :goto_0
 
-    .line 663
+    .line 668
     .end local v0    # "currentId":I
     .end local v1    # "e":Ljava/lang/Exception;
     :cond_6
@@ -347,7 +347,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 664
+    .line 669
     iget-object v3, p0, Lcom/android/systemui/recents/BaseRecentsImpl$5;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v3}, Lcom/android/systemui/recents/BaseRecentsImpl;->-wrap0(Lcom/android/systemui/recents/BaseRecentsImpl;)V

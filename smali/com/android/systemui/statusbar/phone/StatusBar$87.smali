@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->logNotificationExpansion(Ljava/lang/String;ZZ)V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->startPendingIntentDismissingKeyguard(Landroid/app/PendingIntent;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,30 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-.field final synthetic val$expanded:Z
-
-.field final synthetic val$key:Ljava/lang/String;
-
-.field final synthetic val$userAction:Z
+.field final synthetic val$intent:Landroid/app/PendingIntent;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Ljava/lang/String;ZZ)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/app/PendingIntent;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
-    .param p2, "val$key"    # Ljava/lang/String;
-    .param p3, "val$userAction"    # Z
-    .param p4, "val$expanded"    # Z
+    .param p2, "val$intent"    # Landroid/app/PendingIntent;
 
     .prologue
-    .line 9248
+    .line 8495
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->val$key:Ljava/lang/String;
-
-    iput-boolean p3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->val$userAction:Z
-
-    iput-boolean p4, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->val$expanded:Z
+    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->val$intent:Landroid/app/PendingIntent;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -52,34 +42,35 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 5
+.method public onDismiss()Z
+    .locals 3
 
     .prologue
-    .line 9251
-    :try_start_0
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    const/4 v2, 0x1
 
-    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
+    .line 8498
+    new-instance v0, Lcom/android/systemui/statusbar/phone/StatusBar$87$1;
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->val$key:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->val$intent:Landroid/app/PendingIntent;
 
-    iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->val$userAction:Z
+    invoke-direct {v0, p0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$87$1;-><init>(Lcom/android/systemui/statusbar/phone/StatusBar$87;Landroid/app/PendingIntent;)V
 
-    iget-boolean v4, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->val$expanded:Z
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar$87$1;->start()V
 
-    invoke-interface {v1, v2, v3, v4}, Lcom/android/internal/statusbar/IStatusBarService;->onNotificationExpansionChanged(Ljava/lang/String;ZZ)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .line 8525
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 9249
-    :goto_0
-    return-void
+    const/4 v1, 0x2
 
-    .line 9252
-    :catch_0
-    move-exception v0
+    invoke-virtual {v0, v1, v2, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels(IZZ)V
 
-    .local v0, "e":Landroid/os/RemoteException;
-    goto :goto_0
+    .line 8527
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$87;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->visibilityChanged(Z)V
+
+    .line 8529
+    return v2
 .end method

@@ -58,28 +58,28 @@
     .prologue
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 520
+    .line 522
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->this$0:Lcom/android/systemui/statusbar/phone/NotificationIconContainer;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/stack/ViewState;-><init>()V
 
-    .line 521
+    .line 523
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->iconAppearAmount:F
 
-    .line 522
+    .line 524
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->clampedAppearAmount:F
 
-    .line 524
+    .line 526
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->justAdded:Z
 
-    .line 531
+    .line 533
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->iconColor:I
 
-    .line 520
+    .line 522
     return-void
 .end method
 
@@ -98,25 +98,25 @@
 
     const/4 v6, 0x0
 
-    .line 536
+    .line 538
     instance-of v5, p1, Lcom/android/systemui/statusbar/StatusBarIconView;
 
     if-eqz v5, :cond_a
 
     move-object v4, p1
 
-    .line 537
+    .line 539
     check-cast v4, Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    .line 538
+    .line 540
     .local v4, "icon":Lcom/android/systemui/statusbar/StatusBarIconView;
     const/4 v0, 0x0
 
-    .line 539
+    .line 541
     .local v0, "animate":Z
     const/4 v2, 0x0
 
-    .line 540
+    .line 542
     .local v2, "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->this$0:Lcom/android/systemui/statusbar/phone/NotificationIconContainer;
 
@@ -130,7 +130,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 541
+    .line 543
     :cond_0
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->this$0:Lcom/android/systemui/statusbar/phone/NotificationIconContainer;
 
@@ -143,12 +143,12 @@
     :cond_1
     move v3, v6
 
-    .line 543
+    .line 545
     .local v3, "animationsAllowed":Z
     :goto_0
     if-eqz v3, :cond_9
 
-    .line 544
+    .line 546
     iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->justAdded:Z
 
     if-nez v5, :cond_2
@@ -157,11 +157,11 @@
 
     if-eqz v5, :cond_d
 
-    .line 545
+    .line 547
     :cond_2
     invoke-super {p0, v4}, Lcom/android/systemui/statusbar/stack/ViewState;->applyToView(Landroid/view/View;)V
 
-    .line 546
+    .line 548
     iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->justAdded:Z
 
     if-eqz v5, :cond_3
@@ -172,22 +172,22 @@
 
     if-eqz v5, :cond_3
 
-    .line 547
+    .line 549
     invoke-virtual {v4, v7}, Lcom/android/systemui/statusbar/StatusBarIconView;->setAlpha(F)V
 
-    .line 548
+    .line 550
     invoke-virtual {v4, v8, v6}, Lcom/android/systemui/statusbar/StatusBarIconView;->setVisibleState(IZ)V
 
-    .line 550
+    .line 552
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get0()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v2
 
-    .line 551
+    .line 553
     .local v2, "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     const/4 v0, 0x1
 
-    .line 560
+    .line 562
     .end local v2    # "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     :cond_3
     :goto_1
@@ -201,7 +201,7 @@
 
     if-ltz v5, :cond_5
 
-    .line 561
+    .line 563
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->this$0:Lcom/android/systemui/statusbar/phone/NotificationIconContainer;
 
     invoke-virtual {v5, p1}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->indexOfChild(Landroid/view/View;)I
@@ -216,36 +216,36 @@
 
     if-lt v5, v7, :cond_5
 
-    .line 562
+    .line 564
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/StatusBarIconView;->getVisibleState()I
 
     move-result v5
 
     if-ne v5, v8, :cond_4
 
-    .line 563
+    .line 565
     iget v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->visibleState:I
 
     if-eq v5, v8, :cond_5
 
-    .line 564
+    .line 566
     :cond_4
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get1()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v2
 
-    .line 565
+    .line 567
     .restart local v2    # "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     const/4 v0, 0x1
 
-    .line 567
+    .line 569
     .end local v2    # "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     :cond_5
     iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->needsCannedAnimation:Z
 
     if-eqz v5, :cond_7
 
-    .line 568
+    .line 570
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get8()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v5
@@ -254,11 +254,11 @@
 
     move-result-object v1
 
-    .line 569
+    .line 571
     .local v1, "animationFilter":Lcom/android/systemui/statusbar/stack/AnimationFilter;
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;->reset()V
 
-    .line 571
+    .line 573
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get2()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v5
@@ -267,17 +267,17 @@
 
     move-result-object v5
 
-    .line 570
+    .line 572
     invoke-virtual {v1, v5}, Lcom/android/systemui/statusbar/stack/AnimationFilter;->combineFilter(Lcom/android/systemui/statusbar/stack/AnimationFilter;)V
 
-    .line 572
+    .line 574
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get8()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v5
 
     invoke-virtual {v5}, Lcom/android/systemui/statusbar/stack/AnimationProperties;->resetCustomInterpolators()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
-    .line 573
+    .line 575
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get8()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v5
@@ -288,37 +288,37 @@
 
     invoke-virtual {v5, v7}, Lcom/android/systemui/statusbar/stack/AnimationProperties;->combineCustomInterpolators(Lcom/android/systemui/statusbar/stack/AnimationProperties;)V
 
-    .line 574
+    .line 576
     if-eqz v2, :cond_6
 
-    .line 575
+    .line 577
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/stack/AnimationProperties;->getAnimationFilter()Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Lcom/android/systemui/statusbar/stack/AnimationFilter;->combineFilter(Lcom/android/systemui/statusbar/stack/AnimationFilter;)V
 
-    .line 576
+    .line 578
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get8()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v5
 
     invoke-virtual {v5, v2}, Lcom/android/systemui/statusbar/stack/AnimationProperties;->combineCustomInterpolators(Lcom/android/systemui/statusbar/stack/AnimationProperties;)V
 
-    .line 578
+    .line 580
     :cond_6
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get8()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v2
 
-    .line 579
+    .line 581
     .restart local v2    # "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     invoke-virtual {v2, v10, v11}, Lcom/android/systemui/statusbar/stack/AnimationProperties;->setDuration(J)Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
-    .line 580
+    .line 582
     const/4 v0, 0x1
 
-    .line 581
+    .line 583
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->this$0:Lcom/android/systemui/statusbar/phone/NotificationIconContainer;
 
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->this$0:Lcom/android/systemui/statusbar/phone/NotificationIconContainer;
@@ -329,7 +329,7 @@
 
     invoke-static {v5, v7}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-set0(Lcom/android/systemui/statusbar/phone/NotificationIconContainer;I)I
 
-    .line 583
+    .line 585
     .end local v1    # "animationFilter":Lcom/android/systemui/statusbar/stack/AnimationFilter;
     .end local v2    # "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     :cond_7
@@ -343,7 +343,7 @@
 
     if-ltz v5, :cond_9
 
-    .line 584
+    .line 586
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->this$0:Lcom/android/systemui/statusbar/phone/NotificationIconContainer;
 
     invoke-virtual {v5, p1}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->indexOfChild(Landroid/view/View;)I
@@ -358,19 +358,19 @@
 
     if-le v5, v7, :cond_9
 
-    .line 585
+    .line 587
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/StatusBarIconView;->getVisibleState()I
 
     move-result v5
 
     if-ne v5, v8, :cond_8
 
-    .line 586
+    .line 588
     iget v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->visibleState:I
 
     if-eq v5, v8, :cond_9
 
-    .line 587
+    .line 589
     :cond_8
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get8()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
@@ -380,33 +380,33 @@
 
     move-result-object v1
 
-    .line 588
+    .line 590
     .restart local v1    # "animationFilter":Lcom/android/systemui/statusbar/stack/AnimationFilter;
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;->reset()V
 
-    .line 589
+    .line 591
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;->animateX()Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
-    .line 590
+    .line 592
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get8()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v5
 
     invoke-virtual {v5}, Lcom/android/systemui/statusbar/stack/AnimationProperties;->resetCustomInterpolators()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
-    .line 591
+    .line 593
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get8()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v2
 
-    .line 592
+    .line 594
     .restart local v2    # "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     invoke-virtual {v2, v10, v11}, Lcom/android/systemui/statusbar/stack/AnimationProperties;->setDuration(J)Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
-    .line 593
+    .line 595
     const/4 v0, 0x1
 
-    .line 596
+    .line 598
     .end local v1    # "animationFilter":Lcom/android/systemui/statusbar/stack/AnimationFilter;
     .end local v2    # "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     :cond_9
@@ -414,7 +414,7 @@
 
     invoke-virtual {v4, v5, v3}, Lcom/android/systemui/statusbar/StatusBarIconView;->setVisibleState(IZ)V
 
-    .line 597
+    .line 599
     iget v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->iconColor:I
 
     iget-boolean v7, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->needsCannedAnimation:Z
@@ -425,32 +425,32 @@
     :goto_2
     invoke-virtual {v4, v5, v3}, Lcom/android/systemui/statusbar/StatusBarIconView;->setIconColor(IZ)V
 
-    .line 598
+    .line 600
     if-eqz v0, :cond_10
 
-    .line 599
+    .line 601
     invoke-virtual {p0, v4, v2}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->animateTo(Landroid/view/View;Lcom/android/systemui/statusbar/stack/AnimationProperties;)V
 
-    .line 604
+    .line 606
     .end local v0    # "animate":Z
     .end local v4    # "icon":Lcom/android/systemui/statusbar/StatusBarIconView;
     :cond_a
     :goto_3
     iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->justAdded:Z
 
-    .line 605
+    .line 607
     iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->justReplaced:Z
 
-    .line 606
+    .line 608
     iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->needsCannedAnimation:Z
 
-    .line 607
+    .line 609
     iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->justUndarkened:Z
 
-    .line 535
+    .line 537
     return-void
 
-    .line 542
+    .line 544
     .restart local v0    # "animate":Z
     .local v2, "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     .restart local v4    # "icon":Lcom/android/systemui/statusbar/StatusBarIconView;
@@ -471,25 +471,25 @@
 
     goto :goto_4
 
-    .line 553
+    .line 555
     .restart local v3    # "animationsAllowed":Z
     :cond_d
     iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->justUndarkened:Z
 
     if-eqz v5, :cond_e
 
-    .line 554
+    .line 556
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get3()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v2
 
-    .line 555
+    .line 557
     .local v2, "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     const/4 v0, 0x1
 
     goto/16 :goto_1
 
-    .line 556
+    .line 558
     .local v2, "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     :cond_e
     iget v5, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->visibleState:I
@@ -500,12 +500,12 @@
 
     if-eq v5, v7, :cond_3
 
-    .line 557
+    .line 559
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->-get1()Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     move-result-object v2
 
-    .line 558
+    .line 560
     .local v2, "animationProperties":Lcom/android/systemui/statusbar/stack/AnimationProperties;
     const/4 v0, 0x1
 
@@ -515,10 +515,10 @@
     :cond_f
     move v3, v6
 
-    .line 597
+    .line 599
     goto :goto_2
 
-    .line 601
+    .line 603
     .end local v3    # "animationsAllowed":Z
     :cond_10
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/stack/ViewState;->applyToView(Landroid/view/View;)V
@@ -531,15 +531,15 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 612
+    .line 614
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/stack/ViewState;->initFrom(Landroid/view/View;)V
 
-    .line 613
+    .line 615
     instance-of v0, p1, Lcom/android/systemui/statusbar/StatusBarIconView;
 
     if-eqz v0, :cond_0
 
-    .line 614
+    .line 616
     check-cast p1, Lcom/android/systemui/statusbar/StatusBarIconView;
 
     .end local p1    # "view":Landroid/view/View;
@@ -549,7 +549,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NotificationIconContainer$IconState;->iconColor:I
 
-    .line 611
+    .line 613
     :cond_0
     return-void
 .end method

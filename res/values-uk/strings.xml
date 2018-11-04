@@ -1004,8 +1004,8 @@ u0009 • Використовуйте свій телефон при висок
     <string name="wireless_charge_current">Заряджання</string>
     <string name="structure_face_data_input_timeout_title">Спробуйте ще</string>
     <string name="structure_face_data_input_timeout_msg">Не вдалося записати. Спробуйте ще раз.</string>
-    <string name="structure_face_hardware_abnormal_title">Помилка лазера</string>
-    <string name="structure_face_hardware_abnormal_msg">Неможливо записати дані обличчя через помилку лазера. Зверніться до служби підтримки, щоб отримати допомогу.</string>
+    <string name="structure_face_hardware_abnormal_title">Помилка апаратного забезпечення</string>
+    <string name="structure_face_hardware_abnormal_msg">Виникла апаратна помилка. Перезапустіть свій пристрій. Якщо це не допоможе, зателефонуйте 400-100-5678, щоб отримати допомогу.</string>
     <string name="structure_face_hardware_abnormal_btn">Зрозуміло</string>
     <string name="structure_face_modules_abnormal_title">Помилка оптичного модуля</string>
     <string name="structure_face_modules_abnormal_msg">Неможливо записати дані обличчя через помилку оптичного модуля. Перезапустіть пристрій і повторіть спробу.</string>
@@ -1666,5 +1666,8 @@ EEEE"</string>
     <string name="wifi_disabled_by_recommendation_provider">Не підключений через низьку якість мережі</string>
     <string name="wifi_no_internet_no_reconnect">Неможливо підключитися до Інтернету.</string>
     <string name="lockscreen_storage_locked">Розблокувати для всіх функції та даних</string>
+    <string name="enable_atrace">Увімкнути ATrace</string>
+    <string name="enable_atrace_summary">Захоплення подій ядра з використанням ATrace</string>
+    <string name="structure_face_unlock_tof_covered">Не вдалося додати дані лиця. Перемістіть пристрій далі від екрану.</string>
     <string name="notification_num_channels">%d категорії сповіщень</string>
 </resources>

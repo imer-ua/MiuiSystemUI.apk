@@ -30,7 +30,7 @@
     .param p2, "val$ssp"    # Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     .prologue
-    .line 1589
+    .line 1593
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$19;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     iput-object p2, p0, Lcom/android/systemui/recents/RecentsActivity$19;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
@@ -47,7 +47,7 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 1592
+    .line 1596
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -58,13 +58,13 @@
 
     move-result v0
 
-    .line 1593
+    .line 1597
     .local v0, "animatedValue":F
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v1
 
-    .line 1594
+    .line 1598
     .local v1, "fraction":F
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity$19;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
@@ -72,6 +72,6 @@
 
     invoke-virtual {v2, v3, v1, v0}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->changeAlphaScaleForFsGesture(Ljava/lang/String;FF)V
 
-    .line 1591
+    .line 1595
     return-void
 .end method

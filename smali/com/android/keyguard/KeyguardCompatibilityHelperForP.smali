@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 11
+    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,7 +19,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 32
+    .line 33
     return-void
 .end method
 
@@ -28,7 +28,7 @@
     .param p0, "utils"    # Lcom/android/internal/widget/LockPatternUtils;
 
     .prologue
-    .line 21
+    .line 22
     :try_start_0
     const-class v2, Lcom/android/internal/widget/LockPatternUtils;
 
@@ -42,7 +42,7 @@
 
     move-result-object v1
 
-    .line 22
+    .line 23
     .local v1, "method":Ljava/lang/reflect/Method;
     const/4 v2, 0x0
 
@@ -52,16 +52,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 19
+    .line 20
     .end local v1    # "method":Ljava/lang/reflect/Method;
     :goto_0
     return-void
 
-    .line 23
+    .line 24
     :catch_0
     move-exception v0
 
-    .line 24
+    .line 25
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v2, "KeyguardCompatibilityHelperForP"
 
@@ -93,6 +93,15 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 28
+    .line 29
+    return-void
+.end method
+
+.method public static setLayoutInDisplayCutoutMode(Landroid/view/WindowManager$LayoutParams;)V
+    .locals 0
+    .param p0, "lp"    # Landroid/view/WindowManager$LayoutParams;
+
+    .prologue
+    .line 37
     return-void
 .end method

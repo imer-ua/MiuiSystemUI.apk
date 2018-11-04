@@ -33,7 +33,7 @@
     .param p3, "val$destPivotY"    # I
 
     .prologue
-    .line 1738
+    .line 1747
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$12;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     iput p2, p0, Lcom/android/systemui/statusbar/phone/NavStubView$12;->val$destPivotX:I
@@ -52,12 +52,12 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 1741
+    .line 1750
     const-string/jumbo v0, "home"
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NavStubJankyFrameReporter;->caculateAnimationFrameInterval(Ljava/lang/String;)V
 
-    .line 1742
+    .line 1751
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$12;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     const-string/jumbo v0, "yScale"
@@ -74,7 +74,7 @@
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set18(Lcom/android/systemui/statusbar/phone/NavStubView;F)F
 
-    .line 1743
+    .line 1752
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$12;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     const-string/jumbo v0, "xScale"
@@ -91,7 +91,7 @@
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set17(Lcom/android/systemui/statusbar/phone/NavStubView;F)F
 
-    .line 1745
+    .line 1754
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$12;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     const-string/jumbo v0, "yPivot"
@@ -108,7 +108,7 @@
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set12(Lcom/android/systemui/statusbar/phone/NavStubView;I)I
 
-    .line 1746
+    .line 1755
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$12;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     const-string/jumbo v0, "xPivot"
@@ -125,14 +125,14 @@
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set11(Lcom/android/systemui/statusbar/phone/NavStubView;I)I
 
-    .line 1747
+    .line 1756
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/NavStubView;->IS_E10:Z
 
     if-eqz v0, :cond_1
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 1749
+    .line 1758
     .local v3, "scale":F
     :goto_0
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
@@ -145,14 +145,14 @@
 
     if-lez v0, :cond_0
 
-    .line 1750
+    .line 1759
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavStubView$12;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set7(Lcom/android/systemui/statusbar/phone/NavStubView;Z)Z
 
-    .line 1753
+    .line 1762
     :cond_0
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
@@ -160,7 +160,7 @@
 
     sget-object v1, Lcom/android/systemui/Constants;->HOME_LAUCNHER_PACKAGE_NAME:Ljava/lang/String;
 
-    .line 1754
+    .line 1763
     const-string/jumbo v2, "homeAlpha"
 
     invoke-virtual {p1, v2}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -173,7 +173,7 @@
 
     move-result v2
 
-    .line 1756
+    .line 1765
     iget v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$12;->val$destPivotX:I
 
     iget v5, p0, Lcom/android/systemui/statusbar/phone/NavStubView$12;->val$destPivotY:I
@@ -196,18 +196,18 @@
 
     move-result v8
 
-    .line 1753
+    .line 1762
     invoke-virtual/range {v0 .. v8}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->changeAlphaScaleForFsGesture(Ljava/lang/String;FFIIIIZ)V
 
-    .line 1757
+    .line 1766
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavStubView$12;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->invalidate()V
 
-    .line 1740
+    .line 1749
     return-void
 
-    .line 1747
+    .line 1756
     .end local v3    # "scale":F
     :cond_1
     const-string/jumbo v0, "homeScale"

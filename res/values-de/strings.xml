@@ -1071,8 +1071,8 @@ Kontaktieren Sie Ihren Netzbetreiber für eine neue SIM-Karte."</string>
     <string name="wireless_charge_current">Aufladen</string>
     <string name="structure_face_data_input_timeout_title">Nochmal versuchen</string>
     <string name="structure_face_data_input_timeout_msg">Konnte nicht aufnehmen, nochmal versuchen.</string>
-    <string name="structure_face_hardware_abnormal_title">Laserfehler</string>
-    <string name="structure_face_hardware_abnormal_msg">Kann aufgrund eines Laserfehlers keine Gesichtsdaten aufzeichnen. Wenden Sie sich an den Kundendienst, um Hilfe zu erhalten.</string>
+    <string name="structure_face_hardware_abnormal_title">Hardwarefehler</string>
+    <string name="structure_face_hardware_abnormal_msg">Es ist ein Hardwarefehler aufgetreten. Starten Sie Ihr Gerät neu. Wenn das nicht hilft, rufen Sie 400-100-5678 an, um Hilfe zu erhalten.</string>
     <string name="structure_face_hardware_abnormal_btn">"Ich hab's"</string>
     <string name="structure_face_modules_abnormal_title">Fehler optisches Modul</string>
     <string name="structure_face_modules_abnormal_msg">Aufgrund eines optischen Modulfehlers können keine Gesichtsdaten aufgezeichnet werden. Gerät neu starten und nochmal versuchen.</string>
@@ -1101,8 +1101,8 @@ Kontaktieren Sie Ihren Netzbetreiber für eine neue SIM-Karte."</string>
     <string name="status_bar_date_format_12">EEEE, d. MMMM</string>
     <string name="status_bar_clock_date_format">EEEE, d. MMMM</string>
     <string name="status_bar_clock_date_format_12">EEEE, d. MMMM</string>
-    <string name="status_bar_clock_date_time_format">H:mm d. MMMM</string>
-    <string name="status_bar_clock_date_time_format_12">aah:mm d. MMMM</string>
+    <string name="status_bar_clock_date_time_format">d. MMMM H:mm</string>
+    <string name="status_bar_clock_date_time_format_12">d. MMMM, h:mm aa</string>
     <string name="status_bar_recent_memory_info1">Verfügbar %1$sB von %2$sB</string>
     <string name="memory_clear_result_mega">%1$sMB gelöscht</string>
     <string name="memory_clear_result_giga">%1$sGB gelöscht</string>
@@ -1352,8 +1352,8 @@ Kontaktieren Sie Ihren Netzbetreiber für eine neue SIM-Karte."</string>
     <string name="notification_menu_remove_from_filter_title">Wichtig</string>
     <string name="notification_menu_filter_secondary_text">Alle Benachrichtigungen von %s erscheinen in einem separaten Ordner</string>
     <string name="notification_menu_remove_from_filter_secondary_text">Alle wichtigen Benachrichtigungen von %s erscheinen direkt in der Statusleiste</string>
-    <string name="notification_info_channel_enabled_text">Sie erhalten %2$s Benachrichtigungen von %1$s.</string>
-    <string name="notification_info_channel_disabled_text">Sie erhalten keine %2$s Benachrichtigungen von %1$s.</string>
+    <string name="notification_info_channel_enabled_text">%1$s sendet Ihnen %2$s-Benachrichtigungen.</string>
+    <string name="notification_info_channel_disabled_text">%1$s sendet Ihnen keine %2$s-Benachrichtigungen.</string>
     <string name="notification_channel_location">Standort</string>
     <string name="notification_channel_usb">USB</string>
     <string name="notification_channel_battery">Akku</string>
@@ -1468,7 +1468,7 @@ Kontaktieren Sie Ihren Netzbetreiber für eine neue SIM-Karte."</string>
     <string name="tts_play_example_summary">Kurze Demonstration der Sprachsynthese abspielen</string>
     <string name="tts_install_data_title">Sprachdaten installieren</string>
     <string name="tts_install_data_summary">Erforderliche Sprachdaten für Sprachsynthese installieren</string>
-    <string name="tts_engine_security_warning">Dieses Sprachsynthesemodul kann in der Lage sein, alle Texte zu sammeln die gesprochen werden, einschließlich persönlicher Daten wie Passwörter und Kreditkartennummern. Es kommt vom %s-Modul. Die Verwendung dieses Sprachsynthesemoduls aktivieren?</string>
+    <string name="tts_engine_security_warning">Dieses Sprachsynthesemodul kann in der Lage sein, alle gesprochenen Texte zu sammeln, einschließlich persönlicher Daten wie Passwörter und Kreditkartennummern. Es kommt vom %s-Modul. Die Verwendung dieses Sprachsynthesemoduls aktivieren?</string>
     <string name="tts_engine_network_required">Diese Sprache erfordert eine funktionierende Netzwerkverbindung für die Text-in-Sprache-Ausgabe</string>
     <string name="tts_default_sample_string">Dies ist ein Beispiel für Sprachsynthese</string>
     <string name="tts_status_title">Standardsprachstatus</string>
@@ -1712,6 +1712,7 @@ Diese Funktion ist in Alpha-Stadium und funktioniert evtl. nicht richtig.
     <string name="wifi_disabled_by_recommendation_provider">Nicht verbunden wegen schlechter Netzwerkqualität</string>
     <string name="wifi_no_internet_no_reconnect">Keine automatische Verbindung</string>
     <string name="lockscreen_storage_locked">Entsperren für alle Funktionen und Daten</string>
+    <string name="structure_face_unlock_tof_covered">Konnte keine Gesichtsdaten hinzufügen. Gehen Sie weiter weg vom Bildschirm.</string>
     <string name="notification_num_channels">%d Benachrichtigungskategorien</string>
     <string name="abc_menu_ctrl_shortcut_label">Strg+</string>
     <string name="abc_menu_delete_shortcut_label">Löschen</string>

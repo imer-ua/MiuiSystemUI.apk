@@ -38,7 +38,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
 
     .prologue
-    .line 186
+    .line 190
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController$1;->this$0:Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
     .param p1, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .prologue
-    .line 189
+    .line 193
     iget-object v0, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->icon:Lcom/android/systemui/statusbar/StatusBarIconView;
 
     return-object v0
@@ -64,7 +64,7 @@
     .param p1, "entry"    # Ljava/lang/Object;
 
     .prologue
-    .line 188
+    .line 192
     check-cast p1, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .end local p1    # "entry":Ljava/lang/Object;

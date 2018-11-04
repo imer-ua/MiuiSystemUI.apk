@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/BaseRecentsImpl;
 
     .prologue
-    .line 536
+    .line 541
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$11;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 2
 
     .prologue
-    .line 539
+    .line 544
     iget-object v0, p0, Lcom/android/systemui/recents/BaseRecentsImpl$11;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v0}, Lcom/android/systemui/recents/BaseRecentsImpl;->-wrap3(Lcom/android/systemui/recents/BaseRecentsImpl;)V
 
-    .line 540
+    .line 545
     iget-object v0, p0, Lcom/android/systemui/recents/BaseRecentsImpl$11;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v0}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get9(Lcom/android/systemui/recents/BaseRecentsImpl;)Lcom/android/systemui/statusbar/phone/NavStubView;
@@ -55,7 +55,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 541
+    .line 546
     iget-object v0, p0, Lcom/android/systemui/recents/BaseRecentsImpl$11;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-static {v0}, Lcom/android/systemui/recents/BaseRecentsImpl;->-get9(Lcom/android/systemui/recents/BaseRecentsImpl;)Lcom/android/systemui/statusbar/phone/NavStubView;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->setVisibility(I)V
 
-    .line 538
+    .line 543
     :cond_0
     return-void
 .end method

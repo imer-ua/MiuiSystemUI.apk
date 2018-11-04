@@ -126,19 +126,32 @@
 .end method
 
 .method public isUnlockingWithFingerprintAllowed()Z
-    .locals 1
+    .locals 2
 
     .prologue
-    const/4 v0, 0x1
+    .line 1309
+    invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getCurrentUser()I
 
-    return v0
+    move-result v0
+
+    .line 1310
+    .local v0, "userId":I
+    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardUpdateMonitor$StrongAuthTracker;->isFingerprintAllowedForUser(I)Z
+
+    move-result v1
+
+    return v1
 .end method
 
 .method public isUnlockingWithFingerprintAllowed(I)Z
     .locals 1
+    .param p1, "userId"    # I
 
     .prologue
-    const/4 v0, 0x1
+    .line 1314
+    invoke-virtual {p0, p1}, Lcom/android/keyguard/KeyguardUpdateMonitor$StrongAuthTracker;->isFingerprintAllowedForUser(I)Z
+
+    move-result v0
 
     return v0
 .end method

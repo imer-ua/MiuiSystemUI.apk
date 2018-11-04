@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/statusbar/phone/NavStubView$1;
 
     .prologue
-    .line 307
+    .line 309
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$1$1;->this$1:Lcom/android/systemui/statusbar/phone/NavStubView$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 311
+    .line 313
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavStubView$1$1;->this$1:Lcom/android/systemui/statusbar/phone/NavStubView$1;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NavStubView$1;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
@@ -50,6 +50,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->performHapticFeedback(I)Z
 
-    .line 309
+    .line 311
     return-void
 .end method

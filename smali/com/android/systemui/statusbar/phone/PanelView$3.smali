@@ -29,7 +29,7 @@
     .param p2, "val$collapseWhenFinished"    # Z
 
     .prologue
-    .line 176
+    .line 177
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->val$collapseWhenFinished:Z
@@ -46,12 +46,12 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 181
+    .line 182
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->mCancelled:Z
 
-    .line 180
+    .line 181
     return-void
 .end method
 
@@ -60,14 +60,14 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 186
+    .line 187
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->-set1(Lcom/android/systemui/statusbar/phone/PanelView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
-    .line 187
+    .line 188
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->mCancelled:Z
 
     if-nez v0, :cond_0
@@ -76,7 +76,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 188
+    .line 189
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PanelView$3;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
@@ -85,7 +85,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->postOnAnimation(Ljava/lang/Runnable;)V
 
-    .line 185
+    .line 186
     :cond_0
     return-void
 .end method

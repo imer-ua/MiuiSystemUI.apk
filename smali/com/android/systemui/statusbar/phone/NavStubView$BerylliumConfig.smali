@@ -23,7 +23,7 @@
     .locals 5
 
     .prologue
-    .line 2182
+    .line 2191
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const/4 v1, 0x0
@@ -38,7 +38,7 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/phone/NavStubView$BerylliumConfig;->FAST_OUT_SLOW_IN:Landroid/view/animation/Interpolator;
 
-    .line 2174
+    .line 2183
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .locals 0
 
     .prologue
-    .line 2176
+    .line 2185
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

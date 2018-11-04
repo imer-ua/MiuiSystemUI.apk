@@ -67,5 +67,7 @@
     <bool name="config_enableLockBeforeUnlockScreen">true</bool>
     <bool name="config_flash_camera">false</bool>
     <bool name="show_battery_digit_full">true</bool>
+    <bool name="status_bar_notification_icons_peeking">false</bool>
+    <bool name="status_bar_notification_icons_peeking_extra_padding">false</bool>
     <bool name="enable_pbap_pce_profile">false</bool>
 </resources>

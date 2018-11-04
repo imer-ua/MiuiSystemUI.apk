@@ -125,7 +125,7 @@
     .prologue
     const-string v0, "set_toggles_columns"
 
-    invoke-static {p0, v0}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v0
 

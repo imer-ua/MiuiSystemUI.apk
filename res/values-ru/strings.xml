@@ -1130,8 +1130,8 @@
     <string name="wireless_charge_current">Зарядка</string>
     <string name="structure_face_data_input_timeout_title">Повторите попытку</string>
     <string name="structure_face_data_input_timeout_msg">Не удалось выполнить запись. Повторите попытку.</string>
-    <string name="structure_face_hardware_abnormal_title">Ошибка лазера</string>
-    <string name="structure_face_hardware_abnormal_msg">Невозможно записать данные лица из-за ошибки лазера. Обратитесь в службу поддержки клиентов, чтобы получить справку.</string>
+    <string name="structure_face_hardware_abnormal_title">Ошибка оборудования</string>
+    <string name="structure_face_hardware_abnormal_msg">Ошибка оборудования. Перезагрузите устройство. Если это не поможет, наберите 400-100-5678 для получения справки.</string>
     <string name="structure_face_hardware_abnormal_btn">Понятно</string>
     <string name="structure_face_modules_abnormal_title">Ошибка оптического модуля</string>
     <string name="structure_face_modules_abnormal_msg">Невозможно записать данные лица из-за ошибки оптического модуля. Перезагрузите устройство и повторите попытку.</string>
@@ -1782,4 +1782,7 @@ EEEE"</string>
     <string name="wifi_disabled_by_recommendation_provider">Не подключен из-за низкого качества сети</string>
     <string name="wifi_no_internet_no_reconnect">Не удается подключиться к Интернету.</string>
     <string name="lockscreen_storage_locked">Разблокировать устройство</string>
+    <string name="enable_atrace">Включить ATrace</string>
+    <string name="enable_atrace_summary">Захват событий ядра с использованием ATrace</string>
+    <string name="structure_face_unlock_tof_covered">Невозможно добавить данные лица. Отодвиньтесь дальше от экрана.</string>
 </resources>

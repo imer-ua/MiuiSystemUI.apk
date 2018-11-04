@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 3346
+    .line 3362
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$11;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,17 +42,17 @@
     .param p1, "isInSuspectMode"    # Z
 
     .prologue
-    .line 3349
+    .line 3365
     if-eqz p1, :cond_0
 
-    .line 3350
+    .line 3366
     const-string/jumbo v0, "miui_keyguard"
 
     const-string/jumbo v1, "enter suspect mode"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3352
+    .line 3368
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$11;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
@@ -62,13 +62,13 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/phone/KeyguardMoveHelper;->updateKeyguardHorizontalSwpingSlop(Z)V
 
-    .line 3353
+    .line 3369
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$11;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardVerticalMoveHelper:Lcom/android/systemui/statusbar/phone/KeyguardVerticalMoveHelper;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/phone/KeyguardVerticalMoveHelper;->updateKeyguardVerticalSwpingSlop(Z)V
 
-    .line 3348
+    .line 3364
     return-void
 .end method

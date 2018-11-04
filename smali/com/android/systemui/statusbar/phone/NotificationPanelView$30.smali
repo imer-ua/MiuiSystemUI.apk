@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->saveValueToTunerService(I)V
+    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->onExpandingFinished()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-.field final synthetic val$qqs_count:I
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
-    .param p2, "val$qqs_count"    # I
 
     .prologue
-    .line 2486
+    .line 2380
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$30;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
-
-    iput p2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$30;->val$qqs_count:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,21 +41,21 @@
     .locals 3
 
     .prologue
-    .line 2489
-    const-class v0, Lcom/android/systemui/tuner/TunerService;
+    .line 2383
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$30;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/systemui/tuner/TunerService;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$30;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    const-string/jumbo v1, "sysui_qqs_count"
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get8()Landroid/graphics/Rect;
 
-    iget v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$30;->val$qqs_count:I
+    move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/tuner/TunerService;->setValue(Ljava/lang/String;I)V
+    invoke-interface {v0, v1, v2}, Landroid/view/ViewParent;->invalidateChild(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2488
+    .line 2382
     return-void
 .end method

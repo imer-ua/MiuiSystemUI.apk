@@ -65,7 +65,15 @@
     return-object v0
 .end method
 
-.method static synthetic -get3(Lcom/android/systemui/statusbar/HeaderView;)Landroid/widget/ImageView;
+.method static synthetic -get3(Lcom/android/systemui/statusbar/HeaderView;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/systemui/statusbar/HeaderView;->mLastOrientation:I
+
+    return v0
+.end method
+
+.method static synthetic -get4(Lcom/android/systemui/statusbar/HeaderView;)Landroid/widget/ImageView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/HeaderView;->mShortcut:Landroid/widget/ImageView;

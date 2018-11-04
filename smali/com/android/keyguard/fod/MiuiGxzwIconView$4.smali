@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     .prologue
-    .line 606
+    .line 620
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -38,17 +38,17 @@
     .locals 2
 
     .prologue
-    .line 610
+    .line 624
     invoke-super {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->onFingerprintAcquired()V
 
-    .line 612
+    .line 626
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "onFingerprintAcquired"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 609
+    .line 623
     return-void
 .end method
 
@@ -56,17 +56,17 @@
     .locals 2
 
     .prologue
-    .line 618
+    .line 632
     invoke-super {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->onFingerprintAuthFailed()V
 
-    .line 620
+    .line 634
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "onFingerprintAuthFailed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 622
+    .line 636
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-get2(Lcom/android/keyguard/fod/MiuiGxzwIconView;)Z
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 623
+    .line 637
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-get4(Lcom/android/keyguard/fod/MiuiGxzwIconView;)Lcom/android/keyguard/fod/MiuiGxzwAnimView;
@@ -92,7 +92,7 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/fod/MiuiGxzwAnimView;->startFalseAnim()V
 
-    .line 625
+    .line 639
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
@@ -100,7 +100,7 @@
 
     invoke-static {v0, v1}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-set0(Lcom/android/keyguard/fod/MiuiGxzwIconView;Z)Z
 
-    .line 617
+    .line 631
     return-void
 .end method
 
@@ -109,10 +109,10 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 630
+    .line 644
     invoke-super {p0, p1}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->onFingerprintAuthenticated(I)V
 
-    .line 632
+    .line 646
     const-string/jumbo v1, "MiuiGxzwViewIcon"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -135,14 +135,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 634
+    .line 648
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-set0(Lcom/android/keyguard/fod/MiuiGxzwIconView;Z)Z
 
-    .line 637
+    .line 651
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v1}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-get3(Lcom/android/keyguard/fod/MiuiGxzwIconView;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -157,11 +157,11 @@
 
     move-result v0
 
-    .line 638
+    .line 652
     .local v0, "authenticatedSinceBoot":Z
     if-nez v0, :cond_1
 
-    .line 639
+    .line 653
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v1}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-get1(Lcom/android/keyguard/fod/MiuiGxzwIconView;)Z
@@ -170,7 +170,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 641
+    .line 655
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v1}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-get5(Lcom/android/keyguard/fod/MiuiGxzwIconView;)Landroid/os/PowerManager;
@@ -183,13 +183,13 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/os/PowerManager;->wakeUp(J)V
 
-    .line 644
+    .line 658
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v1}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-wrap2(Lcom/android/keyguard/fod/MiuiGxzwIconView;)V
 
-    .line 629
+    .line 643
     :cond_1
     return-void
 .end method
@@ -200,10 +200,10 @@
     .param p2, "errString"    # Ljava/lang/String;
 
     .prologue
-    .line 658
+    .line 672
     invoke-super {p0, p1, p2}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->onFingerprintError(ILjava/lang/String;)V
 
-    .line 660
+    .line 674
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -236,17 +236,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 663
+    .line 677
     const/4 v0, 0x7
 
     if-eq p1, v0, :cond_0
 
-    .line 664
+    .line 678
     const/16 v0, 0x9
 
     if-ne p1, v0, :cond_2
 
-    .line 665
+    .line 679
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
@@ -264,7 +264,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 667
+    .line 681
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-get5(Lcom/android/keyguard/fod/MiuiGxzwIconView;)Landroid/os/PowerManager;
@@ -277,12 +277,12 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/os/PowerManager;->wakeUp(J)V
 
-    .line 668
+    .line 682
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-wrap2(Lcom/android/keyguard/fod/MiuiGxzwIconView;)V
 
-    .line 670
+    .line 684
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
@@ -290,14 +290,14 @@
 
     invoke-static {v0, v1}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-set1(Lcom/android/keyguard/fod/MiuiGxzwIconView;Z)Z
 
-    .line 671
+    .line 685
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-set0(Lcom/android/keyguard/fod/MiuiGxzwIconView;Z)Z
 
-    .line 657
+    .line 671
     :cond_2
     return-void
 .end method
@@ -308,10 +308,10 @@
     .param p2, "helpString"    # Ljava/lang/String;
 
     .prologue
-    .line 650
+    .line 664
     invoke-super {p0, p1, p2}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->onFingerprintHelp(ILjava/lang/String;)V
 
-    .line 652
+    .line 666
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -344,7 +344,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 649
+    .line 663
     return-void
 .end method
 
@@ -353,10 +353,10 @@
     .param p1, "running"    # Z
 
     .prologue
-    .line 677
+    .line 691
     invoke-super {p0, p1}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;->onFingerprintRunningStateChanged(Z)V
 
-    .line 679
+    .line 693
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -379,17 +379,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 681
+    .line 695
     if-eqz p1, :cond_0
 
-    .line 682
+    .line 696
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$4;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-set1(Lcom/android/keyguard/fod/MiuiGxzwIconView;Z)Z
 
-    .line 676
+    .line 690
     :cond_0
     return-void
 .end method

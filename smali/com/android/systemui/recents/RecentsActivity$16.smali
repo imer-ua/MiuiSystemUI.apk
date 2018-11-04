@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 1500
+    .line 1504
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     .locals 8
 
     .prologue
-    .line 1503
+    .line 1507
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity;->getFreeMemory()J
 
     move-result-wide v2
 
-    .line 1504
+    .line 1508
     .local v2, "freeAtLast":J
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -64,7 +64,7 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/systemui/recents/misc/RecentsPushEventHelper;->sendOneKeyCleanEvent(JJJ)V
 
-    .line 1505
+    .line 1509
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity;->getApplicationContext()Landroid/content/Context;
@@ -81,7 +81,7 @@
 
     move-result-object v6
 
-    .line 1506
+    .line 1510
     .local v6, "msg":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -95,7 +95,7 @@
 
     move-result-object v7
 
-    .line 1507
+    .line 1511
     .local v7, "toast":Landroid/widget/Toast;
     invoke-virtual {v7}, Landroid/widget/Toast;->getWindowParams()Landroid/view/WindowManager$LayoutParams;
 
@@ -107,9 +107,9 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    .line 1509
+    .line 1513
     invoke-virtual {v7}, Landroid/widget/Toast;->show()V
 
-    .line 1502
+    .line 1506
     return-void
 .end method

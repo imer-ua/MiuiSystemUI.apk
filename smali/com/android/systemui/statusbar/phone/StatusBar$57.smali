@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/keyguard/KeyguardUpdateMonitor$SensorsChangeCallback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationShade()V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->wakeUpForNotification(Lcom/android/systemui/statusbar/NotificationData$Entry;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 2758
+    .line 2337
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$57;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,15 +37,41 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 1
+.method public onChange(Z)V
+    .locals 2
+    .param p1, "isInSuspectMode"    # Z
 
     .prologue
-    .line 2761
+    .line 2340
+    if-nez p1, :cond_0
+
+    .line 2341
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$57;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap37(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap41(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    .line 2760
+    .line 2345
+    :goto_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$57;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->unregisterSeneorsForKeyguard()V
+
+    .line 2339
     return-void
+
+    .line 2343
+    :cond_0
+    const-string/jumbo v0, "miui_keyguard"
+
+    const-string/jumbo v1, "not wake up for notification because in suspect mode"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method

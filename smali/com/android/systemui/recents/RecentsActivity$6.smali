@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 1655
+    .line 1659
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 1657
+    .line 1661
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 1666
+    .line 1670
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     const-string/jumbo v2, "window"
@@ -70,7 +70,7 @@
 
     move-result v0
 
-    .line 1667
+    .line 1671
     .local v0, "rotation":I
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -80,21 +80,21 @@
 
     if-ne v1, v0, :cond_0
 
-    .line 1668
+    .line 1672
     return-void
 
-    .line 1670
+    .line 1674
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-static {v1, v0}, Lcom/android/systemui/recents/RecentsActivity;->-set1(Lcom/android/systemui/recents/RecentsActivity;I)I
 
-    .line 1671
+    .line 1675
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/RecentsActivity;->setNotchPadding()V
 
-    .line 1672
+    .line 1676
     invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
 
     move-result-object v1
@@ -111,7 +111,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/events/RecentsEventBus;->send(Lcom/android/systemui/recents/events/RecentsEventBus$Event;)V
 
-    .line 1665
+    .line 1669
     return-void
 .end method
 
@@ -120,6 +120,6 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 1661
+    .line 1665
     return-void
 .end method

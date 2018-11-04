@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 7159
+    .line 7160
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$30;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,38 +36,39 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 1
+    .locals 5
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 7164
+    .line 7163
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$30;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get40(Lcom/android/systemui/statusbar/phone/StatusBar;)Landroid/util/SparseBooleanArray;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$30;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    move-result-object v0
+    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0}, Landroid/util/SparseBooleanArray;->clear()V
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    .line 7164
+    const-string/jumbo v2, "wakeup_for_keyguard_notification"
+
+    .line 7166
+    invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getCurrentUser()I
+
+    move-result v3
 
     .line 7165
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$30;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    const/4 v4, 0x1
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get39(Lcom/android/systemui/statusbar/phone/StatusBar;)Landroid/util/SparseBooleanArray;
+    .line 7163
+    invoke-static {v1, v2, v4, v3}, Landroid/provider/MiuiSettings$System;->getBooleanForUser(Landroid/content/ContentResolver;Ljava/lang/String;ZI)Z
 
-    move-result-object v0
+    move-result v1
 
-    invoke-virtual {v0}, Landroid/util/SparseBooleanArray;->clear()V
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set21(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
-    .line 7167
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$30;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap33(Lcom/android/systemui/statusbar/phone/StatusBar;)V
-
-    .line 7168
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$30;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotifications()V
-
-    .line 7161
+    .line 7162
     return-void
 .end method

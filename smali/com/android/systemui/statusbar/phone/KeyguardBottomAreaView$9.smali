@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     .prologue
-    .line 868
+    .line 870
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$9;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 2
 
     .prologue
-    .line 871
+    .line 873
     const-string/jumbo v0, "keyguard_charging_show"
 
     invoke-static {v0}, Lcom/android/keyguard/AnalyticsHelper;->record(Ljava/lang/String;)V
 
-    .line 872
+    .line 874
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$9;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get3(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;
@@ -65,6 +65,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->startEnterAnim(Z)V
 
-    .line 870
+    .line 872
     return-void
 .end method

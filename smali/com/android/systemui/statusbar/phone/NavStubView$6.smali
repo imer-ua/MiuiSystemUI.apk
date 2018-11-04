@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 1068
+    .line 1081
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$6;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 1071
+    .line 1084
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavStubView$6;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get15(Lcom/android/systemui/statusbar/phone/NavStubView;)Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;
@@ -50,6 +50,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->onGestureReady()V
 
-    .line 1070
+    .line 1083
     return-void
 .end method

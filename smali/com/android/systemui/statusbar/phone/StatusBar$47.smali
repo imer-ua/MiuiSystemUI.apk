@@ -3,7 +3,7 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/android/systemui/fragments/FragmentHostManager$FragmentListener;
 
 
 # annotations
@@ -20,15 +20,30 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
+.field final synthetic val$qsCustomizer:Lcom/android/systemui/qs/customize/QSCustomizer;
+
+.field final synthetic val$qsDetail:Lcom/android/systemui/qs/QSDetail;
+
+.field final synthetic val$qsh:Lcom/android/systemui/qs/QSTileHost;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/qs/QSDetail;Lcom/android/systemui/qs/customize/QSCustomizer;Lcom/android/systemui/qs/QSTileHost;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
+    .param p2, "val$qsDetail"    # Lcom/android/systemui/qs/QSDetail;
+    .param p3, "val$qsCustomizer"    # Lcom/android/systemui/qs/customize/QSCustomizer;
+    .param p4, "val$qsh"    # Lcom/android/systemui/qs/QSTileHost;
 
     .prologue
-    .line 1763
+    .line 1744
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->val$qsDetail:Lcom/android/systemui/qs/QSDetail;
+
+    iput-object p3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->val$qsCustomizer:Lcom/android/systemui/qs/customize/QSCustomizer;
+
+    iput-object p4, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->val$qsh:Lcom/android/systemui/qs/QSTileHost;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,147 +52,72 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 8
-    .param p1, "v"    # Landroid/view/View;
+.method public onFragmentViewCreated(Ljava/lang/String;Lcom/miui/systemui/support/v4/app/Fragment;)V
+    .locals 4
+    .param p1, "tag"    # Ljava/lang/String;
+    .param p2, "f"    # Lcom/miui/systemui/support/v4/app/Fragment;
 
     .prologue
-    const/4 v7, 0x1
+    move-object v0, p2
 
-    .line 1765
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    .line 1747
+    check-cast v0, Lcom/android/systemui/plugins/qs/QS;
 
-    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get12(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/classifier/FalsingManager;
+    .line 1748
+    .local v0, "qs":Lcom/android/systemui/plugins/qs/QS;
+    instance-of v2, v0, Lcom/android/systemui/qs/QSFragment;
+
+    if-eqz v2, :cond_0
+
+    move-object v1, v0
+
+    .line 1749
+    check-cast v1, Lcom/android/systemui/qs/QSFragment;
+
+    .line 1750
+    .local v1, "qsFragment":Lcom/android/systemui/qs/QSFragment;
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->val$qsDetail:Lcom/android/systemui/qs/QSDetail;
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSFragment;->setQSDetail(Lcom/android/systemui/qs/QSDetail;)V
+
+    .line 1751
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->val$qsCustomizer:Lcom/android/systemui/qs/customize/QSCustomizer;
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSFragment;->setQSCustomizer(Lcom/android/systemui/qs/customize/QSCustomizer;)V
+
+    .line 1752
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->val$qsh:Lcom/android/systemui/qs/QSTileHost;
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSFragment;->setHost(Lcom/android/systemui/qs/QSTileHost;)V
+
+    .line 1753
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mBrightnessMirrorController:Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSFragment;->setBrightnessMirror(Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;)V
+
+    .line 1754
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v1}, Lcom/android/systemui/qs/QSFragment;->getQsPanel()Lcom/android/systemui/qs/QSPanel;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/android/systemui/classifier/FalsingManager;->reportRejectedTouch()Landroid/net/Uri;
+    iput-object v3, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
-    move-result-object v2
-
-    .line 1766
-    .local v2, "session":Landroid/net/Uri;
-    if-nez v2, :cond_0
-
-    return-void
-
-    .line 1768
+    .line 1746
+    .end local v1    # "qsFragment":Lcom/android/systemui/qs/QSFragment;
     :cond_0
-    new-instance v1, Ljava/io/StringWriter;
+    return-void
+.end method
 
-    invoke-direct {v1}, Ljava/io/StringWriter;-><init>()V
+.method public onFragmentViewDestroyed(Ljava/lang/String;Lcom/miui/systemui/support/v4/app/Fragment;)V
+    .locals 0
+    .param p1, "tag"    # Ljava/lang/String;
+    .param p2, "fragment"    # Lcom/miui/systemui/support/v4/app/Fragment;
 
-    .line 1769
-    .local v1, "message":Ljava/io/StringWriter;
-    const-string/jumbo v3, "Build info: "
-
-    invoke-virtual {v1, v3}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
-
-    .line 1770
-    const-string/jumbo v3, "ro.build.description"
-
-    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
-
-    .line 1771
-    const-string/jumbo v3, "\nSerial number: "
-
-    invoke-virtual {v1, v3}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
-
-    .line 1772
-    const-string/jumbo v3, "ro.serialno"
-
-    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
-
-    .line 1773
-    const-string/jumbo v3, "\n"
-
-    invoke-virtual {v1, v3}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
-
-    .line 1775
-    new-instance v0, Ljava/io/PrintWriter;
-
-    invoke-direct {v0, v1}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
-
-    .line 1776
-    .local v0, "falsingPw":Ljava/io/PrintWriter;
-    invoke-static {v0}, Lcom/android/systemui/classifier/FalsingLog;->dump(Ljava/io/PrintWriter;)V
-
-    .line 1777
-    invoke-virtual {v0}, Ljava/io/PrintWriter;->flush()V
-
-    .line 1779
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$47;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    new-instance v4, Landroid/content/Intent;
-
-    const-string/jumbo v5, "android.intent.action.SEND"
-
-    invoke-direct {v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 1780
-    const-string/jumbo v5, "*/*"
-
-    .line 1779
-    invoke-virtual {v4, v5}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v4
-
-    .line 1781
-    const-string/jumbo v5, "android.intent.extra.SUBJECT"
-
-    const-string/jumbo v6, "Rejected touch report"
-
-    .line 1779
-    invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v4
-
-    .line 1782
-    const-string/jumbo v5, "android.intent.extra.STREAM"
-
-    .line 1779
-    invoke-virtual {v4, v5, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    move-result-object v4
-
-    .line 1783
-    const-string/jumbo v5, "android.intent.extra.TEXT"
-
-    invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 1779
-    invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v4
-
-    .line 1784
-    const-string/jumbo v5, "Share rejected touch report"
-
-    .line 1779
-    invoke-static {v4, v5}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
-
-    move-result-object v4
-
-    .line 1785
-    const/high16 v5, 0x10000000
-
-    .line 1779
-    invoke-virtual {v4, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4, v7, v7}, Lcom/android/systemui/statusbar/phone/StatusBar;->startActivityDismissingKeyguard(Landroid/content/Intent;ZZ)V
-
-    .line 1764
+    .prologue
+    .line 1759
     return-void
 .end method

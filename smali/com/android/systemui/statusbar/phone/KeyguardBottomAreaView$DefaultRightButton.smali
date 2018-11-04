@@ -29,19 +29,19 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     .prologue
-    .line 747
+    .line 748
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 749
+    .line 750
     new-instance v0, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     invoke-direct {v0}, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
-    .line 747
+    .line 748
     return-void
 .end method
 
@@ -63,14 +63,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 753
+    .line 754
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->resolveCameraIntent()Landroid/content/pm/ResolveInfo;
 
     move-result-object v0
 
-    .line 754
+    .line 755
     .local v0, "resolved":Landroid/content/pm/ResolveInfo;
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
@@ -84,7 +84,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 755
+    .line 756
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getResources()Landroid/content/res/Resources;
@@ -97,31 +97,31 @@
 
     move-result v1
 
-    .line 754
+    .line 755
     if-eqz v1, :cond_0
 
-    .line 756
+    .line 757
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get15(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Z
 
     move-result v1
 
-    .line 754
+    .line 755
     if-eqz v1, :cond_0
 
-    .line 757
+    .line 758
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get16(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Z
 
     move-result v1
 
-    .line 754
+    .line 755
     :goto_0
     iput-boolean v1, v3, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->isVisible:Z
 
-    .line 758
+    .line 759
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
@@ -132,7 +132,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 759
+    .line 760
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get5(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Landroid/content/Context;
@@ -145,14 +145,14 @@
 
     move-result-object v1
 
-    .line 758
+    .line 759
     :goto_1
     iput-object v1, v3, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 761
+    .line 762
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
-    .line 762
+    .line 763
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->-get5(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Landroid/content/Context;
@@ -165,15 +165,15 @@
 
     move-result-object v3
 
-    .line 761
+    .line 762
     iput-object v3, v1, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 763
+    .line 764
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     iput-boolean v2, v1, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->tint:Z
 
-    .line 764
+    .line 765
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     return-object v1
@@ -181,10 +181,10 @@
     :cond_0
     move v1, v2
 
-    .line 754
+    .line 755
     goto :goto_0
 
-    .line 760
+    .line 761
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -207,33 +207,33 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 769
+    .line 770
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 770
+    .line 771
     .local v0, "intent":Landroid/content/Intent;
     const v1, 0x10808000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 771
+    .line 772
     const-string/jumbo v1, "ShowCameraWhenLocked"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 772
+    .line 773
     const-string/jumbo v1, "StartActivityWhenLocked"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 773
+    .line 774
     const-string/jumbo v1, "android.media.action.STILL_IMAGE_CAMERA"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 774
+    .line 775
     new-instance v1, Landroid/content/ComponentName;
 
     const-string/jumbo v2, "com.android.camera"
@@ -244,6 +244,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 775
+    .line 776
     return-object v0
 .end method

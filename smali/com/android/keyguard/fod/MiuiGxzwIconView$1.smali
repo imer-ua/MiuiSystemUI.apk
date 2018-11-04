@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     .prologue
-    .line 100
+    .line 102
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$1;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,17 +39,17 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 104
+    .line 106
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 103
+    .line 105
     :cond_0
     :goto_0
     return-void
 
-    .line 106
+    .line 108
     :pswitch_0
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$1;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 107
+    .line 109
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$1;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-get4(Lcom/android/keyguard/fod/MiuiGxzwIconView;)Lcom/android/keyguard/fod/MiuiGxzwAnimView;
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 104
+    .line 106
     :pswitch_data_0
     .packed-switch 0x3e9
         :pswitch_0

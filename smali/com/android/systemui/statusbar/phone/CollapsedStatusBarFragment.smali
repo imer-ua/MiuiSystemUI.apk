@@ -17,6 +17,8 @@
 
 
 # instance fields
+.field private mClockContainer:Landroid/view/ViewGroup;
+
 .field private mClockVisible:Z
 
 .field private mDarkIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;
@@ -147,27 +149,27 @@
     .line 67
     invoke-direct {p0}, Lcom/miui/systemui/support/v4/app/Fragment;-><init>()V
 
-    .line 90
+    .line 91
     new-instance v0, Landroid/util/ArraySet;
 
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotchleftearIconsList:Landroid/util/ArraySet;
 
-    .line 92
+    .line 93
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mClockVisible:Z
 
-    .line 96
+    .line 97
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mIsStatusBarPromptNormalMode:Z
 
-    .line 99
+    .line 100
     new-instance v0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$1;-><init>(Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mSignalCallback:Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;
 
-    .line 435
+    .line 434
     const-class v0, Lcom/android/systemui/statusbar/policy/LocationController;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -190,28 +192,28 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 371
+    .line 370
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 372
+    .line 371
     if-nez p2, :cond_0
 
-    .line 373
+    .line 372
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 374
+    .line 373
     const/4 v0, 0x4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 375
+    .line 374
     return-void
 
-    .line 377
+    .line 376
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -221,39 +223,39 @@
 
     move-result-object v0
 
-    .line 379
+    .line 378
     const-wide/16 v2, 0xa0
 
-    .line 377
+    .line 376
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 380
+    .line 379
     const-wide/16 v2, 0x0
 
-    .line 377
+    .line 376
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 381
+    .line 380
     sget-object v1, Lcom/android/systemui/Interpolators;->ALPHA_OUT:Landroid/view/animation/Interpolator;
 
-    .line 377
+    .line 376
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 382
+    .line 381
     new-instance v1, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$2;
 
     invoke-direct {v1, p0, p1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$2;-><init>(Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;Landroid/view/View;)V
 
-    .line 377
+    .line 376
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
-    .line 370
+    .line 369
     return-void
 .end method
 
@@ -265,28 +267,28 @@
     .prologue
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 394
+    .line 393
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 395
+    .line 394
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 396
+    .line 395
     if-nez p2, :cond_0
 
-    .line 397
+    .line 396
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 398
+    .line 397
     return-void
 
-    .line 400
+    .line 399
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -296,37 +298,37 @@
 
     move-result-object v0
 
-    .line 402
+    .line 401
     const-wide/16 v2, 0x140
 
-    .line 400
+    .line 399
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 403
+    .line 402
     sget-object v1, Lcom/android/systemui/Interpolators;->ALPHA_IN:Landroid/view/animation/Interpolator;
 
-    .line 400
+    .line 399
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 404
+    .line 403
     const-wide/16 v2, 0x32
 
-    .line 400
+    .line 399
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 409
+    .line 408
     const/4 v1, 0x0
 
-    .line 400
+    .line 399
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
-    .line 412
+    .line 411
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mKeyguardMonitor:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->isKeyguardFadingAway()Z
@@ -335,46 +337,46 @@
 
     if-eqz v0, :cond_1
 
-    .line 413
+    .line 412
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 414
+    .line 413
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mKeyguardMonitor:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     invoke-interface {v1}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->getKeyguardFadingAwayDuration()J
 
     move-result-wide v2
 
-    .line 413
+    .line 412
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 415
+    .line 414
     sget-object v1, Lcom/android/systemui/Interpolators;->LINEAR_OUT_SLOW_IN:Landroid/view/animation/Interpolator;
 
-    .line 413
+    .line 412
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 416
+    .line 415
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mKeyguardMonitor:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     invoke-interface {v1}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->getKeyguardFadingAwayDelay()J
 
     move-result-wide v2
 
-    .line 413
+    .line 412
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 393
+    .line 392
     :cond_1
     return-void
 .end method
@@ -389,35 +391,35 @@
 
     const/4 v2, 0x0
 
-    .line 653
+    .line 652
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusClock:Lcom/android/systemui/statusbar/policy/Clock;
 
-    .line 654
+    .line 653
     .local v0, "v":Landroid/view/View;
     if-eqz p1, :cond_2
 
-    .line 655
+    .line 654
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 656
+    .line 655
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 657
+    .line 656
     if-nez p2, :cond_0
 
-    .line 658
+    .line 657
     invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 659
+    .line 658
     return-void
 
-    .line 661
+    .line 660
     :cond_0
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -427,37 +429,37 @@
 
     move-result-object v1
 
-    .line 663
+    .line 662
     const-wide/16 v2, 0x140
 
-    .line 661
+    .line 660
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    .line 664
+    .line 663
     sget-object v2, Lcom/android/systemui/Interpolators;->ALPHA_IN:Landroid/view/animation/Interpolator;
 
-    .line 661
+    .line 660
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    .line 665
+    .line 664
     const-wide/16 v2, 0x32
 
-    .line 661
+    .line 660
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    .line 670
+    .line 669
     const/4 v2, 0x0
 
-    .line 661
+    .line 660
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
-    .line 673
+    .line 672
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mKeyguardMonitor:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     invoke-interface {v1}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->isKeyguardFadingAway()Z
@@ -466,51 +468,51 @@
 
     if-eqz v1, :cond_1
 
-    .line 674
+    .line 673
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    .line 675
+    .line 674
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mKeyguardMonitor:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     invoke-interface {v2}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->getKeyguardFadingAwayDuration()J
 
     move-result-wide v2
 
-    .line 674
+    .line 673
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    .line 676
+    .line 675
     sget-object v2, Lcom/android/systemui/Interpolators;->LINEAR_OUT_SLOW_IN:Landroid/view/animation/Interpolator;
 
-    .line 674
+    .line 673
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    .line 677
+    .line 676
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mKeyguardMonitor:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     invoke-interface {v2}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->getKeyguardFadingAwayDelay()J
 
     move-result-wide v2
 
-    .line 674
+    .line 673
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 652
+    .line 651
     :cond_1
     :goto_0
     return-void
 
-    .line 681
+    .line 680
     :cond_2
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -518,21 +520,21 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 682
+    .line 681
     if-nez p2, :cond_3
 
-    .line 683
+    .line 682
     invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 684
+    .line 683
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 685
+    .line 684
     return-void
 
-    .line 687
+    .line 686
     :cond_3
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -542,36 +544,36 @@
 
     move-result-object v1
 
-    .line 689
+    .line 688
     const-wide/16 v2, 0xa0
 
-    .line 687
+    .line 686
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    .line 690
+    .line 689
     const-wide/16 v2, 0x0
 
-    .line 687
+    .line 686
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    .line 691
+    .line 690
     sget-object v2, Lcom/android/systemui/Interpolators;->ALPHA_OUT:Landroid/view/animation/Interpolator;
 
-    .line 687
+    .line 686
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    .line 692
+    .line 691
     new-instance v2, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$3;
 
     invoke-direct {v2, p0, v0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$3;-><init>(Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;Landroid/view/View;)V
 
-    .line 687
+    .line 686
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
     goto :goto_0
@@ -581,7 +583,7 @@
     .locals 4
 
     .prologue
-    .line 422
+    .line 421
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v3, 0x91200db
@@ -590,7 +592,7 @@
 
     move-result-object v0
 
-    .line 423
+    .line 422
     .local v0, "emergencyViewStub":Landroid/view/View;
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
@@ -600,23 +602,23 @@
 
     if-eqz v2, :cond_2
 
-    .line 424
+    .line 423
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusClock:Lcom/android/systemui/statusbar/policy/Clock;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/policy/Clock;->setVisibility(I)V
 
-    .line 425
+    .line 424
     if-eqz v0, :cond_0
 
-    .line 426
+    .line 425
     check-cast v0, Landroid/view/ViewStub;
 
     .end local v0    # "emergencyViewStub":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    .line 428
+    .line 427
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
@@ -624,24 +626,24 @@
 
     invoke-interface {v2, v3}, Lcom/android/systemui/statusbar/policy/NetworkController;->addCallback(Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;)V
 
-    .line 421
+    .line 420
     :cond_1
     :goto_0
     return-void
 
-    .line 429
+    .line 428
     .restart local v0    # "emergencyViewStub":Landroid/view/View;
     :cond_2
     if-eqz v0, :cond_1
 
-    .line 430
+    .line 429
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 431
+    .line 430
     .local v1, "parent":Landroid/view/ViewGroup;
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
@@ -652,7 +654,7 @@
     .locals 1
 
     .prologue
-    .line 344
+    .line 347
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->isClosed()Z
@@ -683,22 +685,22 @@
     .prologue
     const/16 v4, 0x11
 
-    .line 712
+    .line 710
     if-eqz p1, :cond_1
 
-    .line 713
+    .line 711
     const/4 v0, 0x0
 
-    .line 714
+    .line 712
     .local v0, "center":Z
     sget-boolean v3, Lcom/android/systemui/Constants;->IS_NARROW_NOTCH:Z
 
     if-nez v3, :cond_0
 
-    .line 715
+    .line 713
     const/4 v0, 0x1
 
-    .line 718
+    .line 716
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -706,7 +708,7 @@
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 719
+    .line 717
     .local v2, "mlp":Landroid/widget/FrameLayout$LayoutParams;
     iget v3, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
@@ -714,29 +716,29 @@
 
     const/4 v1, 0x1
 
-    .line 720
+    .line 718
     .local v1, "centerValueOld":Z
     :goto_0
     if-eq v1, v0, :cond_1
 
-    .line 721
+    .line 719
     if-eqz v0, :cond_3
 
-    .line 722
+    .line 720
     iput v4, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 726
+    .line 724
     :goto_1
     invoke-virtual {p1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 711
+    .line 709
     .end local v0    # "center":Z
     .end local v1    # "centerValueOld":Z
     .end local v2    # "mlp":Landroid/widget/FrameLayout$LayoutParams;
     :cond_1
     return-void
 
-    .line 719
+    .line 717
     .restart local v0    # "center":Z
     .restart local v2    # "mlp":Landroid/widget/FrameLayout$LayoutParams;
     :cond_2
@@ -744,7 +746,7 @@
 
     goto :goto_0
 
-    .line 724
+    .line 722
     .restart local v1    # "centerValueOld":Z
     :cond_3
     const v3, 0x800013
@@ -761,7 +763,7 @@
     .param p1, "tile"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 571
+    .line 570
     return-void
 .end method
 
@@ -774,7 +776,7 @@
 
     const/high16 v1, 0x20000
 
-    .line 322
+    .line 325
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBarComponent:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->shouldHideNotificationIcons()Z
@@ -783,10 +785,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 323
+    .line 326
     or-int/2addr p1, v1
 
-    .line 325
+    .line 328
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBarComponent:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -796,7 +798,7 @@
 
     if-nez v0, :cond_1
 
-    .line 326
+    .line 329
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mKeyguardMonitor:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->isKeyguardFadingAway()Z
@@ -805,7 +807,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 332
+    .line 335
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
@@ -816,7 +818,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 333
+    .line 336
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/NetworkController;->hasEmergencyCryptKeeperText()Z
@@ -825,10 +827,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 334
+    .line 337
     or-int/2addr p1, v1
 
-    .line 336
+    .line 339
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
@@ -838,29 +840,29 @@
 
     if-nez v0, :cond_3
 
-    .line 337
+    .line 340
     or-int/2addr p1, v2
 
-    .line 340
+    .line 343
     :cond_3
     return p1
 
-    .line 327
+    .line 330
     :cond_4
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->shouldHideNotificationIcons()Z
 
     move-result v0
 
-    .line 325
+    .line 328
     if-eqz v0, :cond_1
 
-    .line 328
+    .line 331
     or-int/2addr p1, v1
 
-    .line 329
+    .line 332
     or-int/2addr p1, v2
 
-    .line 330
+    .line 333
     const/high16 v0, 0x800000
 
     or-int/2addr p1, v0
@@ -873,7 +875,7 @@
     .param p1, "flags"    # I
 
     .prologue
-    .line 470
+    .line 469
     return-void
 .end method
 
@@ -881,7 +883,7 @@
     .locals 0
 
     .prologue
-    .line 466
+    .line 465
     return-void
 .end method
 
@@ -890,7 +892,7 @@
     .param p1, "obj"    # Ljava/lang/String;
 
     .prologue
-    .line 474
+    .line 473
     return-void
 .end method
 
@@ -898,7 +900,7 @@
     .locals 0
 
     .prologue
-    .line 538
+    .line 537
     return-void
 .end method
 
@@ -906,7 +908,7 @@
     .locals 0
 
     .prologue
-    .line 547
+    .line 546
     return-void
 .end method
 
@@ -915,7 +917,7 @@
     .param p1, "forced"    # Z
 
     .prologue
-    .line 534
+    .line 533
     return-void
 .end method
 
@@ -926,7 +928,7 @@
     .param p5, "forced"    # Z
 
     .prologue
-    .line 543
+    .line 542
     return-void
 .end method
 
@@ -934,7 +936,7 @@
     .locals 0
 
     .prologue
-    .line 522
+    .line 521
     return-void
 .end method
 
@@ -943,7 +945,7 @@
     .param p1, "tile"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 579
+    .line 578
     return-void
 .end method
 
@@ -958,70 +960,70 @@
 
     const/high16 v3, 0x20000
 
-    .line 297
+    .line 300
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->adjustDisableFlags(I)I
 
     move-result p1
 
-    .line 298
+    .line 301
     iget v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDisabled1:I
 
-    .line 299
+    .line 302
     .local v1, "old1":I
     xor-int v0, p1, v1
 
-    .line 300
+    .line 303
     .local v0, "diff1":I
     iput p1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDisabled1:I
 
-    .line 301
+    .line 304
     iput p2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDisabled2:I
 
-    .line 303
+    .line 306
     and-int v2, v0, v4
 
     if-eqz v2, :cond_0
 
-    .line 304
+    .line 307
     and-int v2, p1, v4
 
     if-eqz v2, :cond_2
 
-    .line 305
+    .line 308
     invoke-virtual {p0, p3}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->hideSystemIconArea(Z)V
 
-    .line 310
+    .line 313
     :cond_0
     :goto_0
     and-int v2, v0, v3
 
     if-eqz v2, :cond_1
 
-    .line 311
+    .line 314
     and-int v2, p1, v3
 
     if-eqz v2, :cond_3
 
-    .line 312
+    .line 315
     invoke-virtual {p0, p3}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->hideNotificationIconArea(Z)V
 
-    .line 318
+    .line 321
     :cond_1
     :goto_1
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mIsStatusBarPromptNormalMode:Z
 
     invoke-virtual {p0, p3, v2}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->refreshClockVisibility(ZZ)V
 
-    .line 296
+    .line 299
     return-void
 
-    .line 307
+    .line 310
     :cond_2
     invoke-virtual {p0, p3}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->showSystemIconArea(Z)V
 
     goto :goto_0
 
-    .line 314
+    .line 317
     :cond_3
     invoke-virtual {p0, p3}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->showNotificationIconArea(Z)V
 
@@ -1032,7 +1034,7 @@
     .locals 0
 
     .prologue
-    .line 514
+    .line 513
     return-void
 .end method
 
@@ -1040,7 +1042,7 @@
     .locals 0
 
     .prologue
-    .line 612
+    .line 611
     return-void
 .end method
 
@@ -1049,7 +1051,7 @@
     .param p1, "arg1"    # I
 
     .prologue
-    .line 608
+    .line 607
     return-void
 .end method
 
@@ -1057,7 +1059,7 @@
     .locals 0
 
     .prologue
-    .line 603
+    .line 602
     return-void
 .end method
 
@@ -1066,18 +1068,12 @@
     .param p1, "animate"    # Z
 
     .prologue
-    .line 356
-    sget-boolean v0, Lcom/android/systemui/Constants;->IS_NOTCH:Z
-
-    if-nez v0, :cond_0
-
-    .line 357
+    .line 359
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotificationIconAreaInner:Landroid/view/View;
 
     invoke-direct {p0, v0, p1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->animateHide(Landroid/view/View;Z)V
 
-    .line 355
-    :cond_0
+    .line 358
     return-void
 .end method
 
@@ -1087,7 +1083,7 @@
     .param p2, "triggeredFromHomeKey"    # Z
 
     .prologue
-    .line 498
+    .line 497
     return-void
 .end method
 
@@ -1096,12 +1092,12 @@
     .param p1, "animate"    # Z
 
     .prologue
-    .line 348
+    .line 351
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mSystemIconArea:Landroid/widget/LinearLayout;
 
     invoke-direct {p0, v0, p1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->animateHide(Landroid/view/View;Z)V
 
-    .line 347
+    .line 350
     return-void
 .end method
 
@@ -1110,7 +1106,7 @@
     .param p1, "notificationIconAreaController"    # Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
 
     .prologue
-    .line 278
+    .line 280
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v2, 0x91202d2
@@ -1121,19 +1117,19 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 280
+    .line 282
     .local v0, "notificationIconArea":Landroid/view/ViewGroup;
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->getNotificationInnerAreaView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 279
+    .line 281
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotificationIconAreaInner:Landroid/view/View;
 
-    .line 281
+    .line 283
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotificationIconAreaController:Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
 
-    .line 282
+    .line 284
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotificationIconAreaInner:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -1142,7 +1138,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 283
+    .line 285
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotificationIconAreaInner:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -1151,29 +1147,29 @@
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 284
+    .line 286
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotificationIconAreaInner:Landroid/view/View;
 
-    .line 283
+    .line 285
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 286
+    .line 288
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotificationIconAreaInner:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 288
+    .line 290
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->showNotificationIconArea(Z)V
 
-    .line 290
+    .line 292
     sget-boolean v1, Lcom/android/systemui/Constants;->IS_NOTCH:Z
 
     if-nez v1, :cond_1
 
-    .line 291
+    .line 293
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v2, 0x91202f9
@@ -1186,8 +1182,13 @@
 
     invoke-virtual {p1, v1}, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->setMoreIcon(Lcom/android/systemui/statusbar/StatusBarIconView;)V
 
-    .line 277
+    .line 295
     :cond_1
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mClockContainer:Landroid/view/ViewGroup;
+
+    invoke-virtual {p1, v1}, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->setupClockContainer(Landroid/view/View;)V
+
+    .line 279
     return-void
 .end method
 
@@ -1196,10 +1197,10 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 165
+    .line 166
     invoke-super {p0, p1}, Lcom/miui/systemui/support/v4/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 166
+    .line 167
     const-class v0, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1210,7 +1211,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mKeyguardMonitor:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
-    .line 167
+    .line 168
     const-class v0, Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1221,7 +1222,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
-    .line 168
+    .line 169
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1236,7 +1237,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBarComponent:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 169
+    .line 170
     const-class v0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1247,7 +1248,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mMiuiStatusBarPrompt:Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;
 
-    .line 164
+    .line 165
     return-void
 .end method
 
@@ -1275,10 +1276,10 @@
     .locals 2
 
     .prologue
-    .line 258
+    .line 260
     invoke-super {p0}, Lcom/miui/systemui/support/v4/app/Fragment;->onDestroyView()V
 
-    .line 259
+    .line 261
     const-class v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1291,12 +1292,12 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->removeDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
-    .line 260
+    .line 262
     sget-boolean v0, Lcom/android/systemui/Constants;->IS_NOTCH:Z
 
     if-eqz v0, :cond_2
 
-    .line 261
+    .line 263
     const-class v0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1309,12 +1310,12 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->removeIconGroup(Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;)V
 
-    .line 262
+    .line 264
     sget-boolean v0, Lcom/android/systemui/Constants;->IS_NARROW_NOTCH:Z
 
     if-eqz v0, :cond_0
 
-    .line 263
+    .line 265
     const-class v0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1327,7 +1328,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->removeIconGroup(Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;)V
 
-    .line 269
+    .line 271
     :cond_0
     :goto_0
     const-class v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
@@ -1342,7 +1343,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->removeDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
-    .line 270
+    .line 272
     const-class v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1355,7 +1356,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->removeDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
-    .line 271
+    .line 273
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/NetworkController;->hasEmergencyCryptKeeperText()Z
@@ -1364,18 +1365,18 @@
 
     if-eqz v0, :cond_1
 
-    .line 272
+    .line 274
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mSignalCallback:Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/NetworkController;->removeCallback(Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;)V
 
-    .line 257
+    .line 259
     :cond_1
     return-void
 
-    .line 266
+    .line 268
     :cond_2
     const-class v0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;
 
@@ -1389,7 +1390,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->removeIconGroup(Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;)V
 
-    .line 267
+    .line 269
     const-class v0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1409,7 +1410,7 @@
     .locals 0
 
     .prologue
-    .line 588
+    .line 587
     return-void
 .end method
 
@@ -1418,7 +1419,7 @@
     .param p1, "error"    # Ljava/lang/String;
 
     .prologue
-    .line 598
+    .line 597
     return-void
 .end method
 
@@ -1427,7 +1428,7 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 593
+    .line 592
     return-void
 .end method
 
@@ -1438,7 +1439,7 @@
     .prologue
     const/16 v1, 0x8
 
-    .line 439
+    .line 438
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusIcons:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getVisibility()I
@@ -1447,7 +1448,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 440
+    .line 439
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mLocationController:Lcom/android/systemui/statusbar/policy/LocationController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/LocationController;->isLocationActive()Z
@@ -1456,19 +1457,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 441
+    .line 440
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mGpsDriveMode:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 437
+    .line 436
     :cond_0
     :goto_0
     return-void
 
-    .line 443
+    .line 442
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mGpsDriveMode:Landroid/widget/ImageView;
 
@@ -1482,7 +1483,7 @@
     .param p1, "locationEnabled"    # Z
 
     .prologue
-    .line 449
+    .line 448
     return-void
 .end method
 
@@ -1491,7 +1492,7 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 453
+    .line 452
     return-void
 .end method
 
@@ -1499,10 +1500,10 @@
     .locals 2
 
     .prologue
-    .line 252
+    .line 254
     invoke-super {p0}, Lcom/miui/systemui/support/v4/app/Fragment;->onPause()V
 
-    .line 253
+    .line 255
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1517,7 +1518,7 @@
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/CommandQueue;->removeCallbacks(Lcom/android/systemui/statusbar/CommandQueue$Callbacks;)V
 
-    .line 251
+    .line 253
     return-void
 .end method
 
@@ -1525,10 +1526,10 @@
     .locals 2
 
     .prologue
-    .line 246
+    .line 248
     invoke-super {p0}, Lcom/miui/systemui/support/v4/app/Fragment;->onResume()V
 
-    .line 247
+    .line 249
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1543,7 +1544,7 @@
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/CommandQueue;->addCallbacks(Lcom/android/systemui/statusbar/CommandQueue$Callbacks;)V
 
-    .line 245
+    .line 247
     return-void
 .end method
 
@@ -1552,10 +1553,10 @@
     .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 240
+    .line 242
     invoke-super {p0, p1}, Lcom/miui/systemui/support/v4/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 241
+    .line 243
     const-string/jumbo v0, "panel_state"
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
@@ -1566,7 +1567,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 239
+    .line 241
     return-void
 .end method
 
@@ -1580,7 +1581,7 @@
 
     const-string v1, "ios_toggle"
 
-    invoke-static {v0, v1}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v1
 
@@ -1635,17 +1636,17 @@
     .param p2, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 180
+    .line 181
     invoke-super {p0, p1, p2}, Lcom/miui/systemui/support/v4/app/Fragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
     move-object v2, p1
 
-    .line 181
+    .line 182
     check-cast v2, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    .line 182
+    .line 183
     if-eqz p2, :cond_0
 
     const-string/jumbo v2, "panel_state"
@@ -1656,7 +1657,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 183
+    .line 184
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const-string/jumbo v3, "panel_state"
@@ -1667,8 +1668,21 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->go(I)V
 
-    .line 185
+    .line 186
     :cond_0
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
+
+    const v3, 0x91200a7
+
+    invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/view/ViewGroup;
+
+    iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mClockContainer:Landroid/view/ViewGroup;
+
+    .line 187
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v3, 0x91202d0
@@ -1681,7 +1695,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mLeftSideLayout:Landroid/widget/LinearLayout;
 
-    .line 186
+    .line 188
     const v2, 0x91202fb
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1692,7 +1706,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusIcons:Landroid/widget/LinearLayout;
 
-    .line 188
+    .line 190
     sget-boolean v2, Lcom/android/systemui/Constants;->IS_NOTCH:Z
 
     if-eqz v2, :cond_1
@@ -1701,7 +1715,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 189
+    .line 191
     :cond_1
     new-instance v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;
 
@@ -1711,12 +1725,12 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDarkIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;
 
-    .line 190
+    .line 192
     sget-boolean v2, Lcom/android/systemui/Constants;->IS_NARROW_NOTCH:Z
 
     if-eqz v2, :cond_2
 
-    .line 191
+    .line 193
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDarkIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;
 
     new-instance v3, Landroid/util/ArraySet;
@@ -1725,7 +1739,7 @@
 
     iput-object v3, v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mWhiteList:Landroid/util/ArraySet;
 
-    .line 192
+    .line 194
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDarkIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mWhiteList:Landroid/util/ArraySet;
@@ -1734,7 +1748,7 @@
 
     invoke-virtual {v2, v3}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 193
+    .line 195
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDarkIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mWhiteList:Landroid/util/ArraySet;
@@ -1743,7 +1757,7 @@
 
     invoke-virtual {v2, v3}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 194
+    .line 196
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDarkIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;->mWhiteList:Landroid/util/ArraySet;
@@ -1752,7 +1766,7 @@
 
     invoke-virtual {v2, v3}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 196
+    .line 198
     :cond_2
     const-class v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController;
 
@@ -1766,34 +1780,34 @@
 
     invoke-interface {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->addIconGroup(Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;)V
 
-    .line 198
+    .line 200
     :cond_3
     sget-boolean v2, Lcom/android/systemui/Constants;->IS_NOTCH:Z
 
     if-nez v2, :cond_4
 
-    .line 199
+    .line 201
     new-instance v1, Landroid/util/ArraySet;
 
     invoke-direct {v1}, Landroid/util/ArraySet;-><init>()V
 
-    .line 200
+    .line 202
     .local v1, "inCallList":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     const-string/jumbo v2, "call_record"
 
     invoke-virtual {v1, v2}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 201
+    .line 203
     const-string/jumbo v2, "mute"
 
     invoke-virtual {v1, v2}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 202
+    .line 204
     const-string/jumbo v2, "speakerphone"
 
     invoke-virtual {v1, v2}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 203
+    .line 205
     const v2, 0x91201c5
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1802,7 +1816,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 204
+    .line 206
     .local v0, "callIcons":Landroid/widget/LinearLayout;
     new-instance v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;
 
@@ -1810,7 +1824,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mInCallIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;
 
-    .line 205
+    .line 207
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mInCallIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;
 
     new-instance v3, Landroid/util/ArraySet;
@@ -1819,14 +1833,14 @@
 
     iput-object v3, v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mWhiteList:Landroid/util/ArraySet;
 
-    .line 206
+    .line 208
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mInCallIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mWhiteList:Landroid/util/ArraySet;
 
     invoke-virtual {v2, v1}, Landroid/util/ArraySet;->addAll(Landroid/util/ArraySet;)V
 
-    .line 207
+    .line 209
     const-class v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController;
 
     invoke-static {v2}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1839,7 +1853,7 @@
 
     invoke-interface {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->addIconGroup(Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;)V
 
-    .line 210
+    .line 212
     .end local v0    # "callIcons":Landroid/widget/LinearLayout;
     .end local v1    # "inCallList":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     :cond_4
@@ -1855,7 +1869,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mSystemIconArea:Landroid/widget/LinearLayout;
 
-    .line 211
+    .line 213
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v3, 0x91202b0
@@ -1868,7 +1882,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mSignalClusterView:Lcom/android/systemui/statusbar/SignalClusterView;
 
-    .line 212
+    .line 214
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v3, 0x91202fa
@@ -1881,7 +1895,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkSpeedView:Lcom/android/systemui/statusbar/NetworkSpeedView;
 
-    .line 213
+    .line 215
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v3, 0x91200ec
@@ -1894,7 +1908,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusClock:Lcom/android/systemui/statusbar/policy/Clock;
 
-    .line 214
+    .line 216
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v3, 0x91202fc
@@ -1907,17 +1921,17 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mGpsDriveMode:Landroid/widget/ImageView;
 
-    .line 216
+    .line 218
     sget-boolean v2, Lcom/android/systemui/Constants;->IS_NOTCH:Z
 
     if-eqz v2, :cond_6
 
-    .line 217
+    .line 219
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mLeftSideLayout:Landroid/widget/LinearLayout;
 
     invoke-direct {p0, v2}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->updateNotchPromptViewLayout(Landroid/view/View;)V
 
-    .line 218
+    .line 220
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v3, 0x91202d1
@@ -1930,26 +1944,26 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotchLeftEarIcons:Landroid/widget/LinearLayout;
 
-    .line 219
+    .line 221
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotchleftearIconsList:Landroid/util/ArraySet;
 
     const-string/jumbo v3, "bluetooth"
 
     invoke-virtual {v2, v3}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 220
+    .line 222
     sget-boolean v2, Lcom/android/systemui/Constants;->IS_NARROW_NOTCH:Z
 
     if-eqz v2, :cond_5
 
-    .line 221
+    .line 223
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotchleftearIconsList:Landroid/util/ArraySet;
 
     const-string/jumbo v3, "location"
 
     invoke-virtual {v2, v3}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 223
+    .line 225
     :cond_5
     new-instance v2, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;
 
@@ -1959,7 +1973,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotchLeftEarIconManager:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;
 
-    .line 224
+    .line 226
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotchLeftEarIconManager:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;
 
     new-instance v3, Landroid/util/ArraySet;
@@ -1968,7 +1982,7 @@
 
     iput-object v3, v2, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->mWhiteList:Landroid/util/ArraySet;
 
-    .line 225
+    .line 227
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotchLeftEarIconManager:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment$LeftEarIconManager;->mWhiteList:Landroid/util/ArraySet;
@@ -1977,7 +1991,7 @@
 
     invoke-virtual {v2, v3}, Landroid/util/ArraySet;->addAll(Landroid/util/ArraySet;)V
 
-    .line 226
+    .line 228
     const-class v2, Lcom/android/systemui/statusbar/phone/StatusBarIconController;
 
     invoke-static {v2}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -1990,12 +2004,12 @@
 
     invoke-interface {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->addIconGroup(Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;)V
 
-    .line 227
+    .line 229
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mSignalClusterView:Lcom/android/systemui/statusbar/SignalClusterView;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/SignalClusterView;->setNotchEar()V
 
-    .line 230
+    .line 232
     :cond_6
     const-class v2, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
@@ -2009,7 +2023,7 @@
 
     invoke-interface {v2, v3}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->addDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
-    .line 231
+    .line 233
     const-class v2, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
     invoke-static {v2}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -2022,7 +2036,7 @@
 
     invoke-interface {v2, v3}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->addDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
-    .line 232
+    .line 234
     const-class v2, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
     invoke-static {v2}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -2035,15 +2049,15 @@
 
     invoke-interface {v2, v3}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->addDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
-    .line 234
+    .line 236
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->showSystemIconArea(Z)V
 
-    .line 235
+    .line 237
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->initEmergencyCryptkeeperText()V
 
-    .line 179
+    .line 180
     return-void
 .end method
 
@@ -2051,7 +2065,7 @@
     .locals 0
 
     .prologue
-    .line 510
+    .line 509
     return-void
 .end method
 
@@ -2063,10 +2077,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 639
+    .line 638
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mIsStatusBarPromptNormalMode:Z
 
-    .line 640
+    .line 639
     iget v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDisabled1:I
 
     const/high16 v3, 0x800000
@@ -2075,34 +2089,34 @@
 
     if-nez v2, :cond_3
 
-    .line 641
+    .line 640
     sget-boolean v2, Lcom/android/systemui/Constants;->IS_NOTCH:Z
 
     if-eqz v2, :cond_2
 
     move v0, p2
 
-    .line 642
+    .line 641
     :goto_0
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mClockVisible:Z
 
     if-eq v2, v0, :cond_0
 
-    .line 643
+    .line 642
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mClockVisible:Z
 
-    .line 644
+    .line 643
     const/4 v2, 0x1
 
     invoke-direct {p0, v0, v2}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->clockVisibleAnimate(ZZ)V
 
-    .line 647
+    .line 646
     :cond_0
     sget-boolean v2, Lcom/android/systemui/Constants;->IS_NOTCH:Z
 
     if-eqz v2, :cond_1
 
-    .line 648
+    .line 647
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotchLeftEarIcons:Landroid/widget/LinearLayout;
 
     if-eqz p2, :cond_4
@@ -2110,18 +2124,18 @@
     :goto_1
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 638
+    .line 637
     :cond_1
     return-void
 
-    .line 641
+    .line 640
     :cond_2
     const/4 v0, 0x1
 
     .local v0, "visible":Z
     goto :goto_0
 
-    .line 640
+    .line 639
     .end local v0    # "visible":Z
     :cond_3
     const/4 v0, 0x0
@@ -2129,7 +2143,7 @@
     .restart local v0    # "visible":Z
     goto :goto_0
 
-    .line 648
+    .line 647
     .end local v0    # "visible":Z
     :cond_4
     const/16 v1, 0x8
@@ -2142,7 +2156,7 @@
     .param p1, "tile"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 575
+    .line 574
     return-void
 .end method
 
@@ -2151,7 +2165,7 @@
     .param p1, "slot"    # Ljava/lang/String;
 
     .prologue
-    .line 462
+    .line 461
     return-void
 .end method
 
@@ -2161,7 +2175,7 @@
     .param p2, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 458
+    .line 457
     return-void
 .end method
 
@@ -2173,17 +2187,15 @@
     .param p4, "showImeSwitcher"    # Z
 
     .prologue
-    .line 489
+    .line 488
     return-void
 .end method
 
 .method public setNotch()V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/16 v3, 0x8
-
-    .line 702
+    .line 701
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
     const v2, 0x91202c7
@@ -2194,34 +2206,31 @@
 
     check-cast v0, Lcom/android/systemui/BatteryMeterView;
 
-    .line 703
+    .line 702
     .local v0, "batteryMeterView":Lcom/android/systemui/BatteryMeterView;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/BatteryMeterView;->setNortchEar(Z)V
 
-    .line 704
+    .line 703
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkSpeedView:Lcom/android/systemui/statusbar/NetworkSpeedView;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/NetworkSpeedView;->setNotch()V
 
-    .line 705
+    .line 704
     sget-boolean v1, Lcom/android/systemui/Constants;->IS_NARROW_NOTCH:Z
 
     if-nez v1, :cond_0
 
-    .line 706
+    .line 705
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusIcons:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    const/16 v2, 0x8
 
-    .line 708
+    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 700
     :cond_0
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotificationIconAreaInner:Landroid/view/View;
-
-    invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
-
-    .line 701
     return-void
 .end method
 
@@ -2232,7 +2241,7 @@
     .param p3, "ext"    # Landroid/os/Bundle;
 
     .prologue
-    .line 616
+    .line 615
     return-void
 .end method
 
@@ -2246,7 +2255,7 @@
     .param p6, "dockedStackBounds"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 480
+    .line 479
     return-void
 .end method
 
@@ -2256,7 +2265,7 @@
     .param p2, "state"    # I
 
     .prologue
-    .line 526
+    .line 525
     return-void
 .end method
 
@@ -2264,7 +2273,7 @@
     .locals 0
 
     .prologue
-    .line 551
+    .line 550
     return-void
 .end method
 
@@ -2273,7 +2282,7 @@
     .param p1, "args"    # Lcom/android/internal/os/SomeArgs;
 
     .prologue
-    .line 583
+    .line 582
     return-void
 .end method
 
@@ -2282,18 +2291,12 @@
     .param p1, "animate"    # Z
 
     .prologue
-    .line 362
-    sget-boolean v0, Lcom/android/systemui/Constants;->IS_NOTCH:Z
-
-    if-nez v0, :cond_0
-
     .line 363
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotificationIconAreaInner:Landroid/view/View;
 
     invoke-direct {p0, v0, p1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->animateShow(Landroid/view/View;Z)V
 
-    .line 361
-    :cond_0
+    .line 362
     return-void
 .end method
 
@@ -2301,7 +2304,7 @@
     .locals 0
 
     .prologue
-    .line 563
+    .line 562
     return-void
 .end method
 
@@ -2311,7 +2314,7 @@
     .param p2, "fromHome"    # Z
 
     .prologue
-    .line 493
+    .line 492
     return-void
 .end method
 
@@ -2320,7 +2323,7 @@
     .param p1, "taskId"    # I
 
     .prologue
-    .line 530
+    .line 529
     return-void
 .end method
 
@@ -2329,12 +2332,12 @@
     .param p1, "animate"    # Z
 
     .prologue
-    .line 352
+    .line 355
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mSystemIconArea:Landroid/widget/LinearLayout;
 
     invoke-direct {p0, v0, p1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->animateShow(Landroid/view/View;Z)V
 
-    .line 351
+    .line 354
     return-void
 .end method
 
@@ -2343,7 +2346,7 @@
     .param p1, "args"    # Landroid/os/Bundle;
 
     .prologue
-    .line 555
+    .line 554
     return-void
 .end method
 
@@ -2352,7 +2355,7 @@
     .param p1, "deviceId"    # I
 
     .prologue
-    .line 518
+    .line 517
     return-void
 .end method
 
@@ -2360,7 +2363,7 @@
     .locals 0
 
     .prologue
-    .line 502
+    .line 501
     return-void
 .end method
 
@@ -2368,7 +2371,7 @@
     .locals 0
 
     .prologue
-    .line 506
+    .line 505
     return-void
 .end method
 
@@ -2377,7 +2380,7 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 484
+    .line 483
     return-void
 .end method
 
@@ -2390,17 +2393,17 @@
 
     const/16 v2, 0x8
 
-    .line 620
+    .line 619
     sget-boolean v3, Lcom/android/systemui/Constants;->IS_NOTCH:Z
 
     if-nez v3, :cond_0
 
-    .line 621
+    .line 620
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNetworkSpeedView:Lcom/android/systemui/statusbar/NetworkSpeedView;
 
     invoke-virtual {v3, p1}, Lcom/android/systemui/statusbar/NetworkSpeedView;->setDriveMode(Z)V
 
-    .line 623
+    .line 622
     :cond_0
     if-eqz p1, :cond_1
 
@@ -2408,20 +2411,20 @@
 
     if-eqz v3, :cond_6
 
-    .line 628
+    .line 627
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mLocationController:Lcom/android/systemui/statusbar/policy/LocationController;
 
     invoke-interface {v3, p0}, Lcom/android/systemui/statusbar/policy/LocationController;->removeCallback(Ljava/lang/Object;)V
 
-    .line 629
+    .line 628
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusBarComponent:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-boolean v3, v3, Lcom/android/systemui/statusbar/phone/StatusBar;->mDemoMode:Z
 
     if-nez v3, :cond_5
 
-    .line 630
+    .line 629
     iget v3, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDisabled2:I
 
     and-int/lit8 v3, v3, 0x2
@@ -2430,7 +2433,7 @@
 
     const/4 v0, 0x1
 
-    .line 631
+    .line 630
     .local v0, "hideSystemIcon":Z
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusIcons:Landroid/widget/LinearLayout;
@@ -2452,34 +2455,34 @@
     :cond_4
     invoke-virtual {v3, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 633
+    .line 632
     .end local v0    # "hideSystemIcon":Z
     :cond_5
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mGpsDriveMode:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 635
+    .line 634
     :goto_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mNotificationIconAreaController:Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->setForceHideMoreIcon(Z)V
 
-    .line 619
+    .line 618
     return-void
 
-    .line 624
+    .line 623
     :cond_6
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mLocationController:Lcom/android/systemui/statusbar/policy/LocationController;
 
     invoke-interface {v3, p0}, Lcom/android/systemui/statusbar/policy/LocationController;->addCallback(Ljava/lang/Object;)V
 
-    .line 625
+    .line 624
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mStatusIcons:Landroid/widget/LinearLayout;
 
     invoke-virtual {v3, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 626
+    .line 625
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mGpsDriveMode:Landroid/widget/ImageView;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->mDarkIconManager:Lcom/android/systemui/statusbar/phone/StatusBarIconController$DarkIconManager;
@@ -2502,7 +2505,7 @@
 
     goto :goto_2
 
-    .line 630
+    .line 629
     :cond_8
     const/4 v0, 0x0
 

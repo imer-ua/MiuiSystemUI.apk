@@ -33,7 +33,7 @@
     .param p4, "val$freeAtFirst"    # J
 
     .prologue
-    .line 1959
+    .line 1964
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$2$1;->this$2:Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$2;
 
     iput-object p2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$2$1;->val$clearButton:Lmiui/widget/CircleProgressBar;
@@ -56,7 +56,7 @@
     .prologue
     const-wide/16 v4, 0x400
 
-    .line 1961
+    .line 1966
     invoke-static {}, Lmiui/util/HardwareInfo;->getFreeMemory()J
 
     move-result-wide v0
@@ -67,7 +67,7 @@
 
     int-to-long v6, v0
 
-    .line 1962
+    .line 1967
     .local v6, "freeAtLast":J
     const-string/jumbo v0, "RecentsReceiver"
 
@@ -95,7 +95,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1964
+    .line 1969
     iget-object v8, p0, Lcom/android/systemui/recents/BaseRecentsImpl$RecentsReceiver$2$1;->val$clearButton:Lmiui/widget/CircleProgressBar;
 
     invoke-static {}, Lmiui/util/HardwareInfo;->getTotalPhysicalMemory()J
@@ -122,6 +122,6 @@
 
     invoke-virtual {v8, v9, v0}, Lmiui/widget/CircleProgressBar;->setProgressByAnimator(ILandroid/animation/Animator$AnimatorListener;)V
 
-    .line 1960
+    .line 1965
     return-void
 .end method

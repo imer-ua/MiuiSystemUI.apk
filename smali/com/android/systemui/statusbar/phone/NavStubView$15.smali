@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 1786
+    .line 1795
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$15;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1789
+    .line 1798
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$15;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -63,6 +63,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->setBackgroundColor(I)V
 
-    .line 1788
+    .line 1797
     return-void
 .end method

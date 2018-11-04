@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Lcom/android/keyguard/KeyguardUpdateMonitor$SensorsChangeCallback;
+.implements Lcom/android/systemui/statusbar/RemoteInputController$Callback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->wakeUpForNotification(Lcom/android/systemui/statusbar/NotificationData$Entry;)V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->startKeyguard()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 2333
+    .line 2251
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$56;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,41 +37,77 @@
 
 
 # virtual methods
-.method public onChange(Z)V
-    .locals 2
-    .param p1, "isInSuspectMode"    # Z
+.method public onRemoteInputActive(Z)V
+    .locals 0
+    .param p1, "active"    # Z
 
     .prologue
-    .line 2336
-    if-nez p1, :cond_0
+    .line 2272
+    return-void
+.end method
 
-    .line 2337
+.method public onRemoteInputSent(Lcom/android/systemui/statusbar/NotificationData$Entry;)V
+    .locals 4
+    .param p1, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
+
+    .prologue
+    .line 2254
+    sget-boolean v0, Lcom/android/systemui/statusbar/phone/StatusBar;->FORCE_REMOTE_INPUT_HISTORY:Z
+
+    if-eqz v0, :cond_1
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$56;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap40(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mKeysKeptForRemoteInput:Landroid/util/ArraySet;
 
-    .line 2341
+    iget-object v1, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->key:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 2255
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$56;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v1, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->key:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->removeNotification(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$RankingMap;)V
+
+    .line 2253
+    :cond_0
     :goto_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$56;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->unregisterSeneorsForKeyguard()V
-
-    .line 2335
     return-void
 
-    .line 2339
-    :cond_0
-    const-string/jumbo v0, "miui_keyguard"
+    .line 2256
+    :cond_1
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$56;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    const-string/jumbo v1, "not wake up for notification because in suspect mode"
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mRemoteInputEntriesToRemoveOnCollapse:Landroid/util/ArraySet;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, p1}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2261
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$56;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
+
+    new-instance v1, Lcom/android/systemui/statusbar/phone/StatusBar$56$1;
+
+    invoke-direct {v1, p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBar$56$1;-><init>(Lcom/android/systemui/statusbar/phone/StatusBar$56;Lcom/android/systemui/statusbar/NotificationData$Entry;)V
+
+    .line 2267
+    const-wide/16 v2, 0xc8
+
+    .line 2261
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_0
 .end method

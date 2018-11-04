@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/BaseRecentsImpl;
 
     .prologue
-    .line 316
+    .line 321
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-direct {p0}, Lcom/miui/internal/transition/IMiuiGestureControlHelper$Stub;-><init>()V
@@ -45,7 +45,7 @@
     .end annotation
 
     .prologue
-    .line 320
+    .line 325
     new-instance v0, Lcom/miui/internal/transition/MiuiAppTransitionAnimationSpec;
 
     new-instance v1, Landroid/graphics/Rect;
@@ -65,17 +65,17 @@
     .prologue
     const/16 v4, 0x67
 
-    .line 366
+    .line 371
     const-string/jumbo v2, "RecentsImpl"
 
     const-string/jumbo v3, "notifyGestureAnimationCancel"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 368
+    .line 373
     const/16 v1, 0x67
 
-    .line 369
+    .line 374
     .local v1, "what":I
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -83,7 +83,7 @@
 
     invoke-virtual {v2, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 370
+    .line 375
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v2, v2, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
@@ -92,7 +92,7 @@
 
     move-result-object v0
 
-    .line 371
+    .line 376
     .local v0, "msg":Landroid/os/Message;
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -100,7 +100,7 @@
 
     invoke-virtual {v2, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 365
+    .line 370
     return-void
 .end method
 
@@ -110,17 +110,17 @@
     .prologue
     const/16 v4, 0x66
 
-    .line 376
+    .line 381
     const-string/jumbo v2, "RecentsImpl"
 
     const-string/jumbo v3, "notifyGestureAnimationEnd"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 377
+    .line 382
     const/16 v1, 0x66
 
-    .line 378
+    .line 383
     .local v1, "what":I
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -128,7 +128,7 @@
 
     invoke-virtual {v2, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 379
+    .line 384
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v2, v2, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
@@ -137,7 +137,7 @@
 
     move-result-object v0
 
-    .line 380
+    .line 385
     .local v0, "msg":Landroid/os/Message;
     iget-object v2, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -147,7 +147,7 @@
 
     invoke-virtual {v2, v0, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 375
+    .line 380
     return-void
 .end method
 
@@ -161,21 +161,21 @@
 
     const/16 v8, 0x68
 
-    .line 344
+    .line 349
     const-string/jumbo v6, "RecentsImpl"
 
     const-string/jumbo v7, "notifyGestureAnimationStart"
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 345
+    .line 350
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v6, v6, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v6, v8}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 346
+    .line 351
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v6, v6, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
@@ -184,11 +184,11 @@
 
     move-result-object v2
 
-    .line 347
+    .line 352
     .local v2, "delayMsg":Landroid/os/Message;
     const-wide/16 v0, 0x11f
 
-    .line 349
+    .line 354
     .local v0, "delay":J
     :try_start_0
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
@@ -215,7 +215,7 @@
 
     float-to-long v0, v6
 
-    .line 353
+    .line 358
     :goto_0
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -223,14 +223,14 @@
 
     invoke-virtual {v6, v2, v0, v1}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 355
+    .line 360
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v6, v6, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v6, v9}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 356
+    .line 361
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v6, v6, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
@@ -239,7 +239,7 @@
 
     move-result-object v4
 
-    .line 357
+    .line 362
     .local v4, "msg":Landroid/os/Message;
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -247,14 +247,14 @@
 
     invoke-virtual {v6, v4}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 359
+    .line 364
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v6, v6, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v6, v10}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 360
+    .line 365
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v6, v6, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
@@ -263,7 +263,7 @@
 
     move-result-object v5
 
-    .line 361
+    .line 366
     .local v5, "removeZoomViewMsg":Landroid/os/Message;
     iget-object v6, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -273,16 +273,16 @@
 
     invoke-virtual {v6, v5, v8, v9}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 342
+    .line 347
     return-void
 
-    .line 350
+    .line 355
     .end local v4    # "msg":Landroid/os/Message;
     .end local v5    # "removeZoomViewMsg":Landroid/os/Message;
     :catch_0
     move-exception v3
 
-    .line 351
+    .line 356
     .local v3, "e":Landroid/os/RemoteException;
     invoke-virtual {v3}, Landroid/os/RemoteException;->printStackTrace()V
 
@@ -299,17 +299,17 @@
 
     const/16 v6, 0x64
 
-    .line 326
+    .line 331
     const-string/jumbo v4, "RecentsImpl"
 
     const-string/jumbo v5, "notifyGestureStartRecents"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 327
+    .line 332
     const/16 v3, 0x64
 
-    .line 328
+    .line 333
     .local v3, "what":I
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -317,7 +317,7 @@
 
     invoke-virtual {v4, v6}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 329
+    .line 334
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v4, v4, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
@@ -326,7 +326,7 @@
 
     move-result-object v1
 
-    .line 330
+    .line 335
     .local v1, "msg":Landroid/os/Message;
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -334,14 +334,14 @@
 
     invoke-virtual {v4, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 332
+    .line 337
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v4, v4, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v4, v7}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 333
+    .line 338
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v4, v4, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
@@ -350,7 +350,7 @@
 
     move-result-object v0
 
-    .line 334
+    .line 339
     .local v0, "animationMsg":Landroid/os/Message;
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -358,14 +358,14 @@
 
     invoke-virtual {v4, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 336
+    .line 341
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v4, v4, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v4, v8}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 337
+    .line 342
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v4, v4, Lcom/android/systemui/recents/BaseRecentsImpl;->mHandler:Landroid/os/Handler;
@@ -374,7 +374,7 @@
 
     move-result-object v2
 
-    .line 338
+    .line 343
     .local v2, "removeAnimationMsg":Landroid/os/Message;
     iget-object v4, p0, Lcom/android/systemui/recents/BaseRecentsImpl$10;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
@@ -384,6 +384,6 @@
 
     invoke-virtual {v4, v2, v6, v7}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 324
+    .line 329
     return-void
 .end method

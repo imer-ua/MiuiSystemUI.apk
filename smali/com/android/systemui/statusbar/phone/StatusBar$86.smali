@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->startPendingIntentDismissingKeyguard(Landroid/app/PendingIntent;)V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->bindRow(Lcom/android/systemui/statusbar/NotificationData$Entry;Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-.field final synthetic val$intent:Landroid/app/PendingIntent;
+.field final synthetic val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/app/PendingIntent;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
-    .param p2, "val$intent"    # Landroid/app/PendingIntent;
+    .param p2, "val$row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     .prologue
-    .line 8483
+    .line 8396
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86;->val$intent:Landroid/app/PendingIntent;
+    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,35 +42,53 @@
 
 
 # virtual methods
-.method public onDismiss()Z
+.method public run()V
     .locals 3
 
     .prologue
-    const/4 v2, 0x1
+    .line 8398
+    const-class v0, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;
 
-    .line 8486
-    new-instance v0, Lcom/android/systemui/statusbar/phone/StatusBar$86$1;
+    invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86;->val$intent:Landroid/app/PendingIntent;
+    move-result-object v0
 
-    invoke-direct {v0, p0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$86$1;-><init>(Lcom/android/systemui/statusbar/phone/StatusBar$86;Landroid/app/PendingIntent;)V
+    check-cast v0, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;
 
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar$86$1;->start()V
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 8513
+    .line 8399
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get17(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const-string/jumbo v1, "keyguard"
+
+    .line 8398
+    :goto_0
+    invoke-virtual {v0, v2, v1}, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;->onRemove(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Ljava/lang/String;)V
+
+    .line 8400
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    invoke-virtual {v0, v1, v2, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels(IZZ)V
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getStatusBarNotification()Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
-    .line 8515
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    move-result-object v1
 
-    const/4 v1, 0x0
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->performRemoveNotification(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)V
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->visibilityChanged(Z)V
+    .line 8397
+    return-void
 
-    .line 8517
-    return v2
+    .line 8399
+    :cond_0
+    const-string/jumbo v1, "statusbar"
+
+    goto :goto_0
 .end method

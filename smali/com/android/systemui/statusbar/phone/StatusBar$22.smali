@@ -1,6 +1,9 @@
 .class Lcom/android/systemui/statusbar/phone/StatusBar$22;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "StatusBar.java"
+
+# interfaces
+.implements Lcom/android/systemui/statusbar/policy/DemoModeController$DemoModeCallback;
 
 
 # annotations
@@ -24,78 +27,27 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 5091
+    .line 5094
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$22;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public onDemoModeChanged(Ljava/lang/String;Landroid/os/Bundle;)V
+    .locals 1
+    .param p1, "command"    # Ljava/lang/String;
+    .param p2, "args"    # Landroid/os/Bundle;
 
     .prologue
-    const/4 v4, 0x1
+    .line 5097
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$22;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 5094
-    sget-boolean v1, Lcom/android/systemui/statusbar/phone/StatusBar;->DEBUG:Z
-
-    if-eqz v1, :cond_0
-
-    const-string/jumbo v1, "StatusBar"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "onReceive: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5095
-    :cond_0
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-virtual {v0, p1, p2}, Lcom/android/systemui/statusbar/phone/StatusBar;->dispatchDemoCommand(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 5096
-    .local v0, "action":Ljava/lang/String;
-    const-string/jumbo v1, "fake_artwork"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 5097
-    sget-boolean v1, Lcom/android/systemui/statusbar/phone/StatusBar;->DEBUG_MEDIA_FAKE_ARTWORK:Z
-
-    if-eqz v1, :cond_1
-
-    .line 5098
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$22;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v1, v4, v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateMediaMetaData(ZZ)V
-
-    .line 5093
-    :cond_1
     return-void
 .end method

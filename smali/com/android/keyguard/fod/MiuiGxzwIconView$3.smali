@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     .prologue
-    .line 575
+    .line 589
     iput-object p1, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$3;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .param p2, "i"    # I
 
     .prologue
-    .line 596
+    .line 610
     return-void
 .end method
 
@@ -54,17 +54,17 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 578
+    .line 592
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "PutUp: onSensorChanged"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 580
+    .line 594
     if-eqz p1, :cond_0
 
-    .line 581
+    .line 595
     iget-object v0, p1, Landroid/hardware/SensorEvent;->values:[F
 
     aget v0, v0, v3
@@ -75,24 +75,24 @@
 
     if-nez v0, :cond_1
 
-    .line 583
+    .line 597
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "detect put up"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 585
+    .line 599
     iget-object v0, p0, Lcom/android/keyguard/fod/MiuiGxzwIconView$3;->this$0:Lcom/android/keyguard/fod/MiuiGxzwIconView;
 
     invoke-static {v0}, Lcom/android/keyguard/fod/MiuiGxzwIconView;->-wrap3(Lcom/android/keyguard/fod/MiuiGxzwIconView;)V
 
-    .line 576
+    .line 590
     :cond_0
     :goto_0
     return-void
 
-    .line 586
+    .line 600
     :cond_1
     iget-object v0, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -104,7 +104,7 @@
 
     if-nez v0, :cond_2
 
-    .line 588
+    .line 602
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 
     const-string/jumbo v1, "detect put down"
@@ -113,7 +113,7 @@
 
     goto :goto_0
 
-    .line 591
+    .line 605
     :cond_2
     const-string/jumbo v0, "MiuiGxzwViewIcon"
 

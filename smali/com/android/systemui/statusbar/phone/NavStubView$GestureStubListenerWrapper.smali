@@ -28,19 +28,19 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 1457
+    .line 1470
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1458
+    .line 1471
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->getGestureStubListener()Landroid/view/IGestureStubListener;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->mListener:Landroid/view/IGestureStubListener;
 
-    .line 1457
+    .line 1470
     return-void
 .end method
 
@@ -50,13 +50,13 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1503
+    .line 1516
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->getGestureStubListenerMethod:Ljava/lang/reflect/Method;
 
     if-nez v1, :cond_0
 
-    .line 1504
+    .line 1517
     invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
 
     move-result-object v1
@@ -65,10 +65,10 @@
 
     move-result-object v1
 
-    .line 1505
+    .line 1518
     const-string/jumbo v2, "getGestureStubListener"
 
-    .line 1504
+    .line 1517
     const/4 v3, 0x0
 
     new-array v3, v3, [Ljava/lang/Class;
@@ -79,21 +79,21 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->getGestureStubListenerMethod:Ljava/lang/reflect/Method;
 
-    .line 1507
+    .line 1520
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->getGestureStubListenerMethod:Ljava/lang/reflect/Method;
 
     if-eqz v1, :cond_1
 
-    .line 1508
+    .line 1521
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->getGestureStubListenerMethod:Ljava/lang/reflect/Method;
 
-    .line 1509
+    .line 1522
     invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
 
     move-result-object v2
 
-    .line 1508
+    .line 1521
     const/4 v3, 0x0
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -108,15 +108,15 @@
 
     return-object v1
 
-    .line 1511
+    .line 1524
     :catch_0
     move-exception v0
 
-    .line 1512
+    .line 1525
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1514
+    .line 1527
     .end local v0    # "e":Ljava/lang/Exception;
     :cond_1
     return-object v4
@@ -129,29 +129,29 @@
     .param p1, "immediate"    # Z
 
     .prologue
-    .line 1483
+    .line 1496
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->mListener:Landroid/view/IGestureStubListener;
 
     if-eqz v1, :cond_0
 
-    .line 1484
+    .line 1497
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->mListener:Landroid/view/IGestureStubListener;
 
     invoke-interface {v1, p1}, Landroid/view/IGestureStubListener;->onGestureFinish(Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1481
+    .line 1494
     :cond_0
     :goto_0
     return-void
 
-    .line 1486
+    .line 1499
     :catch_0
     move-exception v0
 
-    .line 1487
+    .line 1500
     .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
@@ -162,29 +162,29 @@
     .locals 2
 
     .prologue
-    .line 1463
+    .line 1476
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->mListener:Landroid/view/IGestureStubListener;
 
     if-eqz v1, :cond_0
 
-    .line 1464
+    .line 1477
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->mListener:Landroid/view/IGestureStubListener;
 
     invoke-interface {v1}, Landroid/view/IGestureStubListener;->onGestureReady()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1461
+    .line 1474
     :cond_0
     :goto_0
     return-void
 
-    .line 1466
+    .line 1479
     :catch_0
     move-exception v0
 
-    .line 1467
+    .line 1480
     .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
@@ -195,29 +195,29 @@
     .locals 2
 
     .prologue
-    .line 1473
+    .line 1486
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->mListener:Landroid/view/IGestureStubListener;
 
     if-eqz v1, :cond_0
 
-    .line 1474
+    .line 1487
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->mListener:Landroid/view/IGestureStubListener;
 
     invoke-interface {v1}, Landroid/view/IGestureStubListener;->onGestureStart()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1471
+    .line 1484
     :cond_0
     :goto_0
     return-void
 
-    .line 1476
+    .line 1489
     :catch_0
     move-exception v0
 
-    .line 1477
+    .line 1490
     .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
@@ -228,29 +228,29 @@
     .locals 2
 
     .prologue
-    .line 1493
+    .line 1506
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->mListener:Landroid/view/IGestureStubListener;
 
     if-eqz v1, :cond_0
 
-    .line 1494
+    .line 1507
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->mListener:Landroid/view/IGestureStubListener;
 
     invoke-interface {v1}, Landroid/view/IGestureStubListener;->skipAppTransition()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1491
+    .line 1504
     :cond_0
     :goto_0
     return-void
 
-    .line 1496
+    .line 1509
     :catch_0
     move-exception v0
 
-    .line 1497
+    .line 1510
     .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 

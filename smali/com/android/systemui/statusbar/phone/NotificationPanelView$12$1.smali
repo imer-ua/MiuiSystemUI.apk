@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;
 
     .prologue
-    .line 3382
+    .line 3421
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12$1;->this$1:Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 3386
+    .line 3425
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12$1;->this$1:Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -52,6 +52,6 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/faceunlock/FaceUnlockManager;->stopFaceUnlock()V
 
-    .line 3385
+    .line 3424
     return-void
 .end method

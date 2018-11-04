@@ -1,11 +1,14 @@
 .class Lcom/android/systemui/statusbar/phone/StatusBar$88;
-.super Landroid/telephony/PhoneStateListener;
+.super Ljava/lang/Object;
 .source "StatusBar.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->onInCallNotificationShow()V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->logNotificationExpansion(Ljava/lang/String;ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,49 +20,66 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
+.field final synthetic val$expanded:Z
+
+.field final synthetic val$key:Ljava/lang/String;
+
+.field final synthetic val$userAction:Z
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Ljava/lang/String;ZZ)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
+    .param p2, "val$key"    # Ljava/lang/String;
+    .param p3, "val$userAction"    # Z
+    .param p4, "val$expanded"    # Z
 
     .prologue
-    .line 9299
+    .line 9261
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$88;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
+    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$88;->val$key:Ljava/lang/String;
+
+    iput-boolean p3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$88;->val$userAction:Z
+
+    iput-boolean p4, p0, Lcom/android/systemui/statusbar/phone/StatusBar$88;->val$expanded:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onCallStateChanged(ILjava/lang/String;)V
-    .locals 1
-    .param p1, "state"    # I
-    .param p2, "incomingNumber"    # Ljava/lang/String;
+.method public run()V
+    .locals 5
 
     .prologue
-    .line 9302
-    const/4 v0, 0x2
+    .line 9264
+    :try_start_0
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$88;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    if-ne p1, v0, :cond_0
+    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
-    .line 9304
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$88;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$88;->val$key:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get14(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
+    iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$88;->val$userAction:Z
 
-    move-result v0
+    iget-boolean v4, p0, Lcom/android/systemui/statusbar/phone/StatusBar$88;->val$expanded:Z
 
-    if-nez v0, :cond_0
+    invoke-interface {v1, v2, v3, v4}, Lcom/android/internal/statusbar/IStatusBarService;->onNotificationExpansionChanged(Ljava/lang/String;ZZ)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 9305
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$88;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->onExitCall()V
-
-    .line 9301
-    :cond_0
+    .line 9262
+    :goto_0
     return-void
+
+    .line 9265
+    :catch_0
+    move-exception v0
+
+    .local v0, "e":Landroid/os/RemoteException;
+    goto :goto_0
 .end method

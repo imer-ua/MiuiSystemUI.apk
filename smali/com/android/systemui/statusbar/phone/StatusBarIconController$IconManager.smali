@@ -39,54 +39,54 @@
     .param p1, "group"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 148
+    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 149
+    .line 162
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mGroup:Landroid/view/ViewGroup;
 
-    .line 150
+    .line 163
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mContext:Landroid/content/Context;
 
-    .line 151
+    .line 164
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 152
+    .line 165
     const v2, 0x1050022
 
-    .line 151
+    .line 164
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mIconSize:I
 
-    .line 154
+    .line 167
     new-instance v0, Lcom/android/systemui/util/DisableStateTracker;
 
-    .line 155
+    .line 168
     const/4 v1, 0x0
 
     const/4 v2, 0x2
 
-    .line 154
+    .line 167
     invoke-direct {v0, v1, v2}, Lcom/android/systemui/util/DisableStateTracker;-><init>(II)V
 
-    .line 156
+    .line 169
     .local v0, "tracker":Lcom/android/systemui/util/DisableStateTracker;
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 157
+    .line 170
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->isAttachedToWindow()Z
@@ -95,12 +95,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 159
+    .line 172
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/util/DisableStateTracker;->onViewAttachedToWindow(Landroid/view/View;)V
 
-    .line 148
+    .line 161
     :cond_0
     return-void
 .end method
@@ -115,7 +115,7 @@
     .param p4, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 170
+    .line 183
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mWhiteList:Landroid/util/ArraySet;
 
     if-eqz v1, :cond_0
@@ -130,18 +130,18 @@
 
     const/4 p3, 0x0
 
-    .line 171
+    .line 184
     :cond_0
     :goto_0
     invoke-virtual {p0, p2, p3}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->onCreateStatusBarIconView(Ljava/lang/String;Z)Lcom/android/systemui/statusbar/StatusBarIconView;
 
     move-result-object v0
 
-    .line 172
+    .line 185
     .local v0, "view":Lcom/android/systemui/statusbar/StatusBarIconView;
     invoke-virtual {v0, p4}, Lcom/android/systemui/statusbar/StatusBarIconView;->set(Lcom/android/internal/statusbar/StatusBarIcon;)Z
 
-    .line 173
+    .line 186
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->onCreateLayoutParams()Landroid/widget/LinearLayout$LayoutParams;
@@ -150,10 +150,10 @@
 
     invoke-virtual {v1, v0, p1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 174
+    .line 187
     return-object v0
 
-    .line 170
+    .line 183
     .end local v0    # "view":Lcom/android/systemui/statusbar/StatusBarIconView;
     :cond_1
     const/4 p3, 0x1
@@ -165,12 +165,12 @@
     .locals 1
 
     .prologue
-    .line 187
+    .line 200
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 186
+    .line 199
     return-void
 .end method
 
@@ -179,7 +179,7 @@
     .param p1, "slot"    # Ljava/lang/String;
 
     .prologue
-    .line 225
+    .line 238
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -192,7 +192,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 226
+    .line 239
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -201,7 +201,7 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    .line 227
+    .line 240
     .local v0, "child":Lcom/android/systemui/statusbar/StatusBarIconView;
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/StatusBarIconView;->getSlot()Ljava/lang/String;
 
@@ -213,18 +213,18 @@
 
     if-eqz v2, :cond_0
 
-    .line 228
+    .line 241
     const/4 v2, 0x1
 
     return v2
 
-    .line 225
+    .line 238
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 231
+    .line 244
     .end local v0    # "child":Lcom/android/systemui/statusbar/StatusBarIconView;
     :cond_1
     const/4 v2, 0x0
@@ -236,7 +236,7 @@
     .locals 3
 
     .prologue
-    .line 183
+    .line 196
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     iget v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mIconSize:I
@@ -256,7 +256,7 @@
     .end annotation
 
     .prologue
-    .line 179
+    .line 192
     new-instance v0, Lcom/android/systemui/statusbar/StatusBarIconView;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mContext:Landroid/content/Context;
@@ -276,10 +276,10 @@
     .param p4, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 165
+    .line 178
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->addIcon(ILjava/lang/String;ZLcom/android/internal/statusbar/StatusBarIcon;)Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    .line 164
+    .line 177
     return-void
 .end method
 
@@ -288,12 +288,12 @@
     .param p1, "viewIndex"    # I
 
     .prologue
-    .line 216
+    .line 229
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeViewAt(I)V
 
-    .line 215
+    .line 228
     return-void
 .end method
 
@@ -303,7 +303,7 @@
     .param p2, "icon"    # Lcom/android/internal/statusbar/StatusBarIcon;
 
     .prologue
-    .line 220
+    .line 233
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;->mGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v1, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -312,10 +312,10 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    .line 221
+    .line 234
     .local v0, "view":Lcom/android/systemui/statusbar/StatusBarIconView;
     invoke-virtual {v0, p2}, Lcom/android/systemui/statusbar/StatusBarIconView;->set(Lcom/android/internal/statusbar/StatusBarIcon;)Z
 
-    .line 219
+    .line 232
     return-void
 .end method

@@ -1,11 +1,14 @@
 .class Lcom/android/systemui/statusbar/phone/StatusBar$58;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "StatusBar.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->setAreThereNotifications()V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationShade()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,40 +20,32 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-.field final synthetic val$nlo:Landroid/view/View;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/view/View;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
-    .param p2, "val$nlo"    # Landroid/view/View;
 
     .prologue
-    .line 3257
+    .line 2762
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$58;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$58;->val$nlo:Landroid/view/View;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-    .param p1, "_a"    # Landroid/animation/Animator;
+.method public run()V
+    .locals 1
 
     .prologue
-    .line 3260
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$58;->val$nlo:Landroid/view/View;
+    .line 2765
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$58;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    const/16 v1, 0x8
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap38(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 3259
+    .line 2764
     return-void
 .end method

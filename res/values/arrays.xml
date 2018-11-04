@@ -1082,17 +1082,11 @@
         <item>BG</item>
         <item>DE</item>
         <item>EL</item>
-        <item>ES</item>
-        <item>IT</item>
         <item>KO</item>
         <item>PL</item>
         <item>RU</item>
-        <item>SK</item>
         <item>TR</item>
         <item>UK</item>
-        <item>VI</item>
-        <item>HK</item>
-        <item>TW</item>
     </string-array>
     <string-array name="region_global_support_face_sensetime">
         <item>EN</item>
@@ -1100,17 +1094,11 @@
         <item>BG</item>
         <item>DE</item>
         <item>EL</item>
-        <item>ES</item>
-        <item>IT</item>
         <item>KO</item>
         <item>PL</item>
         <item>RU</item>
-        <item>SK</item>
         <item>TR</item>
         <item>UK</item>
-        <item>VI</item>
-        <item>HK</item>
-        <item>TW</item>
     </string-array>
     <string-array name="device_support_face">
         <item>jason</item>
@@ -1172,6 +1160,7 @@
         <item>vince</item>
         <item>wayne</item>
         <item>whyred</item>
+        <item>jasmine_sprout</item>
     </string-array>
     <string-array name="device_global_support_face_sensetime">
         <item>dipper</item>

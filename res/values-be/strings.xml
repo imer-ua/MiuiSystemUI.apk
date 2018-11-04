@@ -1128,8 +1128,8 @@ U0009 • Выкарыстоўваеце свой тэлефон пры высо
     <string name="wireless_charge_current">Зарадка</string>
     <string name="structure_face_data_input_timeout_title">Паўтарыце спробу</string>
     <string name="structure_face_data_input_timeout_msg">Не атрымалася выканаць запіс. Паспрабуйце яшчэ раз.</string>
-    <string name="structure_face_hardware_abnormal_title">Памылка лазера</string>
-    <string name="structure_face_hardware_abnormal_msg">Немагчыма запісаць дадзеныя твару з-за памылкі лазера. Звярніцеся ў службу падтрымкі кліентаў, каб атрымаць даведку.</string>
+    <string name="structure_face_hardware_abnormal_title">Памылка абсталявання</string>
+    <string name="structure_face_hardware_abnormal_msg">Памылка абсталявання. Перазагрузіце прыладу. Калі гэта не дапаможа, набярыце 400-100-5678 для атрымання даведкі.</string>
     <string name="structure_face_hardware_abnormal_btn">Зразумела</string>
     <string name="structure_face_modules_abnormal_title">Памылка аптычнага модуля</string>
     <string name="structure_face_modules_abnormal_msg">Немагчыма запісаць дадзеныя твару з-за памылкі аптычнага модуля. Перазагрузіце прыладу і паспрабуйце ізноў.</string>
@@ -1779,4 +1779,7 @@ EEEE"</string>
     <string name="wifi_disabled_by_recommendation_provider">Не падлучаны з-за нізкай якасці сеткі</string>
     <string name="wifi_no_internet_no_reconnect">Не ўдаецца падключыцца да Інтэрнэту.</string>
     <string name="lockscreen_storage_locked">Разблакаваць для ўсіх функцый і дадзеных</string>
+    <string name="enable_atrace">Уключыць ATrace</string>
+    <string name="enable_atrace_summary">Захоп падзей ядра з выкарыстаннем ATrace</string>
+    <string name="structure_face_unlock_tof_covered">Немагчыма дадаць дадзеныя твару. Адсуньцеся далей ад экрана.</string>
 </resources>

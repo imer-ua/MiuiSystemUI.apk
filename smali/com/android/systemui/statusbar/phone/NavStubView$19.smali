@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 2029
+    .line 2038
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$19;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 2032
+    .line 2041
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$19;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get44(Lcom/android/systemui/statusbar/phone/NavStubView;)I
@@ -70,12 +70,12 @@
 
     float-to-int v0, v1
 
-    .line 2033
+    .line 2042
     .local v0, "stubSize":I
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$19;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->-wrap5(Lcom/android/systemui/statusbar/phone/NavStubView;I)V
 
-    .line 2031
+    .line 2040
     return-void
 .end method

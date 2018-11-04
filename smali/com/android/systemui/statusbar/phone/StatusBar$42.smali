@@ -3,12 +3,12 @@
 .source "StatusBar.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/hardware/display/DisplayManager$DisplayListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/StatusBar;->runInBackground()V
+    value = Lcom/android/systemui/statusbar/phone/StatusBar;->start()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1433
+    .line 1219
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$42;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,17 +37,72 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 1
+.method public onDisplayAdded(I)V
+    .locals 0
+    .param p1, "displayId"    # I
 
     .prologue
-    .line 1436
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$42;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+    .line 1236
+    return-void
+.end method
 
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+.method public onDisplayChanged(I)V
+    .locals 3
+    .param p1, "displayId"    # I
 
-    invoke-static {v0}, Lcom/android/systemui/miui/statusbar/notification/PushEvents;->restoreLocalModel(Landroid/content/Context;)V
+    .prologue
+    .line 1227
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$42;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 1435
+    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mDisplay:Landroid/view/Display;
+
+    invoke-virtual {v1}, Landroid/view/Display;->getRotation()I
+
+    move-result v0
+
+    .line 1228
+    .local v0, "rotation":I
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$42;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get24(Lcom/android/systemui/statusbar/phone/StatusBar;)I
+
+    move-result v1
+
+    if-eq v1, v0, :cond_0
+
+    .line 1229
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$42;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set14(Lcom/android/systemui/statusbar/phone/StatusBar;I)I
+
+    .line 1230
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$42;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mDisplay:Landroid/view/Display;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$42;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get15(Lcom/android/systemui/statusbar/phone/StatusBar;)Landroid/view/DisplayInfo;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/view/Display;->getDisplayInfo(Landroid/view/DisplayInfo;)Z
+
+    .line 1231
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$42;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusBarPading()V
+
+    .line 1226
+    :cond_0
+    return-void
+.end method
+
+.method public onDisplayRemoved(I)V
+    .locals 0
+    .param p1, "displayId"    # I
+
+    .prologue
+    .line 1222
     return-void
 .end method

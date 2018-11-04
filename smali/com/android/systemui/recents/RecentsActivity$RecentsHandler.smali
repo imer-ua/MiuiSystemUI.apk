@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 260
+    .line 261
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$RecentsHandler;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,19 +39,19 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 263
+    .line 264
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 264
+    .line 265
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 262
+    .line 263
     :goto_0
     return-void
 
-    .line 266
+    .line 267
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$RecentsHandler;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -59,7 +59,7 @@
 
     goto :goto_0
 
-    .line 264
+    .line 265
     nop
 
     :pswitch_data_0

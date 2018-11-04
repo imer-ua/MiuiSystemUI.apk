@@ -324,7 +324,7 @@
 
     const-string v8, "vol_sounds"
 
-    invoke-static {v7, v8}, Landroid/preference/MiuiCoreSettingsPreference;->getKeyParam(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v8, v7}, Landroid/preference/MiuiCoreSettingsPreference;->gKP(Ljava/lang/String;Landroid/content/Context;)I
 
     move-result v8
 

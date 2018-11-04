@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/BaseRecentsImpl;
 
     .prologue
-    .line 588
+    .line 593
     iput-object p1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$4;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-direct {p0}, Landroid/app/IMiuiActivityObserver$Stub;-><init>()V
@@ -44,7 +44,7 @@
     .end annotation
 
     .prologue
-    .line 613
+    .line 618
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 591
+    .line 596
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .end annotation
 
     .prologue
-    .line 605
+    .line 610
     return-void
 .end method
 
@@ -86,7 +86,7 @@
     .end annotation
 
     .prologue
-    .line 597
+    .line 602
     iget-object v1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$4;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     iget-object v1, v1, Lcom/android/systemui/recents/BaseRecentsImpl;->mKM:Landroid/app/KeyguardManager;
@@ -107,11 +107,11 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 598
+    .line 603
     :cond_0
     return-void
 
-    .line 600
+    .line 605
     :cond_1
     invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
@@ -121,13 +121,13 @@
 
     move-result-object v0
 
-    .line 601
+    .line 606
     .local v0, "className":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/systemui/recents/BaseRecentsImpl$4;->this$0:Lcom/android/systemui/recents/BaseRecentsImpl;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/recents/BaseRecentsImpl;->onResumed(Ljava/lang/String;)V
 
-    .line 596
+    .line 601
     return-void
 .end method
 
@@ -141,7 +141,7 @@
     .end annotation
 
     .prologue
-    .line 609
+    .line 614
     return-void
 .end method
 
@@ -149,6 +149,6 @@
     .locals 0
 
     .prologue
-    .line 618
+    .line 623
     return-object p0
 .end method
