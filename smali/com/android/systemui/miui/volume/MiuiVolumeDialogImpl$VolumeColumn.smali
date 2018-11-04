@@ -365,20 +365,20 @@
     .locals 1
 
     .prologue
-    .line 1308
+    .line 1313
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1316
+    .line 1321
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->requestedLevel:I
 
-    .line 1328
+    .line 1333
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->lastAudibleLevel:I
 
-    .line 1308
+    .line 1313
     return-void
 .end method
 

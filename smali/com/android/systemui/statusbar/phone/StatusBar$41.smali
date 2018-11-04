@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1207
+    .line 1209
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$41;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 1224
+    .line 1226
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 1215
+    .line 1217
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$41;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mDisplay:Landroid/view/Display;
@@ -60,7 +60,7 @@
 
     move-result v0
 
-    .line 1216
+    .line 1218
     .local v0, "rotation":I
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$41;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -70,12 +70,12 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 1217
+    .line 1219
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$41;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set13(Lcom/android/systemui/statusbar/phone/StatusBar;I)I
 
-    .line 1218
+    .line 1220
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$41;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mDisplay:Landroid/view/Display;
@@ -88,12 +88,12 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Display;->getDisplayInfo(Landroid/view/DisplayInfo;)Z
 
-    .line 1219
+    .line 1221
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$41;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusBarPading()V
 
-    .line 1214
+    .line 1216
     :cond_0
     return-void
 .end method
@@ -103,6 +103,6 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 1210
+    .line 1212
     return-void
 .end method

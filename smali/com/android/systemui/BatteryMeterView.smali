@@ -907,7 +907,7 @@
     if-eqz v5, :cond_0
 
     .line 149
-    const v5, 0x90f03f6
+    const v5, 0x90f03f7
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -915,7 +915,7 @@
 
     .line 150
     .local v2, "paddingStart":I
-    const v5, 0x90f03f7
+    const v5, 0x90f03f8
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -923,7 +923,7 @@
 
     .line 151
     .local v1, "paddingEnd":I
-    const v5, 0x90f03f8
+    const v5, 0x90f03f9
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -931,7 +931,7 @@
 
     .line 152
     .local v3, "paddingTop":I
-    const v5, 0x90f03f9
+    const v5, 0x90f03fa
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1554,50 +1554,59 @@
 .end method
 
 .method public onBatteryStyleChanged(I)V
-    .locals 4
+    .locals 5
     .param p1, "batteryStyle"    # I
 
     .prologue
-    const/16 v3, 0x8
+    const/16 v4, 0x8
 
-    const/4 v0, 0x1
+    const/4 v3, 0x2
 
-    const/4 v1, 0x0
+    const/4 v2, 0x1
 
-    iget v2, p0, Lcom/android/systemui/BatteryMeterView;->mForceBatteryStyle:I
+    const/4 v0, 0x0
 
-    if-eqz v2, :cond_0
+    iput-boolean v0, p0, Lcom/android/systemui/BatteryMeterView;->mForceShowDigit:Z
 
-    iget v2, p0, Lcom/android/systemui/BatteryMeterView;->mForceBatteryStyle:I
+    iget-boolean v1, p0, Lcom/android/systemui/BatteryMeterView;->mNotchEar:Z
 
-    if-ne v2, v0, :cond_1
+    if-eqz v1, :cond_0
+
+    if-ne p1, v3, :cond_5
+
+    const/4 p1, 0x0
 
     :cond_0
+    :goto_0
+    iget v1, p0, Lcom/android/systemui/BatteryMeterView;->mForceBatteryStyle:I
+
+    if-ne v1, v2, :cond_1
+
     iget p1, p0, Lcom/android/systemui/BatteryMeterView;->mForceBatteryStyle:I
 
     :cond_1
     iput p1, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryStyle:I
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    if-eq p1, v2, :cond_2
+    if-eq p1, v3, :cond_2
 
-    const/4 v2, 0x3
+    const/4 v3, 0x3
 
-    if-eq p1, v2, :cond_9
+    if-eq p1, v3, :cond_a
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    if-ne p1, v2, :cond_5
+    if-ne p1, v3, :cond_6
 
     :cond_2
-    iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryIconView:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryDigitalView:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryIconView:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryDigitalView:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryPercentView:Landroid/widget/TextView;
@@ -1606,56 +1615,72 @@
 
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryPercentView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
     :cond_4
-    :goto_0
+    :goto_1
+    invoke-direct {p0}, Lcom/android/systemui/BatteryMeterView;->getIconId()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/systemui/BatteryMeterView;->mIconId:I
+
     invoke-direct {p0}, Lcom/android/systemui/BatteryMeterView;->updateBatteryChargingIcon()V
+
+    invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->update()V
 
     return-void
 
     :cond_5
-    iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryIconView:Landroid/widget/ImageView;
+    if-ne p1, v2, :cond_0
 
-    if-eqz v2, :cond_6
-
-    iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryIconView:Landroid/widget/ImageView;
-
-    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    :cond_6
-    :goto_1
-    iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryPercentView:Landroid/widget/TextView;
-
-    if-eqz v2, :cond_7
-
-    iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryPercentView:Landroid/widget/TextView;
-
-    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_7
-    if-ne p1, v0, :cond_8
-
-    :goto_2
-    invoke-virtual {p0, v0}, Lcom/android/systemui/BatteryMeterView;->setForceShowPercent(Z)V
+    iput-boolean v2, p0, Lcom/android/systemui/BatteryMeterView;->mForceShowDigit:Z
 
     goto :goto_0
 
-    :cond_8
-    move v0, v1
+    :cond_6
+    iget-object v1, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryDigitalView:Landroid/widget/FrameLayout;
 
-    goto :goto_2
+    if-eqz v1, :cond_7
+
+    iget-object v1, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryDigitalView:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    :cond_7
+    :goto_2
+    iget-object v1, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryPercentView:Landroid/widget/TextView;
+
+    if-eqz v1, :cond_8
+
+    iget-object v1, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryPercentView:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setVisibility(I)V
+
+    :cond_8
+    if-ne p1, v2, :cond_9
+
+    iget-boolean v0, p0, Lcom/android/systemui/BatteryMeterView;->mNotchEar:Z
+
+    xor-int/lit8 v0, v0, 0x1
 
     :cond_9
-    iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryIconView:Landroid/widget/ImageView;
+    invoke-virtual {p0, v0}, Lcom/android/systemui/BatteryMeterView;->setForceShowPercent(Z)V
 
-    if-eqz v2, :cond_6
-
-    iget-object v2, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryIconView:Landroid/widget/ImageView;
-
-    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->setDigitViewTextColor()V
 
     goto :goto_1
+
+    :cond_a
+    iget-object v1, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryDigitalView:Landroid/widget/FrameLayout;
+
+    if-eqz v1, :cond_7
+
+    iget-object v1, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryDigitalView:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    goto :goto_2
 .end method
 
 .method public onConfigChanged(Landroid/content/res/Configuration;)V

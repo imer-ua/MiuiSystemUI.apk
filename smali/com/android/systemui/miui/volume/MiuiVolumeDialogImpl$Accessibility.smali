@@ -53,19 +53,19 @@
     .param p1, "this$0"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     .prologue
-    .line 1247
+    .line 1252
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
 
-    .line 1250
+    .line 1255
     new-instance v0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility$1;-><init>(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;)V
 
     iput-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->mAttachListener:Landroid/view/View$OnAttachStateChangeListener;
 
-    .line 1247
+    .line 1252
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1293
+    .line 1298
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get2(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Landroid/view/accessibility/AccessibilityManager;
@@ -98,7 +98,7 @@
 
     move-result-object v2
 
-    .line 1294
+    .line 1299
     .local v2, "services":Ljava/util/List;, "Ljava/util/List<Landroid/accessibilityservice/AccessibilityServiceInfo;>;"
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -118,7 +118,7 @@
 
     check-cast v0, Landroid/accessibilityservice/AccessibilityServiceInfo;
 
-    .line 1295
+    .line 1300
     .local v0, "asi":Landroid/accessibilityservice/AccessibilityServiceInfo;
     iget v3, v0, Landroid/accessibilityservice/AccessibilityServiceInfo;->feedbackType:I
 
@@ -130,12 +130,12 @@
 
     if-eq v3, v4, :cond_0
 
-    .line 1296
+    .line 1301
     const/4 v3, 0x1
 
     return v3
 
-    .line 1299
+    .line 1304
     .end local v0    # "asi":Landroid/accessibilityservice/AccessibilityServiceInfo;
     :cond_1
     return v5
@@ -145,14 +145,14 @@
     .locals 1
 
     .prologue
-    .line 1287
+    .line 1292
     invoke-direct {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->computeFeedbackEnabled()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->mFeedbackEnabled:Z
 
-    .line 1286
+    .line 1291
     return-void
 .end method
 
@@ -162,7 +162,7 @@
     .locals 2
 
     .prologue
-    .line 1274
+    .line 1279
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get8(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;
@@ -173,7 +173,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 1275
+    .line 1280
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get8(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;
@@ -184,7 +184,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
 
-    .line 1276
+    .line 1281
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get2(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Landroid/view/accessibility/AccessibilityManager;
@@ -193,7 +193,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/accessibility/AccessibilityManager;->removeAccessibilityStateChangeListener(Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;)Z
 
-    .line 1273
+    .line 1278
     return-void
 .end method
 
@@ -201,7 +201,7 @@
     .locals 2
 
     .prologue
-    .line 1264
+    .line 1269
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get8(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;
@@ -212,7 +212,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 1265
+    .line 1270
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get8(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;
@@ -221,7 +221,7 @@
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
 
-    .line 1266
+    .line 1271
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get2(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Landroid/view/accessibility/AccessibilityManager;
@@ -230,10 +230,10 @@
 
     invoke-virtual {v0, p0}, Landroid/view/accessibility/AccessibilityManager;->addAccessibilityStateChangeListener(Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;)Z
 
-    .line 1267
+    .line 1272
     invoke-direct {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->updateFeedbackEnabled()V
 
-    .line 1270
+    .line 1275
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
@@ -248,7 +248,7 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-set7(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;Z)Z
 
-    .line 1263
+    .line 1268
     return-void
 .end method
 
@@ -257,10 +257,10 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1304
+    .line 1309
     invoke-direct {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->updateFeedbackEnabled()V
 
-    .line 1303
+    .line 1308
     return-void
 .end method
 
@@ -271,12 +271,12 @@
     .param p3, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 1282
+    .line 1287
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-virtual {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->rescheduleTimeoutH()V
 
-    .line 1283
+    .line 1288
     invoke-super {p0, p1, p2, p3}, Landroid/view/View$AccessibilityDelegate;->onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v0

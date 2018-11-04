@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final usage_graph_dots:I = 0x90c0191
+.field public static final usage_graph_dots:I = 0x90c0193
 
 
 # direct methods

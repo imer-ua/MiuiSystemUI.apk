@@ -757,7 +757,7 @@
     if-nez v1, :cond_2
 
     .line 431
-    const v1, 0x912028b
+    const v1, 0x9120291
 
     .line 430
     invoke-static {p0, v1}, Lcom/android/systemui/recents/misc/Utilities;->findViewStubById(Landroid/view/View;I)Landroid/view/ViewStub;
@@ -1119,7 +1119,7 @@
     iput-object v1, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mTitleView:Landroid/widget/TextView;
 
     .line 236
-    const v1, 0x9120289
+    const v1, 0x912028f
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/views/TaskViewHeader;->findViewById(I)Landroid/view/View;
 

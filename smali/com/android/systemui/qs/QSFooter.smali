@@ -691,7 +691,7 @@
     .line 325
     iget-object v1, p0, Lcom/android/systemui/qs/QSFooter;->mSettingsContainer:Landroid/view/View;
 
-    const v4, 0x9120246
+    const v4, 0x912024c
 
     invoke-virtual {v1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -780,7 +780,7 @@
 
     .prologue
     .line 310
-    const v0, 0x9120247
+    const v0, 0x912024d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSFooter;->findViewById(I)Landroid/view/View;
 
@@ -1032,7 +1032,7 @@
 
     .line 131
     :cond_0
-    const v1, 0x9120241
+    const v1, 0x9120247
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSFooter;->findViewById(I)Landroid/view/View;
 
@@ -1050,7 +1050,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSFooter;->mDate:Landroid/view/View;
 
     .line 134
-    const v1, 0x9120247
+    const v1, 0x912024d
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSFooter;->findViewById(I)Landroid/view/View;
 
@@ -1077,7 +1077,7 @@
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/ExpandableIndicator;->setVisibility(I)V
 
     .line 139
-    const v1, 0x9120245
+    const v1, 0x912024b
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSFooter;->findViewById(I)Landroid/view/View;
 
@@ -1088,7 +1088,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSFooter;->mSettingsButton:Lcom/android/systemui/statusbar/phone/SettingsButton;
 
     .line 140
-    const v1, 0x9120244
+    const v1, 0x912024a
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSFooter;->findViewById(I)Landroid/view/View;
 
@@ -1102,7 +1102,7 @@
     invoke-virtual {v1, p0}, Lcom/android/systemui/statusbar/phone/SettingsButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 143
-    const v1, 0x91202cd
+    const v1, 0x91202d3
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSFooter;->findViewById(I)Landroid/view/View;
 
@@ -1127,7 +1127,7 @@
     invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 147
-    const v1, 0x9120242
+    const v1, 0x9120248
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSFooter;->findViewById(I)Landroid/view/View;
 
@@ -1140,7 +1140,7 @@
     .line 148
     iget-object v1, p0, Lcom/android/systemui/qs/QSFooter;->mMultiUserSwitch:Lcom/android/systemui/statusbar/phone/MultiUserSwitch;
 
-    const v2, 0x9120243
+    const v2, 0x9120249
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/MultiUserSwitch;->findViewById(I)Landroid/view/View;
 

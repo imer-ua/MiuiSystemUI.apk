@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
 
     .prologue
-    .line 285
+    .line 296
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$1;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 288
+    .line 299
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$1;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->-get1(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)Landroid/view/View;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 290
+    .line 301
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$1;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->-get1(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)Landroid/view/View;
@@ -75,7 +75,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 291
+    .line 302
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$1;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->-get1(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)Landroid/view/View;
@@ -84,11 +84,11 @@
 
     invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    .line 292
+    .line 303
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$1;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
 
-    invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->-wrap3(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)V
+    invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->-wrap4(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)V
 
-    .line 287
+    .line 298
     return-void
 .end method

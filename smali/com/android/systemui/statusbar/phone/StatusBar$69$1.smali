@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/statusbar/phone/StatusBar$69;
 
     .prologue
-    .line 5757
+    .line 5771
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$69$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$69;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,13 @@
     .locals 1
 
     .prologue
-    .line 5760
+    .line 5774
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$69$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$69;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar$69;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap18(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    .line 5759
+    .line 5773
     return-void
 .end method

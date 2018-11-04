@@ -30,7 +30,7 @@
     .param p2, "val$finished"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 5792
+    .line 5806
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$70;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$70;->val$finished:Ljava/lang/Runnable;
@@ -46,24 +46,24 @@
     .locals 2
 
     .prologue
-    .line 5795
+    .line 5809
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$70;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set5(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
-    .line 5796
+    .line 5810
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$70;->val$finished:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 5797
+    .line 5811
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$70;->val$finished:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 5794
+    .line 5808
     :cond_0
     return-void
 .end method

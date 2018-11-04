@@ -297,7 +297,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 71
-    const v0, 0x9120316
+    const v0, 0x912031c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
 
@@ -308,7 +308,7 @@
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mIcon:Landroid/widget/ImageView;
 
     .line 72
-    const v0, 0x9120317
+    const v0, 0x912031d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
 
@@ -319,7 +319,7 @@
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSummaryLine1:Landroid/widget/TextView;
 
     .line 73
-    const v0, 0x9120318
+    const v0, 0x912031e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
 
@@ -330,7 +330,7 @@
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mSummaryLine2:Landroid/widget/TextView;
 
     .line 74
-    const v0, 0x9120319
+    const v0, 0x912031f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
 
@@ -341,7 +341,7 @@
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mEndNowButton:Landroid/widget/TextView;
 
     .line 75
-    const v0, 0x9120313
+    const v0, 0x9120319
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
 
@@ -350,7 +350,7 @@
     iput-object v0, p0, Lcom/android/systemui/volume/ZenFooter;->mZenIntroduction:Landroid/view/View;
 
     .line 76
-    const v0, 0x9120315
+    const v0, 0x912031b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/volume/ConfigurableTexts;->add(Landroid/widget/TextView;I)I
 
     .line 78
-    const v0, 0x9120314
+    const v0, 0x912031a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenFooter;->findViewById(I)Landroid/view/View;
 

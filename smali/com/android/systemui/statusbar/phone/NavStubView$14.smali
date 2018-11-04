@@ -1,9 +1,6 @@
 .class Lcom/android/systemui/statusbar/phone/NavStubView$14;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "NavStubView.java"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
@@ -27,36 +24,55 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 1803
+    .line 1775
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$14;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 3
+    .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1806
+    .line 1779
+    :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$14;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get17(Lcom/android/systemui/statusbar/phone/NavStubView;)Lcom/android/systemui/fsgesture/IFsGestureCallback;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/lang/Float;
+    invoke-interface {v1}, Lcom/android/systemui/fsgesture/IFsGestureCallback;->notifyMiuiAnimationEnd()V
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    .line 1780
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$14;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
-    move-result v0
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get15(Lcom/android/systemui/statusbar/phone/NavStubView;)Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;
 
-    invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set1(Lcom/android/systemui/statusbar/phone/NavStubView;F)F
+    move-result-object v1
 
-    .line 1805
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->onGestureFinish(Z)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 1777
+    :goto_0
     return-void
+
+    .line 1781
+    :catch_0
+    move-exception v0
+
+    .line 1782
+    .local v0, "e":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
 .end method

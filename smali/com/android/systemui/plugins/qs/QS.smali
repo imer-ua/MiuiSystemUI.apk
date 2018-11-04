@@ -62,9 +62,6 @@
 .method public abstract isQSFullyCollapsed()Z
 .end method
 
-.method public abstract setBrightnessHeight(I)V
-.end method
-
 .method public abstract setBrightnessListening(Z)V
 .end method
 

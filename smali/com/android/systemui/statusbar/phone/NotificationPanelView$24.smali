@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 1618
+    .line 1609
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$24;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1621
+    .line 1612
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$24;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get0(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Ljava/lang/Runnable;
@@ -48,6 +48,6 @@
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 1620
+    .line 1611
     return-void
 .end method

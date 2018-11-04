@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 530
+    .line 534
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$3;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,11 +40,11 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 533
+    .line 537
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$3;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->-wrap0(Lcom/android/systemui/statusbar/phone/NavigationBarView;)V
 
-    .line 532
+    .line 536
     return-void
 .end method

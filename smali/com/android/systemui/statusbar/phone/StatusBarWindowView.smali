@@ -1385,7 +1385,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 184
-    const v0, 0x91202d5
+    const v0, 0x91202db
 
     .line 183
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
@@ -1397,7 +1397,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mStackScrollLayout:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .line 185
-    const v0, 0x91202ce
+    const v0, 0x91202d4
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 

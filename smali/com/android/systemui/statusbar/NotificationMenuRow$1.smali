@@ -36,7 +36,7 @@
     .param p4, "val$notiThreshold"    # F
 
     .prologue
-    .line 547
+    .line 550
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     iput p2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->val$transX:F
@@ -61,14 +61,14 @@
 
     const/4 v2, 0x0
 
-    .line 550
+    .line 553
     iget v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->val$transX:F
 
     invoke-static {v3}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
-    .line 552
+    .line 555
     .local v0, "absTrans":F
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->val$fromLeft:Z
 
@@ -82,7 +82,7 @@
 
     if-gtz v3, :cond_2
 
-    .line 554
+    .line 557
     .local v1, "pastMenu":Z
     :cond_0
     :goto_0
@@ -96,12 +96,12 @@
 
     if-eqz v2, :cond_4
 
-    .line 549
+    .line 552
     :cond_1
     :goto_1
     return-void
 
-    .line 553
+    .line 556
     .end local v1    # "pastMenu":Z
     :cond_2
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->val$fromLeft:Z
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 555
+    .line 558
     .restart local v1    # "pastMenu":Z
     :cond_4
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;

@@ -1424,6 +1424,9 @@ EEEE aa"</string>
     <string name="status_bar_safepay_safe">གཏོང་སྤྲོད་ཁོར་ཡུག་བདེ་འཇགས་ཡིན། བདེ་འཇཊ་ལྟེ་གནས་ཀྱིས་སྐུ་ཉིད་ལ་བདེ་སྲུང་བྱེད་བཞིན་ཡོད།</string>
     <string name="status_bar_safepay_risk">མ་དངུལ་ཉེན་ཁ་ལྡན་པ་དཔྱད་འཇལ་ཐུབ་བྱུང་། གཏོང་སྤྲོད་མཚམས་འཇོག་རོགས།</string>
     <string name="status_bar_safepay_unknown">དཔྱད་འཇལ་བྱེད་མ་ཐུབ། བདེ་འཇགས་གནས་ཚུལ་ངོས་མ་ཟིན། དྲ་སྦྲེལ་རྗེས་ཡང་བསྐྱར་ཚོད་ལྟ་གནང་རོགས།</string>
+    <string name="notch_sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_title">SOS求助模式中</string>
+    <string name="sos_status_bar_summary">点击退出</string>
     <string name="wifi_fail_to_scan">དྲ་རྒྱར་བཤེར་འབེབས་བྱེད་མི་ཐུབ།</string>
     <string name="wifi_security_none">"མི་འདུག "</string>
     <string name="wifi_security_short_WAPI_PSK">WAPI PSK</string>

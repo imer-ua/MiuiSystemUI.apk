@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 2016
+    .line 2019
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     .locals 5
 
     .prologue
-    .line 2019
+    .line 2022
     new-instance v1, Landroid/content/Intent;
 
     const-string/jumbo v2, "android.intent.action.MAIN"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2020
+    .line 2023
     .local v1, "intent":Landroid/content/Intent;
     const-string/jumbo v2, ":android:show_fragment"
 
@@ -56,24 +56,24 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2021
+    .line 2024
     const-string/jumbo v2, "com.android.settings"
 
     const-string/jumbo v3, "com.android.settings.SubSettings"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2022
+    .line 2025
     const v2, 0x8000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2023
+    .line 2026
     const/high16 v2, 0x10000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2025
+    .line 2028
     :try_start_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -85,7 +85,7 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2029
+    .line 2032
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$49;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -95,14 +95,14 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels(IZ)V
 
-    .line 2018
+    .line 2021
     return-void
 
-    .line 2026
+    .line 2029
     :catch_0
     move-exception v0
 
-    .line 2027
+    .line 2030
     .local v0, "e":Landroid/content/ActivityNotFoundException;
     const-string/jumbo v2, "StatusBar"
 

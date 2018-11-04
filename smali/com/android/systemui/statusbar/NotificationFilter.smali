@@ -58,7 +58,7 @@
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
     .line 29
-    const v6, 0x912021a
+    const v6, 0x9120220
 
     invoke-virtual {p0, v6}, Lcom/android/systemui/statusbar/NotificationFilter;->findViewById(I)Landroid/view/View;
 
@@ -69,7 +69,7 @@
     invoke-virtual {v6, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 31
-    const v6, 0x9120219
+    const v6, 0x912021f
 
     invoke-virtual {p0, v6}, Lcom/android/systemui/statusbar/NotificationFilter;->findViewById(I)Landroid/view/View;
 
@@ -109,7 +109,7 @@
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 35
-    const v6, 0x9120218
+    const v6, 0x912021e
 
     invoke-virtual {p0, v6}, Lcom/android/systemui/statusbar/NotificationFilter;->findViewById(I)Landroid/view/View;
 
@@ -126,7 +126,7 @@
     invoke-static {v6, p1, v2}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->applyAppIcon(Landroid/content/Context;Lcom/android/systemui/miui/statusbar/ExpandedNotification;Landroid/widget/ImageView;)V
 
     .line 38
-    const v6, 0x912021b
+    const v6, 0x9120221
 
     invoke-virtual {p0, v6}, Lcom/android/systemui/statusbar/NotificationFilter;->findViewById(I)Landroid/view/View;
 
@@ -148,7 +148,7 @@
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 47
-    const v6, 0x912021c
+    const v6, 0x9120222
 
     invoke-virtual {p0, v6}, Lcom/android/systemui/statusbar/NotificationFilter;->findViewById(I)Landroid/view/View;
 

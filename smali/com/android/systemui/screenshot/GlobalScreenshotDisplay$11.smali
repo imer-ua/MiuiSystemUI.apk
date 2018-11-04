@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     .prologue
-    .line 292
+    .line 293
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$11;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,17 +42,17 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 294
+    .line 295
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$11;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap15(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap16(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;Z)V
 
-    .line 295
+    .line 296
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$11;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
-    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get8(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get9(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -62,6 +62,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/systemui/screenshot/StatHelper;->recordCountEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 293
+    .line 294
     return-void
 .end method

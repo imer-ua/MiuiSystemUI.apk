@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     .prologue
-    .line 915
+    .line 919
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,18 +42,18 @@
     .param p1, "showA11yStream"    # Ljava/lang/Boolean;
 
     .prologue
-    .line 988
+    .line 992
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
-    .line 989
+    .line 993
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v1, v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-set7(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;Z)Z
 
-    .line 990
+    .line 994
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     iget-object v2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
@@ -64,10 +64,10 @@
 
     invoke-static {v1, v2}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-wrap11(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;)V
 
-    .line 987
+    .line 991
     return-void
 
-    .line 988
+    .line 992
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -81,7 +81,7 @@
     .locals 5
 
     .prologue
-    .line 949
+    .line 953
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get4(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Landroid/content/Context;
@@ -96,15 +96,15 @@
 
     move-result-object v1
 
-    .line 950
+    .line 954
     .local v1, "newConfig":Landroid/content/res/Configuration;
     iget v0, v1, Landroid/content/res/Configuration;->densityDpi:I
 
-    .line 951
+    .line 955
     .local v0, "density":I
     iget v2, v1, Landroid/content/res/Configuration;->orientation:I
 
-    .line 952
+    .line 956
     .local v2, "orientation":I
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -122,7 +122,7 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 953
+    .line 957
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -132,7 +132,7 @@
 
     invoke-virtual {v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$CustomDialog;->dismiss()V
 
-    .line 954
+    .line 958
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get1(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;
@@ -141,12 +141,12 @@
 
     invoke-virtual {v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->destory()V
 
-    .line 955
+    .line 959
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-wrap3(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)V
 
-    .line 956
+    .line 960
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get1(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;
@@ -155,24 +155,24 @@
 
     invoke-virtual {v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$Accessibility;->init()V
 
-    .line 957
+    .line 961
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v3, v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-set1(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;I)I
 
-    .line 958
+    .line 962
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v3, v2}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-set3(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;I)I
 
-    .line 962
+    .line 966
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     const/4 v4, -0x1
 
     invoke-static {v3, v4}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-set0(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;I)I
 
-    .line 964
+    .line 968
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -182,7 +182,7 @@
 
     invoke-virtual {v3}, Lcom/android/systemui/volume/ConfigurableTexts;->update()V
 
-    .line 948
+    .line 952
     return-void
 .end method
 
@@ -191,12 +191,12 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 929
+    .line 933
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->dismissH(I)V
 
-    .line 928
+    .line 932
     return-void
 .end method
 
@@ -205,7 +205,7 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 944
+    .line 948
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get8(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;
@@ -214,7 +214,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;->setLayoutDirection(I)V
 
-    .line 943
+    .line 947
     return-void
 .end method
 
@@ -222,14 +222,14 @@
     .locals 2
 
     .prologue
-    .line 934
+    .line 938
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->dismissH(I)V
 
-    .line 933
+    .line 937
     return-void
 .end method
 
@@ -238,12 +238,12 @@
     .param p1, "reason"    # I
 
     .prologue
-    .line 924
+    .line 928
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0, p1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-wrap8(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;I)V
 
-    .line 923
+    .line 927
     return-void
 .end method
 
@@ -252,12 +252,12 @@
     .param p1, "flags"    # I
 
     .prologue
-    .line 983
+    .line 987
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0, p1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-wrap9(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;I)V
 
-    .line 982
+    .line 986
     return-void
 .end method
 
@@ -265,7 +265,7 @@
     .locals 3
 
     .prologue
-    .line 976
+    .line 980
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get17(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Z
@@ -274,7 +274,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 977
+    .line 981
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get5(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/plugins/VolumeDialogController;
@@ -287,7 +287,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/systemui/plugins/VolumeDialogController;->setRingerMode(IZ)V
 
-    .line 975
+    .line 979
     :cond_0
     return-void
 .end method
@@ -298,7 +298,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 969
+    .line 973
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get17(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Z
@@ -307,7 +307,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 970
+    .line 974
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get5(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/plugins/VolumeDialogController;
@@ -316,7 +316,7 @@
 
     invoke-interface {v0, v1, v1}, Lcom/android/systemui/plugins/VolumeDialogController;->setRingerMode(IZ)V
 
-    .line 968
+    .line 972
     :cond_0
     return-void
 .end method
@@ -326,12 +326,12 @@
     .param p1, "state"    # Lcom/android/systemui/plugins/VolumeDialogController$State;
 
     .prologue
-    .line 939
+    .line 943
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0, p1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-wrap4(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;Lcom/android/systemui/plugins/VolumeDialogController$State;)V
 
-    .line 938
+    .line 942
     return-void
 .end method
 
@@ -341,11 +341,11 @@
     .param p2, "fromKey"    # Z
 
     .prologue
-    .line 919
+    .line 923
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0, p1, p2}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-wrap6(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;IZ)V
 
-    .line 918
+    .line 922
     return-void
 .end method

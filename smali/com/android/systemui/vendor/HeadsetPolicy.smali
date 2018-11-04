@@ -42,6 +42,17 @@
     iput-object v0, p0, Lcom/android/systemui/vendor/HeadsetPolicy;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
     .line 19
+    const-string/jumbo v0, "power"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/PowerManager;
+
+    iput-object v0, p0, Lcom/android/systemui/vendor/HeadsetPolicy;->mPowerManager:Landroid/os/PowerManager;
+
+    .line 21
     new-instance v5, Landroid/os/Handler;
 
     sget-object v0, Lcom/android/systemui/Dependency;->BG_LOOPER:Lcom/android/systemui/Dependency$DependencyKey;
@@ -54,41 +65,30 @@
 
     invoke-direct {v5, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 20
+    .line 22
     .local v5, "handler":Landroid/os/Handler;
     new-instance v3, Landroid/content/IntentFilter;
 
     invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 21
+    .line 23
     .local v3, "filter":Landroid/content/IntentFilter;
     const-string/jumbo v0, "android.intent.action.HEADSET_PLUG"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 22
+    .line 24
     iget-object v1, p0, Lcom/android/systemui/vendor/HeadsetPolicy;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    .line 23
+    .line 25
     const/4 v4, 0x0
 
     move-object v0, p1
 
-    .line 22
+    .line 24
     invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
-
-    .line 25
-    const-string/jumbo v0, "power"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/PowerManager;
-
-    iput-object v0, p0, Lcom/android/systemui/vendor/HeadsetPolicy;->mPowerManager:Landroid/os/PowerManager;
 
     .line 18
     return-void

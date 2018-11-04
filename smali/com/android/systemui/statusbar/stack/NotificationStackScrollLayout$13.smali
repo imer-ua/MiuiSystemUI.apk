@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 2485
+    .line 2487
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$13;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,7 +41,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 2488
+    .line 2490
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$13;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get10(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Landroid/graphics/Rect;
@@ -50,7 +50,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->top:I
 
-    .line 2489
+    .line 2491
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$13;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get3(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Landroid/graphics/Rect;
@@ -59,13 +59,13 @@
 
     iput v1, v0, Landroid/graphics/Rect;->top:I
 
-    .line 2490
+    .line 2492
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$13;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-set9(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
-    .line 2487
+    .line 2489
     return-void
 .end method

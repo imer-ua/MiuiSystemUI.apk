@@ -107,6 +107,16 @@
 
 .method static synthetic -wrap2(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;F)V
     .locals 0
+    .param p1, "alpha"    # F
+
+    .prologue
+    invoke-direct {p0, p1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setViewsAlpha(F)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap3(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;F)V
+    .locals 0
     .param p1, "elevation"    # F
 
     .prologue
@@ -115,7 +125,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap3(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)V
+.method static synthetic -wrap4(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->startShowAnimation()V
@@ -132,39 +142,39 @@
     .param p5, "footer"    # Landroid/view/View;
 
     .prologue
-    .line 62
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
+    .line 45
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCornerBgViews:Ljava/util/List;
 
-    .line 63
+    .line 67
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mContext:Landroid/content/Context;
 
-    .line 64
+    .line 68
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
-    .line 65
+    .line 69
     iput-object p2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogContentView:Landroid/view/View;
 
-    .line 66
+    .line 70
     iput-object p3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mTempColumnContainer:Landroid/widget/FrameLayout;
 
-    .line 67
+    .line 71
     iput-object p4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandButton:Landroid/view/View;
 
-    .line 68
+    .line 72
     iput-object p5, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
 
-    .line 70
+    .line 74
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -181,7 +191,7 @@
 
     iput v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCornerRadiusExpanded:F
 
-    .line 71
+    .line 75
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -198,7 +208,7 @@
 
     iput v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCornerRadiusCollapsed:F
 
-    .line 72
+    .line 76
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -213,13 +223,13 @@
 
     iput v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mElevationCollapsed:F
 
-    .line 74
+    .line 78
     invoke-direct {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setupAnimationInfo()V
 
-    .line 75
+    .line 79
     invoke-direct {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setupStates()V
 
-    .line 62
+    .line 66
     return-void
 .end method
 
@@ -229,31 +239,31 @@
     .param p2, "radius"    # F
 
     .prologue
-    .line 241
+    .line 252
     invoke-virtual {p1}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 242
+    .line 253
     .local v0, "bg":Landroid/graphics/drawable/Drawable;
     if-nez v0, :cond_0
 
-    .line 243
+    .line 254
     return-void
 
-    .line 246
+    .line 257
     :cond_0
     instance-of v1, v0, Landroid/graphics/drawable/GradientDrawable;
 
     if-eqz v1, :cond_1
 
-    .line 247
+    .line 258
     check-cast v0, Landroid/graphics/drawable/GradientDrawable;
 
     .end local v0    # "bg":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0, p2}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
 
-    .line 240
+    .line 251
     :cond_1
     return-void
 .end method
@@ -262,12 +272,12 @@
     .locals 1
 
     .prologue
-    .line 299
+    .line 310
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setShowing(Z)V
 
-    .line 298
+    .line 309
     return-void
 .end method
 
@@ -276,21 +286,21 @@
     .param p1, "dismissing"    # Z
 
     .prologue
-    .line 262
+    .line 273
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDismissing:Z
 
     if-ne p1, v0, :cond_0
 
     return-void
 
-    .line 263
+    .line 274
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDismissing:Z
 
-    .line 264
+    .line 275
     invoke-direct {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->updateAnimating()V
 
-    .line 261
+    .line 272
     return-void
 .end method
 
@@ -299,21 +309,45 @@
     .param p1, "showing"    # Z
 
     .prologue
-    .line 256
+    .line 267
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mShowing:Z
 
     if-ne p1, v0, :cond_0
 
     return-void
 
-    .line 257
+    .line 268
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mShowing:Z
 
-    .line 258
+    .line 269
     invoke-direct {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->updateAnimating()V
 
-    .line 255
+    .line 266
+    return-void
+.end method
+
+.method private setViewsAlpha(F)V
+    .locals 1
+    .param p1, "alpha"    # F
+
+    .prologue
+    .line 245
+    iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogContentView:Landroid/view/View;
+
+    invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
+
+    .line 246
+    iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+
+    invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
+
+    .line 247
+    iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mTempColumnContainer:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
+
+    .line 244
     return-void
 .end method
 
@@ -322,22 +356,22 @@
     .param p1, "elevation"    # F
 
     .prologue
-    .line 234
+    .line 239
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogContentView:Landroid/view/View;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setElevation(F)V
 
-    .line 235
+    .line 240
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setElevation(F)V
 
-    .line 236
+    .line 241
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mTempColumnContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setElevation(F)V
 
-    .line 233
+    .line 238
     return-void
 .end method
 
@@ -345,28 +379,28 @@
     .locals 2
 
     .prologue
-    .line 100
+    .line 104
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCornerBgViews:Ljava/util/List;
 
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogContentView:Landroid/view/View;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 101
+    .line 105
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCornerBgViews:Ljava/util/List;
 
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 102
+    .line 106
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCornerBgViews:Ljava/util/List;
 
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mTempColumnContainer:Landroid/widget/FrameLayout;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 104
+    .line 108
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mContext:Landroid/content/Context;
 
     sget v1, Lcom/android/systemui/miui/volume/R$animator;->miui_volume_bg_expand:I
@@ -377,12 +411,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandAnimator:Landroid/animation/Animator;
 
-    .line 105
+    .line 109
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0, p0}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
-    .line 106
+    .line 110
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mContext:Landroid/content/Context;
 
     sget v1, Lcom/android/systemui/miui/volume/R$animator;->miui_volume_bg_collapse:I
@@ -393,12 +427,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCollapseAnimator:Landroid/animation/Animator;
 
-    .line 107
+    .line 111
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCollapseAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0, p0}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
-    .line 99
+    .line 103
     return-void
 .end method
 
@@ -406,14 +440,14 @@
     .locals 13
 
     .prologue
-    .line 112
+    .line 116
     iget-object v9, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mContext:Landroid/content/Context;
 
     invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
 
-    .line 113
+    .line 117
     .local v7, "resources":Landroid/content/res/Resources;
     invoke-virtual {v7}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
@@ -421,15 +455,15 @@
 
     iget v9, v9, Landroid/content/res/Configuration;->orientation:I
 
-    .line 114
+    .line 118
     const/4 v10, 0x2
 
-    .line 113
+    .line 117
     if-ne v9, v10, :cond_1
 
     const/4 v4, 0x1
 
-    .line 117
+    .line 121
     .local v4, "landscape":Z
     :goto_0
     sget v9, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_offset_end:I
@@ -438,7 +472,7 @@
 
     move-result v6
 
-    .line 118
+    .line 122
     .local v6, "offsetEndCollapsed":I
     if-eqz v4, :cond_0
 
@@ -450,7 +484,7 @@
 
     if-eqz v9, :cond_0
 
-    .line 119
+    .line 123
     iget-object v9, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDisplay:Landroid/view/Display;
 
     invoke-virtual {v9}, Landroid/view/Display;->getRotation()I
@@ -463,12 +497,12 @@
 
     const/4 v5, 0x1
 
-    .line 120
+    .line 124
     .local v5, "notchSide":Z
     :goto_1
     if-eqz v5, :cond_0
 
-    .line 122
+    .line 126
     sget v9, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_status_bar_height:I
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -477,7 +511,7 @@
 
     add-int/2addr v6, v9
 
-    .line 126
+    .line 130
     .end local v5    # "notchSide":Z
     :cond_0
     new-instance v9, Lcom/android/systemui/miui/ViewStateGroup$Builder;
@@ -486,7 +520,7 @@
 
     invoke-direct {v9, v10}, Lcom/android/systemui/miui/ViewStateGroup$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 127
+    .line 131
     iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
@@ -497,70 +531,8 @@
 
     const/4 v12, 0x1
 
-    .line 126
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntRes(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 128
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    const/16 v11, 0xb
-
-    const/4 v12, 0x1
-
-    .line 126
-    invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 129
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_offset_top_collapsed:I
-
-    const/4 v12, 0x6
-
-    .line 126
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
     .line 130
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    const/4 v11, 0x5
-
-    const/4 v12, 0x0
-
-    .line 126
-    invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 131
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    const/4 v11, 0x7
-
-    .line 126
-    invoke-virtual {v9, v10, v11, v6}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntRes(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
@@ -571,49 +543,79 @@
 
     move-result v10
 
-    const/16 v11, 0xc
+    const/16 v11, 0xb
 
-    const v12, 0x800005
+    const/4 v12, 0x1
 
-    .line 126
+    .line 130
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
     .line 133
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogContentView:Landroid/view/View;
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
 
     move-result v10
 
-    const/4 v11, 0x2
+    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_offset_top_collapsed:I
 
-    const/4 v12, -0x2
+    const/4 v12, 0x6
 
-    .line 126
-    invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+    .line 130
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
     .line 134
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogContentView:Landroid/view/View;
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
 
     move-result v10
 
-    const/4 v11, 0x3
+    const/4 v11, 0x5
 
-    const/4 v12, -0x2
+    const/4 v12, 0x0
 
-    .line 126
+    .line 130
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
     .line 135
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    const/4 v11, 0x7
+
+    .line 130
+    invoke-virtual {v9, v10, v11, v6}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 136
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    const/16 v11, 0xc
+
+    const v12, 0x800005
+
+    .line 130
+    invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 137
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogContentView:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
 
@@ -623,13 +625,13 @@
 
     const/4 v12, -0x2
 
-    .line 126
+    .line 130
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 136
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+    .line 138
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogContentView:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
 
@@ -639,40 +641,8 @@
 
     const/4 v12, -0x2
 
-    .line 126
+    .line 130
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 137
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    const/16 v11, 0xb
-
-    const/4 v12, 0x1
-
-    .line 126
-    invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 138
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_footer_margin_top:I
-
-    const/4 v12, 0x6
-
-    .line 126
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
@@ -683,16 +653,80 @@
 
     move-result v10
 
-    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_footer_margin_left:I
+    const/4 v11, 0x2
 
-    const/4 v12, 0x5
+    const/4 v12, -0x2
 
-    .line 126
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+    .line 130
+    invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
     .line 140
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    const/4 v11, 0x3
+
+    const/4 v12, -0x2
+
+    .line 130
+    invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 141
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    const/16 v11, 0xb
+
+    const/4 v12, 0x1
+
+    .line 130
+    invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 142
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_footer_margin_top:I
+
+    const/4 v12, 0x6
+
+    .line 130
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 143
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_footer_margin_left:I
+
+    const/4 v12, 0x5
+
+    .line 130
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 144
     iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandButton:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
@@ -703,48 +737,48 @@
 
     const/4 v12, 0x0
 
-    .line 126
+    .line 130
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 143
+    .line 147
     sget v10, Lcom/android/systemui/miui/volume/R$id;->miui_ringer_state_layout:I
 
     sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_silence_button_height:I
 
     const/4 v12, 0x2
 
-    .line 126
+    .line 130
     invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 144
+    .line 148
     sget v10, Lcom/android/systemui/miui/volume/R$id;->miui_ringer_state_layout:I
 
     sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_silence_button_height:I
 
     const/4 v12, 0x3
 
-    .line 126
+    .line 130
     invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 145
+    .line 149
     sget v10, Lcom/android/systemui/miui/volume/R$id;->miui_volume_ringer_divider:I
 
     const/16 v11, 0xa
 
     const/16 v12, 0x8
 
-    .line 126
+    .line 130
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 146
+    .line 150
     iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
@@ -755,7 +789,7 @@
 
     const/16 v12, 0x9
 
-    .line 126
+    .line 130
     invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
@@ -766,7 +800,7 @@
 
     iput-object v9, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCollapsedStates:Lcom/android/systemui/miui/ViewStateGroup;
 
-    .line 150
+    .line 154
     iget-object v9, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mContext:Landroid/content/Context;
 
     invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -779,11 +813,11 @@
 
     move-result v2
 
-    .line 155
+    .line 159
     .local v2, "expandedFreeland":Z
     if-eqz v2, :cond_3
 
-    .line 156
+    .line 160
     sget v9, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_offset_top_collapsed:I
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getDimension(I)F
@@ -792,11 +826,11 @@
 
     float-to-int v1, v9
 
-    .line 157
+    .line 161
     .local v1, "dialogMarginTopExpanded":I
     const/4 v0, 0x0
 
-    .line 172
+    .line 176
     .local v0, "dialogMarginLeftExpanded":I
     :goto_2
     new-instance v9, Lcom/android/systemui/miui/ViewStateGroup$Builder;
@@ -805,7 +839,7 @@
 
     invoke-direct {v9, v10}, Lcom/android/systemui/miui/ViewStateGroup$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 173
+    .line 177
     iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
@@ -816,68 +850,8 @@
 
     const/4 v12, 0x1
 
-    .line 172
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntRes(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 174
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    sget v11, Lcom/android/systemui/miui/volume/R$integer;->miui_volume_layout_orientation_expanded:I
-
-    const/16 v12, 0xb
-
-    .line 172
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntRes(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 175
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    const/4 v11, 0x6
-
-    .line 172
-    invoke-virtual {v9, v10, v11, v1}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
     .line 176
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    const/4 v11, 0x5
-
-    .line 172
-    invoke-virtual {v9, v10, v11, v0}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 177
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_offset_end_expanded:I
-
-    const/4 v12, 0x7
-
-    .line 172
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntRes(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
@@ -888,16 +862,76 @@
 
     move-result v10
 
-    const/16 v11, 0xc
+    sget v11, Lcom/android/systemui/miui/volume/R$integer;->miui_volume_layout_orientation_expanded:I
 
-    const/4 v12, 0x1
+    const/16 v12, 0xb
 
-    .line 172
-    invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+    .line 176
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntRes(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
     .line 179
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    const/4 v11, 0x6
+
+    .line 176
+    invoke-virtual {v9, v10, v11, v1}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 180
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    const/4 v11, 0x5
+
+    .line 176
+    invoke-virtual {v9, v10, v11, v0}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 181
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_offset_end_expanded:I
+
+    const/4 v12, 0x7
+
+    .line 176
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 182
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    const/16 v11, 0xc
+
+    const/4 v12, 0x1
+
+    .line 176
+    invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 183
     iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogContentView:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
@@ -908,12 +942,12 @@
 
     const/4 v12, 0x2
 
-    .line 172
+    .line 176
     invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 180
+    .line 184
     iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogContentView:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
@@ -924,71 +958,7 @@
 
     const/4 v12, 0x3
 
-    .line 172
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 181
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_ringer_layout_width_expanded:I
-
-    const/4 v12, 0x2
-
-    .line 172
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 182
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_ringer_layout_height_expanded:I
-
-    const/4 v12, 0x3
-
-    .line 172
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 183
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    sget v11, Lcom/android/systemui/miui/volume/R$integer;->miui_volume_layout_orientation_expanded:I
-
-    const/16 v12, 0xb
-
-    .line 172
-    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntRes(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
-
-    move-result-object v9
-
-    .line 184
-    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
-
-    invoke-virtual {v10}, Landroid/view/View;->getId()I
-
-    move-result v10
-
-    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_footer_margin_top_expanded:I
-
-    const/4 v12, 0x6
-
-    .line 172
+    .line 176
     invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
@@ -1000,16 +970,80 @@
 
     move-result v10
 
-    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_footer_margin_left_expanded:I
+    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_ringer_layout_width_expanded:I
 
-    const/4 v12, 0x5
+    const/4 v12, 0x2
 
-    .line 172
+    .line 176
     invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
     .line 186
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_ringer_layout_height_expanded:I
+
+    const/4 v12, 0x3
+
+    .line 176
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 187
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    sget v11, Lcom/android/systemui/miui/volume/R$integer;->miui_volume_layout_orientation_expanded:I
+
+    const/16 v12, 0xb
+
+    .line 176
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntRes(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 188
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_footer_margin_top_expanded:I
+
+    const/4 v12, 0x6
+
+    .line 176
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 189
+    iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getId()I
+
+    move-result v10
+
+    sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_footer_margin_left_expanded:I
+
+    const/4 v12, 0x5
+
+    .line 176
+    invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
+
+    move-result-object v9
+
+    .line 190
     iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandButton:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
@@ -1020,12 +1054,12 @@
 
     const/16 v12, 0x8
 
-    .line 172
+    .line 176
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 187
+    .line 191
     iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mTempColumnContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v10}, Landroid/widget/FrameLayout;->getId()I
@@ -1036,48 +1070,48 @@
 
     const/16 v12, 0x8
 
-    .line 172
+    .line 176
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 190
+    .line 194
     sget v10, Lcom/android/systemui/miui/volume/R$id;->miui_ringer_state_layout:I
 
     sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_ringer_btn_layout_width:I
 
     const/4 v12, 0x2
 
-    .line 172
+    .line 176
     invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 191
+    .line 195
     sget v10, Lcom/android/systemui/miui/volume/R$id;->miui_ringer_state_layout:I
 
     sget v11, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_ringer_btn_layout_height:I
 
     const/4 v12, 0x3
 
-    .line 172
+    .line 176
     invoke-virtual {v9, v10, v12, v11}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addStateWithIntDimen(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 192
+    .line 196
     sget v10, Lcom/android/systemui/miui/volume/R$id;->miui_volume_ringer_divider:I
 
     const/16 v11, 0xa
 
     const/4 v12, 0x0
 
-    .line 172
+    .line 176
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
 
-    .line 193
+    .line 197
     iget-object v10, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mRingerModeLayout:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
@@ -1088,7 +1122,7 @@
 
     const/4 v12, 0x0
 
-    .line 172
+    .line 176
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/miui/ViewStateGroup$Builder;->addState(III)Lcom/android/systemui/miui/ViewStateGroup$Builder;
 
     move-result-object v9
@@ -1099,10 +1133,10 @@
 
     iput-object v9, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandedStates:Lcom/android/systemui/miui/ViewStateGroup;
 
-    .line 111
+    .line 115
     return-void
 
-    .line 113
+    .line 117
     .end local v0    # "dialogMarginLeftExpanded":I
     .end local v1    # "dialogMarginTopExpanded":I
     .end local v2    # "expandedFreeland":Z
@@ -1114,30 +1148,30 @@
     .restart local v4    # "landscape":Z
     goto/16 :goto_0
 
-    .line 119
+    .line 123
     .restart local v6    # "offsetEndCollapsed":I
     :cond_2
     const/4 v5, 0x0
 
     goto/16 :goto_1
 
-    .line 158
+    .line 162
     .restart local v2    # "expandedFreeland":Z
     :cond_3
     if-eqz v4, :cond_4
 
-    .line 159
+    .line 163
     invoke-virtual {v7}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v9
 
     iget v8, v9, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 160
+    .line 164
     .local v8, "width":I
     const/4 v1, 0x0
 
-    .line 161
+    .line 165
     .restart local v1    # "dialogMarginTopExpanded":I
     int-to-float v9, v8
 
@@ -1149,24 +1183,24 @@
 
     sub-float/2addr v9, v10
 
-    .line 162
+    .line 166
     sget v10, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_ringer_btn_layout_width:I
 
     invoke-virtual {v7, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v10
 
-    .line 161
+    .line 165
     sub-float/2addr v9, v10
 
-    .line 163
+    .line 167
     sget v10, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_footer_margin_left_expanded:I
 
     invoke-virtual {v7, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v10
 
-    .line 161
+    .line 165
     sub-float/2addr v9, v10
 
     float-to-int v9, v9
@@ -1176,7 +1210,7 @@
     .restart local v0    # "dialogMarginLeftExpanded":I
     goto/16 :goto_2
 
-    .line 165
+    .line 169
     .end local v0    # "dialogMarginLeftExpanded":I
     .end local v1    # "dialogMarginTopExpanded":I
     .end local v8    # "width":I
@@ -1187,7 +1221,7 @@
 
     iget v3, v9, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 166
+    .line 170
     .local v3, "height":I
     int-to-float v9, v3
 
@@ -1199,31 +1233,31 @@
 
     sub-float/2addr v9, v10
 
-    .line 167
+    .line 171
     sget v10, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_ringer_btn_layout_height:I
 
     invoke-virtual {v7, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v10
 
-    .line 166
+    .line 170
     sub-float/2addr v9, v10
 
-    .line 168
+    .line 172
     sget v10, Lcom/android/systemui/miui/volume/R$dimen;->miui_volume_footer_margin_top_expanded:I
 
     invoke-virtual {v7, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v10
 
-    .line 166
+    .line 170
     sub-float/2addr v9, v10
 
     float-to-int v9, v9
 
     div-int/lit8 v1, v9, 0x2
 
-    .line 169
+    .line 173
     .restart local v1    # "dialogMarginTopExpanded":I
     const/4 v0, 0x0
 
@@ -1231,62 +1265,132 @@
     goto/16 :goto_2
 .end method
 
-.method private startShowAnimation()V
+.method private startDismissAnimation(Ljava/lang/Runnable;)V
     .locals 4
+    .param p1, "onComplete"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 303
+    .line 337
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 304
-    const/4 v1, 0x0
+    .line 338
+    iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
-    .line 303
+    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    .line 337
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 305
-    const/high16 v1, 0x3f800000    # 1.0f
+    .line 339
+    sget-object v1, Lcom/android/systemui/Interpolators;->ACCELERATE_DECELERATE:Landroid/view/animation/Interpolator;
 
-    .line 303
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    .line 306
-    const-wide/16 v2, 0x12c
-
-    .line 303
-    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    .line 307
-    sget-object v1, Lcom/android/systemui/Interpolators;->DECELERATE_QUART:Landroid/view/animation/Interpolator;
-
-    .line 303
+    .line 337
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 308
-    new-instance v1, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$2;
+    .line 340
+    const-wide/16 v2, 0x12c
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$2;-><init>(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)V
+    .line 337
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 303
+    move-result-object v0
+
+    .line 341
+    new-instance v1, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$4;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$4;-><init>(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)V
+
+    .line 337
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    .line 347
+    new-instance v1, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$5;
+
+    invoke-direct {v1, p0, p1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$5;-><init>(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;Ljava/lang/Runnable;)V
+
+    .line 337
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 302
+    .line 336
+    return-void
+.end method
+
+.method private startShowAnimation()V
+    .locals 4
+
+    .prologue
+    .line 314
+    iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    .line 315
+    const/4 v1, 0x0
+
+    .line 314
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    .line 316
+    const-wide/16 v2, 0x12c
+
+    .line 314
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    .line 317
+    sget-object v1, Lcom/android/systemui/Interpolators;->DECELERATE_QUART:Landroid/view/animation/Interpolator;
+
+    .line 314
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    .line 318
+    new-instance v1, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$2;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$2;-><init>(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)V
+
+    .line 314
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    .line 324
+    new-instance v1, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$3;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$3;-><init>(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)V
+
+    .line 314
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    .line 313
     return-void
 .end method
 
@@ -1294,14 +1398,14 @@
     .locals 3
 
     .prologue
-    .line 268
+    .line 279
     iget-boolean v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mShowing:Z
 
     if-nez v1, :cond_0
 
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDismissing:Z
 
-    .line 269
+    .line 280
     :goto_0
     iget-boolean v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mAnimating:Z
 
@@ -1309,31 +1413,31 @@
 
     return-void
 
-    .line 268
+    .line 279
     :cond_0
     const/4 v0, 0x1
 
     .local v0, "animating":Z
     goto :goto_0
 
-    .line 270
+    .line 281
     .end local v0    # "animating":Z
     :cond_1
     iput-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mAnimating:Z
 
-    .line 271
+    .line 282
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCallback:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$Callback;
 
     if-eqz v1, :cond_2
 
-    .line 272
+    .line 283
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCallback:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$Callback;
 
     iget-boolean v2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mAnimating:Z
 
     invoke-interface {v1, v2}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$Callback;->onAnimatingChanged(Z)V
 
-    .line 267
+    .line 278
     :cond_2
     return-void
 .end method
@@ -1344,7 +1448,7 @@
     .locals 1
 
     .prologue
-    .line 252
+    .line 263
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mAnimating:Z
 
     return v0
@@ -1355,10 +1459,10 @@
     .param p1, "callback"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$Callback;
 
     .prologue
-    .line 79
+    .line 83
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCallback:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$Callback;
 
-    .line 78
+    .line 82
     return-void
 .end method
 
@@ -1367,16 +1471,16 @@
     .param p1, "display"    # Landroid/view/Display;
 
     .prologue
-    .line 83
+    .line 87
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDisplay:Landroid/view/Display;
 
-    .line 84
+    .line 88
     if-eqz p1, :cond_0
 
-    .line 85
+    .line 89
     invoke-virtual {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->updateStates()V
 
-    .line 82
+    .line 86
     :cond_0
     return-void
 .end method
@@ -1386,7 +1490,7 @@
     .param p1, "fraction"    # F
 
     .prologue
-    .line 223
+    .line 228
     iget v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCornerRadiusCollapsed:F
 
     iget v5, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCornerRadiusExpanded:F
@@ -1399,7 +1503,7 @@
 
     add-float v1, v4, v5
 
-    .line 224
+    .line 229
     .local v1, "radius":F
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCornerBgViews:Ljava/util/List;
 
@@ -1421,13 +1525,13 @@
 
     check-cast v2, Landroid/view/View;
 
-    .line 225
+    .line 230
     .local v2, "v":Landroid/view/View;
     invoke-direct {p0, v2, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->applyCornerRadius(Landroid/view/View;F)V
 
     goto :goto_0
 
-    .line 229
+    .line 234
     .end local v2    # "v":Landroid/view/View;
     :cond_0
     iget v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mElevationCollapsed:F
@@ -1438,40 +1542,40 @@
 
     mul-float v0, v4, v5
 
-    .line 230
+    .line 235
     .local v0, "elevation":F
     invoke-direct {p0, v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setViewsElevation(F)V
 
-    .line 221
+    .line 226
     return-void
 .end method
 
 .method public startDismiss(Ljava/lang/Runnable;)V
-    .locals 4
+    .locals 2
     .param p1, "onComplete"    # Ljava/lang/Runnable;
 
     .prologue
     const/4 v1, 0x0
 
-    .line 320
+    .line 365
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDismissing:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 321
+    .line 366
     :cond_0
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setDismissing(Z)V
 
-    .line 322
+    .line 367
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mShowing:Z
 
     if-eqz v0, :cond_1
 
-    .line 323
+    .line 368
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1480,10 +1584,10 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 324
+    .line 369
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setShowing(Z)V
 
-    .line 326
+    .line 371
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
@@ -1493,72 +1597,18 @@
 
     if-eqz v0, :cond_2
 
-    .line 327
-    iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
+    .line 372
+    invoke-direct {p0, p1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->startDismissAnimation(Ljava/lang/Runnable;)V
 
-    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    .line 328
-    iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    .line 327
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    .line 329
-    const/4 v1, 0x0
-
-    .line 327
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    .line 330
-    sget-object v1, Lcom/android/systemui/Interpolators;->ACCELERATE_DECELERATE:Landroid/view/animation/Interpolator;
-
-    .line 327
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    .line 331
-    const-wide/16 v2, 0x12c
-
-    .line 327
-    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    .line 332
-    new-instance v1, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$3;
-
-    invoke-direct {v1, p0, p1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$3;-><init>(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;Ljava/lang/Runnable;)V
-
-    .line 327
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    .line 319
+    .line 364
     :goto_0
     return-void
 
-    .line 349
+    .line 375
     :cond_2
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setDismissing(Z)V
 
-    .line 350
+    .line 376
     invoke-direct {p0, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setShowing(Z)V
 
     goto :goto_0
@@ -1569,7 +1619,7 @@
     .param p1, "expand"    # Z
 
     .prologue
-    .line 202
+    .line 206
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->isRunning()Z
@@ -1578,12 +1628,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 203
+    .line 207
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 205
+    .line 209
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCollapseAnimator:Landroid/animation/Animator;
 
@@ -1593,21 +1643,21 @@
 
     if-eqz v0, :cond_1
 
-    .line 206
+    .line 210
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCollapseAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 209
+    .line 213
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 210
+    .line 214
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 211
+    .line 215
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandedStates:Lcom/android/systemui/miui/ViewStateGroup;
 
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
@@ -1616,20 +1666,25 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/miui/ViewStateGroup;->apply(Landroid/view/ViewGroup;)V
 
-    .line 217
+    .line 216
+    sget-object v0, Lcom/android/systemui/statistic/ScenarioConstants;->SCENARIO_EXPAND_VOLUME_DIALOG:Lcom/android/systemui/statistic/ScenarioTrackUtil$SystemUIEventScenario;
+
+    invoke-static {v0}, Lcom/android/systemui/statistic/ScenarioTrackUtil;->finishScenario(Lcom/android/systemui/statistic/ScenarioTrackUtil$SystemUIEventScenario;)V
+
+    .line 222
     :goto_0
     iput-boolean p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpanded:Z
 
-    .line 201
+    .line 205
     return-void
 
-    .line 213
+    .line 218
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCollapseAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 214
+    .line 219
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCollapsedStates:Lcom/android/systemui/miui/ViewStateGroup;
 
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
@@ -1645,25 +1700,25 @@
     .locals 2
 
     .prologue
-    .line 277
+    .line 288
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mShowing:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 278
+    .line 289
     :cond_0
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setShowing(Z)V
 
-    .line 279
+    .line 290
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDismissing:Z
 
     if-eqz v0, :cond_1
 
-    .line 280
+    .line 291
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1672,25 +1727,25 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 281
+    .line 292
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setDismissing(Z)V
 
-    .line 282
+    .line 293
     invoke-direct {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->startShowAnimation()V
 
-    .line 276
+    .line 287
     :goto_0
     return-void
 
-    .line 284
+    .line 295
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCallback:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$Callback;
 
     invoke-interface {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$Callback;->onShow()V
 
-    .line 285
+    .line 296
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -1710,15 +1765,15 @@
     .locals 2
 
     .prologue
-    .line 90
+    .line 94
     invoke-direct {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->setupStates()V
 
-    .line 92
+    .line 96
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpanded:Z
 
     if-eqz v0, :cond_0
 
-    .line 93
+    .line 97
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mExpandedStates:Lcom/android/systemui/miui/ViewStateGroup;
 
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mDialogView:Landroid/view/View;
@@ -1727,11 +1782,11 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/miui/ViewStateGroup;->apply(Landroid/view/ViewGroup;)V
 
-    .line 89
+    .line 93
     :goto_0
     return-void
 
-    .line 95
+    .line 99
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->mCollapsedStates:Lcom/android/systemui/miui/ViewStateGroup;
 

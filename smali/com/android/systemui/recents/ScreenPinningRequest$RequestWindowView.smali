@@ -143,7 +143,7 @@
     .param p1, "isLandscape"    # Z
 
     .prologue
-    const v6, 0x91202a4
+    const v6, 0x91202aa
 
     const/4 v5, 0x3
 
@@ -187,7 +187,7 @@
     .line 213
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x91202a0
+    const v3, 0x91202a6
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -198,7 +198,7 @@
     .line 215
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x9120298
+    const v3, 0x912029e
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -226,7 +226,7 @@
     :goto_1
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x91202a3
+    const v3, 0x91202a9
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -264,7 +264,7 @@
     :goto_2
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x91202a2
+    const v3, 0x91202a8
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -298,7 +298,7 @@
     :goto_3
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x912029b
+    const v3, 0x91202a1
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -309,7 +309,7 @@
     .line 238
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x912029a
+    const v3, 0x91202a0
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

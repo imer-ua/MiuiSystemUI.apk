@@ -26,17 +26,17 @@
     .param p1, "this$0"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     .prologue
-    .line 176
+    .line 178
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$1;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 177
+    .line 179
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$1;->mRingerMode:I
 
-    .line 176
+    .line 178
     return-void
 .end method
 
@@ -50,12 +50,12 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 180
+    .line 182
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 181
+    .line 183
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v2, "android.media.RINGER_MODE_CHANGED"
 
@@ -65,20 +65,20 @@
 
     if-eqz v2, :cond_1
 
-    .line 182
+    .line 184
     const-string/jumbo v2, "android.media.EXTRA_RINGER_MODE"
 
     invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 183
+    .line 185
     .local v1, "ringerMode":I
     iget v2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$1;->mRingerMode:I
 
     if-eq v2, v1, :cond_1
 
-    .line 184
+    .line 186
     iget v2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$1;->mRingerMode:I
 
     if-eq v2, v3, :cond_0
@@ -87,7 +87,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 185
+    .line 187
     iget-object v2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$1;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v2}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get10(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;
@@ -110,11 +110,11 @@
 
     invoke-virtual {v2, v3, v4, v5}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 187
+    .line 189
     :cond_0
     iput v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$1;->mRingerMode:I
 
-    .line 179
+    .line 181
     .end local v1    # "ringerMode":I
     :cond_1
     return-void

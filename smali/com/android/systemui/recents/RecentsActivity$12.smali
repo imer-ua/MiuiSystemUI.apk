@@ -3,12 +3,12 @@
 .source "RecentsActivity.java"
 
 # interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/RecentsActivity;->onBusEvent(Lcom/android/systemui/recents/events/activity/FsGestureEnterRecentsZoomEvent;)V
+    value = Lcom/android/systemui/recents/RecentsActivity;->updateExitMultiModeBtnVisible(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 1233
+    .line 788
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$12;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,38 +37,29 @@
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
+.method public onClick(Landroid/view/View;)V
+    .locals 2
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1245
-    return-void
-.end method
+    .line 791
+    invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
+    move-result-object v0
 
-    .prologue
-    .line 1240
-    return-void
-.end method
+    new-instance v1, Lcom/android/systemui/recents/events/activity/UndockingTaskEvent;
 
-.method public onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
+    invoke-direct {v1}, Lcom/android/systemui/recents/events/activity/UndockingTaskEvent;-><init>()V
 
-    .prologue
-    .line 1250
-    return-void
-.end method
+    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/RecentsEventBus;->send(Lcom/android/systemui/recents/events/RecentsEventBus$Event;)V
 
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
+    .line 792
+    const-string/jumbo v0, "RecentsActivity"
 
-    .prologue
-    .line 1235
+    const-string/jumbo v1, "exit splitScreen mode ---- click exit button."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 790
     return-void
 .end method

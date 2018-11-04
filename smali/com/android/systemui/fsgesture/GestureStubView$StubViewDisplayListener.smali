@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/fsgesture/GestureStubView;
 
     .prologue
-    .line 957
+    .line 987
     iput-object p1, p0, Lcom/android/systemui/fsgesture/GestureStubView$StubViewDisplayListener;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 960
+    .line 990
     return-void
 .end method
 
@@ -61,12 +61,12 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 967
+    .line 997
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$StubViewDisplayListener;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v0}, Lcom/android/systemui/fsgesture/GestureStubView;->-wrap3(Lcom/android/systemui/fsgesture/GestureStubView;)V
 
-    .line 966
+    .line 996
     return-void
 .end method
 
@@ -75,6 +75,6 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 963
+    .line 993
     return-void
 .end method

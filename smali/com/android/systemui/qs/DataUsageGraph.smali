@@ -58,7 +58,7 @@
 
     .line 48
     .local v0, "res":Landroid/content/res/Resources;
-    const v1, 0x90c01a6
+    const v1, 0x90c01a8
 
     invoke-static {p1, v1}, Lcom/android/systemui/util/Utils;->getDefaultColor(Landroid/content/Context;I)I
 
@@ -67,7 +67,7 @@
     iput v1, p0, Lcom/android/systemui/qs/DataUsageGraph;->mTrackColor:I
 
     .line 49
-    const v1, 0x90c01a7
+    const v1, 0x90c01a9
 
     invoke-static {p1, v1}, Lcom/android/systemui/util/Utils;->getDefaultColor(Landroid/content/Context;I)I
 

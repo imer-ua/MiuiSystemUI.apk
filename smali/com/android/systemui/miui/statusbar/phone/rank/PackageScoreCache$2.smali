@@ -30,7 +30,7 @@
     .param p2, "val$pkgEntity"    # Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     .prologue
-    .line 228
+    .line 227
     iput-object p1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$2;->this$0:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
 
     iput-object p2, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$2;->val$pkgEntity:Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 231
+    .line 230
     iget-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$2;->this$0:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
 
     iget-object v1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$2;->val$pkgEntity:Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     invoke-static {v0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->-wrap1(Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;)V
 
-    .line 230
+    .line 229
     return-void
 .end method

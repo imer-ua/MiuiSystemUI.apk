@@ -19,7 +19,7 @@
     .param p0, "sbn"    # Landroid/service/notification/StatusBarNotification;
 
     .prologue
-    .line 21
+    .line 20
     invoke-virtual {p0}, Landroid/service/notification/StatusBarNotification;->getOverrideGroupKey()Ljava/lang/String;
 
     move-result-object v0
@@ -32,7 +32,7 @@
     .param p0, "sbn"    # Landroid/service/notification/StatusBarNotification;
 
     .prologue
-    .line 29
+    .line 28
     invoke-virtual {p0}, Landroid/service/notification/StatusBarNotification;->isAppGroup()Z
 
     move-result v0
@@ -84,20 +84,6 @@
     move-result v0
 
     .line 10
-    if-eqz v0, :cond_0
-
-    .line 13
-    const-string/jumbo v0, "ranker_bundle"
-
-    invoke-virtual {p0}, Landroid/service/notification/StatusBarNotification;->getOverrideGroupKey()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    .line 10
     :goto_0
     return v0
 
@@ -112,7 +98,7 @@
     .param p0, "sbn"    # Landroid/service/notification/StatusBarNotification;
 
     .prologue
-    .line 25
+    .line 24
     invoke-virtual {p0}, Landroid/service/notification/StatusBarNotification;->isGroup()Z
 
     move-result v0
@@ -126,9 +112,9 @@
     .param p1, "overrideGroupKey"    # Ljava/lang/String;
 
     .prologue
-    .line 17
+    .line 16
     invoke-virtual {p0, p1}, Landroid/service/notification/StatusBarNotification;->setOverrideGroupKey(Ljava/lang/String;)V
 
-    .line 16
+    .line 15
     return-void
 .end method

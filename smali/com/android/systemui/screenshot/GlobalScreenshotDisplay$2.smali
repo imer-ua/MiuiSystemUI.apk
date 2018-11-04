@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     .prologue
-    .line 125
+    .line 126
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$2;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,15 +40,15 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 127
+    .line 128
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$2;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap5(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)V
 
-    .line 128
+    .line 129
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$2;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
-    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get8(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get9(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -78,6 +78,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/systemui/screenshot/StatHelper;->recordCountEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 126
+    .line 127
     return-void
 .end method

@@ -225,7 +225,7 @@
     .line 73
     iget-object v0, p0, Lcom/android/systemui/qs/QSSecurityFooter;->mRootView:Landroid/view/View;
 
-    const v1, 0x912025e
+    const v1, 0x9120264
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -238,7 +238,7 @@
     .line 74
     iget-object v0, p0, Lcom/android/systemui/qs/QSSecurityFooter;->mRootView:Landroid/view/View;
 
-    const v1, 0x912025d
+    const v1, 0x9120263
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -506,7 +506,7 @@
     if-nez v14, :cond_0
 
     .line 259
-    const v21, 0x912025f
+    const v21, 0x9120265
 
     move/from16 v0, v21
 
@@ -531,7 +531,7 @@
     if-nez v4, :cond_1
 
     .line 272
-    const v21, 0x9120262
+    const v21, 0x9120268
 
     move/from16 v0, v21
 
@@ -556,7 +556,7 @@
     if-nez v15, :cond_2
 
     .line 284
-    const v21, 0x9120265
+    const v21, 0x912026b
 
     move/from16 v0, v21
 
@@ -585,7 +585,7 @@
     if-nez v17, :cond_3
 
     .line 296
-    const v21, 0x9120268
+    const v21, 0x912026e
 
     move/from16 v0, v21
 
@@ -634,7 +634,7 @@
     .end local v15    # "networkLoggingMessage":Ljava/lang/CharSequence;
     .end local v17    # "vpnMessage":Ljava/lang/CharSequence;
     :cond_0
-    const v21, 0x912025f
+    const v21, 0x9120265
 
     move/from16 v0, v21
 
@@ -647,7 +647,7 @@
     invoke-virtual/range {v21 .. v22}, Landroid/view/View;->setVisibility(I)V
 
     .line 263
-    const v21, 0x9120261
+    const v21, 0x9120267
 
     move/from16 v0, v21
 
@@ -690,7 +690,7 @@
     .end local v6    # "deviceManagementWarning":Landroid/widget/TextView;
     .restart local v4    # "caCertsMessage":Ljava/lang/CharSequence;
     :cond_1
-    const v21, 0x9120262
+    const v21, 0x9120268
 
     move/from16 v0, v21
 
@@ -703,7 +703,7 @@
     invoke-virtual/range {v21 .. v22}, Landroid/view/View;->setVisibility(I)V
 
     .line 275
-    const v21, 0x9120264
+    const v21, 0x912026a
 
     move/from16 v0, v21
 
@@ -732,7 +732,7 @@
     .end local v5    # "caCertsWarning":Landroid/widget/TextView;
     .restart local v15    # "networkLoggingMessage":Ljava/lang/CharSequence;
     :cond_2
-    const v21, 0x9120265
+    const v21, 0x912026b
 
     move/from16 v0, v21
 
@@ -745,7 +745,7 @@
     invoke-virtual/range {v21 .. v22}, Landroid/view/View;->setVisibility(I)V
 
     .line 288
-    const v21, 0x9120267
+    const v21, 0x912026d
 
     move/from16 v0, v21
 
@@ -767,7 +767,7 @@
     .end local v16    # "networkLoggingWarning":Landroid/widget/TextView;
     .restart local v17    # "vpnMessage":Ljava/lang/CharSequence;
     :cond_3
-    const v21, 0x9120268
+    const v21, 0x912026e
 
     move/from16 v0, v21
 
@@ -780,7 +780,7 @@
     invoke-virtual/range {v21 .. v22}, Landroid/view/View;->setVisibility(I)V
 
     .line 299
-    const v21, 0x912026a
+    const v21, 0x9120270
 
     move/from16 v0, v21
 

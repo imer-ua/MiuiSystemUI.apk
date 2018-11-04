@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 3366
+    .line 3357
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -44,7 +44,7 @@
 
     const/4 v5, 0x0
 
-    .line 3369
+    .line 3360
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -59,17 +59,17 @@
 
     const-string/jumbo v3, "sc_status"
 
-    .line 3370
+    .line 3361
     const/4 v4, -0x2
 
-    .line 3369
+    .line 3360
     invoke-static {v2, v3, v5, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v2
 
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-set9(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
 
-    .line 3371
+    .line 3362
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get21(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)I
@@ -80,7 +80,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 3389
+    .line 3380
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
@@ -90,7 +90,7 @@
 
     if-ne v1, v6, :cond_1
 
-    .line 3390
+    .line 3381
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get25(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -99,7 +99,7 @@
 
     invoke-virtual {v1, v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setFaceUnlockStarted(Z)V
 
-    .line 3391
+    .line 3382
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get9(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/keyguard/faceunlock/FaceUnlockManager;
@@ -112,12 +112,12 @@
 
     invoke-virtual {v1, v2}, Lcom/android/keyguard/faceunlock/FaceUnlockManager;->runOnFaceUnlockWorkerThread(Ljava/lang/Runnable;)V
 
-    .line 3368
+    .line 3359
     :cond_1
     :goto_0
     return-void
 
-    .line 3372
+    .line 3363
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
@@ -131,7 +131,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 3373
+    .line 3364
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get25(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 3375
+    .line 3366
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
@@ -173,54 +173,54 @@
 
     if-nez v1, :cond_1
 
-    .line 3376
+    .line 3367
     :cond_5
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 3377
+    .line 3368
     .local v0, "intent":Landroid/content/Intent;
     const v1, 0x10808000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 3378
+    .line 3369
     const-string/jumbo v1, "ShowCameraWhenLocked"
 
     invoke-virtual {v0, v1, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 3379
+    .line 3370
     const-string/jumbo v1, "StartActivityWhenLocked"
 
     invoke-virtual {v0, v1, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 3380
+    .line 3371
     const-string/jumbo v1, "android.media.action.STILL_IMAGE_CAMERA"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3381
+    .line 3372
     const-string/jumbo v1, "android.intent.extras.CAMERA_FACING"
 
     invoke-virtual {v0, v1, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 3382
+    .line 3373
     const-string/jumbo v1, "autofocus"
 
     invoke-virtual {v0, v1, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 3383
+    .line 3374
     const-string/jumbo v1, "fullScreen"
 
     invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 3384
+    .line 3375
     const-string/jumbo v1, "showActionIcons"
 
     invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 3385
+    .line 3376
     new-instance v1, Landroid/content/ComponentName;
 
     const-string/jumbo v2, "com.android.camera"
@@ -231,7 +231,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 3386
+    .line 3377
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get5(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;

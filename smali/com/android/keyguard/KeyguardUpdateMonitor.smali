@@ -1912,7 +1912,7 @@
 
     move-result-object v2
 
-    const v3, 0x90f02ad
+    const v3, 0x90f02ae
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -5350,7 +5350,7 @@
 
     .line 1679
     .local v30, "statusbarBitmap":Landroid/graphics/Bitmap;
-    const v1, 0x90f03d0
+    const v1, 0x90f03d1
 
     move-object/from16 v0, v25
 
@@ -5365,7 +5365,7 @@
     float-to-int v11, v1
 
     .line 1680
-    const v1, 0x90f03d1
+    const v1, 0x90f03d2
 
     move-object/from16 v0, v25
 
@@ -5391,7 +5391,7 @@
 
     .line 1683
     :goto_0
-    const v1, 0x90f03cf
+    const v1, 0x90f03d0
 
     move-object/from16 v0, v25
 
@@ -5431,7 +5431,7 @@
     move v11, v5
 
     .line 1689
-    const v1, 0x90f03d2
+    const v1, 0x90f03d3
 
     move-object/from16 v0, v25
 
@@ -5464,7 +5464,7 @@
 
     .line 1692
     .local v31, "wallpaperCarouselBitmap":Landroid/graphics/Bitmap;
-    const v1, 0x90f03d3
+    const v1, 0x90f03d4
 
     move-object/from16 v0, v25
 
@@ -5624,7 +5624,7 @@
     invoke-static {}, Lcom/android/keyguard/fod/MiuiGxzwUtils;->caculateGxzwIconSize()V
 
     .line 1726
-    const v1, 0x90f03d4
+    const v1, 0x90f03d5
 
     move-object/from16 v0, v25
 

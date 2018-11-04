@@ -37,7 +37,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 352
+    .line 354
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$6;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
     .param p2, "otherView"    # Lcom/android/systemui/statusbar/ExpandableView;
 
     .prologue
-    .line 355
+    .line 357
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/ExpandableView;->getTranslationY()F
 
     move-result v2
@@ -66,7 +66,7 @@
 
     add-float v0, v2, v3
 
-    .line 356
+    .line 358
     .local v0, "endY":F
     invoke-virtual {p2}, Lcom/android/systemui/statusbar/ExpandableView;->getTranslationY()F
 
@@ -80,29 +80,29 @@
 
     add-float v1, v2, v3
 
-    .line 357
+    .line 359
     .local v1, "otherEndY":F
     cmpg-float v2, v0, v1
 
     if-gez v2, :cond_0
 
-    .line 358
+    .line 360
     const/4 v2, -0x1
 
     return v2
 
-    .line 359
+    .line 361
     :cond_0
     cmpl-float v2, v0, v1
 
     if-lez v2, :cond_1
 
-    .line 360
+    .line 362
     const/4 v2, 0x1
 
     return v2
 
-    .line 363
+    .line 365
     :cond_1
     const/4 v2, 0x0
 
@@ -115,7 +115,7 @@
     .param p2, "otherView"    # Ljava/lang/Object;
 
     .prologue
-    .line 354
+    .line 356
     check-cast p1, Lcom/android/systemui/statusbar/ExpandableView;
 
     .end local p1    # "view":Ljava/lang/Object;

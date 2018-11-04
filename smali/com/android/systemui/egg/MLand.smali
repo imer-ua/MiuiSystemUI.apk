@@ -3801,7 +3801,7 @@
 
     move-result-object v25
 
-    const v26, 0x90f02be
+    const v26, 0x90f02bf
 
     invoke-virtual/range {v25 .. v26}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4057,7 +4057,7 @@
 
     move-result-object v25
 
-    const v26, 0x90f02be
+    const v26, 0x90f02bf
 
     invoke-virtual/range {v25 .. v26}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -5012,7 +5012,7 @@
     .locals 8
 
     .prologue
-    const v7, 0x91201e7
+    const v7, 0x91201eb
 
     const/4 v6, 0x1
 
@@ -5068,7 +5068,7 @@
     .line 576
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v1, 0x91201e8
+    const v1, 0x91201ec
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5079,7 +5079,7 @@
     .line 577
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v1, 0x91201e9
+    const v1, 0x91201ed
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5146,7 +5146,7 @@
     .line 523
     iget-object v4, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v5, 0x91201e7
+    const v5, 0x91201eb
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5157,7 +5157,7 @@
     .line 525
     iget-object v4, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v5, 0x91201e8
+    const v5, 0x91201ec
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5167,7 +5167,7 @@
     .local v2, "playImage":Landroid/view/View;
     iget-object v4, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v5, 0x91201e9
+    const v5, 0x91201ed
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

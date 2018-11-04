@@ -24,17 +24,17 @@
     .param p1, "this$0"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     .prologue
-    .line 1093
+    .line 1098
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
-    .line 1094
+    .line 1099
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1093
+    .line 1098
     return-void
 .end method
 
@@ -47,16 +47,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1099
+    .line 1104
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1098
+    .line 1103
     :goto_0
     return-void
 
-    .line 1100
+    .line 1105
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -66,7 +66,7 @@
 
     goto :goto_0
 
-    .line 1101
+    .line 1106
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 1102
+    .line 1107
     :pswitch_2
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -88,7 +88,7 @@
 
     goto :goto_0
 
-    .line 1103
+    .line 1108
     :pswitch_3
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -98,7 +98,7 @@
 
     goto :goto_0
 
-    .line 1104
+    .line 1109
     :pswitch_4
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -115,7 +115,7 @@
 
     goto :goto_0
 
-    .line 1105
+    .line 1110
     :pswitch_5
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -123,7 +123,7 @@
 
     goto :goto_0
 
-    .line 1106
+    .line 1111
     :pswitch_6
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -137,7 +137,7 @@
 
     goto :goto_0
 
-    .line 1107
+    .line 1112
     :pswitch_7
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -145,7 +145,7 @@
 
     goto :goto_0
 
-    .line 1108
+    .line 1113
     :pswitch_8
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -155,7 +155,7 @@
 
     goto :goto_0
 
-    .line 1099
+    .line 1104
     nop
 
     :pswitch_data_0

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;
 
     .prologue
-    .line 310
+    .line 347
     iput-object p1, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController$1;->this$0:Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 313
+    .line 350
     iget-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController$1;->this$0:Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;
 
     invoke-static {v0}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->-wrap0(Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;)V
 
-    .line 312
+    .line 349
     return-void
 .end method

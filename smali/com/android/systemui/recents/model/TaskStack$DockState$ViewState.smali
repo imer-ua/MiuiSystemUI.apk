@@ -754,7 +754,7 @@
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Point;->set(II)V
 
     .line 346
-    const v1, 0x90f02ad
+    const v1, 0x90f02ae
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

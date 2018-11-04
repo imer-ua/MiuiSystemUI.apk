@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
 
     .prologue
-    .line 6749
+    .line 6763
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .param p2, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 6752
+    .line 6766
     const/4 v0, 0x1
 
     return v0

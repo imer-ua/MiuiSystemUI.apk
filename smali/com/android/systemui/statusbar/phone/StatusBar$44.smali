@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1659
+    .line 1662
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,12 +44,12 @@
     .param p3, "charging"    # Z
 
     .prologue
-    .line 1680
+    .line 1683
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set0(Lcom/android/systemui/statusbar/phone/StatusBar;I)I
 
-    .line 1679
+    .line 1682
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .param p1, "batteryStyle"    # I
 
     .prologue
-    .line 1684
+    .line 1687
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .param p1, "isExtremePowerSave"    # Z
 
     .prologue
-    .line 1671
+    .line 1674
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
@@ -80,7 +80,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 1672
+    .line 1675
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get9(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1673
+    .line 1676
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get9(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
@@ -98,7 +98,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1674
+    .line 1677
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get2(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/policy/BatteryController;
@@ -109,15 +109,15 @@
 
     move-result v0
 
-    .line 1673
+    .line 1676
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;->firePowerSaveChanged(Z)V
 
-    .line 1670
+    .line 1673
     :cond_0
     return-void
 
-    .line 1673
+    .line 1676
     :cond_1
     const/4 v0, 0x1
 
@@ -129,7 +129,7 @@
     .param p1, "isPowerSave"    # Z
 
     .prologue
-    .line 1662
+    .line 1665
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
@@ -142,7 +142,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 1663
+    .line 1666
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get9(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
@@ -151,7 +151,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1664
+    .line 1667
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get9(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;
@@ -160,7 +160,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1665
+    .line 1668
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$44;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get2(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/policy/BatteryController;
@@ -171,15 +171,15 @@
 
     move-result v0
 
-    .line 1664
+    .line 1667
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar$DozeServiceHost;->firePowerSaveChanged(Z)V
 
-    .line 1661
+    .line 1664
     :cond_0
     return-void
 
-    .line 1664
+    .line 1667
     :cond_1
     const/4 v0, 0x1
 

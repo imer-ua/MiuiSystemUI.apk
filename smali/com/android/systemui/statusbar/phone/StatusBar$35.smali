@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 7421
+    .line 7435
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 7424
+    .line 7438
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 7425
+    .line 7439
     .local v7, "action":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.USER_SWITCHED"
 
@@ -55,7 +55,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 7426
+    .line 7440
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -72,7 +72,7 @@
 
     iput v3, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mCurrentUserId:I
 
-    .line 7427
+    .line 7441
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -93,14 +93,14 @@
 
     iput-object v3, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mContextForUser:Landroid/content/Context;
 
-    .line 7428
+    .line 7442
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap30(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    .line 7429
+    .line 7443
     const-string/jumbo v1, "StatusBar"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -135,14 +135,14 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7431
+    .line 7445
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap33(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    .line 7432
+    .line 7446
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -155,7 +155,7 @@
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->userSwitched(I)V
 
-    .line 7433
+    .line 7447
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -172,12 +172,12 @@
 
     invoke-virtual {v1, v3}, Lmiui/app/ToggleManager;->updateAllToggles(I)V
 
-    .line 7423
+    .line 7437
     :cond_0
     :goto_0
     return-void
 
-    .line 7434
+    .line 7448
     :cond_1
     const-string/jumbo v1, "android.intent.action.USER_ADDED"
 
@@ -187,7 +187,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 7435
+    .line 7449
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -196,7 +196,7 @@
 
     goto :goto_0
 
-    .line 7436
+    .line 7450
     :cond_2
     const-string/jumbo v1, "android.intent.action.USER_PRESENT"
 
@@ -206,10 +206,10 @@
 
     if-eqz v1, :cond_4
 
-    .line 7437
+    .line 7451
     const/16 v17, 0x0
 
-    .line 7442
+    .line 7456
     .local v17, "recentTask":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RecentTaskInfo;>;"
     :try_start_0
     move-object/from16 v0, p0
@@ -218,20 +218,20 @@
 
     iget v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mCurrentUserId:I
 
-    .line 7439
+    .line 7453
     const/4 v3, 0x1
 
-    .line 7440
+    .line 7454
     const/4 v4, 0x5
 
-    .line 7439
+    .line 7453
     invoke-static {v3, v4, v1}, Landroid/app/ActivityManagerCompat;->getRecentTasks(III)Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_2
 
     move-result-object v17
 
-    .line 7446
+    .line 7460
     .end local v17    # "recentTask":Ljava/util/List;, "Ljava/util/List<Landroid/app/ActivityManager$RecentTaskInfo;>;"
     :goto_1
     if-eqz v17, :cond_0
@@ -242,7 +242,7 @@
 
     if-lez v1, :cond_0
 
-    .line 7447
+    .line 7461
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -267,7 +267,7 @@
 
     move-result-object v20
 
-    .line 7448
+    .line 7462
     .local v20, "user":Landroid/content/pm/UserInfo;
     if-eqz v20, :cond_3
 
@@ -277,41 +277,41 @@
 
     if-eqz v1, :cond_3
 
-    .line 7449
+    .line 7463
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
 
-    .line 7450
+    .line 7464
     const v3, 0x9100214
 
-    .line 7451
+    .line 7465
     const/4 v4, 0x0
 
-    .line 7449
+    .line 7463
     invoke-static {v1, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
     move-result-object v19
 
-    .line 7452
+    .line 7466
     .local v19, "toast":Landroid/widget/Toast;
     invoke-virtual/range {v19 .. v19}, Landroid/widget/Toast;->getView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 7453
+    .line 7467
     const v3, 0x102000b
 
-    .line 7452
+    .line 7466
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v18
 
     check-cast v18, Landroid/widget/TextView;
 
-    .line 7455
+    .line 7469
     .local v18, "text":Landroid/widget/TextView;
     const v1, 0x90203b7
 
@@ -321,12 +321,12 @@
 
     const/4 v5, 0x0
 
-    .line 7454
+    .line 7468
     move-object/from16 v0, v18
 
     invoke-virtual {v0, v1, v3, v4, v5}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(IIII)V
 
-    .line 7456
+    .line 7470
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -337,31 +337,31 @@
 
     move-result-object v1
 
-    .line 7457
+    .line 7471
     const v3, 0x90f01bc
 
-    .line 7456
+    .line 7470
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v15
 
-    .line 7458
+    .line 7472
     .local v15, "paddingPx":I
     move-object/from16 v0, v18
 
     invoke-virtual {v0, v15}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    .line 7459
+    .line 7473
     invoke-virtual/range {v19 .. v19}, Landroid/widget/Toast;->show()V
 
-    .line 7461
+    .line 7475
     .end local v15    # "paddingPx":I
     .end local v18    # "text":Landroid/widget/TextView;
     .end local v19    # "toast":Landroid/widget/Toast;
     :cond_3
     if-eqz v20, :cond_0
 
-    .line 7462
+    .line 7476
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -380,7 +380,7 @@
 
     goto/16 :goto_0
 
-    .line 7465
+    .line 7479
     .end local v20    # "user":Landroid/content/pm/UserInfo;
     :cond_4
     const-string/jumbo v1, "com.android.systemui.statusbar.banner_action_cancel"
@@ -399,7 +399,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 7467
+    .line 7481
     :cond_5
     move-object/from16 v0, p0
 
@@ -413,16 +413,16 @@
 
     move-result-object v12
 
-    .line 7466
+    .line 7480
     check-cast v12, Landroid/app/NotificationManager;
 
-    .line 7468
+    .line 7482
     .local v12, "noMan":Landroid/app/NotificationManager;
     const/4 v1, 0x5
 
     invoke-virtual {v12, v1}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 7470
+    .line 7484
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -433,15 +433,15 @@
 
     move-result-object v1
 
-    .line 7471
+    .line 7485
     const-string/jumbo v3, "show_note_about_notification_hiding"
 
     const/4 v4, 0x0
 
-    .line 7470
+    .line 7484
     invoke-static {v1, v3, v4}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 7472
+    .line 7486
     const-string/jumbo v1, "com.android.systemui.statusbar.banner_action_setup"
 
     invoke-virtual {v1, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -450,20 +450,20 @@
 
     if-eqz v1, :cond_0
 
-    .line 7473
+    .line 7487
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     const/4 v3, 0x2
 
-    .line 7474
+    .line 7488
     const/4 v4, 0x1
 
-    .line 7473
+    .line 7487
     invoke-virtual {v1, v3, v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels(IZ)V
 
-    .line 7475
+    .line 7489
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/StatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -476,10 +476,10 @@
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 7476
+    .line 7490
     const/high16 v4, 0x10000000
 
-    .line 7475
+    .line 7489
     invoke-virtual {v3, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     move-result-object v3
@@ -488,7 +488,7 @@
 
     goto/16 :goto_0
 
-    .line 7480
+    .line 7494
     .end local v12    # "noMan":Landroid/app/NotificationManager;
     :cond_6
     const-string/jumbo v1, "com.android.systemui.statusbar.work_challenge_unlocked_notification_action"
@@ -499,7 +499,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 7481
+    .line 7495
     const-string/jumbo v1, "android.intent.extra.INTENT"
 
     move-object/from16 v0, p2
@@ -510,7 +510,7 @@
 
     check-cast v2, Landroid/content/IntentSender;
 
-    .line 7482
+    .line 7496
     .local v2, "intentSender":Landroid/content/IntentSender;
     const-string/jumbo v1, "android.intent.extra.INDEX"
 
@@ -520,11 +520,11 @@
 
     move-result-object v13
 
-    .line 7483
+    .line 7497
     .local v13, "notificationKey":Ljava/lang/String;
     if-eqz v2, :cond_7
 
-    .line 7485
+    .line 7499
     :try_start_1
     move-object/from16 v0, p0
 
@@ -544,12 +544,12 @@
     :try_end_1
     .catch Landroid/content/IntentSender$SendIntentException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 7490
+    .line 7504
     :cond_7
     :goto_2
     if-eqz v13, :cond_0
 
-    .line 7492
+    .line 7506
     :try_start_2
     move-object/from16 v0, p0
 
@@ -561,7 +561,7 @@
 
     move-result v16
 
-    .line 7493
+    .line 7507
     .local v16, "rank":I
     move-object/from16 v0, p0
 
@@ -577,7 +577,7 @@
 
     move-result v8
 
-    .line 7494
+    .line 7508
     .local v8, "count":I
     const/4 v1, 0x1
 
@@ -587,7 +587,7 @@
 
     move-result-object v14
 
-    .line 7495
+    .line 7509
     .local v14, "nv":Lcom/android/internal/statusbar/NotificationVisibility;
     move-object/from16 v0, p0
 
@@ -601,7 +601,7 @@
 
     goto/16 :goto_0
 
-    .line 7496
+    .line 7510
     .end local v8    # "count":I
     .end local v14    # "nv":Lcom/android/internal/statusbar/NotificationVisibility;
     .end local v16    # "rank":I
@@ -611,7 +611,7 @@
     .local v11, "e":Ljava/lang/Exception;
     goto/16 :goto_0
 
-    .line 7486
+    .line 7500
     .end local v11    # "e":Ljava/lang/Exception;
     :catch_1
     move-exception v9
@@ -619,7 +619,7 @@
     .local v9, "e":Landroid/content/IntentSender$SendIntentException;
     goto :goto_2
 
-    .line 7443
+    .line 7457
     .end local v2    # "intentSender":Landroid/content/IntentSender;
     .end local v9    # "e":Landroid/content/IntentSender$SendIntentException;
     .end local v13    # "notificationKey":Ljava/lang/String;

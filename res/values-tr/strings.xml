@@ -1175,12 +1175,14 @@ kilitlemek için aşağı doğru kaydırın."</string>
     <string name="status_bar_recent_guide_top">Kapatmak için yukarı kaldırın</string>
     <string name="status_bar_recent_guide_bottom">Kilitlemek için aşağı doğru kaydırın</string>
     <string name="share">Paylaş</string>
-    <string name="status_bar_date_format">"d MMMM
-EEEE"</string>
-    <string name="status_bar_date_format_12">"d MMMM
-EEEE"</string>
-    <string name="status_bar_clock_date_format">d MMMM, EEEE</string>
-    <string name="status_bar_clock_date_format_12">EEEE, MMMM d</string>
+    <string name="status_bar_date_format">"E
+d MMM"</string>
+    <string name="status_bar_date_format_12">"E
+d MMM"</string>
+    <string name="status_bar_clock_date_format">d MMM, E</string>
+    <string name="status_bar_clock_date_format_12">d MMM, E</string>
+    <string name="status_bar_clock_date_time_format">H:mm d MMM</string>
+    <string name="status_bar_clock_date_time_format_12">h:mm aa,d MMM</string>
     <string name="status_bar_recent_memory_info1">%1$sB | %2$sB</string>
     <string name="memory_clear_result_mega">%1$sMB temizlendi</string>
     <string name="memory_clear_result_giga">%1$sGB temizlendi</string>
@@ -1464,6 +1466,9 @@ EEEE"</string>
     <string name="status_bar_safepay_safe">Ödeme riski bulunmadı</string>
     <string name="status_bar_safepay_risk">Ödeme riskleri bulundu</string>
     <string name="status_bar_safepay_unknown">Ödeme ortamı kontrol edilemedi</string>
+    <string name="notch_sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_summary">çıkmak için tıklayın</string>
     <string name="wifi_fail_to_scan">Ağlar taranamıyor</string>
     <string name="wifi_security_none">Yok</string>
     <string name="wifi_remembered">Kaydedildi</string>
@@ -1794,7 +1799,4 @@ Oynatma Kalitesi"</string>
     <string name="wifi_disabled_by_recommendation_provider">Ağ kalitesi düşük olduğundan bağlanamadı</string>
     <string name="wifi_no_internet_no_reconnect">Otomatik olarak bağlanma</string>
     <string name="lockscreen_storage_locked">Tüm özellikler ve veriler için kilidini aç</string>
-    <string name="notch_sos_status_bar_title">SOS</string>
-    <string name="sos_status_bar_summary">çıkmak için tıklayın</string>
-    <string name="sos_status_bar_title">SOS</string>
 </resources>

@@ -1,9 +1,6 @@
 .class Lcom/android/systemui/statusbar/phone/NavStubView$21;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "NavStubView.java"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
@@ -27,46 +24,30 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 2098
+    .line 2062
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$21;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 4
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
+    .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 2101
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Float;
-
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
-
-    move-result v1
-
-    .line 2102
-    .local v1, "animatedValue":F
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    .line 2103
-    .local v0, "alpha":F
+    .line 2065
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
-    move-result-object v2
+    move-result-object v0
 
-    sget-object v3, Lcom/android/systemui/Constants;->HOME_LAUCNHER_PACKAGE_NAME:Ljava/lang/String;
+    const/4 v1, 0x0
 
-    invoke-virtual {v2, v3, v0, v1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->changeAlphaScaleForFsGesture(Ljava/lang/String;FF)V
+    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->setIsFsGestureAnimating(Z)V
 
-    .line 2100
+    .line 2064
     return-void
 .end method

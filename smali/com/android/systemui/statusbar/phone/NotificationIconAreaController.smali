@@ -945,7 +945,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->mNotificationIconArea:Landroid/view/View;
 
     .line 78
-    const v2, 0x912020f
+    const v2, 0x9120215
 
     .line 77
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;

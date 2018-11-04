@@ -149,7 +149,7 @@
     invoke-static {p1, v0, p0}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 58
-    const v0, 0x91202e6
+    const v0, 0x91202ec
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/settings/ToggleSliderView;->findViewById(I)Landroid/view/View;
 

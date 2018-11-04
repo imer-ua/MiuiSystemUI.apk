@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 930
+    .line 932
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$11;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -44,7 +44,7 @@
 
     const/4 v1, 0x0
 
-    .line 933
+    .line 935
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$11;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
@@ -53,12 +53,12 @@
 
     move-result-object v2
 
-    .line 934
+    .line 936
     const-string/jumbo v3, "gb_notification"
 
     const/4 v4, -0x2
 
-    .line 933
+    .line 935
     invoke-static {v2, v3, v1, v4}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v2
@@ -68,12 +68,12 @@
     :goto_0
     sput-boolean v0, Lcom/android/systemui/statusbar/phone/StatusBar;->sGameMode:Z
 
-    .line 932
+    .line 934
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 933
+    .line 935
     goto :goto_0
 .end method

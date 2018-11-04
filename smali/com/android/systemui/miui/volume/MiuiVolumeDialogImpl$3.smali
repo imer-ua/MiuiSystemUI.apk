@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     .prologue
-    .line 1059
+    .line 1063
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$3;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,14 +44,19 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1062
+    .line 1066
+    sget-object v1, Lcom/android/systemui/statistic/ScenarioConstants;->SCENARIO_EXPAND_VOLUME_DIALOG:Lcom/android/systemui/statistic/ScenarioTrackUtil$SystemUIEventScenario;
+
+    invoke-static {v1}, Lcom/android/systemui/statistic/ScenarioTrackUtil;->beginScenario(Lcom/android/systemui/statistic/ScenarioTrackUtil$SystemUIEventScenario;)V
+
+    .line 1067
     const-string/jumbo v1, "systemui_volume_dialog"
 
     const-string/jumbo v2, "volume_click_more"
 
     invoke-static {v1, v2}, Lcom/android/systemui/miui/analytics/AnalyticsWrapper;->recordCountEventAnonymous(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1063
+    .line 1068
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$3;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get8(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/miui/volume/MiuiVolumeDialogView;
@@ -64,10 +69,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1064
+    .line 1069
     return-void
 
-    .line 1066
+    .line 1071
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$3;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -79,7 +84,7 @@
 
     const/4 v0, 0x0
 
-    .line 1067
+    .line 1072
     .local v0, "newExpand":Z
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$3;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
@@ -102,15 +107,15 @@
 
     invoke-static {v1, v3, v2}, Lcom/android/systemui/volume/Events;->writeEvent(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    .line 1068
+    .line 1073
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$3;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v1, v0, v4}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-wrap12(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;ZZ)V
 
-    .line 1061
+    .line 1065
     return-void
 
-    .line 1066
+    .line 1071
     .end local v0    # "newExpand":Z
     :cond_1
     const/4 v0, 0x1

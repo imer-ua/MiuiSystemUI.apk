@@ -3,12 +3,12 @@
 .source "RecentsActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/hardware/display/DisplayManager$DisplayListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/RecentsActivity;->onCreate(Landroid/os/Bundle;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/systemui/recents/RecentsActivity;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 407
+    .line 1655
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,17 +37,89 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onDisplayAdded(I)V
+    .locals 0
+    .param p1, "displayId"    # I
 
     .prologue
-    .line 410
-    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+    .line 1657
+    return-void
+.end method
 
-    const/16 v1, 0x120
+.method public onDisplayChanged(I)V
+    .locals 4
+    .param p1, "displayId"    # I
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToTargetTask(I)Z
+    .prologue
+    .line 1666
+    iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    .line 409
+    const-string/jumbo v2, "window"
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/recents/RecentsActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/WindowManager;
+
+    invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/Display;->getRotation()I
+
+    move-result v0
+
+    .line 1667
+    .local v0, "rotation":I
+    iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+
+    invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-get5(Lcom/android/systemui/recents/RecentsActivity;)I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_0
+
+    .line 1668
+    return-void
+
+    .line 1670
+    :cond_0
+    iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+
+    invoke-static {v1, v0}, Lcom/android/systemui/recents/RecentsActivity;->-set1(Lcom/android/systemui/recents/RecentsActivity;I)I
+
+    .line 1671
+    iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+
+    invoke-virtual {v1}, Lcom/android/systemui/recents/RecentsActivity;->setNotchPadding()V
+
+    .line 1672
+    invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/android/systemui/recents/events/activity/RotationChangedEvent;
+
+    iget-object v3, p0, Lcom/android/systemui/recents/RecentsActivity$6;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+
+    invoke-static {v3}, Lcom/android/systemui/recents/RecentsActivity;->-get5(Lcom/android/systemui/recents/RecentsActivity;)I
+
+    move-result v3
+
+    invoke-direct {v2, v3}, Lcom/android/systemui/recents/events/activity/RotationChangedEvent;-><init>(I)V
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/recents/events/RecentsEventBus;->send(Lcom/android/systemui/recents/events/RecentsEventBus$Event;)V
+
+    .line 1665
+    return-void
+.end method
+
+.method public onDisplayRemoved(I)V
+    .locals 0
+    .param p1, "displayId"    # I
+
+    .prologue
+    .line 1661
     return-void
 .end method

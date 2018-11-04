@@ -25,13 +25,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 4006
+    .line 4020
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$W;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 4007
+    .line 4021
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 4006
+    .line 4020
     return-void
 .end method
 
@@ -42,19 +42,19 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 4012
+    .line 4026
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 4013
+    .line 4027
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 4011
+    .line 4025
     :goto_0
     return-void
 
-    .line 4015
+    .line 4029
     :pswitch_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$W;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -66,7 +66,7 @@
 
     goto :goto_0
 
-    .line 4018
+    .line 4032
     :pswitch_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$W;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 4013
+    .line 4027
     nop
 
     :pswitch_data_0

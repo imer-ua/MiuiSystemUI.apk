@@ -148,7 +148,7 @@
     .line 48
     new-instance v3, Lcom/android/systemui/statusbar/phone/StatusBarIconController$IconManager;
 
-    const v2, 0x91202f5
+    const v2, 0x91202fb
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -166,7 +166,7 @@
     if-eqz v2, :cond_0
 
     .line 51
-    const v2, 0x91202c1
+    const v2, 0x91202c7
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -181,7 +181,7 @@
     .line 55
     .end local v0    # "battery":Lcom/android/systemui/BatteryMeterView;
     :cond_0
-    const v2, 0x91202f2
+    const v2, 0x91202f8
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 

@@ -44,54 +44,54 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 156
+    .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 146
+    .line 150
     const v0, 0x90201ca
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBack:I
 
-    .line 147
+    .line 151
     const v0, 0x90201ce
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBackAlt:I
 
-    .line 148
+    .line 152
     const v0, 0x90201df
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mHome:I
 
-    .line 149
+    .line 153
     const v0, 0x90201ea
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mRecent:I
 
-    .line 150
+    .line 154
     const v0, 0x90201d4
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgPort:I
 
-    .line 151
+    .line 155
     const v0, 0x90201d7
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgLand:I
 
-    .line 152
+    .line 156
     iput v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgPortCTS:I
 
-    .line 153
+    .line 157
     iput v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgLandCTS:I
 
-    .line 154
+    .line 158
     const v0, 0x90c00d3
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgColorRes:I
 
-    .line 157
+    .line 161
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mContext:Landroid/content/Context;
 
-    .line 156
+    .line 160
     return-void
 .end method
 
@@ -101,14 +101,14 @@
     .locals 3
 
     .prologue
-    .line 206
+    .line 210
     new-instance v1, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;
 
     const/4 v2, 0x0
 
     invoke-direct {v1, v2}, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;-><init>(Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;)V
 
-    .line 207
+    .line 211
     .local v1, "suit":Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mContext:Landroid/content/Context;
 
@@ -116,7 +116,7 @@
 
     move-result-object v0
 
-    .line 208
+    .line 212
     .local v0, "res":Landroid/content/res/Resources;
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBack:I
 
@@ -126,7 +126,7 @@
 
     iput-object v2, v1, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;->mBack:Landroid/graphics/drawable/Drawable;
 
-    .line 209
+    .line 213
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBackAlt:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -135,7 +135,7 @@
 
     iput-object v2, v1, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;->mBackAlt:Landroid/graphics/drawable/Drawable;
 
-    .line 210
+    .line 214
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mHome:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -144,7 +144,7 @@
 
     iput-object v2, v1, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;->mHome:Landroid/graphics/drawable/Drawable;
 
-    .line 211
+    .line 215
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mRecent:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -153,7 +153,7 @@
 
     iput-object v2, v1, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;->mRecent:Landroid/graphics/drawable/Drawable;
 
-    .line 212
+    .line 216
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgPort:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -162,7 +162,7 @@
 
     iput-object v2, v1, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;->mBgPort:Landroid/graphics/drawable/Drawable;
 
-    .line 213
+    .line 217
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgLand:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -171,12 +171,12 @@
 
     iput-object v2, v1, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;->mBgLand:Landroid/graphics/drawable/Drawable;
 
-    .line 214
+    .line 218
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgPortCTS:I
 
     if-eqz v2, :cond_0
 
-    .line 215
+    .line 219
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgPortCTS:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -185,13 +185,13 @@
 
     iput-object v2, v1, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;->mBgPortCTS:Landroid/graphics/drawable/Drawable;
 
-    .line 217
+    .line 221
     :cond_0
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgLandCTS:I
 
     if-eqz v2, :cond_1
 
-    .line 218
+    .line 222
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgLandCTS:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -200,7 +200,7 @@
 
     iput-object v2, v1, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;->mBgLandCTS:Landroid/graphics/drawable/Drawable;
 
-    .line 220
+    .line 224
     :cond_1
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgColorRes:I
 
@@ -210,7 +210,7 @@
 
     iput v2, v1, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit;->mBgColor:I
 
-    .line 221
+    .line 225
     return-object v1
 .end method
 
@@ -219,10 +219,10 @@
     .param p1, "back"    # I
 
     .prologue
-    .line 161
+    .line 165
     iput p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBack:I
 
-    .line 162
+    .line 166
     return-object p0
 .end method
 
@@ -231,10 +231,10 @@
     .param p1, "backAlt"    # I
 
     .prologue
-    .line 166
+    .line 170
     iput p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBackAlt:I
 
-    .line 167
+    .line 171
     return-object p0
 .end method
 
@@ -243,10 +243,10 @@
     .param p1, "bgColorRes"    # I
 
     .prologue
-    .line 201
+    .line 205
     iput p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgColorRes:I
 
-    .line 202
+    .line 206
     return-object p0
 .end method
 
@@ -255,10 +255,10 @@
     .param p1, "bgLand"    # I
 
     .prologue
-    .line 186
+    .line 190
     iput p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgLand:I
 
-    .line 187
+    .line 191
     return-object p0
 .end method
 
@@ -267,10 +267,10 @@
     .param p1, "bgLandCTS"    # I
 
     .prologue
-    .line 196
+    .line 200
     iput p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgLandCTS:I
 
-    .line 197
+    .line 201
     return-object p0
 .end method
 
@@ -279,10 +279,10 @@
     .param p1, "bgPort"    # I
 
     .prologue
-    .line 181
+    .line 185
     iput p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgPort:I
 
-    .line 182
+    .line 186
     return-object p0
 .end method
 
@@ -291,10 +291,10 @@
     .param p1, "bgPortCTS"    # I
 
     .prologue
-    .line 191
+    .line 195
     iput p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mBgPortCTS:I
 
-    .line 192
+    .line 196
     return-object p0
 .end method
 
@@ -303,10 +303,10 @@
     .param p1, "home"    # I
 
     .prologue
-    .line 171
+    .line 175
     iput p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mHome:I
 
-    .line 172
+    .line 176
     return-object p0
 .end method
 
@@ -315,9 +315,9 @@
     .param p1, "recent"    # I
 
     .prologue
-    .line 176
+    .line 180
     iput p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$DrawableSuit$Builder;->mRecent:I
 
-    .line 177
+    .line 181
     return-object p0
 .end method

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 7537
+    .line 7551
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$37;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -37,26 +37,26 @@
     .param p1, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 7564
+    .line 7578
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 7565
+    .line 7579
     const-string/jumbo v0, "StatusBar"
 
     const-string/jumbo v1, "enable notifications receiver: empty pkg"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7566
+    .line 7580
     const/4 v0, 0x0
 
     return v0
 
-    .line 7568
+    .line 7582
     :cond_0
     const/4 v0, 0x1
 
@@ -68,7 +68,7 @@
     .param p1, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 7559
+    .line 7573
     const-string/jumbo v0, "com.android.systemui"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -77,14 +77,14 @@
 
     if-nez v0, :cond_0
 
-    .line 7560
+    .line 7574
     const-string/jumbo v0, "com.xiaomi.xmsf"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    .line 7559
+    .line 7573
     :goto_0
     return v0
 
@@ -102,12 +102,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 7544
+    .line 7558
     invoke-virtual {p2}, Landroid/content/Intent;->getSender()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 7545
+    .line 7559
     .local v2, "senderPkg":Ljava/lang/String;
     invoke-direct {p0, v2}, Lcom/android/systemui/statusbar/phone/StatusBar$37;->checkSender(Ljava/lang/String;)Z
 
@@ -115,17 +115,17 @@
 
     if-nez v3, :cond_0
 
-    .line 7546
+    .line 7560
     const-string/jumbo v3, "StatusBar"
 
     const-string/jumbo v4, "enable notifications receiver: invalid sender"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7547
+    .line 7561
     return-void
 
-    .line 7550
+    .line 7564
     :cond_0
     const-string/jumbo v3, "pkg"
 
@@ -133,7 +133,7 @@
 
     move-result-object v1
 
-    .line 7551
+    .line 7565
     .local v1, "pkg":Ljava/lang/String;
     const-string/jumbo v3, "enabled"
 
@@ -143,7 +143,7 @@
 
     move-result v0
 
-    .line 7552
+    .line 7566
     .local v0, "enabled":Z
     invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$37;->checkParams(Ljava/lang/String;)Z
 
@@ -151,7 +151,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 7553
+    .line 7567
     const-string/jumbo v3, "StatusBar"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -184,10 +184,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7554
+    .line 7568
     invoke-static {p1, v1, v0}, Lmiui/util/NotificationFilterHelper;->enableNotifications(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 7543
+    .line 7557
     :cond_1
     return-void
 .end method

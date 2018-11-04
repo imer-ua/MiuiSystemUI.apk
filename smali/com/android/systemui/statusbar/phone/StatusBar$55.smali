@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 2243
+    .line 2247
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "active"    # Z
 
     .prologue
-    .line 2264
+    .line 2268
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p1, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .prologue
-    .line 2246
+    .line 2250
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/StatusBar;->FORCE_REMOTE_INPUT_HISTORY:Z
 
     if-eqz v0, :cond_1
@@ -68,7 +68,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2247
+    .line 2251
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->key:Ljava/lang/String;
@@ -77,12 +77,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->removeNotification(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$RankingMap;)V
 
-    .line 2245
+    .line 2249
     :cond_0
     :goto_0
     return-void
 
-    .line 2248
+    .line 2252
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -94,7 +94,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2253
+    .line 2257
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
@@ -103,10 +103,10 @@
 
     invoke-direct {v1, p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBar$55$1;-><init>(Lcom/android/systemui/statusbar/phone/StatusBar$55;Lcom/android/systemui/statusbar/NotificationData$Entry;)V
 
-    .line 2259
+    .line 2263
     const-wide/16 v2, 0xc8
 
-    .line 2253
+    .line 2257
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_0

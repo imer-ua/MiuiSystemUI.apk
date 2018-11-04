@@ -29,16 +29,16 @@
     .param p2, "columnsExpanded"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 1340
+    .line 1345
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1341
+    .line 1346
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->mColumnsCollapsed:Landroid/view/ViewGroup;
 
-    .line 1342
+    .line 1347
     iput-object p2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->mColumnsExpanded:Landroid/view/ViewGroup;
 
-    .line 1340
+    .line 1345
     return-void
 .end method
 
@@ -49,14 +49,14 @@
     .param p1, "child"    # Landroid/view/View;
 
     .prologue
-    .line 1360
+    .line 1365
     invoke-virtual {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->getCurrentParent()Landroid/view/ViewGroup;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1359
+    .line 1364
     return-void
 .end method
 
@@ -66,14 +66,14 @@
     .param p2, "index"    # I
 
     .prologue
-    .line 1364
+    .line 1369
     invoke-virtual {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->getCurrentParent()Landroid/view/ViewGroup;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
-    .line 1363
+    .line 1368
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .locals 1
 
     .prologue
-    .line 1356
+    .line 1361
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->mExpanded:Z
 
     if-eqz v0, :cond_0
@@ -102,14 +102,14 @@
     .param p1, "child"    # Landroid/view/View;
 
     .prologue
-    .line 1368
+    .line 1373
     invoke-virtual {p0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->getCurrentParent()Landroid/view/ViewGroup;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1367
+    .line 1372
     return-void
 .end method
 
@@ -118,17 +118,17 @@
     .param p1, "expanded"    # Z
 
     .prologue
-    .line 1347
+    .line 1352
     iput-boolean p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->mExpanded:Z
 
-    .line 1349
+    .line 1354
     iget-boolean v2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->mExpanded:Z
 
     if-eqz v2, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->mColumnsCollapsed:Landroid/view/ViewGroup;
 
-    .line 1350
+    .line 1355
     .local v0, "from":Landroid/view/ViewGroup;
     :goto_0
     iget-boolean v2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->mExpanded:Z
@@ -137,15 +137,15 @@
 
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->mColumnsExpanded:Landroid/view/ViewGroup;
 
-    .line 1352
+    .line 1357
     .local v1, "to":Landroid/view/ViewGroup;
     :goto_1
     invoke-static {v0, v1}, Lcom/android/systemui/miui/volume/Util;->reparentChildren(Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V
 
-    .line 1346
+    .line 1351
     return-void
 
-    .line 1349
+    .line 1354
     .end local v0    # "from":Landroid/view/ViewGroup;
     .end local v1    # "to":Landroid/view/ViewGroup;
     :cond_0
@@ -154,7 +154,7 @@
     .restart local v0    # "from":Landroid/view/ViewGroup;
     goto :goto_0
 
-    .line 1350
+    .line 1355
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumns;->mColumnsCollapsed:Landroid/view/ViewGroup;
 

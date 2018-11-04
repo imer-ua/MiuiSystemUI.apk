@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 628
+    .line 630
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 0
 
     .prologue
-    .line 630
+    .line 632
     return-void
 .end method
 
@@ -49,14 +49,14 @@
     .locals 6
 
     .prologue
-    .line 640
+    .line 642
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get8(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/policy/DeviceProvisionedController;
 
     move-result-object v1
 
-    .line 641
+    .line 643
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get8(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/policy/DeviceProvisionedController;
@@ -67,12 +67,12 @@
 
     move-result v2
 
-    .line 640
+    .line 642
     invoke-interface {v1, v2}, Lcom/android/systemui/statusbar/policy/DeviceProvisionedController;->isUserSetup(I)Z
 
     move-result v0
 
-    .line 642
+    .line 644
     .local v0, "userSetup":Z
     const-string/jumbo v1, "StatusBar"
 
@@ -82,7 +82,7 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 643
+    .line 645
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v4
@@ -105,14 +105,14 @@
 
     aput-object v4, v3, v5
 
-    .line 642
+    .line 644
     invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 645
+    .line 647
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get38(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
@@ -121,12 +121,12 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 646
+    .line 648
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set19(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
-    .line 647
+    .line 649
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get38(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
@@ -141,12 +141,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 648
+    .line 650
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapseQuickSettings()V
 
-    .line 649
+    .line 651
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -154,7 +154,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 650
+    .line 652
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
@@ -167,13 +167,13 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->setUserSetupComplete(Z)V
 
-    .line 652
+    .line 654
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap38(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap39(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    .line 639
+    .line 641
     :cond_2
     return-void
 .end method
@@ -182,9 +182,9 @@
     .locals 0
 
     .prologue
-    .line 635
+    .line 637
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar$1;->onUserSetupChanged()V
 
-    .line 634
+    .line 636
     return-void
 .end method

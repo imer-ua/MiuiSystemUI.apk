@@ -30,7 +30,7 @@
     .param p3, "val$guts"    # Lcom/android/systemui/statusbar/NotificationGuts;
 
     .prologue
-    .line 8006
+    .line 8023
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$83$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$83;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$83$1;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -49,21 +49,21 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 8009
+    .line 8026
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 8011
+    .line 8028
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$83$1;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->resetTranslation()V
 
-    .line 8012
+    .line 8029
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$83$1;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationGuts;->setIsAnimating(Z)V
 
-    .line 8008
+    .line 8025
     return-void
 .end method

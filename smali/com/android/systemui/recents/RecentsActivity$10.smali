@@ -3,12 +3,12 @@
 .source "RecentsActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnApplyWindowInsetsListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/RecentsActivity;->fitsSystemWindowInsets(Landroid/view/View;)V
+    value = Lcom/android/systemui/recents/RecentsActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 550
+    .line 459
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$10;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,37 +37,18 @@
 
 
 # virtual methods
-.method public onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .locals 6
+.method public onClick(Landroid/view/View;)V
+    .locals 2
     .param p1, "v"    # Landroid/view/View;
-    .param p2, "insets"    # Landroid/view/WindowInsets;
 
     .prologue
-    .line 553
-    invoke-virtual {p2}, Landroid/view/WindowInsets;->getSystemWindowInsets()Landroid/graphics/Rect;
+    .line 468
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$10;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    move-result-object v1
+    const/4 v1, 0x1
 
-    .line 554
-    .local v1, "systemWindowInsets":Landroid/graphics/Rect;
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/RecentsActivity;->updateDockRegions(Z)V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    .line 555
-    .local v0, "lp":Landroid/view/ViewGroup$MarginLayoutParams;
-    iget v2, v1, Landroid/graphics/Rect;->left:I
-
-    iget v3, v1, Landroid/graphics/Rect;->right:I
-
-    iget v4, v1, Landroid/graphics/Rect;->bottom:I
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v0, v2, v5, v3, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
-
-    .line 556
-    return-object p2
+    .line 461
+    return-void
 .end method

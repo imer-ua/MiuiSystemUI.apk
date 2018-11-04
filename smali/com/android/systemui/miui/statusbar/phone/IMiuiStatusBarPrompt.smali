@@ -22,6 +22,9 @@
 .method public abstract hideSafePayStatusBar()V
 .end method
 
+.method public abstract hideSosStatusBar()V
+.end method
+
 .method public abstract makeReturnToInCallScreenButtonGone()V
 .end method
 
@@ -52,5 +55,11 @@
 .method public abstract showReturnToSafeBar(Z)V
 .end method
 
+.method public abstract showReturnToSosBar(Z)V
+.end method
+
 .method public abstract showSafePayStatusBar(ILandroid/os/Bundle;)V
+.end method
+
+.method public abstract showSosStatusBar()V
 .end method

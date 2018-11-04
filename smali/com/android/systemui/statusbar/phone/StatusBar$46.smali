@@ -36,7 +36,7 @@
     .param p4, "val$qsh"    # Lcom/android/systemui/qs/QSTileHost;
 
     .prologue
-    .line 1737
+    .line 1740
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$46;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$46;->val$qsDetail:Lcom/android/systemui/qs/QSDetail;
@@ -60,10 +60,10 @@
     .prologue
     move-object v0, p2
 
-    .line 1740
+    .line 1743
     check-cast v0, Lcom/android/systemui/plugins/qs/QS;
 
-    .line 1741
+    .line 1744
     .local v0, "qs":Lcom/android/systemui/plugins/qs/QS;
     instance-of v2, v0, Lcom/android/systemui/qs/QSFragment;
 
@@ -71,33 +71,33 @@
 
     move-object v1, v0
 
-    .line 1742
+    .line 1745
     check-cast v1, Lcom/android/systemui/qs/QSFragment;
 
-    .line 1743
+    .line 1746
     .local v1, "qsFragment":Lcom/android/systemui/qs/QSFragment;
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$46;->val$qsDetail:Lcom/android/systemui/qs/QSDetail;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSFragment;->setQSDetail(Lcom/android/systemui/qs/QSDetail;)V
 
-    .line 1744
+    .line 1747
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$46;->val$qsCustomizer:Lcom/android/systemui/qs/customize/QSCustomizer;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSFragment;->setQSCustomizer(Lcom/android/systemui/qs/customize/QSCustomizer;)V
 
-    .line 1745
+    .line 1748
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$46;->val$qsh:Lcom/android/systemui/qs/QSTileHost;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSFragment;->setHost(Lcom/android/systemui/qs/QSTileHost;)V
 
-    .line 1746
+    .line 1749
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$46;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mBrightnessMirrorController:Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSFragment;->setBrightnessMirror(Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;)V
 
-    .line 1747
+    .line 1750
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$46;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/qs/QSFragment;->getQsPanel()Lcom/android/systemui/qs/QSPanel;
@@ -106,7 +106,7 @@
 
     iput-object v3, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
-    .line 1739
+    .line 1742
     .end local v1    # "qsFragment":Lcom/android/systemui/qs/QSFragment;
     :cond_0
     return-void
@@ -118,6 +118,6 @@
     .param p2, "fragment"    # Lcom/miui/systemui/support/v4/app/Fragment;
 
     .prologue
-    .line 1752
+    .line 1755
     return-void
 .end method

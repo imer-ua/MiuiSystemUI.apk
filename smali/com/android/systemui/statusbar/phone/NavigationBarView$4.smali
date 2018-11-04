@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     .prologue
-    .line 318
+    .line 322
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$4;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 332
+    .line 336
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 326
+    .line 330
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$4;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->-get0(Lcom/android/systemui/statusbar/phone/NavigationBarView;)Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -60,7 +60,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 327
+    .line 331
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$4;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->-get0(Lcom/android/systemui/statusbar/phone/NavigationBarView;)Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -69,7 +69,7 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusBarPading()V
 
-    .line 325
+    .line 329
     :cond_0
     return-void
 .end method
@@ -79,6 +79,6 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 321
+    .line 325
     return-void
 .end method

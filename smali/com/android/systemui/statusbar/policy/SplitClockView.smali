@@ -339,7 +339,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 62
-    const v0, 0x91202c3
+    const v0, 0x91202c9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/SplitClockView;->findViewById(I)Landroid/view/View;
 
@@ -350,7 +350,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mTimeView:Landroid/widget/TextClock;
 
     .line 63
-    const v0, 0x91202c4
+    const v0, 0x91202ca
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/SplitClockView;->findViewById(I)Landroid/view/View;
 

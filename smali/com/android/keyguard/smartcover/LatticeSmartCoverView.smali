@@ -114,7 +114,7 @@
     iput-object v1, p0, Lcom/android/keyguard/smartcover/LatticeSmartCoverView;->mInfo2TextView2:Landroid/widget/TextView;
 
     .line 40
-    const v1, 0x91202c1
+    const v1, 0x91202c7
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/smartcover/LatticeSmartCoverView;->findViewById(I)Landroid/view/View;
 
@@ -123,7 +123,7 @@
     iput-object v1, p0, Lcom/android/keyguard/smartcover/LatticeSmartCoverView;->mBatteryInfo:Landroid/view/View;
 
     .line 41
-    const v1, 0x91202c2
+    const v1, 0x91202c8
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/smartcover/LatticeSmartCoverView;->findViewById(I)Landroid/view/View;
 

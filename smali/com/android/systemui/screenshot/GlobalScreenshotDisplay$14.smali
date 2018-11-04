@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->quit(ZZ)V
+    value = Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->calScreenshotViewPaddingAndAnim(IIIII)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     .prologue
-    .line 470
+    .line 417
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$14;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,33 +38,88 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 6
 
     .prologue
-    .line 472
-    iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$14;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
+    const-wide/16 v4, 0x12c
 
-    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get18(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/view/WindowManager;
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    move-result-object v0
+    .line 419
+    const/16 v0, 0x12c
 
+    .line 420
+    .local v0, "duration":I
     iget-object v1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$14;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
-    invoke-static {v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get14(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/view/View;
+    invoke-static {v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get17(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Lcom/android/systemui/screenshot/ScreenshotScrollView;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    invoke-virtual {v1}, Lcom/android/systemui/screenshot/ScreenshotScrollView;->animate()Landroid/view/ViewPropertyAnimator;
 
-    .line 473
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-virtual {v1, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+    invoke-virtual {v1, v3}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 471
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    .line 425
+    iget-object v1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$14;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
+
+    invoke-static {v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get3(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/view/ViewGroup;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    .line 427
+    const/4 v2, 0x0
+
+    .line 425
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    .line 429
+    iget-object v1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$14;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
+
+    invoke-static {v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get2(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    .line 418
     return-void
 .end method

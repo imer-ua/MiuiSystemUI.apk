@@ -95,10 +95,10 @@
     .locals 5
 
     .prologue
-    .line 244
+    .line 245
     const-string/jumbo v0, ""
 
-    .line 245
+    .line 246
     .local v0, "channelNameText":Ljava/lang/CharSequence;
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mSbn:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
@@ -108,16 +108,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 246
+    .line 247
     return-object v0
 
-    .line 248
+    .line 249
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mSingleNotificationChannel:Landroid/app/NotificationChannelCompat;
 
     if-nez v1, :cond_2
 
-    .line 250
+    .line 251
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/NotificationInfo;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -126,7 +126,7 @@
 
     move-result-object v1
 
-    .line 251
+    .line 252
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mNotificationChannels:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
@@ -135,7 +135,7 @@
 
     const v3, 0x9140002
 
-    .line 250
+    .line 251
     invoke-virtual {v1, v3, v2}, Landroid/content/res/Resources;->getQuantityString(II)Ljava/lang/String;
 
     move-result-object v1
@@ -144,7 +144,7 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 252
+    .line 253
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mNotificationChannels:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
@@ -159,23 +159,23 @@
 
     aput-object v3, v2, v4
 
-    .line 250
+    .line 251
     invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 257
+    .line 258
     :cond_1
     :goto_0
     return-object v0
 
-    .line 254
+    .line 255
     :cond_2
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mIsDefaultChannel:Z
 
     if-nez v1, :cond_1
 
-    .line 255
+    .line 256
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mSingleNotificationChannel:Landroid/app/NotificationChannelCompat;
 
     invoke-virtual {v1}, Landroid/app/NotificationChannelCompat;->getName()Ljava/lang/CharSequence;
@@ -249,7 +249,7 @@
     const/4 v2, 0x0
 
     .line 204
-    const v1, 0x912021a
+    const v1, 0x9120220
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -286,21 +286,26 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
-
-    const/4 v0, 0x0
+    if-nez v1, :cond_2
 
     .line 208
+    iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mSingleNotificationChannel:Landroid/app/NotificationChannelCompat;
+
+    if-eqz v1, :cond_1
+
+    const/4 v0, 0x1
+
+    .line 209
     .local v0, "visible":Z
     :goto_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mChannelEnabledSwitch:Lmiui/widget/SlidingButton;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     :goto_2
     invoke-virtual {v1, v2}, Lmiui/widget/SlidingButton;->setVisibility(I)V
 
-    .line 211
+    .line 212
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mChannelEnabledSwitch:Lmiui/widget/SlidingButton;
 
     new-instance v2, Lcom/android/systemui/statusbar/NotificationInfo$3;
@@ -319,15 +324,23 @@
     .line 206
     goto :goto_0
 
-    .line 207
+    .line 208
     :cond_1
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     .restart local v0    # "visible":Z
     goto :goto_1
 
-    .line 208
+    .line 207
+    .end local v0    # "visible":Z
     :cond_2
+    const/4 v0, 0x0
+
+    .restart local v0    # "visible":Z
+    goto :goto_1
+
+    .line 209
+    :cond_3
     const/16 v2, 0x8
 
     goto :goto_2
@@ -526,12 +539,12 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 234
+    .line 235
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mSingleNotificationChannel:Landroid/app/NotificationChannelCompat;
 
     if-eqz v2, :cond_1
 
-    .line 235
+    .line 236
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationInfo;->getSelectedImportance()I
 
     move-result v2
@@ -540,14 +553,14 @@
 
     const/4 v1, 0x1
 
-    .line 236
+    .line 237
     .local v1, "disabled":Z
     :goto_0
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationInfo;->getChannelNameText()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 237
+    .line 238
     .local v0, "channelNameText":Ljava/lang/CharSequence;
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mSecondaryTextView:Landroid/widget/TextView;
 
@@ -562,7 +575,7 @@
 
     new-array v5, v5, [Ljava/lang/Object;
 
-    .line 238
+    .line 239
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mSbn:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     invoke-virtual {v6}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getAppName()Ljava/lang/String;
@@ -575,14 +588,14 @@
 
     aput-object v0, v5, v6
 
-    .line 237
+    .line 238
     invoke-virtual {v4, v2, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 239
+    .line 240
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mSecondaryTextView:Landroid/widget/TextView;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mContext:Landroid/content/Context;
@@ -594,10 +607,10 @@
     :goto_2
     invoke-virtual {v3, v4, v2}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 
-    .line 233
+    .line 234
     return-void
 
-    .line 235
+    .line 236
     .end local v0    # "channelNameText":Ljava/lang/CharSequence;
     .end local v1    # "disabled":Z
     :cond_0
@@ -606,7 +619,7 @@
     .restart local v1    # "disabled":Z
     goto :goto_0
 
-    .line 234
+    .line 235
     .end local v1    # "disabled":Z
     :cond_1
     const/4 v1, 0x0
@@ -614,14 +627,14 @@
     .restart local v1    # "disabled":Z
     goto :goto_0
 
-    .line 238
+    .line 239
     .restart local v0    # "channelNameText":Ljava/lang/CharSequence;
     :cond_2
     const v2, 0x9100598    # 1.7336E-33f
 
     goto :goto_1
 
-    .line 240
+    .line 241
     :cond_3
     const v2, 0x91101d2
 
@@ -694,7 +707,7 @@
 
     .line 89
     .local v3, "appUid":I
-    const v11, 0x9120218
+    const v11, 0x912021e
 
     invoke-virtual {p0, v11}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -844,7 +857,7 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationInfo;->initSlidingButton()V
 
     .line 127
-    const v11, 0x9120219
+    const v11, 0x912021f
 
     invoke-virtual {p0, v11}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -858,7 +871,7 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationInfo;->updateSecondaryText()V
 
     .line 131
-    const v11, 0x912021b
+    const v11, 0x9120221
 
     invoke-virtual {p0, v11}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -901,7 +914,7 @@
 
     .line 150
     :goto_4
-    const v11, 0x912021c
+    const v11, 0x9120222
 
     invoke-virtual {p0, v11}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -1007,7 +1020,7 @@
     .param p2, "force"    # Z
 
     .prologue
-    .line 277
+    .line 278
     if-eqz p1, :cond_0
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationInfo;->hasImportanceChanged()Z
@@ -1016,12 +1029,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 278
+    .line 279
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mClickListener:Lcom/android/systemui/statusbar/NotificationInfo$ClickListener;
 
     if-eqz v0, :cond_1
 
-    .line 279
+    .line 280
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mClickListener:Lcom/android/systemui/statusbar/NotificationInfo$ClickListener;
 
     new-instance v1, Lcom/android/systemui/statusbar/NotificationInfo$4;
@@ -1030,14 +1043,14 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/NotificationInfo$ClickListener;->onClickCheckSave(Ljava/lang/Runnable;)V
 
-    .line 288
+    .line 289
     :cond_0
     :goto_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 285
+    .line 286
     :cond_1
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationInfo;->saveImportance()V
 
@@ -1048,7 +1061,7 @@
     .locals 1
 
     .prologue
-    .line 272
+    .line 273
     const/4 v0, 0x0
 
     return v0
@@ -1059,15 +1072,15 @@
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 224
+    .line 225
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/BaseGutsContentView;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 225
+    .line 226
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mGutsContainer:Lcom/android/systemui/statusbar/NotificationGuts;
 
     if-eqz v0, :cond_0
 
-    .line 226
+    .line 227
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v0
@@ -1076,14 +1089,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 227
+    .line 228
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mContext:Landroid/content/Context;
 
-    .line 228
+    .line 229
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mGutsContainer:Lcom/android/systemui/statusbar/NotificationGuts;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/NotificationGuts;->isExposed()Z
@@ -1094,13 +1107,13 @@
 
     const v0, 0x9100263
 
-    .line 227
+    .line 228
     :goto_0
     const/4 v3, 0x1
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 229
+    .line 230
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mSbn:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     invoke-virtual {v4}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getAppName()Ljava/lang/String;
@@ -1111,18 +1124,18 @@
 
     aput-object v4, v3, v5
 
-    .line 227
+    .line 228
     invoke-virtual {v2, v0, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 223
+    .line 224
     :cond_0
     return-void
 
-    .line 229
+    .line 230
     :cond_1
     const v0, 0x9100264
 
@@ -1134,10 +1147,10 @@
     .param p1, "guts"    # Lcom/android/systemui/statusbar/NotificationGuts;
 
     .prologue
-    .line 262
+    .line 263
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mGutsContainer:Lcom/android/systemui/statusbar/NotificationGuts;
 
-    .line 261
+    .line 262
     return-void
 .end method
 
@@ -1147,7 +1160,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 267
+    .line 268
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationInfo;->mChannelEnabledSwitch:Lmiui/widget/SlidingButton;
 
     if-eqz v1, :cond_0

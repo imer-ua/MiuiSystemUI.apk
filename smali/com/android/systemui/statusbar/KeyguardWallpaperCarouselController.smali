@@ -333,7 +333,7 @@
     .line 84
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardWallpaperCarouselController;->mNotificationPanelView:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    const v1, 0x91202d1
+    const v1, 0x91202d7
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->findViewById(I)Landroid/view/View;
 

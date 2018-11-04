@@ -30,7 +30,7 @@
     .param p2, "val$row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     .prologue
-    .line 8553
+    .line 8570
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$1;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 8556
+    .line 8573
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$1;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->setJustClicked(Z)V
 
-    .line 8555
+    .line 8572
     return-void
 .end method

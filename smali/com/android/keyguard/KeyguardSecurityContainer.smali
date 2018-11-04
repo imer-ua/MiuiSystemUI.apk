@@ -612,7 +612,7 @@
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 405
-    const v2, 0x91201c4
+    const v2, 0x91201c8
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -623,7 +623,7 @@
     .line 406
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mLockoutView:Landroid/view/View;
 
-    const v3, 0x91201c8
+    const v3, 0x91201cc
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -635,7 +635,7 @@
     .local v0, "fogetPassword":Landroid/widget/Button;
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mLockoutView:Landroid/view/View;
 
-    const v3, 0x91201c9
+    const v3, 0x91201cd
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -646,7 +646,7 @@
     .line 408
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mLockoutView:Landroid/view/View;
 
-    const v3, 0x91201cd
+    const v3, 0x91201d1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -673,7 +673,7 @@
     .line 429
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mFogetPasswordMethod:Landroid/view/View;
 
-    const v3, 0x91201cc
+    const v3, 0x91201d0
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -688,7 +688,7 @@
     .line 457
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mFogetPasswordMethod:Landroid/view/View;
 
-    const v3, 0x91201cb
+    const v3, 0x91201cf
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -703,7 +703,7 @@
     .line 466
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mFogetPasswordSuggestion:Landroid/view/View;
 
-    const v3, 0x91201d0
+    const v3, 0x91201d4
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -930,7 +930,7 @@
     .line 478
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mLockoutView:Landroid/view/View;
 
-    const v1, 0x91201c5
+    const v1, 0x91201c9
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -941,7 +941,7 @@
     .line 479
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mLockoutView:Landroid/view/View;
 
-    const v1, 0x91201c6
+    const v1, 0x91201ca
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -952,7 +952,7 @@
     .line 480
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mLockoutView:Landroid/view/View;
 
-    const v1, 0x91201c8
+    const v1, 0x91201cc
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2020,7 +2020,7 @@
     .line 342
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mLockoutView:Landroid/view/View;
 
-    const v1, 0x91201c6
+    const v1, 0x91201ca
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

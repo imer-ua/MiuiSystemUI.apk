@@ -65,19 +65,19 @@
     sput-object v0, Lcom/android/systemui/statusbar/policy/AccessibilityContentDescriptions;->DATA_CONNECTION_STRENGTH:[I
 
     .line 30
-    const v0, 0x91005ff
+    const v0, 0x9100602
 
     .line 31
-    const v1, 0x9100600
+    const v1, 0x9100603
 
     .line 32
-    const v2, 0x9100601
+    const v2, 0x9100604
 
     .line 33
-    const v3, 0x9100602
+    const v3, 0x9100605
 
     .line 34
-    const v4, 0x9100603
+    const v4, 0x9100606
 
     .line 29
     filled-new-array {v0, v1, v2, v3, v4}, [I

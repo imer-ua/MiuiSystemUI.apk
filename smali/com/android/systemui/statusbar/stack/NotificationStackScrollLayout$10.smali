@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 452
+    .line 454
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$10;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "outline"    # Landroid/graphics/Outline;
 
     .prologue
-    .line 455
+    .line 457
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$10;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-wrap1(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Z
@@ -49,7 +49,7 @@
 
     if-nez v0, :cond_0
 
-    .line 456
+    .line 458
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$10;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get2(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Landroid/graphics/Rect;
@@ -86,12 +86,12 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
 
-    .line 458
+    .line 460
     const/4 v0, 0x0
 
     invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setAlpha(F)V
 
-    .line 454
+    .line 456
     :cond_0
     return-void
 .end method

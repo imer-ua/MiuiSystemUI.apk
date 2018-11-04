@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationInfo;
 
     .prologue
-    .line 279
+    .line 280
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationInfo$4;->this$0:Lcom/android/systemui/statusbar/NotificationInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 281
+    .line 282
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationInfo$4;->this$0:Lcom/android/systemui/statusbar/NotificationInfo;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/NotificationInfo;->-wrap0(Lcom/android/systemui/statusbar/NotificationInfo;)V
 
-    .line 280
+    .line 281
     return-void
 .end method

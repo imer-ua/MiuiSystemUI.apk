@@ -1224,7 +1224,7 @@
 
     .line 109
     .local v0, "res":Landroid/content/res/Resources;
-    const v1, 0x912024e
+    const v1, 0x9120254
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1235,7 +1235,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSFragment;->mContainer:Lcom/android/systemui/qs/QSContainerImpl;
 
     .line 110
-    const v1, 0x9120250
+    const v1, 0x9120256
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1244,7 +1244,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSFragment;->mContent:Landroid/view/View;
 
     .line 111
-    const v1, 0x9120251    # 1.75752E-33f
+    const v1, 0x9120257
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1253,7 +1253,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSFragment;->mBackground:Landroid/view/View;
 
     .line 112
-    const v1, 0x9120252
+    const v1, 0x9120258
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1264,7 +1264,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSFragment;->mQuickQSPanel:Lcom/android/systemui/qs/QuickQSPanel;
 
     .line 113
-    const v1, 0x9120253
+    const v1, 0x9120259
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1275,7 +1275,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSFragment;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
     .line 114
-    const v1, 0x912023a
+    const v1, 0x9120240
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1286,7 +1286,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSFragment;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
     .line 115
-    const v1, 0x9120254
+    const v1, 0x912025a
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1475,18 +1475,6 @@
 
     .prologue
     .line 500
-    return-void
-.end method
-
-.method public setBrightnessHeight(I)V
-    .locals 1
-
-    iput p1, p0, Lcom/android/systemui/qs/QSFragment;->mBrightnessHeight:I
-
-    iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mContainer:Lcom/android/systemui/qs/QSContainerImpl;
-
-    invoke-virtual {v0, p1}, Lcom/android/systemui/qs/QSContainerImpl;->setBrightnessHeight(I)V
-
     return-void
 .end method
 

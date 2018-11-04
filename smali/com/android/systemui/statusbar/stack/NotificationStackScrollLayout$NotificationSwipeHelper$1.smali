@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;
 
     .prologue
-    .line 4796
+    .line 4801
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper$1;->this$1:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,11 +43,11 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 4799
+    .line 4804
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper$1;->this$1:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;
 
     invoke-virtual {v0, v1, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->resetExposedMenuView(ZZ)V
 
-    .line 4798
+    .line 4803
     return-void
 .end method

@@ -45,10 +45,10 @@
     .prologue
     const/16 v3, 0x15
 
-    .line 5045
+    .line 5050
     new-array v0, v3, [Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
-    .line 5048
+    .line 5053
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -81,7 +81,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5057
+    .line 5062
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -114,7 +114,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5066
+    .line 5071
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -147,7 +147,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5075
+    .line 5080
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -180,7 +180,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5084
+    .line 5089
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -193,7 +193,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5088
+    .line 5093
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -210,7 +210,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5093
+    .line 5098
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -223,7 +223,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5097
+    .line 5102
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -236,7 +236,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5101
+    .line 5106
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -269,14 +269,14 @@
 
     aput-object v1, v0, v2
 
-    .line 5110
+    .line 5115
     const/4 v1, 0x0
 
     const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
-    .line 5113
+    .line 5118
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -313,7 +313,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5123
+    .line 5128
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -326,7 +326,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5127
+    .line 5132
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -355,7 +355,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5135
+    .line 5140
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -388,7 +388,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5144
+    .line 5149
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -417,7 +417,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5152
+    .line 5157
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -446,7 +446,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5160
+    .line 5165
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -479,7 +479,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5169
+    .line 5174
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -508,7 +508,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5177
+    .line 5182
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -525,7 +525,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5182
+    .line 5187
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -542,7 +542,7 @@
 
     aput-object v1, v0, v2
 
-    .line 5187
+    .line 5192
     new-instance v1, Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     invoke-direct {v1}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -587,20 +587,20 @@
 
     aput-object v1, v0, v2
 
-    .line 5045
+    .line 5050
     sput-object v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->FILTERS:[Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
-    .line 5199
+    .line 5204
     new-array v0, v3, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->LENGTHS:[I
 
-    .line 5043
+    .line 5048
     return-void
 
-    .line 5199
+    .line 5204
     nop
 
     :array_0
@@ -635,7 +635,7 @@
     .param p2, "type"    # I
 
     .prologue
-    .line 5300
+    .line 5305
     sget-object v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->LENGTHS:[I
 
     aget v0, v0, p2
@@ -644,7 +644,7 @@
 
     invoke-direct {p0, p1, p2, v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;-><init>(Landroid/view/View;IJ)V
 
-    .line 5299
+    .line 5304
     return-void
 .end method
 
@@ -655,7 +655,7 @@
     .param p3, "length"    # J
 
     .prologue
-    .line 5308
+    .line 5313
     sget-object v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->FILTERS:[Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     aget-object v6, v0, p2
@@ -670,7 +670,7 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;-><init>(Landroid/view/View;IJLcom/android/systemui/statusbar/stack/AnimationFilter;)V
 
-    .line 5307
+    .line 5312
     return-void
 .end method
 
@@ -682,29 +682,29 @@
     .param p5, "filter"    # Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     .prologue
-    .line 5311
+    .line 5316
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5312
+    .line 5317
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->eventStartTime:J
 
-    .line 5313
+    .line 5318
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->changingView:Landroid/view/View;
 
-    .line 5314
+    .line 5319
     iput p2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->animationType:I
 
-    .line 5315
+    .line 5320
     iput-wide p3, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->length:J
 
-    .line 5316
+    .line 5321
     iput-object p5, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->filter:Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
-    .line 5311
+    .line 5316
     return-void
 .end method
 
@@ -715,7 +715,7 @@
     .param p3, "filter"    # Lcom/android/systemui/statusbar/stack/AnimationFilter;
 
     .prologue
-    .line 5304
+    .line 5309
     sget-object v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->LENGTHS:[I
 
     aget v0, v0, p2
@@ -732,7 +732,7 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;-><init>(Landroid/view/View;IJLcom/android/systemui/statusbar/stack/AnimationFilter;)V
 
-    .line 5303
+    .line 5308
     return-void
 .end method
 
@@ -749,17 +749,17 @@
     .end annotation
 
     .prologue
-    .line 5327
+    .line 5332
     .local p0, "events":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;>;"
     const-wide/16 v2, 0x0
 
-    .line 5328
+    .line 5333
     .local v2, "length":J
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    .line 5329
+    .line 5334
     .local v4, "size":I
     const/4 v1, 0x0
 
@@ -767,14 +767,14 @@
     :goto_0
     if-ge v1, v4, :cond_1
 
-    .line 5330
+    .line 5335
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;
 
-    .line 5331
+    .line 5336
     .local v0, "event":Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;
     iget-wide v6, v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->length:J
 
@@ -782,25 +782,25 @@
 
     move-result-wide v2
 
-    .line 5332
+    .line 5337
     iget v5, v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->animationType:I
 
     const/16 v6, 0xa
 
     if-ne v5, v6, :cond_0
 
-    .line 5333
+    .line 5338
     iget-wide v6, v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;->length:J
 
     return-wide v6
 
-    .line 5329
+    .line 5334
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 5336
+    .line 5341
     .end local v0    # "event":Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$AnimationEvent;
     :cond_1
     return-wide v2

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationInfo;
 
     .prologue
-    .line 211
+    .line 212
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationInfo$3;->this$0:Lcom/android/systemui/statusbar/NotificationInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .param p2, "isChecked"    # Z
 
     .prologue
-    .line 214
+    .line 215
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationInfo$3;->this$0:Lcom/android/systemui/statusbar/NotificationInfo;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/NotificationInfo;->-get0(Lcom/android/systemui/statusbar/NotificationInfo;)Lcom/android/systemui/statusbar/NotificationGuts;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 215
+    .line 216
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationInfo$3;->this$0:Lcom/android/systemui/statusbar/NotificationInfo;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/NotificationInfo;->-get0(Lcom/android/systemui/statusbar/NotificationInfo;)Lcom/android/systemui/statusbar/NotificationGuts;
@@ -61,12 +61,12 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/NotificationGuts;->resetFalsingCheck()V
 
-    .line 217
+    .line 218
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationInfo$3;->this$0:Lcom/android/systemui/statusbar/NotificationInfo;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/NotificationInfo;->-wrap1(Lcom/android/systemui/statusbar/NotificationInfo;)V
 
-    .line 213
+    .line 214
     return-void
 .end method

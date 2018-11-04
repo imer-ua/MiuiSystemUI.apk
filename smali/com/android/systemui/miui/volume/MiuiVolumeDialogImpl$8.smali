@@ -26,7 +26,7 @@
     .param p3, "$anonymous1"    # Landroid/media/AudioManager;
 
     .prologue
-    .line 886
+    .line 890
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$8;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-direct {p0, p2, p3}, Lcom/android/systemui/volume/SafetyWarningDialog;-><init>(Landroid/content/Context;Landroid/media/AudioManager;)V
@@ -42,7 +42,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 889
+    .line 893
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$8;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get15(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Ljava/lang/Object;
@@ -51,7 +51,7 @@
 
     monitor-enter v1
 
-    .line 890
+    .line 894
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$8;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -63,15 +63,15 @@
 
     monitor-exit v1
 
-    .line 892
+    .line 896
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$8;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v0, v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-wrap5(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;)V
 
-    .line 888
+    .line 892
     return-void
 
-    .line 889
+    .line 893
     :catchall_0
     move-exception v0
 

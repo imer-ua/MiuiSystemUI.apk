@@ -392,7 +392,7 @@
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/UserDetailItemView;->updateTypeface()V
 
     .line 128
-    const v0, 0x912025a
+    const v0, 0x9120260
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/UserDetailItemView;->findViewById(I)Landroid/view/View;
 

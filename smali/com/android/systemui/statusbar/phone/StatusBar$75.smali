@@ -30,7 +30,7 @@
     .param p2, "val$clickPendingViewRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 6518
+    .line 6532
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$75;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$75;->val$clickPendingViewRunnable:Ljava/lang/Runnable;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 6521
+    .line 6535
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$75;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -61,7 +61,7 @@
 
     move-result v0
 
-    .line 6522
+    .line 6536
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$75;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -72,10 +72,10 @@
 
     move-result v1
 
-    .line 6521
+    .line 6535
     if-eq v0, v1, :cond_0
 
-    .line 6524
+    .line 6538
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$75;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -86,7 +86,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 6526
+    .line 6540
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$75;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -95,7 +95,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->post(Ljava/lang/Runnable;)Z
 
-    .line 6520
+    .line 6534
     :cond_0
     return-void
 .end method

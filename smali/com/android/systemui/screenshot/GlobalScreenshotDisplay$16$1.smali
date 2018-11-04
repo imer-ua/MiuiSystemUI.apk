@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;->onAnimationStarted()V
+    value = Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;->onClick(Landroid/content/DialogInterface;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;
 
     .prologue
-    .line 555
+    .line 549
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16$1;->this$1:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,18 +38,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 557
+    .line 552
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16$1;->this$1:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;
 
     iget-object v0, v0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
-    invoke-static {v0, v1, v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap12(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;ZZ)V
+    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap8(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)V
 
-    .line 556
+    .line 551
     return-void
 .end method

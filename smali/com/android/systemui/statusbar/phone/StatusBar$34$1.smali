@@ -36,7 +36,7 @@
     .param p4, "val$fillInIntent"    # Landroid/content/Intent;
 
     .prologue
-    .line 7245
+    .line 7259
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$34$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$34;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$34$1;->val$view:Landroid/view/View;
@@ -56,7 +56,7 @@
     .locals 6
 
     .prologue
-    .line 7249
+    .line 7263
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerCompat;->getService()Landroid/app/IActivityManager;
 
@@ -66,7 +66,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 7253
+    .line 7267
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$34$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$34;
 
@@ -80,24 +80,24 @@
 
     move-result v1
 
-    .line 7256
+    .line 7270
     .local v1, "handled":Z
     if-eqz v1, :cond_0
 
-    .line 7257
+    .line 7271
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$34$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$34;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar$34;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     const/4 v3, 0x2
 
-    .line 7258
+    .line 7272
     const/4 v4, 0x1
 
-    .line 7257
+    .line 7271
     invoke-virtual {v2, v3, v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels(IZ)V
 
-    .line 7259
+    .line 7273
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$34$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$34;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar$34;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->visibilityChanged(Z)V
 
-    .line 7260
+    .line 7274
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$34$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$34;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar$34;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -115,11 +115,11 @@
 
     invoke-virtual {v2}, Lcom/android/systemui/assist/AssistManager;->hideAssist()V
 
-    .line 7264
+    .line 7278
     :cond_0
     return v1
 
-    .line 7250
+    .line 7264
     .end local v1    # "handled":Z
     :catch_0
     move-exception v0

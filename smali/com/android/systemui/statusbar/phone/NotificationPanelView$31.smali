@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 2620
+    .line 2611
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$31;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,20 +41,20 @@
     .locals 2
 
     .prologue
-    .line 2623
+    .line 2614
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$31;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHintAnimationRunning:Z
 
-    .line 2624
+    .line 2615
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$31;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->onHintFinished()V
 
-    .line 2622
+    .line 2613
     return-void
 .end method

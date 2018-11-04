@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 3969
+    .line 3982
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,94 +35,108 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 2
+    .locals 6
     .param p1, "m"    # Landroid/os/Message;
 
     .prologue
-    .line 3972
-    iget v0, p1, Landroid/os/Message;->what:I
+    .line 3985
+    iget v1, p1, Landroid/os/Message;->what:I
 
-    sparse-switch v0, :sswitch_data_0
+    sparse-switch v1, :sswitch_data_0
 
-    .line 3971
+    .line 3984
     :goto_0
     return-void
 
-    .line 3974
+    .line 3987
     :sswitch_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget v1, p1, Landroid/os/Message;->arg1:I
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->toggleKeyboardShortcuts(I)V
-
-    goto :goto_0
-
-    .line 3977
-    :sswitch_1
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->dismissKeyboardShortcuts()V
-
-    goto :goto_0
-
-    .line 3981
-    :sswitch_2
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateExpandNotificationsPanel()V
-
-    goto :goto_0
-
-    .line 3984
-    :sswitch_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget v2, p1, Landroid/os/Message;->arg1:I
 
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateExpandSettingsPanel(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 3987
-    :sswitch_4
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels()V
+    invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->toggleKeyboardShortcuts(I)V
 
     goto :goto_0
 
     .line 3990
-    :sswitch_5
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap19(Lcom/android/systemui/statusbar/phone/StatusBar;)V
-
-    goto :goto_0
-
-    .line 3993
-    :sswitch_6
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap20(Lcom/android/systemui/statusbar/phone/StatusBar;)V
-
-    goto :goto_0
-
-    .line 3996
-    :sswitch_7
+    :sswitch_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Landroid/service/notification/NotificationListenerService$RankingMap;
-
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationRanking(Landroid/service/notification/NotificationListenerService$RankingMap;)V
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->dismissKeyboardShortcuts()V
 
     goto :goto_0
 
-    .line 3972
+    .line 3994
+    :sswitch_2
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateExpandNotificationsPanel()V
+
+    goto :goto_0
+
+    .line 3997
+    :sswitch_3
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateExpandSettingsPanel(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 4000
+    :sswitch_4
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels()V
+
+    goto :goto_0
+
+    .line 4003
+    :sswitch_5
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap19(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+
+    goto :goto_0
+
+    .line 4006
+    :sswitch_6
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap20(Lcom/android/systemui/statusbar/phone/StatusBar;)V
+
+    goto :goto_0
+
+    .line 4009
+    :sswitch_7
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lcom/android/internal/os/SomeArgs;
+
+    .line 4010
+    .local v0, "args":Lcom/android/internal/os/SomeArgs;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$H;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
+
+    check-cast v1, Landroid/service/notification/NotificationListenerService$RankingMap;
+
+    iget-object v2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
+
+    check-cast v2, Ljava/lang/Long;
+
+    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    invoke-static {v3, v1, v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap36(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/service/notification/NotificationListenerService$RankingMap;J)V
+
+    goto :goto_0
+
+    .line 3985
     :sswitch_data_0
     .sparse-switch
         0x3e8 -> :sswitch_2

@@ -41,7 +41,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/qs/tiles/WifiTile;
 
     .prologue
-    .line 345
+    .line 346
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,14 +59,14 @@
 
     const/4 v5, 0x0
 
-    .line 437
+    .line 439
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
     if-nez v4, :cond_0
 
     return-void
 
-    .line 438
+    .line 440
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mAccessPoints:[Lcom/android/settingslib/wifi/AccessPoint;
 
@@ -78,13 +78,13 @@
 
     if-lez v4, :cond_2
 
-    .line 440
+    .line 442
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-virtual {v4, v6}, Lcom/android/systemui/qs/tiles/WifiTile;->fireScanStateChanged(Z)V
 
-    .line 446
+    .line 447
     :goto_0
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
@@ -94,73 +94,31 @@
 
     iget-boolean v4, v4, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->enabled:Z
 
-    if-nez v4, :cond_3
-
-    .line 447
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
-
-    .line 448
-    const v6, 0x9100317
-
-    .line 447
-    invoke-virtual {v4, v7, v6}, Lcom/android/systemui/qs/QSDetailItems;->setEmptyState(II)V
+    if-eqz v4, :cond_7
 
     .line 449
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
-
-    invoke-virtual {v4, v5}, Lcom/android/systemui/qs/QSDetailItems;->setItems([Lcom/android/systemui/qs/QSDetailItems$Item;)V
-
-    .line 450
-    return-void
-
-    .line 439
-    :cond_2
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
-
-    iget-object v4, v4, Lcom/android/systemui/qs/tiles/WifiTile;->mSignalCallback:Lcom/android/systemui/qs/tiles/WifiTile$WifiSignalCallback;
-
-    iget-object v4, v4, Lcom/android/systemui/qs/tiles/WifiTile$WifiSignalCallback;->mInfo:Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;
-
-    iget-boolean v4, v4, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->enabled:Z
-
-    if-eqz v4, :cond_1
-
-    .line 442
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v4, v6}, Lcom/android/systemui/qs/tiles/WifiTile;->fireScanStateChanged(Z)V
-
-    goto :goto_0
-
-    .line 454
-    :cond_3
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
-
-    .line 455
-    const v6, 0x9100159
-
-    .line 454
-    invoke-virtual {v4, v7, v6}, Lcom/android/systemui/qs/QSDetailItems;->setEmptyState(II)V
-
-    .line 458
     const/4 v3, 0x0
 
-    .line 459
+    .line 450
     .local v3, "items":[Lcom/android/systemui/qs/QSDetailItems$Item;
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mAccessPoints:[Lcom/android/settingslib/wifi/AccessPoint;
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
-    .line 460
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mAccessPoints:[Lcom/android/settingslib/wifi/AccessPoint;
+
+    array-length v4, v4
+
+    if-lez v4, :cond_5
+
+    .line 451
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mAccessPoints:[Lcom/android/settingslib/wifi/AccessPoint;
 
     array-length v4, v4
 
     new-array v3, v4, [Lcom/android/systemui/qs/QSDetailItems$Item;
 
-    .line 461
+    .line 452
     .local v3, "items":[Lcom/android/systemui/qs/QSDetailItems$Item;
     const/4 v1, 0x0
 
@@ -172,22 +130,22 @@
 
     if-ge v1, v4, :cond_6
 
-    .line 462
+    .line 453
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mAccessPoints:[Lcom/android/settingslib/wifi/AccessPoint;
 
     aget-object v0, v4, v1
 
-    .line 463
+    .line 454
     .local v0, "ap":Lcom/android/settingslib/wifi/AccessPoint;
     new-instance v2, Lcom/android/systemui/qs/QSDetailItems$Item;
 
     invoke-direct {v2}, Lcom/android/systemui/qs/QSDetailItems$Item;-><init>()V
 
-    .line 464
+    .line 455
     .local v2, "item":Lcom/android/systemui/qs/QSDetailItems$Item;
     iput-object v0, v2, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
-    .line 465
+    .line 456
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-static {v4}, Lcom/android/systemui/qs/tiles/WifiTile;->-get9(Lcom/android/systemui/qs/tiles/WifiTile;)Lcom/android/systemui/statusbar/policy/NetworkController$AccessPointController;
@@ -200,19 +158,19 @@
 
     iput v4, v2, Lcom/android/systemui/qs/QSDetailItems$Item;->icon:I
 
-    .line 466
+    .line 457
     invoke-virtual {v0}, Lcom/android/settingslib/wifi/AccessPoint;->getSsid()Ljava/lang/CharSequence;
 
     move-result-object v4
 
     iput-object v4, v2, Lcom/android/systemui/qs/QSDetailItems$Item;->line1:Ljava/lang/CharSequence;
 
-    .line 467
+    .line 458
     invoke-virtual {v0}, Lcom/android/settingslib/wifi/AccessPoint;->isActive()Z
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
 
     invoke-virtual {v0}, Lcom/android/settingslib/wifi/AccessPoint;->getSummary()Ljava/lang/String;
 
@@ -221,52 +179,110 @@
     :goto_2
     iput-object v4, v2, Lcom/android/systemui/qs/QSDetailItems$Item;->line2:Ljava/lang/CharSequence;
 
-    .line 468
+    .line 459
     invoke-virtual {v0}, Lcom/android/settingslib/wifi/AccessPoint;->getSecurity()I
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_4
 
-    .line 469
+    .line 460
     const v4, 0x90201a2
 
-    .line 468
+    .line 459
     :goto_3
     iput v4, v2, Lcom/android/systemui/qs/QSDetailItems$Item;->icon2:I
 
-    .line 471
+    .line 462
     aput-object v2, v3, v1
 
-    .line 461
+    .line 452
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    :cond_4
+    .line 441
+    .end local v0    # "ap":Lcom/android/settingslib/wifi/AccessPoint;
+    .end local v1    # "i":I
+    .end local v2    # "item":Lcom/android/systemui/qs/QSDetailItems$Item;
+    .end local v3    # "items":[Lcom/android/systemui/qs/QSDetailItems$Item;
+    :cond_2
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
+
+    iget-object v4, v4, Lcom/android/systemui/qs/tiles/WifiTile;->mSignalCallback:Lcom/android/systemui/qs/tiles/WifiTile$WifiSignalCallback;
+
+    iget-object v4, v4, Lcom/android/systemui/qs/tiles/WifiTile$WifiSignalCallback;->mInfo:Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;
+
+    iget-boolean v4, v4, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->enabled:Z
+
+    if-eqz v4, :cond_1
+
+    .line 444
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v4, v6}, Lcom/android/systemui/qs/tiles/WifiTile;->fireScanStateChanged(Z)V
+
+    goto :goto_0
+
+    .restart local v0    # "ap":Lcom/android/settingslib/wifi/AccessPoint;
+    .restart local v1    # "i":I
+    .restart local v2    # "item":Lcom/android/systemui/qs/QSDetailItems$Item;
+    .restart local v3    # "items":[Lcom/android/systemui/qs/QSDetailItems$Item;
+    :cond_3
     move-object v4, v5
 
-    .line 467
+    .line 458
     goto :goto_2
 
-    .line 470
-    :cond_5
+    .line 461
+    :cond_4
     const/4 v4, -0x1
 
     goto :goto_3
 
-    .line 474
+    .line 466
     .end local v0    # "ap":Lcom/android/settingslib/wifi/AccessPoint;
     .end local v1    # "i":I
     .end local v2    # "item":Lcom/android/systemui/qs/QSDetailItems$Item;
+    .local v3, "items":[Lcom/android/systemui/qs/QSDetailItems$Item;
+    :cond_5
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
+
+    .line 467
+    const v5, 0x9100159
+
+    .line 466
+    invoke-virtual {v4, v7, v5}, Lcom/android/systemui/qs/QSDetailItems;->setEmptyState(II)V
+
+    .line 469
     .end local v3    # "items":[Lcom/android/systemui/qs/QSDetailItems$Item;
     :cond_6
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
     invoke-virtual {v4, v3}, Lcom/android/systemui/qs/QSDetailItems;->setItems([Lcom/android/systemui/qs/QSDetailItems$Item;)V
 
-    .line 436
+    .line 438
+    :goto_4
     return-void
+
+    .line 472
+    :cond_7
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
+
+    .line 473
+    const v6, 0x9100317
+
+    .line 472
+    invoke-virtual {v4, v7, v6}, Lcom/android/systemui/qs/QSDetailItems;->setEmptyState(II)V
+
+    .line 474
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
+
+    invoke-virtual {v4, v5}, Lcom/android/systemui/qs/QSDetailItems;->setItems([Lcom/android/systemui/qs/QSDetailItems$Item;)V
+
+    goto :goto_4
 .end method
 
 
@@ -280,7 +296,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 389
+    .line 390
     invoke-static {}, Lcom/android/systemui/qs/tiles/WifiTile;->-get0()Z
 
     move-result v0
@@ -318,25 +334,25 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 390
+    .line 391
     :cond_0
     iput-object v3, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mAccessPoints:[Lcom/android/settingslib/wifi/AccessPoint;
 
-    .line 391
+    .line 392
     invoke-static {p1, p2, p3}, Lcom/android/systemui/qs/QSDetailItems;->convertOrInflate(Landroid/content/Context;Landroid/view/View;Landroid/view/ViewGroup;)Lcom/android/systemui/qs/QSDetailItems;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
-    .line 392
+    .line 393
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
     const-string/jumbo v1, "Wifi"
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSDetailItems;->setTagSuffix(Ljava/lang/String;)V
 
-    .line 393
+    .line 394
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/qs/QSDetailItems;->setCallback(Lcom/android/systemui/qs/QSDetailItems$Callback;)V
@@ -377,7 +393,7 @@
 
     return-object v0
 
-    .line 389
+    .line 390
     :cond_1
     const/4 v0, 0x0
 
@@ -388,7 +404,7 @@
     .locals 1
 
     .prologue
-    .line 379
+    .line 380
     const/16 v0, 0x98
 
     return v0
@@ -398,7 +414,7 @@
     .locals 1
 
     .prologue
-    .line 357
+    .line 358
     invoke-static {}, Lcom/android/systemui/qs/tiles/WifiTile;->-get2()Landroid/content/Intent;
 
     move-result-object v0
@@ -410,7 +426,7 @@
     .locals 2
 
     .prologue
-    .line 353
+    .line 354
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/WifiTile;->-get4(Lcom/android/systemui/qs/tiles/WifiTile;)Landroid/content/Context;
@@ -430,7 +446,7 @@
     .locals 1
 
     .prologue
-    .line 367
+    .line 368
     const/4 v0, 0x1
 
     return v0
@@ -440,7 +456,7 @@
     .locals 1
 
     .prologue
-    .line 362
+    .line 363
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/WifiTile;->-get8(Lcom/android/systemui/qs/tiles/WifiTile;)Lcom/android/systemui/plugins/qs/QSTile$State;
@@ -462,7 +478,7 @@
     .locals 1
 
     .prologue
-    .line 384
+    .line 385
     const/4 v0, 0x1
 
     return v0
@@ -507,9 +523,19 @@
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mAccessPoints:[Lcom/android/settingslib/wifi/AccessPoint;
 
     .line 406
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
+
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/WifiTile;->-wrap0(Lcom/android/systemui/qs/tiles/WifiTile;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 407
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->updateItems()V
 
     .line 402
+    :cond_0
     return-void
 .end method
 
@@ -518,7 +544,7 @@
     .param p1, "item"    # Lcom/android/systemui/qs/QSDetailItems$Item;
 
     .prologue
-    .line 416
+    .line 418
     if-eqz p1, :cond_0
 
     iget-object v1, p1, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
@@ -528,13 +554,13 @@
     :cond_0
     return-void
 
-    .line 417
+    .line 419
     :cond_1
     iget-object v0, p1, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/settingslib/wifi/AccessPoint;
 
-    .line 418
+    .line 420
     .local v0, "ap":Lcom/android/settingslib/wifi/AccessPoint;
     invoke-virtual {v0}, Lcom/android/settingslib/wifi/AccessPoint;->isActive()Z
 
@@ -542,7 +568,7 @@
 
     if-nez v1, :cond_2
 
-    .line 419
+    .line 421
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/WifiTile;->-get9(Lcom/android/systemui/qs/tiles/WifiTile;)Lcom/android/systemui/statusbar/policy/NetworkController$AccessPointController;
@@ -555,7 +581,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 420
+    .line 422
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/WifiTile;->-get7(Lcom/android/systemui/qs/tiles/WifiTile;)Lcom/android/systemui/qs/QSHost;
@@ -564,7 +590,7 @@
 
     invoke-interface {v1}, Lcom/android/systemui/qs/QSHost;->collapsePanels()V
 
-    .line 423
+    .line 425
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
@@ -572,7 +598,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/tiles/WifiTile;->showDetail(Z)V
 
-    .line 415
+    .line 417
     return-void
 .end method
 
@@ -581,7 +607,7 @@
     .param p1, "item"    # Lcom/android/systemui/qs/QSDetailItems$Item;
 
     .prologue
-    .line 427
+    .line 429
     return-void
 .end method
 
@@ -590,7 +616,7 @@
     .param p1, "settingsIntent"    # Landroid/content/Intent;
 
     .prologue
-    .line 411
+    .line 413
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/WifiTile;->-get3(Lcom/android/systemui/qs/tiles/WifiTile;)Lcom/android/systemui/plugins/ActivityStarter;
@@ -601,7 +627,7 @@
 
     invoke-interface {v0, p1, v1}, Lcom/android/systemui/plugins/ActivityStarter;->postStartActivityDismissingKeyguard(Landroid/content/Intent;I)V
 
-    .line 410
+    .line 412
     return-void
 .end method
 
@@ -610,20 +636,20 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 432
+    .line 434
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 433
+    .line 435
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/QSDetailItems;->setItemsVisible(Z)V
 
-    .line 431
+    .line 433
     return-void
 .end method
 
@@ -632,7 +658,7 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 372
+    .line 373
     invoke-static {}, Lcom/android/systemui/qs/tiles/WifiTile;->-get0()Z
 
     move-result v0
@@ -665,7 +691,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 373
+    .line 374
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
@@ -677,13 +703,13 @@
 
     invoke-static {v0, v1, p1}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;IZ)V
 
-    .line 374
+    .line 375
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/WifiTile;
 
     iget-object v0, v0, Lcom/android/systemui/qs/tiles/WifiTile;->mController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-interface {v0, p1}, Lcom/android/systemui/statusbar/policy/NetworkController;->setWifiEnabled(Z)V
 
-    .line 371
+    .line 372
     return-void
 .end method

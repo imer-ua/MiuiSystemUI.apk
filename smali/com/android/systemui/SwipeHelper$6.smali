@@ -35,7 +35,7 @@
     .param p4, "val$targetLeft"    # F
 
     .prologue
-    .line 605
+    .line 610
     iput-object p1, p0, Lcom/android/systemui/SwipeHelper$6;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iput-object p2, p0, Lcom/android/systemui/SwipeHelper$6;->val$animView:Landroid/view/View;
@@ -46,12 +46,12 @@
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    .line 606
+    .line 611
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/SwipeHelper$6;->wasCancelled:Z
 
-    .line 605
+    .line 610
     return-void
 .end method
 
@@ -62,12 +62,12 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 610
+    .line 615
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/SwipeHelper$6;->wasCancelled:Z
 
-    .line 609
+    .line 614
     return-void
 .end method
 
@@ -76,19 +76,19 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 615
+    .line 620
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$6;->this$0:Lcom/android/systemui/SwipeHelper;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/SwipeHelper;->-set2(Lcom/android/systemui/SwipeHelper;Z)Z
 
-    .line 616
+    .line 621
     iget-boolean v0, p0, Lcom/android/systemui/SwipeHelper$6;->wasCancelled:Z
 
     if-nez v0, :cond_0
 
-    .line 617
+    .line 622
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$6;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iget-object v1, p0, Lcom/android/systemui/SwipeHelper$6;->val$animView:Landroid/view/View;
@@ -97,7 +97,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/systemui/SwipeHelper;->-wrap1(Lcom/android/systemui/SwipeHelper;Landroid/view/View;Z)V
 
-    .line 618
+    .line 623
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$6;->this$0:Lcom/android/systemui/SwipeHelper;
 
     invoke-static {v0}, Lcom/android/systemui/SwipeHelper;->-get0(Lcom/android/systemui/SwipeHelper;)Lcom/android/systemui/SwipeHelper$Callback;
@@ -110,7 +110,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/systemui/SwipeHelper$Callback;->onChildSnappedBack(Landroid/view/View;F)V
 
-    .line 614
+    .line 619
     :cond_0
     return-void
 .end method

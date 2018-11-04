@@ -34,27 +34,27 @@
     .param p4, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 4793
+    .line 4798
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
-    .line 4794
+    .line 4799
     invoke-direct {p0, p2, p3, p4}, Lcom/android/systemui/SwipeHelper;-><init>(ILcom/android/systemui/SwipeHelper$Callback;Landroid/content/Context;)V
 
-    .line 4795
+    .line 4800
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->mHandler:Landroid/os/Handler;
 
-    .line 4796
+    .line 4801
     new-instance v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper$1;-><init>(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->mFalsingCheck:Ljava/lang/Runnable;
 
-    .line 4793
+    .line 4798
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 4928
+    .line 4933
     instance-of v0, p1, Lcom/android/systemui/miui/statusbar/notification/FoldHeaderView;
 
     if-nez v0, :cond_0
@@ -90,7 +90,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 4874
+    .line 4879
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get5(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Landroid/view/View;
@@ -113,12 +113,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 4875
+    .line 4880
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0, v2}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-set7(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Landroid/view/View;)Landroid/view/View;
 
-    .line 4873
+    .line 4878
     :cond_0
     return-void
 .end method
@@ -136,7 +136,7 @@
 
     const/4 v1, 0x0
 
-    .line 4942
+    .line 4947
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get11(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -147,11 +147,11 @@
 
     move-result-object v7
 
-    .line 4943
+    .line 4948
     .local v7, "guts":Lcom/android/systemui/statusbar/NotificationGuts;
     const/4 v8, 0x0
 
-    .line 4944
+    .line 4949
     .local v8, "view":Landroid/view/View;
     if-eqz v7, :cond_0
 
@@ -165,7 +165,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 4947
+    .line 4952
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
@@ -187,7 +187,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 4948
+    .line 4953
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get13(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Landroid/view/View;
@@ -196,14 +196,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 4950
+    .line 4955
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get13(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Landroid/view/View;
 
     move-result-object v8
 
-    .line 4952
+    .line 4957
     .end local v8    # "view":Landroid/view/View;
     :cond_1
     :goto_0
@@ -217,21 +217,21 @@
 
     if-eqz v0, :cond_4
 
-    .line 4941
+    .line 4946
     :cond_2
     :goto_1
     return-void
 
-    .line 4946
+    .line 4951
     .restart local v8    # "view":Landroid/view/View;
     :cond_3
     move-object v8, v7
 
-    .line 4944
+    .line 4949
     .local v8, "view":Landroid/view/View;
     goto :goto_0
 
-    .line 4954
+    .line 4959
     .end local v8    # "view":Landroid/view/View;
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -248,7 +248,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/systemui/statusbar/phone/StatusBar;->closeAndSaveGuts(ZZZIIZ)V
 
-    .line 4956
+    .line 4961
     invoke-virtual {p0, v3, v3}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->resetExposedMenuView(ZZ)V
 
     goto :goto_1
@@ -262,7 +262,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 4904
+    .line 4909
     invoke-virtual {p0, v0, v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->swipedFastEnough(FF)Z
 
     move-result v0
@@ -271,14 +271,14 @@
 
     const/4 v0, 0x0
 
-    .line 4903
+    .line 4908
     :goto_0
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->dismissChild(Landroid/view/View;FZ)V
 
-    .line 4902
+    .line 4907
     return-void
 
-    .line 4904
+    .line 4909
     :cond_0
     const/4 v0, 0x1
 
@@ -296,10 +296,10 @@
 
     const/4 v2, 0x0
 
-    .line 4844
+    .line 4849
     invoke-super {p0, p1, p2, p3}, Lcom/android/systemui/SwipeHelper;->dismissChild(Landroid/view/View;FZ)V
 
-    .line 4845
+    .line 4850
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get4(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Z
@@ -308,12 +308,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 4848
+    .line 4853
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-wrap4(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Landroid/view/View;)V
 
-    .line 4850
+    .line 4855
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
@@ -331,10 +331,10 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/systemui/statusbar/phone/StatusBar;->closeAndSaveGuts(ZZZIIZ)V
 
-    .line 4852
+    .line 4857
     invoke-direct {p0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->handleMenuCoveredOrDismissed()V
 
-    .line 4843
+    .line 4848
     return-void
 .end method
 
@@ -342,7 +342,7 @@
     .locals 1
 
     .prologue
-    .line 4924
+    .line 4929
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->getEscapeVelocity()F
 
     move-result v0
@@ -355,7 +355,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 4898
+    .line 4903
     check-cast p1, Lcom/android/systemui/statusbar/ExpandableView;
 
     .end local p1    # "v":Landroid/view/View;
@@ -373,12 +373,12 @@
     .param p3, "listener"    # Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     .prologue
-    .line 4882
+    .line 4887
     instance-of v0, p1, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     if-eqz v0, :cond_0
 
-    .line 4883
+    .line 4888
     check-cast p1, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     .end local p1    # "v":Landroid/view/View;
@@ -388,7 +388,7 @@
 
     return-object v0
 
-    .line 4885
+    .line 4890
     .restart local p1    # "v":Landroid/view/View;
     :cond_0
     invoke-super {p0, p1, p2, p3}, Lcom/android/systemui/SwipeHelper;->getViewTranslationAnimator(Landroid/view/View;FLandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/Animator;
@@ -406,7 +406,7 @@
     .param p4, "translation"    # F
 
     .prologue
-    .line 4835
+    .line 4840
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get1(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;
@@ -415,7 +415,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4836
+    .line 4841
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get1(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;
@@ -428,7 +428,7 @@
 
     return v0
 
-    .line 4838
+    .line 4843
     :cond_0
     const/4 v0, 0x0
 
@@ -440,7 +440,7 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 4870
+    .line 4875
     invoke-super {p0, p1}, Lcom/android/systemui/SwipeHelper;->isFalseGesture(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -456,17 +456,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 4806
+    .line 4811
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v1, p1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-set10(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Landroid/view/View;)Landroid/view/View;
 
-    .line 4807
+    .line 4812
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-set2(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;
 
-    .line 4808
+    .line 4813
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get1(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;
@@ -475,7 +475,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 4809
+    .line 4814
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get1(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;
@@ -486,7 +486,7 @@
 
     invoke-interface {v1, p1, p2, v2}, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;->onTouchEvent(Landroid/view/View;Landroid/view/MotionEvent;F)Z
 
-    .line 4811
+    .line 4816
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->mHandler:Landroid/os/Handler;
 
@@ -494,24 +494,24 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 4814
+    .line 4819
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
     invoke-virtual {p0, v1, v2}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->resetExposedMenuView(ZZ)V
 
-    .line 4816
+    .line 4821
     instance-of v1, p1, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     if-eqz v1, :cond_1
 
     move-object v0, p1
 
-    .line 4817
+    .line 4822
     check-cast v0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 4818
+    .line 4823
     .local v0, "row":Lcom/android/systemui/statusbar/ExpandableNotificationRow;
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
@@ -521,7 +521,7 @@
 
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-set2(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;
 
-    .line 4819
+    .line 4824
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get1(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;
@@ -530,7 +530,7 @@
 
     invoke-interface {v1, p0}, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;->setSwipeActionHelper(Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper;)V
 
-    .line 4820
+    .line 4825
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get1(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;
@@ -541,7 +541,7 @@
 
     invoke-interface {v1, v2}, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;->setMenuClickListener(Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;)V
 
-    .line 4805
+    .line 4810
     .end local v0    # "row":Lcom/android/systemui/statusbar/ExpandableNotificationRow;
     :cond_1
     return-void
@@ -552,12 +552,12 @@
     .param p1, "animView"    # Landroid/view/View;
 
     .prologue
-    .line 4932
+    .line 4937
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->onDragCancelled(Landroid/view/View;)V
 
-    .line 4935
+    .line 4940
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->isAntiFalsingNeeded()Z
@@ -566,14 +566,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 4936
+    .line 4941
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->mFalsingCheck:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 4937
+    .line 4942
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->mFalsingCheck:Ljava/lang/Runnable;
@@ -582,7 +582,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 4931
+    .line 4936
     :cond_0
     return-void
 .end method
@@ -595,14 +595,14 @@
     .param p4, "delta"    # F
 
     .prologue
-    .line 4826
+    .line 4831
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->mFalsingCheck:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 4827
+    .line 4832
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get1(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;
@@ -611,7 +611,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4828
+    .line 4833
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get1(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;
@@ -622,7 +622,7 @@
 
     invoke-interface {v0, p1, p2, v1}, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin;->onTouchEvent(Landroid/view/View;Landroid/view/MotionEvent;F)Z
 
-    .line 4825
+    .line 4830
     :cond_0
     return-void
 .end method
@@ -635,7 +635,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 4961
+    .line 4966
     iget-object v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v2}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get5(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Landroid/view/View;
@@ -644,7 +644,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 4962
+    .line 4967
     if-nez p2, :cond_1
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -661,11 +661,11 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 4964
+    .line 4969
     :cond_0
     return-void
 
-    .line 4966
+    .line 4971
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
@@ -673,26 +673,26 @@
 
     move-result-object v1
 
-    .line 4967
+    .line 4972
     .local v1, "prevMenuExposedView":Landroid/view/View;
     if-eqz p1, :cond_3
 
-    .line 4969
+    .line 4974
     const/4 v2, 0x0
 
-    .line 4968
+    .line 4973
     invoke-virtual {p0, v1, v2, v4}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->getViewTranslationAnimator(Landroid/view/View;FLandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/Animator;
 
     move-result-object v0
 
-    .line 4970
+    .line 4975
     .local v0, "anim":Landroid/animation/Animator;
     if-eqz v0, :cond_2
 
-    .line 4971
+    .line 4976
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 4976
+    .line 4981
     .end local v0    # "anim":Landroid/animation/Animator;
     :cond_2
     :goto_0
@@ -700,10 +700,10 @@
 
     invoke-static {v2, v4}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-set7(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Landroid/view/View;)Landroid/view/View;
 
-    .line 4960
+    .line 4965
     return-void
 
-    .line 4973
+    .line 4978
     :cond_3
     iget-object v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
@@ -715,7 +715,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 4974
+    .line 4979
     iget-object v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v2}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get5(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Landroid/view/View;
@@ -735,20 +735,20 @@
     .param p2, "translate"    # F
 
     .prologue
-    .line 4891
+    .line 4896
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->canViewSliding(Landroid/view/View;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4892
+    .line 4897
     check-cast p1, Lcom/android/systemui/statusbar/ExpandableView;
 
     .end local p1    # "v":Landroid/view/View;
     invoke-virtual {p1, p2}, Lcom/android/systemui/statusbar/ExpandableView;->setTranslation(F)V
 
-    .line 4890
+    .line 4895
     :cond_0
     return-void
 .end method
@@ -760,10 +760,10 @@
     .param p3, "velocity"    # F
 
     .prologue
-    .line 4909
+    .line 4914
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->snapChild(Landroid/view/View;FF)V
 
-    .line 4908
+    .line 4913
     return-void
 .end method
 
@@ -774,25 +774,25 @@
     .param p3, "velocity"    # F
 
     .prologue
-    .line 4857
+    .line 4862
     invoke-super {p0, p1, p2, p3}, Lcom/android/systemui/SwipeHelper;->snapChild(Landroid/view/View;FF)V
 
-    .line 4858
+    .line 4863
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->onDragCancelled(Landroid/view/View;)V
 
-    .line 4859
+    .line 4864
     const/4 v0, 0x0
 
     cmpl-float v0, p2, v0
 
     if-nez v0, :cond_0
 
-    .line 4860
+    .line 4865
     invoke-direct {p0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->handleMenuCoveredOrDismissed()V
 
-    .line 4856
+    .line 4861
     :cond_0
     return-void
 .end method
@@ -803,7 +803,7 @@
     .param p2, "snoozeOption"    # Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper$SnoozeOption;
 
     .prologue
-    .line 4866
+    .line 4871
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-get11(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -812,7 +812,7 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/statusbar/phone/StatusBar;->setNotificationSnoozed(Landroid/service/notification/StatusBarNotification;Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper$SnoozeOption;)V
 
-    .line 4865
+    .line 4870
     return-void
 .end method
 
@@ -822,7 +822,7 @@
     .param p2, "viewSize"    # F
 
     .prologue
-    .line 4914
+    .line 4919
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->swipedFarEnough()Z
 
     move-result v0
@@ -836,7 +836,7 @@
     .param p2, "velocity"    # F
 
     .prologue
-    .line 4919
+    .line 4924
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$NotificationSwipeHelper;->swipedFastEnough()Z
 
     move-result v0

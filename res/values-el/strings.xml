@@ -1434,6 +1434,7 @@
     <string name="status_bar_safepay_safe">Το περιβάλλον πληρωμών είναι ασφαλές.</string>
     <string name="status_bar_safepay_risk">Το περιβάλλον πληρωμών είναι επικίνδυνο!</string>
     <string name="status_bar_safepay_unknown">Αδύνατος ο έλεγχος ασφάλειας πληρωμών</string>
+    <string name="sos_status_bar_summary">Αγγίξτε για Έξοδο</string>
     <string name="wifi_fail_to_scan">Αδυναμία σάρωσης για δίκτυα</string>
     <string name="wifi_security_none">Κανένα</string>
     <string name="wifi_remembered">Αποθηκεύτηκε</string>
@@ -1764,5 +1765,4 @@
     <string name="wifi_disabled_by_recommendation_provider">Δεν είναι συνδεδεμένο λόγω δικτύου χαμηλής ποιότητας</string>
     <string name="wifi_no_internet_no_reconnect">Δεν είναι δυνατή η σύνδεση στο διαδίκτυο</string>
     <string name="lockscreen_storage_locked">Ξεκλείδωμα για όλες τις λειτουργίες και δεδομένα</string>
-    <string name="sos_status_bar_summary">Αγγίξτε για Έξοδο</string>
 </resources>

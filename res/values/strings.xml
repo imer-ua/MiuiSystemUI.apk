@@ -1534,6 +1534,9 @@ MMMM d"</string>
     <string name="status_bar_safepay_safe">No payment risks found</string>
     <string name="status_bar_safepay_risk">Payment risks found</string>
     <string name="status_bar_safepay_unknown">"Couldn't check payment environment"</string>
+    <string name="notch_sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_summary">click to exit</string>
     <string name="wifi_fail_to_scan">"Can't scan for networks"</string>
     <string name="wifi_security_short_wep">WEP</string>
     <string name="wifi_security_short_wpa">WPA</string>
@@ -1862,8 +1865,8 @@ MMMM d"</string>
     <string name="screen_zoom_summary_custom">Custom (%d)</string>
     <string name="help_feedback_label">Help &amp; feedback</string>
     <string name="select_logd_level">Select log level</string>
-    <item type="string" name="APKTOOL_DUMMY_6f4">false</item>
-    <item type="string" name="APKTOOL_DUMMY_6f5">false</item>
-    <item type="string" name="APKTOOL_DUMMY_6f6">false</item>
     <item type="string" name="APKTOOL_DUMMY_6f7">false</item>
+    <item type="string" name="APKTOOL_DUMMY_6f8">false</item>
+    <item type="string" name="APKTOOL_DUMMY_6f9">false</item>
+    <item type="string" name="APKTOOL_DUMMY_6fa">false</item>
 </resources>

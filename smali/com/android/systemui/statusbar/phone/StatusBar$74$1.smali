@@ -33,7 +33,7 @@
     .param p3, "val$row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     .prologue
-    .line 6493
+    .line 6507
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$74;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1;->val$scrollLayout:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -51,14 +51,14 @@
     .locals 3
 
     .prologue
-    .line 6496
+    .line 6510
     new-instance v0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1$1;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1;->val$scrollLayout:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {v0, p0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$74$1$1;-><init>(Lcom/android/systemui/statusbar/phone/StatusBar$74$1;Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)V
 
-    .line 6504
+    .line 6518
     .local v0, "finishScrollingCallback":Ljava/lang/Runnable;
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1;->val$scrollLayout:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
@@ -70,16 +70,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 6506
+    .line 6520
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1;->val$scrollLayout:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->setFinishScrollingCallback(Ljava/lang/Runnable;)V
 
-    .line 6495
+    .line 6509
     :goto_0
     return-void
 
-    .line 6510
+    .line 6524
     :cond_0
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 

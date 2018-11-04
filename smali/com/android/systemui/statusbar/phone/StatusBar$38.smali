@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 7573
+    .line 7587
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Landroid/service/notification/NotificationListenerService;-><init>()V
@@ -38,7 +38,7 @@
     .locals 4
 
     .prologue
-    .line 7576
+    .line 7590
     sget-boolean v2, Lcom/android/systemui/statusbar/phone/StatusBar;->DEBUG:Z
 
     if-eqz v2, :cond_0
@@ -49,33 +49,33 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7577
+    .line 7591
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar$38;->getActiveNotifications()[Landroid/service/notification/StatusBarNotification;
 
     move-result-object v1
 
-    .line 7578
+    .line 7592
     .local v1, "notifications":[Landroid/service/notification/StatusBarNotification;
     if-nez v1, :cond_1
 
-    .line 7579
+    .line 7593
     const-string/jumbo v2, "StatusBar"
 
     const-string/jumbo v3, "onListenerConnected unable to get active notifications."
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7580
+    .line 7594
     return-void
 
-    .line 7582
+    .line 7596
     :cond_1
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar$38;->getCurrentRanking()Landroid/service/notification/NotificationListenerService$RankingMap;
 
     move-result-object v0
 
-    .line 7583
+    .line 7597
     .local v0, "currentRanking":Landroid/service/notification/NotificationListenerService$RankingMap;
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -87,7 +87,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 7575
+    .line 7589
     return-void
 .end method
 
@@ -97,7 +97,7 @@
     .param p2, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
     .prologue
-    .line 7597
+    .line 7611
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/StatusBar;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -124,11 +124,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7598
+    .line 7612
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 7599
+    .line 7613
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
@@ -139,53 +139,74 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 7596
+    .line 7610
     :cond_1
     return-void
 .end method
 
 .method public onNotificationRankingUpdate(Landroid/service/notification/NotificationListenerService$RankingMap;)V
-    .locals 4
+    .locals 6
     .param p1, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
     .prologue
-    const/16 v2, 0x3ed
+    const/16 v4, 0x3ed
 
-    .line 7647
-    const-string/jumbo v0, "StatusBar"
+    .line 7661
+    const-string/jumbo v1, "StatusBar"
 
-    const-string/jumbo v1, "onRankingUpdate"
+    const-string/jumbo v2, "onRankingUpdate"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7648
+    .line 7662
     if-eqz p1, :cond_0
 
-    .line 7649
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
-
-    invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->removeMessages(I)V
-
-    .line 7650
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
-
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
-
+    .line 7663
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
 
-    invoke-virtual {v1, v2, p1}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v1, v4}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->removeMessages(I)V
+
+    .line 7664
+    invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
+
+    move-result-object v0
+
+    .line 7665
+    .local v0, "args":Lcom/android/internal/os/SomeArgs;
+    iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
+
+    .line 7666
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
-    const-wide/16 v2, 0xc8
+    iput-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->sendMessageDelayed(Landroid/os/Message;J)Z
+    .line 7667
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 7646
+    iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
+
+    invoke-virtual {v2, v4, v0}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v2
+
+    const-wide/16 v4, 0xc8
+
+    invoke-virtual {v1, v2, v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->sendMessageDelayed(Landroid/os/Message;J)Z
+
+    .line 7660
+    .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :cond_0
     return-void
 .end method
@@ -196,7 +217,7 @@
     .param p2, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
     .prologue
-    .line 7633
+    .line 7647
     sget-boolean v1, Lcom/android/systemui/statusbar/phone/StatusBar;->DEBUG:Z
 
     if-eqz v1, :cond_0
@@ -223,16 +244,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7634
+    .line 7648
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 7635
+    .line 7649
     invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 7636
+    .line 7650
     .local v0, "key":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -244,7 +265,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 7632
+    .line 7646
     .end local v0    # "key":Ljava/lang/String;
     :cond_1
     return-void

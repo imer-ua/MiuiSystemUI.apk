@@ -29,7 +29,7 @@
     .param p1, "$anonymous0"    # Ljava/lang/String;
 
     .prologue
-    .line 377
+    .line 379
     invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -42,7 +42,7 @@
     .param p1, "object"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 385
+    .line 387
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->getBackgroundFadeAmount()F
 
     move-result v0
@@ -59,7 +59,7 @@
     .param p1, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 384
+    .line 386
     check-cast p1, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .end local p1    # "object":Ljava/lang/Object;
@@ -76,10 +76,10 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 380
+    .line 382
     invoke-static {p1, p2}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-wrap8(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;F)V
 
-    .line 379
+    .line 381
     return-void
 .end method
 
@@ -89,7 +89,7 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 379
+    .line 381
     check-cast p1, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .end local p1    # "object":Ljava/lang/Object;

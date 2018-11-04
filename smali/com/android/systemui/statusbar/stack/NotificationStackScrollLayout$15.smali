@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 4265
+    .line 4267
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$15;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 4268
+    .line 4270
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$15;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mEmptyShadeView:Lcom/android/systemui/statusbar/EmptyShadeView;
@@ -50,7 +50,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/EmptyShadeView;->setVisibility(I)V
 
-    .line 4269
+    .line 4271
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$15;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mEmptyShadeView:Lcom/android/systemui/statusbar/EmptyShadeView;
@@ -59,12 +59,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/EmptyShadeView;->setWillBeGone(Z)V
 
-    .line 4270
+    .line 4272
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$15;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-wrap12(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)V
 
-    .line 4271
+    .line 4273
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$15;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$15;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -73,6 +73,6 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-wrap5(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Lcom/android/systemui/statusbar/ExpandableView;)V
 
-    .line 4267
+    .line 4269
     return-void
 .end method

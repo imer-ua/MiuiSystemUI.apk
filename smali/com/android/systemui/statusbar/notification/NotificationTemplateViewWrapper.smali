@@ -501,7 +501,7 @@
 
     move-result-object v1
 
-    const v2, 0x90f026b
+    const v2, 0x90f026c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -1654,7 +1654,7 @@
     move-result-object v5
 
     .line 437
-    const v6, 0x90f046e
+    const v6, 0x90f046f
 
     .line 436
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1690,7 +1690,7 @@
     iget-object v4, p0, Lcom/android/systemui/statusbar/notification/NotificationTemplateViewWrapper;->mPicture:Landroid/widget/ImageView;
 
     .line 443
-    const v5, 0x90f046f
+    const v5, 0x90f0470
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

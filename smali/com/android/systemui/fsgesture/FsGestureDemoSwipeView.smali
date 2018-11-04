@@ -806,7 +806,7 @@
 
     move-result-object v2
 
-    const v3, 0x90f0255
+    const v3, 0x90f0256
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -859,7 +859,7 @@
     .param p1, "status"    # I
 
     .prologue
-    const v4, 0x90f0256
+    const v4, 0x90f0257
 
     .line 60
     const/4 v3, 0x0
@@ -994,7 +994,7 @@
 
     move-result-object v3
 
-    const v4, 0x90f0257
+    const v4, 0x90f0258
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 

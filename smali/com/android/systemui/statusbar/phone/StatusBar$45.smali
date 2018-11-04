@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1697
+    .line 1700
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 1700
+    .line 1703
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mBackdrop:Lcom/android/systemui/statusbar/BackDropView;
@@ -54,7 +54,7 @@
 
     const/4 v0, 0x1
 
-    .line 1701
+    .line 1704
     .local v0, "asSrc":Z
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -63,17 +63,17 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/ScrimController;->setDrawBehindAsSrc(Z)V
 
-    .line 1702
+    .line 1705
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$45;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->setDrawBackgroundAsSrc(Z)V
 
-    .line 1699
+    .line 1702
     return-void
 
-    .line 1700
+    .line 1703
     .end local v0    # "asSrc":Z
     :cond_0
     const/4 v0, 0x0

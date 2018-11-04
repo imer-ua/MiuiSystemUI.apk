@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1533
+    .line 1536
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,18 +43,18 @@
     .param p2, "fragment"    # Lcom/miui/systemui/support/v4/app/Fragment;
 
     .prologue
-    .line 1535
+    .line 1538
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     move-object v1, p2
 
-    .line 1536
+    .line 1539
     check-cast v1, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
-    .line 1535
+    .line 1538
     iput-object v1, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarFragment:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
-    .line 1537
+    .line 1540
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarFragment:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
@@ -67,7 +67,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->initNotificationIconArea(Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;)V
 
-    .line 1538
+    .line 1541
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {p2}, Lcom/miui/systemui/support/v4/app/Fragment;->getView()Landroid/view/View;
@@ -78,14 +78,14 @@
 
     iput-object v1, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    .line 1539
+    .line 1542
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v3, 0x91202cc
+    const v3, 0x91202d2
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -93,14 +93,14 @@
 
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set15(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/view/View;)Landroid/view/View;
 
-    .line 1540
+    .line 1543
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v3, 0x91202c7
+    const v3, 0x91202cd
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -110,7 +110,7 @@
 
     invoke-static {v2, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set4(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/widget/LinearLayout;)Landroid/widget/LinearLayout;
 
-    .line 1541
+    .line 1544
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
@@ -119,7 +119,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->setBar(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    .line 1542
+    .line 1545
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
@@ -130,7 +130,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->setPanel(Lcom/android/systemui/statusbar/phone/PanelView;)V
 
-    .line 1543
+    .line 1546
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
@@ -141,7 +141,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->setScrimController(Lcom/android/systemui/statusbar/phone/ScrimController;)V
 
-    .line 1544
+    .line 1547
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get23(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;
@@ -158,7 +158,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->setHandler(Landroid/os/Handler;)V
 
-    .line 1545
+    .line 1548
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get23(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;
@@ -171,7 +171,7 @@
 
     move-result v0
 
-    .line 1546
+    .line 1549
     .local v0, "isShowingDriveMode":Z
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -187,7 +187,7 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/android/systemui/miui/statusbar/phone/MiuiStatusBarPromptController;->showReturnToDriveModeView(ZZ)V
 
-    .line 1547
+    .line 1550
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get5(Lcom/android/systemui/statusbar/phone/StatusBar;)Ljava/lang/String;
@@ -200,7 +200,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1548
+    .line 1551
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -217,18 +217,18 @@
 
     invoke-virtual {v1, v2, v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBar;->showReturnToInCallScreenButton(Ljava/lang/String;J)V
 
-    .line 1550
+    .line 1553
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->setAreThereNotifications()V
 
-    .line 1551
+    .line 1554
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->checkBarModes()V
 
-    .line 1552
+    .line 1555
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get33(Lcom/android/systemui/statusbar/phone/StatusBar;)Landroid/database/ContentObserver;
@@ -239,30 +239,30 @@
 
     invoke-virtual {v1, v2}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 1553
+    .line 1556
     sget-boolean v1, Lcom/android/systemui/Constants;->IS_NOTCH:Z
 
     if-eqz v1, :cond_1
 
-    .line 1554
+    .line 1557
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarFragment:Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/CollapsedStatusBarFragment;->setNotch()V
 
-    .line 1556
+    .line 1559
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap32(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    .line 1557
+    .line 1560
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusBarPading()V
 
-    .line 1558
+    .line 1561
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$43;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get29(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/OLEDScreenHelper;
@@ -275,7 +275,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/OLEDScreenHelper;->setStatusBarView(Landroid/view/View;)V
 
-    .line 1534
+    .line 1537
     return-void
 .end method
 
@@ -285,6 +285,6 @@
     .param p2, "fragment"    # Lcom/miui/systemui/support/v4/app/Fragment;
 
     .prologue
-    .line 1561
+    .line 1564
     return-void
 .end method

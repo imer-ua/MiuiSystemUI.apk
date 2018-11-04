@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 280
+    .line 282
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$1;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,24 +41,24 @@
     .locals 2
 
     .prologue
-    .line 283
+    .line 285
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$1;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-wrap13(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)V
 
-    .line 284
+    .line 286
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$1;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-wrap11(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)V
 
-    .line 285
+    .line 287
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$1;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-set1(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Z)Z
 
-    .line 286
+    .line 288
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$1;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -67,7 +67,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 287
+    .line 289
     const/4 v0, 0x1
 
     return v0

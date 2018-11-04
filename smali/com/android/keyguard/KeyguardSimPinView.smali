@@ -565,7 +565,7 @@
 
     .line 117
     .local v3, "resources":Landroid/content/res/Resources;
-    const v5, 0x90f03ae
+    const v5, 0x90f03af
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -618,7 +618,7 @@
 
     .line 128
     .local v1, "layoutParams":Landroid/widget/LinearLayout$LayoutParams;
-    const v5, 0x90f03ab
+    const v5, 0x90f03ac
 
     .line 127
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -628,7 +628,7 @@
     iput v5, v1, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     .line 130
-    const v5, 0x90f03aa
+    const v5, 0x90f03ab
 
     .line 129
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I

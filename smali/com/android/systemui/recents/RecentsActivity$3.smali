@@ -44,7 +44,7 @@
     .line 253
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$3;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    invoke-static {v0}, Lcom/android/systemui/recents/RecentsActivity;->-get3(Lcom/android/systemui/recents/RecentsActivity;)Lcom/android/systemui/recents/views/RecentsView;
+    invoke-static {v0}, Lcom/android/systemui/recents/RecentsActivity;->-get4(Lcom/android/systemui/recents/RecentsActivity;)Lcom/android/systemui/recents/views/RecentsView;
 
     move-result-object v0
 

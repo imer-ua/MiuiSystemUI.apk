@@ -184,6 +184,7 @@
     <dimen name="fold_header_text_size">18.179993dip</dimen>
     <dimen name="fold_dividing_line_margin">13.819977dip</dimen>
     <dimen name="fold_dividing_line_height">0.73dip</dimen>
+    <dimen name="sos_icon_locked_padding_start">36.359985dip</dimen>
     <dimen name="fsg_demo_recents_dest_width">170.18dip</dimen>
     <dimen name="fsg_demo_recents_dest_height">247.26999dip</dimen>
     <dimen name="fsg_demo_recents_dest_left">20.0dip</dimen>

@@ -246,7 +246,7 @@
 
     move-result-object v0
 
-    const v1, 0x90f0267
+    const v1, 0x90f0268
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1233,7 +1233,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x9120273
+    .packed-switch 0x9120279
         :pswitch_1
         :pswitch_2
         :pswitch_0
@@ -1263,7 +1263,7 @@
 
     .prologue
     .line 140
-    const v0, 0x9120275
+    const v0, 0x912027b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/RecentMenuView;->findViewById(I)Landroid/view/View;
 
@@ -1274,7 +1274,7 @@
     iput-object v0, p0, Lcom/android/systemui/recents/views/RecentMenuView;->mMenuItemInfo:Landroid/widget/ImageView;
 
     .line 141
-    const v0, 0x9120273
+    const v0, 0x9120279
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/RecentMenuView;->findViewById(I)Landroid/view/View;
 
@@ -1285,7 +1285,7 @@
     iput-object v0, p0, Lcom/android/systemui/recents/views/RecentMenuView;->mMenuItemLock:Landroid/widget/ImageView;
 
     .line 142
-    const v0, 0x9120274
+    const v0, 0x912027a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/RecentMenuView;->findViewById(I)Landroid/view/View;
 

@@ -1375,6 +1375,7 @@ Kontaktieren Sie Ihren Netzbetreiber für eine neue SIM-Karte."</string>
     <string name="status_bar_safepay_safe">Zahlungsumfeld ist sicher</string>
     <string name="status_bar_safepay_risk">Zahlungsumfeld ist riskant!</string>
     <string name="status_bar_safepay_unknown">Zahlungssicherheit ist unbekannt</string>
+    <string name="sos_status_bar_summary">Klicken zum Verlassen</string>
     <string name="wifi_fail_to_scan">Netzwerksuche nicht möglich</string>
     <string name="wifi_security_none">Keine</string>
     <string name="wifi_remembered">Gespeichert</string>
@@ -1711,7 +1712,6 @@ Diese Funktion ist in Alpha-Stadium und funktioniert evtl. nicht richtig.
     <string name="wifi_disabled_by_recommendation_provider">Nicht verbunden wegen schlechter Netzwerkqualität</string>
     <string name="wifi_no_internet_no_reconnect">Keine automatische Verbindung</string>
     <string name="lockscreen_storage_locked">Entsperren für alle Funktionen und Daten</string>
-    <string name="sos_status_bar_summary">Klicken zum Verlassen</string>
     <string name="notification_num_channels">%d Benachrichtigungskategorien</string>
     <string name="abc_menu_ctrl_shortcut_label">Strg+</string>
     <string name="abc_menu_delete_shortcut_label">Löschen</string>

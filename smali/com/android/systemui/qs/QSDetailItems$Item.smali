@@ -35,14 +35,14 @@
     .locals 1
 
     .prologue
-    .line 265
+    .line 272
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 272
+    .line 279
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/qs/QSDetailItems$Item;->icon2:I
 
-    .line 265
+    .line 272
     return-void
 .end method

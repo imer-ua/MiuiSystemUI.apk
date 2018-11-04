@@ -280,7 +280,7 @@
 
     move-result v1
 
-    const v2, 0x91202ef
+    const v2, 0x91202f5
 
     if-ne v1, v2, :cond_0
 
@@ -628,7 +628,7 @@
 
     move-result v1
 
-    const v2, 0x91202ef
+    const v2, 0x91202f5
 
     if-ne v1, v2, :cond_1
 

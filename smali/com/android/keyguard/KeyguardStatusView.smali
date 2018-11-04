@@ -433,7 +433,7 @@
     .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .prologue
-    const v5, 0x90f02d2
+    const v5, 0x90f02d3
 
     const/4 v4, 0x0
 
@@ -448,7 +448,7 @@
 
     move-result-object v2
 
-    const v3, 0x90f02d3
+    const v3, 0x90f02d4
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -475,7 +475,7 @@
     move-result-object v1
 
     .line 147
-    const v2, 0x90f02d1
+    const v2, 0x90f02d2
 
     .line 146
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I

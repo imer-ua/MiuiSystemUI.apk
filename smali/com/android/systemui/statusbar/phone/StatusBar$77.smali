@@ -30,7 +30,7 @@
     .param p2, "val$row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     .prologue
-    .line 7747
+    .line 7764
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$77;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$77;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -46,8 +46,8 @@
     .locals 2
 
     .prologue
-    .line 7760
-    sget-boolean v0, Lcom/android/systemui/Constants;->IS_INTERNATIONAL:Z
+    .line 7777
+    const/4 v0, 0x0
 
     if-nez v0, :cond_0
 
@@ -59,12 +59,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 7759
+    .line 7776
     :cond_0
     :goto_0
     return-void
 
-    .line 7761
+    .line 7778
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$77;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
@@ -82,7 +82,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 7749
+    .line 7766
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/NotificationGuts;->willBeRemoved()Z
 
     move-result v0
@@ -97,7 +97,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 7752
+    .line 7769
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$77;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -108,21 +108,21 @@
 
     if-ne v0, p1, :cond_1
 
-    .line 7753
+    .line 7770
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$77;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set14(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/NotificationGuts;)Lcom/android/systemui/statusbar/NotificationGuts;
 
-    .line 7754
+    .line 7771
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$77;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0, v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set7(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
-    .line 7748
+    .line 7765
     :cond_1
     return-void
 
-    .line 7750
+    .line 7767
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$77;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 

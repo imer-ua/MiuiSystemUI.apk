@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$SilenceModeObserver;
 
     .prologue
-    .line 1476
+    .line 1481
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$SilenceModeObserver$2;->this$1:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$SilenceModeObserver;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 1479
+    .line 1484
     invoke-static {}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get0()Ljava/lang/String;
 
     move-result-object v2
@@ -52,21 +52,21 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1480
+    .line 1485
     const-string/jumbo v2, "com.android.settings/com.android.settings.Settings$MiuiSilentModeAcivity"
 
     invoke-static {v2}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v0
 
-    .line 1481
+    .line 1486
     .local v0, "component":Landroid/content/ComponentName;
     if-nez v0, :cond_0
 
-    .line 1482
+    .line 1487
     return-void
 
-    .line 1485
+    .line 1490
     :cond_0
     new-instance v1, Landroid/content/Intent;
 
@@ -74,16 +74,16 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1486
+    .line 1491
     .local v1, "intent":Landroid/content/Intent;
     invoke-virtual {v1, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 1487
+    .line 1492
     const/high16 v2, 0x14000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1488
+    .line 1493
     const-class v2, Lcom/android/systemui/plugins/ActivityStarter;
 
     invoke-static {v2}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -96,9 +96,9 @@
 
     invoke-interface {v2, v1, v3}, Lcom/android/systemui/plugins/ActivityStarter;->postStartActivityDismissingKeyguard(Landroid/content/Intent;I)V
 
-    .line 1489
+    .line 1494
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 1478
+    .line 1483
     return-void
 .end method

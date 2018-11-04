@@ -30,7 +30,7 @@
     .param p2, "val$row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     .prologue
-    .line 8367
+    .line 8384
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$85;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$85;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 8369
+    .line 8386
     const-class v0, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -57,7 +57,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$85;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 8370
+    .line 8387
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$85;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get18(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
@@ -68,11 +68,11 @@
 
     const-string/jumbo v1, "keyguard"
 
-    .line 8369
+    .line 8386
     :goto_0
     invoke-virtual {v0, v2, v1}, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;->onRemove(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Ljava/lang/String;)V
 
-    .line 8371
+    .line 8388
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$85;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$85;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -83,10 +83,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->performRemoveNotification(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)V
 
-    .line 8368
+    .line 8385
     return-void
 
-    .line 8370
+    .line 8387
     :cond_0
     const-string/jumbo v1, "statusbar"
 

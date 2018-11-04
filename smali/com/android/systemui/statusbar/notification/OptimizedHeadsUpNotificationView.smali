@@ -106,7 +106,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/notification/OptimizedHeadsUpNotificationView;->mTitle:Landroid/widget/TextView;
 
     .line 41
-    const v0, 0x9120216
+    const v0, 0x912021c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/notification/OptimizedHeadsUpNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -117,7 +117,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/notification/OptimizedHeadsUpNotificationView;->mText:Landroid/widget/TextView;
 
     .line 42
-    const v0, 0x9120230
+    const v0, 0x9120236
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/notification/OptimizedHeadsUpNotificationView;->findViewById(I)Landroid/view/View;
 

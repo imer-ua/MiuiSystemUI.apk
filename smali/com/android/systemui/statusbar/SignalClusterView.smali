@@ -2949,7 +2949,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 230
-    const v0, 0x91202ab
+    const v0, 0x91202b1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -2960,7 +2960,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mVpn:Landroid/widget/ImageView;
 
     .line 231
-    const v0, 0x91202ac
+    const v0, 0x91202b2
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -2971,7 +2971,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mEthernetGroup:Landroid/view/ViewGroup;
 
     .line 232
-    const v0, 0x91202ad
+    const v0, 0x91202b3
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -2982,7 +2982,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mEthernet:Landroid/widget/ImageView;
 
     .line 233
-    const v0, 0x91202ae
+    const v0, 0x91202b4
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -2993,7 +2993,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mEthernetDark:Landroid/widget/ImageView;
 
     .line 234
-    const v0, 0x91202bb
+    const v0, 0x91202c1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3004,7 +3004,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mWifiGroup:Landroid/view/ViewGroup;
 
     .line 235
-    const v0, 0x91202bc
+    const v0, 0x91202c2
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3015,7 +3015,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mWifi:Landroid/widget/ImageView;
 
     .line 236
-    const v0, 0x91202be
+    const v0, 0x91202c4
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3026,7 +3026,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mWifiActivity:Landroid/widget/ImageView;
 
     .line 237
-    const v0, 0x91202ba
+    const v0, 0x91202c0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3037,7 +3037,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mWifiAp:Landroid/widget/ImageView;
 
     .line 238
-    const v0, 0x91202bf
+    const v0, 0x91202c5
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3048,7 +3048,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mWifiLabel:Lcom/android/systemui/miui/statusbar/WifiLabelText;
 
     .line 239
-    const v0, 0x91202b9
+    const v0, 0x91202bf
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3061,7 +3061,7 @@
     .line 240
     iget-object v1, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mVowifi:[Landroid/widget/ImageView;
 
-    const v0, 0x91202b1
+    const v0, 0x91202b7
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3074,7 +3074,7 @@
     .line 241
     iget-object v1, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mVowifi:[Landroid/widget/ImageView;
 
-    const v0, 0x91202b3
+    const v0, 0x91202b9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3085,7 +3085,7 @@
     aput-object v0, v1, v3
 
     .line 242
-    const v0, 0x91202b7
+    const v0, 0x91202bd
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3096,7 +3096,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mNoSims:Landroid/widget/ImageView;
 
     .line 243
-    const v0, 0x91202b4
+    const v0, 0x91202ba
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3107,7 +3107,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mDemoMobileSignal:Landroid/widget/ImageView;
 
     .line 244
-    const v0, 0x91202b8
+    const v0, 0x91202be
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3118,7 +3118,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mNoSimsDark:Landroid/widget/ImageView;
 
     .line 245
-    const v0, 0x91202b6
+    const v0, 0x91202bc
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3127,7 +3127,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mNoSimsCombo:Landroid/view/View;
 
     .line 246
-    const v0, 0x91202c0
+    const v0, 0x91202c6
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3138,7 +3138,7 @@
     .line 247
     iget-object v1, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mMobileSignalGroup:[Landroid/widget/LinearLayout;
 
-    const v0, 0x91202b0
+    const v0, 0x91202b6
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3151,7 +3151,7 @@
     .line 248
     iget-object v1, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mMobileSignalGroup:[Landroid/widget/LinearLayout;
 
-    const v0, 0x91202b2
+    const v0, 0x91202b8
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3162,7 +3162,7 @@
     aput-object v0, v1, v3
 
     .line 249
-    const v0, 0x91202bd
+    const v0, 0x91202c3
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3173,7 +3173,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mWifiApConnectMark:Landroid/widget/ImageView;
 
     .line 250
-    const v0, 0x91202b5
+    const v0, 0x91202bb
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/SignalClusterView;->findViewById(I)Landroid/view/View;
 
@@ -3186,7 +3186,7 @@
     .line 251
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mSignalDualNotchGroup:Landroid/view/ViewGroup;
 
-    const v1, 0x91201fb
+    const v1, 0x91201ff
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3199,7 +3199,7 @@
     .line 252
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mSignalDualNotchGroup:Landroid/view/ViewGroup;
 
-    const v1, 0x91201fc
+    const v1, 0x9120200
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3225,7 +3225,7 @@
     .line 254
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mSignalDualNotchGroup:Landroid/view/ViewGroup;
 
-    const v1, 0x91201f6
+    const v1, 0x91201fa
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3238,7 +3238,7 @@
     .line 255
     iget-object v0, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mSignalDualNotchGroup:Landroid/view/ViewGroup;
 
-    const v1, 0x91201f7
+    const v1, 0x91201fb
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

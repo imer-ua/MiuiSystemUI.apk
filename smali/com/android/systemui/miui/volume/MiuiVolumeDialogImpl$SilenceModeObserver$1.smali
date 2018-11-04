@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$SilenceModeObserver;
 
     .prologue
-    .line 1469
+    .line 1474
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$SilenceModeObserver$1;->this$1:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$SilenceModeObserver;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,9 +43,9 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 1472
+    .line 1477
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 1471
+    .line 1476
     return-void
 .end method

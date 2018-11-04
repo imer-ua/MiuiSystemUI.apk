@@ -851,7 +851,7 @@
     if-eqz v1, :cond_0
 
     .line 242
-    const v1, 0x90f037d
+    const v1, 0x90f037e
 
     .line 241
     :goto_0
@@ -871,7 +871,7 @@
 
     .line 243
     :cond_0
-    const v1, 0x90f037c
+    const v1, 0x90f037d
 
     goto :goto_0
 .end method
@@ -893,7 +893,7 @@
     .local v0, "clockLayoutParams":Landroid/widget/FrameLayout$LayoutParams;
     iget-object v5, p0, Lcom/android/keyguard/MiuiKeyguardClock;->mResources:Landroid/content/res/Resources;
 
-    const v6, 0x90f038a
+    const v6, 0x90f038b
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -914,7 +914,7 @@
     iget-object v6, p0, Lcom/android/keyguard/MiuiKeyguardClock;->mResources:Landroid/content/res/Resources;
 
     .line 426
-    const v7, 0x90f0379
+    const v7, 0x90f037a
 
     .line 425
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -937,7 +937,7 @@
     iget-object v5, p0, Lcom/android/keyguard/MiuiKeyguardClock;->mResources:Landroid/content/res/Resources;
 
     .line 431
-    const v6, 0x90f037a
+    const v6, 0x90f037b
 
     .line 430
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -957,7 +957,7 @@
     iget-object v6, p0, Lcom/android/keyguard/MiuiKeyguardClock;->mResources:Landroid/content/res/Resources;
 
     .line 435
-    const v7, 0x90f037c
+    const v7, 0x90f037d
 
     .line 434
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -979,7 +979,7 @@
     .local v1, "dateInfoLayoutParams":Landroid/widget/LinearLayout$LayoutParams;
     iget-object v5, p0, Lcom/android/keyguard/MiuiKeyguardClock;->mResources:Landroid/content/res/Resources;
 
-    const v6, 0x90f03b1
+    const v6, 0x90f03b2
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1006,7 +1006,7 @@
     .local v3, "simCardLayoutParams":Landroid/widget/LinearLayout$LayoutParams;
     iget-object v5, p0, Lcom/android/keyguard/MiuiKeyguardClock;->mResources:Landroid/content/res/Resources;
 
-    const v6, 0x90f0389
+    const v6, 0x90f038a
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1033,7 +1033,7 @@
     .local v2, "ownerInfoLayoutParams":Landroid/widget/LinearLayout$LayoutParams;
     iget-object v5, p0, Lcom/android/keyguard/MiuiKeyguardClock;->mResources:Landroid/content/res/Resources;
 
-    const v6, 0x90f0382
+    const v6, 0x90f0383
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1066,7 +1066,7 @@
 
     .line 396
     .local v3, "resources":Landroid/content/res/Resources;
-    const v5, 0x90f037e
+    const v5, 0x90f037f
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1074,7 +1074,7 @@
 
     .line 398
     .local v1, "horizontalTextSize":I
-    const v5, 0x90f037b
+    const v5, 0x90f037c
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1082,7 +1082,7 @@
 
     .line 400
     .local v4, "verticalTextSize":I
-    const v5, 0x90f037f
+    const v5, 0x90f0380
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1090,7 +1090,7 @@
 
     .line 403
     .local v0, "dateBatteryTextSize":I
-    const v5, 0x90f0380
+    const v5, 0x90f0381
 
     .line 402
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1648,7 +1648,7 @@
 
     move-result-object v1
 
-    const v2, 0x90f037c
+    const v2, 0x90f037d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1664,7 +1664,7 @@
 
     move-result-object v1
 
-    const v2, 0x90f0379
+    const v2, 0x90f037a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

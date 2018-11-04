@@ -41,26 +41,26 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationData;
 
     .prologue
-    .line 319
+    .line 321
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 321
+    .line 323
     new-instance v0, Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-direct {v0}, Landroid/service/notification/NotificationListenerService$Ranking;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationData$1;->mRankingA:Landroid/service/notification/NotificationListenerService$Ranking;
 
-    .line 322
+    .line 324
     new-instance v0, Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-direct {v0}, Landroid/service/notification/NotificationListenerService$Ranking;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationData$1;->mRankingB:Landroid/service/notification/NotificationListenerService$Ranking;
 
-    .line 319
+    .line 321
     return-void
 .end method
 
@@ -72,30 +72,30 @@
     .param p2, "b"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .prologue
-    .line 326
+    .line 328
     iget-object v5, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
-    .line 327
+    .line 329
     .local v5, "na":Landroid/service/notification/StatusBarNotification;
     iget-object v6, p2, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
-    .line 328
+    .line 330
     .local v6, "nb":Landroid/service/notification/StatusBarNotification;
     const/4 v0, 0x3
 
-    .line 329
+    .line 331
     .local v0, "aImportance":I
     const/4 v2, 0x3
 
-    .line 330
+    .line 332
     .local v2, "bImportance":I
     const/4 v1, 0x0
 
-    .line 331
+    .line 333
     .local v1, "aRank":I
     const/4 v3, 0x0
 
-    .line 334
+    .line 336
     .local v3, "bRank":I
     iget-object v7, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
@@ -105,7 +105,7 @@
 
     if-eqz v7, :cond_0
 
-    .line 336
+    .line 338
     iget-object v7, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-static {v7}, Lcom/android/systemui/statusbar/NotificationData;->-get2(Lcom/android/systemui/statusbar/NotificationData;)Landroid/service/notification/NotificationListenerService$RankingMap;
@@ -118,7 +118,7 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/service/notification/NotificationListenerService$RankingMap;->getRanking(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z
 
-    .line 337
+    .line 339
     iget-object v7, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-static {v7}, Lcom/android/systemui/statusbar/NotificationData;->-get2(Lcom/android/systemui/statusbar/NotificationData;)Landroid/service/notification/NotificationListenerService$RankingMap;
@@ -131,7 +131,7 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/service/notification/NotificationListenerService$RankingMap;->getRanking(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z
 
-    .line 338
+    .line 340
     iget-object v7, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/NotificationData$1;->mRankingA:Landroid/service/notification/NotificationListenerService$Ranking;
@@ -140,7 +140,7 @@
 
     move-result v0
 
-    .line 339
+    .line 341
     iget-object v7, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/NotificationData$1;->mRankingB:Landroid/service/notification/NotificationListenerService$Ranking;
@@ -149,21 +149,21 @@
 
     move-result v2
 
-    .line 340
+    .line 342
     iget-object v7, p0, Lcom/android/systemui/statusbar/NotificationData$1;->mRankingA:Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-virtual {v7}, Landroid/service/notification/NotificationListenerService$Ranking;->getRank()I
 
     move-result v1
 
-    .line 341
+    .line 343
     iget-object v7, p0, Lcom/android/systemui/statusbar/NotificationData$1;->mRankingB:Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-virtual {v7}, Landroid/service/notification/NotificationListenerService$Ranking;->getRank()I
 
     move-result v3
 
-    .line 345
+    .line 347
     :cond_0
     iget-object v7, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
@@ -175,26 +175,26 @@
 
     move-result v4
 
-    .line 346
+    .line 348
     .local v4, "compareResult":I
     if-eqz v4, :cond_1
 
-    .line 347
+    .line 349
     return v4
 
-    .line 351
+    .line 353
     :cond_1
     invoke-static {p1, p2}, Lcom/android/systemui/miui/statusbar/phone/rank/RankUtil;->compareHighPriority(Lcom/android/systemui/statusbar/NotificationData$Entry;Lcom/android/systemui/statusbar/NotificationData$Entry;)I
 
     move-result v4
 
-    .line 352
+    .line 354
     if-eqz v4, :cond_2
 
-    .line 353
+    .line 355
     return v4
 
-    .line 358
+    .line 360
     :cond_2
     iget-object v7, p0, Lcom/android/systemui/statusbar/NotificationData$1;->this$0:Lcom/android/systemui/statusbar/NotificationData;
 
@@ -206,71 +206,71 @@
 
     move-result-object v7
 
-    .line 357
+    .line 359
     invoke-static {p1, p2, v0, v2, v7}, Lcom/android/systemui/miui/statusbar/phone/rank/RankUtil;->compareMedia(Lcom/android/systemui/statusbar/NotificationData$Entry;Lcom/android/systemui/statusbar/NotificationData$Entry;IILjava/lang/String;)I
 
     move-result v4
 
-    .line 359
+    .line 361
     if-eqz v4, :cond_3
 
-    .line 360
+    .line 362
     return v4
 
-    .line 364
+    .line 366
     :cond_3
     invoke-static {p1, p2}, Lcom/android/systemui/miui/statusbar/phone/rank/RankUtil;->compareNew(Lcom/android/systemui/statusbar/NotificationData$Entry;Lcom/android/systemui/statusbar/NotificationData$Entry;)I
 
     move-result v4
 
-    .line 365
+    .line 367
     if-eqz v4, :cond_4
 
-    .line 366
+    .line 368
     return v4
 
-    .line 369
+    .line 371
     :cond_4
     sget-boolean v7, Lcom/android/systemui/Constants;->IS_INTERNATIONAL:Z
 
     if-nez v7, :cond_5
 
-    .line 371
+    .line 373
     invoke-static {p1, p2}, Lcom/android/systemui/miui/statusbar/phone/rank/RankUtil;->compareIM(Lcom/android/systemui/statusbar/NotificationData$Entry;Lcom/android/systemui/statusbar/NotificationData$Entry;)I
 
     move-result v4
 
-    .line 372
+    .line 374
     if-eqz v4, :cond_5
 
-    .line 373
+    .line 375
     return v4
 
-    .line 378
+    .line 380
     :cond_5
     invoke-static {p1, p2, v0, v2}, Lcom/android/systemui/miui/statusbar/phone/rank/RankUtil;->compareSystemMax(Lcom/android/systemui/statusbar/NotificationData$Entry;Lcom/android/systemui/statusbar/NotificationData$Entry;II)I
 
     move-result v4
 
-    .line 379
+    .line 381
     if-eqz v4, :cond_6
 
-    .line 380
+    .line 382
     return v4
 
-    .line 384
+    .line 386
     :cond_6
     invoke-static {v1, v3}, Lcom/android/systemui/miui/statusbar/phone/rank/RankUtil;->compareRank(II)I
 
     move-result v4
 
-    .line 385
+    .line 387
     if-eqz v4, :cond_7
 
-    .line 386
+    .line 388
     return v4
 
-    .line 389
+    .line 391
     :cond_7
     invoke-virtual {v6}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -297,7 +297,7 @@
     .param p2, "b"    # Ljava/lang/Object;
 
     .prologue
-    .line 325
+    .line 327
     check-cast p1, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .end local p1    # "a":Ljava/lang/Object;

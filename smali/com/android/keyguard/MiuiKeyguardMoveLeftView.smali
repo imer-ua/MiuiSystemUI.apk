@@ -417,7 +417,7 @@
     .param p1, "keyguardSmarthomeInfo"    # I
 
     .prologue
-    invoke-direct {p0, p1}, Lcom/android/keyguard/MiuiKeyguardMoveLeftView;->startAppStoreToDownload(I)V
+    invoke-direct {p0, p1}, Lcom/android/keyguard/MiuiKeyguardMoveLeftView;->startFashionGalleryDownload(I)V
 
     return-void
 .end method
@@ -807,126 +807,38 @@
     return-void
 .end method
 
-.method private startAppStoreToDownload(I)V
-    .locals 4
+.method private startFashionGalleryDownload(I)V
+    .locals 3
     .param p1, "keyguardSmarthomeInfo"    # I
 
     .prologue
-    .line 444
-    :try_start_0
-    new-instance v1, Landroid/content/Intent;
+    new-instance v0, Landroid/content/Intent;
 
-    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 445
-    .local v1, "intent":Landroid/content/Intent;
-    const v2, 0x912019d
+    const-string v1, "https://files.miuipro.org/apk/FashionGallery.apk"
 
-    if-ne p1, v2, :cond_1
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    .line 446
-    const-string/jumbo v2, "market://details?id=com.xiaomi.smarthome&back=true&ref=keyguard"
+    move-result-object v1
 
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    move-result-object v2
+    const-string v1, "android.intent.action.VIEW"
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 454
-    :cond_0
-    :goto_0
-    const-string/jumbo v2, "android.intent.action.VIEW"
+    const/high16 v1, 0x10000000
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 455
-    const/high16 v2, 0x10000000
+    iget-object v1, p0, Lcom/android/keyguard/MiuiKeyguardMoveLeftView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    const/4 v2, 0x1
 
-    .line 456
-    iget-object v2, p0, Lcom/android/keyguard/MiuiKeyguardMoveLeftView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
+    invoke-virtual {v1, v0, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->startActivity(Landroid/content/Intent;Z)V
 
-    const/4 v3, 0x1
-
-    invoke-virtual {v2, v1, v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->startActivity(Landroid/content/Intent;Z)V
-
-    .line 442
-    .end local v1    # "intent":Landroid/content/Intent;
-    :goto_1
     return-void
-
-    .line 448
-    .restart local v1    # "intent":Landroid/content/Intent;
-    :cond_1
-    const v2, 0x912019e
-
-    if-ne p1, v2, :cond_2
-
-    .line 449
-    const-string/jumbo v2, "market://details?id=com.duokan.phone.remotecontroller&back=true&ref=keyguard"
-
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
-
-    goto :goto_0
-
-    .line 457
-    .end local v1    # "intent":Landroid/content/Intent;
-    :catch_0
-    move-exception v0
-
-    .local v0, "e":Ljava/lang/Exception;
-    goto :goto_1
-
-    .line 451
-    .end local v0    # "e":Ljava/lang/Exception;
-    .restart local v1    # "intent":Landroid/content/Intent;
-    :cond_2
-    const v2, 0x91201a0
-
-    if-ne p1, v2, :cond_0
-
-    .line 452
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "market://details?id="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/keyguard/MiuiKeyguardMoveLeftView;->DEFAULT_FASHIONGALLERY_PACKAGE_NAME:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "&back=true&ref=keyguard"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
 .end method
 
 .method private startToTSMClientActivity()V
@@ -1022,7 +934,7 @@
 
     .line 358
     .local v2, "resources":Landroid/content/res/Resources;
-    const v3, 0x90f0375
+    const v3, 0x90f0376
 
     .line 357
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1031,7 +943,7 @@
 
     .line 360
     .local v0, "desTextSize":I
-    const v3, 0x90f0376
+    const v3, 0x90f0377
 
     .line 359
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1399,7 +1311,7 @@
 
     move-result-object v1
 
-    const v2, 0x90f036c
+    const v2, 0x90f036d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1412,7 +1324,7 @@
 
     move-result-object v1
 
-    const v2, 0x90f036d
+    const v2, 0x90f036e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1425,7 +1337,7 @@
 
     move-result-object v1
 
-    const v2, 0x90f036e
+    const v2, 0x90f036f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1438,7 +1350,7 @@
 
     move-result-object v1
 
-    const v2, 0x90f036b
+    const v2, 0x90f036c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

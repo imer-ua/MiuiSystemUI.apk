@@ -30,6 +30,8 @@
 # instance fields
 .field public insets:Landroid/graphics/Rect;
 
+.field public scale:F
+
 .field public screenOrientation:I
 
 .field public taskHeight:I
@@ -42,7 +44,7 @@
     .locals 1
 
     .prologue
-    .line 193
+    .line 194
     new-instance v0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo$1;
 
     invoke-direct {v0}, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo$1;-><init>()V
@@ -59,7 +61,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 127
+    .line 128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 124
@@ -72,7 +74,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->insets:Landroid/graphics/Rect;
 
-    .line 127
+    .line 126
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    iput v0, p0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->scale:F
+
+    .line 128
     return-void
 .end method
 
@@ -83,7 +90,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 131
+    .line 132
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 124
@@ -96,10 +103,15 @@
 
     iput-object v0, p0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->insets:Landroid/graphics/Rect;
 
-    .line 132
+    .line 126
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    iput v0, p0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->scale:F
+
+    .line 133
     invoke-virtual {p0, p1}, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 131
+    .line 132
     return-void
 .end method
 
@@ -119,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 178
+    .line 179
     const/4 v0, 0x0
 
     return v0
@@ -130,28 +142,28 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 188
+    .line 189
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->taskWidth:I
 
-    .line 189
+    .line 190
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->taskHeight:I
 
-    .line 190
+    .line 191
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->screenOrientation:I
 
-    .line 187
+    .line 188
     return-void
 .end method
 
@@ -161,21 +173,21 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 182
+    .line 183
     iget v0, p0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->taskWidth:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 183
+    .line 184
     iget v0, p0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->taskHeight:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 184
+    .line 185
     iget v0, p0, Lcom/android/systemui/proxy/ActivityManager$TaskThumbnailInfo;->screenOrientation:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 181
+    .line 182
     return-void
 .end method

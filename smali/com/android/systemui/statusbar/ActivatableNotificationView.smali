@@ -2060,7 +2060,7 @@
     invoke-super {p0}, Lcom/android/systemui/statusbar/ExpandableOutlineView;->onFinishInflate()V
 
     .line 233
-    const v0, 0x91202dd
+    const v0, 0x91202e3
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -2071,7 +2071,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
     .line 234
-    const v0, 0x91202e5
+    const v0, 0x91202eb
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->findViewById(I)Landroid/view/View;
 
@@ -2096,7 +2096,7 @@
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mShadowHidden:Z
 
     .line 236
-    const v0, 0x91202de
+    const v0, 0x91202e4
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->findViewById(I)Landroid/view/View;
 

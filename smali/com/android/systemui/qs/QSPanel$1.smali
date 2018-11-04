@@ -30,7 +30,7 @@
     .param p2, "val$r"    # Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     .prologue
-    .line 274
+    .line 275
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iput-object p2, p0, Lcom/android/systemui/qs/QSPanel$1;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
@@ -47,10 +47,10 @@
     .param p1, "announcement"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 311
+    .line 312
     if-eqz p1, :cond_0
 
-    .line 312
+    .line 313
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-static {v0}, Lcom/android/systemui/qs/QSPanel;->-get2(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/qs/QSPanel$H;
@@ -65,7 +65,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 310
+    .line 311
     :cond_0
     return-void
 .end method
@@ -75,12 +75,12 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 303
+    .line 304
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     iput-boolean p1, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->scanState:Z
 
-    .line 304
+    .line 305
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-static {v0}, Lcom/android/systemui/qs/QSPanel;->-get1(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/qs/QSPanel$Record;
@@ -91,7 +91,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 305
+    .line 306
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$1;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
@@ -100,7 +100,7 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/qs/QSPanel;->-wrap0(Lcom/android/systemui/qs/QSPanel;Z)V
 
-    .line 302
+    .line 303
     :cond_0
     return-void
 .end method
@@ -110,25 +110,30 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 284
+    .line 285
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->shouldShowDetail()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    .line 285
+    if-eqz p1, :cond_0
+
+    .line 282
+    :goto_0
+    return-void
+
+    .line 286
+    :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$1;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     invoke-virtual {v0, p1, v1}, Lcom/android/systemui/qs/QSPanel;->showDetail(ZLcom/android/systemui/qs/QSPanel$Record;)V
 
-    .line 281
-    :cond_0
-    return-void
+    goto :goto_0
 .end method
 
 .method public onShowEdit(Z)V
@@ -136,14 +141,14 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 291
+    .line 292
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$1;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     invoke-virtual {v0, p1, v1}, Lcom/android/systemui/qs/QSPanel;->showEdit(ZLcom/android/systemui/qs/QSPanel$Record;)V
 
-    .line 290
+    .line 291
     return-void
 .end method
 
@@ -152,14 +157,14 @@
     .param p1, "state"    # Lcom/android/systemui/plugins/qs/QSTile$State;
 
     .prologue
-    .line 277
+    .line 278
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$1;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     invoke-virtual {v0, v1, p1}, Lcom/android/systemui/qs/QSPanel;->drawTile(Lcom/android/systemui/qs/QSPanel$TileRecord;Lcom/android/systemui/plugins/qs/QSTile$State;)V
 
-    .line 276
+    .line 277
     return-void
 .end method
 
@@ -168,7 +173,7 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 296
+    .line 297
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-static {v0}, Lcom/android/systemui/qs/QSPanel;->-get1(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/qs/QSPanel$Record;
@@ -179,12 +184,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 297
+    .line 298
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-static {v0, p1}, Lcom/android/systemui/qs/QSPanel;->-wrap1(Lcom/android/systemui/qs/QSPanel;Z)V
 
-    .line 295
+    .line 296
     :cond_0
     return-void
 .end method

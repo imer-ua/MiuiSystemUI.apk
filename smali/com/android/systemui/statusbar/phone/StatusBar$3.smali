@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 686
+    .line 688
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$3;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -44,7 +44,7 @@
 
     const/4 v1, 0x0
 
-    .line 689
+    .line 691
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$3;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$3;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -63,7 +63,7 @@
 
     invoke-static {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set6(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
-    .line 690
+    .line 692
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$3;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mLightBarController:Lcom/android/systemui/statusbar/phone/LightBarController;
@@ -95,7 +95,7 @@
     :goto_0
     invoke-virtual {v2, v0}, Lcom/android/systemui/statusbar/phone/LightBarController;->setForceBlack(Z)V
 
-    .line 692
+    .line 694
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$3;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
@@ -108,7 +108,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 693
+    .line 695
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$3;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -121,12 +121,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setForceBlack(Z)V
 
-    .line 688
+    .line 690
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 690
+    .line 692
     goto :goto_0
 .end method

@@ -106,12 +106,12 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 66
+    .line 67
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/qs/QSPanel;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 65
+    .line 66
     return-void
 .end method
 
@@ -121,17 +121,17 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 70
+    .line 71
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 47
+    .line 48
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
-    .line 48
+    .line 49
     new-instance v0, Lcom/android/systemui/qs/QSPanel$H;
 
     const/4 v1, 0x0
@@ -140,7 +140,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mHandler:Lcom/android/systemui/qs/QSPanel$H;
 
-    .line 49
+    .line 50
     const-class v0, Lcom/android/internal/logging/MetricsLogger;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -151,10 +151,10 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mMetricsLogger:Lcom/android/internal/logging/MetricsLogger;
 
-    .line 71
+    .line 72
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel;->mContext:Landroid/content/Context;
 
-    .line 72
+    .line 73
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSPanel;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -167,10 +167,10 @@
 
     iput v0, p0, Lcom/android/systemui/qs/QSPanel;->mEditTopOffset:I
 
-    .line 73
+    .line 74
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSPanel;->initViews()V
 
-    .line 69
+    .line 70
     return-void
 .end method
 
@@ -179,17 +179,17 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 441
+    .line 449
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mDetailCallback:Lcom/android/systemui/qs/QSDetail$QSPanelCallback;
 
     if-eqz v0, :cond_0
 
-    .line 442
+    .line 450
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mDetailCallback:Lcom/android/systemui/qs/QSDetail$QSPanelCallback;
 
     invoke-interface {v0, p1}, Lcom/android/systemui/qs/QSDetail$QSPanelCallback;->onScanStateChanged(Z)V
 
-    .line 440
+    .line 448
     :cond_0
     return-void
 .end method
@@ -201,17 +201,17 @@
     .param p3, "y"    # I
 
     .prologue
-    .line 423
+    .line 431
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mDetailCallback:Lcom/android/systemui/qs/QSDetail$QSPanelCallback;
 
     if-eqz v0, :cond_0
 
-    .line 424
+    .line 432
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mDetailCallback:Lcom/android/systemui/qs/QSDetail$QSPanelCallback;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/systemui/qs/QSDetail$QSPanelCallback;->onShowingDetail(Lcom/android/systemui/plugins/qs/DetailAdapter;II)V
 
-    .line 422
+    .line 430
     :cond_0
     return-void
 .end method
@@ -222,17 +222,17 @@
     .param p2, "y"    # I
 
     .prologue
-    .line 429
+    .line 437
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mCustomizerCallback:Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;
 
     if-eqz v0, :cond_0
 
-    .line 430
+    .line 438
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mCustomizerCallback:Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;
 
     invoke-interface {v0, p1, p2}, Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;->show(II)V
 
-    .line 428
+    .line 436
     :cond_0
     return-void
 .end method
@@ -242,17 +242,17 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 435
+    .line 443
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mDetailCallback:Lcom/android/systemui/qs/QSDetail$QSPanelCallback;
 
     if-eqz v0, :cond_0
 
-    .line 436
+    .line 444
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mDetailCallback:Lcom/android/systemui/qs/QSDetail$QSPanelCallback;
 
     invoke-interface {v0, p1}, Lcom/android/systemui/qs/QSDetail$QSPanelCallback;->onToggleStateChanged(Z)V
 
-    .line 434
+    .line 442
     :cond_0
     return-void
 .end method
@@ -262,7 +262,7 @@
     .param p1, "subPanel"    # Ljava/lang/String;
 
     .prologue
-    .line 142
+    .line 143
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -275,7 +275,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 143
+    .line 144
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -296,7 +296,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 144
+    .line 145
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -309,13 +309,13 @@
 
     return-object v1
 
-    .line 142
+    .line 143
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 147
+    .line 148
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
@@ -336,7 +336,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 402
+    .line 410
     if-eqz p2, :cond_1
 
     move-object v0, p1
@@ -344,7 +344,7 @@
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSPanel;->setDetailRecord(Lcom/android/systemui/qs/QSPanel$Record;)V
 
-    .line 403
+    .line 411
     if-eqz p2, :cond_0
 
     iget-object v1, p1, Lcom/android/systemui/qs/QSPanel$Record;->detailAdapter:Lcom/android/systemui/plugins/qs/DetailAdapter;
@@ -352,13 +352,13 @@
     :cond_0
     invoke-direct {p0, v1, p3, p4}, Lcom/android/systemui/qs/QSPanel;->fireShowingDetail(Lcom/android/systemui/plugins/qs/DetailAdapter;II)V
 
-    .line 401
+    .line 409
     return-void
 
     :cond_1
     move-object v0, v1
 
-    .line 402
+    .line 410
     goto :goto_0
 .end method
 
@@ -368,7 +368,7 @@
     .param p2, "show"    # Z
 
     .prologue
-    .line 382
+    .line 390
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
 
     if-eqz v2, :cond_0
@@ -389,11 +389,11 @@
 
     goto :goto_0
 
-    .line 384
+    .line 392
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 385
+    .line 393
     iget-object v2, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
     invoke-interface {v2}, Lcom/android/systemui/plugins/qs/QSTile;->getDetailAdapter()Lcom/android/systemui/plugins/qs/DetailAdapter;
@@ -402,20 +402,20 @@
 
     iput-object v2, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;->detailAdapter:Lcom/android/systemui/plugins/qs/DetailAdapter;
 
-    .line 386
+    .line 394
     iget-object v2, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;->detailAdapter:Lcom/android/systemui/plugins/qs/DetailAdapter;
 
     if-nez v2, :cond_2
 
     return-void
 
-    .line 389
+    .line 397
     :cond_2
     iget-object v2, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
     invoke-interface {v2, p2}, Lcom/android/systemui/plugins/qs/QSTile;->setDetailListening(Z)V
 
-    .line 390
+    .line 398
     iget-object v2, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/plugins/qs/QSTileView;
 
     invoke-virtual {v2}, Lcom/android/systemui/plugins/qs/QSTileView;->getLeft()I
@@ -432,7 +432,7 @@
 
     add-int v0, v2, v3
 
-    .line 391
+    .line 399
     .local v0, "x":I
     iget-object v2, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/plugins/qs/QSTileView;
 
@@ -454,11 +454,11 @@
 
     add-int v1, v2, v3
 
-    .line 392
+    .line 400
     .local v1, "y":I
     invoke-direct {p0, p1, p2, v0, v1}, Lcom/android/systemui/qs/QSPanel;->handleShowDetailImpl(Lcom/android/systemui/qs/QSPanel$Record;ZII)V
 
-    .line 381
+    .line 389
     return-void
 .end method
 
@@ -467,7 +467,7 @@
     .param p1, "r"    # Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     .prologue
-    .line 396
+    .line 404
     iget-object v2, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/plugins/qs/QSTileView;
 
     invoke-virtual {v2}, Lcom/android/systemui/plugins/qs/QSTileView;->getLeft()I
@@ -484,7 +484,7 @@
 
     add-int v0, v2, v3
 
-    .line 397
+    .line 405
     .local v0, "x":I
     iget-object v2, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/plugins/qs/QSTileView;
 
@@ -510,11 +510,11 @@
 
     add-int v1, v2, v3
 
-    .line 398
+    .line 406
     .local v1, "y":I
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/qs/QSPanel;->fireShowingEdit(II)V
 
-    .line 395
+    .line 403
     return-void
 .end method
 
@@ -522,7 +522,7 @@
     .locals 6
 
     .prologue
-    .line 415
+    .line 423
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -535,7 +535,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 416
+    .line 424
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -546,7 +546,7 @@
 
     iget-object v1, v2, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
-    .line 417
+    .line 425
     .local v1, "tile":Lcom/android/systemui/plugins/qs/QSTile;
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mContext:Landroid/content/Context;
 
@@ -560,22 +560,22 @@
 
     invoke-direct {v4, v5}, Landroid/metrics/LogMakerCompat;-><init>(I)V
 
-    .line 418
+    .line 426
     const/4 v5, 0x1
 
-    .line 417
+    .line 425
     invoke-virtual {v4, v5}, Landroid/metrics/LogMakerCompat;->setType(I)Landroid/metrics/LogMakerCompat;
 
     move-result-object v4
 
     invoke-static {v2, v3, v4}, Landroid/metrics/LogMakerCompat;->write(Landroid/content/Context;Lcom/android/internal/logging/MetricsLogger;Landroid/metrics/LogMakerCompat;)V
 
-    .line 415
+    .line 423
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 414
+    .line 422
     .end local v1    # "tile":Lcom/android/systemui/plugins/qs/QSTile;
     :cond_0
     return-void
@@ -589,64 +589,64 @@
     .param p2, "collapsedView"    # Z
 
     .prologue
-    .line 271
+    .line 272
     new-instance v1, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     invoke-direct {v1}, Lcom/android/systemui/qs/QSPanel$TileRecord;-><init>()V
 
-    .line 272
+    .line 273
     .local v1, "r":Lcom/android/systemui/qs/QSPanel$TileRecord;
     iput-object p1, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
-    .line 273
+    .line 274
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/qs/QSPanel;->createTileView(Lcom/android/systemui/plugins/qs/QSTile;Z)Lcom/android/systemui/plugins/qs/QSTileView;
 
     move-result-object v2
 
     iput-object v2, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/plugins/qs/QSTileView;
 
-    .line 274
+    .line 275
     new-instance v0, Lcom/android/systemui/qs/QSPanel$1;
 
     invoke-direct {v0, p0, v1}, Lcom/android/systemui/qs/QSPanel$1;-><init>(Lcom/android/systemui/qs/QSPanel;Lcom/android/systemui/qs/QSPanel$TileRecord;)V
 
-    .line 317
+    .line 318
     .local v0, "callback":Lcom/android/systemui/plugins/qs/QSTile$Callback;
     iget-object v2, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
     invoke-interface {v2, v0}, Lcom/android/systemui/plugins/qs/QSTile;->addCallback(Lcom/android/systemui/plugins/qs/QSTile$Callback;)V
 
-    .line 318
+    .line 319
     iput-object v0, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->callback:Lcom/android/systemui/plugins/qs/QSTile$Callback;
 
-    .line 319
+    .line 320
     iget-object v2, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/plugins/qs/QSTileView;
 
     iget-object v3, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/plugins/qs/QSTileView;->init(Lcom/android/systemui/plugins/qs/QSTile;)V
 
-    .line 320
+    .line 321
     iget-object v2, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
     invoke-interface {v2}, Lcom/android/systemui/plugins/qs/QSTile;->refreshState()V
 
-    .line 321
+    .line 322
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 323
+    .line 324
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     if-eqz v2, :cond_0
 
-    .line 324
+    .line 325
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     invoke-interface {v2, v1}, Lcom/android/systemui/qs/QSPanel$QSTileLayout;->addTile(Lcom/android/systemui/qs/QSPanel$TileRecord;)V
 
-    .line 327
+    .line 328
     :cond_0
     return-object v1
 .end method
@@ -656,12 +656,12 @@
     .param p1, "tile"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 447
+    .line 455
     invoke-static {p1}, Lcom/android/systemui/qs/external/CustomTile;->toSpec(Landroid/content/ComponentName;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 448
+    .line 456
     .local v2, "spec":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
@@ -669,7 +669,7 @@
 
     move-result v0
 
-    .line 449
+    .line 457
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -677,7 +677,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 450
+    .line 458
     iget-object v3, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -698,7 +698,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 451
+    .line 459
     iget-object v3, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -711,11 +711,11 @@
 
     invoke-interface {v3}, Lcom/android/systemui/plugins/qs/QSTile;->click()V
 
-    .line 446
+    .line 454
     :cond_0
     return-void
 
-    .line 449
+    .line 457
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
@@ -723,30 +723,65 @@
 .end method
 
 .method public closeDetail(Z)V
-    .locals 2
+    .locals 3
     .param p1, "animate"    # Z
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v2, 0x0
+
+    .line 347
+    iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mCustomizerCallback:Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;
+
+    if-eqz v1, :cond_0
+
+    .line 349
+    iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mCustomizerCallback:Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;
+
+    invoke-interface {v1, v2, v2, p1}, Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;->hide(IIZ)V
+
+    .line 351
+    :cond_0
+    iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
+
+    instance-of v1, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;
+
+    if-eqz v1, :cond_2
+
+    .line 352
+    iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
+
+    check-cast v1, Lcom/android/systemui/qs/QSPanel$TileRecord;
+
+    iget-object v0, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
+
+    .line 353
+    .local v0, "tile":Lcom/android/systemui/plugins/qs/QSTile;
+    instance-of v1, v0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;
+
+    if-eqz v1, :cond_1
+
+    .line 354
+    check-cast v0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;
+
+    .end local v0    # "tile":Lcom/android/systemui/plugins/qs/QSTile;
+    invoke-virtual {v0, v2}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->showDetail(Z)V
 
     .line 346
-    iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mCustomizerCallback:Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;
-
-    if-eqz v0, :cond_0
-
-    .line 348
-    iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mCustomizerCallback:Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;
-
-    invoke-interface {v0, v1, v1, p1}, Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;->hide(IIZ)V
-
-    .line 350
-    :cond_0
-    iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
-
-    invoke-virtual {p0, v1, v0}, Lcom/android/systemui/qs/QSPanel;->showDetail(ZLcom/android/systemui/qs/QSPanel$Record;)V
-
-    .line 345
+    :cond_1
+    :goto_0
     return-void
+
+    .line 357
+    :cond_2
+    iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
+
+    invoke-virtual {p0, v2, v1}, Lcom/android/systemui/qs/QSPanel;->showDetail(ZLcom/android/systemui/qs/QSPanel$Record;)V
+
+    goto :goto_0
 .end method
 
 .method protected createTileView(Lcom/android/systemui/plugins/qs/QSTile;Z)Lcom/android/systemui/plugins/qs/QSTileView;
@@ -755,7 +790,7 @@
     .param p2, "collapsedView"    # Z
 
     .prologue
-    .line 263
+    .line 264
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/qs/QSTileHost;->createTileView(Lcom/android/systemui/plugins/qs/QSTile;Z)Lcom/android/systemui/plugins/qs/QSTileView;
@@ -771,12 +806,12 @@
     .param p2, "state"    # Lcom/android/systemui/plugins/qs/QSTile$State;
 
     .prologue
-    .line 259
+    .line 260
     iget-object v0, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/plugins/qs/QSTileView;
 
     invoke-virtual {v0, p2}, Lcom/android/systemui/plugins/qs/QSTileView;->onStateChanged(Lcom/android/systemui/plugins/qs/QSTile$State;)V
 
-    .line 258
+    .line 259
     return-void
 .end method
 
@@ -784,7 +819,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 479
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mFooter:Lcom/android/systemui/qs/QSSecurityFooter;
 
     return-object v0
@@ -794,7 +829,7 @@
     .locals 1
 
     .prologue
-    .line 165
+    .line 166
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
     return-object v0
@@ -804,7 +839,7 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 86
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mPageIndicator:Landroid/view/View;
 
     return-object v0
@@ -814,7 +849,7 @@
     .locals 1
 
     .prologue
-    .line 458
+    .line 466
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     return-object v0
@@ -825,7 +860,7 @@
     .param p1, "tile"    # Lcom/android/systemui/plugins/qs/QSTile;
 
     .prologue
-    .line 462
+    .line 470
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -846,18 +881,18 @@
 
     check-cast v0, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
-    .line 463
+    .line 471
     .local v0, "r":Lcom/android/systemui/qs/QSPanel$TileRecord;
     iget-object v2, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
     if-ne v2, p1, :cond_0
 
-    .line 464
+    .line 472
     iget-object v2, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/plugins/qs/QSTileView;
 
     return-object v2
 
-    .line 467
+    .line 475
     .end local v0    # "r":Lcom/android/systemui/qs/QSPanel$TileRecord;
     :cond_1
     const/4 v2, 0x0
@@ -871,41 +906,41 @@
     .param p2, "show"    # Z
 
     .prologue
-    .line 354
+    .line 362
     instance-of v2, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     if-eqz v2, :cond_0
 
-    .line 355
+    .line 363
     check-cast p1, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     .end local p1    # "r":Lcom/android/systemui/qs/QSPanel$Record;
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/qs/QSPanel;->handleShowDetailTile(Lcom/android/systemui/qs/QSPanel$TileRecord;Z)V
 
-    .line 353
+    .line 361
     :goto_0
     return-void
 
-    .line 357
+    .line 365
     .restart local p1    # "r":Lcom/android/systemui/qs/QSPanel$Record;
     :cond_0
     const/4 v0, 0x0
 
-    .line 358
+    .line 366
     .local v0, "x":I
     const/4 v1, 0x0
 
-    .line 359
+    .line 367
     .local v1, "y":I
     if-eqz p1, :cond_1
 
-    .line 360
+    .line 368
     iget v0, p1, Lcom/android/systemui/qs/QSPanel$Record;->x:I
 
-    .line 361
+    .line 369
     iget v1, p1, Lcom/android/systemui/qs/QSPanel$Record;->y:I
 
-    .line 363
+    .line 371
     :cond_1
     invoke-direct {p0, p1, p2, v0, v1}, Lcom/android/systemui/qs/QSPanel;->handleShowDetailImpl(Lcom/android/systemui/qs/QSPanel$Record;ZII)V
 
@@ -918,41 +953,41 @@
     .param p2, "show"    # Z
 
     .prologue
-    .line 368
+    .line 376
     instance-of v2, p1, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     if-eqz v2, :cond_0
 
-    .line 369
+    .line 377
     check-cast p1, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     .end local p1    # "r":Lcom/android/systemui/qs/QSPanel$Record;
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSPanel;->handleShowEditTile(Lcom/android/systemui/qs/QSPanel$TileRecord;)V
 
-    .line 367
+    .line 375
     :goto_0
     return-void
 
-    .line 371
+    .line 379
     .restart local p1    # "r":Lcom/android/systemui/qs/QSPanel$Record;
     :cond_0
     const/4 v0, 0x0
 
-    .line 372
+    .line 380
     .local v0, "x":I
     const/4 v1, 0x0
 
-    .line 373
+    .line 381
     .local v1, "y":I
     if-eqz p1, :cond_1
 
-    .line 374
+    .line 382
     iget v0, p1, Lcom/android/systemui/qs/QSPanel$Record;->x:I
 
-    .line 375
+    .line 383
     iget v1, p1, Lcom/android/systemui/qs/QSPanel$Record;->y:I
 
-    .line 377
+    .line 385
     :cond_1
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/qs/QSPanel;->fireShowingEdit(II)V
 
@@ -963,26 +998,26 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 78
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSPanel;->setOrientation(I)V
 
-    .line 78
+    .line 79
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSPanel;->setupTileLayout()V
 
-    .line 79
+    .line 80
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSPanel;->setupPageIndicator()V
 
-    .line 80
+    .line 81
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSPanel;->setupFooter()V
 
-    .line 81
+    .line 82
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSPanel;->updateResources(Z)V
 
-    .line 76
+    .line 77
     return-void
 .end method
 
@@ -990,15 +1025,15 @@
     .locals 1
 
     .prologue
-    .line 114
+    .line 115
     invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
-    .line 115
+    .line 116
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
     if-eqz v0, :cond_0
 
-    .line 116
+    .line 117
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSTileHost;->getTiles()Ljava/util/Collection;
@@ -1007,7 +1042,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSPanel;->setTiles(Ljava/util/Collection;)V
 
-    .line 113
+    .line 114
     :cond_0
     return-void
 .end method
@@ -1016,17 +1051,17 @@
     .locals 3
 
     .prologue
-    .line 122
+    .line 123
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
     if-eqz v2, :cond_0
 
-    .line 123
+    .line 124
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
     invoke-virtual {v2, p0}, Lcom/android/systemui/qs/QSTileHost;->removeCallback(Lcom/android/systemui/qs/QSHost$Callback;)V
 
-    .line 125
+    .line 126
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
@@ -1048,7 +1083,7 @@
 
     check-cast v0, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
-    .line 126
+    .line 127
     .local v0, "record":Lcom/android/systemui/qs/QSPanel$TileRecord;
     iget-object v2, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
@@ -1056,12 +1091,12 @@
 
     goto :goto_0
 
-    .line 128
+    .line 129
     .end local v0    # "record":Lcom/android/systemui/qs/QSPanel$TileRecord;
     :cond_1
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 121
+    .line 122
     return-void
 .end method
 
@@ -1069,7 +1104,7 @@
     .locals 1
 
     .prologue
-    .line 133
+    .line 134
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSTileHost;->getTiles()Ljava/util/Collection;
@@ -1078,7 +1113,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSPanel;->setTiles(Ljava/util/Collection;)V
 
-    .line 132
+    .line 133
     return-void
 .end method
 
@@ -1091,12 +1126,12 @@
 
     const/4 v4, 0x0
 
-    .line 137
+    .line 138
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSPanel;->getTile(Ljava/lang/String;)Lcom/android/systemui/plugins/qs/QSTile;
 
     move-result-object v0
 
-    .line 138
+    .line 139
     .local v0, "tile":Lcom/android/systemui/plugins/qs/QSTile;
     invoke-interface {v0}, Lcom/android/systemui/plugins/qs/QSTile;->getDetailAdapter()Lcom/android/systemui/plugins/qs/DetailAdapter;
 
@@ -1118,7 +1153,7 @@
 
     invoke-virtual {p0, v5, v1, v2}, Lcom/android/systemui/qs/QSPanel;->showDetailAdapter(ZLcom/android/systemui/plugins/qs/DetailAdapter;[I)V
 
-    .line 136
+    .line 137
     return-void
 .end method
 
@@ -1126,7 +1161,7 @@
     .locals 3
 
     .prologue
-    .line 214
+    .line 215
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1147,7 +1182,7 @@
 
     check-cast v0, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
-    .line 215
+    .line 216
     .local v0, "r":Lcom/android/systemui/qs/QSPanel$TileRecord;
     iget-object v2, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
@@ -1155,14 +1190,14 @@
 
     goto :goto_0
 
-    .line 217
+    .line 218
     .end local v0    # "r":Lcom/android/systemui/qs/QSPanel$TileRecord;
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mFooter:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-virtual {v2}, Lcom/android/systemui/qs/QSSecurityFooter;->refreshState()V
 
-    .line 213
+    .line 214
     return-void
 .end method
 
@@ -1171,40 +1206,40 @@
     .param p1, "r"    # Lcom/android/systemui/qs/QSPanel$Record;
 
     .prologue
-    .line 407
+    .line 415
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
 
     if-ne p1, v1, :cond_0
 
     return-void
 
-    .line 408
+    .line 416
     :cond_0
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
 
-    .line 409
+    .line 417
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
 
     instance-of v1, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     if-eqz v1, :cond_1
 
-    .line 410
+    .line 418
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mDetailRecord:Lcom/android/systemui/qs/QSPanel$Record;
 
     check-cast v1, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     iget-boolean v0, v1, Lcom/android/systemui/qs/QSPanel$TileRecord;->scanState:Z
 
-    .line 411
+    .line 419
     .local v0, "scanState":Z
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/systemui/qs/QSPanel;->fireScanStateChanged(Z)V
 
-    .line 406
+    .line 414
     return-void
 
-    .line 409
+    .line 417
     .end local v0    # "scanState":Z
     :cond_1
     const/4 v0, 0x0
@@ -1219,18 +1254,18 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 184
+    .line 185
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSPanel;->mExpanded:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 185
+    .line 186
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/qs/QSPanel;->mExpanded:Z
 
-    .line 186
+    .line 187
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSPanel;->mExpanded:Z
 
     if-nez v0, :cond_1
@@ -1241,14 +1276,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 187
+    .line 188
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     check-cast v0, Lcom/android/systemui/qs/PagedTileLayout;
 
     invoke-virtual {v0, v3, v3}, Lcom/android/systemui/qs/PagedTileLayout;->setCurrentItem(IZ)V
 
-    .line 189
+    .line 190
     :cond_1
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSPanel;->getContext()Landroid/content/Context;
 
@@ -1260,19 +1295,19 @@
 
     invoke-static {v0, v2, v1}, Lcom/android/internal/logging/MetricsLogger;->visibility(Landroid/content/Context;IZ)V
 
-    .line 190
+    .line 191
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSPanel;->mExpanded:Z
 
     if-nez v0, :cond_2
 
-    .line 191
+    .line 192
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/QSPanel;->closeDetail(Z)V
 
-    .line 183
+    .line 184
     :goto_0
     return-void
 
-    .line 193
+    .line 194
     :cond_2
     invoke-direct {p0}, Lcom/android/systemui/qs/QSPanel;->logTiles()V
 
@@ -1284,15 +1319,15 @@
     .param p1, "host"    # Lcom/android/systemui/qs/QSTileHost;
 
     .prologue
-    .line 158
+    .line 159
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
-    .line 159
+    .line 160
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/qs/QSTileHost;->addCallback(Lcom/android/systemui/qs/QSHost$Callback;)V
 
-    .line 160
+    .line 161
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSTileHost;->getTiles()Ljava/util/Collection;
@@ -1301,12 +1336,12 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSPanel;->setTiles(Ljava/util/Collection;)V
 
-    .line 161
+    .line 162
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mFooter:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/QSSecurityFooter;->setHostEnvironment(Lcom/android/systemui/qs/QSTileHost;)V
 
-    .line 157
+    .line 158
     return-void
 .end method
 
@@ -1315,28 +1350,28 @@
     .param p1, "listening"    # Z
 
     .prologue
-    .line 202
+    .line 203
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSPanel;->mListening:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 203
+    .line 204
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/qs/QSPanel;->mListening:Z
-
-    .line 204
-    iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
-
-    if-eqz v0, :cond_1
 
     .line 205
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
+    if-eqz v0, :cond_1
+
+    .line 206
+    iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
+
     invoke-interface {v0, p1}, Lcom/android/systemui/qs/QSPanel$QSTileLayout;->setListening(Z)V
 
-    .line 207
+    .line 208
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mFooter:Lcom/android/systemui/qs/QSSecurityFooter;
 
@@ -1344,15 +1379,15 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSSecurityFooter;->setListening(Z)V
 
-    .line 208
+    .line 209
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSPanel;->mListening:Z
 
     if-eqz v0, :cond_2
 
-    .line 209
+    .line 210
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSPanel;->refreshAllTiles()V
 
-    .line 201
+    .line 202
     :cond_2
     return-void
 .end method
@@ -1362,10 +1397,10 @@
     .param p1, "callback"    # Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;
 
     .prologue
-    .line 154
+    .line 155
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel;->mCustomizerCallback:Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;
 
-    .line 153
+    .line 154
     return-void
 .end method
 
@@ -1374,10 +1409,10 @@
     .param p1, "callback"    # Lcom/android/systemui/qs/QSDetail$QSPanelCallback;
 
     .prologue
-    .line 151
+    .line 152
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel;->mDetailCallback:Lcom/android/systemui/qs/QSDetail$QSPanelCallback;
 
-    .line 150
+    .line 151
     return-void
 .end method
 
@@ -1394,13 +1429,13 @@
     .end annotation
 
     .prologue
-    .line 244
+    .line 245
     .local p1, "tiles":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/android/systemui/plugins/qs/QSTile;>;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/systemui/qs/QSPanel;->setTiles(Ljava/util/Collection;Z)V
 
-    .line 243
+    .line 244
     return-void
 .end method
 
@@ -1418,7 +1453,7 @@
     .end annotation
 
     .prologue
-    .line 248
+    .line 249
     .local p1, "tiles":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/android/systemui/plugins/qs/QSTile;>;"
     iget-object v4, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
@@ -1440,13 +1475,13 @@
 
     check-cast v0, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
-    .line 249
+    .line 250
     .local v0, "record":Lcom/android/systemui/qs/QSPanel$TileRecord;
     iget-object v4, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     invoke-interface {v4, v0}, Lcom/android/systemui/qs/QSPanel$QSTileLayout;->removeTile(Lcom/android/systemui/qs/QSPanel$TileRecord;)V
 
-    .line 250
+    .line 251
     iget-object v4, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
     iget-object v5, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->callback:Lcom/android/systemui/plugins/qs/QSTile$Callback;
@@ -1455,14 +1490,14 @@
 
     goto :goto_0
 
-    .line 252
+    .line 253
     .end local v0    # "record":Lcom/android/systemui/qs/QSPanel$TileRecord;
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 253
+    .line 254
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -1481,13 +1516,13 @@
 
     check-cast v2, Lcom/android/systemui/plugins/qs/QSTile;
 
-    .line 254
+    .line 255
     .local v2, "tile":Lcom/android/systemui/plugins/qs/QSTile;
     invoke-virtual {p0, v2, p2}, Lcom/android/systemui/qs/QSPanel;->addTile(Lcom/android/systemui/plugins/qs/QSTile;Z)Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     goto :goto_1
 
-    .line 247
+    .line 248
     .end local v2    # "tile":Lcom/android/systemui/plugins/qs/QSTile;
     :cond_1
     return-void
@@ -1497,7 +1532,7 @@
     .locals 2
 
     .prologue
-    .line 108
+    .line 109
     new-instance v0, Lcom/android/systemui/qs/QSSecurityFooter;
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mContext:Landroid/content/Context;
@@ -1506,7 +1541,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mFooter:Lcom/android/systemui/qs/QSSecurityFooter;
 
-    .line 109
+    .line 110
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mFooter:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSSecurityFooter;->getView()Landroid/view/View;
@@ -1515,7 +1550,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSPanel;->addView(Landroid/view/View;)V
 
-    .line 107
+    .line 108
     return-void
 .end method
 
@@ -1523,26 +1558,26 @@
     .locals 4
 
     .prologue
-    .line 96
+    .line 97
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    .line 97
+    .line 98
     const v2, 0x90400c5
 
     const/4 v3, 0x0
 
-    .line 96
+    .line 97
     invoke-virtual {v1, v2, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mPageIndicator:Landroid/view/View;
 
-    .line 98
+    .line 99
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mPageIndicator:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1551,7 +1586,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 99
+    .line 100
     .local v0, "layoutParams":Landroid/widget/LinearLayout$LayoutParams;
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mContext:Landroid/content/Context;
 
@@ -1559,29 +1594,29 @@
 
     move-result-object v1
 
-    .line 100
+    .line 101
     const v2, 0x90f011a
 
-    .line 99
+    .line 100
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
     iput v1, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
-    .line 101
+    .line 102
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mPageIndicator:Landroid/view/View;
 
     invoke-virtual {p0, v1, v0}, Lcom/android/systemui/qs/QSPanel;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 102
+    .line 103
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     instance-of v1, v1, Lcom/android/systemui/qs/PagedTileLayout;
 
     if-eqz v1, :cond_0
 
-    .line 103
+    .line 104
     iget-object v1, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     check-cast v1, Lcom/android/systemui/qs/PagedTileLayout;
@@ -1592,7 +1627,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/PagedTileLayout;->setPageIndicator(Lcom/android/systemui/qs/PageIndicator;)V
 
-    .line 95
+    .line 96
     :cond_0
     return-void
 .end method
@@ -1601,19 +1636,19 @@
     .locals 3
 
     .prologue
-    .line 89
+    .line 90
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    .line 90
+    .line 91
     const v1, 0x90400c7
 
     const/4 v2, 0x0
 
-    .line 89
+    .line 90
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
@@ -1622,21 +1657,21 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
-    .line 91
+    .line 92
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     iget-boolean v1, p0, Lcom/android/systemui/qs/QSPanel;->mListening:Z
 
     invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSPanel$QSTileLayout;->setListening(Z)V
 
-    .line 92
+    .line 93
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     check-cast v0, Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSPanel;->addView(Landroid/view/View;)V
 
-    .line 88
+    .line 89
     return-void
 .end method
 
@@ -1644,7 +1679,7 @@
     .locals 1
 
     .prologue
-    .line 267
+    .line 268
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSPanel;->mExpanded:Z
 
     return v0
@@ -1660,7 +1695,7 @@
 
     const/4 v2, 0x0
 
-    .line 236
+    .line 237
     iget-object v3, p0, Lcom/android/systemui/qs/QSPanel;->mHandler:Lcom/android/systemui/qs/QSPanel$H;
 
     if-eqz p1, :cond_0
@@ -1674,13 +1709,13 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 235
+    .line 236
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 236
+    .line 237
     goto :goto_0
 .end method
 
@@ -1695,14 +1730,14 @@
 
     const/4 v4, 0x0
 
-    .line 221
+    .line 222
     aget v1, p3, v4
 
-    .line 222
+    .line 223
     .local v1, "xInWindow":I
     aget v2, p3, v5
 
-    .line 223
+    .line 224
     .local v2, "yInWindow":I
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSPanel;->getParent()Landroid/view/ViewParent;
 
@@ -1712,39 +1747,39 @@
 
     invoke-virtual {v3, p3}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 224
+    .line 225
     new-instance v0, Lcom/android/systemui/qs/QSPanel$Record;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSPanel$Record;-><init>()V
 
-    .line 225
+    .line 226
     .local v0, "r":Lcom/android/systemui/qs/QSPanel$Record;
     iput-object p2, v0, Lcom/android/systemui/qs/QSPanel$Record;->detailAdapter:Lcom/android/systemui/plugins/qs/DetailAdapter;
 
-    .line 226
+    .line 227
     aget v3, p3, v4
 
     sub-int v3, v1, v3
 
     iput v3, v0, Lcom/android/systemui/qs/QSPanel$Record;->x:I
 
-    .line 227
+    .line 228
     aget v3, p3, v5
 
     sub-int v3, v2, v3
 
     iput v3, v0, Lcom/android/systemui/qs/QSPanel$Record;->y:I
 
-    .line 229
+    .line 230
     aput v1, p3, v4
 
-    .line 230
+    .line 231
     aput v2, p3, v5
 
-    .line 232
+    .line 233
     invoke-virtual {p0, p1, v0}, Lcom/android/systemui/qs/QSPanel;->showDetail(ZLcom/android/systemui/qs/QSPanel$Record;)V
 
-    .line 220
+    .line 221
     return-void
 .end method
 
@@ -1752,12 +1787,12 @@
     .locals 1
 
     .prologue
-    .line 475
+    .line 483
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mFooter:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSSecurityFooter;->showDeviceMonitoringDialog()V
 
-    .line 474
+    .line 482
     return-void
 .end method
 
@@ -1766,14 +1801,14 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 331
+    .line 332
     new-instance v0, Lcom/android/systemui/qs/QSPanel$2;
 
     invoke-direct {v0, p0, p1}, Lcom/android/systemui/qs/QSPanel$2;-><init>(Lcom/android/systemui/qs/QSPanel;Landroid/view/View;)V
 
     invoke-virtual {p1, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 330
+    .line 331
     return-void
 .end method
 
@@ -1785,7 +1820,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 240
+    .line 241
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mHandler:Lcom/android/systemui/qs/QSPanel$H;
 
     if-eqz p1, :cond_0
@@ -1801,13 +1836,13 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 239
+    .line 240
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 240
+    .line 241
     goto :goto_0
 .end method
 
@@ -1816,12 +1851,12 @@
     .param p1, "isThemeChanged"    # Z
 
     .prologue
-    .line 169
+    .line 170
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mFooter:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-virtual {v2}, Lcom/android/systemui/qs/QSSecurityFooter;->onConfigurationChanged()V
 
-    .line 170
+    .line 171
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSPanel;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -1834,7 +1869,7 @@
 
     iput v2, p0, Lcom/android/systemui/qs/QSPanel;->mEditTopOffset:I
 
-    .line 171
+    .line 172
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mRecords:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1855,7 +1890,7 @@
 
     check-cast v0, Lcom/android/systemui/qs/QSPanel$TileRecord;
 
-    .line 172
+    .line 173
     .local v0, "r":Lcom/android/systemui/qs/QSPanel$TileRecord;
     iget-object v2, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->tileView:Lcom/android/systemui/plugins/qs/QSTileView;
 
@@ -1865,35 +1900,35 @@
 
     invoke-virtual {v2}, Lcom/android/systemui/plugins/qs/QSIconView;->updateResources()V
 
-    .line 173
+    .line 174
     iget-object v2, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/plugins/qs/QSTile;
 
     invoke-interface {v2}, Lcom/android/systemui/plugins/qs/QSTile;->clearState()V
 
     goto :goto_0
 
-    .line 175
+    .line 176
     .end local v0    # "r":Lcom/android/systemui/qs/QSPanel$TileRecord;
     :cond_0
     iget-boolean v2, p0, Lcom/android/systemui/qs/QSPanel;->mListening:Z
 
     if-eqz v2, :cond_1
 
-    .line 176
+    .line 177
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSPanel;->refreshAllTiles()V
 
-    .line 178
+    .line 179
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     if-eqz v2, :cond_2
 
-    .line 179
+    .line 180
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mTileLayout:Lcom/android/systemui/qs/QSPanel$QSTileLayout;
 
     invoke-interface {v2}, Lcom/android/systemui/qs/QSPanel$QSTileLayout;->updateResources()Z
 
-    .line 168
+    .line 169
     :cond_2
     return-void
 .end method

@@ -30,7 +30,7 @@
     .param p2, "val$clickedView"    # Landroid/view/View;
 
     .prologue
-    .line 6401
+    .line 6415
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$73;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$73;->val$clickedView:Landroid/view/View;
@@ -46,11 +46,11 @@
     .locals 1
 
     .prologue
-    .line 6404
+    .line 6418
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$73;->val$clickedView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->performClick()Z
 
-    .line 6403
+    .line 6417
     return-void
 .end method

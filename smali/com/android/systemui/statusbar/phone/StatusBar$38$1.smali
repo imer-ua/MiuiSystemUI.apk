@@ -33,7 +33,7 @@
     .param p3, "val$currentRanking"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
     .prologue
-    .line 7583
+    .line 7597
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$38;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38$1;->val$notifications:[Landroid/service/notification/StatusBarNotification;
@@ -53,7 +53,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 7586
+    .line 7600
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38$1;->val$notifications:[Landroid/service/notification/StatusBarNotification;
 
     array-length v4, v3
@@ -65,7 +65,7 @@
 
     aget-object v0, v3, v1
 
-    .line 7587
+    .line 7601
     .local v0, "sbn":Landroid/service/notification/StatusBarNotification;
     invoke-virtual {v0}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -75,7 +75,7 @@
 
     invoke-virtual {v5, v2}, Landroid/app/MiuiNotification;->setEnableFloat(Z)Landroid/app/MiuiNotification;
 
-    .line 7588
+    .line 7602
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/StatusBar$38$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$38;
 
     iget-object v5, v5, Lcom/android/systemui/statusbar/phone/StatusBar$38;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -84,12 +84,12 @@
 
     invoke-static {v5, v0, v6, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap1(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;Z)Z
 
-    .line 7586
+    .line 7600
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 7585
+    .line 7599
     .end local v0    # "sbn":Landroid/service/notification/StatusBarNotification;
     :cond_0
     return-void

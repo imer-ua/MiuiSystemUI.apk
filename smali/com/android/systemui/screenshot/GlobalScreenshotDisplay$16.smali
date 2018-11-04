@@ -3,12 +3,12 @@
 .source "GlobalScreenshotDisplay.java"
 
 # interfaces
-.implements Landroid/app/ActivityOptions$OnAnimationStartedListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->createQuitAnimationBundle()Landroid/os/Bundle;
+    value = Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->showDeleteDialog()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     .prologue
-    .line 553
+    .line 543
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,27 +37,69 @@
 
 
 # virtual methods
-.method public onAnimationStarted()V
-    .locals 4
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 3
+    .param p1, "dialog"    # Landroid/content/DialogInterface;
+    .param p2, "which"    # I
 
     .prologue
-    .line 555
+    .line 546
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
-    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get14(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/view/View;
+    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get10(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Z
 
-    move-result-object v0
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 547
+    iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
+
+    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap8(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)V
+
+    .line 556
+    :goto_0
+    iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
+
+    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get9(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/content/Context;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "indeed_deleted"
+
+    .line 557
+    iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
+
+    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get11(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const-string/jumbo v0, "longscreenshot"
+
+    .line 556
+    :goto_1
+    invoke-static {v1, v2, v0}, Lcom/android/systemui/screenshot/StatHelper;->recordCountEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 545
+    return-void
+
+    .line 549
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     new-instance v1, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16$1;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16$1;-><init>(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$16;)V
 
-    .line 559
-    const-wide/16 v2, 0x12c
+    invoke-static {v0, v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-set2(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 555
-    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    goto :goto_0
 
-    .line 554
-    return-void
+    .line 557
+    :cond_1
+    const-string/jumbo v0, "normal"
+
+    goto :goto_1
 .end method

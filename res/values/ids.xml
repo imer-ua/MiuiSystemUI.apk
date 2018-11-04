@@ -406,6 +406,7 @@
     <item type="id" name="notch_recorder">false</item>
     <item type="id" name="timer">false</item>
     <item type="id" name="notch_safe">false</item>
+    <item type="id" name="notch_sos">false</item>
     <item type="id" name="notch_call">false</item>
     <item type="id" name="notch_multi">false</item>
     <item type="id" name="returnToDriveModeScreen">false</item>
@@ -416,6 +417,9 @@
     <item type="id" name="recorderTimer">false</item>
     <item type="id" name="safepayStatusBar">false</item>
     <item type="id" name="safepayStatusBarText">false</item>
+    <item type="id" name="sosStatusBar">false</item>
+    <item type="id" name="sosTitle">false</item>
+    <item type="id" name="sosSummary">false</item>
     <item type="id" name="return_to_in_call_screen">false</item>
     <item type="id" name="call_state_icon">false</item>
     <item type="id" name="call_icons">false</item>
@@ -484,7 +488,9 @@
     <item type="id" name="drag">false</item>
     <item type="id" name="seekbar">false</item>
     <item type="id" name="rot0">false</item>
+    <item type="id" name="start_padding">false</item>
     <item type="id" name="recent_apps">false</item>
+    <item type="id" name="side_padding">false</item>
     <item type="id" name="deadzone">false</item>
     <item type="id" name="rot90">false</item>
     <item type="id" name="navigation_bar_frame">false</item>

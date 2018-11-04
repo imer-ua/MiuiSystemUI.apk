@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 658
+    .line 660
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -42,14 +42,14 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 661
+    .line 663
     sget-boolean v2, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
 
     if-eqz v2, :cond_0
 
     const/4 v0, 0x1
 
-    .line 662
+    .line 664
     .local v0, "default_value":I
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -60,29 +60,29 @@
 
     move-result-object v2
 
-    .line 663
+    .line 665
     const-string/jumbo v3, "upload_log_pref"
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget v4, v4, Lcom/android/systemui/statusbar/phone/StatusBar;->mCurrentUserId:I
 
-    .line 662
+    .line 664
     invoke-static {v2, v3, v0, v4}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v2
 
     if-ne v2, v1, :cond_1
 
-    .line 664
+    .line 666
     .local v1, "enable":Z
     :goto_1
     invoke-static {v1}, Lcom/android/systemui/Util;->setUserExperienceProgramEnabled(Z)V
 
-    .line 660
+    .line 662
     return-void
 
-    .line 661
+    .line 663
     .end local v0    # "default_value":I
     .end local v1    # "enable":Z
     :cond_0
@@ -91,7 +91,7 @@
     .restart local v0    # "default_value":I
     goto :goto_0
 
-    .line 662
+    .line 664
     :cond_1
     const/4 v1, 0x0
 

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 707
+    .line 709
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 710
+    .line 712
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar;->mSystemUiVisibility:I
@@ -50,7 +50,7 @@
 
     and-int v0, v1, v2
 
-    .line 711
+    .line 713
     .local v0, "requested":I
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -58,12 +58,12 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 712
+    .line 714
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap16(Lcom/android/systemui/statusbar/phone/StatusBar;I)V
 
-    .line 709
+    .line 711
     :cond_0
     return-void
 .end method

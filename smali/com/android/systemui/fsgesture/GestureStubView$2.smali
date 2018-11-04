@@ -113,7 +113,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/fsgesture/GestureStubView;
 
     .prologue
-    .line 155
+    .line 162
     iput-object p1, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -131,10 +131,10 @@
     .prologue
     const/16 v1, 0x105
 
-    .line 179
+    .line 186
     if-eqz p1, :cond_0
 
-    .line 180
+    .line 187
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v0}, Lcom/android/systemui/fsgesture/GestureStubView;->-get12(Lcom/android/systemui/fsgesture/GestureStubView;)Lcom/android/systemui/fsgesture/GestureStubView$H;
@@ -143,7 +143,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView$H;->removeMessages(I)V
 
-    .line 181
+    .line 188
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v0}, Lcom/android/systemui/fsgesture/GestureStubView;->-get12(Lcom/android/systemui/fsgesture/GestureStubView;)Lcom/android/systemui/fsgesture/GestureStubView$H;
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView$H;->sendEmptyMessage(I)Z
 
-    .line 185
+    .line 192
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
@@ -162,10 +162,10 @@
 
     invoke-virtual {v0, p2}, Lcom/android/systemui/fsgesture/GestureBackArrowView;->onActionMove(F)V
 
-    .line 178
+    .line 185
     return-void
 
-    .line 183
+    .line 190
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
@@ -190,17 +190,17 @@
 
     const/4 v4, 0x0
 
-    .line 158
+    .line 165
     iget-object v1, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v1, v5}, Lcom/android/systemui/fsgesture/GestureStubView;->-set2(Lcom/android/systemui/fsgesture/GestureStubView;Z)Z
 
-    .line 159
+    .line 166
     iget-object v1, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-wrap4(Lcom/android/systemui/fsgesture/GestureStubView;)V
 
-    .line 162
+    .line 169
     const-string/jumbo v1, "GestureStubView"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -223,10 +223,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
+    .line 172
     if-eqz p1, :cond_0
 
-    .line 166
+    .line 173
     iget-object v1, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-get9(Lcom/android/systemui/fsgesture/GestureStubView;)Lcom/android/systemui/fsgesture/GestureBackArrowView;
@@ -235,12 +235,12 @@
 
     invoke-virtual {v1, v4}, Lcom/android/systemui/fsgesture/GestureBackArrowView;->setVisibility(I)V
 
-    .line 167
+    .line 174
     iget-object v1, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-wrap8(Lcom/android/systemui/fsgesture/GestureStubView;)V
 
-    .line 168
+    .line 175
     iget-object v1, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-get16(Lcom/android/systemui/fsgesture/GestureStubView;)Z
@@ -249,14 +249,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 169
+    .line 176
     iget-object v1, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v1, p2}, Lcom/android/systemui/fsgesture/GestureStubView;->-wrap2(Lcom/android/systemui/fsgesture/GestureStubView;F)[I
 
     move-result-object v0
 
-    .line 170
+    .line 177
     .local v0, "params":[I
     iget-object v1, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
@@ -280,13 +280,13 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/android/systemui/fsgesture/GestureBackArrowView;->onActionDown(FFF)V
 
-    .line 157
+    .line 164
     .end local v0    # "params":[I
     :cond_0
     :goto_0
     return-void
 
-    .line 172
+    .line 179
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
@@ -309,21 +309,21 @@
     .param p2, "offsetX"    # F
 
     .prologue
-    .line 191
+    .line 198
     const-string/jumbo v0, "GestureStubView"
 
     const-string/jumbo v1, "onSwipeStop"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 194
+    .line 201
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-set2(Lcom/android/systemui/fsgesture/GestureStubView;Z)Z
 
-    .line 195
+    .line 202
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v0}, Lcom/android/systemui/fsgesture/GestureStubView;->-get12(Lcom/android/systemui/fsgesture/GestureStubView;)Lcom/android/systemui/fsgesture/GestureStubView$H;
@@ -342,13 +342,13 @@
 
     move-result-object v1
 
-    .line 196
+    .line 203
     const-wide/16 v2, 0x1f4
 
-    .line 195
+    .line 202
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/fsgesture/GestureStubView$H;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 197
+    .line 204
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     const/16 v1, 0x14
@@ -359,7 +359,7 @@
 
     if-nez v0, :cond_0
 
-    .line 198
+    .line 205
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v0}, Lcom/android/systemui/fsgesture/GestureStubView;->-wrap1(Lcom/android/systemui/fsgesture/GestureStubView;)Z
@@ -368,7 +368,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 199
+    .line 206
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v0}, Lcom/android/systemui/fsgesture/GestureStubView;->-get9(Lcom/android/systemui/fsgesture/GestureStubView;)Lcom/android/systemui/fsgesture/GestureBackArrowView;
@@ -379,12 +379,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/fsgesture/GestureBackArrowView;->setReadyFinish(Lcom/android/systemui/fsgesture/GestureBackArrowView$ReadyState;)V
 
-    .line 204
+    .line 211
     :cond_0
     :goto_0
     if-eqz p1, :cond_1
 
-    .line 205
+    .line 212
     invoke-static {}, Lcom/android/systemui/fsgesture/GestureStubView$2;->-getcom-android-systemui-fsgesture-GestureBackArrowView$ReadyStateSwitchesValues()[I
 
     move-result-object v0
@@ -407,7 +407,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 218
+    .line 225
     :cond_1
     :goto_1
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
@@ -420,7 +420,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView$H;->removeMessages(I)V
 
-    .line 219
+    .line 226
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v0}, Lcom/android/systemui/fsgesture/GestureStubView;->-get9(Lcom/android/systemui/fsgesture/GestureStubView;)Lcom/android/systemui/fsgesture/GestureBackArrowView;
@@ -431,20 +431,20 @@
 
     move-result v1
 
-    .line 220
+    .line 227
     iget-object v2, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v2}, Lcom/android/systemui/fsgesture/GestureStubView;->-get0(Lcom/android/systemui/fsgesture/GestureStubView;)Landroid/animation/Animator$AnimatorListener;
 
     move-result-object v2
 
-    .line 219
+    .line 226
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/fsgesture/GestureBackArrowView;->onActionUp(FLandroid/animation/Animator$AnimatorListener;)V
 
-    .line 189
+    .line 196
     return-void
 
-    .line 201
+    .line 208
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
@@ -458,7 +458,7 @@
 
     goto :goto_0
 
-    .line 207
+    .line 214
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
@@ -468,7 +468,7 @@
 
     goto :goto_1
 
-    .line 210
+    .line 217
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
@@ -488,7 +488,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 211
+    .line 218
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v0}, Lcom/android/systemui/fsgesture/GestureStubView;->-get2(Lcom/android/systemui/fsgesture/GestureStubView;)Landroid/content/Context;
@@ -509,7 +509,7 @@
 
     if-nez v0, :cond_1
 
-    .line 212
+    .line 219
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
@@ -523,7 +523,7 @@
 
     goto :goto_1
 
-    .line 205
+    .line 212
     nop
 
     :pswitch_data_0
@@ -537,27 +537,27 @@
     .locals 2
 
     .prologue
-    .line 226
+    .line 233
     const-string/jumbo v0, "GestureStubView"
 
     const-string/jumbo v1, "onSwipeStopDirect"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 229
+    .line 236
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-set2(Lcom/android/systemui/fsgesture/GestureStubView;Z)Z
 
-    .line 230
+    .line 237
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$2;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     const/4 v1, 0x4
 
     invoke-static {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-wrap6(Lcom/android/systemui/fsgesture/GestureStubView;I)V
 
-    .line 224
+    .line 231
     return-void
 .end method

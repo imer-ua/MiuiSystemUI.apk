@@ -30,7 +30,7 @@
     .param p2, "val$intent"    # Landroid/app/PendingIntent;
 
     .prologue
-    .line 5453
+    .line 5467
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->val$intent:Landroid/app/PendingIntent;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 5455
+    .line 5469
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$67;->val$intent:Landroid/app/PendingIntent;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->startPendingIntentDismissingKeyguard(Landroid/app/PendingIntent;)V
 
-    .line 5454
+    .line 5468
     return-void
 .end method

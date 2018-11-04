@@ -495,7 +495,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 122
-    const v2, 0x912023a
+    const v2, 0x9120240
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -517,7 +517,7 @@
     iput-object v2, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mTitle:Landroid/widget/TextView;
 
     .line 124
-    const v2, 0x912023b
+    const v2, 0x9120241
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 

@@ -20,15 +20,50 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
+.field final synthetic val$action:Ljava/lang/String;
+
+.field final synthetic val$finalCurScale:F
+
+.field final synthetic val$finalCurTranslationY:F
+
+.field final synthetic val$initScale:F
+
+.field final synthetic val$initX:I
+
+.field final synthetic val$initY:I
+
+.field final synthetic val$type:I
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/NavStubView;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/NavStubView;IIIFFFLjava/lang/String;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
+    .param p2, "val$type"    # I
+    .param p3, "val$initX"    # I
+    .param p4, "val$initY"    # I
+    .param p5, "val$finalCurTranslationY"    # F
+    .param p6, "val$finalCurScale"    # F
+    .param p7, "val$initScale"    # F
+    .param p8, "val$action"    # Ljava/lang/String;
 
     .prologue
-    .line 1825
+    .line 1849
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iput p2, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$type:I
+
+    iput p3, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initX:I
+
+    iput p4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initY:I
+
+    iput p5, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$finalCurTranslationY:F
+
+    iput p6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$finalCurScale:F
+
+    iput p7, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initScale:F
+
+    iput-object p8, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$action:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,31 +73,469 @@
 
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 3
+    .locals 10
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    const/4 v2, 0x0
+    const/high16 v9, 0x3f800000    # 1.0f
 
-    .line 1828
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+    const/4 v5, 0x0
+
+    .line 1852
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v4
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v4, Ljava/lang/Float;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v4}, Ljava/lang/Float;->floatValue()F
 
-    move-result v0
+    move-result v4
 
-    invoke-static {v0, v2, v2, v2}, Landroid/graphics/Color;->argb(IIII)I
+    invoke-static {v6, v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set2(Lcom/android/systemui/statusbar/phone/NavStubView;F)F
 
-    move-result v0
+    .line 1853
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->setBackgroundColor(I)V
+    move-result v2
 
-    .line 1827
+    .line 1855
+    .local v2, "fraction":F
+    iget v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$type:I
+
+    packed-switch v4, :pswitch_data_0
+
+    .line 1899
+    :goto_0
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$action:Ljava/lang/String;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubJankyFrameReporter;->caculateAnimationFrameInterval(Ljava/lang/String;)V
+
+    .line 1900
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-virtual {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->invalidate()V
+
+    .line 1851
     return-void
+
+    .line 1857
+    :pswitch_0
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get40(Lcom/android/systemui/statusbar/phone/NavStubView;)I
+
+    move-result v4
+
+    div-int/lit8 v3, v4, 0x2
+
+    .line 1858
+    .local v3, "xDestLoc":I
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get27(Lcom/android/systemui/statusbar/phone/NavStubView;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get39(Lcom/android/systemui/statusbar/phone/NavStubView;)I
+
+    move-result v4
+
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v5}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get40(Lcom/android/systemui/statusbar/phone/NavStubView;)I
+
+    move-result v5
+
+    if-ge v4, v5, :cond_0
+
+    .line 1859
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get28(Lcom/android/systemui/statusbar/phone/NavStubView;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 1861
+    :cond_0
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initX:I
+
+    int-to-float v5, v5
+
+    iget v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initX:I
+
+    sub-int v6, v3, v6
+
+    int-to-float v6, v6
+
+    mul-float/2addr v6, v2
+
+    add-float/2addr v5, v6
+
+    float-to-int v5, v5
+
+    invoke-static {v4, v5}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set11(Lcom/android/systemui/statusbar/phone/NavStubView;I)I
+
+    .line 1862
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget v5, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initY:I
+
+    int-to-float v5, v5
+
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v6}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get39(Lcom/android/systemui/statusbar/phone/NavStubView;)I
+
+    move-result v6
+
+    iget v7, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initY:I
+
+    sub-int/2addr v6, v7
+
+    int-to-float v6, v6
+
+    mul-float/2addr v6, v2
+
+    add-float/2addr v5, v6
+
+    float-to-int v5, v5
+
+    invoke-static {v4, v5}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set12(Lcom/android/systemui/statusbar/phone/NavStubView;I)I
+
+    goto :goto_0
+
+    .line 1866
+    .end local v3    # "xDestLoc":I
+    :pswitch_1
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$finalCurTranslationY:F
+
+    iget v7, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$finalCurScale:F
+
+    invoke-static {v4, v6, v7, v2}, Lcom/android/systemui/statusbar/phone/NavStubView;->-wrap0(Lcom/android/systemui/statusbar/phone/NavStubView;FFF)V
+
+    .line 1868
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get31(Lcom/android/systemui/statusbar/phone/NavStubView;)Landroid/view/View;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_1
+
+    .line 1869
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get31(Lcom/android/systemui/statusbar/phone/NavStubView;)Landroid/view/View;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Landroid/view/View;->setAlpha(F)V
+
+    .line 1873
+    :cond_1
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget v6, v6, Lcom/android/systemui/statusbar/phone/NavStubView;->targetBgAlpha:I
+
+    int-to-float v6, v6
+
+    sub-float v7, v9, v2
+
+    mul-float/2addr v6, v7
+
+    float-to-int v6, v6
+
+    invoke-static {v6, v5, v5, v5}, Landroid/graphics/Color;->argb(IIII)I
+
+    move-result v6
+
+    invoke-virtual {v4, v6}, Lcom/android/systemui/statusbar/phone/NavStubView;->setBackgroundColor(I)V
+
+    .line 1876
+    const/4 v0, 0x0
+
+    .line 1877
+    .local v0, "destX":F
+    const/4 v1, 0x0
+
+    .line 1878
+    .local v1, "destY":F
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get9(Lcom/android/systemui/statusbar/phone/NavStubView;)Landroid/graphics/RectF;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_2
+
+    .line 1879
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get9(Lcom/android/systemui/statusbar/phone/NavStubView;)Landroid/graphics/RectF;
+
+    move-result-object v4
+
+    iget v4, v4, Landroid/graphics/RectF;->left:F
+
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v6}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get9(Lcom/android/systemui/statusbar/phone/NavStubView;)Landroid/graphics/RectF;
+
+    move-result-object v6
+
+    iget v6, v6, Landroid/graphics/RectF;->right:F
+
+    add-float/2addr v4, v6
+
+    const/high16 v6, 0x40000000    # 2.0f
+
+    div-float v0, v4, v6
+
+    .line 1880
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get9(Lcom/android/systemui/statusbar/phone/NavStubView;)Landroid/graphics/RectF;
+
+    move-result-object v4
+
+    iget v1, v4, Landroid/graphics/RectF;->bottom:F
+
+    .line 1882
+    :cond_2
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initX:I
+
+    int-to-float v6, v6
+
+    iget v7, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initX:I
+
+    int-to-float v7, v7
+
+    sub-float v7, v0, v7
+
+    mul-float/2addr v7, v2
+
+    add-float/2addr v6, v7
+
+    float-to-int v6, v6
+
+    invoke-static {v4, v6}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set11(Lcom/android/systemui/statusbar/phone/NavStubView;I)I
+
+    .line 1883
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initY:I
+
+    int-to-float v6, v6
+
+    iget v7, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initY:I
+
+    int-to-float v7, v7
+
+    sub-float v7, v1, v7
+
+    mul-float/2addr v7, v2
+
+    add-float/2addr v6, v7
+
+    float-to-int v6, v6
+
+    invoke-static {v4, v6}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set12(Lcom/android/systemui/statusbar/phone/NavStubView;I)I
+
+    .line 1885
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initScale:F
+
+    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v7}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get10(Lcom/android/systemui/statusbar/phone/NavStubView;)F
+
+    move-result v7
+
+    iget v8, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initScale:F
+
+    sub-float/2addr v7, v8
+
+    mul-float/2addr v7, v2
+
+    add-float/2addr v6, v7
+
+    invoke-static {v4, v6}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set13(Lcom/android/systemui/statusbar/phone/NavStubView;F)F
+
+    .line 1886
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v6}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get10(Lcom/android/systemui/statusbar/phone/NavStubView;)F
+
+    move-result v6
+
+    sub-float v6, v9, v6
+
+    mul-float/2addr v6, v2
+
+    invoke-static {v4, v6}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set3(Lcom/android/systemui/statusbar/phone/NavStubView;F)F
+
+    .line 1889
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get22(Lcom/android/systemui/statusbar/phone/NavStubView;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_3
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get25(Lcom/android/systemui/statusbar/phone/NavStubView;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    :cond_3
+    move v4, v5
+
+    :goto_1
+    invoke-static {v6, v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set15(Lcom/android/systemui/statusbar/phone/NavStubView;I)I
+
+    goto/16 :goto_0
+
+    :cond_4
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get42(Lcom/android/systemui/statusbar/phone/NavStubView;)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    mul-float/2addr v4, v2
+
+    float-to-int v4, v4
+
+    goto :goto_1
+
+    .line 1892
+    .end local v0    # "destX":F
+    .end local v1    # "destY":F
+    :pswitch_2
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initX:I
+
+    int-to-float v6, v6
+
+    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v7}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get38(Lcom/android/systemui/statusbar/phone/NavStubView;)I
+
+    move-result v7
+
+    div-int/lit8 v7, v7, 0x2
+
+    iget v8, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initX:I
+
+    sub-int/2addr v7, v8
+
+    int-to-float v7, v7
+
+    mul-float/2addr v7, v2
+
+    add-float/2addr v6, v7
+
+    float-to-int v6, v6
+
+    invoke-static {v4, v6}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set11(Lcom/android/systemui/statusbar/phone/NavStubView;I)I
+
+    .line 1893
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initY:I
+
+    int-to-float v6, v6
+
+    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v7}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get37(Lcom/android/systemui/statusbar/phone/NavStubView;)I
+
+    move-result v7
+
+    mul-int/lit8 v7, v7, 0x3
+
+    div-int/lit8 v7, v7, 0x4
+
+    iget v8, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->val$initY:I
+
+    sub-int/2addr v7, v8
+
+    int-to-float v7, v7
+
+    mul-float/2addr v7, v2
+
+    add-float/2addr v6, v7
+
+    float-to-int v6, v6
+
+    invoke-static {v4, v6}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set12(Lcom/android/systemui/statusbar/phone/NavStubView;I)I
+
+    .line 1895
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    iget v6, v6, Lcom/android/systemui/statusbar/phone/NavStubView;->targetBgAlpha:I
+
+    int-to-float v6, v6
+
+    sub-float v7, v9, v2
+
+    mul-float/2addr v6, v7
+
+    float-to-int v6, v6
+
+    invoke-static {v6, v5, v5, v5}, Landroid/graphics/Color;->argb(IIII)I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/NavStubView;->setBackgroundColor(I)V
+
+    .line 1896
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/NavStubView$16;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    sub-float v5, v9, v2
+
+    invoke-static {v4, v5}, Lcom/android/systemui/statusbar/phone/NavStubView;->-set1(Lcom/android/systemui/statusbar/phone/NavStubView;F)F
+
+    goto/16 :goto_0
+
+    .line 1855
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

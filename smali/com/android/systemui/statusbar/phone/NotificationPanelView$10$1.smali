@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;
 
     .prologue
-    .line 3182
+    .line 3173
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10$1;->this$1:Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,25 +50,25 @@
     .param p9, "oldBottom"    # I
 
     .prologue
-    .line 3185
+    .line 3176
     sub-int v0, p5, p3
 
-    .line 3186
+    .line 3177
     .local v0, "height":I
     sub-int v1, p9, p7
 
-    .line 3187
+    .line 3178
     .local v1, "oldHeight":I
     if-eq v0, v1, :cond_0
 
-    .line 3188
+    .line 3179
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10$1;->this$1:Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->onQsHeightChanged()V
 
-    .line 3184
+    .line 3175
     :cond_0
     return-void
 .end method

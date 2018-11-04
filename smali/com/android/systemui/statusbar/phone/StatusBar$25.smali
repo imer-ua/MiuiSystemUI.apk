@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 7083
+    .line 7097
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$25;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 7086
+    .line 7100
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$25;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotifications()V
 
-    .line 7085
+    .line 7099
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .locals 0
 
     .prologue
-    .line 7095
+    .line 7109
     return-void
 .end method
 
@@ -62,9 +62,9 @@
     .locals 0
 
     .prologue
-    .line 7091
+    .line 7105
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar$25;->onUserSetupChanged()V
 
-    .line 7090
+    .line 7104
     return-void
 .end method

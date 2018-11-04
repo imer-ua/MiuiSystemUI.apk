@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 7135
+    .line 7149
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$29;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,7 +40,7 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 7138
+    .line 7152
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$29;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$29;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -51,24 +51,24 @@
 
     move-result-object v1
 
-    .line 7139
+    .line 7153
     const-string/jumbo v2, "wakeup_for_keyguard_notification"
 
-    .line 7141
+    .line 7155
     invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getCurrentUser()I
 
     move-result v3
 
-    .line 7140
+    .line 7154
     const/4 v4, 0x1
 
-    .line 7138
+    .line 7152
     invoke-static {v1, v2, v4, v3}, Landroid/provider/MiuiSettings$System;->getBooleanForUser(Landroid/content/ContentResolver;Ljava/lang/String;ZI)Z
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set20(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
-    .line 7137
+    .line 7151
     return-void
 .end method

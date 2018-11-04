@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 3402
+    .line 3393
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$13;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -39,10 +39,10 @@
     .param p1, "showing"    # Z
 
     .prologue
-    .line 3405
+    .line 3396
     if-eqz p1, :cond_0
 
-    .line 3406
+    .line 3397
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$13;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get5(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
@@ -53,14 +53,14 @@
 
     move-result-object v0
 
-    .line 3407
+    .line 3398
     const-string/jumbo v1, "sc_event_status"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 3408
+    .line 3399
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$13;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get22(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/database/ContentObserver;
@@ -71,10 +71,10 @@
 
     const/4 v4, -0x1
 
-    .line 3406
+    .line 3397
     invoke-virtual {v0, v1, v3, v2, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 3409
+    .line 3400
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$13;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get22(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/database/ContentObserver;
@@ -85,11 +85,11 @@
 
     invoke-virtual {v0, v1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 3404
+    .line 3395
     :goto_0
     return-void
 
-    .line 3412
+    .line 3403
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$13;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 

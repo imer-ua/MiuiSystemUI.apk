@@ -42,7 +42,7 @@
     .param p6, "val$intent"    # Landroid/app/PendingIntent;
 
     .prologue
-    .line 8563
+    .line 8580
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->val$isHeadsUp:Z
@@ -68,12 +68,12 @@
     .prologue
     const/4 v10, 0x1
 
-    .line 8566
+    .line 8583
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->val$isHeadsUp:Z
 
     if-eqz v1, :cond_1
 
-    .line 8569
+    .line 8586
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -84,12 +84,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 8570
+    .line 8587
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-static {v1, v10}, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->setIsClickedNotification(Landroid/view/View;Z)V
 
-    .line 8575
+    .line 8592
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
@@ -101,11 +101,11 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->releaseImmediately(Ljava/lang/String;)V
 
-    .line 8577
+    .line 8594
     :cond_1
     const/4 v6, 0x0
 
-    .line 8578
+    .line 8595
     .local v6, "parentToCancel":Lcom/android/systemui/miui/statusbar/ExpandedNotification;
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
@@ -131,7 +131,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 8579
+    .line 8596
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -148,7 +148,7 @@
 
     move-result-object v7
 
-    .line 8581
+    .line 8598
     .local v7, "summarySbn":Lcom/android/systemui/miui/statusbar/ExpandedNotification;
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
@@ -158,16 +158,16 @@
 
     if-eqz v1, :cond_2
 
-    .line 8582
+    .line 8599
     move-object v6, v7
 
-    .line 8585
+    .line 8602
     .end local v6    # "parentToCancel":Lcom/android/systemui/miui/statusbar/ExpandedNotification;
     .end local v7    # "summarySbn":Lcom/android/systemui/miui/statusbar/ExpandedNotification;
     :cond_2
     move-object v5, v6
 
-    .line 8586
+    .line 8603
     .local v5, "parentToCancelFinal":Lcom/android/systemui/miui/statusbar/ExpandedNotification;
     new-instance v0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2$1;
 
@@ -181,7 +181,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2$1;-><init>(Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;Landroid/app/PendingIntent;Ljava/lang/String;Lcom/android/systemui/miui/statusbar/ExpandedNotification;Lcom/android/systemui/miui/statusbar/ExpandedNotification;)V
 
-    .line 8666
+    .line 8683
     .local v0, "runnable":Ljava/lang/Runnable;
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
@@ -195,7 +195,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 8667
+    .line 8684
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -206,7 +206,7 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/UiOffloadThread;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
 
-    .line 8673
+    .line 8690
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
@@ -216,7 +216,7 @@
 
     invoke-virtual {v1, v2, v10, v10}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels(IZZ)V
 
-    .line 8683
+    .line 8700
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -229,7 +229,7 @@
 
     if-nez v1, :cond_3
 
-    .line 8684
+    .line 8701
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -240,13 +240,13 @@
 
     invoke-direct {v2, p0}, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2$2;-><init>(Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;)V
 
-    .line 8689
+    .line 8706
     const-wide/16 v8, 0x190
 
-    .line 8684
+    .line 8701
     invoke-virtual {v1, v2, v8, v9}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 8692
+    .line 8709
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 
@@ -256,10 +256,10 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->visibilityChanged(Z)V
 
-    .line 8694
+    .line 8711
     return v10
 
-    .line 8669
+    .line 8686
     :cond_4
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$NotificationClicker;
 

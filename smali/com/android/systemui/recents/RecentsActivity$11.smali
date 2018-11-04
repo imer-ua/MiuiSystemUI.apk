@@ -3,12 +3,12 @@
 .source "RecentsActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/View$OnApplyWindowInsetsListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/RecentsActivity;->updateExitMultiModeBtnVisible(Z)V
+    value = Lcom/android/systemui/recents/RecentsActivity;->fitsSystemWindowInsets(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 770
+    .line 568
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$11;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,29 +37,37 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 2
+.method public onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
+    .locals 6
     .param p1, "v"    # Landroid/view/View;
+    .param p2, "insets"    # Landroid/view/WindowInsets;
 
     .prologue
-    .line 773
-    invoke-static {}, Lcom/android/systemui/recents/events/RecentsEventBus;->getDefault()Lcom/android/systemui/recents/events/RecentsEventBus;
+    .line 571
+    invoke-virtual {p2}, Landroid/view/WindowInsets;->getSystemWindowInsets()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    .line 572
+    .local v1, "systemWindowInsets":Landroid/graphics/Rect;
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/systemui/recents/events/activity/UndockingTaskEvent;
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    invoke-direct {v1}, Lcom/android/systemui/recents/events/activity/UndockingTaskEvent;-><init>()V
+    .line 573
+    .local v0, "lp":Landroid/view/ViewGroup$MarginLayoutParams;
+    iget v2, v1, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/RecentsEventBus;->send(Lcom/android/systemui/recents/events/RecentsEventBus$Event;)V
+    iget v3, v1, Landroid/graphics/Rect;->right:I
 
-    .line 774
-    const-string/jumbo v0, "RecentsActivity"
+    iget v4, v1, Landroid/graphics/Rect;->bottom:I
 
-    const-string/jumbo v1, "exit splitScreen mode ---- click exit button."
+    const/4 v5, 0x0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v2, v5, v3, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 772
-    return-void
+    .line 574
+    return-object p2
 .end method

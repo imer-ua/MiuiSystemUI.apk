@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 1444
+    .line 1435
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$22;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,21 +43,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1447
+    .line 1438
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$22;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-set10(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
 
-    .line 1448
+    .line 1439
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$22;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-wrap3(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)V
 
-    .line 1449
+    .line 1440
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$22;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-wrap8(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
-    .line 1446
+    .line 1437
     return-void
 .end method

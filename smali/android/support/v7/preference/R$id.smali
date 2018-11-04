@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final switchWidget:I = 0x9120237
+.field public static final switchWidget:I = 0x912023d
 
 
 # direct methods
@@ -12,7 +12,7 @@
     .locals 0
 
     .prologue
-    .line 8115
+    .line 8122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

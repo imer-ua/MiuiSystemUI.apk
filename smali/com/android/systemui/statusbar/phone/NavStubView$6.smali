@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/NavStubView;->writeRotationForBsp()V
+    value = Lcom/android/systemui/statusbar/phone/NavStubView;->appTouchResolution(Landroid/view/MotionEvent;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
-.field final synthetic val$finalRotaion:I
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/NavStubView;I)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/NavStubView;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
-    .param p2, "val$finalRotaion"    # I
 
     .prologue
-    .line 1062
+    .line 1068
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$6;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
-
-    iput p2, p0, Lcom/android/systemui/statusbar/phone/NavStubView$6;->val$finalRotaion:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,20 +38,18 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 1065
-    const-string/jumbo v0, "sys.tp.grip_enable"
+    .line 1071
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavStubView$6;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
-    iget v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$6;->val$finalRotaion:I
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get15(Lcom/android/systemui/statusbar/phone/NavStubView;)Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;
 
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NavStubView$GestureStubListenerWrapper;->onGestureReady()V
 
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1064
+    .line 1070
     return-void
 .end method

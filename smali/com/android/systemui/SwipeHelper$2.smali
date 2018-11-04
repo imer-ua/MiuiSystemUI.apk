@@ -29,7 +29,7 @@
     .param p3, "val$finishAction"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 428
+    .line 430
     .local p2, "val$realHideAnimatedList":Ljava/util/List;, "Ljava/util/List<Landroid/view/View;>;"
     iput-object p1, p0, Lcom/android/systemui/SwipeHelper$2;->this$0:Lcom/android/systemui/SwipeHelper;
 
@@ -49,21 +49,21 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 432
+    .line 434
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$2;->this$0:Lcom/android/systemui/SwipeHelper;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/SwipeHelper;->-set0(Lcom/android/systemui/SwipeHelper;Z)Z
 
-    .line 433
+    .line 435
     const-string/jumbo v0, "com.android.systemui.SwipeHelper"
 
     const-string/jumbo v1, "dispatchDismissAllToChild onAnimationCancel."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 431
+    .line 433
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 438
+    .line 440
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$2;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iget-object v1, p0, Lcom/android/systemui/SwipeHelper$2;->val$realHideAnimatedList:Ljava/util/List;
@@ -81,20 +81,20 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/systemui/SwipeHelper;->-wrap0(Lcom/android/systemui/SwipeHelper;Ljava/util/List;Ljava/lang/Runnable;)V
 
-    .line 439
+    .line 441
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$2;->this$0:Lcom/android/systemui/SwipeHelper;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/SwipeHelper;->-set0(Lcom/android/systemui/SwipeHelper;Z)Z
 
-    .line 440
+    .line 442
     const-string/jumbo v0, "com.android.systemui.SwipeHelper"
 
     const-string/jumbo v1, "dispatchDismissAllToChild onAnimationEnd."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 437
+    .line 439
     return-void
 .end method

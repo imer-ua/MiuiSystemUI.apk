@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 334
+    .line 336
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$4;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 338
+    .line 340
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$4;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,6 +57,6 @@
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-wrap9(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;F)V
 
-    .line 337
+    .line 339
     return-void
 .end method

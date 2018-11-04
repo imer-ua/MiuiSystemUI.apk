@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     .prologue
-    .line 255
+    .line 256
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$7;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
     const/4 v1, 0x0
 
-    .line 257
+    .line 258
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$7;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap3(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Z
@@ -59,7 +59,7 @@
 
     return v3
 
-    .line 259
+    .line 260
     :cond_0
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -71,15 +71,15 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 260
+    .line 261
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$7;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap2(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Z
 
-    .line 261
+    .line 262
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$7;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
-    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get8(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get9(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -89,10 +89,10 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/systemui/screenshot/StatHelper;->recordCountEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 262
+    .line 263
     return v3
 
-    .line 264
+    .line 265
     :cond_1
     return v1
 .end method

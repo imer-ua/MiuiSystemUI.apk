@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 750
+    .line 752
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$12;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 763
+    .line 765
     return-void
 .end method
 
@@ -53,12 +53,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 757
+    .line 759
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$12;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-set6(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Z)Z
 
-    .line 758
+    .line 760
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$12;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$12;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -84,14 +84,14 @@
     :cond_0
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->resetIsQsCovered(Z)V
 
-    .line 759
+    .line 761
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$12;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-set8(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 756
+    .line 758
     return-void
 .end method
 
@@ -100,7 +100,7 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 767
+    .line 769
     return-void
 .end method
 
@@ -109,6 +109,6 @@
     .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 752
+    .line 754
     return-void
 .end method

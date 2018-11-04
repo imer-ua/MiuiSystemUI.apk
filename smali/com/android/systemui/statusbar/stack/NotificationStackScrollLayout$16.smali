@@ -30,7 +30,7 @@
     .param p2, "val$changedRow"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     .prologue
-    .line 4392
+    .line 4394
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$16;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$16;->val$changedRow:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -46,11 +46,11 @@
     .locals 1
 
     .prologue
-    .line 4395
+    .line 4397
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$16;->val$changedRow:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->onFinishedExpansionChange()V
 
-    .line 4394
+    .line 4396
     return-void
 .end method

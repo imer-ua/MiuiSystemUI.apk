@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1894
+    .line 1897
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,36 +43,36 @@
     .param p2, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1896
+    .line 1899
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/statusbar/phone/StatusBar;->checkUserAutohide(Landroid/view/View;Landroid/view/MotionEvent;)V
 
-    .line 1897
+    .line 1900
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0, p2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap8(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/view/MotionEvent;)V
 
-    .line 1898
+    .line 1901
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1899
+    .line 1902
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mExpandedVisible:Z
 
     if-eqz v0, :cond_0
 
-    .line 1900
+    .line 1903
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels()V
 
-    .line 1903
+    .line 1906
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$48;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 

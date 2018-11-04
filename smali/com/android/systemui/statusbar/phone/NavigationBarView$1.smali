@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     .prologue
-    .line 272
+    .line 276
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$1;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 275
+    .line 279
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$1;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->-get1(Lcom/android/systemui/statusbar/phone/NavigationBarView;)Landroid/content/Context;
@@ -57,12 +57,12 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 276
+    .line 280
     const/4 v1, 0x1
 
-    .line 275
+    .line 279
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodManager;->showInputMethodPicker(Z)V
 
-    .line 274
+    .line 278
     return-void
 .end method

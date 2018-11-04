@@ -34,7 +34,7 @@
     invoke-virtual {p0, v2}, Lcom/android/systemui/egg/MLandActivity;->setContentView(I)V
 
     .line 33
-    const v2, 0x91201e5
+    const v2, 0x91201e9
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/egg/MLandActivity;->findViewById(I)Landroid/view/View;
 
@@ -47,7 +47,7 @@
     .line 34
     iget-object v3, p0, Lcom/android/systemui/egg/MLandActivity;->mLand:Lcom/android/systemui/egg/MLand;
 
-    const v2, 0x91201ec
+    const v2, 0x91201f0
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/egg/MLandActivity;->findViewById(I)Landroid/view/View;
 
@@ -58,7 +58,7 @@
     invoke-virtual {v3, v2}, Lcom/android/systemui/egg/MLand;->setScoreFieldHolder(Landroid/view/ViewGroup;)V
 
     .line 35
-    const v2, 0x91201e6
+    const v2, 0x91201ea
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/egg/MLandActivity;->findViewById(I)Landroid/view/View;
 
@@ -177,7 +177,7 @@
     const/4 v1, 0x4
 
     .line 87
-    const v0, 0x91201eb
+    const v0, 0x91201ef
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/MLandActivity;->findViewById(I)Landroid/view/View;
 
@@ -186,7 +186,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 88
-    const v0, 0x91201ed
+    const v0, 0x91201f1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/MLandActivity;->findViewById(I)Landroid/view/View;
 
@@ -222,7 +222,7 @@
 
     .line 45
     .local v0, "N":I
-    const v3, 0x91201eb
+    const v3, 0x91201ef
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/egg/MLandActivity;->findViewById(I)Landroid/view/View;
 
@@ -230,7 +230,7 @@
 
     .line 46
     .local v1, "minus":Landroid/view/View;
-    const v3, 0x91201ed
+    const v3, 0x91201f1
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/egg/MLandActivity;->findViewById(I)Landroid/view/View;
 

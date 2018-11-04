@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1110
+    .line 1112
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$39;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +42,11 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1113
+    .line 1115
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$39;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-boolean p1, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mVrMode:Z
 
-    .line 1112
+    .line 1114
     return-void
 .end method

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     .prologue
-    .line 255
+    .line 257
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$4;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,12 +45,12 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 258
+    .line 260
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 259
+    .line 261
     .local v0, "action":I
     iget-object v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$4;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -58,32 +58,32 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 260
+    .line 262
     const/4 v1, 0x7
 
     if-ne v0, v1, :cond_1
 
     move v1, v2
 
-    .line 259
+    .line 261
     :goto_0
     invoke-static {v3, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-set2(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;Z)Z
 
-    .line 261
+    .line 263
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$4;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-virtual {v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->rescheduleTimeoutH()V
 
-    .line 262
+    .line 264
     return v2
 
     :cond_0
     move v1, v2
 
-    .line 259
+    .line 261
     goto :goto_0
 
-    .line 260
+    .line 262
     :cond_1
     const/4 v1, 0x0
 

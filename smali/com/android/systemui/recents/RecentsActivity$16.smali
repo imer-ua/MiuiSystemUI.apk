@@ -1,11 +1,14 @@
 .class Lcom/android/systemui/recents/RecentsActivity$16;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "RecentsActivity.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/RecentsActivity;->doClearAnim()V
+    value = Lcom/android/systemui/recents/RecentsActivity;->endForClear()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,78 +27,89 @@
     .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 1511
+    .line 1500
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 6
-    .param p1, "animation"    # Landroid/animation/Animator;
+.method public run()V
+    .locals 8
 
     .prologue
-    const/4 v3, 0x0
+    .line 1503
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    .line 1514
-    iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+    invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity;->getFreeMemory()J
 
-    invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-get0(Lcom/android/systemui/recents/RecentsActivity;)Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
+    move-result-wide v2
 
-    move-result-object v1
+    .line 1504
+    .local v2, "freeAtLast":J
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    if-eqz v1, :cond_0
+    invoke-static {v0}, Lcom/android/systemui/recents/RecentsActivity;->-get1(Lcom/android/systemui/recents/RecentsActivity;)J
 
-    .line 1515
-    iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+    move-result-wide v0
 
-    invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-get0(Lcom/android/systemui/recents/RecentsActivity;)Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
+    iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    move-result-object v1
+    invoke-static {v4}, Lcom/android/systemui/recents/RecentsActivity;->-get6(Lcom/android/systemui/recents/RecentsActivity;)J
 
-    invoke-virtual {v1}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->decrement()V
+    move-result-wide v4
 
-    .line 1516
-    iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+    invoke-static/range {v0 .. v5}, Lcom/android/systemui/recents/misc/RecentsPushEventHelper;->sendOneKeyCleanEvent(JJJ)V
 
-    invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-get0(Lcom/android/systemui/recents/RecentsActivity;)Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
+    .line 1505
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 1517
-    .local v0, "ensureFlushTrigger":Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-get2(Lcom/android/systemui/recents/RecentsActivity;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-get1(Lcom/android/systemui/recents/RecentsActivity;)J
 
-    move-result-object v1
+    move-result-wide v4
 
-    new-instance v2, Lcom/android/systemui/recents/RecentsActivity$16$1;
+    invoke-static {v0, v4, v5, v2, v3}, Lcom/android/systemui/recents/RecentsActivity;->getToastMsg(Landroid/content/Context;JJ)Ljava/lang/String;
 
-    invoke-direct {v2, p0, v0}, Lcom/android/systemui/recents/RecentsActivity$16$1;-><init>(Lcom/android/systemui/recents/RecentsActivity$16;Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;)V
+    move-result-object v6
 
-    .line 1522
-    const-wide/16 v4, 0x12c
+    .line 1506
+    .local v6, "msg":Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    .line 1517
-    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity;->getApplicationContext()Landroid/content/Context;
 
-    .line 1523
-    iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+    move-result-object v0
 
-    invoke-static {v1, v3}, Lcom/android/systemui/recents/RecentsActivity;->-set0(Lcom/android/systemui/recents/RecentsActivity;Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;)Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
+    const/4 v1, 0x0
 
-    .line 1525
-    .end local v0    # "ensureFlushTrigger":Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
-    :cond_0
-    iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$16;->this$0:Lcom/android/systemui/recents/RecentsActivity;
+    invoke-static {v0, v6, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
-    invoke-static {v1}, Lcom/android/systemui/recents/RecentsActivity;->-wrap2(Lcom/android/systemui/recents/RecentsActivity;)V
+    move-result-object v7
 
-    .line 1513
+    .line 1507
+    .local v7, "toast":Landroid/widget/Toast;
+    invoke-virtual {v7}, Landroid/widget/Toast;->getWindowParams()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v0
+
+    iget v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
+
+    or-int/lit8 v1, v1, 0x10
+
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
+
+    .line 1509
+    invoke-virtual {v7}, Landroid/widget/Toast;->show()V
+
+    .line 1502
     return-void
 .end method

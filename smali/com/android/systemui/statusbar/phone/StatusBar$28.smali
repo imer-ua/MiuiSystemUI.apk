@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 7123
+    .line 7137
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$28;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,7 +40,7 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 7126
+    .line 7140
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$28;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {}, Lcom/android/systemui/Util;->showCtsSpecifiedColor()Z
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 7127
+    .line 7141
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$28;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -67,11 +67,11 @@
 
     move-result v0
 
-    .line 7126
+    .line 7140
     :goto_0
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set18(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
-    .line 7128
+    .line 7142
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$28;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get27(Lcom/android/systemui/statusbar/phone/StatusBar;)Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
@@ -86,20 +86,20 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->setShowNotificationIcon(Z)V
 
-    .line 7129
+    .line 7143
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$28;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotifications()V
 
-    .line 7130
+    .line 7144
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$28;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap35(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    .line 7125
+    .line 7139
     return-void
 
-    .line 7126
+    .line 7140
     :cond_1
     const/4 v0, 0x1
 

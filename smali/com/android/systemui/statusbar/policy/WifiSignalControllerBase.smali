@@ -163,7 +163,7 @@
     const v9, 0x90201a3
 
     .line 77
-    const v10, 0x91005ff
+    const v10, 0x9100602
 
     .line 68
     invoke-direct/range {v1 .. v10}, Lcom/android/systemui/statusbar/policy/SignalController$IconGroup;-><init>(Ljava/lang/String;[[I[[I[IIIIII)V

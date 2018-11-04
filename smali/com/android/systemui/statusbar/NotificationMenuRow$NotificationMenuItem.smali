@@ -34,19 +34,19 @@
     .param p4, "iconResId"    # I
 
     .prologue
-    .line 671
+    .line 674
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 672
+    .line 675
     invoke-virtual {p0, p1, p4}, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->setIcon(Landroid/content/Context;I)V
 
-    .line 673
+    .line 676
     iput-object p2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mContentDescription:Ljava/lang/String;
 
-    .line 674
+    .line 677
     iput-object p3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mGutsContent:Lcom/android/systemui/statusbar/NotificationGuts$GutsContent;
 
-    .line 671
+    .line 674
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 689
+    .line 692
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mContentDescription:Ljava/lang/String;
 
     return-object v0
@@ -66,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 684
+    .line 687
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mGutsContent:Lcom/android/systemui/statusbar/NotificationGuts$GutsContent;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/NotificationGuts$GutsContent;->getContentView()Landroid/view/View;
@@ -80,7 +80,7 @@
     .locals 1
 
     .prologue
-    .line 679
+    .line 682
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mMenuView:Lcom/android/systemui/statusbar/AlphaOptimizedImageView;
 
     return-object v0
@@ -92,45 +92,45 @@
     .param p2, "iconResId"    # I
 
     .prologue
-    .line 694
+    .line 697
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 695
+    .line 698
     .local v2, "res":Landroid/content/res/Resources;
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mMenuView:Lcom/android/systemui/statusbar/AlphaOptimizedImageView;
 
     if-nez v3, :cond_0
 
-    .line 696
+    .line 699
     new-instance v3, Lcom/android/systemui/statusbar/AlphaOptimizedImageView;
 
     invoke-direct {v3, p1}, Lcom/android/systemui/statusbar/AlphaOptimizedImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mMenuView:Lcom/android/systemui/statusbar/AlphaOptimizedImageView;
 
-    .line 697
+    .line 700
     const v3, 0x90f00b1
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    .line 698
+    .line 701
     .local v1, "padding":I
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mMenuView:Lcom/android/systemui/statusbar/AlphaOptimizedImageView;
 
     invoke-virtual {v3, v1, v1, v1, v1}, Lcom/android/systemui/statusbar/AlphaOptimizedImageView;->setPadding(IIII)V
 
-    .line 699
+    .line 702
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mMenuView:Lcom/android/systemui/statusbar/AlphaOptimizedImageView;
 
     const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/statusbar/AlphaOptimizedImageView;->setAlpha(F)V
 
-    .line 701
+    .line 704
     .end local v1    # "padding":I
     :cond_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -141,13 +141,13 @@
 
     move-result-object v0
 
-    .line 702
+    .line 705
     .local v0, "icon":Landroid/graphics/drawable/Drawable;
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mMenuView:Lcom/android/systemui/statusbar/AlphaOptimizedImageView;
 
     invoke-virtual {v3, v0}, Lcom/android/systemui/statusbar/AlphaOptimizedImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 703
+    .line 706
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;->mMenuView:Lcom/android/systemui/statusbar/AlphaOptimizedImageView;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -156,6 +156,6 @@
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/statusbar/AlphaOptimizedImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 693
+    .line 696
     return-void
 .end method

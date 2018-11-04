@@ -32,7 +32,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 5053
+    .line 5067
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$AppMessage;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

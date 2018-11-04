@@ -29,7 +29,7 @@
     .param p2, "val$entity"    # Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
     .prologue
-    .line 369
+    .line 352
     .local p1, "this$1":Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;, "Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache<TK;TV;>;"
     iput-object p1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache$1;->this$1:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;
 
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 372
+    .line 355
     iget-object v0, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache$1;->this$1:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;
 
     iget-object v0, v0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;->this$0:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
@@ -55,6 +55,6 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->-wrap2(Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;)V
 
-    .line 371
+    .line 354
     return-void
 .end method

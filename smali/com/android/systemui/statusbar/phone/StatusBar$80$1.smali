@@ -30,7 +30,7 @@
     .param p2, "val$saveImportance"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 7841
+    .line 7858
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$80$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$80;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$80$1;->val$saveImportance:Ljava/lang/Runnable;
@@ -46,12 +46,12 @@
     .locals 1
 
     .prologue
-    .line 7843
+    .line 7860
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$80$1;->val$saveImportance:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 7844
+    .line 7861
     const/4 v0, 0x1
 
     return v0

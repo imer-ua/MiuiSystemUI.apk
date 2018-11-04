@@ -417,7 +417,7 @@
 
     .line 90
     .local v0, "res":Landroid/content/res/Resources;
-    const v1, 0x912023a
+    const v1, 0x9120240
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -428,7 +428,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSContainerImpl;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
     .line 91
-    const v1, 0x912024f
+    const v1, 0x9120255
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -437,7 +437,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSContainerImpl;->mContent:Landroid/view/View;
 
     .line 92
-    const v1, 0x9120250
+    const v1, 0x9120256
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -448,7 +448,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSContainer:Landroid/widget/FrameLayout;
 
     .line 93
-    const v1, 0x9120251    # 1.75752E-33f
+    const v1, 0x9120257
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -457,7 +457,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSContainerImpl;->mBackground:Landroid/view/View;
 
     .line 94
-    const v1, 0x9120252
+    const v1, 0x9120258
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -486,7 +486,7 @@
     invoke-virtual {v2, v1}, Lcom/android/systemui/qs/QuickQSPanel;->setVisibility(I)V
 
     .line 97
-    const v1, 0x9120253
+    const v1, 0x9120259
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -497,7 +497,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
     .line 98
-    const v1, 0x9120254
+    const v1, 0x912025a
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -508,7 +508,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSFooterContainer:Landroid/widget/LinearLayout;
 
     .line 101
-    const v1, 0x9120255
+    const v1, 0x912025b
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -532,7 +532,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/QSContainerImpl;->mBrightnessController:Lcom/android/systemui/settings/BrightnessController;
 
     .line 103
-    const v1, 0x9120256
+    const v1, 0x912025c
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -708,28 +708,6 @@
     const/4 v0, 0x1
 
     return v0
-.end method
-
-.method public setBrightnessHeight(I)V
-    .locals 5
-
-    iget-object v1, p0, Lcom/android/systemui/qs/QSContainerImpl;->mBrightnessView:Lcom/android/systemui/settings/ToggleSliderView;
-
-    if-eqz v1, :cond_1
-
-    const/16 v0, 0x4
-
-    if-lez p1, :cond_0
-
-    const/4 v0, 0x0
-
-    :cond_0
-    invoke-virtual {v1, v0}, Lcom/android/systemui/settings/ToggleSliderView;->setVisibility(I)V
-
-    :cond_1
-    iput p1, p0, Lcom/android/systemui/qs/QSContainerImpl;->mBrightnessHeight:I
-
-    return-void
 .end method
 
 .method public setBrightnessListening(Z)V

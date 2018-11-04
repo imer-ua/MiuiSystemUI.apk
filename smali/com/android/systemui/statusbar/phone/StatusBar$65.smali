@@ -36,7 +36,7 @@
     .param p4, "val$deferred"    # Z
 
     .prologue
-    .line 4861
+    .line 4875
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->val$runnable:Ljava/lang/Runnable;
@@ -58,12 +58,12 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 4863
+    .line 4877
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->val$runnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 4864
+    .line 4878
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->isKeyguardShowing()Z
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 4865
+    .line 4879
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
@@ -81,10 +81,10 @@
 
     move-result v0
 
-    .line 4864
+    .line 4878
     if-eqz v0, :cond_2
 
-    .line 4866
+    .line 4880
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
@@ -93,35 +93,35 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->addAfterKeyguardGoneRunnable(Ljava/lang/Runnable;)V
 
-    .line 4871
+    .line 4885
     :cond_0
     :goto_0
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->val$dismissShade:Z
 
     if-eqz v0, :cond_4
 
-    .line 4872
+    .line 4886
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mExpandedVisible:Z
 
     if-eqz v0, :cond_3
 
-    .line 4873
+    .line 4887
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1, v2, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels(IZZ)V
 
-    .line 4897
+    .line 4911
     :cond_1
     :goto_1
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->val$deferred:Z
 
     return v0
 
-    .line 4868
+    .line 4882
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->val$runnable:Ljava/lang/Runnable;
 
@@ -129,7 +129,7 @@
 
     goto :goto_0
 
-    .line 4878
+    .line 4892
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -143,7 +143,7 @@
 
     goto :goto_1
 
-    .line 4885
+    .line 4899
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -163,7 +163,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 4890
+    .line 4904
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;

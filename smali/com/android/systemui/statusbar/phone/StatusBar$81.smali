@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 7871
+    .line 7888
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,15 +47,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 7875
+    .line 7892
     instance-of v1, p1, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     if-nez v1, :cond_0
 
-    .line 7876
+    .line 7893
     return v3
 
-    .line 7878
+    .line 7895
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
@@ -63,23 +63,23 @@
 
     if-nez v1, :cond_1
 
-    .line 7879
+    .line 7896
     const-string/jumbo v1, "StatusBar"
 
     const-string/jumbo v2, "Trying to show notification guts, but not attached to window"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7880
+    .line 7897
     return v3
 
     :cond_1
     move-object v0, p1
 
-    .line 7883
+    .line 7900
     check-cast v0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 7884
+    .line 7901
     .local v0, "row":Lcom/android/systemui/statusbar/ExpandableNotificationRow;
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isDark()Z
 
@@ -87,10 +87,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 7885
+    .line 7902
     return v3
 
-    .line 7888
+    .line 7905
     :cond_2
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isExpandable()Z
 
@@ -110,7 +110,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 7893
+    .line 7910
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -124,7 +124,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 7894
+    .line 7911
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$81;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1, v0, p2, p3, p4}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap3(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/ExpandableNotificationRow;IILcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;)Z
@@ -133,7 +133,7 @@
 
     return v1
 
-    .line 7889
+    .line 7906
     :cond_4
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getExpandClickListener()Landroid/view/View$OnClickListener;
 
@@ -141,12 +141,12 @@
 
     invoke-interface {v1, v0}, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
 
-    .line 7890
+    .line 7907
     const/4 v1, 0x1
 
     return v1
 
-    .line 7897
+    .line 7914
     :cond_5
     return v3
 .end method

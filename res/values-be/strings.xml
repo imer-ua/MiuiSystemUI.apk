@@ -1443,6 +1443,9 @@ EEEE"</string>
     <string name="status_bar_safepay_safe">Не знойдзена ніякіх рызык аплаты</string>
     <string name="status_bar_safepay_risk">Знойдзены рызыкі аплаты</string>
     <string name="status_bar_safepay_unknown">Не атрымалася праверыць асяроддзе плацяжоў</string>
+    <string name="notch_sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_summary">націсніце для выхаду</string>
     <string name="wifi_fail_to_scan">Не ўдаецца сканаваць сеткі Wi-Fi</string>
     <string name="wifi_security_none">Няма</string>
     <string name="wifi_remembered">Захавана</string>
@@ -1776,7 +1779,4 @@ EEEE"</string>
     <string name="wifi_disabled_by_recommendation_provider">Не падлучаны з-за нізкай якасці сеткі</string>
     <string name="wifi_no_internet_no_reconnect">Не ўдаецца падключыцца да Інтэрнэту.</string>
     <string name="lockscreen_storage_locked">Разблакаваць для ўсіх функцый і дадзеных</string>
-    <string name="notch_sos_status_bar_title">SOS</string>
-    <string name="sos_status_bar_summary">націсніце для выхаду</string>
-    <string name="sos_status_bar_title">SOS</string>
 </resources>

@@ -694,7 +694,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 64
-    const v0, 0x9120248
+    const v0, 0x912024e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSFooterDataUsage;->findViewById(I)Landroid/view/View;
 
@@ -705,7 +705,7 @@
     iput-object v0, p0, Lcom/android/systemui/qs/QSFooterDataUsage;->mPieImage:Landroid/widget/ImageView;
 
     .line 65
-    const v0, 0x9120249
+    const v0, 0x912024f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSFooterDataUsage;->findViewById(I)Landroid/view/View;
 
@@ -725,7 +725,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 73
-    const v0, 0x912024a
+    const v0, 0x9120250
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSFooterDataUsage;->findViewById(I)Landroid/view/View;
 

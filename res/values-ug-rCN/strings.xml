@@ -1424,6 +1424,9 @@ EEEE aa"</string>
     <string name="status_bar_safepay_safe">پۇل تۆلەش مۇھىتى بىخەتەر، بىخەتەرلىك مەركىزى سىز ئۈچۈن خىزمەت قىلىدۇ</string>
     <string name="status_bar_safepay_risk">خەتەر بايقالدى، پۇل تۆلەشنى توختىتىڭ</string>
     <string name="status_bar_safepay_unknown">تەكشۈرەلمىدى، بىخەتەرلىك ئەھۋالى نامەلۇم، تورغا ئۇلاپ قايتا سىناڭ</string>
+    <string name="notch_sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_title">SOS ياردەم سوراش ھالىتىدە</string>
+    <string name="sos_status_bar_summary">چېكىپ چېكىنىڭ</string>
     <string name="wifi_fail_to_scan">تورنى تەكشۈرەلمىدى</string>
     <string name="wifi_security_none">يوق</string>
     <string name="wifi_security_short_WAPI_PSK">WAPI PSK</string>

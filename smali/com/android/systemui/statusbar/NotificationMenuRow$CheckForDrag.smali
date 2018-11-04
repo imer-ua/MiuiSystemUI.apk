@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     .prologue
-    .line 525
+    .line 528
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
     .locals 10
 
     .prologue
-    .line 528
+    .line 531
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-static {v3}, Lcom/android/systemui/statusbar/NotificationMenuRow;->-get3(Lcom/android/systemui/statusbar/NotificationMenuRow;)F
@@ -62,7 +62,7 @@
 
     move-result v0
 
-    .line 529
+    .line 532
     .local v0, "absTransX":F
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
@@ -70,7 +70,7 @@
 
     move-result v1
 
-    .line 530
+    .line 533
     .local v1, "bounceBackToMenuWidth":F
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
@@ -88,7 +88,7 @@
 
     mul-float v2, v3, v4
 
-    .line 531
+    .line 534
     .local v2, "notiThreshold":F
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
@@ -98,7 +98,7 @@
 
     if-nez v3, :cond_0
 
-    .line 532
+    .line 535
     float-to-double v4, v0
 
     float-to-double v6, v1
@@ -111,17 +111,17 @@
 
     if-ltz v3, :cond_0
 
-    .line 533
+    .line 536
     cmpg-float v3, v0, v2
 
     if-gez v3, :cond_0
 
-    .line 534
+    .line 537
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-static {v3, v2}, Lcom/android/systemui/statusbar/NotificationMenuRow;->-wrap1(Lcom/android/systemui/statusbar/NotificationMenuRow;F)V
 
-    .line 527
+    .line 530
     :cond_0
     return-void
 .end method

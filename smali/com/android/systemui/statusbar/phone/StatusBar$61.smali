@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 3826
+    .line 3839
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$61;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 3829
+    .line 3842
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$61;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHeadsUpManager:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
@@ -54,26 +54,26 @@
 
     if-nez v0, :cond_0
 
-    .line 3830
+    .line 3843
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$61;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setHeadsUpShowing(Z)V
 
-    .line 3831
+    .line 3844
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$61;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHeadsUpManager:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->setHeadsUpGoingAway(Z)V
 
-    .line 3833
+    .line 3846
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$61;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap24(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    .line 3828
+    .line 3841
     return-void
 .end method

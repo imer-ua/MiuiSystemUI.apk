@@ -70,6 +70,16 @@
     return-wide v0
 .end method
 
+.method public getPackageName()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 89
+    iget-object v0, p0, Lcom/android/systemui/miui/statusbar/analytics/NotificationEvent;->mPackageName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getVersion()I
     .locals 1
 

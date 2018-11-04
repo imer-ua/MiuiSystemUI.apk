@@ -1,44 +1,34 @@
-.class final Lcom/android/systemui/recents/RecentsActivity$13;
+.class Lcom/android/systemui/recents/RecentsActivity$13;
 .super Ljava/lang/Object;
 .source "RecentsActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/RecentsActivity;->updateAppConfigure(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/android/systemui/recents/RecentsActivity;->onBusEvent(Lcom/android/systemui/recents/events/activity/FsGestureEnterRecentsZoomEvent;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic val$bgControl:Ljava/lang/String;
-
-.field final synthetic val$ctx:Landroid/content/Context;
-
-.field final synthetic val$pkgName:Ljava/lang/String;
+.field final synthetic this$0:Lcom/android/systemui/recents/RecentsActivity;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
+.method constructor <init>(Lcom/android/systemui/recents/RecentsActivity;)V
     .locals 0
-    .param p1, "val$pkgName"    # Ljava/lang/String;
-    .param p2, "val$bgControl"    # Ljava/lang/String;
-    .param p3, "val$ctx"    # Landroid/content/Context;
+    .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
 
     .prologue
-    .line 1386
-    iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$13;->val$pkgName:Ljava/lang/String;
-
-    iput-object p2, p0, Lcom/android/systemui/recents/RecentsActivity$13;->val$bgControl:Ljava/lang/String;
-
-    iput-object p3, p0, Lcom/android/systemui/recents/RecentsActivity$13;->val$ctx:Landroid/content/Context;
+    .line 1251
+    iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$13;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,82 +37,38 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 7
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 1389
-    invoke-static {}, Lmiui/securityspace/CrossUserUtils;->getCurrentUserId()I
-
-    move-result v2
-
-    .line 1390
-    .local v2, "userId":I
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    .line 1391
-    .local v0, "bundle":Landroid/os/Bundle;
-    const-string/jumbo v3, "userId"
-
-    invoke-virtual {v0, v3, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-
-    .line 1392
-    const-string/jumbo v3, "pkgName"
-
-    iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity$13;->val$pkgName:Ljava/lang/String;
-
-    invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1393
-    const-string/jumbo v3, "bgControl"
-
-    iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity$13;->val$bgControl:Ljava/lang/String;
-
-    invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1395
-    :try_start_0
-    iget-object v3, p0, Lcom/android/systemui/recents/RecentsActivity$13;->val$ctx:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "content://com.miui.powerkeeper.configure"
-
-    invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "userTable"
-
-    invoke-static {v4, v5}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v4
-
-    .line 1396
-    const-string/jumbo v5, "userTableupdate"
-
-    const/4 v6, 0x0
-
-    .line 1395
-    invoke-virtual {v3, v4, v5, v6, v0}, Landroid/content/ContentResolver;->call(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 1388
-    :goto_0
+    .line 1263
     return-void
+.end method
 
-    .line 1397
-    :catch_0
-    move-exception v1
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 1398
-    .local v1, "ex":Ljava/lang/IllegalArgumentException;
-    invoke-virtual {v1}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
+    .prologue
+    .line 1258
+    return-void
+.end method
 
-    goto :goto_0
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Landroid/animation/Animator;
+
+    .prologue
+    .line 1268
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Landroid/animation/Animator;
+
+    .prologue
+    .line 1253
+    return-void
 .end method

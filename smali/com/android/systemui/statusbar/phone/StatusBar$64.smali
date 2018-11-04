@@ -30,7 +30,7 @@
     .param p2, "val$callback"    # Lcom/android/systemui/plugins/ActivityStarter$Callback;
 
     .prologue
-    .line 4840
+    .line 4854
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$64;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$64;->val$callback:Lcom/android/systemui/plugins/ActivityStarter$Callback;
@@ -46,19 +46,19 @@
     .locals 2
 
     .prologue
-    .line 4843
+    .line 4857
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$64;->val$callback:Lcom/android/systemui/plugins/ActivityStarter$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 4844
+    .line 4858
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$64;->val$callback:Lcom/android/systemui/plugins/ActivityStarter$Callback;
 
     const/4 v1, -0x6
 
     invoke-interface {v0, v1}, Lcom/android/systemui/plugins/ActivityStarter$Callback;->onActivityStarted(I)V
 
-    .line 4842
+    .line 4856
     :cond_0
     return-void
 .end method

@@ -126,7 +126,7 @@
     .line 121
     iget-object v1, p0, Lcom/android/keyguard/wallpaper/WallPaperDesView;->mResources:Landroid/content/res/Resources;
 
-    const v2, 0x90f0335
+    const v2, 0x90f0336
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -143,7 +143,7 @@
     .line 123
     iget-object v1, p0, Lcom/android/keyguard/wallpaper/WallPaperDesView;->mResources:Landroid/content/res/Resources;
 
-    const v2, 0x90f0336
+    const v2, 0x90f0337
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -160,7 +160,7 @@
     .line 125
     iget-object v1, p0, Lcom/android/keyguard/wallpaper/WallPaperDesView;->mResources:Landroid/content/res/Resources;
 
-    const v2, 0x90f0337
+    const v2, 0x90f0338
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -257,7 +257,7 @@
     iget-object v2, p0, Lcom/android/keyguard/wallpaper/WallPaperDesView;->mResources:Landroid/content/res/Resources;
 
     .line 185
-    const v3, 0x90f0338
+    const v3, 0x90f0339
 
     .line 184
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -314,7 +314,7 @@
     if-eqz v1, :cond_0
 
     .line 84
-    const v1, 0x90f0305
+    const v1, 0x90f0306
 
     .line 83
     :goto_0
@@ -332,7 +332,7 @@
 
     .line 85
     :cond_0
-    const v1, 0x90f0304
+    const v1, 0x90f0305
 
     goto :goto_0
 .end method
@@ -352,7 +352,7 @@
     .local v2, "layoutParams":Landroid/widget/FrameLayout$LayoutParams;
     iget-object v4, p0, Lcom/android/keyguard/wallpaper/WallPaperDesView;->mResources:Landroid/content/res/Resources;
 
-    const v5, 0x90f0339
+    const v5, 0x90f033a
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -371,7 +371,7 @@
     if-eqz v4, :cond_0
 
     .line 134
-    const v4, 0x90f0305
+    const v4, 0x90f0306
 
     .line 133
     :goto_0
@@ -402,7 +402,7 @@
     iget-object v4, p0, Lcom/android/keyguard/wallpaper/WallPaperDesView;->mResources:Landroid/content/res/Resources;
 
     .line 142
-    const v5, 0x90f033a
+    const v5, 0x90f033b
 
     .line 141
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -476,7 +476,7 @@
     iget-object v4, p0, Lcom/android/keyguard/wallpaper/WallPaperDesView;->mResources:Landroid/content/res/Resources;
 
     .line 155
-    const v5, 0x90f033b
+    const v5, 0x90f033c
 
     .line 154
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -497,7 +497,7 @@
     .end local v0    # "contentLayoutParams":Landroid/widget/RelativeLayout$LayoutParams;
     .end local v3    # "previewButtonLayoutParams":Landroid/widget/LinearLayout$LayoutParams;
     :cond_0
-    const v4, 0x90f0304
+    const v4, 0x90f0305
 
     goto :goto_0
 

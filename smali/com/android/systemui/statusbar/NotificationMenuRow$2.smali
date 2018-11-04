@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     .prologue
-    .line 559
+    .line 562
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$2;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,14 +39,14 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 568
+    .line 571
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$2;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/NotificationMenuRow;->-wrap2(Lcom/android/systemui/statusbar/NotificationMenuRow;F)V
 
-    .line 566
+    .line 569
     return-void
 .end method
 
@@ -57,12 +57,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 573
+    .line 576
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$2;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->-set0(Lcom/android/systemui/statusbar/NotificationMenuRow;Z)Z
 
-    .line 574
+    .line 577
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$2;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$2;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
@@ -82,7 +82,7 @@
     :cond_0
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->-set1(Lcom/android/systemui/statusbar/NotificationMenuRow;Z)Z
 
-    .line 572
+    .line 575
     return-void
 .end method
 
@@ -91,13 +91,13 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 562
+    .line 565
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$2;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/NotificationMenuRow;->-set0(Lcom/android/systemui/statusbar/NotificationMenuRow;Z)Z
 
-    .line 561
+    .line 564
     return-void
 .end method

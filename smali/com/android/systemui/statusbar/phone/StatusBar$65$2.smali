@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/statusbar/phone/StatusBar$65;
 
     .prologue
-    .line 4890
+    .line 4904
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$65;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 4893
+    .line 4907
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$65$2;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$65;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar$65;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -50,6 +50,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->readyForKeyguardDone()V
 
-    .line 4892
+    .line 4906
     return-void
 .end method

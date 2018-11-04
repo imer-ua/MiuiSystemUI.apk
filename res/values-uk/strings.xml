@@ -1318,6 +1318,9 @@ EEEE"</string>
     <string name="status_bar_safepay_safe">Не знайдено ніяких ризиків оплати</string>
     <string name="status_bar_safepay_risk">Знайдено ризики оплати</string>
     <string name="status_bar_safepay_unknown">Неможливо перевірити середовище платежів</string>
+    <string name="notch_sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_summary">натисніть для виходу</string>
     <string name="wifi_fail_to_scan">Не вдається сканувати Wi-Fi мережі</string>
     <string name="wifi_security_short_wep">WEP</string>
     <string name="wifi_security_short_wpa">WPA</string>
@@ -1663,8 +1666,5 @@ EEEE"</string>
     <string name="wifi_disabled_by_recommendation_provider">Не підключений через низьку якість мережі</string>
     <string name="wifi_no_internet_no_reconnect">Неможливо підключитися до Інтернету.</string>
     <string name="lockscreen_storage_locked">Розблокувати для всіх функції та даних</string>
-    <string name="notch_sos_status_bar_title">SOS</string>
-    <string name="sos_status_bar_summary">натисніть для виходу</string>
-    <string name="sos_status_bar_title">SOS</string>
     <string name="notification_num_channels">%d категорії сповіщень</string>
 </resources>

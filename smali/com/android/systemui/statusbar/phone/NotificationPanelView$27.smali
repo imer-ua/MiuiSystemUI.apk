@@ -27,7 +27,7 @@
     .param p2, "val$onFinishRunnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 2022
+    .line 2013
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$27;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$27;->val$onFinishRunnable:Ljava/lang/Runnable;
@@ -46,7 +46,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2025
+    .line 2016
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$27;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get18(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/util/QcomBoostFramework;
@@ -55,7 +55,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2026
+    .line 2017
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$27;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-get18(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/util/QcomBoostFramework;
@@ -64,7 +64,7 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/util/QcomBoostFramework;->perfLockRelease()I
 
-    .line 2028
+    .line 2019
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$27;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
@@ -72,22 +72,22 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->resetCheckSnoozeLeavebehind()V
 
-    .line 2029
+    .line 2020
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$27;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-set7(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 2030
+    .line 2021
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$27;->val$onFinishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
 
-    .line 2031
+    .line 2022
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$27;->val$onFinishRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 2024
+    .line 2015
     :cond_1
     return-void
 .end method

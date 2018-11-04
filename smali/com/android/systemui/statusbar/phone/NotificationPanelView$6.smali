@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     .prologue
-    .line 1592
+    .line 1583
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$6;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,13 @@
     .locals 2
 
     .prologue
-    .line 1595
+    .line 1586
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$6;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->-set4(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
 
-    .line 1594
+    .line 1585
     return-void
 .end method

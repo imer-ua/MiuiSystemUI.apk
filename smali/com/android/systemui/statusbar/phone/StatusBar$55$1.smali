@@ -30,7 +30,7 @@
     .param p2, "val$entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .prologue
-    .line 2253
+    .line 2257
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$55;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55$1;->val$entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 2255
+    .line 2259
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$55;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -61,7 +61,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2256
+    .line 2260
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$55$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$55;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar$55;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -74,7 +74,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->removeNotification(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$RankingMap;)V
 
-    .line 2254
+    .line 2258
     :cond_0
     return-void
 .end method

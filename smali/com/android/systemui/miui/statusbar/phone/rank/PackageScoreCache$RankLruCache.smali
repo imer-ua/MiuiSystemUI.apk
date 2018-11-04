@@ -37,14 +37,14 @@
     .param p2, "maxSize"    # I
 
     .prologue
-    .line 361
+    .line 344
     .local p0, "this":Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;, "Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache<TK;TV;>;"
     iput-object p1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;->this$0:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
 
-    .line 362
+    .line 345
     invoke-direct {p0, p2}, Landroid/util/LruCache;-><init>(I)V
 
-    .line 361
+    .line 344
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .end annotation
 
     .prologue
-    .line 367
+    .line 350
     .local p0, "this":Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;, "Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache<TK;TV;>;"
     .local p2, "key":Ljava/lang/Object;, "TK;"
     .local p3, "oldValue":Ljava/lang/Object;, "TV;"
@@ -73,10 +73,10 @@
 
     move-object v0, p3
 
-    .line 368
+    .line 351
     check-cast v0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
 
-    .line 369
+    .line 352
     .local v0, "entity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
     iget-object v1, p0, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache$RankLruCache;->this$0:Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
 
@@ -90,7 +90,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 366
+    .line 349
     .end local v0    # "entity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
     :cond_0
     return-void

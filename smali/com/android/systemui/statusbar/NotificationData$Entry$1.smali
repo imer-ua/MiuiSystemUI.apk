@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     .prologue
-    .line 203
+    .line 204
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationData$Entry$1;->this$1:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,14 +44,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 205
+    .line 206
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationData$Entry$1;->this$1:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     if-eqz v1, :cond_1
 
-    .line 206
+    .line 207
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationData$Entry$1;->this$1:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -63,7 +63,7 @@
     :cond_0
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->setIconsVisible(Z)V
 
-    .line 204
+    .line 205
     :cond_1
     return-void
 .end method

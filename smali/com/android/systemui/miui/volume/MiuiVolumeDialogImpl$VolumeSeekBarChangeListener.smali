@@ -30,15 +30,15 @@
     .param p2, "column"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     .prologue
-    .line 1189
+    .line 1194
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1190
+    .line 1195
     iput-object p2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
-    .line 1189
+    .line 1194
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 1195
+    .line 1200
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {v4}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-get13(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;)Lcom/android/systemui/plugins/VolumeDialogController$StreamState;
@@ -75,7 +75,7 @@
 
     return-void
 
-    .line 1196
+    .line 1201
     :cond_0
     sget-boolean v4, Lcom/android/systemui/miui/volume/Util;->DEBUG:Z
 
@@ -103,10 +103,10 @@
 
     move-result-object v5
 
-    .line 1197
+    .line 1202
     const-string/jumbo v6, " onProgressChanged "
 
-    .line 1196
+    .line 1201
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -115,10 +115,10 @@
 
     move-result-object v5
 
-    .line 1197
+    .line 1202
     const-string/jumbo v6, " fromUser="
 
-    .line 1196
+    .line 1201
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -133,7 +133,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1200
+    .line 1205
     :cond_1
     int-to-float v4, p2
 
@@ -145,7 +145,7 @@
 
     div-float v2, v4, v5
 
-    .line 1201
+    .line 1206
     .local v2, "ratio":F
     float-to-double v4, v2
 
@@ -161,7 +161,7 @@
 
     move-result-object v0
 
-    .line 1202
+    .line 1207
     :goto_0
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
@@ -171,12 +171,12 @@
 
     if-eq v4, v0, :cond_2
 
-    .line 1203
+    .line 1208
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {v4, v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-set3(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;Landroid/content/res/ColorStateList;)Landroid/content/res/ColorStateList;
 
-    .line 1204
+    .line 1209
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {v4}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-get5(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;)Landroid/widget/ImageView;
@@ -185,20 +185,20 @@
 
     invoke-virtual {v4, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 1207
+    .line 1212
     :cond_2
     if-nez p3, :cond_4
 
     return-void
 
-    .line 1201
+    .line 1206
     :cond_3
     const/4 v0, 0x0
 
     .local v0, "iconTint":Landroid/content/res/ColorStateList;
     goto :goto_0
 
-    .line 1208
+    .line 1213
     .end local v0    # "iconTint":Landroid/content/res/ColorStateList;
     :cond_4
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
@@ -211,7 +211,7 @@
 
     if-lez v4, :cond_5
 
-    .line 1209
+    .line 1214
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {v4}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-get13(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;)Lcom/android/systemui/plugins/VolumeDialogController$StreamState;
@@ -222,24 +222,24 @@
 
     mul-int/lit8 v1, v4, 0x64
 
-    .line 1210
+    .line 1215
     .local v1, "minProgress":I
     if-ge p2, v1, :cond_5
 
-    .line 1211
+    .line 1216
     invoke-virtual {p1, v1}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 1212
+    .line 1217
     move p2, v1
 
-    .line 1215
+    .line 1220
     .end local v1    # "minProgress":I
     :cond_5
     invoke-static {p1, p2}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-wrap1(Landroid/widget/SeekBar;I)I
 
     move-result v3
 
-    .line 1216
+    .line 1221
     .local v3, "userLevel":I
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
@@ -263,7 +263,7 @@
 
     if-lez v3, :cond_7
 
-    .line 1217
+    .line 1222
     :cond_6
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
@@ -273,7 +273,7 @@
 
     invoke-static {v4, v6, v7}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-set18(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;J)J
 
-    .line 1218
+    .line 1223
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {v4}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-get11(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;)I
@@ -282,7 +282,7 @@
 
     if-eq v4, v3, :cond_7
 
-    .line 1219
+    .line 1224
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v4}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get5(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/plugins/VolumeDialogController;
@@ -297,12 +297,12 @@
 
     invoke-interface {v4, v5, v3}, Lcom/android/systemui/plugins/VolumeDialogController;->setStreamVolume(II)V
 
-    .line 1220
+    .line 1225
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {v4, v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-set13(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;I)I
 
-    .line 1221
+    .line 1226
     iget-object v4, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v4}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get4(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Landroid/content/Context;
@@ -325,7 +325,7 @@
 
     aput-object v6, v5, v8
 
-    .line 1222
+    .line 1227
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -334,12 +334,12 @@
 
     aput-object v6, v5, v7
 
-    .line 1221
+    .line 1226
     const/16 v6, 0x9
 
     invoke-static {v4, v6, v5}, Lcom/android/systemui/volume/Events;->writeEvent(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    .line 1194
+    .line 1199
     :cond_7
     return-void
 .end method
@@ -349,7 +349,7 @@
     .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
     .prologue
-    .line 1229
+    .line 1234
     sget-boolean v0, Lcom/android/systemui/miui/volume/Util;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -384,7 +384,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1230
+    .line 1235
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
@@ -392,7 +392,7 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-set17(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;Z)Z
 
-    .line 1228
+    .line 1233
     return-void
 .end method
 
@@ -403,7 +403,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1235
+    .line 1240
     sget-boolean v1, Lcom/android/systemui/miui/volume/Util;->DEBUG:Z
 
     if-eqz v1, :cond_0
@@ -438,13 +438,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1236
+    .line 1241
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {v1, v4}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-set17(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;Z)Z
 
-    .line 1237
+    .line 1242
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -453,7 +453,7 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-set18(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;J)J
 
-    .line 1238
+    .line 1243
     invoke-virtual {p1}, Landroid/widget/SeekBar;->getProgress()I
 
     move-result v1
@@ -462,7 +462,7 @@
 
     move-result v0
 
-    .line 1239
+    .line 1244
     .local v0, "userLevel":I
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
@@ -498,7 +498,7 @@
 
     invoke-static {v1, v3, v2}, Lcom/android/systemui/volume/Events;->writeEvent(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    .line 1240
+    .line 1245
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->mColumn:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-get13(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;)Lcom/android/systemui/plugins/VolumeDialogController$StreamState;
@@ -509,7 +509,7 @@
 
     if-eq v1, v0, :cond_1
 
-    .line 1241
+    .line 1246
     iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeSeekBarChangeListener;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     invoke-static {v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;->-get10(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;)Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;
@@ -530,13 +530,13 @@
 
     move-result-object v2
 
-    .line 1242
+    .line 1247
     const-wide/16 v4, 0x3e8
 
-    .line 1241
+    .line 1246
     invoke-virtual {v1, v2, v4, v5}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$H;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 1234
+    .line 1239
     :cond_1
     return-void
 .end method

@@ -69,50 +69,50 @@
 
     const/4 v1, 0x0
 
-    .line 33
+    .line 32
     sput-wide v2, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->v:D
 
-    .line 34
+    .line 33
     sput-wide v2, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->b:D
 
-    .line 35
+    .line 34
     sput-wide v2, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->th:D
 
-    .line 36
+    .line 35
     const/4 v0, 0x6
 
     new-array v0, v0, [D
 
     sput-object v0, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
 
-    .line 37
+    .line 36
     sput-object v1, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->el:[D
 
-    .line 38
+    .line 37
     sput-object v1, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->elw:[D
 
-    .line 39
+    .line 38
     sput-object v1, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->eg:[D
 
-    .line 40
+    .line 39
     sput-object v1, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->egw:[D
 
-    .line 41
+    .line 40
     sput-object v1, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cl:[D
 
-    .line 42
+    .line 41
     sput-object v1, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->clw:[D
 
-    .line 43
+    .line 42
     sput-object v1, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cg:[D
 
-    .line 44
+    .line 43
     sput-object v1, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cgw:[D
 
-    .line 45
+    .line 44
     sput-wide v4, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->mLastUpdateTimeStamp:J
 
-    .line 46
+    .line 45
     sput-wide v4, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->mOldestUpdateTimeStamp:J
 
     .line 53
@@ -290,7 +290,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 29
+    .line 28
     return-void
 .end method
 
@@ -298,7 +298,7 @@
     .locals 0
 
     .prologue
-    .line 29
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -858,484 +858,462 @@
 .end method
 
 .method public static getScore(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)D
-    .locals 30
+    .locals 28
     .param p0, "sbn"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
     .line 284
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getFoldPackageName()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
     .line 286
-    .local v7, "packageName":Ljava/lang/String;
+    .local v6, "packageName":Ljava/lang/String;
     invoke-static {}, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->isLocalModelAvailable()Z
 
-    move-result v17
+    move-result v18
 
-    if-nez v17, :cond_0
+    if-nez v18, :cond_0
 
     .line 287
-    const-wide/16 v20, 0x0
+    const-wide/16 v18, 0x0
 
-    return-wide v20
+    return-wide v18
 
     .line 290
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/miui/statusbar/ExpandedNotification;->getNotification()Landroid/app/Notification;
 
-    move-result-object v17
+    move-result-object v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
-    invoke-static {v7, v0}, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->matchRules(Ljava/lang/String;Landroid/app/Notification;)I
+    invoke-static {v6, v0}, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->matchRules(Ljava/lang/String;Landroid/app/Notification;)I
 
-    move-result v6
+    move-result v5
 
     .line 291
-    .local v6, "matchScore":I
-    const/high16 v17, -0x80000000
+    .local v5, "matchScore":I
+    const/high16 v18, -0x80000000
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    if-eq v6, v0, :cond_1
+    if-eq v5, v0, :cond_1
 
     .line 292
-    int-to-double v0, v6
+    int-to-double v0, v5
 
-    move-wide/from16 v20, v0
+    move-wide/from16 v18, v0
 
-    return-wide v20
+    return-wide v18
 
     .line 295
     :cond_1
-    const-class v17, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
+    const-class v18, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
 
-    invoke-static/range {v17 .. v17}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static/range {v18 .. v18}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v7
 
-    check-cast v8, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
+    check-cast v7, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
 
     .line 296
-    .local v8, "packageScoreCache":Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
-    invoke-virtual {v8, v7}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->getPkgEntity(Ljava/lang/String;)Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
+    .local v7, "packageScoreCache":Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;
+    invoke-virtual {v7, v6}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->getTotalClickCount(Ljava/lang/String;)I
 
-    move-result-object v4
+    move-result v10
 
     .line 297
-    .local v4, "entity":Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;
-    if-eqz v4, :cond_2
+    .local v10, "pkgTotalClick":I
+    invoke-virtual {v7, v6}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->getTotalShowCount(Ljava/lang/String;)I
 
-    invoke-virtual {v4}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->getTotalClick()I
-
-    move-result v9
+    move-result v11
 
     .line 298
-    .local v9, "pkgTotalClick":I
-    :goto_0
-    if-eqz v4, :cond_3
+    .local v11, "pkgTotalShow":I
+    if-eqz v11, :cond_2
 
-    invoke-virtual {v4}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageEntity;->getTotalShow()I
+    int-to-double v0, v10
 
-    move-result v12
+    move-wide/from16 v18, v0
 
-    .line 299
-    .local v12, "pkgTotalShow":I
-    :goto_1
-    if-eqz v12, :cond_4
+    const-wide/high16 v20, 0x3ff0000000000000L    # 1.0
 
-    int-to-double v0, v9
+    mul-double v18, v18, v20
+
+    int-to-double v0, v11
 
     move-wide/from16 v20, v0
 
-    const-wide/high16 v22, 0x3ff0000000000000L    # 1.0
+    div-double v8, v18, v20
 
-    mul-double v20, v20, v22
+    .line 300
+    .local v8, "pkgClickRate":D
+    :goto_0
+    invoke-virtual {v7}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->getTotalClickCount()I
 
-    int-to-double v0, v12
-
-    move-wide/from16 v22, v0
-
-    div-double v10, v20, v22
+    move-result v14
 
     .line 301
-    .local v10, "pkgClickRate":D
-    :goto_2
-    invoke-virtual {v8}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->getTotalClickCount()I
+    .local v14, "totalClickCount":I
+    invoke-virtual {v7}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->getTotalShowCount()I
 
-    move-result v13
+    move-result v15
 
     .line 302
-    .local v13, "totalClickCount":I
-    invoke-virtual {v8}, Lcom/android/systemui/miui/statusbar/phone/rank/PackageScoreCache;->getTotalShowCount()I
+    .local v15, "totalShowCount":I
+    if-eqz v15, :cond_3
 
-    move-result v16
+    int-to-double v0, v14
 
-    .line 303
-    .local v16, "totalShowCount":I
-    if-eqz v16, :cond_5
+    move-wide/from16 v18, v0
 
-    int-to-double v0, v13
+    const-wide/high16 v20, 0x3ff0000000000000L    # 1.0
+
+    mul-double v18, v18, v20
+
+    int-to-double v0, v15
 
     move-wide/from16 v20, v0
 
-    const-wide/high16 v22, 0x3ff0000000000000L    # 1.0
+    div-double v2, v18, v20
 
-    mul-double v20, v20, v22
-
-    move/from16 v0, v16
-
-    int-to-double v0, v0
-
-    move-wide/from16 v22, v0
-
-    div-double v2, v20, v22
+    .line 304
+    .local v2, "averageClickRate":D
+    :goto_1
+    const-wide/16 v12, 0x0
 
     .line 305
-    .local v2, "averageClickRate":D
-    :goto_3
-    const-wide/16 v14, 0x0
+    .local v12, "sum":D
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->el:[D
+
+    if-eqz v18, :cond_5
 
     .line 306
-    .local v14, "sum":D
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->el:[D
+    const/4 v4, 0x0
 
-    if-eqz v17, :cond_7
+    .local v4, "i":I
+    :goto_2
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->el:[D
 
-    .line 307
-    const/4 v5, 0x0
-
-    .local v5, "i":I
-    :goto_4
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->el:[D
-
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     array-length v0, v0
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    if-ge v5, v0, :cond_7
-
-    .line 308
-    int-to-double v0, v12
-
-    move-wide/from16 v20, v0
-
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->el:[D
-
-    aget-wide v22, v17, v5
-
-    cmpg-double v17, v20, v22
-
-    if-gez v17, :cond_6
-
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->elw:[D
-
-    aget-wide v20, v17, v5
-
-    :goto_5
-    add-double v14, v14, v20
+    if-ge v4, v0, :cond_5
 
     .line 307
-    add-int/lit8 v5, v5, 0x1
+    int-to-double v0, v11
 
-    goto :goto_4
+    move-wide/from16 v18, v0
 
-    .line 297
-    .end local v2    # "averageClickRate":D
-    .end local v5    # "i":I
-    .end local v9    # "pkgTotalClick":I
-    .end local v10    # "pkgClickRate":D
-    .end local v12    # "pkgTotalShow":I
-    .end local v13    # "totalClickCount":I
-    .end local v14    # "sum":D
-    .end local v16    # "totalShowCount":I
-    :cond_2
-    const/4 v9, 0x0
+    sget-object v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->el:[D
 
-    .restart local v9    # "pkgTotalClick":I
-    goto :goto_0
+    aget-wide v20, v20, v4
 
-    .line 298
-    :cond_3
-    const/4 v12, 0x0
+    cmpg-double v18, v18, v20
 
-    goto :goto_1
+    if-gez v18, :cond_4
 
-    .line 299
-    .restart local v12    # "pkgTotalShow":I
-    :cond_4
-    const-wide/16 v10, 0x0
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->elw:[D
 
-    .restart local v10    # "pkgClickRate":D
+    aget-wide v18, v18, v4
+
+    :goto_3
+    add-double v12, v12, v18
+
+    .line 306
+    add-int/lit8 v4, v4, 0x1
+
     goto :goto_2
 
-    .line 303
-    .restart local v13    # "totalClickCount":I
-    .restart local v16    # "totalShowCount":I
-    :cond_5
+    .line 298
+    .end local v2    # "averageClickRate":D
+    .end local v4    # "i":I
+    .end local v8    # "pkgClickRate":D
+    .end local v12    # "sum":D
+    .end local v14    # "totalClickCount":I
+    .end local v15    # "totalShowCount":I
+    :cond_2
+    const-wide/16 v8, 0x0
+
+    .restart local v8    # "pkgClickRate":D
+    goto :goto_0
+
+    .line 302
+    .restart local v14    # "totalClickCount":I
+    .restart local v15    # "totalShowCount":I
+    :cond_3
     const-wide/16 v2, 0x0
 
     .restart local v2    # "averageClickRate":D
+    goto :goto_1
+
+    .line 307
+    .restart local v4    # "i":I
+    .restart local v12    # "sum":D
+    :cond_4
+    const-wide/16 v18, 0x0
+
     goto :goto_3
 
-    .line 308
-    .restart local v5    # "i":I
-    .restart local v14    # "sum":D
+    .line 311
+    .end local v4    # "i":I
+    :cond_5
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->eg:[D
+
+    if-eqz v18, :cond_7
+
+    .line 312
+    const/4 v4, 0x0
+
+    .restart local v4    # "i":I
+    :goto_4
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->eg:[D
+
+    move-object/from16 v0, v18
+
+    array-length v0, v0
+
+    move/from16 v18, v0
+
+    move/from16 v0, v18
+
+    if-ge v4, v0, :cond_7
+
+    .line 313
+    int-to-double v0, v11
+
+    move-wide/from16 v18, v0
+
+    sget-object v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->eg:[D
+
+    aget-wide v20, v20, v4
+
+    cmpl-double v18, v18, v20
+
+    if-lez v18, :cond_6
+
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->egw:[D
+
+    aget-wide v18, v18, v4
+
+    :goto_5
+    add-double v12, v12, v18
+
+    .line 312
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_4
+
+    .line 313
     :cond_6
-    const-wide/16 v20, 0x0
+    const-wide/16 v18, 0x0
 
     goto :goto_5
 
-    .line 312
-    .end local v5    # "i":I
+    .line 317
+    .end local v4    # "i":I
     :cond_7
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->eg:[D
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cl:[D
 
-    if-eqz v17, :cond_9
+    if-eqz v18, :cond_9
 
-    .line 313
-    const/4 v5, 0x0
+    .line 318
+    const/4 v4, 0x0
 
-    .restart local v5    # "i":I
+    .restart local v4    # "i":I
     :goto_6
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->eg:[D
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cl:[D
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     array-length v0, v0
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    if-ge v5, v0, :cond_9
+    if-ge v4, v0, :cond_9
 
-    .line 314
-    int-to-double v0, v12
+    .line 319
+    int-to-double v0, v10
 
-    move-wide/from16 v20, v0
+    move-wide/from16 v18, v0
 
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->eg:[D
+    sget-object v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cl:[D
 
-    aget-wide v22, v17, v5
+    aget-wide v20, v20, v4
 
-    cmpl-double v17, v20, v22
+    cmpg-double v18, v18, v20
 
-    if-lez v17, :cond_8
+    if-gez v18, :cond_8
 
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->egw:[D
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->clw:[D
 
-    aget-wide v20, v17, v5
+    aget-wide v18, v18, v4
 
     :goto_7
-    add-double v14, v14, v20
+    add-double v12, v12, v18
 
-    .line 313
-    add-int/lit8 v5, v5, 0x1
+    .line 318
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_6
 
-    .line 314
+    .line 319
     :cond_8
-    const-wide/16 v20, 0x0
+    const-wide/16 v18, 0x0
 
     goto :goto_7
 
-    .line 318
-    .end local v5    # "i":I
+    .line 323
+    .end local v4    # "i":I
     :cond_9
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cl:[D
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cg:[D
 
-    if-eqz v17, :cond_b
+    if-eqz v18, :cond_b
 
-    .line 319
-    const/4 v5, 0x0
+    .line 324
+    const/4 v4, 0x0
 
-    .restart local v5    # "i":I
+    .restart local v4    # "i":I
     :goto_8
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cl:[D
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cg:[D
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     array-length v0, v0
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    if-ge v5, v0, :cond_b
+    if-ge v4, v0, :cond_b
 
-    .line 320
-    int-to-double v0, v9
+    .line 325
+    int-to-double v0, v10
 
-    move-wide/from16 v20, v0
+    move-wide/from16 v18, v0
 
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cl:[D
+    sget-object v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cg:[D
 
-    aget-wide v22, v17, v5
+    aget-wide v20, v20, v4
 
-    cmpg-double v17, v20, v22
+    cmpl-double v18, v18, v20
 
-    if-gez v17, :cond_a
+    if-lez v18, :cond_a
 
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->clw:[D
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cgw:[D
 
-    aget-wide v20, v17, v5
+    aget-wide v18, v18, v4
 
     :goto_9
-    add-double v14, v14, v20
+    add-double v12, v12, v18
 
-    .line 319
-    add-int/lit8 v5, v5, 0x1
+    .line 324
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_8
 
-    .line 320
+    .line 325
     :cond_a
-    const-wide/16 v20, 0x0
+    const-wide/16 v18, 0x0
 
     goto :goto_9
 
-    .line 324
-    .end local v5    # "i":I
+    .line 329
+    .end local v4    # "i":I
     :cond_b
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cg:[D
+    sget-object v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->sPkgs:Ljava/util/HashSet;
 
-    if-eqz v17, :cond_d
+    move-object/from16 v0, v18
 
-    .line 325
-    const/4 v5, 0x0
+    invoke-virtual {v0, v6}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
-    .restart local v5    # "i":I
-    :goto_a
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cg:[D
+    move-result v18
 
-    move-object/from16 v0, v17
-
-    array-length v0, v0
-
-    move/from16 v17, v0
-
-    move/from16 v0, v17
-
-    if-ge v5, v0, :cond_d
-
-    .line 326
-    int-to-double v0, v9
-
-    move-wide/from16 v20, v0
-
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cg:[D
-
-    aget-wide v22, v17, v5
-
-    cmpl-double v17, v20, v22
-
-    if-lez v17, :cond_c
-
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->cgw:[D
-
-    aget-wide v20, v17, v5
-
-    :goto_b
-    add-double v14, v14, v20
-
-    .line 325
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_a
-
-    .line 326
-    :cond_c
-    const-wide/16 v20, 0x0
-
-    goto :goto_b
+    if-eqz v18, :cond_c
 
     .line 330
-    .end local v5    # "i":I
-    :cond_d
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->sPkgs:Ljava/util/HashSet;
+    const-wide/high16 v18, 0x4022000000000000L    # 9.0
 
-    move-object/from16 v0, v17
+    add-double v12, v12, v18
 
-    invoke-virtual {v0, v7}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    .line 333
+    :cond_c
+    sget-wide v18, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->b:D
 
-    move-result v17
+    sget-object v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
 
-    if-eqz v17, :cond_e
+    const/16 v21, 0x0
 
-    .line 331
-    const-wide/high16 v20, 0x4022000000000000L    # 9.0
+    aget-wide v20, v20, v21
 
-    add-double v14, v14, v20
+    mul-double v20, v20, v8
+
+    add-double v18, v18, v20
+
+    sget-object v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
+
+    const/16 v21, 0x1
+
+    aget-wide v20, v20, v21
+
+    mul-double v20, v20, v2
+
+    add-double v18, v18, v20
+
+    sget-object v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
+
+    const/16 v21, 0x2
+
+    aget-wide v20, v20, v21
+
+    int-to-double v0, v11
+
+    move-wide/from16 v22, v0
+
+    mul-double v20, v20, v22
+
+    add-double v18, v18, v20
 
     .line 334
-    :cond_e
-    sget-wide v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->b:D
+    sget-object v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
 
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
+    const/16 v21, 0x3
 
-    const/16 v22, 0x0
+    aget-wide v20, v20, v21
 
-    aget-wide v22, v17, v22
+    int-to-double v0, v10
 
-    mul-double v22, v22, v10
+    move-wide/from16 v22, v0
 
-    add-double v20, v20, v22
+    mul-double v20, v20, v22
 
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
+    .line 333
+    add-double v18, v18, v20
 
-    const/16 v22, 0x1
+    .line 334
+    sget-object v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
 
-    aget-wide v22, v17, v22
+    const/16 v21, 0x4
 
-    mul-double v22, v22, v2
+    aget-wide v20, v20, v21
 
-    add-double v20, v20, v22
+    int-to-double v0, v10
 
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
+    move-wide/from16 v22, v0
 
-    const/16 v22, 0x2
-
-    aget-wide v22, v17, v22
-
-    int-to-double v0, v12
-
-    move-wide/from16 v24, v0
+    const-wide v24, 0x3fb999999999999aL    # 0.1
 
     mul-double v22, v22, v24
 
-    add-double v20, v20, v22
-
-    .line 335
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
-
-    const/16 v22, 0x3
-
-    aget-wide v22, v17, v22
-
-    int-to-double v0, v9
-
-    move-wide/from16 v24, v0
-
-    mul-double v22, v22, v24
-
-    .line 334
-    add-double v20, v20, v22
-
-    .line 335
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
-
-    const/16 v22, 0x4
-
-    aget-wide v22, v17, v22
-
-    int-to-double v0, v9
+    int-to-double v0, v10
 
     move-wide/from16 v24, v0
 
@@ -1343,78 +1321,70 @@
 
     mul-double v24, v24, v26
 
-    int-to-double v0, v9
+    const-wide/high16 v26, 0x3ff0000000000000L    # 1.0
 
-    move-wide/from16 v26, v0
-
-    const-wide v28, 0x3fb999999999999aL    # 0.1
-
-    mul-double v26, v26, v28
-
-    const-wide/high16 v28, 0x3ff0000000000000L    # 1.0
-
-    add-double v26, v26, v28
-
-    div-double v24, v24, v26
-
-    mul-double v22, v22, v24
-
-    .line 334
-    add-double v20, v20, v22
-
-    .line 336
-    sget-object v17, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
-
-    const/16 v22, 0x5
-
-    aget-wide v22, v17, v22
-
-    add-int v17, v9, v13
-
-    move/from16 v0, v17
-
-    int-to-double v0, v0
-
-    move-wide/from16 v24, v0
-
-    mul-double v22, v22, v24
-
-    add-int/lit8 v17, v12, 0x1
-
-    move/from16 v0, v17
-
-    int-to-double v0, v0
-
-    move-wide/from16 v24, v0
+    add-double v24, v24, v26
 
     div-double v22, v22, v24
 
-    .line 334
-    add-double v20, v20, v22
+    mul-double v20, v20, v22
 
-    add-double v18, v20, v14
+    .line 333
+    add-double v18, v18, v20
 
-    .line 338
-    .local v18, "y":D
-    move-wide/from16 v0, v18
+    .line 335
+    sget-object v20, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->w:[D
+
+    const/16 v21, 0x5
+
+    aget-wide v20, v20, v21
+
+    add-int v22, v10, v14
+
+    move/from16 v0, v22
+
+    int-to-double v0, v0
+
+    move-wide/from16 v22, v0
+
+    mul-double v20, v20, v22
+
+    add-int/lit8 v22, v11, 0x1
+
+    move/from16 v0, v22
+
+    int-to-double v0, v0
+
+    move-wide/from16 v22, v0
+
+    div-double v20, v20, v22
+
+    .line 333
+    add-double v18, v18, v20
+
+    add-double v16, v18, v12
+
+    .line 337
+    .local v16, "y":D
+    move-wide/from16 v0, v16
 
     neg-double v0, v0
 
-    move-wide/from16 v20, v0
+    move-wide/from16 v18, v0
 
-    invoke-static/range {v20 .. v21}, Ljava/lang/Math;->exp(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->exp(D)D
 
-    move-result-wide v20
+    move-result-wide v18
 
-    const-wide/high16 v22, 0x3ff0000000000000L    # 1.0
+    const-wide/high16 v20, 0x3ff0000000000000L    # 1.0
 
-    add-double v20, v20, v22
+    add-double v18, v18, v20
 
-    const-wide/high16 v22, 0x3ff0000000000000L    # 1.0
+    const-wide/high16 v20, 0x3ff0000000000000L    # 1.0
 
-    div-double v20, v22, v20
+    div-double v18, v20, v18
 
-    return-wide v20
+    return-wide v18
 .end method
 
 .method public static getScoreForRank(D)D
@@ -1424,14 +1394,14 @@
     .prologue
     const-wide/16 v0, 0x0
 
-    .line 342
+    .line 341
     sget-wide v2, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->th:D
 
     cmpl-double v2, v2, v0
 
     if-eqz v2, :cond_1
 
-    .line 343
+    .line 342
     invoke-static {}, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->getThreshold()D
 
     move-result-wide v2
@@ -1445,7 +1415,7 @@
     :cond_0
     return-wide v0
 
-    .line 345
+    .line 344
     :cond_1
     return-wide p0
 .end method
@@ -1454,7 +1424,7 @@
     .locals 4
 
     .prologue
-    .line 349
+    .line 348
     sget-wide v0, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->th:D
 
     invoke-static {}, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->getIncreasePercent()D
@@ -1756,6 +1726,42 @@
     goto :goto_0
 .end method
 
+.method private static needUploadLocalAlgoModel(Landroid/content/Context;)Z
+    .locals 5
+    .param p0, "context"    # Landroid/content/Context;
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 365
+    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    .line 366
+    .local v1, "sp":Landroid/content/SharedPreferences;
+    const-string/jumbo v4, "last_upload_algo_date"
+
+    invoke-interface {v1, v4, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    .line 367
+    .local v0, "lastUploadDay":I
+    invoke-static {}, Lcom/android/systemui/DateUtils;->getDigitalFormatDateToday()I
+
+    move-result v2
+
+    .line 368
+    .local v2, "today":I
+    if-eq v0, v2, :cond_0
+
+    const/4 v3, 0x1
+
+    :cond_0
+    return v3
+.end method
+
 .method public static recordUpdateTime(Landroid/content/Context;)V
     .locals 6
     .param p0, "context"    # Landroid/content/Context;
@@ -1875,6 +1881,38 @@
 
     .line 136
     :cond_1
+    return-void
+.end method
+
+.method private static saveUploadDate(Landroid/content/Context;)V
+    .locals 4
+    .param p0, "context"    # Landroid/content/Context;
+
+    .prologue
+    .line 372
+    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    .line 373
+    .local v0, "sp":Landroid/content/SharedPreferences;
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "last_upload_algo_date"
+
+    invoke-static {}, Lcom/android/systemui/DateUtils;->getDigitalFormatDateToday()I
+
+    move-result v3
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 371
     return-void
 .end method
 
@@ -2084,5 +2122,40 @@
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
     .line 248
+    return-void
+.end method
+
+.method public static uploadLocalAlgoModelIfNeed(Landroid/content/Context;Landroid/os/Handler;)V
+    .locals 2
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "bgHandler"    # Landroid/os/Handler;
+
+    .prologue
+    .line 352
+    invoke-static {p0}, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->needUploadLocalAlgoModel(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 353
+    const-string/jumbo v0, "LocalAlgoModel"
+
+    const-string/jumbo v1, "upload local algo model"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 354
+    invoke-static {p0}, Lcom/android/systemui/miui/statusbar/LocalAlgoModel;->saveUploadDate(Landroid/content/Context;)V
+
+    .line 355
+    new-instance v0, Lcom/android/systemui/miui/statusbar/LocalAlgoModel$2;
+
+    invoke-direct {v0}, Lcom/android/systemui/miui/statusbar/LocalAlgoModel$2;-><init>()V
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 351
+    :cond_0
     return-void
 .end method

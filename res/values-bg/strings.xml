@@ -1471,6 +1471,9 @@ MMMM d"</string>
     <string name="status_bar_safepay_safe">Няма рискове при плащане</string>
     <string name="status_bar_safepay_risk">Установени са рисковете при плащане</string>
     <string name="status_bar_safepay_unknown">Не може да се провери платежната обстановка</string>
+    <string name="notch_sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_summary">кликнете, за изход</string>
     <string name="wifi_fail_to_scan">Не може да се сканира за мрежи</string>
     <string name="wifi_security_short_wep">WEP</string>
     <string name="wifi_security_short_wpa">WPA</string>
@@ -1817,8 +1820,5 @@ Sample rate"</string>
     <string name="wifi_disabled_by_recommendation_provider">Не е свързан поради мрежа с ниско качество</string>
     <string name="wifi_no_internet_no_reconnect">Не може да се свърже с интернет</string>
     <string name="lockscreen_storage_locked">Отключване за всички функции и данни</string>
-    <string name="notch_sos_status_bar_title">SOS</string>
-    <string name="sos_status_bar_summary">кликнете, за изход</string>
-    <string name="sos_status_bar_title">SOS</string>
     <string name="notification_num_channels">%d категории за уведомяване</string>
 </resources>

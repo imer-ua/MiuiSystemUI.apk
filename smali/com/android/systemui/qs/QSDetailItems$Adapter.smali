@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/qs/QSDetailItems;
 
     .prologue
-    .line 170
+    .line 177
     iput-object p1, p0, Lcom/android/systemui/qs/QSDetailItems$Adapter;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
@@ -48,10 +48,10 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 181
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetailItems$Adapter;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
-    invoke-static {v0}, Lcom/android/systemui/qs/QSDetailItems;->-get4(Lcom/android/systemui/qs/QSDetailItems;)[Lcom/android/systemui/qs/QSDetailItems$Item;
+    invoke-static {v0}, Lcom/android/systemui/qs/QSDetailItems;->-get5(Lcom/android/systemui/qs/QSDetailItems;)[Lcom/android/systemui/qs/QSDetailItems$Item;
 
     move-result-object v0
 
@@ -59,7 +59,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetailItems$Adapter;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
-    invoke-static {v0}, Lcom/android/systemui/qs/QSDetailItems;->-get4(Lcom/android/systemui/qs/QSDetailItems;)[Lcom/android/systemui/qs/QSDetailItems$Item;
+    invoke-static {v0}, Lcom/android/systemui/qs/QSDetailItems;->-get5(Lcom/android/systemui/qs/QSDetailItems;)[Lcom/android/systemui/qs/QSDetailItems$Item;
 
     move-result-object v0
 
@@ -79,10 +79,10 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 179
+    .line 186
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetailItems$Adapter;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
-    invoke-static {v0}, Lcom/android/systemui/qs/QSDetailItems;->-get4(Lcom/android/systemui/qs/QSDetailItems;)[Lcom/android/systemui/qs/QSDetailItems$Item;
+    invoke-static {v0}, Lcom/android/systemui/qs/QSDetailItems;->-get5(Lcom/android/systemui/qs/QSDetailItems;)[Lcom/android/systemui/qs/QSDetailItems$Item;
 
     move-result-object v0
 
@@ -96,7 +96,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 184
+    .line 191
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -109,20 +109,20 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 189
+    .line 196
     iget-object v6, p0, Lcom/android/systemui/qs/QSDetailItems$Adapter;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
-    invoke-static {v6}, Lcom/android/systemui/qs/QSDetailItems;->-get4(Lcom/android/systemui/qs/QSDetailItems;)[Lcom/android/systemui/qs/QSDetailItems$Item;
+    invoke-static {v6}, Lcom/android/systemui/qs/QSDetailItems;->-get5(Lcom/android/systemui/qs/QSDetailItems;)[Lcom/android/systemui/qs/QSDetailItems$Item;
 
     move-result-object v6
 
     aget-object v1, v6, p1
 
-    .line 190
+    .line 197
     .local v1, "item":Lcom/android/systemui/qs/QSDetailItems$Item;
     if-nez p2, :cond_0
 
-    .line 191
+    .line 198
     iget-object v6, p0, Lcom/android/systemui/qs/QSDetailItems$Adapter;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
     invoke-static {v6}, Lcom/android/systemui/qs/QSDetailItems;->-get1(Lcom/android/systemui/qs/QSDetailItems;)Landroid/content/Context;
@@ -135,19 +135,19 @@
 
     const v7, 0x90400c0
 
-    .line 192
+    .line 199
     const/4 v8, 0x0
 
-    .line 191
+    .line 198
     invoke-virtual {v6, v7, p3, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object p2
 
-    .line 194
+    .line 201
     :cond_0
     iget-object v6, p0, Lcom/android/systemui/qs/QSDetailItems$Adapter;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
-    invoke-static {v6}, Lcom/android/systemui/qs/QSDetailItems;->-get5(Lcom/android/systemui/qs/QSDetailItems;)Z
+    invoke-static {v6}, Lcom/android/systemui/qs/QSDetailItems;->-get6(Lcom/android/systemui/qs/QSDetailItems;)Z
 
     move-result v6
 
@@ -158,7 +158,7 @@
     :goto_0
     invoke-virtual {p2, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 195
+    .line 202
     const v6, 0x1020006
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -167,36 +167,36 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 196
+    .line 203
     .local v2, "iv":Landroid/widget/ImageView;
     iget v6, v1, Lcom/android/systemui/qs/QSDetailItems$Item;->icon:I
 
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 197
+    .line 204
     invoke-virtual {v2}, Landroid/widget/ImageView;->getOverlay()Landroid/view/ViewOverlay;
 
     move-result-object v6
 
     invoke-virtual {v6}, Landroid/view/ViewOverlay;->clear()V
 
-    .line 198
+    .line 205
     iget-object v6, v1, Lcom/android/systemui/qs/QSDetailItems$Item;->overlay:Landroid/graphics/drawable/Drawable;
 
     if-eqz v6, :cond_1
 
-    .line 199
+    .line 206
     iget-object v6, v1, Lcom/android/systemui/qs/QSDetailItems$Item;->overlay:Landroid/graphics/drawable/Drawable;
 
     iget-object v7, p0, Lcom/android/systemui/qs/QSDetailItems$Adapter;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
-    invoke-static {v7}, Lcom/android/systemui/qs/QSDetailItems;->-get6(Lcom/android/systemui/qs/QSDetailItems;)I
+    invoke-static {v7}, Lcom/android/systemui/qs/QSDetailItems;->-get7(Lcom/android/systemui/qs/QSDetailItems;)I
 
     move-result v7
 
     iget-object v8, p0, Lcom/android/systemui/qs/QSDetailItems$Adapter;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
-    invoke-static {v8}, Lcom/android/systemui/qs/QSDetailItems;->-get6(Lcom/android/systemui/qs/QSDetailItems;)I
+    invoke-static {v8}, Lcom/android/systemui/qs/QSDetailItems;->-get7(Lcom/android/systemui/qs/QSDetailItems;)I
 
     move-result v8
 
@@ -206,7 +206,7 @@
 
     invoke-virtual {v6, v9, v10, v7, v8}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 200
+    .line 207
     invoke-virtual {v2}, Landroid/widget/ImageView;->getOverlay()Landroid/view/ViewOverlay;
 
     move-result-object v6
@@ -215,7 +215,7 @@
 
     invoke-virtual {v6, v7}, Landroid/view/ViewOverlay;->add(Landroid/graphics/drawable/Drawable;)V
 
-    .line 202
+    .line 209
     :cond_1
     const v6, 0x1020016
 
@@ -225,13 +225,13 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 203
+    .line 210
     .local v4, "title":Landroid/widget/TextView;
     iget-object v6, v1, Lcom/android/systemui/qs/QSDetailItems$Item;->line1:Ljava/lang/CharSequence;
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 204
+    .line 211
     const v6, 0x1020010
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -240,7 +240,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 205
+    .line 212
     .local v3, "summary":Landroid/widget/TextView;
     iget-object v6, v1, Lcom/android/systemui/qs/QSDetailItems$Item;->line2:Ljava/lang/CharSequence;
 
@@ -252,7 +252,7 @@
 
     const/4 v5, 0x0
 
-    .line 206
+    .line 213
     .local v5, "twoLines":Z
     :goto_1
     if-eqz v5, :cond_4
@@ -262,7 +262,7 @@
     :goto_2
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 208
+    .line 215
     if-eqz v5, :cond_5
 
     const/4 v6, 0x0
@@ -270,7 +270,7 @@
     :goto_3
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 209
+    .line 216
     if-eqz v5, :cond_6
 
     iget-object v6, v1, Lcom/android/systemui/qs/QSDetailItems$Item;->line2:Ljava/lang/CharSequence;
@@ -278,14 +278,14 @@
     :goto_4
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 210
+    .line 217
     new-instance v6, Lcom/android/systemui/qs/QSDetailItems$Adapter$1;
 
     invoke-direct {v6, p0, v1}, Lcom/android/systemui/qs/QSDetailItems$Adapter$1;-><init>(Lcom/android/systemui/qs/QSDetailItems$Adapter;Lcom/android/systemui/qs/QSDetailItems$Item;)V
 
     invoke-virtual {p2, v6}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 219
+    .line 226
     const v6, 0x1020008
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -294,39 +294,39 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 220
+    .line 227
     .local v0, "icon2":Landroid/widget/ImageView;
     iget-boolean v6, v1, Lcom/android/systemui/qs/QSDetailItems$Item;->canDisconnect:Z
 
     if-eqz v6, :cond_7
 
-    .line 221
+    .line 228
     const v6, 0x9020153
 
     invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 222
+    .line 229
     const/4 v6, 0x0
 
     invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 223
+    .line 230
     const/4 v6, 0x1
 
     invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setClickable(Z)V
 
-    .line 224
+    .line 231
     new-instance v6, Lcom/android/systemui/qs/QSDetailItems$Adapter$2;
 
     invoke-direct {v6, p0, v1}, Lcom/android/systemui/qs/QSDetailItems$Adapter$2;-><init>(Lcom/android/systemui/qs/QSDetailItems$Adapter;Lcom/android/systemui/qs/QSDetailItems$Item;)V
 
     invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 240
+    .line 247
     :goto_5
     return-object p2
 
-    .line 194
+    .line 201
     .end local v0    # "icon2":Landroid/widget/ImageView;
     .end local v2    # "iv":Landroid/widget/ImageView;
     .end local v3    # "summary":Landroid/widget/TextView;
@@ -337,7 +337,7 @@
 
     goto/16 :goto_0
 
-    .line 205
+    .line 212
     .restart local v2    # "iv":Landroid/widget/ImageView;
     .restart local v3    # "summary":Landroid/widget/TextView;
     .restart local v4    # "title":Landroid/widget/TextView;
@@ -346,26 +346,26 @@
 
     goto :goto_1
 
-    .line 206
+    .line 213
     .restart local v5    # "twoLines":Z
     :cond_4
     const/4 v6, 0x2
 
     goto :goto_2
 
-    .line 208
+    .line 215
     :cond_5
     const/16 v6, 0x8
 
     goto :goto_3
 
-    .line 209
+    .line 216
     :cond_6
     const/4 v6, 0x0
 
     goto :goto_4
 
-    .line 232
+    .line 239
     .restart local v0    # "icon2":Landroid/widget/ImageView;
     :cond_7
     iget v6, v1, Lcom/android/systemui/qs/QSDetailItems$Item;->icon2:I
@@ -374,24 +374,24 @@
 
     if-eq v6, v7, :cond_8
 
-    .line 233
+    .line 240
     const/4 v6, 0x0
 
     invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 234
+    .line 241
     iget v6, v1, Lcom/android/systemui/qs/QSDetailItems$Item;->icon2:I
 
     invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 235
+    .line 242
     const/4 v6, 0x0
 
     invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setClickable(Z)V
 
     goto :goto_5
 
-    .line 237
+    .line 244
     :cond_8
     const/16 v6, 0x8
 

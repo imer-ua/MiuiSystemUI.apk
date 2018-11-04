@@ -25,13 +25,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 80
+    .line 81
     iput-object p1, p0, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat$WorkHandler;->this$0:Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;
 
-    .line 81
+    .line 82
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 80
+    .line 81
     return-void
 .end method
 
@@ -42,31 +42,31 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 86
+    .line 87
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 89
+    .line 90
     iget v5, p1, Landroid/os/Message;->what:I
 
     packed-switch v5, :pswitch_data_0
 
-    .line 85
+    .line 86
     :goto_0
     return-void
 
-    .line 91
+    .line 92
     :pswitch_0
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Lcom/android/systemui/miui/statusbar/analytics/INotificationEvent;
 
-    .line 92
+    .line 93
     .local v2, "event":Lcom/android/systemui/miui/statusbar/analytics/INotificationEvent;
     invoke-interface {v2}, Lcom/android/systemui/miui/statusbar/analytics/INotificationEvent;->getTinyData()Lcom/android/systemui/miui/statusbar/analytics/TinyData;
 
     move-result-object v4
 
-    .line 93
+    .line 94
     .local v4, "tinyData":Lcom/android/systemui/miui/statusbar/analytics/TinyData;
     invoke-static {}, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;->-get0()Z
 
@@ -74,7 +74,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 94
+    .line 95
     const-string/jumbo v5, "SystemUIStat"
 
     invoke-virtual {v4}, Lcom/android/systemui/miui/statusbar/analytics/TinyData;->toString()Ljava/lang/String;
@@ -83,7 +83,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
+    .line 97
     :cond_0
     new-instance v3, Landroid/content/Intent;
 
@@ -91,13 +91,13 @@
 
     invoke-direct {v3, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 97
+    .line 98
     .local v3, "intent":Landroid/content/Intent;
     const-string/jumbo v5, "com.xiaomi.xmsf"
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 98
+    .line 99
     const-string/jumbo v5, "pkgname"
 
     invoke-virtual {v4}, Lcom/android/systemui/miui/statusbar/analytics/TinyData;->getPkg()Ljava/lang/String;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 99
+    .line 100
     const-string/jumbo v5, "category"
 
     invoke-virtual {v4}, Lcom/android/systemui/miui/statusbar/analytics/TinyData;->getCategory()Ljava/lang/String;
@@ -115,7 +115,7 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 100
+    .line 101
     const-string/jumbo v5, "name"
 
     invoke-virtual {v4}, Lcom/android/systemui/miui/statusbar/analytics/TinyData;->getName()Ljava/lang/String;
@@ -124,7 +124,7 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 101
+    .line 102
     const-string/jumbo v5, "data"
 
     invoke-virtual {v4}, Lcom/android/systemui/miui/statusbar/analytics/TinyData;->getData()Ljava/lang/String;
@@ -133,7 +133,7 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 102
+    .line 103
     iget-object v5, p0, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat$WorkHandler;->this$0:Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;
 
     invoke-static {v5}, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;->-get1(Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;)Landroid/content/Context;
@@ -148,7 +148,7 @@
 
     goto :goto_0
 
-    .line 105
+    .line 106
     .end local v2    # "event":Lcom/android/systemui/miui/statusbar/analytics/INotificationEvent;
     .end local v3    # "intent":Landroid/content/Intent;
     .end local v4    # "tinyData":Lcom/android/systemui/miui/statusbar/analytics/TinyData;
@@ -157,7 +157,7 @@
 
     check-cast v0, Lcom/android/systemui/miui/statusbar/analytics/ADBlock;
 
-    .line 106
+    .line 107
     .local v0, "adBlock":Lcom/android/systemui/miui/statusbar/analytics/ADBlock;
     invoke-static {}, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;->-get0()Z
 
@@ -165,14 +165,14 @@
 
     if-eqz v5, :cond_1
 
-    .line 107
+    .line 108
     const-string/jumbo v5, "SystemUIStat"
 
     iget-object v6, v0, Lcom/android/systemui/miui/statusbar/analytics/ADBlock;->adId:Ljava/lang/String;
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 109
+    .line 110
     :cond_1
     new-instance v3, Landroid/content/Intent;
 
@@ -180,20 +180,20 @@
 
     invoke-direct {v3, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 110
+    .line 111
     .restart local v3    # "intent":Landroid/content/Intent;
     const-string/jumbo v5, "com.miui.systemAdSolution"
 
     invoke-virtual {v3, v5}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 111
+    .line 112
     const-string/jumbo v5, "adid"
 
     iget-object v6, v0, Lcom/android/systemui/miui/statusbar/analytics/ADBlock;->adId:Ljava/lang/String;
 
     invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 112
+    .line 113
     iget-object v5, p0, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat$WorkHandler;->this$0:Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;
 
     invoke-static {v5}, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;->-get1(Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;)Landroid/content/Context;
@@ -206,7 +206,7 @@
 
     goto/16 :goto_0
 
-    .line 115
+    .line 116
     .end local v0    # "adBlock":Lcom/android/systemui/miui/statusbar/analytics/ADBlock;
     .end local v3    # "intent":Landroid/content/Intent;
     :pswitch_2
@@ -214,7 +214,7 @@
 
     check-cast v1, Lcom/android/internal/os/SomeArgs;
 
-    .line 116
+    .line 117
     .local v1, "args":Lcom/android/internal/os/SomeArgs;
     iget-object v5, v1, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
@@ -232,14 +232,14 @@
 
     goto/16 :goto_0
 
-    .line 119
+    .line 120
     .end local v1    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_3
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Lcom/android/internal/os/SomeArgs;
 
-    .line 120
+    .line 121
     .restart local v1    # "args":Lcom/android/internal/os/SomeArgs;
     iget-object v5, v1, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
@@ -265,7 +265,7 @@
 
     goto/16 :goto_0
 
-    .line 123
+    .line 124
     .end local v1    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_4
     iget-object v6, p0, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat$WorkHandler;->this$0:Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;
@@ -278,7 +278,7 @@
 
     goto/16 :goto_0
 
-    .line 126
+    .line 127
     :pswitch_5
     iget-object v5, p0, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat$WorkHandler;->this$0:Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;
 
@@ -304,7 +304,7 @@
 
     goto/16 :goto_0
 
-    .line 89
+    .line 90
     :pswitch_data_0
     .packed-switch 0x3e9
         :pswitch_0

@@ -632,7 +632,7 @@
 
     iget-object v4, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
-    const v5, 0x90f0366
+    const v5, 0x90f0367
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -745,7 +745,7 @@
     iget-object v0, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 238
-    const v1, 0x90f0353
+    const v1, 0x90f0354
 
     .line 237
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -758,7 +758,7 @@
     iget-object v0, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 240
-    const v1, 0x90f0356
+    const v1, 0x90f0357
 
     .line 239
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -771,7 +771,7 @@
     iget-object v0, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 242
-    const v1, 0x90f0357
+    const v1, 0x90f0358
 
     .line 241
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -784,7 +784,7 @@
     iget-object v0, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 244
-    const v1, 0x90f0355
+    const v1, 0x90f0356
 
     .line 243
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -797,7 +797,7 @@
     iget-object v0, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 246
-    const v1, 0x90f0358
+    const v1, 0x90f0359
 
     .line 245
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -810,7 +810,7 @@
     iget-object v0, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 248
-    const v1, 0x90f035f
+    const v1, 0x90f0360
 
     .line 247
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -823,7 +823,7 @@
     iget-object v0, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 250
-    const v1, 0x90f0360
+    const v1, 0x90f0361
 
     .line 249
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -836,7 +836,7 @@
     iget-object v0, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 252
-    const v1, 0x90f0362
+    const v1, 0x90f0363
 
     .line 251
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -848,7 +848,7 @@
     .line 254
     iget-object v0, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
-    const v1, 0x90f0332
+    const v1, 0x90f0333
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1021,7 +1021,7 @@
     iget-object v3, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 328
-    const v4, 0x90f0367
+    const v4, 0x90f0368
 
     .line 327
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1036,7 +1036,7 @@
     iget-object v3, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 330
-    const v4, 0x90f0368
+    const v4, 0x90f0369
 
     .line 329
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1062,7 +1062,7 @@
     iget-object v1, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 137
-    const v2, 0x90f0310
+    const v2, 0x90f0311
 
     .line 136
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1133,7 +1133,7 @@
     iget-object v4, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 299
-    const v5, 0x90f0361
+    const v5, 0x90f0362
 
     .line 298
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1168,7 +1168,7 @@
     iget-object v4, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 309
-    const v5, 0x90f0360
+    const v5, 0x90f0361
 
     .line 308
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -1184,7 +1184,7 @@
     iget-object v4, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 313
-    const v5, 0x90f0362
+    const v5, 0x90f0363
 
     .line 312
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -1197,7 +1197,7 @@
     iget-object v4, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 315
-    const v5, 0x90f035e
+    const v5, 0x90f035f
 
     .line 314
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1335,7 +1335,7 @@
     .local v1, "chargingViewlayoutParams":Landroid/widget/RelativeLayout$LayoutParams;
     iget-object v2, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
-    const v3, 0x90f0332
+    const v3, 0x90f0333
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -1347,7 +1347,7 @@
     .line 150
     iget-object v2, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
-    const v3, 0x90f0354
+    const v3, 0x90f0355
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -1359,7 +1359,7 @@
     .line 152
     iget-object v2, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
-    const v3, 0x90f0353
+    const v3, 0x90f0354
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -1382,7 +1382,7 @@
     iget-object v3, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 158
-    const v4, 0x90f035a
+    const v4, 0x90f035b
 
     .line 157
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -1393,7 +1393,7 @@
     iget-object v4, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 160
-    const v5, 0x90f035b
+    const v5, 0x90f035c
 
     .line 159
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -1417,7 +1417,7 @@
     iget-object v2, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 165
-    const v3, 0x90f0363
+    const v3, 0x90f0364
 
     .line 164
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1430,7 +1430,7 @@
     iget-object v2, p0, Lcom/android/keyguard/charge/MiuiKeyguardChargingContainer;->mResources:Landroid/content/res/Resources;
 
     .line 167
-    const v3, 0x90f0364
+    const v3, 0x90f0365
 
     .line 166
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I

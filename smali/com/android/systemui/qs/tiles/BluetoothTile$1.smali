@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     .prologue
-    .line 172
+    .line 174
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 186
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->-wrap0(Lcom/android/systemui/qs/tiles/BluetoothTile;)Z
@@ -50,16 +50,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 185
+    .line 187
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->-get3(Lcom/android/systemui/qs/tiles/BluetoothTile;)Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->-get4(Lcom/android/systemui/qs/tiles/BluetoothTile;)Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->-wrap0(Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;)V
 
-    .line 183
+    .line 185
     :cond_0
     return-void
 .end method
@@ -69,7 +69,7 @@
     .param p1, "action"    # Ljava/lang/String;
 
     .prologue
-    .line 190
+    .line 192
     return-void
 .end method
 
@@ -78,12 +78,12 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 175
+    .line 177
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->refreshState()V
 
-    .line 176
+    .line 178
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->-wrap0(Lcom/android/systemui/qs/tiles/BluetoothTile;)Z
@@ -92,21 +92,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 177
+    .line 179
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->-get3(Lcom/android/systemui/qs/tiles/BluetoothTile;)Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->-get4(Lcom/android/systemui/qs/tiles/BluetoothTile;)Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->-wrap0(Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;)V
 
-    .line 178
+    .line 180
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$1;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/tiles/BluetoothTile;->fireToggleStateChanged(Z)V
 
-    .line 174
+    .line 176
     :cond_0
     return-void
 .end method

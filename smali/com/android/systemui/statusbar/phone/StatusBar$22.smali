@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 5077
+    .line 5091
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$22;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,7 +42,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 5080
+    .line 5094
     sget-boolean v1, Lcom/android/systemui/statusbar/phone/StatusBar;->DEBUG:Z
 
     if-eqz v1, :cond_0
@@ -69,13 +69,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5081
+    .line 5095
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5082
+    .line 5096
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v1, "fake_artwork"
 
@@ -85,17 +85,17 @@
 
     if-eqz v1, :cond_1
 
-    .line 5083
+    .line 5097
     sget-boolean v1, Lcom/android/systemui/statusbar/phone/StatusBar;->DEBUG_MEDIA_FAKE_ARTWORK:Z
 
     if-eqz v1, :cond_1
 
-    .line 5084
+    .line 5098
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$22;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1, v4, v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateMediaMetaData(ZZ)V
 
-    .line 5079
+    .line 5093
     :cond_1
     return-void
 .end method

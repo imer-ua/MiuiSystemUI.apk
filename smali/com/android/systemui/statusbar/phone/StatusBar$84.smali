@@ -33,7 +33,7 @@
     .param p3, "val$sbn"    # Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
     .prologue
-    .line 8342
+    .line 8359
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$84;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$84;->val$entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
@@ -52,22 +52,22 @@
     .param p1, "row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     .prologue
-    .line 8344
+    .line 8361
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$84;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$84;->val$entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     invoke-static {v0, v1, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap5(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/NotificationData$Entry;Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
 
-    .line 8345
+    .line 8362
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$84;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$84;->val$entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$84;->val$sbn:Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
-    invoke-static {v0, v1, v2, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap37(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/NotificationData$Entry;Landroid/service/notification/StatusBarNotification;Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
+    invoke-static {v0, v1, v2, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap38(Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/NotificationData$Entry;Landroid/service/notification/StatusBarNotification;Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
 
-    .line 8343
+    .line 8360
     return-void
 .end method

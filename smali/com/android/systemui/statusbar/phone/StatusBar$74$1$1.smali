@@ -30,7 +30,7 @@
     .param p2, "val$scrollLayout"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 6496
+    .line 6510
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1$1;->this$2:Lcom/android/systemui/statusbar/phone/StatusBar$74$1;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1$1;->val$scrollLayout:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -48,7 +48,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 6499
+    .line 6513
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1$1;->this$2:Lcom/android/systemui/statusbar/phone/StatusBar$74$1;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$74;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->callOnClick()Z
 
-    .line 6500
+    .line 6514
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1$1;->this$2:Lcom/android/systemui/statusbar/phone/StatusBar$74$1;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$74;
@@ -70,11 +70,11 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->-set16(Lcom/android/systemui/statusbar/phone/StatusBar;Landroid/view/View;)Landroid/view/View;
 
-    .line 6501
+    .line 6515
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$74$1$1;->val$scrollLayout:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->setFinishScrollingCallback(Ljava/lang/Runnable;)V
 
-    .line 6498
+    .line 6512
     return-void
 .end method

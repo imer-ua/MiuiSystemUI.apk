@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 2133
+    .line 2137
     .local p2, "val$viewsToRemove":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/ExpandableNotificationRow;>;"
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -50,12 +50,12 @@
 
     const/4 v13, 0x0
 
-    .line 2136
+    .line 2140
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2137
+    .line 2141
     .local v0, "clearNotifications":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/miui/statusbar/ExpandedNotification;>;"
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -63,7 +63,7 @@
 
     invoke-virtual {v11, v13}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->setDismissAllInProgress(Z)V
 
-    .line 2138
+    .line 2142
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->val$viewsToRemove:Ljava/util/ArrayList;
 
     invoke-interface {v11}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -84,7 +84,7 @@
 
     check-cast v9, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 2139
+    .line 2143
     .local v9, "rowToRemove":Lcom/android/systemui/statusbar/ExpandableNotificationRow;
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -96,7 +96,7 @@
 
     if-eqz v11, :cond_0
 
-    .line 2140
+    .line 2144
     invoke-virtual {v9}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getEntry()Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     move-result-object v11
@@ -105,7 +105,7 @@
 
     invoke-virtual {v0, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2141
+    .line 2145
     const-class v11, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;
 
     invoke-static {v11}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -120,7 +120,7 @@
 
     invoke-virtual {v11, v12}, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;->onRemoveAll(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)V
 
-    .line 2142
+    .line 2146
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v9}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getEntry()Lcom/android/systemui/statusbar/NotificationData$Entry;
@@ -133,13 +133,13 @@
 
     goto :goto_0
 
-    .line 2144
+    .line 2148
     :cond_0
     invoke-virtual {v9}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->resetTranslation()V
 
     goto :goto_0
 
-    .line 2149
+    .line 2153
     .end local v9    # "rowToRemove":Lcom/android/systemui/statusbar/ExpandableNotificationRow;
     :cond_1
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -150,17 +150,17 @@
 
     move-result-object v4
 
-    .line 2150
+    .line 2154
     .local v4, "foldEntries":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/NotificationData$Entry;>;"
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v8
 
-    .line 2151
+    .line 2155
     .local v8, "numChildren":I
     const/4 v1, 0x0
 
-    .line 2152
+    .line 2156
     .local v1, "clearableFoldEntriesNum":I
     const/4 v5, 0x0
 
@@ -168,14 +168,14 @@
     :goto_1
     if-ge v5, v8, :cond_3
 
-    .line 2153
+    .line 2157
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 2154
+    .line 2158
     .local v2, "entry":Lcom/android/systemui/statusbar/NotificationData$Entry;
     iget-object v11, v2, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
@@ -189,7 +189,7 @@
 
     if-eqz v11, :cond_2
 
-    .line 2155
+    .line 2159
     const-class v11, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;
 
     invoke-static {v11}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -208,16 +208,16 @@
 
     invoke-virtual {v11, v12}, Lcom/android/systemui/miui/statusbar/analytics/SystemUIStat;->onRemoveAll(Lcom/android/systemui/miui/statusbar/ExpandedNotification;)V
 
-    .line 2156
+    .line 2160
     add-int/lit8 v1, v1, 0x1
 
-    .line 2152
+    .line 2156
     :cond_2
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 2160
+    .line 2164
     .end local v2    # "entry":Lcom/android/systemui/statusbar/NotificationData$Entry;
     :cond_3
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -228,7 +228,7 @@
 
     invoke-static {v11}, Lcom/android/systemui/AnalyticsHelper;->trackNotificationClearAll(I)V
 
-    .line 2162
+    .line 2166
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v11}, Lcom/android/systemui/statusbar/phone/StatusBar;->-get15(Lcom/android/systemui/statusbar/phone/StatusBar;)Z
@@ -237,7 +237,7 @@
 
     if-eqz v11, :cond_6
 
-    .line 2164
+    .line 2168
     :try_start_0
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -251,7 +251,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2172
+    .line 2176
     :cond_4
     :goto_2
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -268,7 +268,7 @@
 
     if-nez v11, :cond_5
 
-    .line 2173
+    .line 2177
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v11, v11, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -277,11 +277,11 @@
 
     invoke-virtual {v11, v13, v12}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->doExpandCollapseAnimation(ZI)V
 
-    .line 2135
+    .line 2139
     :cond_5
     return-void
 
-    .line 2167
+    .line 2171
     :cond_6
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -301,7 +301,7 @@
 
     check-cast v6, Lcom/android/systemui/miui/statusbar/ExpandedNotification;
 
-    .line 2168
+    .line 2172
     .local v6, "n":Lcom/android/systemui/miui/statusbar/ExpandedNotification;
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/StatusBar$53;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -309,7 +309,7 @@
 
     goto :goto_3
 
-    .line 2165
+    .line 2169
     .end local v6    # "n":Lcom/android/systemui/miui/statusbar/ExpandedNotification;
     .end local v7    # "n$iterator":Ljava/util/Iterator;
     :catch_0

@@ -27,7 +27,7 @@
     .param p2, "val$intent"    # Landroid/app/PendingIntent;
 
     .prologue
-    .line 8469
+    .line 8486
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$86;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86$1;->val$intent:Landroid/app/PendingIntent;
@@ -43,7 +43,7 @@
     .locals 10
 
     .prologue
-    .line 8477
+    .line 8494
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerCompat;->getService()Landroid/app/IActivityManager;
 
@@ -53,7 +53,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 8481
+    .line 8498
     :goto_0
     :try_start_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86$1;->val$intent:Landroid/app/PendingIntent;
@@ -82,7 +82,7 @@
     :try_end_1
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 8489
+    .line 8506
     :goto_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86$1;->val$intent:Landroid/app/PendingIntent;
 
@@ -92,7 +92,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 8490
+    .line 8507
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$86$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBar$86;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar$86;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -101,15 +101,15 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/assist/AssistManager;->hideAssist()V
 
-    .line 8471
+    .line 8488
     :cond_0
     return-void
 
-    .line 8482
+    .line 8499
     :catch_0
     move-exception v8
 
-    .line 8485
+    .line 8502
     .local v8, "e":Landroid/app/PendingIntent$CanceledException;
     const-string/jumbo v0, "StatusBar"
 
@@ -135,7 +135,7 @@
 
     goto :goto_1
 
-    .line 8478
+    .line 8495
     .end local v8    # "e":Landroid/app/PendingIntent$CanceledException;
     :catch_1
     move-exception v9

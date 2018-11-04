@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 7903
+    .line 7920
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$82;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +47,10 @@
     .prologue
     move-object v0, p1
 
-    .line 7905
+    .line 7922
     check-cast v0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 7906
+    .line 7923
     .local v0, "row":Lcom/android/systemui/statusbar/ExpandableNotificationRow;
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$82;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 

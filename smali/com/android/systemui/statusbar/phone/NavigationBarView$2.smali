@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     .prologue
-    .line 384
+    .line 388
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,12 +44,12 @@
 
     const/4 v5, 0x0
 
-    .line 386
+    .line 390
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 387
+    .line 391
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v2, "miui.intent.TAKE_SCREENSHOT"
 
@@ -59,14 +59,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 388
+    .line 392
     const-string/jumbo v2, "IsFinished"
 
     invoke-virtual {p2, v2, v6}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v1
 
-    .line 389
+    .line 393
     .local v1, "screenshotFinished":Z
     const-string/jumbo v2, "PhoneStatusBar/NavigationBarView"
 
@@ -90,10 +90,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 390
+    .line 394
     if-nez v1, :cond_1
 
-    .line 391
+    .line 395
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getRecentsButton()Landroid/view/View;
@@ -102,7 +102,7 @@
 
     invoke-virtual {v2, v5}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 392
+    .line 396
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getRecentsButton()Landroid/view/View;
@@ -111,13 +111,13 @@
 
     invoke-virtual {v2, v5}, Landroid/view/View;->setPressed(Z)V
 
-    .line 385
+    .line 389
     .end local v1    # "screenshotFinished":Z
     :cond_0
     :goto_0
     return-void
 
-    .line 394
+    .line 398
     .restart local v1    # "screenshotFinished":Z
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$2;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarView;

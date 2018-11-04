@@ -198,7 +198,7 @@
     move-result-object v1
 
     .line 219
-    const v2, 0x90f02ad
+    const v2, 0x90f02ae
 
     .line 218
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -267,7 +267,7 @@
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->init()V
 
     .line 83
-    const v0, 0x91202c1
+    const v0, 0x91202c7
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 

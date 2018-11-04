@@ -1,6 +1,9 @@
 .class Lcom/android/systemui/recents/RecentsActivity$19;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "RecentsActivity.java"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
@@ -27,46 +30,48 @@
     .param p2, "val$ssp"    # Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     .prologue
-    .line 1579
+    .line 1589
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$19;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     iput-object p2, p0, Lcom/android/systemui/recents/RecentsActivity$19;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 4
+    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 1587
-    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$19;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
+    .line 1592
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->setIsFsGestureAnimating(Z)V
+    check-cast v2, Ljava/lang/Float;
 
-    .line 1586
-    return-void
-.end method
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
 
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
+    move-result v0
 
-    .prologue
-    .line 1582
-    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$19;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
+    .line 1593
+    .local v0, "animatedValue":F
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
-    const/4 v1, 0x1
+    move-result v1
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->setIsFsGestureAnimating(Z)V
+    .line 1594
+    .local v1, "fraction":F
+    iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity$19;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
-    .line 1581
+    const-string/jumbo v3, "com.miui.home"
+
+    invoke-virtual {v2, v3, v1, v0}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->changeAlphaScaleForFsGesture(Ljava/lang/String;FF)V
+
+    .line 1591
     return-void
 .end method

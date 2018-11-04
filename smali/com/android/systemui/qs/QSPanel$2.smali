@@ -30,7 +30,7 @@
     .param p2, "val$v"    # Landroid/view/View;
 
     .prologue
-    .line 331
+    .line 332
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iput-object p2, p0, Lcom/android/systemui/qs/QSPanel$2;->val$v:Landroid/view/View;
@@ -46,7 +46,7 @@
     .locals 5
 
     .prologue
-    .line 334
+    .line 335
     iget-object v3, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-static {v3}, Lcom/android/systemui/qs/QSPanel;->-get0(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;
@@ -55,18 +55,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 335
+    .line 336
     const/4 v3, 0x2
 
     new-array v0, v3, [I
 
-    .line 336
+    .line 337
     .local v0, "loc":[I
     iget-object v3, p0, Lcom/android/systemui/qs/QSPanel$2;->val$v:Landroid/view/View;
 
     invoke-virtual {v3, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 337
+    .line 338
     const/4 v3, 0x0
 
     aget v3, v0, v3
@@ -81,7 +81,7 @@
 
     add-int v1, v3, v4
 
-    .line 338
+    .line 339
     .local v1, "x":I
     const/4 v3, 0x1
 
@@ -97,7 +97,7 @@
 
     add-int v2, v3, v4
 
-    .line 339
+    .line 340
     .local v2, "y":I
     iget-object v3, p0, Lcom/android/systemui/qs/QSPanel$2;->this$0:Lcom/android/systemui/qs/QSPanel;
 
@@ -107,7 +107,7 @@
 
     invoke-interface {v3, v1, v2}, Lcom/android/systemui/qs/customize/QSCustomizer$QSPanelCallback;->show(II)V
 
-    .line 333
+    .line 334
     .end local v0    # "loc":[I
     .end local v1    # "x":I
     .end local v2    # "y":I

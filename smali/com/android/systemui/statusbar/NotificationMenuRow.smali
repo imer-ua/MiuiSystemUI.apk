@@ -166,43 +166,43 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 103
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 83
+    .line 85
     new-array v0, v1, [I
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mIconLocation:[I
 
-    .line 84
+    .line 86
     new-array v0, v1, [I
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParentLocation:[I
 
-    .line 86
+    .line 88
     const/high16 v0, -0x40800000    # -1.0f
 
     iput v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHorizSpaceForIcon:F
 
-    .line 87
+    .line 89
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mVertSpaceForIcons:I
 
-    .line 89
+    .line 91
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mAlpha:F
 
-    .line 101
+    .line 103
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mIsUserFold:Z
 
-    .line 104
+    .line 106
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mContext:Landroid/content/Context;
 
-    .line 105
+    .line 107
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -215,7 +215,7 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mShouldShowMenu:Z
 
-    .line 106
+    .line 108
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -226,14 +226,14 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHandler:Landroid/os/Handler;
 
-    .line 107
+    .line 109
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
-    .line 103
+    .line 105
     return-void
 .end method
 
@@ -243,29 +243,29 @@
     .param p2, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 618
+    .line 621
     invoke-interface {p1}, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;->getMenuView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 619
+    .line 622
     .local v1, "menuView":Landroid/view/View;
     if-eqz v1, :cond_0
 
-    .line 620
+    .line 623
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 621
+    .line 624
     invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 622
+    .line 625
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 623
+    .line 626
     .local v0, "lp":Landroid/widget/FrameLayout$LayoutParams;
     iget v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHorizSpaceForIcon:F
 
@@ -273,17 +273,17 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 624
+    .line 627
     iget v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHorizSpaceForIcon:F
 
     float-to-int v2, v2
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 625
+    .line 628
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 617
+    .line 620
     .end local v0    # "lp":Landroid/widget/FrameLayout$LayoutParams;
     :cond_0
     return-void
@@ -294,32 +294,32 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 609
+    .line 612
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 610
+    .line 613
     .local v3, "res":Landroid/content/res/Resources;
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v4
 
-    .line 611
+    .line 614
     const v5, 0x904008e
 
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    .line 610
+    .line 613
     invoke-virtual {v4, v5, v6, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/systemui/statusbar/NotificationFilter;
 
-    .line 612
+    .line 615
     .local v0, "content":Lcom/android/systemui/statusbar/NotificationFilter;
     const v4, 0x9100592
 
@@ -327,7 +327,7 @@
 
     move-result-object v2
 
-    .line 613
+    .line 616
     .local v2, "filterDescription":Ljava/lang/String;
     new-instance v1, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;
 
@@ -335,7 +335,7 @@
 
     invoke-direct {v1, p0, v2, v0, v4}, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/systemui/statusbar/NotificationGuts$GutsContent;I)V
 
-    .line 614
+    .line 617
     .local v1, "filter":Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
     return-object v1
 .end method
@@ -345,12 +345,12 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 599
+    .line 602
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 600
+    .line 603
     .local v3, "res":Landroid/content/res/Resources;
     const v4, 0x910026b
 
@@ -358,37 +358,37 @@
 
     move-result-object v2
 
-    .line 601
+    .line 604
     .local v2, "infoDescription":Ljava/lang/String;
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v4
 
-    .line 602
+    .line 605
     const v5, 0x9040092
 
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    .line 601
+    .line 604
     invoke-virtual {v4, v5, v6, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/systemui/statusbar/NotificationInfo;
 
-    .line 603
+    .line 606
     .local v1, "infoContent":Lcom/android/systemui/statusbar/NotificationInfo;
     new-instance v0, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;
 
-    .line 604
+    .line 607
     const v4, 0x90201b0
 
-    .line 603
+    .line 606
     invoke-direct {v0, p0, v2, v1, v4}, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/systemui/statusbar/NotificationGuts$GutsContent;I)V
 
-    .line 605
+    .line 608
     .local v0, "info":Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
     return-object v0
 .end method
@@ -400,14 +400,14 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 190
+    .line 192
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 191
+    .line 193
     .local v3, "res":Landroid/content/res/Resources;
     const v4, 0x90f00b0
 
@@ -419,7 +419,7 @@
 
     iput v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHorizSpaceForIcon:F
 
-    .line 192
+    .line 194
     const v4, 0x90f00a0
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -428,17 +428,17 @@
 
     iput v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mVertSpaceForIcons:I
 
-    .line 193
+    .line 195
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 195
+    .line 197
     sget-boolean v4, Lcom/android/systemui/Constants;->IS_INTERNATIONAL:Z
 
     if-eqz v4, :cond_2
 
-    .line 196
+    .line 198
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     if-eqz v4, :cond_0
@@ -451,7 +451,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 197
+    .line 199
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getStatusBarNotification()Lcom/android/systemui/miui/statusbar/ExpandedNotification;
@@ -464,7 +464,7 @@
 
     iget v0, v4, Landroid/app/Notification;->flags:I
 
-    .line 198
+    .line 200
     .local v0, "flags":I
     and-int/lit8 v4, v0, 0x40
 
@@ -472,12 +472,12 @@
 
     const/4 v2, 0x1
 
-    .line 199
+    .line 201
     .local v2, "isForeground":Z
     :goto_0
     if-nez v2, :cond_0
 
-    .line 201
+    .line 203
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mContext:Landroid/content/Context;
@@ -488,7 +488,7 @@
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 210
+    .line 212
     .end local v0    # "flags":I
     .end local v2    # "isForeground":Z
     :cond_0
@@ -501,24 +501,24 @@
 
     iput-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mInfoItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
-    .line 211
+    .line 213
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mInfoItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 214
+    .line 216
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     if-eqz v4, :cond_3
 
-    .line 215
+    .line 217
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    .line 219
+    .line 221
     :goto_2
     const/4 v1, 0x0
 
@@ -532,7 +532,7 @@
 
     if-ge v1, v4, :cond_4
 
-    .line 220
+    .line 222
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -545,7 +545,7 @@
 
     invoke-direct {p0, v4, v6}, Lcom/android/systemui/statusbar/NotificationMenuRow;->addMenuView(Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;Landroid/view/ViewGroup;)V
 
-    .line 219
+    .line 221
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
@@ -555,10 +555,10 @@
     :cond_1
     move v2, v5
 
-    .line 198
+    .line 200
     goto :goto_0
 
-    .line 205
+    .line 207
     .end local v0    # "flags":I
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mContext:Landroid/content/Context;
@@ -569,12 +569,12 @@
 
     iput-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFilterItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
-    .line 206
+    .line 208
     iget-boolean v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mIsUserFold:Z
 
     if-eqz v4, :cond_0
 
-    .line 207
+    .line 209
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFilterItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
@@ -583,7 +583,7 @@
 
     goto :goto_1
 
-    .line 217
+    .line 219
     :cond_3
     new-instance v4, Landroid/widget/FrameLayout;
 
@@ -595,23 +595,23 @@
 
     goto :goto_2
 
-    .line 222
+    .line 224
     .restart local v1    # "i":I
     :cond_4
     if-eqz p1, :cond_5
 
-    .line 223
+    .line 225
     invoke-direct {p0, v5}, Lcom/android/systemui/statusbar/NotificationMenuRow;->resetState(Z)V
 
-    .line 189
+    .line 191
     :goto_4
     return-void
 
-    .line 225
+    .line 227
     :cond_5
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->setMenuLocation()V
 
-    .line 227
+    .line 229
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->getSpaceForMenu()F
@@ -632,32 +632,32 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 589
+    .line 592
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 590
+    .line 593
     .local v1, "res":Landroid/content/res/Resources;
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v4
 
-    .line 591
+    .line 594
     const v5, 0x9040098
 
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    .line 590
+    .line 593
     invoke-virtual {v4, v5, v6, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/systemui/statusbar/NotificationSnooze;
 
-    .line 592
+    .line 595
     .local v0, "content":Lcom/android/systemui/statusbar/NotificationSnooze;
     const v4, 0x910026c
 
@@ -665,17 +665,17 @@
 
     move-result-object v3
 
-    .line 593
+    .line 596
     .local v3, "snoozeDescription":Ljava/lang/String;
     new-instance v2, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;
 
-    .line 594
+    .line 597
     const v4, 0x90201c7
 
-    .line 593
+    .line 596
     invoke-direct {v2, p0, v3, v0, v4}, Lcom/android/systemui/statusbar/NotificationMenuRow$NotificationMenuItem;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/systemui/statusbar/NotificationGuts$GutsContent;I)V
 
-    .line 595
+    .line 598
     .local v2, "snooze":Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
     return-object v2
 .end method
@@ -686,17 +686,17 @@
     .param p2, "velocity"    # F
 
     .prologue
-    .line 383
+    .line 386
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 384
+    .line 387
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 386
+    .line 389
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHandler:Landroid/os/Handler;
 
@@ -704,22 +704,22 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 387
+    .line 390
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuSnappedTo:Z
 
-    .line 388
+    .line 391
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mDismissing:Z
 
-    .line 389
+    .line 392
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mSwipeHelper:Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper;
 
     invoke-interface {v0, p1, p2}, Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper;->dismiss(Landroid/view/View;F)V
 
-    .line 382
+    .line 385
     return-void
 .end method
 
@@ -728,7 +728,7 @@
     .param p1, "notiThreshold"    # F
 
     .prologue
-    .line 540
+    .line 543
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mDismissing:Z
 
     if-nez v2, :cond_0
@@ -737,15 +737,15 @@
 
     if-eqz v2, :cond_1
 
-    .line 541
+    .line 544
     :cond_0
     return-void
 
-    .line 543
+    .line 546
     :cond_1
     iget v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mTranslation:F
 
-    .line 544
+    .line 547
     .local v1, "transX":F
     iget v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mTranslation:F
 
@@ -757,12 +757,12 @@
 
     const/4 v0, 0x1
 
-    .line 545
+    .line 548
     .local v0, "fromLeft":Z
     :goto_0
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->setMenuLocation()V
 
-    .line 546
+    .line 549
     const/4 v2, 0x2
 
     new-array v2, v2, [F
@@ -785,7 +785,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
-    .line 547
+    .line 550
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v3, Lcom/android/systemui/statusbar/NotificationMenuRow$1;
@@ -794,7 +794,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 559
+    .line 562
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v3, Lcom/android/systemui/statusbar/NotificationMenuRow$2;
@@ -803,29 +803,29 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 577
+    .line 580
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v3, Lcom/android/systemui/Interpolators;->ALPHA_IN:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 578
+    .line 581
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v4, 0xc8
 
     invoke-virtual {v2, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 579
+    .line 582
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 539
+    .line 542
     return-void
 
-    .line 544
+    .line 547
     .end local v0    # "fromLeft":Z
     :cond_2
     const/4 v0, 0x0
@@ -838,7 +838,7 @@
     .locals 2
 
     .prologue
-    .line 522
+    .line 525
     iget v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHorizSpaceForIcon:F
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
@@ -861,14 +861,14 @@
     .param p3, "velocity"    # F
 
     .prologue
-    .line 298
+    .line 300
     move-object/from16 v0, p0
 
     iget-boolean v14, v0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mShouldShowMenu:Z
 
     if-nez v14, :cond_1
 
-    .line 299
+    .line 301
     move-object/from16 v0, p0
 
     iget v14, v0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mTranslation:F
@@ -891,7 +891,7 @@
 
     if-eqz v14, :cond_0
 
-    .line 300
+    .line 302
     move-object/from16 v0, p0
 
     move-object/from16 v1, p2
@@ -900,13 +900,13 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/systemui/statusbar/NotificationMenuRow;->dismiss(Landroid/view/View;F)V
 
-    .line 304
+    .line 306
     :goto_0
     const/4 v14, 0x1
 
     return v14
 
-    .line 302
+    .line 304
     :cond_0
     move-object/from16 v0, p0
 
@@ -918,7 +918,7 @@
 
     goto :goto_0
 
-    .line 307
+    .line 309
     :cond_1
     move-object/from16 v0, p0
 
@@ -928,7 +928,7 @@
 
     move-result v6
 
-    .line 309
+    .line 311
     .local v6, "gestureTowardsMenu":Z
     move-object/from16 v0, p0
 
@@ -948,7 +948,7 @@
 
     const/4 v5, 0x1
 
-    .line 311
+    .line 313
     .local v5, "gestureFastEnough":Z
     :goto_1
     move-object/from16 v0, p0
@@ -979,7 +979,7 @@
 
     move-result v4
 
-    .line 312
+    .line 314
     .local v4, "gestureFarEnough":Z
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getEventTime()J
 
@@ -993,7 +993,7 @@
 
     long-to-double v12, v14
 
-    .line 313
+    .line 315
     .local v12, "timeForGesture":D
     move-object/from16 v0, p0
 
@@ -1005,7 +1005,7 @@
 
     if-nez v14, :cond_5
 
-    .line 314
+    .line 316
     const-wide/high16 v14, 0x4069000000000000L    # 200.0
 
     cmpl-double v14, v12, v14
@@ -1014,19 +1014,19 @@
 
     const/4 v9, 0x1
 
-    .line 315
+    .line 317
     .local v9, "showMenuForSlowOnGoing":Z
     :goto_2
     invoke-direct/range {p0 .. p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->updateFilterItem()V
 
-    .line 316
+    .line 318
     invoke-direct/range {p0 .. p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->getSpaceForMenu()F
 
     move-result v14
 
     neg-float v8, v14
 
-    .line 330
+    .line 332
     .local v8, "menuSnapTarget":F
     move-object/from16 v0, p0
 
@@ -1054,7 +1054,7 @@
 
     if-eqz v14, :cond_7
 
-    .line 331
+    .line 333
     :cond_2
     move-object/from16 v0, p0
 
@@ -1068,7 +1068,12 @@
 
     if-eqz v14, :cond_6
 
-    .line 332
+    .line 334
+    sget-object v14, Lcom/android/systemui/statistic/ScenarioConstants;->SCENARIO_CLEAR_NOTI:Lcom/android/systemui/statistic/ScenarioTrackUtil$SystemUIEventScenario;
+
+    invoke-static {v14}, Lcom/android/systemui/statistic/ScenarioTrackUtil;->beginScenario(Lcom/android/systemui/statistic/ScenarioTrackUtil$SystemUIEventScenario;)V
+
+    .line 335
     move-object/from16 v0, p0
 
     move-object/from16 v1, p2
@@ -1077,13 +1082,13 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/systemui/statusbar/NotificationMenuRow;->dismiss(Landroid/view/View;F)V
 
-    .line 336
+    .line 339
     :goto_3
     const/4 v14, 0x1
 
     return v14
 
-    .line 309
+    .line 311
     .end local v4    # "gestureFarEnough":Z
     .end local v5    # "gestureFastEnough":Z
     .end local v8    # "menuSnapTarget":F
@@ -1095,7 +1100,7 @@
     .restart local v5    # "gestureFastEnough":Z
     goto :goto_1
 
-    .line 314
+    .line 316
     .restart local v4    # "gestureFarEnough":Z
     .restart local v12    # "timeForGesture":D
     :cond_4
@@ -1104,7 +1109,7 @@
     .restart local v9    # "showMenuForSlowOnGoing":Z
     goto :goto_2
 
-    .line 313
+    .line 315
     .end local v9    # "showMenuForSlowOnGoing":Z
     :cond_5
     const/4 v9, 0x0
@@ -1112,7 +1117,7 @@
     .restart local v9    # "showMenuForSlowOnGoing":Z
     goto :goto_2
 
-    .line 334
+    .line 337
     .restart local v8    # "menuSnapTarget":F
     :cond_6
     move-object/from16 v0, p0
@@ -1125,19 +1130,19 @@
 
     goto :goto_3
 
-    .line 338
+    .line 341
     :cond_7
     move-object/from16 v0, p0
 
     iget v14, v0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHorizSpaceForIcon:F
 
-    .line 339
+    .line 342
     const v15, 0x3e4ccccd    # 0.2f
 
-    .line 338
+    .line 341
     mul-float v7, v14, v15
 
-    .line 340
+    .line 343
     .local v7, "maximumSwipeDistance":F
     invoke-direct/range {p0 .. p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->getSpaceForMenu()F
 
@@ -1145,7 +1150,7 @@
 
     sub-float v10, v14, v7
 
-    .line 341
+    .line 344
     .local v10, "targetLeft":F
     move-object/from16 v0, p0
 
@@ -1159,7 +1164,7 @@
 
     const/4 v11, 0x1
 
-    .line 342
+    .line 345
     .local v11, "withinSnapMenuThreshold":Z
     :goto_4
     move-object/from16 v0, p0
@@ -1174,10 +1179,10 @@
 
     if-eqz v14, :cond_a
 
-    .line 343
+    .line 346
     if-eqz v11, :cond_9
 
-    .line 345
+    .line 348
     move-object/from16 v0, p0
 
     move-object/from16 v1, p2
@@ -1186,13 +1191,13 @@
 
     invoke-direct {v0, v1, v8, v2}, Lcom/android/systemui/statusbar/NotificationMenuRow;->showMenu(Landroid/view/View;FF)V
 
-    .line 362
+    .line 365
     :goto_5
     const/4 v14, 0x1
 
     return v14
 
-    .line 341
+    .line 344
     .end local v11    # "withinSnapMenuThreshold":Z
     :cond_8
     const/4 v11, 0x0
@@ -1200,7 +1205,7 @@
     .restart local v11    # "withinSnapMenuThreshold":Z
     goto :goto_4
 
-    .line 347
+    .line 350
     :cond_9
     move-object/from16 v0, p0
 
@@ -1212,7 +1217,7 @@
 
     goto :goto_5
 
-    .line 350
+    .line 353
     :cond_a
     move-object/from16 v0, p0
 
@@ -1226,7 +1231,7 @@
 
     if-nez v14, :cond_b
 
-    .line 351
+    .line 354
     invoke-direct/range {p0 .. p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->swipedEnoughToShowMenu()Z
 
     move-result v14
@@ -1235,13 +1240,13 @@
 
     if-eqz v5, :cond_c
 
-    .line 350
+    .line 353
     if-nez v9, :cond_c
 
     :cond_b
     if-eqz v6, :cond_d
 
-    .line 354
+    .line 357
     :cond_c
     move-object/from16 v0, p0
 
@@ -1253,11 +1258,11 @@
 
     goto :goto_5
 
-    .line 355
+    .line 358
     :cond_d
     if-nez v6, :cond_e
 
-    .line 356
+    .line 359
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -1272,7 +1277,7 @@
 
     invoke-direct {v0, v14}, Lcom/android/systemui/statusbar/NotificationMenuRow;->fadeInMenu(F)V
 
-    .line 357
+    .line 360
     move-object/from16 v0, p0
 
     move-object/from16 v1, p2
@@ -1283,7 +1288,7 @@
 
     goto :goto_5
 
-    .line 359
+    .line 362
     :cond_e
     move-object/from16 v0, p0
 
@@ -1303,7 +1308,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 409
+    .line 412
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->isMenuVisible()Z
 
     move-result v1
@@ -1329,44 +1334,44 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 232
+    .line 234
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->setMenuAlpha(F)V
 
-    .line 233
+    .line 235
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuFadedIn:Z
 
-    .line 234
+    .line 236
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mAnimating:Z
 
-    .line 235
+    .line 237
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mSnapping:Z
 
-    .line 236
+    .line 238
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mDismissing:Z
 
-    .line 237
+    .line 239
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuSnappedTo:Z
 
-    .line 238
+    .line 240
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->setMenuLocation()V
 
-    .line 239
+    .line 241
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuListener:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;
 
     if-eqz v0, :cond_0
 
     if-eqz p1, :cond_0
 
-    .line 240
+    .line 242
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuListener:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;->onMenuReset(Landroid/view/View;)V
 
-    .line 231
+    .line 233
     :cond_0
     return-void
 .end method
@@ -1378,18 +1383,18 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 501
+    .line 504
     iput p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mAlpha:F
 
-    .line 502
+    .line 505
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     if-nez v2, :cond_0
 
-    .line 503
+    .line 506
     return-void
 
-    .line 505
+    .line 508
     :cond_0
     const/4 v2, 0x0
 
@@ -1397,17 +1402,17 @@
 
     if-nez v2, :cond_1
 
-    .line 506
+    .line 509
     iput-boolean v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuFadedIn:Z
 
-    .line 507
+    .line 510
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     const/4 v3, 0x4
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 512
+    .line 515
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
@@ -1415,7 +1420,7 @@
 
     move-result v0
 
-    .line 513
+    .line 516
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -1423,7 +1428,7 @@
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 514
+    .line 517
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
@@ -1434,12 +1439,12 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 513
+    .line 516
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 509
+    .line 512
     .end local v0    # "count":I
     .end local v1    # "i":I
     :cond_1
@@ -1447,12 +1452,12 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 510
+    .line 513
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->updateFilterItem()V
 
     goto :goto_0
 
-    .line 500
+    .line 503
     .restart local v0    # "count":I
     .restart local v1    # "i":I
     :cond_2
@@ -1463,7 +1468,7 @@
     .locals 8
 
     .prologue
-    .line 486
+    .line 489
     iget-boolean v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mSnapping:Z
 
     if-nez v5, :cond_0
@@ -1472,11 +1477,11 @@
 
     if-nez v5, :cond_1
 
-    .line 489
+    .line 492
     :cond_0
     return-void
 
-    .line 487
+    .line 490
     :cond_1
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
@@ -1486,14 +1491,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 491
+    .line 494
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result v0
 
-    .line 492
+    .line 495
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -1501,14 +1506,14 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 493
+    .line 496
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 494
+    .line 497
     .local v4, "v":Landroid/view/View;
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
@@ -1528,7 +1533,7 @@
 
     sub-float v3, v5, v6
 
-    .line 495
+    .line 498
     .local v3, "right":F
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
@@ -1546,16 +1551,16 @@
 
     sub-int v2, v5, v6
 
-    .line 496
+    .line 499
     .local v2, "posY":I
     invoke-virtual {v4, v3}, Landroid/view/View;->setX(F)V
 
-    .line 492
+    .line 495
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 485
+    .line 488
     .end local v2    # "posY":I
     .end local v3    # "right":F
     .end local v4    # "v":Landroid/view/View;
@@ -1570,22 +1575,22 @@
     .param p3, "velocity"    # F
 
     .prologue
-    .line 367
+    .line 370
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuSnappedTo:Z
 
-    .line 368
+    .line 371
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuListener:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;
 
     invoke-interface {v0, p1}, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;->onMenuShown(Landroid/view/View;)V
 
-    .line 369
+    .line 372
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mSwipeHelper:Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper;->snap(Landroid/view/View;FF)V
 
-    .line 366
+    .line 369
     return-void
 .end method
 
@@ -1595,17 +1600,17 @@
     .param p2, "velocity"    # F
 
     .prologue
-    .line 373
+    .line 376
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 374
+    .line 377
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 376
+    .line 379
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHandler:Landroid/os/Handler;
 
@@ -1613,24 +1618,24 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 377
+    .line 380
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuSnappedTo:Z
 
-    .line 378
+    .line 381
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mSnapping:Z
 
-    .line 379
+    .line 382
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mSwipeHelper:Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, p1, v1, p2}, Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper;->snap(Landroid/view/View;FF)V
 
-    .line 372
+    .line 375
     return-void
 .end method
 
@@ -1642,7 +1647,7 @@
 
     const/4 v4, 0x0
 
-    .line 397
+    .line 400
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->canViewBeDismissed()Z
@@ -1651,17 +1656,17 @@
 
     if-eqz v3, :cond_1
 
-    .line 398
+    .line 401
     const/high16 v1, 0x3e800000    # 0.25f
 
-    .line 400
+    .line 403
     .local v1, "multiplier":F
     :goto_0
     iget v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHorizSpaceForIcon:F
 
     mul-float v0, v3, v1
 
-    .line 401
+    .line 404
     .local v0, "minimumSwipeDistance":F
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mSwipeHelper:Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper;
 
@@ -1677,7 +1682,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 402
+    .line 405
     iget v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mTranslation:F
 
     neg-float v4, v0
@@ -1688,11 +1693,11 @@
 
     const/4 v2, 0x1
 
-    .line 401
+    .line 404
     :cond_0
     return v2
 
-    .line 399
+    .line 402
     .end local v0    # "minimumSwipeDistance":F
     .end local v1    # "multiplier":F
     :cond_1
@@ -1706,7 +1711,7 @@
     .locals 6
 
     .prologue
-    .line 630
+    .line 633
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFilterItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
     if-eqz v3, :cond_0
@@ -1719,53 +1724,53 @@
 
     if-nez v3, :cond_1
 
-    .line 631
+    .line 634
     :cond_0
     return-void
 
-    .line 633
+    .line 636
     :cond_1
     invoke-static {}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->isUserFold()Z
 
     move-result v2
 
-    .line 634
+    .line 637
     .local v2, "isUserFold":Z
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mIsUserFold:Z
 
     if-eq v2, v3, :cond_4
 
-    .line 635
+    .line 638
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mIsUserFold:Z
 
-    .line 636
+    .line 639
     if-eqz v2, :cond_2
 
-    .line 637
+    .line 640
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    .line 638
+    .line 641
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 639
+    .line 642
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFilterItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 640
+    .line 643
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mInfoItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 641
+    .line 644
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -1778,7 +1783,7 @@
 
     if-ge v0, v3, :cond_3
 
-    .line 642
+    .line 645
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1791,26 +1796,26 @@
 
     invoke-direct {p0, v3, v4}, Lcom/android/systemui/statusbar/NotificationMenuRow;->addMenuView(Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;Landroid/view/ViewGroup;)V
 
-    .line 641
+    .line 644
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 645
+    .line 648
     .end local v0    # "i":I
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 646
+    .line 649
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mInfoItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 647
+    .line 650
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFilterItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
@@ -1821,18 +1826,18 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 649
+    .line 652
     :cond_3
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->setMenuLocation()V
 
-    .line 651
+    .line 654
     :cond_4
     if-nez v2, :cond_5
 
-    .line 652
+    .line 655
     return-void
 
-    .line 654
+    .line 657
     :cond_5
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
@@ -1844,23 +1849,23 @@
 
     move-result v1
 
-    .line 655
+    .line 658
     .local v1, "isFold":Z
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mIsFoldInFilter:Z
 
     if-ne v3, v1, :cond_6
 
-    .line 656
+    .line 659
     return-void
 
-    .line 658
+    .line 661
     :cond_6
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mIsFoldInFilter:Z
 
-    .line 659
+    .line 662
     if-eqz v1, :cond_7
 
-    .line 660
+    .line 663
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFilterItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mContext:Landroid/content/Context;
@@ -1869,11 +1874,11 @@
 
     invoke-interface {v3, v4, v5}, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;->setIcon(Landroid/content/Context;I)V
 
-    .line 629
+    .line 632
     :goto_1
     return-void
 
-    .line 662
+    .line 665
     :cond_7
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFilterItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
@@ -1893,18 +1898,18 @@
     .param p1, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 132
+    .line 134
     check-cast p1, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     .end local p1    # "parent":Landroid/view/ViewGroup;
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 133
+    .line 135
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->createMenuViews(Z)V
 
-    .line 131
+    .line 133
     return-void
 .end method
 
@@ -1913,7 +1918,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 117
+    .line 119
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mInfoItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
     return-object v0
@@ -1935,7 +1940,7 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 114
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     return-object v0
@@ -1945,7 +1950,7 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 145
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     return-object v0
@@ -1955,7 +1960,7 @@
     .locals 1
 
     .prologue
-    .line 172
+    .line 174
     const/4 v0, -0x1
 
     return v0
@@ -1965,7 +1970,7 @@
     .locals 2
 
     .prologue
-    .line 138
+    .line 140
     iget v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mAlpha:F
 
     const/4 v1, 0x0
@@ -1994,28 +1999,28 @@
 
     const/4 v7, 0x0
 
-    .line 471
+    .line 474
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuListener:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;
 
     if-nez v5, :cond_0
 
-    .line 473
+    .line 476
     return-void
 
-    .line 475
+    .line 478
     :cond_0
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mIconLocation:[I
 
     invoke-virtual {p1, v5}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 476
+    .line 479
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParentLocation:[I
 
     invoke-virtual {v5, v6}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getLocationOnScreen([I)V
 
-    .line 477
+    .line 480
     iget v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHorizSpaceForIcon:F
 
     const/high16 v6, 0x40000000    # 2.0f
@@ -2024,7 +2029,7 @@
 
     float-to-int v0, v5
 
-    .line 478
+    .line 481
     .local v0, "centerX":I
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
@@ -2032,7 +2037,7 @@
 
     div-int/lit8 v1, v5, 0x2
 
-    .line 479
+    .line 482
     .local v1, "centerY":I
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mIconLocation:[I
 
@@ -2046,7 +2051,7 @@
 
     add-int v3, v5, v0
 
-    .line 480
+    .line 483
     .local v3, "x":I
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mIconLocation:[I
 
@@ -2060,7 +2065,7 @@
 
     add-int v4, v5, v1
 
-    .line 481
+    .line 484
     .local v4, "y":I
     iget-object v5, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
@@ -2068,7 +2073,7 @@
 
     move-result v2
 
-    .line 482
+    .line 485
     .local v2, "index":I
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuListener:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;
 
@@ -2084,7 +2089,7 @@
 
     invoke-interface {v6, v7, v3, v4, v5}, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;->onMenuClicked(Landroid/view/View;IILcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;)V
 
-    .line 470
+    .line 473
     return-void
 .end method
 
@@ -2092,12 +2097,12 @@
     .locals 1
 
     .prologue
-    .line 162
+    .line 164
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->setLayoutListener(Lcom/android/systemui/statusbar/ExpandableNotificationRow$LayoutListener;)V
 
-    .line 161
+    .line 163
     return-void
 .end method
 
@@ -2107,7 +2112,7 @@
     .param p2, "pluginContext"    # Landroid/content/Context;
 
     .prologue
-    .line 176
+    .line 178
     return-void
 .end method
 
@@ -2115,7 +2120,7 @@
     .locals 0
 
     .prologue
-    .line 180
+    .line 182
     return-void
 .end method
 
@@ -2123,10 +2128,10 @@
     .locals 0
 
     .prologue
-    .line 466
+    .line 469
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->setMenuLocation()V
 
-    .line 465
+    .line 468
     return-void
 .end method
 
@@ -2136,7 +2141,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 433
+    .line 436
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     if-eqz v2, :cond_0
@@ -2149,17 +2154,17 @@
 
     if-nez v2, :cond_1
 
-    .line 434
+    .line 437
     :cond_0
     return-void
 
-    .line 433
+    .line 436
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     if-eqz v2, :cond_0
 
-    .line 436
+    .line 439
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getIntrinsicHeight()I
@@ -2176,7 +2181,7 @@
 
     div-float/2addr v2, v3
 
-    .line 437
+    .line 440
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->hasExtraTopPadding()Z
@@ -2196,16 +2201,16 @@
     :cond_2
     int-to-float v1, v1
 
-    .line 436
+    .line 439
     add-float v0, v2, v1
 
-    .line 438
+    .line 441
     .local v0, "translationY":F
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 432
+    .line 435
     return-void
 .end method
 
@@ -2213,15 +2218,15 @@
     .locals 1
 
     .prologue
-    .line 185
+    .line 187
     invoke-direct {p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->setMenuLocation()V
 
-    .line 186
+    .line 188
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->removeListener()V
 
-    .line 184
+    .line 186
     return-void
 .end method
 
@@ -2229,15 +2234,15 @@
     .locals 1
 
     .prologue
-    .line 153
+    .line 155
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     if-nez v0, :cond_0
 
-    .line 155
+    .line 157
     return-void
 
-    .line 157
+    .line 159
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->isMenuVisible()Z
 
@@ -2250,10 +2255,10 @@
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->createMenuViews(Z)V
 
-    .line 152
+    .line 154
     return-void
 
-    .line 157
+    .line 159
     :cond_1
     const/4 v0, 0x1
 
@@ -2271,35 +2276,35 @@
 
     const/4 v4, 0x0
 
-    .line 246
+    .line 248
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 247
+    .line 249
     .local v0, "action":I
     packed-switch v0, :pswitch_data_0
 
-    .line 291
+    .line 293
     :cond_0
     :goto_0
     return v6
 
-    .line 249
+    .line 251
     :pswitch_0
     iput-boolean v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mSnapping:Z
 
-    .line 250
+    .line 252
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v2, :cond_1
 
-    .line 251
+    .line 253
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mFadeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 253
+    .line 255
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHandler:Landroid/os/Handler;
 
@@ -2307,10 +2312,10 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 254
+    .line 256
     iput-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mCheckForDrag:Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;
 
-    .line 255
+    .line 257
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v2
@@ -2319,11 +2324,11 @@
 
     goto :goto_0
 
-    .line 259
+    .line 261
     :pswitch_1
     iput-boolean v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mSnapping:Z
 
-    .line 260
+    .line 262
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v2
@@ -2332,7 +2337,7 @@
 
     sub-float v1, v2, v3
 
-    .line 261
+    .line 263
     .local v1, "diffX":F
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
 
@@ -2340,7 +2345,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mPrevX:F
 
-    .line 276
+    .line 278
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mShouldShowMenu:Z
 
     if-eqz v2, :cond_0
@@ -2353,26 +2358,8 @@
 
     if-gez v2, :cond_0
 
-    .line 277
-    invoke-static {p1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->isPinnedHeadsUp(Landroid/view/View;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 278
-    iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isOnKeyguard()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
     .line 279
-    iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->areGutsExposed()Z
+    invoke-static {p1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->isPinnedHeadsUp(Landroid/view/View;)Z
 
     move-result v2
 
@@ -2381,13 +2368,31 @@
     .line 280
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isDark()Z
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isOnKeyguard()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
     .line 281
+    iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->areGutsExposed()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 282
+    iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isDark()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 283
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mCheckForDrag:Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;
 
     if-eqz v2, :cond_2
@@ -2402,7 +2407,7 @@
 
     if-nez v2, :cond_0
 
-    .line 283
+    .line 285
     :cond_2
     new-instance v2, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;
 
@@ -2410,7 +2415,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mCheckForDrag:Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;
 
-    .line 284
+    .line 286
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mCheckForDrag:Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;
@@ -2421,7 +2426,7 @@
 
     goto :goto_0
 
-    .line 289
+    .line 291
     .end local v1    # "diffX":F
     :pswitch_2
     invoke-direct {p0, p2, p1, p3}, Lcom/android/systemui/statusbar/NotificationMenuRow;->handleUpEvent(Landroid/view/MotionEvent;Landroid/view/View;F)Z
@@ -2430,7 +2435,7 @@
 
     return v2
 
-    .line 247
+    .line 249
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2446,10 +2451,10 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 443
+    .line 446
     iput p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mTranslation:F
 
-    .line 444
+    .line 447
     iget-object v4, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
     new-instance v5, Landroid/graphics/Rect;
@@ -2470,7 +2475,7 @@
 
     float-to-int v3, v3
 
-    .line 445
+    .line 448
     :goto_0
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuContainer:Landroid/widget/FrameLayout;
 
@@ -2486,12 +2491,12 @@
 
     const/4 v8, 0x0
 
-    .line 444
+    .line 447
     invoke-direct {v5, v3, v8, v6, v7}, Landroid/graphics/Rect;-><init>(IIII)V
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setClipBounds(Landroid/graphics/Rect;)V
 
-    .line 447
+    .line 450
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mAnimating:Z
 
     if-nez v3, :cond_1
@@ -2500,7 +2505,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 451
+    .line 454
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mParent:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getWidth()I
@@ -2513,33 +2518,33 @@
 
     mul-float v2, v3, v4
 
-    .line 452
+    .line 455
     .local v2, "fadeThreshold":F
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
-    .line 453
+    .line 456
     .local v0, "absTrans":F
     const/4 v1, 0x0
 
-    .line 454
+    .line 457
     .local v1, "desiredAlpha":F
     cmpl-float v3, v0, v9
 
     if-nez v3, :cond_2
 
-    .line 455
+    .line 458
     const/4 v1, 0x0
 
-    .line 461
+    .line 464
     :goto_1
     invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/NotificationMenuRow;->setMenuAlpha(F)V
 
-    .line 442
+    .line 445
     return-void
 
-    .line 444
+    .line 447
     .end local v0    # "absTrans":F
     .end local v1    # "desiredAlpha":F
     .end local v2    # "fadeThreshold":F
@@ -2552,11 +2557,11 @@
 
     goto :goto_0
 
-    .line 449
+    .line 452
     :cond_1
     return-void
 
-    .line 456
+    .line 459
     .restart local v0    # "absTrans":F
     .restart local v1    # "desiredAlpha":F
     .restart local v2    # "fadeThreshold":F
@@ -2565,12 +2570,12 @@
 
     if-gtz v3, :cond_3
 
-    .line 457
+    .line 460
     const/high16 v1, 0x3f800000    # 1.0f
 
     goto :goto_1
 
-    .line 459
+    .line 462
     :cond_3
     sub-float v3, v0, v2
 
@@ -2597,12 +2602,12 @@
     .locals 1
 
     .prologue
-    .line 148
+    .line 150
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->resetState(Z)V
 
-    .line 147
+    .line 149
     return-void
 .end method
 
@@ -2611,13 +2616,13 @@
     .param p1, "appName"    # Ljava/lang/String;
 
     .prologue
-    .line 414
+    .line 417
     if-nez p1, :cond_0
 
-    .line 415
+    .line 418
     return-void
 
-    .line 417
+    .line 420
     :cond_0
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mContext:Landroid/content/Context;
 
@@ -2625,7 +2630,7 @@
 
     move-result-object v5
 
-    .line 418
+    .line 421
     .local v5, "res":Landroid/content/res/Resources;
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
@@ -2633,7 +2638,7 @@
 
     move-result v0
 
-    .line 419
+    .line 422
     .local v0, "count":I
     const/4 v2, 0x0
 
@@ -2641,7 +2646,7 @@
     :goto_0
     if-ge v2, v0, :cond_2
 
-    .line 420
+    .line 423
     iget-object v6, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuItems:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2650,7 +2655,7 @@
 
     check-cast v3, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
-    .line 422
+    .line 425
     .local v3, "item":Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
     const v6, 0x910026a
 
@@ -2658,12 +2663,12 @@
 
     move-result-object v6
 
-    .line 421
+    .line 424
     const/4 v7, 0x2
 
     new-array v7, v7, [Ljava/lang/Object;
 
-    .line 423
+    .line 426
     const/4 v8, 0x0
 
     aput-object p1, v7, v8
@@ -2676,31 +2681,31 @@
 
     aput-object v8, v7, v9
 
-    .line 421
+    .line 424
     invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 424
+    .line 427
     .local v1, "description":Ljava/lang/String;
     invoke-interface {v3}, Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;->getMenuView()Landroid/view/View;
 
     move-result-object v4
 
-    .line 425
+    .line 428
     .local v4, "menuView":Landroid/view/View;
     if-eqz v4, :cond_1
 
-    .line 426
+    .line 429
     invoke-virtual {v4, v1}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 419
+    .line 422
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 413
+    .line 416
     .end local v1    # "description":Ljava/lang/String;
     .end local v3    # "item":Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
     .end local v4    # "menuView":Landroid/view/View;
@@ -2713,10 +2718,10 @@
     .param p1, "listener"    # Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;
 
     .prologue
-    .line 127
+    .line 129
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mMenuListener:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$OnMenuEventListener;
 
-    .line 126
+    .line 128
     return-void
 .end method
 
@@ -2733,7 +2738,7 @@
     .end annotation
 
     .prologue
-    .line 583
+    .line 586
     .local p1, "items":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;>;"
     return-void
 .end method
@@ -2743,10 +2748,10 @@
     .param p1, "helper"    # Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper;
 
     .prologue
-    .line 122
+    .line 124
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow;->mSwipeHelper:Lcom/android/systemui/plugins/statusbar/NotificationSwipeActionHelper;
 
-    .line 121
+    .line 123
     return-void
 .end method
 
@@ -2754,7 +2759,7 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 169
     const/4 v0, 0x0
 
     return v0

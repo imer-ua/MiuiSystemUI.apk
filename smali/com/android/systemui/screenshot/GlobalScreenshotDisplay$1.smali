@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     .prologue
-    .line 111
+    .line 112
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$1;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,11 +40,11 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 113
+    .line 114
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$1;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
-    invoke-static {v0, p2}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap11(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;Landroid/content/Intent;)V
+    invoke-static {v0, p2}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap12(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;Landroid/content/Intent;)V
 
-    .line 112
+    .line 113
     return-void
 .end method

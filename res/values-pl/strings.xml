@@ -1447,6 +1447,9 @@ d MMMM"</string>
     <string name="status_bar_safepay_safe">Nie znaleziono niebezpieczeństwa dla płatności</string>
     <string name="status_bar_safepay_risk">Znaleziono niebezpieczeństwo dla płatności</string>
     <string name="status_bar_safepay_unknown">Nie można sprawdzić środowiska płatności</string>
+    <string name="notch_sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_title">SOS</string>
+    <string name="sos_status_bar_summary">kliknij, aby wyjść</string>
     <string name="wifi_fail_to_scan">Nie przeskanować sieci</string>
     <string name="wifi_security_none">Brak</string>
     <string name="wifi_remembered">Zapisano</string>
@@ -1781,8 +1784,5 @@ Sample rate"</string>
     <string name="wifi_disabled_by_recommendation_provider">Nie połączono z powodu słabej jakości połączenia</string>
     <string name="wifi_no_internet_no_reconnect">Nie można połączyć się z Internetem</string>
     <string name="lockscreen_storage_locked">Odblokowanie wszystkich funkcji i danych</string>
-    <string name="notch_sos_status_bar_title">SOS</string>
-    <string name="sos_status_bar_summary">kliknij, aby wyjść</string>
-    <string name="sos_status_bar_title">SOS</string>
     <string name="mr_user_route_category_name">Urządzenia</string>
 </resources>

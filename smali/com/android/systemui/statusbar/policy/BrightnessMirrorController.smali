@@ -81,7 +81,7 @@
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
     .line 54
-    const v0, 0x91202ea
+    const v0, 0x91202f0
 
     invoke-virtual {p1, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -114,7 +114,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->mMirrorContent:Landroid/widget/FrameLayout;
 
     .line 57
-    const v0, 0x91202ce
+    const v0, 0x91202d4
 
     invoke-virtual {p1, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -125,7 +125,7 @@
     .line 58
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->mNotificationPanel:Landroid/view/View;
 
-    const v1, 0x91202d4
+    const v1, 0x91202da
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -134,7 +134,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->mNotificationsQuickSettingsContainer:Landroid/view/View;
 
     .line 60
-    const v0, 0x91202d5
+    const v0, 0x91202db
 
     .line 59
     invoke-virtual {p1, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
@@ -483,7 +483,7 @@
     .line 65
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;->mNotificationPanel:Landroid/view/View;
 
-    const v1, 0x9120255
+    const v1, 0x912025b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

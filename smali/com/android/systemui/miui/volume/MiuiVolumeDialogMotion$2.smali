@@ -3,7 +3,7 @@
 .source "MiuiVolumeDialogMotion.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
 
     .prologue
-    .line 308
+    .line 318
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,26 +37,20 @@
 
 
 # virtual methods
-.method public run()V
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
+    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 311
+    .line 321
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
 
-    invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->-wrap0(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)V
-
-    .line 312
-    iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
-
-    iget-object v1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion$2;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;
-
-    invoke-static {v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->-get2(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;)F
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;->-wrap2(Lcom/android/systemui/miui/volume/MiuiVolumeDialogMotion;F)V
 
-    .line 310
+    .line 320
     return-void
 .end method

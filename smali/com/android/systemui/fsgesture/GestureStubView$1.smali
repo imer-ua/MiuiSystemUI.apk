@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/fsgesture/GestureStubView;
 
     .prologue
-    .line 129
+    .line 136
     iput-object p1, p0, Lcom/android/systemui/fsgesture/GestureStubView$1;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 145
+    .line 152
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$1;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-set0(Lcom/android/systemui/fsgesture/GestureStubView;Z)Z
 
-    .line 144
+    .line 151
     return-void
 .end method
 
@@ -58,14 +58,14 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 137
+    .line 144
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$1;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-set0(Lcom/android/systemui/fsgesture/GestureStubView;Z)Z
 
-    .line 138
+    .line 145
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$1;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v0}, Lcom/android/systemui/fsgesture/GestureStubView;->-get12(Lcom/android/systemui/fsgesture/GestureStubView;)Lcom/android/systemui/fsgesture/GestureStubView$H;
@@ -76,7 +76,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView$H;->removeMessages(I)V
 
-    .line 139
+    .line 146
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$1;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     invoke-static {v0}, Lcom/android/systemui/fsgesture/GestureStubView;->-get9(Lcom/android/systemui/fsgesture/GestureStubView;)Lcom/android/systemui/fsgesture/GestureBackArrowView;
@@ -87,14 +87,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/fsgesture/GestureBackArrowView;->setVisibility(I)V
 
-    .line 140
+    .line 147
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$1;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     const-string/jumbo v1, "onAnimationEnd"
 
     invoke-static {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-wrap9(Lcom/android/systemui/fsgesture/GestureStubView;Ljava/lang/String;)V
 
-    .line 136
+    .line 143
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 149
+    .line 156
     return-void
 .end method
 
@@ -112,13 +112,13 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 132
+    .line 139
     iget-object v0, p0, Lcom/android/systemui/fsgesture/GestureStubView$1;->this$0:Lcom/android/systemui/fsgesture/GestureStubView;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/systemui/fsgesture/GestureStubView;->-set0(Lcom/android/systemui/fsgesture/GestureStubView;Z)Z
 
-    .line 131
+    .line 138
     return-void
 .end method

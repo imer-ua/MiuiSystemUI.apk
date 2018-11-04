@@ -30,7 +30,7 @@
     .param p2, "val$row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     .prologue
-    .line 7773
+    .line 7790
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$78;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$78;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -47,7 +47,7 @@
     .param p1, "guts"    # Lcom/android/systemui/statusbar/NotificationGuts;
 
     .prologue
-    .line 7775
+    .line 7792
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$78;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -62,6 +62,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->onHeightChanged(Lcom/android/systemui/statusbar/ExpandableView;Z)V
 
-    .line 7774
+    .line 7791
     return-void
 .end method

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 791
+    .line 793
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "stackScrollLayout"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 795
+    .line 797
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
@@ -57,10 +57,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 798
+    .line 800
     return-void
 
-    .line 805
+    .line 807
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -72,7 +72,7 @@
 
     add-long v0, v2, v4
 
-    .line 806
+    .line 808
     .local v0, "nextReportUptimeMs":J
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -84,6 +84,6 @@
 
     invoke-virtual {v2, v3, v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBar$H;->postAtTime(Ljava/lang/Runnable;J)Z
 
-    .line 794
+    .line 796
     return-void
 .end method

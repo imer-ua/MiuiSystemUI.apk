@@ -3,12 +3,12 @@
 .source "NavStubView.java"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/NavStubView;->startAppAnimation(I)V
+    value = Lcom/android/systemui/statusbar/phone/NavStubView;->finalization(ZZZLjava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavStubView;
 
     .prologue
-    .line 2009
+    .line 2029
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$19;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,61 +37,45 @@
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 4
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 2012
-    sget-boolean v1, Lcom/android/systemui/statusbar/phone/NavStubView;->IS_E10:Z
+    .line 2032
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$19;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
 
-    if-eqz v1, :cond_0
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    .line 2013
-    .local v0, "scale":F
-    :goto_0
-    invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/systemui/Constants;->HOME_LAUCNHER_PACKAGE_NAME:Ljava/lang/String;
-
-    .line 2014
-    const-string/jumbo v1, "homeAlpha"
-
-    invoke-virtual {p1, v1}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get44(Lcom/android/systemui/statusbar/phone/NavStubView;)I
 
     move-result v1
 
-    .line 2013
-    invoke-virtual {v2, v3, v1, v0}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->changeAlphaScaleForFsGesture(Ljava/lang/String;FF)V
+    int-to-float v1, v1
 
-    .line 2011
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NavStubView$19;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/NavStubView;->-get2(Lcom/android/systemui/statusbar/phone/NavStubView;)Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v1, v2
+
+    float-to-int v0, v1
+
+    .line 2033
+    .local v0, "stubSize":I
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavStubView$19;->this$0:Lcom/android/systemui/statusbar/phone/NavStubView;
+
+    invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/NavStubView;->-wrap5(Lcom/android/systemui/statusbar/phone/NavStubView;I)V
+
+    .line 2031
     return-void
-
-    .line 2012
-    .end local v0    # "scale":F
-    :cond_0
-    const-string/jumbo v1, "homeScale"
-
-    invoke-virtual {p1, v1}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    .restart local v0    # "scale":F
-    goto :goto_0
 .end method

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     .prologue
-    .line 282
+    .line 283
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$9;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,13 +42,13 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 284
+    .line 285
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$9;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
     const-string/jumbo v1, "edit"
 
-    invoke-static {v0, v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap6(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap7(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;Ljava/lang/String;)V
 
-    .line 283
+    .line 284
     return-void
 .end method

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
     .prologue
-    .line 1152
+    .line 1154
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$40;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 1155
+    .line 1157
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$40;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/phone/StatusBar;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 1154
+    .line 1156
     return-void
 .end method
 
@@ -55,11 +55,11 @@
     .locals 1
 
     .prologue
-    .line 1160
+    .line 1162
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$40;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->onDensityOrFontScaleChanged()V
 
-    .line 1159
+    .line 1161
     return-void
 .end method

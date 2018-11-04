@@ -34,21 +34,21 @@
     .param p2, "val$column"    # Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     .prologue
-    .line 468
+    .line 470
     iput-object p1, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$6;->this$0:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl;
 
     iput-object p2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$6;->val$column:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 469
+    .line 471
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$6;->mSliderHitRect:Landroid/graphics/Rect;
 
-    .line 468
+    .line 470
     return-void
 .end method
 
@@ -69,7 +69,7 @@
 
     const/4 v2, 0x0
 
-    .line 475
+    .line 477
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$6;->val$column:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-get12(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;)Landroid/widget/SeekBar;
@@ -80,7 +80,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 476
+    .line 478
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$6;->mDragging:Z
 
     if-nez v0, :cond_0
@@ -91,7 +91,7 @@
 
     if-nez v0, :cond_0
 
-    .line 477
+    .line 479
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -106,16 +106,16 @@
 
     if-gez v0, :cond_0
 
-    .line 478
+    .line 480
     iput-boolean v3, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$6;->mDragging:Z
 
-    .line 480
+    .line 482
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$6;->mDragging:Z
 
     if-eqz v0, :cond_3
 
-    .line 481
+    .line 483
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$6;->mSliderHitRect:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
@@ -134,7 +134,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
-    .line 482
+    .line 484
     iget-object v0, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$6;->val$column:Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;
 
     invoke-static {v0}, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;->-get12(Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$VolumeColumn;)Landroid/widget/SeekBar;
@@ -143,14 +143,14 @@
 
     invoke-virtual {v0, p2}, Landroid/widget/SeekBar;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 483
+    .line 485
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     if-eq v0, v3, :cond_1
 
-    .line 484
+    .line 486
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -159,15 +159,15 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 485
+    .line 487
     :cond_1
     iput-boolean v2, p0, Lcom/android/systemui/miui/volume/MiuiVolumeDialogImpl$6;->mDragging:Z
 
-    .line 487
+    .line 489
     :cond_2
     return v3
 
-    .line 489
+    .line 491
     :cond_3
     return v2
 .end method

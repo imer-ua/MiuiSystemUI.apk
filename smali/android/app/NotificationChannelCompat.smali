@@ -155,6 +155,17 @@
     return-void
 .end method
 
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+    .param p1, "obj"    # Ljava/lang/Object;
+
+    .prologue
+    .line 79
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method public getId()Ljava/lang/String;
     .locals 1
 
@@ -183,4 +194,18 @@
     iget-object v0, p0, Landroid/app/NotificationChannelCompat;->mChannelName:Ljava/lang/CharSequence;
 
     return-object v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    .prologue
+    .line 74
+    const-string/jumbo v0, "miscellaneous"
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    return v0
 .end method

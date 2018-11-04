@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .prologue
-    .line 4558
+    .line 4560
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$17;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 4561
+    .line 4563
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$17;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->-wrap10(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;)V
 
-    .line 4560
+    .line 4562
     return-void
 .end method

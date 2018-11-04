@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 7158
+    .line 7172
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$31;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -42,14 +42,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 7161
-    sget-boolean v2, Lcom/android/systemui/Constants;->IS_INTERNATIONAL:Z
+    .line 7175
+    const/4 v2, 0x0
 
     if-eqz v2, :cond_2
 
     const/4 v1, -0x1
 
-    .line 7163
+    .line 7177
     .local v1, "userFold":I
     :goto_0
     invoke-static {}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->isUserFold()Z
@@ -60,40 +60,40 @@
 
     const/4 v0, 0x1
 
-    .line 7164
+    .line 7178
     .local v0, "lastFold":I
     :goto_1
     if-eqz v1, :cond_0
 
     if-eq v1, v0, :cond_1
 
-    .line 7165
+    .line 7179
     :cond_0
     invoke-static {v1}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->userFold(I)V
 
-    .line 7166
+    .line 7180
     invoke-static {}, Lcom/android/systemui/miui/statusbar/notification/NotificationUtil;->isUserFold()Z
 
     move-result v2
 
     if-eqz v2, :cond_4
 
-    .line 7167
+    .line 7181
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$31;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->-wrap14(Lcom/android/systemui/statusbar/phone/StatusBar;)V
 
-    .line 7171
+    .line 7185
     :goto_2
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$31;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotifications()V
 
-    .line 7160
+    .line 7174
     :cond_1
     return-void
 
-    .line 7162
+    .line 7176
     .end local v0    # "lastFold":I
     .end local v1    # "userFold":I
     :cond_2
@@ -114,14 +114,14 @@
     .restart local v1    # "userFold":I
     goto :goto_0
 
-    .line 7163
+    .line 7177
     :cond_3
     const/4 v0, -0x1
 
     .restart local v0    # "lastFold":I
     goto :goto_1
 
-    .line 7169
+    .line 7183
     :cond_4
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$31;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 

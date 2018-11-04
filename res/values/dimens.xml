@@ -579,6 +579,7 @@
     <dimen name="recents_dock_btn_text_size">12.0sp</dimen>
     <dimen name="recents_task_view_header_title_text_size">13.0sp</dimen>
     <dimen name="round_cornor_padding">7.0dip</dimen>
+    <dimen name="sos_txt_padding">10.0dip</dimen>
     <dimen name="fsgesture_ready_title_size">15.0dip</dimen>
     <dimen name="fsgesture_ready_summary_size">23.0dip</dimen>
     <dimen name="fsgesture_skip_size">15.0dip</dimen>
@@ -643,12 +644,12 @@
     <dimen name="notch_status_bar_padding_top">0.0dip</dimen>
     <dimen name="notification_menu_space">131.32999dip</dimen>
     <dimen name="notification_expanded_bg_divider_height">0.6700001dip</dimen>
-    <item type="dimen" name="APKTOOL_DUMMY_288">false</item>
     <item type="dimen" name="APKTOOL_DUMMY_289">false</item>
-    <item type="dimen" name="APKTOOL_DUMMY_293">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_28a">false</item>
     <item type="dimen" name="APKTOOL_DUMMY_294">false</item>
     <item type="dimen" name="APKTOOL_DUMMY_295">false</item>
     <item type="dimen" name="APKTOOL_DUMMY_296">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_297">false</item>
     <dimen name="car_lockscreen_disclaimer_title_size">48.0sp</dimen>
     <dimen name="car_lockscreen_disclaimer_title_padding_start">96.0dip</dimen>
     <dimen name="car_lockscreen_disclaimer_title_padding_top">82.0dip</dimen>
@@ -968,7 +969,7 @@
     <dimen name="wallpaper_bottom_region_height">55.0dip</dimen>
     <dimen name="wallpaper_gxzw_region_margin">10.0dip</dimen>
     <dimen name="wireless_chagre_slowly_dialog_button_height">60.0dip</dimen>
-    <item type="dimen" name="APKTOOL_DUMMY_3d6">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_3d7">false</item>
     <item type="dimen" name="system_bar_height">@android.miui:dimen/android_system_bar_height</item>
     <item type="dimen" name="notification_action_height">@android.miui:dimen/android_notification_action_height</item>
     <item type="dimen" name="notification_content_margin_left_to_icon">@android.miui:dimen/android_notification_content_margin_left_to_icon</item>
@@ -1122,6 +1123,7 @@
     <dimen name="notification_header_time_margin_start_in_group">2.0dip</dimen>
     <dimen name="notification_right_icon_margin_top_for_international">36.0dip</dimen>
     <dimen name="notification_large_icon_corner_radius_for_international">4.0dip</dimen>
+    <dimen name="sos_icon_locked_padding_start">33.329987dip</dimen>
     <dimen name="circle_avatar_size">40.0dip</dimen>
     <dimen name="user_icon_view_height">56.0dip</dimen>
     <dimen name="user_spinner_height">72.0dip</dimen>

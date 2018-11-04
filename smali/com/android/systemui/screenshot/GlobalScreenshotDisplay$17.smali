@@ -3,12 +3,12 @@
 .source "GlobalScreenshotDisplay.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/app/ActivityOptions$OnAnimationStartedListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->clickActionBtn(Ljava/lang/String;)V
+    value = Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->createQuitAnimationBundle()Landroid/os/Bundle;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
-.field final synthetic val$btnType:Ljava/lang/String;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;Ljava/lang/String;)V
+.method constructor <init>(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
-    .param p2, "val$btnType"    # Ljava/lang/String;
 
     .prologue
-    .line 570
+    .line 577
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$17;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
-
-    iput-object p2, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$17;->val$btnType:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,17 +37,27 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onAnimationStarted()V
+    .locals 4
 
     .prologue
-    .line 573
+    .line 579
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$17;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;
 
-    iget-object v1, p0, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$17;->val$btnType:Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-get16(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;)Landroid/view/View;
 
-    invoke-static {v0, v1}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;->-wrap14(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay;Ljava/lang/String;)V
+    move-result-object v0
 
-    .line 572
+    new-instance v1, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$17$1;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$17$1;-><init>(Lcom/android/systemui/screenshot/GlobalScreenshotDisplay$17;)V
+
+    .line 583
+    const-wide/16 v2, 0x12c
+
+    .line 579
+    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 578
     return-void
 .end method
