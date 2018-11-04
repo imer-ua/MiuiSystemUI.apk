@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="miui_volume_column_width_expanded">35.0dip</dimen>
+    <dimen name="miui_volume_ringer_text_size">12.0dip</dimen>
+    <dimen name="status_bar_clock_size">11.699982dip</dimen>
+    <dimen name="navigation_side_padding">82.0dip</dimen>
+    <dimen name="qs_brightness_dialog_height">30.0dip</dimen>
+    <dimen name="battery_margin_bottom">0.0dip</dimen>
+    <dimen name="notch_expanded_header_height">80.0dip</dimen>
+    <dimen name="notch_expanded_header_carrier_margin">4.0dip</dimen>
+    <dimen name="round_cornor_padding">4.0dip</dimen>
+    <dimen name="miui_common_unlock_screen_common_msg_text_size">13.599976sp</dimen>
+    <dimen name="miui_common_unlock_screen_common_unlock_msg_text_size">13.599976dip</dimen>
+    <dimen name="keyguard_music_controller_height_in_lite_mode">150.0dip</dimen>
+    <dimen name="statusbar_carrier_size">11.0dip</dimen>
+    <dimen name="statusbar_battery_size">11.0dip</dimen>
+    <dimen name="fsg_demo_recents_dest_width">156.18dip</dimen>
+    <dimen name="fsg_demo_recents_dest_height">230.26999dip</dimen>
+    <dimen name="fsg_demo_recents_dest_left">16.0dip</dimen>
+    <dimen name="fsg_demo_recents_dest_top">250.0dip</dimen>
+    <dimen name="fsg_demo_recents_margin_top">213.95999dip</dimen>
+    <dimen name="fsg_demo_recents_noteicon_margin_top">213.95999dip</dimen>
+    <dimen name="incall_round_cornor_padding">4.0dip</dimen>
+</resources>

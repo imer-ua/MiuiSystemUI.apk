@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="status_bar_accessibility_recent_apps">
+        <item quantity="other">%d недавніх додатків</item>
+        <item quantity="one">%d недавній додаток</item>
+        <item quantity="few">%d недавніх додатки</item>
+        <item quantity="many">%d недавніх додатків</item>
+    </plurals>
+    <plurals name="notification_group_overflow_description">
+        <item quantity="other">%s більше сповіщень всередині.</item>
+        <item quantity="one">%s сповіщення всередині.</item>
+    </plurals>
+    <plurals name="notification_num_channels">
+        <item quantity="other">%d категорії повідомлень</item>
+        <item quantity="one">%d категорія повідомлень</item>
+    </plurals>
+    <plurals name="notification_num_channels_desc">
+        <item quantity="other">1 із %d категорій повідомлень з цього додатка</item>
+        <item quantity="one">1 із %d категорія повідомлень з цього додатка</item>
+    </plurals>
+    <plurals name="notification_channels_list_desc_2_and_others">
+        <item quantity="other">%1$s, %2$s, а також %3$d інші</item>
+        <item quantity="one">%1$s, %2$s, а також %3$d інше</item>
+    </plurals>
+    <plurals name="kg_password_wrong_pin_code">
+        <item quantity="other">Неправильний PIN-код SIM-карти. У вас %d спроб залишилося.</item>
+        <item quantity="one">"Неправильний PIN-код SIM-карти. Ви маєте ще %d спробу, перш ніж ви повинні зв'язатися зі своїм оператором, щоб розблокувати пристрій."</item>
+    </plurals>
+    <plurals name="kg_password_wrong_puk_code">
+        <item quantity="other">Неправильний код SIM PUK, у вас є %d спроби до того, як SIM-карта стане непридатною для використання.</item>
+        <item quantity="one">Неправильний код SIM PUK, у вас є %d спроба до того, як SIM-карта стане непридатною для використання.</item>
+    </plurals>
+    <plurals name="kg_prompt_reason_time_pattern">
+        <item quantity="other">Пристрій не розблоковувався %d годин. Підтвердіть шаблон.</item>
+        <item quantity="one">Пристрій не розблоковувався %d годину. Підтвердіть шаблон.</item>
+    </plurals>
+    <plurals name="kg_prompt_reason_time_pin">
+        <item quantity="other">Пристрій не розблоковувався %d годин. Підтвердіть PIN.</item>
+        <item quantity="one">Пристрій не розблоковувався %d годину. Підтвердіть PIN.</item>
+    </plurals>
+    <plurals name="kg_prompt_reason_time_password">
+        <item quantity="other">Пристрій не розблоковувався %d годин. Підтвердіть пароль.</item>
+        <item quantity="one">Пристрій не розблоковувався %d годину. Підтвердіть пароль.</item>
+    </plurals>
+    <plurals name="kg_password_default_pin_message">
+        <item quantity="other">Введіть пін-код, у вас є %d спроби.</item>
+        <item quantity="one">Введіть пін-код, у вас є %d спроба, перш ніж ви повинні звернутися до свого оператора для розблокування пристрою.</item>
+    </plurals>
+    <plurals name="kg_password_default_puk_message">
+        <item quantity="other">"Тепер SIM відключена. Введіть PUK-код, щоб продовжити. У вас є %d спроби до того, як SIM-карта стане непридатною для використання. Для отримання додаткової інформації зв'яжіться з оператором."</item>
+        <item quantity="one">"Тепер SIM відключена. Введіть PUK-код, щоб продовжити. У вас є %d спроба до того, як SIM-карта стане непридатною для використання. Для отримання додаткової інформації зв'яжіться з перевізником."</item>
+    </plurals>
+    <plurals name="incorrect_pukcode_remaining_attempts">
+        <item quantity="other">Неправильний PUK-код, залишилось спроб: %d</item>
+        <item quantity="one">Неправильний PUK-код %d спроба залишилася</item>
+    </plurals>
+    <plurals name="incorrect_pincode_remaining_attempts">
+        <item quantity="other">Неправильний PIN-код, залишилось спроб: %d</item>
+        <item quantity="one">Неправильний PIN-код, %d спроба залишилася</item>
+    </plurals>
+    <plurals name="phone_locked_timeout_seconds_string">
+        <item quantity="other">Повторіть спробу через %d с.</item>
+        <item quantity="one">Повторіть спробу через %d с.</item>
+    </plurals>
+    <plurals name="phone_locked_timeout_minutes_string">
+        <item quantity="other">Повторіть спробу через %d хв.</item>
+        <item quantity="one">Повторіть спробу через %d хв.</item>
+    </plurals>
+    <plurals name="new_notifications_msg">
+        <item quantity="other">%d нових повідомлень</item>
+        <item quantity="one">%d нове повідомлення</item>
+        <item quantity="few">%d нових повідолмення</item>
+        <item quantity="many">%d нових повідолмень</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_could_use_min_time_text">
+        <item quantity="other">Залишилося близько %d хв.</item>
+        <item quantity="one">Залишилося близько %d хв.</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_could_use_hour_time_text">
+        <item quantity="other">Залишилося близько %d ч.</item>
+        <item quantity="one">Залишилося близько %d ч.</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_could_use_time_text">
+        <item quantity="other">Залишилося близько %1$d год. %2$d хв.</item>
+        <item quantity="one">Залишилося близько %1$d год. %2$d хв.</item>
+    </plurals>
+    <plurals name="keyguard_extreme_power_info_could_use_min_time_text">
+        <item quantity="other">Залишилось %d хвилин</item>
+        <item quantity="one">Залишилось %d хвилина</item>
+    </plurals>
+    <plurals name="keyguard_extreme_power_info_could_use_hour_time_text">
+        <item quantity="other">Залишилось %d годин</item>
+        <item quantity="one">Залишилось %d година</item>
+    </plurals>
+    <plurals name="keyguard_extreme_power_info_could_use_time_text">
+        <item quantity="other">Залишилось %1$d г %2$d хв</item>
+        <item quantity="one">Залишилось %1$d г %2$d хв</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_drained_hour_time_format">
+        <item quantity="other">%d год.</item>
+        <item quantity="one">%d год.</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_drained_min_time_format">
+        <item quantity="other">%d хв.</item>
+        <item quantity="one">%d хв.</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_drained_time_format">
+        <item quantity="other">%1$d год. %2$d хв.</item>
+        <item quantity="one">%1$d год. %2$d хв.</item>
+    </plurals>
+    <plurals name="accessibility_recent_task_enter">
+        <item quantity="other">Доступно додатків: %d.</item>
+        <item quantity="one">Доступно додатків: 1.</item>
+    </plurals>
+    <plurals name="accessibility_recent_task_first_enter_tips">
+        <item quantity="other">Доступно додатків: %d. Проведіть пальцем вгору, щоб видалити, проведіть пальцем вниз, щоб заблокувати.</item>
+        <item quantity="one">Доступно додатків: 1. Проведіть пальцем вгору, щоб видалити, проведіть пальцем вниз, щоб заблокувати.</item>
+    </plurals>
+    <plurals name="settings_toggle_position_divider_page">
+        <item quantity="other">%1$d перемикачів активні</item>
+        <item quantity="one">1 перемикач активний</item>
+        <item quantity="few">%1$d перемикача активні</item>
+    </plurals>
+    <plurals name="disable_notification_confirm_title">
+        <item quantity="other">%d додатків</item>
+        <item quantity="one">%d додаток</item>
+        <item quantity="few">%d додатки</item>
+        <item quantity="many">%d додатків</item>
+    </plurals>
+    <plurals name="block_record_notification_more_text">
+        <item quantity="other">Приховані повідомлення від %1$s &amp;amp;amp; amp; amp; %2$d додатків</item>
+        <item quantity="one">Приховані повідомлення від %1$s &amp;amp;amp; amp; amp; 1 додаток</item>
+    </plurals>
+    <plurals name="view_realtime_clear">
+        <item quantity="other">Ясно</item>
+        <item quantity="one">Ясно</item>
+    </plurals>
+    <plurals name="fold_tips_title">
+        <item quantity="other">%d повідомлень скинуто</item>
+        <item quantity="one">%d повідомлення скинуто</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_charging_full_need_hour_time__text">
+        <item quantity="other">Близько %d год. до повної</item>
+        <item quantity="one">Близько %d год. до повної</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_charging_full_need_min_time__text">
+        <item quantity="other">Близько %d хв. до повної</item>
+        <item quantity="one">Близько %d хв. до повної</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_charging_full_need_time__text">
+        <item quantity="other">Близько %1$d год. %2$d хв. до повної</item>
+        <item quantity="one">Близько %1$d год. %2$d хв. до повної</item>
+    </plurals>
+</resources>

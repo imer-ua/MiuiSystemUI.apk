@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="miui_volume_timer_segments_title">
+        <item>Выкл.</item>
+        <item>Паўгадзіны</item>
+        <item>1 гадзіну</item>
+        <item>2 гадзіны</item>
+        <item>8 гадзін</item>
+    </string-array>
+    <string-array name="nav_bar_buttons">
+        <item>Буфер абмену</item>
+        <item>Клавіятура</item>
+        <item>Перамыкач клавіятуры</item>
+        <item>Няма</item>
+    </string-array>
+    <string-array name="nav_bar_layouts">
+        <item>Нармальны</item>
+        <item>Кампактны</item>
+        <item>Левы</item>
+        <item>Правы</item>
+    </string-array>
+    <string-array name="clock_options">
+        <item>Паказаць гадзіны, хвіліны і секунды.</item>
+        <item>Паказаць гадзіны і хвіліны (па змаўчанні)</item>
+        <item>Не паказваць гэты значок</item>
+    </string-array>
+    <string-array name="battery_options">
+        <item>Заўсёды паказваць працэнты</item>
+        <item>Паказваць працэнты пры зарадцы (па змаўчанні)</item>
+        <item>Не паказваць гэты значок</item>
+    </string-array>
+    <string-array name="aqi_title_prefix">
+        <item>ІЯП %1$s</item>
+        <item>ІЯП %1$s</item>
+        <item>ІЯП %1$s</item>
+        <item>ІЯП %1$s</item>
+        <item>ІЯП %1$s</item>
+        <item>ІЯП %1$s</item>
+        <item>ІЯП %1$s</item>
+    </string-array>
+    <string-array name="weather_type">
+        <item>Ясна</item>
+        <item>Воблачна</item>
+        <item>Пахмурна</item>
+        <item>Туман</item>
+        <item>Моцны лівень</item>
+        <item>Дробны дождж</item>
+        <item>Часам дажджы</item>
+        <item>Нвальніца</item>
+        <item>Лівень</item>
+        <item>Лівень</item>
+        <item>Дождж</item>
+        <item>Невялікі дождж</item>
+        <item>Снег з дажджом</item>
+        <item>Мяцеліца</item>
+        <item>Снег</item>
+        <item>Снегапад</item>
+        <item>Лёгкі снег</item>
+        <item>Невялікі снег</item>
+        <item>Пыльны шторм</item>
+        <item>Пясчаная бура</item>
+        <item>Умераны пыл</item>
+        <item>Ветрана</item>
+        <item>Град</item>
+        <item>Пыл</item>
+        <item>Дымка</item>
+        <item>Ледзяны дождж</item>
+        <item>Няма дадзеных</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item>" "</item>
+        <item>Сканаванне…</item>
+        <item>Падключэнне…</item>
+        <item>Аўтэнфікацыя…</item>
+        <item>Атрыманне IP адраса…</item>
+        <item>Падключана</item>
+        <item>Прыпынена</item>
+        <item>Адключэнне…</item>
+        <item>Адключана</item>
+        <item>Няўдала</item>
+        <item>Блакавана</item>
+        <item>Часовае пазбяганне дрэннага падключэння</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item>" "</item>
+        <item>Сканаванне…</item>
+        <item>Падключэнне да %1$s…</item>
+        <item>Аўтэнфікацыя з %1$s…</item>
+        <item>Атрыманне IP адраса ад %1$s…</item>
+        <item>Падключана да %1$s</item>
+        <item>Прыпынена</item>
+        <item>Адключэнне ад %1$s…</item>
+        <item>Адключана</item>
+        <item>Няўдала</item>
+        <item>Блакавана</item>
+        <item>Часовае пазбяганне дрэннага падлучэння</item>
+    </string-array>
+    <string-array name="hdcp_checking_titles">
+        <item>Ніколі не правяраць</item>
+        <item>Правяраць толькі змест DRM</item>
+        <item>Заўсёды правяраць</item>
+    </string-array>
+    <string-array name="hdcp_checking_summaries">
+        <item>Не выкарыстоўваць праверку HDCP</item>
+        <item>Выкарыстоўваць праверку HDCP толькі для ўтрымання DRM</item>
+        <item>Заўсёды выкарыстоўваць праверку HDCP</item>
+    </string-array>
+    <string-array name="select_logd_size_titles">
+        <item>Адключана</item>
+        <item>64 Кб</item>
+        <item>256 Кб</item>
+        <item>1 Мб</item>
+        <item>4 Мб</item>
+        <item>16 Мб</item>
+    </string-array>
+    <string-array name="select_logd_size_lowram_titles">
+        <item>Адключана</item>
+        <item>64 Кб</item>
+        <item>256 Кб</item>
+        <item>1 Мб</item>
+    </string-array>
+    <string-array name="select_logd_size_summaries">
+        <item>Адключана</item>
+        <item>64 Кб у буфер часопіса</item>
+        <item>256 Кб у буфер часопіса</item>
+        <item>1 у Мб буфер часопіса</item>
+        <item>4 у Мб буфер часопіса</item>
+        <item>16 у Мб буфер часопіса</item>
+    </string-array>
+    <string-array name="select_logd_system_levels">
+        <item>Выкл.</item>
+        <item>Памылка</item>
+        <item>Папярэджанне</item>
+        <item>Інфармацыя</item>
+        <item>Адладка</item>
+        <item>Падрабязны</item>
+    </string-array>
+    <string-array name="window_animation_scale_entries">
+        <item>Адключана</item>
+        <item>0.5x</item>
+        <item>1x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+        <item>5x</item>
+        <item>10x</item>
+    </string-array>
+    <string-array name="transition_animation_scale_entries">
+        <item>Адключана</item>
+        <item>0.5x</item>
+        <item>1x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+        <item>5x</item>
+        <item>10x</item>
+    </string-array>
+    <string-array name="animator_duration_scale_entries">
+        <item>Адключана</item>
+        <item>0.5x</item>
+        <item>1x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+        <item>5x</item>
+        <item>10x</item>
+    </string-array>
+    <string-array name="overlay_display_devices_entries">
+        <item>Няма</item>
+        <item>480p</item>
+        <item>480p (абарона)</item>
+        <item>720p</item>
+        <item>720p (абарона)</item>
+        <item>1080p</item>
+        <item>1080 (абарона)</item>
+        <item>4K</item>
+        <item>4K (абарона)</item>
+        <item>4K (маштабаванне)</item>
+        <item>4K (маштабаванне, абарона)</item>
+        <item>720p, 1080p (два экрана)</item>
+    </string-array>
+    <string-array name="enable_opengl_traces_entries">
+        <item>Няма</item>
+        <item>Часопіс Logcat</item>
+        <item>Systrace (графіка)</item>
+        <item>Спіс выклікаў у glGetError</item>
+    </string-array>
+    <string-array name="show_non_rect_clip_entries">
+        <item>Адключана</item>
+        <item>Непрямоугольной ўсячэнне сінім</item>
+        <item>Тэст. каманды малявання зялёным</item>
+    </string-array>
+    <string-array name="track_frame_time_entries">
+        <item>Адключыць</item>
+        <item>На экране ў выглядзе палос</item>
+        <item>У ADB dumpsys абалонкі gfxinfo</item>
+    </string-array>
+    <string-array name="debug_hw_overdraw_entries">
+        <item>Адключана</item>
+        <item>Паказваць вобласці накладання</item>
+        <item>Вылучаць вобласці пэўнага колеру</item>
+    </string-array>
+    <string-array name="app_process_limit_entries">
+        <item>Стандартнае абмежаванне</item>
+        <item>Без фонавых працэсаў</item>
+        <item>Не больш за аднаго працэсу</item>
+        <item>Не больш за 2 працэсаў</item>
+        <item>Не больш за 3 працэсаў</item>
+        <item>Не больш за 4 працэсаў</item>
+    </string-array>
+    <string-array name="usb_configuration_titles">
+        <item>Зарадка</item>
+        <item>МТР (пратакол перадачы мультымедыя)</item>
+        <item>PTP (пратакол перадачы малюнкаў)</item>
+        <item>RNDIS (USB Ethernet)</item>
+        <item>Крыніца гуку</item>
+        <item>MIDI</item>
+    </string-array>
+    <string-array name="tts_rate_entries">
+        <item>Вельмі павольная</item>
+        <item>Павольная</item>
+        <item>Нармальная</item>
+        <item>Хуткая</item>
+        <item>Больш хуткая</item>
+        <item>Вельмі хуткая</item>
+        <item>Хуткасная</item>
+        <item>Вельмі хуткасная</item>
+        <item>Самая хуткасная</item>
+    </string-array>
+    <string-array name="color_mode_names">
+        <item>Насычаны (па змаўчанні)</item>
+        <item>Натуральны</item>
+        <item>Стандартны</item>
+    </string-array>
+    <string-array name="color_mode_descriptions">
+        <item>Палепшаныя колеры</item>
+        <item>Натуральныя колеры, звыклыя воку</item>
+        <item>Колеры, аптымізаваныя для лічбавага кантэнту</item>
+    </string-array>
+    <string-array name="battery_labels">
+        <item>0%</item>
+        <item>50%</item>
+        <item>100%</item>
+    </string-array>
+    <string-array name="bluetooth_a2dp_codec_bits_per_sample_summaries">
+        <item>Выбар сістэмы (стандартны)</item>
+        <item>16 бітаў/сэмпл</item>
+        <item>24 біты/сэмпл</item>
+        <item>32 біты/сэмпл</item>
+    </string-array>
+    <string-array name="bluetooth_a2dp_codec_bits_per_sample_titles">
+        <item>Выбар сістэмы (стандартны)</item>
+        <item>16 бітаў/сэмпл</item>
+        <item>24 біты/сэмпл</item>
+        <item>32 біты/сэмпл</item>
+    </string-array>
+    <string-array name="bluetooth_a2dp_codec_channel_mode_summaries">
+        <item>Выбар сістэмы (стандартны)</item>
+        <item>Мона</item>
+        <item>Стэрэа</item>
+    </string-array>
+    <string-array name="bluetooth_a2dp_codec_channel_mode_titles">
+        <item>Выбар сістэмы (стандартны)</item>
+        <item>Мона</item>
+        <item>Стэрэа</item>
+    </string-array>
+    <string-array name="bluetooth_a2dp_codec_ldac_playback_quality_summaries">
+        <item>Аптымізавана якасць гуку</item>
+        <item>Збалансаваная якасць аўдыя і падключэння</item>
+        <item>Аптымізавана якасць падключэння</item>
+        <item>Best Effort (адаптыўны бітрэйт)</item>
+    </string-array>
+    <string-array name="bluetooth_a2dp_codec_ldac_playback_quality_titles">
+        <item>Аптымізавана якасць гуку</item>
+        <item>Збалансаваная якасць аўдыя і падключэння</item>
+        <item>Аптымізавана якасць падключэння</item>
+        <item>Лепшы эфект (адаптыўны бітрэйт)</item>
+    </string-array>
+    <string-array name="bluetooth_a2dp_codec_sample_rate_summaries">
+        <item>Выбар сістэмы (стандартны)</item>
+        <item>44,1 кГц</item>
+        <item>48,0 кГц</item>
+        <item>88,2 кГц</item>
+        <item>96,0 кГц</item>
+    </string-array>
+    <string-array name="bluetooth_a2dp_codec_sample_rate_titles">
+        <item>Выбар сістэмы (стандартны)</item>
+        <item>44,1 кГц</item>
+        <item>48,0 кГц</item>
+        <item>88,2 кГц</item>
+        <item>96,0 кГц</item>
+    </string-array>
+    <string-array name="bluetooth_a2dp_codec_summaries">
+        <item>Выбар сістэмы (стандартны)</item>
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>aptX HD</item>
+        <item>LDAC</item>
+        <item>Уключыць дадатковыя кодэкі</item>
+        <item>Адключыць дадатковыя кодэкі</item>
+    </string-array>
+    <string-array name="bluetooth_a2dp_codec_titles">
+        <item>Выбар сістэмы (стандартны)</item>
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>aptX HD</item>
+        <item>LDAC</item>
+        <item>Уключыць дадатковыя кодэкі</item>
+        <item>Адключыць дадатковыя кодэкі</item>
+    </string-array>
+    <string-array name="bluetooth_avrcp_versions">
+        <item>AVRCP 1.4 (стандартная)</item>
+        <item>AVRCP 1.5</item>
+        <item>AVRCP 1.6</item>
+    </string-array>
+    <string-array name="debug_hw_renderer_entries">
+        <item>OpenGL (па змаўчанні)</item>
+        <item>OpenGL (Skia)</item>
+    </string-array>
+</resources>

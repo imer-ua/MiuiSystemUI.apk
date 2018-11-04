@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="status_bar_accessibility_recent_apps">
+        <item quantity="other">%d πρόσφατες εφαρμογές</item>
+        <item quantity="one">1 πρόσφατη εφαρμογή</item>
+    </plurals>
+    <plurals name="notification_group_overflow_description">
+        <item quantity="other">%s περισσότερες ειδοποιήσεις εντός.</item>
+        <item quantity="one">%s περισσότερη ειδοποίηση εντός.</item>
+    </plurals>
+    <plurals name="notification_num_channels">
+        <item quantity="other">%d κατηγορίες ειδοποιήσεων</item>
+        <item quantity="one">%d κατηγορία ειδοποίησης</item>
+    </plurals>
+    <plurals name="notification_num_channels_desc">
+        <item quantity="other">1 από %d κατηγορίες ειδοποιήσεων από αυτήν την εφαρμογή</item>
+        <item quantity="one">1 από την %d κατηγορία ειδοποίησης από αυτήν την εφαρμογή</item>
+    </plurals>
+    <plurals name="notification_channels_list_desc_2_and_others">
+        <item quantity="other">%1$s, %2$s, και %3$d άλλες</item>
+        <item quantity="one">%1$s, %2$s, και %3$d άλλη</item>
+    </plurals>
+    <plurals name="kg_password_wrong_pin_code">
+        <item quantity="other">Λανθασμένος κωδικός PIN της SIM. Απομένουν %d προσπάθειες.</item>
+        <item quantity="one">Λανθασμένος κωδικός PIN της SIM. Απομένει %d προσπάθεια προτού επικοινωνήσετε με τον φορέα σας για να ξεκλειδώσετε τη συσκευή σας.</item>
+    </plurals>
+    <plurals name="kg_password_wrong_puk_code">
+        <item quantity="other">Εσφαλμένος κωδικός PUK της SIM , %d προσπάθειες απομένουν πρίν η SIM γίνει μόνιμα ανενεργή..</item>
+        <item quantity="one">Εσφαλμένος κωδικός PUK της SIM , %d προσπάθεια απομένει πρίν η SIM γίνει μόνιμα ανενεργή.</item>
+    </plurals>
+    <plurals name="kg_prompt_reason_time_pattern">
+        <item quantity="other">Η συσκευή δεν έχει ξεκλειδωθεί για %d ώρες. Επιβεβαιώστε το μοτίβο.</item>
+        <item quantity="one">Η συσκευή δεν έχει ξεκλειδωθεί για %d ώρα. Επιβεβαιώστε το μοτίβο.</item>
+    </plurals>
+    <plurals name="kg_prompt_reason_time_pin">
+        <item quantity="other">Η συσκευή δεν έχει ξεκλειδωθεί για %d ώρες. Επιβεβαιώστε το PIN.</item>
+        <item quantity="one">Η συσκευή δεν έχει ξεκλειδωθεί για %d ώρα. Επιβεβαιώστε το PIN.</item>
+    </plurals>
+    <plurals name="kg_prompt_reason_time_password">
+        <item quantity="other">"Η συσκευή δεν έχει ξεκλειδωθεί για %d ώρες. Επιβεβαιώστε τον Κωδικό.
+"</item>
+        <item quantity="one">Η συσκευή δεν έχει ξεκλειδωθεί για %d ώρα. Επιβεβαιώστε τον Κωδικό.</item>
+    </plurals>
+    <plurals name="kg_password_default_pin_message">
+        <item quantity="other">Εισαγάγετε το PIN SIM, έχετε %d υπόλοιπες προσπάθειες.</item>
+        <item quantity="one">Εισάγετε το PIN της κάρτας SIM, %d προσπάθεια απέμεινε πριν να επικοινωνήσετε με το φορέα σας για να ξεκλειδώσετε τη συσκευή σας.</item>
+    </plurals>
+    <plurals name="kg_password_default_puk_message">
+        <item quantity="other">Η SIM είναι τώρα ανενεργή. Εισάγετε τον κωδικό PUK για να συνεχίσετε. Απομένουν %d προσπάθειες πριν η SIM γίνει μόνιμα ανενεργή. Επικοινωνήστε με το φορέα σας για λεπτομέρειες.</item>
+        <item quantity="one">Η SIM είναι τώρα ανενεργή. Εισάγετε τον κωδικό PUK για να συνεχίσετε. Έχετε %d προσπάθεια πριν η SIM γίνει μόνιμα ανενεργή. Επικοινωνήστε με το φορέα σας για λεπτομέρειες.</item>
+    </plurals>
+    <plurals name="incorrect_pukcode_remaining_attempts">
+        <item quantity="other">Λανθασμένος κωδικός PUK. Απομένουν %d προσπάθειες</item>
+        <item quantity="one">Λανθασμένος κωδικός PUK. Απομένει %d προσπάθεια</item>
+    </plurals>
+    <plurals name="incorrect_pincode_remaining_attempts">
+        <item quantity="other">Λανθασμένος κωδικός PIN. Απομένουν %d προσπάθειες</item>
+        <item quantity="one">Λανθασμένος κωδικός PIN. Απομένει %d προσπάθεια</item>
+    </plurals>
+    <plurals name="phone_locked_timeout_seconds_string">
+        <item quantity="other">Προσπαθήστε ξανά σε %d δευτ.</item>
+        <item quantity="one">Προσπαθήστε ξανά σε %d δευτ.</item>
+    </plurals>
+    <plurals name="phone_locked_timeout_minutes_string">
+        <item quantity="other">Προσπαθήστε ξανά σε %d λεπτά</item>
+        <item quantity="one">Προσπαθήστε ξανά σε %d λεπτό</item>
+    </plurals>
+    <plurals name="new_notifications_msg">
+        <item quantity="other">%d νέες ειδοποιήσεις</item>
+        <item quantity="one">%d νέα ειδοποίηση</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_could_use_min_time_text">
+        <item quantity="other">Απομένουν περίπου %d λεπτά</item>
+        <item quantity="one">Απομένει περίπου %d λεπτό</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_could_use_hour_time_text">
+        <item quantity="other">Απομένουν περίπου %d ώρες</item>
+        <item quantity="one">Απομένει περίπου %d ώρα</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_could_use_time_text">
+        <item quantity="other">Απομένουν περίπου %1$d ω %2$d λ</item>
+        <item quantity="one">Απομένει περίπου %1$d ω %2$d ω</item>
+    </plurals>
+    <plurals name="keyguard_extreme_power_info_could_use_min_time_text">
+        <item quantity="other">Απομένουν %d λεπ.</item>
+        <item quantity="one">Απομένει %d λεπ.</item>
+    </plurals>
+    <plurals name="keyguard_extreme_power_info_could_use_hour_time_text">
+        <item quantity="other">Απομένουν %d ώρ.</item>
+        <item quantity="one">Απομένει %d ώρ.</item>
+    </plurals>
+    <plurals name="keyguard_extreme_power_info_could_use_time_text">
+        <item quantity="other">Απομένουν %1$d ώρ. %2$d λεπ.</item>
+        <item quantity="one">Απομένει %1$d ώρ. %2$d λεπ.</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_drained_hour_time_format">
+        <item quantity="other">%d ώρες</item>
+        <item quantity="one">%d ώρα</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_drained_min_time_format">
+        <item quantity="other">%d λεπτά</item>
+        <item quantity="one">%d λεπτό</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_drained_time_format">
+        <item quantity="other">%1$d ω %2$d λ</item>
+        <item quantity="one">%1$d ω %2$d λ</item>
+    </plurals>
+    <plurals name="accessibility_recent_task_enter">
+        <item quantity="other">Άνοιξαν πρόσφατα, διαθέσιμες εφαρμ: %d.</item>
+        <item quantity="one">Άνοιξε πρόσφατα, διαθέσιμη εφαρμ: %d.</item>
+    </plurals>
+    <plurals name="accessibility_recent_task_first_enter_tips">
+        <item quantity="other">Άνοιξαν πρόσφατα, διαθέσιμες εφαρμ: %d Σύρετε επάνω για αφαίρεση, κάτω για κλείδωμα.</item>
+        <item quantity="one">Άνοιξε πρόσφατα, διαθέσιμη εφαρμ: %d Σύρετε επάνω για αφαίρεση, κάτω για κλείδωμα.</item>
+    </plurals>
+    <plurals name="settings_toggle_position_divider_page">
+        <item quantity="other">%1$d εναλλαγές θα εμφανιστούν στον πίνακα ειδοποιήσεων</item>
+        <item quantity="one">%1$d εναλλαγή θα εμφανιστεί στον πίνακα ειδοποιήσεων</item>
+    </plurals>
+    <plurals name="disable_notification_confirm_title">
+        <item quantity="other">Απόκρυψη ειδοποιήσεων %d εφαρμογών;</item>
+        <item quantity="one">Απόκρυψη ειδοποιήσεων αυτής της εφαρμογής;</item>
+    </plurals>
+    <plurals name="block_record_notification_more_text">
+        <item quantity="other">Απόκρυψη ειδοποιήσεων από %1$s &amp; %2$d εφαρμογές.</item>
+        <item quantity="one">Απόκρυψη ειδοποιήσεων από %1$s &amp; %2$d εφαρμογή.</item>
+    </plurals>
+    <plurals name="view_realtime_clear">
+        <item quantity="other">Καθαρός</item>
+        <item quantity="one">Λιακάδα</item>
+    </plurals>
+    <plurals name="fold_tips_title">
+        <item quantity="other">%d ασήμαντες ειδοποιήσεις</item>
+        <item quantity="one">%d ασήμαντη ειδοποίηση</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_charging_full_need_hour_time__text">
+        <item quantity="other">Απομένουν %d ώρες για πλήρη φόρτιση</item>
+        <item quantity="one">Απομένει %d ώρα για πλήρη φόρτιση</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_charging_full_need_min_time__text">
+        <item quantity="other">Απομένουν %d λεπτά για πλήρη φόρτιση</item>
+        <item quantity="one">Απομένει %d λεπτό για πλήρη φόρτιση</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_charging_full_need_time__text">
+        <item quantity="other">Απομένουν %1$d ω %2$d λ για πλήρη φόρτιση</item>
+        <item quantity="one">Απομένει %1$d ω %2$d λ για πλήρη φόρτιση</item>
+    </plurals>
+    <plurals name="accessibility_desc_weather_temperature">
+        <item quantity="other">Καιρός %d βαθμοί</item>
+        <item quantity="zero">Καιρός %d βαθμοί</item>
+        <item quantity="one">Καιρός %d βαθμός</item>
+    </plurals>
+    <plurals name="notification_group_child_count">
+        <item quantity="other">%1$d ειδοποιήσεις</item>
+        <item quantity="one">%1$d ειδοποίηση</item>
+    </plurals>
+</resources>

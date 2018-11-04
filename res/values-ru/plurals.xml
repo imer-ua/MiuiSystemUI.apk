@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="status_bar_accessibility_recent_apps">
+        <item quantity="other">%d недавних приложений</item>
+        <item quantity="one">%d недавнее приложение</item>
+        <item quantity="few">%d недавних приложения</item>
+        <item quantity="many">%d недавних приложений</item>
+    </plurals>
+    <plurals name="notification_group_overflow_description">
+        <item quantity="other">на %s больше уведомлений внутри.</item>
+        <item quantity="one">на %s больше уведомление внутри.</item>
+    </plurals>
+    <plurals name="notification_num_channels">
+        <item quantity="other">%d категорий уведомлений</item>
+        <item quantity="one">%d категория уведомлений</item>
+        <item quantity="few">%d категории уведомлений</item>
+    </plurals>
+    <plurals name="notification_num_channels_desc">
+        <item quantity="other">1 из %d категорий уведомлений из этого приложения</item>
+        <item quantity="one">1 из %d категории уведомлений из этого приложения</item>
+    </plurals>
+    <plurals name="notification_channels_list_desc_2_and_others">
+        <item quantity="other">%1$s, %2$s, а также %3$d другие</item>
+        <item quantity="one">%1$s, %2$s, а также %3$d другие</item>
+    </plurals>
+    <plurals name="kg_password_wrong_pin_code">
+        <item quantity="other">Неправильный PIN-код SIM-карты. У вас есть %d оставшихся попытки.</item>
+        <item quantity="one">Неправильный PIN-код SIM-карты. У вас есть %d оставшаяся попытка, прежде чем вы обратитесь к своему оператору, чтобы разблокировать устройство.</item>
+    </plurals>
+    <plurals name="kg_password_wrong_puk_code">
+        <item quantity="other">Неправильный код SIM PUK, у вас есть %d оставшиеся попытки до того, как SIM-карта станет непригодной для использования.</item>
+        <item quantity="one">Неправильный код SIM PUK, у вас есть %d оставшаяся попытка до того, как SIM-карта станет непригодной для использования.</item>
+    </plurals>
+    <plurals name="kg_prompt_reason_time_pattern">
+        <item quantity="other">Устройство не разблокировалось %d часов. Подтвердите шаблон.</item>
+        <item quantity="one">Устройство не разблокировалось %d час. Подтвердите шаблон.</item>
+    </plurals>
+    <plurals name="kg_prompt_reason_time_pin">
+        <item quantity="other">Устройство не разблокировалось %d часов. Подтвердите PIN.</item>
+        <item quantity="one">Устройство не разблокировалось %d час. Подтвердите PIN.</item>
+    </plurals>
+    <plurals name="kg_prompt_reason_time_password">
+        <item quantity="other">Устройство не разблокировалось %d часов. Подтвердите пароль.</item>
+        <item quantity="one">Устройство было не разблокировано %d час. Подтвердите пароль.</item>
+    </plurals>
+    <plurals name="kg_password_default_pin_message">
+        <item quantity="other">Введите пин-код, у вас есть %d оставшиеся попытки.</item>
+        <item quantity="one">Введите пин-код, у вас есть %d попытка, прежде чем вы должны обратиться к своему оператору для разблокировки устройства.</item>
+    </plurals>
+    <plurals name="kg_password_default_puk_message">
+        <item quantity="other">Теперь SIM отключена. Введите PUK-код, чтобы продолжить. У вас есть %d оставшиеся попытки до того, как SIM-карта станет непригодной для использования. Для получения дополнительной информации свяжитесь с перевозчиком.</item>
+        <item quantity="one">Теперь SIM отключена. Введите PUK-код, чтобы продолжить. У вас есть %d оставшаяся попытка до того, как SIM-карта станет непригодной для использования. Для получения дополнительной информации свяжитесь с перевозчиком.</item>
+    </plurals>
+    <plurals name="incorrect_pukcode_remaining_attempts">
+        <item quantity="other">Неверный PUK-код, осталось попыток: %d</item>
+        <item quantity="one">Неверный PUK-код, %d попытка осталась</item>
+    </plurals>
+    <plurals name="incorrect_pincode_remaining_attempts">
+        <item quantity="other">"Неправильный PIN-код, осталось попыток:  %d "</item>
+        <item quantity="one">Неправильный PIN-код, %d попытка осталась</item>
+    </plurals>
+    <plurals name="phone_locked_timeout_seconds_string">
+        <item quantity="other">Повторите попытку через %d с.</item>
+        <item quantity="one">Повторите попытку через %d с.</item>
+    </plurals>
+    <plurals name="phone_locked_timeout_minutes_string">
+        <item quantity="other">Повторите попытку через %d мин.</item>
+        <item quantity="one">Повторите попытку через %d мин.</item>
+    </plurals>
+    <plurals name="new_notifications_msg">
+        <item quantity="other">%d новых уведомлений</item>
+        <item quantity="one">%d новое уведомление</item>
+        <item quantity="few">%d новых уведомления</item>
+        <item quantity="many">%d новых уведомлений</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_could_use_min_time_text">
+        <item quantity="other">Осталось около %d мин.</item>
+        <item quantity="one">Осталось около %d мин.</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_could_use_hour_time_text">
+        <item quantity="other">Осталось около %d ч.</item>
+        <item quantity="one">Осталось около %d ч.</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_could_use_time_text">
+        <item quantity="other">Осталось около %1$d ч. %2$d мин.</item>
+        <item quantity="one">Осталось около %1$d ч. %2$d мин.</item>
+    </plurals>
+    <plurals name="keyguard_extreme_power_info_could_use_min_time_text">
+        <item quantity="other">Осталось %d мин.</item>
+        <item quantity="one">Осталось %d мин.</item>
+    </plurals>
+    <plurals name="keyguard_extreme_power_info_could_use_hour_time_text">
+        <item quantity="other">Осталось %d ч.</item>
+        <item quantity="one">Осталось %d ч.</item>
+    </plurals>
+    <plurals name="keyguard_extreme_power_info_could_use_time_text">
+        <item quantity="other">Осталось %1$d ч. %2$d мин.</item>
+        <item quantity="one">Осталось %1$d ч. %2$d мин.</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_drained_hour_time_format">
+        <item quantity="other">%d ч.</item>
+        <item quantity="one">%d ч.</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_drained_min_time_format">
+        <item quantity="other">%d мин.</item>
+        <item quantity="one">%d мин.</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_drained_time_format">
+        <item quantity="other">%1$d ч. %2$d мин.</item>
+        <item quantity="one">%1$d ч. %2$d мин.</item>
+    </plurals>
+    <plurals name="accessibility_recent_task_enter">
+        <item quantity="other">Доступно приложений: %d.</item>
+        <item quantity="one">Доступно приложений: 1.</item>
+    </plurals>
+    <plurals name="accessibility_recent_task_first_enter_tips">
+        <item quantity="other">Доступно приложений: %d. Проведите пальцем вверх, чтобы удалить, проведите пальцем вниз, чтобы заблокировать.</item>
+        <item quantity="one">Доступно приложений: 1. Проведите пальцем вверх, чтобы удалить, проведите пальцем вниз, чтобы заблокировать.</item>
+    </plurals>
+    <plurals name="settings_toggle_position_divider_page">
+        <item quantity="other">%1$d переключателей активны</item>
+        <item quantity="one">1 переключатель активен</item>
+        <item quantity="few">%1$d переключателя активны</item>
+    </plurals>
+    <plurals name="disable_notification_confirm_title">
+        <item quantity="other">%d приложений</item>
+        <item quantity="one">%d приложение</item>
+        <item quantity="few">%d приложения</item>
+        <item quantity="many">%d приложений</item>
+    </plurals>
+    <plurals name="block_record_notification_more_text">
+        <item quantity="other">Скрыты уведомления от %1$s &amp; %2$d приложений</item>
+        <item quantity="one">Скрыты уведомления от %1$s &amp; 1 приложения</item>
+    </plurals>
+    <plurals name="view_realtime_clear">
+        <item quantity="other">Ясно</item>
+        <item quantity="one">Ясно</item>
+    </plurals>
+    <plurals name="fold_tips_title">
+        <item quantity="other">%d уведомлений сброшено</item>
+        <item quantity="one">%d уведомление сброшено</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_charging_full_need_hour_time__text">
+        <item quantity="other">Около %d ч. до полной</item>
+        <item quantity="one">Около %d ч. до полной</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_charging_full_need_min_time__text">
+        <item quantity="other">Около %d мин. до полной</item>
+        <item quantity="one">Около %d мин. до полной</item>
+    </plurals>
+    <plurals name="keyguard_charging_info_charging_full_need_time__text">
+        <item quantity="other">Около %1$d ч. %2$d мин. до полной</item>
+        <item quantity="one">Около %1$d ч. %2$d мин. до полной</item>
+    </plurals>
+</resources>

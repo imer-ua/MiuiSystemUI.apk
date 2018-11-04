@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.systemui.ClipEdgeLinearLayout android:gravity="end|center" android:id="@id/system_icons" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.keyguard.AlphaOptimizedLinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/statusIcons" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    <com.android.systemui.statusbar.AlphaOptimizedImageView android:layout_gravity="center_vertical" android:id="@id/gps_drivemode" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/stat_sys_gps_on" />
+    <com.android.systemui.BatteryMeterView android:id="@id/battery" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+</com.android.systemui.ClipEdgeLinearLayout>
